@@ -1,6 +1,6 @@
-08 Feb 2022,mean age,median age,#obs
+10 Feb 2022,mean age,median age,#obs
 population,42,41,67 114 995
-cases,35.4,32.4,20 168 389
-hospitalisations,72.8,74.6,11 551 428
-réanimations,64.3,65,1 759 737
-morts,80.7,81.6,105 361
+cases,35.4,32.4,20 466 367
+hospitalisations,72.8,74.6,11 616 384
+réanimations,64.3,64.9,1 766 641
+morts,80.7,81.6,105 923
