@@ -521,7 +521,11 @@ html {
         position: sticky;
         top: 0;
     }
-    
+    table.tree-table thead {
+   
+      position: sticky;
+      top: 0;
+  }
     
     @media only screen and (min-width: 1200px){
       html {

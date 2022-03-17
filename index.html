@@ -412,7 +412,7 @@ PAGE DE GARDE
 	document.getElementById('grph1').src = document.getElementById('grph1').src + "?t=" + timestamp
 	document.getElementById('grph2').src = document.getElementById('grph2').src + "?t=" + timestamp
 	document.getElementById('grph3').src = document.getElementById('grph3').src + "?t=" + timestamp
-	document.getElementById('grph4').src = document.getElementById('grph4').src + "?t=" + timestamp
+	// document.getElementById('grph4').src = document.getElementById('grph4').src + "?t=" + timestamp
 	document.getElementById('grph5').src = document.getElementById('grph5').src + "?t=" + timestamp
 	document.getElementById('grph6').src = document.getElementById('grph6').src + "?t=" + timestamp
 	document.getElementById('grph7').src = document.getElementById('grph7').src + "?t=" + timestamp
@@ -421,6 +421,22 @@ PAGE DE GARDE
 	document.getElementById('grph10').src = document.getElementById('grph10').src + "?t=" + timestamp
 	document.getElementById('grph11').src = document.getElementById('grph11').src + "?t=" + timestamp
 	document.getElementById('grph12').src = document.getElementById('grph12').src + "?t=" + timestamp
-</script>
+
+	var data;
+    //window.alert("Santé publique France a publié des données incomplètes et erronées ce soir. Nous les avons contactés. CovidTracker sera de nouveau à jour dès leur correction.");
+
+    fetch('https://sebast759.github.io/graph/script_lastupdate.json')
+	.then(response => {
+  		return response.json();
+	})
+	.then(data => {
+  // Work with JSON data here
+  		console.log(data);
+	})
+	.catch(err => {
+  		// Do something for an error here
+	});
+
+  </script>
 
 </html>
