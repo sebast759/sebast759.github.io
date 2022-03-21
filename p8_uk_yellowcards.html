@@ -11,6 +11,10 @@ HOPITAUX ET REANIMATIONS NHS
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <!-- BOOTSTRAT : Many of our components require the use of JavaScript to function. -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"></script>
@@ -19,10 +23,6 @@ HOPITAUX ET REANIMATIONS NHS
   <meta http-equiv=“Pragma” content=”no-cache”>
   <meta http-equiv=“Expires” content="Fri, 30 Oct 1998 14:19:41 GMT">
   <meta http-equiv=“CACHE-CONTROL” content="no-cache, must-revalidate">
-  <!-- BOOTSTRAT : Many of our components require the use of JavaScript to function. -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
@@ -168,7 +168,8 @@ HOPITAUX ET REANIMATIONS NHS
     </p>
     <p>
       For the COVID-19 Pfizer/BioNTech Vaccine, COVID-19 Vaccine AstraZeneca and COVID-19 Vaccine Moderna the overall
-      reporting rate is around <b>around 4 Yellow Cards per 1,000 doses administered and 19 suspected deaths per million jabs injected</b>.
+      reporting rate is around <b>around 4 Yellow Cards per 1,000 doses administered and 19 suspected deaths per million
+        jabs injected</b>.
     </p>
 
 
@@ -182,7 +183,8 @@ HOPITAUX ET REANIMATIONS NHS
       Pfizer report can for example be downloaded using that <a
         href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1031316/Pfizer_CORRECT.pdf">
         link</a></p>
-        I aggregated all the data in a comprehensive csv file downloadable <a href="graph/yellow_cards/20211215_vax_all_formatted.csv"> here</a>
+    I aggregated all the data in a comprehensive csv file downloadable <a
+      href="graph/yellow_cards/20211215_vax_all_formatted.csv"> here</a>
     </p>
     </br>
 
@@ -199,7 +201,8 @@ HOPITAUX ET REANIMATIONS NHS
       <li>... for <a id="ndoses"></a> millions of jabs (<a id="ndoses1"></a> 1st dose + <a id="ndoses2"></a> 2 nd doses)
       </li>
     </p>
-    ModernaAAAA led to the most adverse reactions reports per million injections and while Astra was the most lethal.<br> On
+    Moderna generated to the most adverse reactions reports per million injections and while Astra was the most
+    lethal.<br> On
     average, <b>19 deaths for 1 million injections</b> were reported in the Yellow Cards reports.
     <div class="row featurette">
       <div class="col-md-6">
@@ -249,11 +252,10 @@ HOPITAUX ET REANIMATIONS NHS
             id="grph5">Reactions</a> -
           <a href="graph/yellow_cards/yellow_cards_histoTOTAL REPORTS.jpeg" target="search_iframe2"
             id="grph6">Reports</a> -
-          <a href="graph/yellow_cards/yellow_cards_histod_dose_1+2.jpeg" target="search_iframe2"
-            >Monthly injections</a> - 
-          <a href="graph/yellow_cards/yellow_cards_histodose_1+2.jpeg" target="search_iframe2"
-                      >Total injections</a> 
-          
+          <a href="graph/yellow_cards/yellow_cards_histod_dose_1+2.jpeg" target="search_iframe2">Monthly injections</a>
+          -
+          <a href="graph/yellow_cards/yellow_cards_histodose_1+2.jpeg" target="search_iframe2">Total injections</a>
+
           <iframe src="graph/yellow_cards/yellow_cards_histofatal reactions.jpeg" id="grph7" width="80%" height="500"
             style="-webkit-transform:scale(1);-moz-transform-scale(0.25);-ms-transform-origin: 0.25;"
             name="search_iframe2"></iframe>
@@ -277,6 +279,16 @@ HOPITAUX ET REANIMATIONS NHS
         <li>Infections (virus included Covid)</li>
         <li>...</li>
       </ul>
+      <hr class="featurette-divider">
+      <div class="featurette">
+        <h2 class="featurette-heading"> <a name="mark1" href="graph/yellow_cards/last_vax_all_formatted.html"
+            target="_blank">Table<a style="color: rgb(255, 17, 0);"></a> of ADR reports in the UK (Yellow Cards)</h2>
+      </div>
+      <div class="col-md-12">
+        <iframe position="absolute" width="70%" height="300" id="grph2"
+          src="graph/yellow_cards/last_vax_all_formatted_L1.html"></iframe>
+
+      </div>
       These reactions are represented by decreasing frequency in the below chart:
       <a href="graph/yellow_card_reaction.jpeg" target="_blank"><img class="float-left" id="grph8"
           src="graph/yellow_card_reaction.jpeg" alt="First Slide" max-width="600" height="600"></a>
@@ -355,7 +367,7 @@ HOPITAUX ET REANIMATIONS NHS
   $.get('/graph/yellow_cards/yellow_card_recap_prev.html', function (data) {
     // start the table
     var prevdat_d = data.split("/tr")[0].split('as of ')[1].split('</th')[0]
-      // insert into div
+    // insert into div
     $('#prevdat_d').append(prevdat_d);
   });
   // iframe yellow cards scroll down
