@@ -139,52 +139,38 @@ HOPITAUX ET REANIMATIONS NHS
       <a style="color:black;text-align: center;">UK Gov Yellow Cards Reports</a><br><img src="images/flag_govuk.jpg"
         style="height: 0.8cm;">
     </h2>
-    <p> A weekly report <a style="color:black; border-bottom: 1px dotted black;">covering adverse reactions to approved
-        COVID-19 vaccines produced by GOV.UK</a>
-      <span class="extra">In th UK, the MHRA (Medicines and Healthcare products Regulatory Agency) authorised Pfizer,
+    <p> A weekly report <a style="color:black; ">covering adverse reactions to
+        COVID-19 vaccines produced by GOV.UK</a>  </p>
+        <p> In th UK, the MHRA (Medicines and Healthcare products Regulatory Agency) authorised Pfizer,
         Moderna and AstraZeneca in the UK. The MHRA continually monitors safety during widespread use of a vaccine.
         Part of our monitoring role includes <b> reports of suspected side effects</b>. Any member of the public or
         health professional can submit suspected side effects through the Yellow Card scheme.
         The nature of Yellow Card reporting means that <b>reported events are not always proven side effects</b>. Some
-        events may have happened anyway, regardless of vaccination. This is particularly the case when millions of
-        people are vaccinated, and especially when most vaccines are being given to the most elderly people and people
-        who have underlying illness
-
-
-      </span>
+        events may have happened anyway, regardless of vaccination.
     </p>
     <p>
-    <p>This safety update report is based on detailed analysis of data up to 15 December 2021. As of 15 December 2021,
-      an estimated 25 million first doses of the COVID-19 Pfizer/BioNTech Vaccine and 24.9 million first doses of the
-      COVID-19 Vaccine AstraZeneca had been administered, and around 21.4 million and 24.1 million second doses of the
-      COVID-19 Pfizer/BioNTech Vaccine and COVID-19 Vaccine AstraZeneca respectively. An approximate 1.5 million first
-      doses and approximately 1.3 million second doses of the COVID-19 Vaccine Moderna have also now been administered.
-
-    </p>
-    <p>As of 15 December 2021, for the UK, 145,446 Yellow Cards have been reported for the COVID-19 Pfizer/BioNTech
-      Vaccine, 240,065 have been reported for the COVID-19 Vaccine AstraZeneca, 24,721 for the COVID-19 Vaccine Moderna
-      and 1,362 have been reported where the brand of the vaccine was not specified.
-    </p>
-    </p>
-    <p>
+    <p>This safety update report is based on detailed analysis of data up to As of <b><a id="dat_d0"></a></b>
+    <p> 
       For the COVID-19 Pfizer/BioNTech Vaccine, COVID-19 Vaccine AstraZeneca and COVID-19 Vaccine Moderna the overall
       reporting rate is around <b>around 4 Yellow Cards per 1,000 doses administered and 19 suspected deaths per million
         jabs injected</b>.
     </p>
 
 
-    <h2 style="color:rgb(40, 96, 180);font-size: larger;">Source</h2>
+    <h2 style="color:rgb(40, 96, 180);font-size: x-large;font-weight: bold;">Source</h2>
     <p>
       All data are from <a
         href="https://www.gov.uk/government/publications/coronavirus-covid-19-vaccine-adverse-reactions"
         target="_blank">gov.uk</a>.
-      In a pdf format, one can download the adverse reactions report (ADR) for each vaccine (AZ,Pfizer,Moderna). The
+      In a pdf format, one can download the adverse reactions report (ADR) for each vaccine (Astra Z,Pfizer,Moderna). The
       report details the different reactions per category and if the reaction suspectedly led to death.
       Pfizer report can for example be downloaded using that <a
         href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1031316/Pfizer_CORRECT.pdf">
         link</a></p>
-    I aggregated all the data in a comprehensive csv file downloadable <a
-      href="graph/yellow_cards/20211215_vax_all_formatted.csv"> here</a>
+    I aggregated for the 3 vaccines (Astra, Pfizer and Moderna) the different <a style="font-weight: bold;">reactions and suspected deaths</a> (if any) in a comprehensive table. <br>That table can be downloaded using the link below:<br> 
+    <button type="button" class="btn btn-outline-secondary" style="font-weight: bold;"><a href="graph/yellow_cards/last_vax_all_formatted.csv">csv</a></button>
+    <button type="button" class="btn btn-outline-primary" style="font-weight: bold;"><a href="graph/yellow_cards/last_vax_all_formatted_L3.html" target='_blank'>html (static)</a></button>
+    <button type="button" class="btn btn-outline-secondary" style="font-weight: bold;"><a href="graph/yellow_cards/last_vax_all_formatted.html" target='_blank'>html (dynamic)</a></button>
     </p>
     </br>
 
@@ -194,7 +180,7 @@ HOPITAUX ET REANIMATIONS NHS
     <hr class="featurette-divider">
     <h3><b><a id="nmorts"></a></b> suspected fatalities reported</h3>
     <p>
-      As of <b><a id="dat_d"></a></b>, for the UK, yellow cards reports account for :
+      As of <b><a id="dat_d1"></a></b>, for the UK, yellow cards reports account for :
       <li><a id="nreports"></a> ADR (adverse reaction reports)</li>
       <li><a id="nreacts"></a> adverse reactions (1 report may report 1 or several reactions)</li>
       <li><b><a id="nmorts2"></a></b> suspected fatalities</li>
@@ -280,10 +266,10 @@ HOPITAUX ET REANIMATIONS NHS
         <li>...</li>
       </ul>
       <hr class="featurette-divider">
-      <div class="featurette">
+      <!-- <div class="featurette">
         <h2 class="featurette-heading"> <a name="mark1" href="graph/yellow_cards/last_vax_all_formatted.html"
             target="_blank">Table<a style="color: rgb(255, 17, 0);"></a> of ADR reports in the UK (Yellow Cards)</h2>
-      </div>
+      </div> -->
       <div class="col-md-12">
         <iframe position="absolute" width="70%" height="300" id="grph2"
           src="graph/yellow_cards/last_vax_all_formatted_L1.html"></iframe>
@@ -348,7 +334,8 @@ HOPITAUX ET REANIMATIONS NHS
     var ndoses2 = data.split("/tr")[2].split('</td>')[3].split('>')[1]
 
     // insert into div
-    $('#dat_d').append(dat_d);
+    $('#dat_d0').append(dat_d);
+    $('#dat_d1').append(dat_d);
     $('#dat_d2').append(dat_d);
     $('#dat_d3').append(dat_d);
     $('#dat_d4').append(dat_d);
