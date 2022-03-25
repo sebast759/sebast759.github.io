@@ -142,8 +142,6 @@ ul > ol {
 .carousel-inner {
   text-align: center; }
 
-*, ::after, ::before {
-  /* box-sizing: border-box; */ }
 
 html {
   font-family: sans-serif;
@@ -298,10 +296,7 @@ html {
       margin-top: 20px;
       margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
     }
-    .navbar-wrapper .navbar {
-
-    }
-
+    
     /* Remove border and change up box shadow for more contrast */
     .navbar .navbar-inner {
       border: 0;
@@ -478,9 +473,7 @@ html {
         margin-left: -20px;
         margin-right: -20px;
       }
-      .carousel .container {
-
-      }
+      
       .carousel .item {
         height: 300px;
       }
@@ -594,16 +587,16 @@ html {
         background-image: url('/css/searchicon.png'); /* Add a search icon to input */
         background-position: 10px 12px; /* Position the search icon */
         background-repeat: no-repeat; /* Do not repeat the icon image */
-        width: 25%; /* Full-width */
+        width: 50%; /* Full-width */
         font-size: 16px; /* Increase font-size */
         padding: 12px 20px 12px 40px; /* Add some padding */
-        border: 1px solid #ddd; /* Add a grey border */
+        border: 2px solid #ddd; /* Add a grey border */
         margin-bottom: 12px; /* Add some space below the input */
       }
       
       #myTable {
         /* border-collapse: collapse; /* Collapse borders */
-        /* width: 100%; Full-width */ */
+        /* width: 100%; Full-width */ 
         border: 1px solid #ddd; /* Add a grey border */
         font-size: 18px; /* Increase font-size */
       }
