@@ -169,8 +169,8 @@ HOPITAUX ET REANIMATIONS NHS
         link</a></p>
     I aggregated for the 3 vaccines (Astra, Pfizer and Moderna) the different <a style="font-weight: bold;">reactions and suspected deaths</a> (if any) in a comprehensive table. <br>That table can be downloaded using the link below:<br> 
     <button type="button" class="btn btn-outline-secondary" style="font-weight: bold;"><a href="graph/yellow_cards/last_vax_all_formatted.csv">csv</a></button>
-    <button type="button" class="btn btn-outline-primary" style="font-weight: bold;"><a href="https://sebast759.github.io/graph/yellow_cards/last_vax_all_L3.html" target='_blank'>html (static)</a></button>
-    <button type="button" class="btn btn-outline-secondary" style="font-weight: bold;"><a href="https://sebast759.github.io/graph/yellow_cards/last_vax_all_formatted.html" target='_blank'>html (dynamic)</a></button>
+    <button type="button" class="btn btn-outline-primary" style="font-weight: bold;"><a href="https://sebast759.github.io/covidonomics/graph/yellow_cards/last_vax_all_L3.html" target='_blank'>html (static)</a></button>
+    <button type="button" class="btn btn-outline-secondary" style="font-weight: bold;"><a href="https://sebast759.github.io/covidonomics/graph/yellow_cards/last_vax_all_formatted.html" target='_blank'>html (dynamic)</a></button>
     </p>
     </br>
 
@@ -271,8 +271,8 @@ HOPITAUX ET REANIMATIONS NHS
             target="_blank">Table<a style="color: rgb(255, 17, 0);"></a> of ADR reports in the UK (Yellow Cards)</h2>
       </div> -->
       <div class="col-md-12">
-        <iframe position="absolute" width="70%" height="300" id="grph2"
-          src="graph/yellow_cards/last_vax_all_formatted_L1.html"></iframe>
+        <iframe position="absolute" width="90%" height="300" id="grph2"
+          src="graph/yellow_cards/last_vax_all_L3.html"></iframe>
 
       </div>
       These reactions are represented by decreasing frequency in the below chart:
@@ -321,7 +321,7 @@ HOPITAUX ET REANIMATIONS NHS
 <script>
   // create a new timestamp 
   var timestamp = new Date().getTime();
-  $.get('/graph/yellow_cards/yellow_card_recap_last.html', function (data) {
+  $.get('/covidonomics/graph/yellow_cards/yellow_card_recap_last.html', function (data) {
     // start the table
     var html = '<table>';
     var rows = data.split("</tr");
@@ -351,7 +351,7 @@ HOPITAUX ET REANIMATIONS NHS
     $('#ndoses1').append(ndoses1);
     $('#ndoses2').append(ndoses2);
   });
-  $.get('/graph/yellow_cards/yellow_card_recap_prev.html', function (data) {
+  $.get('/covidonomics/graph/yellow_cards/yellow_card_recap_prev.html', function (data) {
     // start the table
     var prevdat_d = data.split("/tr")[0].split('as of ')[1].split('</th')[0]
     // insert into div

@@ -1,0 +1,109 @@
+/**********************************************************/
+.thumbnail{
+position: relative;
+z-index: 0;
+}
+
+.thumbnail:hover{
+background-color: transparent;
+z-index: 50;
+}
+
+.thumbnail span{ /*CSS for enlarged image*/
+position: absolute;
+background-color: lightyellow;
+padding: 5px;
+left: -1000px;
+border: 1px dashed gray;
+visibility: hidden;
+color: black;
+text-decoration: none;
+}
+
+.thumbnail span img{ /*CSS for enlarged image*/
+width : 800px;
+border-width: 0;
+padding: 2px;
+}
+
+.thumbnail:hover span{ /*CSS for enlarged image on hover*/
+visibility: visible;
+top: 0;
+left: 60px; /*position where enlarged image should offset horizontally */
+
+}
+
+.thumbnail span iframe{ /*CSS for enlarged image*/
+width : 800px;
+height : 800px;
+
+transform: scale(1);
+  -ms-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;}
+
+.tooltip {
+position: relative;
+display: inline-block;
+border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+visibility: hidden;
+width: 120px;
+background-color: black;
+color: #fff;
+text-align: center;
+padding: 5px 0;
+border-radius: 6px;
+
+/* Position the tooltip text - see examples below! */
+position: absolute;
+z-index: 1;
+position: absolute;
+z-index: 1;
+top: 100%;
+left: 50%;
+margin-left: -60px;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+visibility: visible;
+}
+/**********************************************************/
+
+/**********************************************************/
+.mystyle {
+    font-size: 11pt; 
+    font-family: Arial;
+    border-collapse: collapse; 
+    border: 2px solid rgb(212, 203, 203);/*rgb(245, 242, 242);*/s
+
+}
+
+.mystyle th {
+    padding: 3px;
+    /*min-width: 50px;*/
+ 
+}
+.mystyle td{
+    padding: 1px;
+}
+
+.mystyle th:nth-of-type(2n) {    
+    /*border-right: 3px solid red;*/
+}
+
+.mystyle tr:nth-child(even) {
+    background: #fcfcfc;
+}
+
+.mystyle tr:hover {
+    background: rgb(216, 215, 215);
+    cursor: pointer;
+}
+/**********************************************************/

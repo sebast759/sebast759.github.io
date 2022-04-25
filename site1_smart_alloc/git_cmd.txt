@@ -1,0 +1,12 @@
+>	select your folder, right click git bash from here
+>	git init  	to create a .git/
+> 	git clone https://github.com/sebast759/CS50_Project0.git
+>	touch aaa.txt 	to create aaa.txt
+>	git status 	to have the list of file in the fordel
+>	git add *
+>	git commit -m "1st commit"
+>	git branch cs50/web/2018/x/projects/0	to create a new branch
+>	git checkout -b cs50/web/2018/x/projects/0	to create a new branch and go there
+	git checkout cs50/web/2018/x/projects/0		just to go on that branch
+>	git push origin cs50/web/2018/x/projects/0
+
