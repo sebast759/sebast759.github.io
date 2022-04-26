@@ -1,33 +1,48 @@
-<!DOCTYPE html>
-<html>
-    <head>
-		<link rel="stylesheet" href="styles.css">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-      <!-- font awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- BOOTSTRAT : Many of our components require the use of JavaScript to function. -->
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-		<title>SmartInv</title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <title>GinKo</title>
+  <style>
+    header{
+      background: url(img/man.jpg);
+      background-size: cover;
+      background-position: center;
+      min-height: 1vw;
+    }
+    @media screen and (max-width: 670px){
+      header{
+        min-height: 50px;
+      }
+    }
+    .section{
+      padding-top: 1vw;
+      padding-bottom: 1vw;
+    }
+    .tabs .indicator{
+      background-color: #1a237e;
+    }
+    .tabs .tab a:focus, .tabs .tab a:focus.active{
+      background: transparent;
+    }
+  </style>
+</head>
+<body>
 
-	</head>
-    <body>
-      <header>
-        <!-- navbar -->
+  <!-- navbar -->
   <header>
     <nav class="nav-wrapper indigo">
       <div class="container">
-        <a href="index.html" class="brand-logo">Smart Alloc</a>
+        <a href="index.html" class="brand-logo" style="vertical-align: middle;">
+          <img src="images/logo_ginko (5).jpg" style="height: 1.2cm;margin-top: 1vh;">GinKo
+        </a>
         <a href="index.html" class="sidenav-trigger" data-target="mobile-menu">
           <i class="material-icons">menu</i>
         </a>
@@ -46,28 +61,28 @@
       </div>
     </nav>
   </header>
-  
-      </header>
+
   <!--================================================== -->
   <!-- BUBLE MENU. -->
 
    <div class="container-fluid" style="margin-left:5cm;margin-top:2cm;;margin-bottom:2cm;">
-    <div class="row">
+    <h2>Current Imbroglio.</h2>
+      <div class="row">
 	<div class="col-lg-4 col-sm-6">
-	<h2>Current Imbroglio.</h2>
-		<p>High Saving High Retirement Needs and Lack of sustainable solutions</br>
-		 High Savings Needs in Europe facing an old inefficient  and too high fee Invesment Industry</p>
+	
+		<!-- <p>High Saving High Retirement Needs and Lack of sustainable solutions</br>
+		 High Savings Needs in Europe facing an old inefficient  and too high fee Invesment Industry</p> -->
 	</div><!-- /.col-lg-4 -->
-	<div class="col-lg-4 col-sm-6"><!-- /.col-lg-4 -->
-		<img class="rounded-circle " src="images/Carrousel (1).jpg" alt="First Slide" width="90" height="90">
-		<a><span class="fas fa-plus"></span></a>
-		<img class="rounded-circle " src="images/Carrousel (2).jpg" alt="First Slide" width="90" height="90">
-		<a><span class="fas fa-plus"></span></a>
-		<img class="rounded-circle " src="images/Carrousel (3).jpg" alt="First Slide" width="90" height="90">
-		<a><span class="fas fa-equals"></span></a>
-		<a><span class="fas fa-question"></span></a>
-    </div><!-- /.col-lg-4 -->
-	<h3 style="margin-left:1em">High Savings Needs in Europe facing an old inefficient and high fee Invesment Industry </h3>
+	<div class="col-lg-12 col-sm-12"><!-- /.col-lg-4 -->
+		<img class="rounded-circle" src="images/2022-04-25_ (8).jpg" alt="First Slide" width="100" height="90">
+		<!-- <i class="Medium material-icons">add</i> -->
+		<img class="rounded-circle" src="images/2022-04-25_ (5).jpg" alt="First Slide" width="100" height="90">
+		<!-- <i class="Medium material-icons">add</i> -->
+		<img class="rounded-circle" src="images/2022-04-25_ (6).jpg" alt="First Slide" width="100" height="90">
+		<!-- <i class="Medium material-icons">add</i> -->
+		<img class="rounded-circle" src="images/2022-04-25_ (7).jpg" alt="First Slide" width="100" height="90">
+	</div><!-- /.col-lg-4 -->
+	<h3 style="margin-left:0.5em;margin-right: 4em">High Savings Needs in Europe face an old, inefficient and high fee Invesment Industry </h3>
 	</div><!-- /.row -->
    </div>
 
@@ -107,7 +122,7 @@
 			</ul>
 			<a type="button" class="btn btn-secundary" href="millenials.html" role="button">More details &raquo;</a>
     </br>
-      <a style="font-size=150%; font-weight: bold; text-indent:50px"> &raquo; Out of scope of most asset-managers &laquo;</a>
+      <a style="font-size:150%; font-weight: bold; text-indent:50px"> &raquo; Out of scope of most asset-managers &laquo;</a>
 
 		</p>
       </div>
@@ -157,7 +172,7 @@
     </div>
   </div>
   <div class="footer-copyright grey darken-4">
-    <div class="container center-align">&copy; 2022 Smart Alloc</div>
+    <div class="container center-align">&copy; 2022 GinKo</div>
   </div>
 </footer>
 

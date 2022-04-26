@@ -5,7 +5,7 @@ Learn to use SCSS to write more complex stylesheets for your webpages.
 
 # Organization
 
-Several Webpages promoting a SMART ALLOCATION PLATEFORM as an alternative to the expensive and not retirement compatible current offer
+Several Webpages promoting a GinKo PLATEFORM as an alternative to the expensive and not retirement compatible current offer
 
 Current imbroglio
 - high savings and high needs for retirement

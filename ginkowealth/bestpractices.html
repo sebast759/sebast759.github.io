@@ -1,0 +1,113 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <title>GinKo</title>
+  <style>
+    header{
+      background: url(img/man.jpg);
+      background-size: cover;
+      background-position: center;
+      min-height: 1vw;
+    }
+    @media screen and (max-width: 670px){
+      header{
+        min-height: 50px;
+      }
+    }
+    .section{
+      padding-top: 1vw;
+      padding-bottom: 1vw;
+    }
+    .tabs .indicator{
+      background-color: #1a237e;
+    }
+    .tabs .tab a:focus, .tabs .tab a:focus.active{
+      background: transparent;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- navbar -->
+  <header>
+    <nav class="nav-wrapper indigo">
+      <div class="container">
+        <a href="index.html" class="brand-logo" style="vertical-align: middle;">
+          <img src="images/logo_ginko (5).jpg" style="height: 1.2cm;margin-top: 1vh;">GinKo
+        </a>
+        <a href="index.html" class="sidenav-trigger" data-target="mobile-menu">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="imbroglio.html">Current Imbroglio</a></li>
+          <li><a href="ouroffer.html">Our Offer</a></li>
+          <li><a href="bestpractices.html">Best Practices</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <ul class="sidenav grey lighten-2" id="mobile-menu">
+          <li><a href="imbroglio.html">Current Imbroglio</a></li>
+          <li><a href="ouroffer.html">Our Offer</a></li>
+          <li><a href="bestpractices.html">Best Practices</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+	
+
+  <!--================================================== -->
+  <!-- BUBLE MENU. -->
+
+  <div class="container-fluid" style="margin-left:5cm;margin-top:2cm;;margin-bottom:2cm;">
+	<div class="row">
+          <h2>Saving & Investment best practices</h2>
+	</div><!-- /.col-lg-4 -->
+    <div class="row">
+    	  </br>
+        <p >This pyramid summarize investment principles to rise your capital. </br>Start from the basis (of the pyramid) and make your path to wise investment</p>
+    </div><!-- /.col-lg-4 -->
+
+	  <div row>
+       <img src="images/BestPractices.jpg" alt="First Slide" width="1000" height="auto">
+  </div>
+</div>
+
+
+<!-- footer -->
+<!-- footer -->
+<footer class="page-footer grey darken-3">
+  
+  <div class="footer-copyright grey darken-4">
+    <div class="container center-align">&copy; 2022 GinKo</div>
+  </div>
+</footer>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+
+      $('.sidenav').sidenav();
+      $('.materialboxed').materialbox();
+      $('.parallax').parallax();
+      $('.tabs').tabs();
+      $('.datepicker').datepicker({
+        disableWeekends: true,
+        yearRange: 1
+      });
+      $('.tooltipped').tooltip();
+      $('.scrollspy').scrollSpy();
+
+    });
+  </script>
+</body>
+</html>
