@@ -3,6 +3,13 @@
     <head>
 		<link rel="stylesheet" href="styles.css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- BOOTSTRAT : Many of our components require the use of JavaScript to function. -->
@@ -16,42 +23,30 @@
 	</head>
     <body>
       <header>
-        <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light">
-          <a class="navbar-brand" style="color:#368c2e;" href="index.html">Smart Allocation</a>
-
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="imbroglio.html">Current Imbroglio</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="bestpractices.html">Best Practices</a>
-            </li>
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              SmartInv
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="ouroffer.html">Our Offer</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="ouroffer.html#mark0">Themes</a>
-              <a class="dropdown-item" href="ouroffer.html#mark1">Thematics +</a>
-              <a class="dropdown-item" href="ouroffer.html#mark2">All-Weather</a>
-            </div>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">About me</a>
-            </li>
-          </ul>
-
-        </nav>
-      </br>
-        <div class="container-fluid" style="text-align: center;border: 3px solid green;padding-top: 10px;width: 90%;">
-          <h2 class="nav" style="text-align: center;">Smart Allocation<img src="images/flower.jpg" style="height: 2cm;"></h2>
-          <p id="h_seb">Grow your capital, Allocate Smartly</p>
-        </div>
+        <!-- navbar -->
+  <header>
+    <nav class="nav-wrapper indigo">
+      <div class="container">
+        <a href="index.html" class="brand-logo">Smart Alloc</a>
+        <a href="index.html" class="sidenav-trigger" data-target="mobile-menu">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="imbroglio.html">Current Imbroglio</a></li>
+          <li><a href="ouroffer.html">Our Offer</a></li>
+          <li><a href="bestpractices.html">Best Practices</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <ul class="sidenav grey lighten-2" id="mobile-menu">
+          <li><a href="imbroglio.html">Current Imbroglio</a></li>
+          <li><a href="ouroffer.html">Our Offer</a></li>
+          <li><a href="bestpractices.html">Best Practices</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
       </header>
   <!--================================================== -->
   <!-- BUBLE MENU. -->
@@ -143,10 +138,28 @@
 
 
   <!-- FOOTER -->
-  <footer class="container">
-    <p class="float-right"><a href="index.html">Home</a> <a href="#">Back to top</a></p>
-    <p>&copy; 2018-2019 Smart Invest, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-  </footer>
+  <!-- footer -->
+<footer class="page-footer grey darken-3">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5>About Me</h5>
+        <p><a style="color:white">My background is in statistics and mathematics. I spend most of my time analysing financial data to build forecasting indicators.</a></p>
+        <p><a style="color:white">I design and manage savings portfolios using a risk-benefit approach.</a></p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Connect</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/sebastien-maillard-cfa-a744927/">Linked In</a></li>
+          <li><a class="grey-text text-lighten-3" href="s2bmaillard@gmail.com">Mail</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright grey darken-4">
+    <div class="container center-align">&copy; 2022 Smart Alloc</div>
+  </div>
+</footer>
 
 
 
