@@ -1,0 +1,252 @@
+<!DOCTYPE html><!-- Last Published: Thu Sep 08 2022 12:12:11 GMT+0000 (Coordinated Universal Time) -->
+<html data-wf-domain="sagewealth.eu" data-wf-page="62c5a40113e6dd508795ea0f" data-wf-site="62c5a40113e6dda53f95ea0e">
+
+<head>
+  <meta charset="utf-8" />
+  <title>SageWealth | Sustainable Digital Wealth Management</title>
+  <!-- <link href="https://uploads-ssl.webflow.com/62c5a40113e6dda53f95ea0e/css/sagewealth.webflow.f54bd3608.min.css" rel="stylesheet" type="text/css" /> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.0/nouislider.min.css"
+    integrity="sha512-qveKnGrvOChbSzAdtSs8p69eoLegyh+1hwOMbmpCViIwj7rn4oJjdmMvWOuyQlTOZgTlZA0N2PXA7iA8/2TUYA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.0/nouislider.min.js"
+    integrity="sha512-1mDhG//LAjM3pLXCJyaA+4c+h5qmMoTc7IuJyuNNPaakrWT9rVTxICK4tIizf7YwJsXgDC2JP74PGCc7qxLAHw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link href="sagewealth.css" rel="stylesheet" type="text/css" />
+  
+  <style>
+    </style>
+
+  
+</head>
+
+<div id="calculator" class="calculator wf-section">
+    <div class="caluculator-container w-container">
+      <h1 class="calculator-title">The magic of compound growth</h1>
+      <div class="calculator-embed">
+        <div class="calculator-box-1">
+          <div class="calculator-left-bg"></div>
+          <div class="calculator-input-box">
+            <div class="calculator-inputs">
+              <h2 class="calculator-investment-heading">Initial<br />investment</h2>
+              <p id="initialInvestment" class="calculator-investment-value">€30,000</p>
+            </div>
+            <div class="input-embed w-embed">
+              <div class="slider-styled sage-slider" id="initial"></div>
+            </div>
+            <div class="calculator-inputs">
+              <h2 class="calculator-investment-heading">Monthly<br />investment</h2>
+              <p id="monthlyInvestment" class="calculator-investment-value">€500</p>
+            </div>
+            <div class="input-embed w-embed">
+              <div class="slider-styled sage-slider" id="monthly"></div>
+            </div>
+            <div class="calculator-years">
+              <p class="calculator-year-title">Select the period of investing</p>
+              <div class="calculator-buttons">
+                <div class="calculator-buttons-bg"></div>
+                <div class="html-embed w-embed">
+                  <div id="horizon1" class="horizonButton" onclick="horizonChange(5)">
+                    5 years
+                  </div>
+                  <div id="horizon2" class="horizonButton" onclick="horizonChange(15)">
+                    15 years
+                  </div>
+                  <div id="horizon3" class="horizonButton h-active" onclick="horizonChange(30)">
+                    30 years
+                  </div>
+                </div>
+              </div>
+              <p class="calculator-years-disclaimer">*Past performance doesn’t predict future growth. Target returns and
+                estimated profits are only a reasonable estimate.</p>
+            </div>
+          </div>
+        </div>
+        <div class="calculator-box-2">
+          <p class="calculator-result-text">
+            After <span id="horizon" class="purple-calculator-text">30 years</span> your initial and monthly investments would sum up to <span id="save" class="purple-calculator-text">6,166 €</span>.
+            <br>If invested, you are expected to have a balance of <span id="final" class="purple-calculator-text">11,900 €</span> in your
+            account, thus making <span id="earned" class="purple-calculator-text">25,656 €</span> in profit. <br />You will have paid <span id="costs" >6,166 €</span> in fees.
+            
+          <div class="calculator-possible-results">
+            <div class="result-save">
+              <div class="possible-result">
+                <p id="finalSave" class="posible-result-amount">140,900 €</p>
+                <div class="result-box-save"></div>
+                <div class="posible-result-title">Only Saving</div>
+              </div>
+            </div>
+            <div class="result-worse">
+              <div class="possible-result">
+                <p id="finalLess" class="posible-result-amount">140,900 €</p>
+                <div class="result-box-less"></div>
+                <div class="posible-result-title">Worse than expected</div>
+              </div>
+            </div>
+            <div class="resulte-expected">
+              <div class="possible-result">
+                <p class="posible-result-amount"><strong id="finalExpected" class="bold-text">140,900 €</strong></p>
+                <div class="result-box-expected"></div>
+                <div class="posible-result-title"><strong class="bold-text-2">Expected</strong></div>
+              </div>
+            </div>
+            <div class="result-better">
+              <div class="possible-result">
+                <p id="finalMore" class="posible-result-amount">140,900 €</p>
+                <div class="result-box-less"></div>
+                <div class="posible-result-title">Better than expected</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  <script>
+    const initialInput = document.querySelector("#initial");
+    const monthlyInput = document.querySelector("#monthly");
+
+    const initialOutput = document.querySelector("#initialInvestment");
+    const monthlyOutput = document.querySelector("#monthlyInvestment");
+
+    const finalOutput = document.querySelector("#final");
+    const earnedOutput = document.querySelector("#earned");
+    const costsOutput = document.querySelector("#costs");
+    const saveOutput = document.querySelector("#save");
+
+    const finalExpectedOutput = document.querySelector("#finalExpected");
+    const finalSaveOutput = document.querySelector("#finalSave");
+    const finalLessOutput = document.querySelector("#finalLess");
+    const finalMoreOutput = document.querySelector("#finalMore");
+
+    const horizonButton1 = document.querySelector("#horizon1");
+    const horizonButton2 = document.querySelector("#horizon2");
+    const horizonButton3 = document.querySelector("#horizon3");
+
+    const horizonOutput = document.querySelector("#horizon");
+
+    let yearsHorizon = 30;
+    let initialValue = 30000;
+    let monthlyValue = 500;
+
+    const formatter = new Intl.NumberFormat("en", {
+      style: "currency",
+      currency: "EUR",
+      maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+    });
+
+    function horizonChange(value) {
+      yearsHorizon = value;
+      horizonOutput.textContent = `${value} years`;
+
+      switch (value) {
+        case 5:
+          horizonButton1.className = "horizonButton h-active";
+          horizonButton2.className = "horizonButton";
+          horizonButton3.className = "horizonButton";
+          break;
+        case 15:
+          horizonButton1.className = "horizonButton";
+          horizonButton2.className = "horizonButton h-active";
+          horizonButton3.className = "horizonButton";
+          break;
+        case 30:
+          horizonButton1.className = "horizonButton";
+          horizonButton2.className = "horizonButton";
+          horizonButton3.className = "horizonButton h-active";
+          break;
+      }
+
+      handleOnChange();
+    }
+
+    function handleOnChange() {
+      const monthlyIncrease = monthlyValue;
+
+      let final = initialValue;
+      
+      let save = final;
+      let less = final;
+      let more = final;
+      let costs = 0;
+      let earned = 0;
+      let maximum = final;
+
+      for (let i = 0; i < yearsHorizon; i++) {
+        const costsPercent = final > 100000 ? 0.0069 : 0.0099;
+
+        if (monthlyIncrease !== 0) {
+          final = final + monthlyIncrease * 12;
+          more = more + monthlyIncrease * 12;
+          less = less + monthlyIncrease * 12;
+          save = save + monthlyIncrease * 12;
+        }
+
+        const earnedValue = final * 0.08;
+        const costsValue = final * costsPercent;
+
+        maximum = maximum + earnedValue;
+
+        earned = earned + earnedValue - costsValue;
+        costs = costs + costsValue;
+        final = final + earnedValue - costsValue;
+
+        less = less + less * 0.04 - less * costsPercent;
+        more = more + more * 0.10 - more * costsPercent;
+        save = save + save * 0.00 ;
+      }
+
+      finalOutput.textContent = formatter.format(final);
+      costsOutput.textContent = formatter.format(costs);
+      earnedOutput.textContent = formatter.format(earned);
+      saveOutput.textContent = formatter.format(save);
+
+      finalExpectedOutput.textContent = formatter.format(final);
+      finalLessOutput.textContent = formatter.format(less);
+      finalSaveOutput.textContent = formatter.format(save);
+      finalMoreOutput.textContent = formatter.format(more);
+    }
+
+    noUiSlider.create(initialInput, {
+      start: [30000],
+      connect: "lower",
+      range: {
+        min: [1000, 100],
+        "33%": [10000, 1000],
+        "66%": [100000, 10000],
+        max: [1000000],
+      },
+    });
+
+    initialInput.noUiSlider.on("update", function (values, handle) {
+      initialOutput.textContent = formatter.format(values[handle]);
+      initialValue = parseInt(values[handle]);
+
+      handleOnChange();
+    });
+
+    noUiSlider.create(monthlyInput, {
+      start: [500],
+      connect: "lower",
+      range: {
+        min: [0, 25],
+        "50%": [1000, 100],
+        max: [5000],
+      },
+    });
+
+    monthlyInput.noUiSlider.on("update", function (values, handle) {
+      monthlyOutput.textContent = formatter.format(values[handle]);
+      monthlyValue = parseInt(values[handle]);
+
+      handleOnChange();
+    });
+
+  </script>
+
+    
+</body>
+
+</html>
