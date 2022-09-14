@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <link href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/chartist-plugin-tooltips@0.0.17"></script>
+    <script src="https://unpkg.com/chartist-plugin-pointlabels@0.0.6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/finboxio-chartist-plugin-axistitle"></script>
+    <meta charset="utf-8">
+    <title>Chartist | Simple line chart</title>
+
+</head>
+<style>
+    /* .ct-chart .ct-label.ct-vertical, */
+    /* .ct-chart .ct-label.ct-horizontal {
+    color: rgba(255, 255, 255, 0.5);
+    }
+    .ct-chart .ct-grid.ct-vertical,
+    */
+    .ct-chart .ct-grid.ct-horizontal {
+        stroke: rgba(255, 255, 255, 0.1);
+        shape-rendering: crispEdges;
+    }
+
+    .ct-chart .ct-series.ct-series-a .ct-line {
+        stroke: #4ECDC4;
+        stroke-width: 10px;
+        stroke-linecap: round;
+    }
+
+    .ct-chart .ct-series.ct-series-b .ct-line {
+        stroke: #ae64f4;
+        stroke-width: 2px;
+        stroke-dasharray: 5px 2px;
+    }
+
+    .ct-chart .ct-series.ct-series-c .ct-line {
+        stroke: #FF6B6B;
+        stroke-width: 3px;
+        stroke-linecap: round;
+        stroke-dasharray: 30px 5px;
+    }
+</style>
+
+<body>
+    <!-- <div class="ct-chart"></div> -->
+    <div class="ct-chart ct-golden-section"></div>
+</body>
+<script>
+    yearsHorizon=5
+    var label_sa = [];
+    for (var i = 0; i < yearsHorizon; i++) {
+        label_sa.push("Year"+(i));
+    }
+    console.log(label_sa)
+    // label_sa = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    s1 = [1, 5, 2, 5, 4, 3];
+    s2 = [2, 3, 4, 8, 1, 2];
+    s3 = [5, 4, 3, 2, 1, 0.5];
+    var data = {
+        labels: label_sa,
+        series: [s1,s2,s3]
+    };
+    var options = {
+        low: 0,
+        showArea: true,
+        showPoint: true,
+        fullWidth: true,
+        axisY: {
+            // Lets offset the chart a bit from the labels
+            offset: 60,
+            // The label interpolation function enables you to modify the values
+            // used for the labels on each axis. Here we are converting the
+            // values into million pound.
+            labelInterpolationFnc: function (value) {
+                return '$' + value + 'm';
+            }
+        },
+        axisX: {
+            // We can disable the grid for this axis
+            showGrid: true,
+            // and also don't show the label
+            showLabel: true
+        },
+        plugins: [
+            Chartist.plugins.ctPointLabels({
+                textAnchor: 'middle',
+                labelInterpolationFnc: function (value) {
+                    console.log("i was called");
+                    return '$' + value
+                }
+            }),
+            Chartist.plugins.tooltip({
+            }),
+            Chartist.plugins.ctAxisTitle({
+      axisX: {
+        axisTitle: 'Time (mins)',
+        axisClass: 'ct-axis-title',
+        offset: {
+          x: 0,
+          y: 50
+        },
+        textAnchor: 'middle'
+      },
+      axisY: {
+        axisTitle: 'Goals',
+        axisClass: 'ct-axis-title',
+        offset: {
+          x: 0,
+          y: 0
+        },
+        textAnchor: 'middle',
+        flipTitle: false
+      }
+    })
+        ]
+    };
+
+    var chart = new Chartist.Line('.ct-chart', data,options);
+
+chart.on('draw', function(data) {
+  if(data.type === 'line' || data.type === 'area') {
+    data.element.animate({
+      d: {
+        begin: 200 * data.index,
+        dur: 20,
+        from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+        to: data.path.clone().stringify(),
+        easing: Chartist.Svg.Easing.easeOutQuint
+      }
+    });
+  }});
+</script>
+
+</html>
