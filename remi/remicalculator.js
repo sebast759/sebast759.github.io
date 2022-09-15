@@ -138,11 +138,19 @@ function handleOnChange() {
           if ((data.type === 'point')&&(data.value.y==data.series.data[data.series.data.length-1])
           &&(data.series.name.length>1)) {
             data.group.elem('text', {
-              x: data.x + options.labelOffset.x,
+              x: data.x + options.labelOffset.x+10,
               y: data.y + options.labelOffset.y,
-              style: 'text-anchor: middle;fill:'+(data.seriesIndex==0 ? '#882aa0':'#000000')
-            }, 'ct-label-seb').text('£'+parseInt(data.value.y/1000)+'m');  // 07.11.17 added ".y"
-          }
+              style: 'text-anchor: right;fill:'+(data.seriesIndex==0 ? '#882aa0':'#000000')
+            }, 'ct-label-seb').text((data.seriesIndex==0 ? 'Invested':'Saved'));  // 07.11.17 added ".y"
+          
+          
+          data.group.elem('text', {
+            x: data.x + options.labelOffset.x+10,
+            y: data.y + options.labelOffset.y+15,
+            style: 'text-anchor: right;fill:'+(data.seriesIndex==0 ? '#882aa0':'#000000')
+          }, 'ct-label-seb').text('£'+parseInt(data.value.y/1000)+'m');  // 07.11.17 added ".y"
+        
+        }
         });
       }
     }

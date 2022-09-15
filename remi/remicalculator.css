@@ -187,8 +187,8 @@
 }
 
 .posible-result-amount {
-    font-size: 24px;
-    line-height: 28px
+    font-size: 18px;
+    line-height: 18px
 }
 
 .posible-result-title {
@@ -207,8 +207,8 @@
     -ms-flex-align: center;
     align-items: center;
     border-top: 1px solid #000;
-    font-size: 20px;
-    line-height: 23px;
+    font-size: 18px;
+    line-height: 15px;
     text-align: center
 }
 
@@ -6955,13 +6955,13 @@ ul {
     }
 
     .posible-result-amount {
-        font-size: 18px;
-        line-height: 20px
+        font-size: 13px;
+        line-height: 00px
     }
 
     .posible-result-title {
         font-size: 16px;
-        line-height: 18px
+        line-height: 20px
     }
 
     .result-better,
@@ -8717,7 +8717,8 @@ ul {
 /* GRAPHIQUE */
 .ct-label{fill:rgba(0,0,0,.4);color:rgba(0,0,0,.4);font-size:.75rem;line-height:1}
   
-.ct-label-seb{fill:rgba(138, 23, 23, 0.4);font-size:.75rem}
+.ct-label-seb{fill:rgba(138, 23, 23, 0.4);font-size:.95rem;font-weight: bold;align-content: flex-end;width: 10,
+    height: 20;style: "overflow: visible;"}
 
 /* .ct-chart .ct-label.ct-vertical, */
 /* .ct-chart .ct-label.ct-horizontal {
