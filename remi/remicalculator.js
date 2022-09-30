@@ -1,8 +1,10 @@
 const initialInput = document.querySelector("#initial");
 const monthlyInput = document.querySelector("#monthly");
+const targetInput = document.querySelector("#target");
 
 const initialOutput = document.querySelector("#initialInvestment");
 const monthlyOutput = document.querySelector("#monthlyInvestment");
+const targetOutput = document.querySelector("#targetInvestment");
 
 const finalOutput = document.querySelector("#final");
 const earnedOutput = document.querySelector("#earned");
@@ -23,6 +25,7 @@ const horizonOutput = document.querySelector("#horizon");
 let yearsHorizon = 30;
 let initialValue = 30000;
 let monthlyValue = 500;
+let targetValue = 50000;
 
 const formatter = new Intl.NumberFormat("en", {
   style: "currency",
@@ -60,6 +63,7 @@ function handleOnChange() {
   const monthlyIncrease = monthlyValue;
 
   let final = initialValue;
+  let target = targetValue;
 
   let save = final;
   let less = final;
@@ -73,6 +77,7 @@ function handleOnChange() {
   var s2 = [less];
   var s3 = [more];
   var s4 = [save];
+  var s5 = [target];
 
   for (let i = 0; i < yearsHorizon; i++) {
     const costsPercent = final > 100000 ? 0.0069 : 0.0099;
@@ -103,6 +108,7 @@ function handleOnChange() {
       s2.push(less);
       s3.push(more);
       s4.push(save);
+      s5.push(target);
     }
   }
 
@@ -117,7 +123,8 @@ function handleOnChange() {
   finalMoreOutput.textContent = formatter.format(more);
   var data = {
     labels: label_sa,
-    series: [{ "name": "Invested", "data": s1 }, { "name": " ", "data": s2 }, { "name": " ", "data": s3 }, { "name": "Saved", "data": s4 }]
+    series: [{ "name": "Invested", "data": s1 }, { "name": " ", "data": s2 }, { "name": " ", "data": s3 }, 
+    { "name": "Saved", "data": s4 },{ "name": " ", "data": s5 },]
   };
 
   function ctPointLabels2(options) {
@@ -135,19 +142,19 @@ function handleOnChange() {
 
       if (chart instanceof Chartist.Line) {
         chart.on('draw', function (data) {
-          if ((data.type === 'point')&&(data.value.y==data.series.data[data.series.data.length-1])
-          &&(data.series.name.length>1)) {
+          if ((data.type === 'point')&&(data.index==data.series.data.length-1)
+          &&((data.seriesIndex==3)||data.seriesIndex==0)) {
             data.group.elem('text', {
               x: data.x + options.labelOffset.x+10,
               y: data.y + options.labelOffset.y,
-              style: 'text-anchor: right;fill:'+(data.seriesIndex==0 ? '#882aa0':'#000000')
-            }, 'ct-label-seb').text((data.seriesIndex==0 ? 'Invested':'Saved'));  // 07.11.17 added ".y"
+              style: 'text-anchor: right;fill:'+(data.seriesIndex==0 ? '#882aa0': (data.seriesIndex==3 ? '#000000' :'#D0D3D4'))
+            }, 'ct-label-seb').text((data.seriesIndex==0 ? 'Invested': (data.seriesIndex==3 ? 'Saved' :'')));  // 07.11.17 added ".y"
           
           
           data.group.elem('text', {
             x: data.x + options.labelOffset.x+10,
             y: data.y + options.labelOffset.y+15,
-            style: 'text-anchor: right;fill:'+(data.seriesIndex==0 ? '#882aa0':'#000000')
+            style: 'text-anchor: right;fill:'+(data.seriesIndex==0 ? '#882aa0':(data.seriesIndex==3 ? '#000000' :'rgba(0,0,0,.2)'))
           }, 'ct-label-seb').text('£'+parseInt(data.value.y/1000)+'m');  // 07.11.17 added ".y"
         
         }
@@ -242,7 +249,7 @@ noUiSlider.create(initialInput, {
   start: [30000],
   connect: "lower",
   range: {
-    min: [1000, 100],
+    min: [1000, 1000],
     "33%": [10000, 1000],
     "66%": [100000, 10000],
     max: [1000000],
@@ -260,7 +267,7 @@ noUiSlider.create(monthlyInput, {
   start: [500],
   connect: "lower",
   range: {
-    min: [0, 25],
+    min: [0, 50],
     "50%": [1000, 100],
     max: [5000],
   },
@@ -269,6 +276,22 @@ noUiSlider.create(monthlyInput, {
 monthlyInput.noUiSlider.on("update", function (values, handle) {
   monthlyOutput.textContent = formatter.format(values[handle]);
   monthlyValue = parseInt(values[handle]);
+
+  handleOnChange();
+});
+noUiSlider.create(targetInput, {
+  start: [30000],
+  connect: "lower",
+  range: {
+    min: [1000, 1000],
+    "33%": [10000, 1000],
+    "66%": [100000, 100000],
+    max: [2000000],
+  },
+});
+targetInput.noUiSlider.on("update", function (values, handle) {
+  targetOutput.textContent = formatter.format(values[handle]);
+  targetValue = parseInt(values[handle]);
 
   handleOnChange();
 });

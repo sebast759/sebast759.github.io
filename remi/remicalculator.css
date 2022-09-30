@@ -8757,6 +8757,13 @@ ul {
     stroke-linecap: round;
     stroke-dasharray: 30px 5px;
 }
+.ct-chart .ct-series.ct-series-e .ct-line {
+    stroke: #dbc714;
+    stroke-width: 3px;
+    stroke-linecap: round;
+    stroke-width: 1px;
+    stroke-dasharray: 5px 2px;
+}
 
 .ct-chart .ct-series.ct-series-a  .ct-point{
     stroke: #882aa0;
@@ -8774,7 +8781,10 @@ ul {
     stroke: #000000;
     stroke-width: 7px;    
 }
-
+.ct-chart .ct-series.ct-series-e  .ct-point{
+    stroke: #dbc714;
+    stroke-width: 1px;    
+}
 .ct-chart {
     position: relative;
 }
