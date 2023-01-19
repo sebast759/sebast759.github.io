@@ -1,0 +1,179 @@
+<!DOCTYPE html><!-- Last Published: Thu Sep 08 2022 12:12:11 GMT+0000 (Coordinated Universal Time) -->
+<html data-wf-domain="remi.eu" data-wf-page="62c5a40113e6dd508795ea0f" data-wf-site="62c5a40113e6dda53f95ea0e">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Remi | Calculator</title>
+  <!-- <link href="https://uploads-ssl.webflow.com/62c5a40113e6dda53f95ea0e/css/sagewealth.webflow.f54bd3608.min.css" rel="stylesheet" type="text/css" /> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.0/nouislider.min.css"
+    integrity="sha512-qveKnGrvOChbSzAdtSs8p69eoLegyh+1hwOMbmpCViIwj7rn4oJjdmMvWOuyQlTOZgTlZA0N2PXA7iA8/2TUYA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.0/nouislider.min.js"
+    integrity="sha512-1mDhG//LAjM3pLXCJyaA+4c+h5qmMoTc7IuJyuNNPaakrWT9rVTxICK4tIizf7YwJsXgDC2JP74PGCc7qxLAHw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" rel="stylesheet" type="text/css" />
+  <link href="remicalculator.css" rel="stylesheet" type="text/css" />
+  <!-- Charts -->
+  <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+  <script src="https://unpkg.com/chartist-plugin-tooltips@0.0.17"></script>
+  <script src="https://unpkg.com/chartist-plugin-pointlabels@0.0.6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/finboxio-chartist-plugin-axistitle"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartist-plugin-legend@0.6.2/chartist-plugin-legend.min.js"></script>
+
+  <!-- <script  type="text/javascript" src="remicalculator.js"></script> -->
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <!-- navbar -->
+  <nav class="nav-wrapper white">
+    <div class="container">
+      <a href="index.html" class="brand-logo" style="vertical-align: middle;">
+        <img src="images/remi_logo.jpg" style="height: 1.2cm;margin-top: 1vh;">
+      </a>
+      <a href="index.html" class="sidenav-trigger" data-target="mobile-menu">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </nav>
+
+
+</head>
+
+<body>
+  <div id="calculator" class="calculator wf-section">
+    <div class="caluculator-container w-container">
+      <h1 class="calculator-title">The magic of compound growth</h1>
+      <div class="calculator-embed">
+        <div class="calculator-box-1">
+          <div class="calculator-left-bg"></div>
+          <div class="calculator-input-box">
+            <div class="calculator-inputs">
+              <h2 class="calculator-investment-heading">Initial<br />investment</h2>
+              <p id="initialInvestment" class="calculator-investment-value">€30,000</p>
+            </div>
+            <div class="input-embed w-embed">
+              <div class="slider-styled user-slider" id="initial"></div>
+            </div>
+            <div class="calculator-inputs">
+              <h2 class="calculator-investment-heading">Monthly<br />investment</h2>
+              <p id="monthlyInvestment" class="calculator-investment-value">€500</p>
+            </div>
+            <div class="input-embed w-embed">
+              <div class="slider-styled user-slider" id="monthly"></div>
+            </div>
+            <div class="calculator-inputs">
+              <h2 class="calculator-investment-heading">Target<br />investment</h2>
+              <p id="targetInvestment" class="calculator-investment-value">€50000</p>
+            </div>
+            <div class="input-embed w-embed">
+              <div class="slider-styled user-slider" id="target"></div>
+            </div>
+            <div class="calculator-years">
+              <p class="calculator-year-title">Select the period of investing</p>
+              <div class="calculator-buttons">
+                <div class="calculator-buttons-bg"></div>
+                <div class="html-embed w-embed">
+                  <div id="horizon1" class="horizonButton" onclick="horizonChange(5)">
+                    5 years
+                  </div>
+                  <div id="horizon2" class="horizonButton" onclick="horizonChange(15)">
+                    15 years
+                  </div>
+                  <div id="horizon3" class="horizonButton h-active" onclick="horizonChange(30)">
+                    30 years
+                  </div>
+                </div>
+              </div>
+              <p class="calculator-years-disclaimer">*Past performance doesn’t predict future growth. Target returns and
+                estimated profits are only a reasonable estimate.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="calculator-box-2">
+          <p style="font-size: 22px;line-height: 30px">
+            After <span id="horizon" class="purple-calculator-text">30 years</span> your initial and target investments
+            would sum up to <span id="save" class="purple-calculator-text">6,166 €</span>.
+            <br>If invested, you are expected to have a balance of <span id="final"
+              class="purple-calculator-text">11,900 €</span> in your
+            account, thus making <span id="earned" class="purple-calculator-text">25,656 €</span> in profit. <br />You
+            will have paid <span id="costs">6,166 €</span> in fees.
+          </p>
+          
+          <div class="calculator-possible-results" style="min-height: 5px;margin-bottom: 15px;">
+            <div class="result-save" style="width: 20%;height: 100%;">
+              <div class="posible-result-title"
+                style="font-size: 22px;border-bottom: 1px solid rgba(35, 66, 80, 1);border-top: 0;">
+                Saving</div>
+            </div>
+            <div class="result-save" style="width: 75%;height: 100%;">
+              <div class="posible-result-title" style="border-bottom: 1px solid rgba(35, 66, 80, 1);border-top: 0;">
+                <strong class="bold-text-2" style="font-size: 22px;">Investing</strong></div>
+            </div>
+          </div>
+          <div class="calculator-possible-results" style="margin-bottom: 15px;">
+            <div class="result-save">
+              <div class="possible-result">
+                <p id="finalSave" class="posible-result-amount">140,900 €</p>
+                <div class="result-box-save"></div>
+                <div class="posible-result-title">Total Deposit</div>
+              </div>
+            </div>
+            <div class="result-worse">
+              <div class="possible-result">
+                <p id="finalLess" class="posible-result-amount">140,900 €</p>
+                <div class="result-box-less"></div>
+                <div class="posible-result-title"
+                  style="color:rgba(35, 66, 80, .4);border-top: 1px solid rgba(35, 66, 80, .4);">Worse than expected
+                </div>
+              </div>
+            </div>
+            <div class="resulte-expected">
+              <div class="possible-result">
+                <p class="posible-result-amount"><strong id="finalExpected" class="bold-text">140,900 €</strong></p>
+                <div class="result-box-expected"></div>
+                <div class="posible-result-title"><strong class="bold-text-2">Expected</strong></div>
+              </div>
+            </div>
+            <div class="result-better">
+              <div class="possible-result">
+                <p id="finalMore" class="posible-result-amount">140,900 €</p>
+                <div class="result-box-less"></div>
+                <div class="posible-result-title"
+                  style="color:rgba(35, 66, 80, .4);border-top: 1px solid rgba(35, 66, 80, .4);">Better than expected
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container" style="width: 100%;height: 100%;margin-top: 0vh;padding-bottom: 15vh; position: relative;">
+            <div class="ct-chart ct-golden-section">
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <!-- Graphics -->
+      <!-- Graphics -->
+
+    </div>
+
+  </div>
+
+  </div>
+
+
+  <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  <script type="text/javascript" src="remicalculator.js"></script>
+
+</body>
+
+</html>
