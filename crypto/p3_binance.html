@@ -28,7 +28,7 @@ PAGE DE GARDE
 
 	<title>Cryptonomics</title>
 	<style>
-
+		body {background-color: black;}
 
 	</style>
 </head>
@@ -66,16 +66,16 @@ PAGE DE GARDE
 		<h3 name="mark1" style="color: crimson;">Our real portfolio and targeted adjustments</h3>
 		<div class="row" style="margin-top: 0.5em">
 			<div class="col-lg-12">
-				<h4><img class="rounded float-left" src="images/flag_WD.jpg" width="12" height="12">Current vs target weights</br></h4>
+				<h4>Current vs target weights</br></h4>
 				<p>Current vs target weights</p>
 				<div class="row">
-					<a href="graphs/trade_ptf_current_target.png" target="_blank"><img class="rounded float-left"
+					<a href="graphs/trade_ptf_current_target.png" target="_blank"><img 
 							src="graphs/trade_ptf_current_target.png" id="grph1" width="600" height="300"></a>
 				</div>
 			</div>
 		</div>
 		<div class="col-md-12">
-			<iframe position="absolute" width="80%" height="600" id="grph2" src="graphs/trade_order_book.html"></iframe>
+			<iframe position="absolute" width="80%" height="600" id="grph2" src="graphs/trade_order_book.html" style="background-color:white"></iframe>
 		</div>
 
 
@@ -110,7 +110,7 @@ PAGE DE GARDE
 	var data;
 	//window.alert("Santé publique France a publié des données incomplètes et erronées ce soir. Nous les avons contactés. CryptooTracker sera de nouveau à jour dès leur correction.");
 
-	fetch('https://sebast759.github.io/Cryptonomics/graph/script_lastupdate.json')
+	fetch('https://sebast759.github.io/Cryptonomics/graphs/script_lastupdate.json')
 		.then(response => {
 			return response.json();
 		})
