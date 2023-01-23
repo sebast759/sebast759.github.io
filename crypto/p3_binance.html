@@ -24,11 +24,41 @@ PAGE DE GARDE
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+	
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+	  google.charts.load('current', { 'packages': ['corechart'] });
+	
+	  google.charts.setOnLoadCallback(drawChart);
+	  function drawChart() {
+		// var json_data = new google.visualization.DataTable({ "cols": [{ "id": "task", "label": "task", "type": "string" }, { "id": "hours", "label": "hours", "type": "number" }], "rows": [{ "c": [{ "v": "Commute" }, { "v": 2 }] }, { "c": [{ "v": "Eat" }, { "v": 2 }] }, { "c": [{ "v": "Watch" }, { "v": 7 }] }, { "c": [{ "v": "Work" }, { "v": 11 }] }] }, 0.6);
+		// var options = { title: 'My Daily Activities',pieHole:.6 };
+		// var chart = new google.visualization.PieChart(document.getElementById('piechart_csv'));
+		// chart.draw(json_data, options);
+		
+		// Use getJSON and process the file contents in the callback function
+		$.getJSON("graphs//dataPie.json", function(obj) {
+			var jsonData = $.ajax({
+				url: "graphs//dataPie.json",
+				dataType: "json",
+				async: false
+				}).responseText;
+			// Create our data table out of JSON data loaded from server.
+			var data = new google.visualization.DataTable(jsonData);
+			var options = { title: 'My Daily Activities',pieHole:.6 };
+			var chart = new google.visualization.PieChart(document.getElementById('piechart_csv'));
+			// chart.draw(json_data, options);
+			// var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+			chart.draw(data, options);
+		});
+		}
+	</script>
+	
 
 	<title>Cryptonomics</title>
 	<style>
-		body {background-color: black;}
+		body {background-color: rgb(230, 229, 229);}
 
 	</style>
 </head>
@@ -77,7 +107,9 @@ PAGE DE GARDE
 		<div class="col-md-12">
 			<iframe position="absolute" width="80%" height="600" id="grph2" src="graphs/trade_order_book.html" style="background-color:white"></iframe>
 		</div>
-
+		
+		<div id="piechart_csv" style="height: 600px;">
+		</div>
 
 
 
