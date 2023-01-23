@@ -1,52 +1,79 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>JSON to HTML Table</title>
-    <style>
-      table {
-        border-collapse: collapse;
-        width: 100%;
-      }
+<html lang="en">
 
-      th, td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
-      }
+<head>
+	<meta charset="UTF-8">
+	<title>GFG User Details</title>
 
-      th {
-        background-color: #ddd;
-      }
-    </style>
-  </head>
-  <body>
-    <table id="data-table"></table>
-    <script>
-      fetch('graphs//script_lastupdate.json')
-        .then(response => response.json())
-        .then(data => {
-          let table = document.getElementById('data-table');
-          let headerRow = document.createElement('tr');
+	<!-- INCLUDING JQUERY-->
+	<script src="https://code.jquery.com/jquery-3.5.1.js">	</script>
 
-          // Create header row
-          for (let key in data[0]) {
-            let headerCell = document.createElement('th');
-            headerCell.textContent = key;
-            headerRow.appendChild(headerCell);
-          }
-          table.appendChild(headerRow);
+	<!-- CSS FOR STYLING THE PAGE -->
+	<style>
+		table {
+			margin: 0 auto;
+			font-size: large;
+			border: 1px solid black;
+		}
 
-          // Create data rows
-          for (let i = 0; i < data.length; i++) {
-            let row = document.createElement('tr');
-            for (let key in data[i]) {
-              let cell = document.createElement('td');
-              cell.textContent = data[i][key];
-              row.appendChild(cell);
-            }
-            table.appendChild(row);
-          }
-        });
-    </script>
-  </body>
+		h1 {
+			text-align: center;
+			color: #006600;
+			font-size: xx-large;
+			font-family: 'Gill Sans',
+				'Gill Sans MT', ' Calibri',
+				'Trebuchet MS', 'sans-serif';
+		}
+
+		td {
+			background-color: #E4F5D4;
+			border: 1px solid black;
+		}
+
+		th,
+		td {
+			font-weight: bold;
+			border: 1px solid black;
+			padding: 10px;
+			text-align: center;
+		}
+
+		td {
+			font-weight: lighter;
+		}
+	</style>
+</head>
+
+<body>
+	<section>
+		<h1>GeeksForGeeks</h1>
+
+		<!-- TABLE CONSTRUCTION-->
+		<table id='table'>
+			<!-- HEADING FORMATION -->
+			<tr>
+				<th>Programme</th>
+				<th>Last Data</th>
+				<th>Completion time</th>
+			</tr>
+
+			<script>
+				$(document).ready(function () {
+					// FETCHING DATA FROM JSON FILE
+					$.getJSON("graphs/script_lastupdate.json",
+							function (data) {
+						var html_tab = '';
+						// ITERATING THROUGH OBJECTS
+						$.each(data, function (key, value) {
+							html_tab += '<tr><td>' +key + '</td>';
+                            html_tab += '<td>' +value.lst_date + '</td><td>'+value.lst_update + '</td></tr>';
+						});
+						//INSERTING ROWS INTO TABLE
+						$('#table').append(html_tab);
+					});
+				});
+			</script>
+        </table>
+	</section>
+</body>
+
 </html>

@@ -24,42 +24,54 @@ PAGE DE GARDE
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	
+
 	<script src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script>
-	  google.charts.load('current', { 'packages': ['corechart'] });
-	
-	  google.charts.setOnLoadCallback(drawChart);
-	  function drawChart() {
-		// var json_data = new google.visualization.DataTable({ "cols": [{ "id": "task", "label": "task", "type": "string" }, { "id": "hours", "label": "hours", "type": "number" }], "rows": [{ "c": [{ "v": "Commute" }, { "v": 2 }] }, { "c": [{ "v": "Eat" }, { "v": 2 }] }, { "c": [{ "v": "Watch" }, { "v": 7 }] }, { "c": [{ "v": "Work" }, { "v": 11 }] }] }, 0.6);
-		// var options = { title: 'My Daily Activities',pieHole:.6 };
-		// var chart = new google.visualization.PieChart(document.getElementById('piechart_csv'));
-		// chart.draw(json_data, options);
-		
-		// Use getJSON and process the file contents in the callback function
-		$.getJSON("graphs//ptw_w.json", function(obj) {
-			var jsonData = $.ajax({
-				url: "graphs//ptw_w.json",
-				dataType: "json",
-				async: false
-				}).responseText;
-			// Create our data table out of JSON data loaded from server.
-			var data = new google.visualization.DataTable(jsonData);
-			var options = { title: 'Current weights',pieHole:.6 };
-			var chart = new google.visualization.PieChart(document.getElementById('piechart_csv'));
+		google.charts.load('current', { 'packages': ['corechart'] });
+
+		google.charts.setOnLoadCallback(drawChart);
+		function drawChart() {
+			// var json_data = new google.visualization.DataTable({ "cols": [{ "id": "task", "label": "task", "type": "string" }, { "id": "hours", "label": "hours", "type": "number" }], "rows": [{ "c": [{ "v": "Commute" }, { "v": 2 }] }, { "c": [{ "v": "Eat" }, { "v": 2 }] }, { "c": [{ "v": "Watch" }, { "v": 7 }] }, { "c": [{ "v": "Work" }, { "v": 11 }] }] }, 0.6);
+			// var options = { title: 'My Daily Activities',pieHole:.6 };
+			// var chart = new google.visualization.PieChart(document.getElementById('piechart_csv'));
 			// chart.draw(json_data, options);
-			// var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-			chart.draw(data, options);
-		});
+
+			// Use getJSON and process the file contents in the callback function
+			$.getJSON("graphs//ptw_w.json", function (obj) {
+				var jsonData = $.ajax({
+					url: "graphs//ptw_w.json",
+					dataType: "json",
+					async: false
+				}).responseText;
+				// Create our data table out of JSON data loaded from server.
+				var data = new google.visualization.DataTable(jsonData);
+				var options = { title: 'Current portfolio', pieHole: .6 };
+				var chart = new google.visualization.PieChart(document.getElementById('piechart_csv'));
+				// chart.draw(json_data, options);
+				// var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+				chart.draw(data, options);
+			});
 		}
 	</script>
-	
+
 
 	<title>Cryptonomics</title>
 	<style>
-		body {background-color: rgb(230, 229, 229);}
-
+		body {
+			background-color: black;
+		}
+		th,td {color: white;
+			font-weight: bold;
+			border: 1px solid white;
+			padding: 10px;
+			text-align: center;
+		}
+		td {
+			font-weight: lighter;
+			background-color: rgb(26, 22, 22);
+		}
+		h3,h4{color :rgb(110, 168, 223) }
 	</style>
 </head>
 
@@ -81,61 +93,76 @@ PAGE DE GARDE
 	</header>
 	<!--================================================== -->
 	<!-- BUBLE MENU. -->
-	<h2 class="nav" style="margin-left:10%; margin-right:10%;padding-top: 10px;height: 10px;">
-
-	</h2>
-
 	<div class="container marketing" id="Mark1" style="margin-top:3em;margin-bottom:5em;">
 		<!-- Three columns of text below the carousel -->
 		<!-- <a href="index.html#mark1">A la une</a><br>
 		<a href="index.html#mark2">...mais aussi </a><br>
 		<a href="index.html#mark0">Pourquoi ce site? </a><br> -->
 
-		<a href="p3_binance.html"><img class="rounded float-left" src="images/binance.jpg"
-			width="25" height="25">
-		<h3 name="mark1" style="color: crimson;">Our real portfolio and targeted adjustments</h3>
-		<div class="row" style="margin-top: 0.5em">
-			<div class="col-lg-12">
-				<h4>Current vs target weights</br></h4>
-				<p>Current vs target weights</p>
-				<div class="row">
-					<a href="graphs/trade_ptf_current_target.png" target="_blank"><img 
-							src="graphs/trade_ptf_current_target.png" id="grph1" width="600" height="300"></a>
+		<a href="p3_binance.html"><img class="rounded float-left" src="images/binance.jpg" width="25" height="25"></a>	
+			<h3 name="mark1" style="color: crimson;">Our portfolio and targeted adjustments</h3>
+
+			<section>
+				<h4>Running Batch</h4>
+				<!-- TABLE CONSTRUCTION-->
+				<table id='table'>
+					<!-- HEADING FORMATION -->
+					<tr>
+						<th>Programme</th>
+						<th>Last Data</th>
+						<th>Completion time</th>
+					</tr>
+
+					<script>
+						$(document).ready(function () {
+							// FETCHING DATA FROM JSON FILE
+							$.getJSON("graphs/script_lastupdate.json",
+								function (data) {
+									var html_tab = '';
+									// ITERATING THROUGH OBJECTS
+									$.each(data, function (key, value) {
+										html_tab += '<tr><td>' + key + '</td>';
+										html_tab += '<td>' + value.lst_date + '</td><td>' + value.lst_update + '</td></tr>';
+									});
+									//INSERTING ROWS INTO TABLE
+									$('#table').append(html_tab);
+								});
+						});
+					</script>
+				</table>
+			</section>
+			<div class="row" style="margin-top: 0.5em">
+				<div class="col-lg-12">
+					<h4>Current vs target weights</br></h4>
+					<p>Current vs target weights</p>
+					<div class="row">
+						<a href="graphs/trade_ptf_current_target.png" target="_blank"><img
+								src="graphs/trade_ptf_current_target.png" id="grph1" width="600" height="300"></a>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="col-md-12">
-			<iframe position="absolute" width="80%" height="600" id="grph2" src="graphs/trade_order_book.html" style="background-color:white"></iframe>
-		</div>
-		
-		<div id="piechart_csv" style="height: 600px;">
-		</div>
+			<div class="col-md-12">
+				<h4>Current vs target weights</br></h4>	
+				<iframe position="absolute" width="80%" height="600" id="grph2" src="graphs/trade_order_book.html"
+					style="background-color:white"></iframe>
+			</div>
+
+			<div id="piechart_csv" style="height: 600px;">
+			</div>
 
 
 
-		<!-- FOOTER -->
-		<footer class="container">
-			<p class="float-right"><a href="index.html">A la Une</a> <a href="#">Back to top</a></p>
-			<!-- <p>&copy; <a href="mailto:Cryptonomics@yahoo.com">Cryptonomics@yahoo.com</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p> -->
-			<p> contact:<a href="mailto:Cryptonomics@yahoo.com">Cryptonomics@yahoo.com</a><a href="#"></a>
-		</footer>
+			<!-- FOOTER -->
+			<footer class="container">
+				<p class="float-right"><a href="index.html">A la Une</a> <a href="#">Back to top</a></p>
+				<!-- <p>&copy; <a href="mailto:Cryptonomics@yahoo.com">Cryptonomics@yahoo.com</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p> -->
+				<p> contact:<a href="mailto:Cryptonomics@yahoo.com">Cryptonomics@yahoo.com</a><a href="#"></a>
+			</footer>
 
 
 
 </body>
 <script>
-	fetch('https://sebast759.github.io/crypto/graphs/script_lastupdate.json')
-		.then(response => {
-			return response.json();
-		})
-		.then(data => {
-			// Work with JSON data here
-			console.log(data);
-		})
-		.catch(err => {
-			// Do something for an error here
-		});
-
 	// create à new timestamp 
 	var timestamp = new Date().getTime();
 	document.getElementById('grph1').src = document.getElementById('grph1').src + "?t=" + timestamp

@@ -1,2 +1,0 @@
-{ "cols": [{ "id": "task", "label": "task", "type": "string" }, { "id": "hours", "label": "hours", "type": "number" }], "rows": [{ "c": [{ "v": "Commute" }, { "v": 2 }] }, { "c": [{ "v": "Eat" }, { "v": 2 }] }, { "c": [{ "v": "Watch" }, 
-{ "v": 19 }] }, { "c": [{ "v": "Work" }, { "v": 11 }] }] }
