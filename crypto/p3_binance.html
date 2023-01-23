@@ -38,15 +38,15 @@ PAGE DE GARDE
 		// chart.draw(json_data, options);
 		
 		// Use getJSON and process the file contents in the callback function
-		$.getJSON("graphs//dataPie.json", function(obj) {
+		$.getJSON("graphs//ptw_w.json", function(obj) {
 			var jsonData = $.ajax({
-				url: "graphs//dataPie.json",
+				url: "graphs//ptw_w.json",
 				dataType: "json",
 				async: false
 				}).responseText;
 			// Create our data table out of JSON data loaded from server.
 			var data = new google.visualization.DataTable(jsonData);
-			var options = { title: 'My Daily Activities',pieHole:.6 };
+			var options = { title: 'Current weights',pieHole:.6 };
 			var chart = new google.visualization.PieChart(document.getElementById('piechart_csv'));
 			// chart.draw(json_data, options);
 			// var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
