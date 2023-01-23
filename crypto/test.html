@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JSON to HTML Table</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="data-table"></table>
+    <script>
+      fetch('graphs//script_lastupdate.json')
+        .then(response => response.json())
+        .then(data => {
+          let table = document.getElementById('data-table');
+          let headerRow = document.createElement('tr');
+
+          // Create header row
+          for (let key in data[0]) {
+            let headerCell = document.createElement('th');
+            headerCell.textContent = key;
+            headerRow.appendChild(headerCell);
+          }
+          table.appendChild(headerRow);
+
+          // Create data rows
+          for (let i = 0; i < data.length; i++) {
+            let row = document.createElement('tr');
+            for (let key in data[i]) {
+              let cell = document.createElement('td');
+              cell.textContent = data[i][key];
+              row.appendChild(cell);
+            }
+            table.appendChild(row);
+          }
+        });
+    </script>
+  </body>
+</html>

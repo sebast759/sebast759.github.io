@@ -25,7 +25,13 @@ COuT EDUCATIF
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+  <script>
+    fetch('graphs//.json')
+      .then(response => response.json())
+      .then(data => {
+        // Step 2: Generate the table
+      });
+  </script>
   <title>Covidonomics</title>
   <style>
   </style>
@@ -90,8 +96,7 @@ COuT EDUCATIF
                   <br><br>
                   <button type="button" class="btn btn-outline-secondary"><a href="#footer">Mail</a></button>
                   <button type="button" class="btn btn-outline-primary"><a
-                      href="https://www.linkedin.com/in/sebastien-maillard/"
-                      target='_blank'>LinkedIn</a></button>
+                      href="https://www.linkedin.com/in/sebastien-maillard/" target='_blank'>LinkedIn</a></button>
               </p>
             </div>
           </div>
