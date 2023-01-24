@@ -84,17 +84,23 @@ PAGE DE GARDE
 				// Create our data table out of JSON data loaded from server.
 				var data = new google.visualization.DataTable(jsonData);
 				var options = {
-				chart: {
-					title: 'Weights Target vs. Current',
+				
+					chart: {title: 'Weights Target vs. Current',
 					subtitle: 'Target w vs current',backgroundColor: 'black',
-				},
+					},
+					hAxis: {format: 'decimal'},
+          			height: 400,
+          			colors: ['black', '#7570b3'],	
 					backgroundColor: 'black',
 					legendTextStyle: { color: 'white' },
 					titleTextStyle: { color: 'white' },
-				bars: 'horizontal' // Required for Material Bar Charts.
+				// bars: 'horizontal' // Required for Material Bar Charts.
 				};
+				
+				
 				var chart = new google.charts.Bar(document.getElementById('barchart_material'));
 				chart.draw(data, google.charts.Bar.convertOptions(options));
+				
 			});
 		};
 	</script>
