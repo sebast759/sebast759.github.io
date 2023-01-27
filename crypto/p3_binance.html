@@ -75,9 +75,9 @@ PAGE DE GARDE
 			google.charts.load('current', {'packages':['bar']});
 			google.charts.setOnLoadCallback(drawChart2);
 			function drawChart2() {
-				$.getJSON("graphs/ptw_w_vs_target.json", function (obj) {
+				$.getJSON("graphs/trade_ptw_w_vs_target.json", function (obj) {
 				var jsonData = $.ajax({
-					url: "graphs/ptw_w_vs_target.json",
+					url: "graphs/trade_ptw_w_vs_target.json",
 					dataType: "json",
 					async: false
 				}).responseText;
@@ -88,10 +88,11 @@ PAGE DE GARDE
 					chart: {title: 'Weights Target vs. Current',
 					subtitle: 'Target w vs current',backgroundColor: 'black',
 					},
-					hAxis: {format: 'decimal'},
-          			height: 400,
-          			colors: ['black', '#7570b3'],	
-					backgroundColor: 'black',
+					// backgroundColor: 'black',
+					backgroundColor: 'transparent',
+					// chartArea:{
+					// 	backgroundColor: '#fcfcfc'
+					// },
 					legendTextStyle: { color: 'white' },
 					titleTextStyle: { color: 'white' },
 				// bars: 'horizontal' // Required for Material Bar Charts.
@@ -200,7 +201,7 @@ PAGE DE GARDE
 					<a href="graphs/trade_ptf_current_target.png" target="_blank"><img
 							src="graphs/trade_ptf_current_target.png" id="grph1" width="600" height="300"></a>
 				</div>
-				<div id="barchart_material" style="height: 600px;"></div>
+				<div id="barchart_material" style="height: 500px;width: 70%;"></div>
 
 			</div>
 		</div>
