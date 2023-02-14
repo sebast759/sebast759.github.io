@@ -3,12 +3,16 @@
     <tr style="text-align: right;">
       <th></th>
       <th>symbol</th>
+      <th>side</th>
       <th>price</th>
       <th>qty</th>
+      <th>realizedPnl</th>
+      <th>marginAsset</th>
       <th>quoteQty</th>
       <th>commissionAsset</th>
       <th>time</th>
-      <th>isMaker</th>
+      <th>positionSide</th>
+      <th>maker</th>
       <th>tc_usdt</th>
       <th>tc_bp</th>
     </tr>
@@ -17,62 +21,146 @@
     <tr>
       <th>0</th>
       <td>APTUSDT</td>
-      <td>13.70930</td>
-      <td>-0.82</td>
-      <td>$-11.2</td>
+      <td>SELL</td>
+      <td>14.506000</td>
+      <td>-0.500</td>
+      <td>0.63415384</td>
       <td>USDT</td>
-      <td>2023-02-13 20:56:46.439</td>
-      <td>True</td>
-      <td>$0.01</td>
-      <td>-9</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>AVAXUSDT</td>
-      <td>17.39000</td>
-      <td>-0.66</td>
-      <td>$-11.5</td>
+      <td>$-7.3</td>
       <td>USDT</td>
-      <td>2023-02-13 20:59:16.354</td>
+      <td>2023-02-14 18:26:31.071</td>
+      <td>BOTH</td>
       <td>True</td>
-      <td>$0.01</td>
-      <td>-9</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>MATICUSDT</td>
-      <td>1.16600</td>
-      <td>-8.60</td>
-      <td>$-10.0</td>
-      <td>USDT</td>
-      <td>2023-02-13 20:58:57.933</td>
-      <td>True</td>
-      <td>$0.01</td>
-      <td>-9</td>
+      <td>$0.00</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>1</th>
       <td>MATICUSDT</td>
-      <td>1.16600</td>
-      <td>-16.50</td>
-      <td>$-19.2</td>
+      <td>BUY</td>
+      <td>1.233200</td>
+      <td>15.000</td>
+      <td>0</td>
       <td>USDT</td>
-      <td>2023-02-13 20:59:00.123</td>
+      <td>$18.5</td>
+      <td>USDT</td>
+      <td>2023-02-14 18:27:11.440</td>
+      <td>BOTH</td>
       <td>True</td>
-      <td>$0.02</td>
-      <td>-9</td>
+      <td>$0.00</td>
+      <td>2</td>
     </tr>
     <tr>
-      <th>0</th>
-      <td>TRXUSDT</td>
-      <td>0.06521</td>
-      <td>410.40</td>
-      <td>$26.8</td>
-      <td>TRX</td>
-      <td>2023-02-13 20:58:35.384</td>
+      <th>2</th>
+      <td>LDOUSDT</td>
+      <td>BUY</td>
+      <td>2.555900</td>
+      <td>7.000</td>
+      <td>0</td>
+      <td>USDT</td>
+      <td>$17.9</td>
+      <td>USDT</td>
+      <td>2023-02-14 18:28:28.983</td>
+      <td>BOTH</td>
       <td>True</td>
-      <td>$0.02</td>
-      <td>9</td>
+      <td>$0.00</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NEARUSDT</td>
+      <td>SELL</td>
+      <td>2.235000</td>
+      <td>-3.000</td>
+      <td>0</td>
+      <td>USDT</td>
+      <td>$-6.7</td>
+      <td>USDT</td>
+      <td>2023-02-14 18:30:48.765</td>
+      <td>BOTH</td>
+      <td>True</td>
+      <td>$0.00</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ETCUSDT</td>
+      <td>SELL</td>
+      <td>21.018000</td>
+      <td>-0.520</td>
+      <td>0</td>
+      <td>USDT</td>
+      <td>$-10.9</td>
+      <td>USDT</td>
+      <td>2023-02-14 18:30:48.776</td>
+      <td>BOTH</td>
+      <td>True</td>
+      <td>$0.00</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1000SHIBUSDT</td>
+      <td>SELL</td>
+      <td>0.012717</td>
+      <td>-3348.000</td>
+      <td>0.55400315</td>
+      <td>USDT</td>
+      <td>$-42.6</td>
+      <td>USDT</td>
+      <td>2023-02-14 18:30:48.887</td>
+      <td>BOTH</td>
+      <td>True</td>
+      <td>$0.01</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>LTCUSDT</td>
+      <td>BUY</td>
+      <td>95.320000</td>
+      <td>0.264</td>
+      <td>0</td>
+      <td>USDT</td>
+      <td>$25.2</td>
+      <td>USDT</td>
+      <td>2023-02-14 18:31:03.540</td>
+      <td>BOTH</td>
+      <td>True</td>
+      <td>$0.00</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>DOTUSDT</td>
+      <td>BUY</td>
+      <td>6.209000</td>
+      <td>1.600</td>
+      <td>-0.30720000</td>
+      <td>USDT</td>
+      <td>$9.9</td>
+      <td>USDT</td>
+      <td>2023-02-14 18:32:05.309</td>
+      <td>BOTH</td>
+      <td>True</td>
+      <td>$0.00</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>TRXUSDT</td>
+      <td>SELL</td>
+      <td>0.066450</td>
+      <td>-238.000</td>
+      <td>0.30890874</td>
+      <td>USDT</td>
+      <td>$-15.8</td>
+      <td>USDT</td>
+      <td>2023-02-14 18:32:42.530</td>
+      <td>BOTH</td>
+      <td>True</td>
+      <td>$0.00</td>
+      <td>2</td>
     </tr>
   </tbody>
 </table>
