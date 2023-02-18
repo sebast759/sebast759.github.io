@@ -98,12 +98,12 @@ PAGE DE GARDE
 			});};//drawChart
 				
 
-		google.charts.load('current', { 'packages': ['bar'] });
+			google.charts.load('current', { 'packages': ['bar'] });
 		google.charts.setOnLoadCallback(drawChart2);
 		function drawChart2() {
-			$.getJSON("graphs/trade_ptw_w_vs_target.json", function (obj) {
+			$.getJSON("graphs/order_ptw_w_vs_target.json", function (obj) {
 				var jsonData = $.ajax({
-					url: "graphs/trade_ptw_w_vs_target.json",
+					url: "graphs/order_ptw_w_vs_target.json",
 					dataType: "json",
 					async: false
 				}).responseText;
@@ -112,7 +112,7 @@ PAGE DE GARDE
 				var options = {
 					chart: {
 						title: 'Weights Target vs. Current',
-						subtitle: 'Target w vs current', backgroundColor: 'black',
+						subtitle: 'Target w and current weight', backgroundColor: 'black',
 					},
 					backgroundColor: 'transparent',
 					legendTextStyle: { color: 'white' },
@@ -121,6 +121,33 @@ PAGE DE GARDE
 
 
 				var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+				chart.draw(data, google.charts.Bar.convertOptions(options));
+
+			});
+		};
+		google.charts.load('current', { 'packages': ['bar'] });
+		google.charts.setOnLoadCallback(drawChart3);
+		function drawChart3() {
+			$.getJSON("graphs/order_ptw_w_vs_target_diff.json", function (obj) {
+				var jsonData = $.ajax({
+					url: "graphs/order_ptw_w_vs_target_diff.json",
+					dataType: "json",
+					async: false
+				}).responseText;
+				// Create our data table out of JSON data loaded from server.
+				var data = new google.visualization.DataTable(jsonData);
+				var options = {
+					chart: {
+						title: 'Weights Target vs. Current',
+						subtitle: 'Targeted adjustment', backgroundColor: 'black',
+					},
+					backgroundColor: 'transparent',
+					legendTextStyle: { color: 'white' },
+					titleTextStyle: { color: 'white' },
+				};
+
+
+				var chart = new google.charts.Bar(document.getElementById('barchart_material_2'));
 				chart.draw(data, google.charts.Bar.convertOptions(options));
 
 			});
@@ -233,14 +260,18 @@ PAGE DE GARDE
 		<div class="row" style="margin-top: 0.5em">
 			<div class="col-lg-12">
 				<h4>Current vs target weights</br></h4>
-				<p>Current vs target weights</p>
+				<!-- <p>Current vs target weights</p> -->
 				<div id="barchart_material" style="height: 500px;width: 90%;"></div>
+			</div>
+			<div class="col-lg-12">
+				<p>To trade</p>
+				<div id="barchart_material_2" style="height: 500px;width: 90%;"></div>
 			</div>
 		</div>
 		
 		<div class="col-md-12">
 			<h4>Current vs target weights</br></h4>
-			<iframe position="absolute" width="80%" height="600" id="grph2" src="graphs/trade_order_book.html"
+			<iframe position="absolute" width="80%" height="600" id="grph2" src="graphs/order_order_book.html"
 				style="background-color:white"></iframe>
 		</div>
 		<h4>Current Allocation</h4>
