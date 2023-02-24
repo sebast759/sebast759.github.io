@@ -75,9 +75,9 @@ PAGE DE GARDE
 		// 	chart.draw(data, options);
 		// });
 		function drawChart() {
-			$.getJSON("graphs/ptw_w_wcash.json", function (obj) {
+			$.getJSON("graphs/order_ptw_w.json", function (obj) {
 				var jsonData = $.ajax({
-					url: "graphs/ptw_w.json",
+					url: "graphs/order_ptw_w.json",
 					dataType: "json",
 					async: false
 				}).responseText;
@@ -85,8 +85,7 @@ PAGE DE GARDE
 				var data = new google.visualization.DataTable(jsonData);
 				var options = {
 					chart: {
-						title: 'Weights Target vs. Current',
-						subtitle: 'Target w vs current', backgroundColor: 'black',
+						title: 'Current Weights',
 					},
 					backgroundColor: 'transparent',
 					legendTextStyle: { color: 'white' },
@@ -262,6 +261,31 @@ PAGE DE GARDE
 				<h4>Current portfolio</br></h4>
 				<iframe position="absolute" width="30%" height="200" id="grph2" src="graphs/trade_positions_recap.html"
 					style="background-color:white"></iframe>
+
+					<table id='positions_recap'>
+						<!-- HEADING FORMATION -->
+						<tr>
+							<th></th>
+							<th>positions </th>
+						</tr>
+		
+						<script>
+							$(document).ready(function () {
+								// FETCHING DATA FROM JSON FILE
+								$.getJSON("graphs/order_positions_recap.json",
+									function (data) {
+										var html_tab = '';
+										// ITERATING THROUGH OBJECTS
+										$.each(data, function (key, value) {
+											html_tab += '<tr><td>' + key + '</td>';
+											html_tab += '<td>' + value.positions + '</td><td>' + value.lst_update + '</td></tr>';
+										});
+										//INSERTING ROWS INTO TABLE
+										$('#positions_recap').append(html_tab);
+									});
+							});
+						</script>
+					</table>
 			</div>
 			<div class="col-lg-12">
 				<iframe position="absolute" width="50%" height="300" id="grph2" src="graphs/order_position_futures.html"
