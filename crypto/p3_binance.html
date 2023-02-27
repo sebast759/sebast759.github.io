@@ -30,6 +30,8 @@ PAGE DE GARDE
 
 	<script src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="sm_script.js"></script>
+
 	<script>
 		// google.charts.load('current', { 'packages': ['corechart'] });
 		google.charts.load('current', { 'packages': ['bar'] });
@@ -259,26 +261,25 @@ PAGE DE GARDE
 		<div class="row" style="margin-top: 0.5em">
 			<div class="col-lg-12">
 				<h4>Current portfolio</br></h4>
-				<iframe position="absolute" width="30%" height="200" id="grph2"
-					src="graphs/posttrade_positions_recap.html" style="background-color:white"></iframe>
+				<!-- <iframe position="absolute" width="30%" height="200" id="grph2" src="graphs/order_positions_recap.html"
+					style="background-color:white"></iframe> -->
 
 				<table id='positions_recap'>
 					<!-- HEADING FORMATION -->
-					<tr>
-						<th></th>
-						<th>positions </th>
-					</tr>
-
 					<script>
 						$(document).ready(function () {
 							// FETCHING DATA FROM JSON FILE
 							$.getJSON("graphs/order_positions_recap.json",
 								function (data) {
-									var html_tab = '';
-									// ITERATING THROUGH OBJECTS
-									$.each(data, function (key, value) {
-										html_tab += '<tr><td>' + key + '</td>';
-										html_tab += '<td>' + value.positions + '</td><td>' + value.lst_update + '</td></tr>';
+									html_tab = ''
+									$.each(data['positions recap'], function (key, value) {
+										if (key == 'as of') {
+											html_tab += '<tr><th colspan="5">Wallet Futures ' + key + ' ' + value + '</th></tr>';
+										}
+										else {
+											html_tab += '<td>' + key + '\n' + value + '</td>';
+										}
+
 									});
 									//INSERTING ROWS INTO TABLE
 									$('#positions_recap').append(html_tab);
@@ -288,10 +289,26 @@ PAGE DE GARDE
 				</table>
 			</div>
 			<div class="col-lg-12">
-				<iframe position="absolute" width="50%" height="300" id="grph2" src="graphs/order_position_futures.html"
+				<iframe position="absolute" width="80%" height="600" id="grph2" src="graphs/order_position_futures.html"
 					style="background-color:white"></iframe>
 			</div>
+			<div class="col-lg-12">
+				<table id='table-container'></table>
+				<script>
+					$(document).ready(function () {
+						fetch('graphs/order_position_futures.csv')
+							.then(function (response) {
+								return response.text();
+							})
+							.then(function (data) {
+								var table_container = document.getElementById('table-container');
+								csv_string_to_table(data, table_container);
+							});
+					});
+				</script>
+			</div>
 		</div>
+
 
 		<div class="row" style="margin-top: 0.5em">
 			<div class="col-lg-12">
@@ -366,7 +383,7 @@ PAGE DE GARDE
 							src="graphs/order_binance_performance_7D.png" id="grph1" width="100%"></a>
 				</div>
 			</div><!-- /.col-lg-3 -->
-			
+
 		</div><!-- /.col-lg-3 -->
 
 		<div class="row" style="margin-top: 3em">
