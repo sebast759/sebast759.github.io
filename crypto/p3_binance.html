@@ -259,33 +259,33 @@ PAGE DE GARDE
 		<div class="row" style="margin-top: 0.5em">
 			<div class="col-lg-12">
 				<h4>Current portfolio</br></h4>
-				<iframe position="absolute" width="30%" height="200" id="grph2" src="graphs/posttrade_positions_recap.html"
-					style="background-color:white"></iframe>
+				<iframe position="absolute" width="30%" height="200" id="grph2"
+					src="graphs/posttrade_positions_recap.html" style="background-color:white"></iframe>
 
-					<table id='positions_recap'>
-						<!-- HEADING FORMATION -->
-						<tr>
-							<th></th>
-							<th>positions </th>
-						</tr>
-		
-						<script>
-							$(document).ready(function () {
-								// FETCHING DATA FROM JSON FILE
-								$.getJSON("graphs/order_positions_recap.json",
-									function (data) {
-										var html_tab = '';
-										// ITERATING THROUGH OBJECTS
-										$.each(data, function (key, value) {
-											html_tab += '<tr><td>' + key + '</td>';
-											html_tab += '<td>' + value.positions + '</td><td>' + value.lst_update + '</td></tr>';
-										});
-										//INSERTING ROWS INTO TABLE
-										$('#positions_recap').append(html_tab);
+				<table id='positions_recap'>
+					<!-- HEADING FORMATION -->
+					<tr>
+						<th></th>
+						<th>positions </th>
+					</tr>
+
+					<script>
+						$(document).ready(function () {
+							// FETCHING DATA FROM JSON FILE
+							$.getJSON("graphs/order_positions_recap.json",
+								function (data) {
+									var html_tab = '';
+									// ITERATING THROUGH OBJECTS
+									$.each(data, function (key, value) {
+										html_tab += '<tr><td>' + key + '</td>';
+										html_tab += '<td>' + value.positions + '</td><td>' + value.lst_update + '</td></tr>';
 									});
-							});
-						</script>
-					</table>
+									//INSERTING ROWS INTO TABLE
+									$('#positions_recap').append(html_tab);
+								});
+						});
+					</script>
+				</table>
 			</div>
 			<div class="col-lg-12">
 				<iframe position="absolute" width="50%" height="300" id="grph2" src="graphs/order_position_futures.html"
@@ -339,8 +339,36 @@ PAGE DE GARDE
 				<p> contact:<a href="mailto:s2bmaillard@gmail.com">s2bmaillard@gmail.com</a><a href="#"></a>
 			</footer>
 		</div>
-		
+
 		<h4>Realized track</h4>
+		<div class="row" style="margin-top: 3em">
+			<div class="col-lg-4">
+				<h4>Today's return</br>
+				</h4>
+				<div class="row">
+					<a href="graphs/order_binance_performance_1D.png" target="_blank"><img class="rounded float-left"
+							src="graphs/order_binance_performance_1D.png" id="grph1" width="100%"></a>
+				</div>
+			</div><!-- /.col-lg-3 -->
+			<div class="col-lg-4">
+				<h4>Performance 3 days</br>
+				</h4>
+				<div class="row">
+					<a href="graphs/order_binance_performance_3D.png" target="_blank"><img class="rounded float-left"
+							src="graphs/order_binance_performance_3D.png" id="grph1" width="100%"></a>
+				</div>
+			</div><!-- /.col-lg-3 -->
+			<div class="col-lg-4">
+				<h4>Performance 7 days</br>
+				</h4>
+				<div class="row">
+					<a href="graphs/order_binance_performance_7D.png" target="_blank"><img class="rounded float-left"
+							src="graphs/order_binance_performance_7D.png" id="grph1" width="100%"></a>
+				</div>
+			</div><!-- /.col-lg-3 -->
+			
+		</div><!-- /.col-lg-3 -->
+
 		<div class="row" style="margin-top: 3em">
 			<div class="col-lg-6">
 				<h4>Binance Official</br>
@@ -361,8 +389,8 @@ PAGE DE GARDE
 				</div>
 			</div><!-- /.col-lg-3 -->
 		</div>
-		
-		
+
+
 
 
 </body>
