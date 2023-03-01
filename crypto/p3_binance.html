@@ -35,8 +35,8 @@ PAGE DE GARDE
 	<script>
 		// google.charts.load('current', { 'packages': ['corechart'] });
 		google.charts.load('current', { 'packages': ['bar'] });
-		google.charts.setOnLoadCallback(drawChart);
-		function drawChart() {
+		google.charts.setOnLoadCallback(drawChart0);
+		function drawChart0() {
 			$.getJSON("graphs/order_ptw_w.json", function (obj) {
 				var jsonData = $.ajax({
 					url: "graphs/order_ptw_w.json",
@@ -53,13 +53,34 @@ PAGE DE GARDE
 					legendTextStyle: { color: 'white' },
 					titleTextStyle: { color: 'white' },
 				};
-
-
-				var chart = new google.charts.Bar(document.getElementById('barchart_0'));
+				var chart = new google.charts.Bar(document.getElementById('bar_positions_w'));
 				chart.draw(data, google.charts.Bar.convertOptions(options));
 			});
 		};//drawChart
 
+		google.charts.load('current', { 'packages': ['bar'] });
+		google.charts.setOnLoadCallback(drawChart1);
+		function drawChart1() {
+			$.getJSON("graphs/order_ptw_PnL.json", function (obj) {
+				var jsonData = $.ajax({
+					url: "graphs/order_ptw_PnL.json",
+					dataType: "json",
+					async: false
+				}).responseText;
+				// Create our data table out of JSON data loaded from server.
+				var data = new google.visualization.DataTable(jsonData);
+				var options = {
+					chart: {
+						title: 'Performance Attribution',
+					},
+					backgroundColor: 'transparent',
+					legendTextStyle: { color: 'white' },
+					titleTextStyle: { color: 'white' },
+				};
+				var chart = new google.charts.Bar(document.getElementById('bar_positions_pnl'));
+				chart.draw(data, google.charts.Bar.convertOptions(options));
+			});
+		};//drawChart
 
 		google.charts.load('current', { 'packages': ['bar'] });
 		google.charts.setOnLoadCallback(drawChart2);
@@ -290,12 +311,12 @@ PAGE DE GARDE
 			<div class="row" style="margin-top: 0.5em">
 			<div class="col-lg-12">
 				<h4>Current portfolio</br></h4>
-
-				<div id="barchart_0" style="height: 400px;"></div>
+				<div id="bar_positions_w" style="height: 400px;"></div>
+				<div id="bar_positions_pnl" style="height: 400px;"></div>
 			</div>
 
 			<div class="col-lg-12">
-				<table id='table-container'></table>
+				<table id='table_positions'></table>
 				<script>
 					$(document).ready(function () {
 						fetch('graphs/order_position_futures.csv')
@@ -303,7 +324,7 @@ PAGE DE GARDE
 								return response.text();
 							})
 							.then(function (data) {
-								var table_container = document.getElementById('table-container');
+								var table_container = document.getElementById('table_positions');
 								csv_string_to_table(data, table_container);
 							});
 					});
