@@ -59,6 +59,29 @@ PAGE DE GARDE
 		};//drawChart
 
 		google.charts.load('current', { 'packages': ['bar'] });
+		google.charts.setOnLoadCallback(drawChart1_1);
+		function drawChart1_1() {
+			$.getJSON("graphs/order_ptw_RtD.json", function (obj) {
+				var jsonData = $.ajax({
+					url: "graphs/order_ptw_RtD.json",
+					dataType: "json",
+					async: false
+				}).responseText;
+				// Create our data table out of JSON data loaded from server.
+				var data = new google.visualization.DataTable(jsonData);
+				var options = {
+					chart: {
+						// title: 'Performance Attribution',
+					},
+					backgroundColor: 'transparent',
+					legendTextStyle: { color: 'white' },
+					titleTextStyle: { color: 'white' },
+				};
+				var chart = new google.charts.Bar(document.getElementById('bar_positions_rtd'));
+				chart.draw(data, google.charts.Bar.convertOptions(options));
+			});
+		};//drawChart
+		google.charts.load('current', { 'packages': ['bar'] });
 		google.charts.setOnLoadCallback(drawChart1);
 		function drawChart1() {
 			$.getJSON("graphs/order_ptw_PnL.json", function (obj) {
@@ -71,7 +94,7 @@ PAGE DE GARDE
 				var data = new google.visualization.DataTable(jsonData);
 				var options = {
 					chart: {
-						title: 'Performance Attribution',
+						// title: 'Performance Attribution',
 					},
 					backgroundColor: 'transparent',
 					legendTextStyle: { color: 'white' },
@@ -310,8 +333,11 @@ PAGE DE GARDE
 			</div>
 			<div class="row" style="margin-top: 0.5em">
 			<div class="col-lg-12">
-				<h4>Current portfolio</br></h4>
+				<h4>Current portfolio</h4></br>
 				<div id="bar_positions_w" style="height: 400px;"></div>
+				<h6>Returnf of the day</h6></br>
+				<div id="bar_positions_rtd" style="height: 400px;"></div>
+				<h6>Performance Attribution, Portfolio Daily P&L <a id="wallet_pnl"> </a></h6></br>
 				<div id="bar_positions_pnl" style="height: 400px;"></div>
 			</div>
 
@@ -326,6 +352,10 @@ PAGE DE GARDE
 							.then(function (data) {
 								var table_container = document.getElementById('table_positions');
 								csv_string_to_table(data, table_container);
+								
+								var span_pnld = document.getElementById('wallet_pnl');
+								PnL_D = data.trim().split(/\r?\n|\r/)[1].split(',')[9]
+								span_pnld.innerHTML += PnL_D;
 							});
 					});
 				</script>
