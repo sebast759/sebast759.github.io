@@ -25,7 +25,34 @@ PAGE DE GARDE
 		crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-
+	<script src="https://code.highcharts.com/stock/highstock.js"></script>
+	<script src="https://code.highcharts.com/stock/modules/data.js"></script>
+	<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+	<script>
+		Highcharts.getJSON('https://demo-live-data.highcharts.com/aapl-c.json', function (data) {
+			// Create the chart
+			Highcharts.stockChart('container', {
+				rangeSelector: {
+					selected: 1
+				},
+				title: {
+					text: 'AAPL Stock Price'
+				},
+				scrollbar: {
+					enabled: false
+				},
+				series: [{
+					name: 'AAPL Stock Price',
+					data: data,
+					tooltip: {
+						valueDecimals: 2
+					}
+				}]
+			});
+		});
+	</script>
 	<title>Mozaic Crypto</title>
 	<style>
 
@@ -88,7 +115,8 @@ PAGE DE GARDE
 		</div>
 		<div class="row" style="margin-top: 3em">
 			<div class="col-lg-3">
-				<h4><img class="rounded float-left" src="images/flag_WD.jpg" width="12" height="12">Performance 3 days</br>
+				<h4><img class="rounded float-left" src="images/flag_WD.jpg" width="12" height="12">Performance 3
+					days</br>
 				</h4>
 				<div class="row">
 					<a href="graphs/alloc_crypto_return_3D.png" target="_blank"><img class="rounded float-left"
@@ -96,13 +124,15 @@ PAGE DE GARDE
 				</div>
 			</div><!-- /.col-lg-3 -->
 			<div class="col-lg-3">
-				<h4><img class="rounded float-left" src="images/flag_WD.jpg" width="12" height="12">Performance 7 days</br>
+				<h4><img class="rounded float-left" src="images/flag_WD.jpg" width="12" height="12">Performance 7
+					days</br>
 				</h4>
 				<div class="row">
 					<a href="graphs/alloc_crypto_return_7D.png" target="_blank"><img class="rounded float-left"
 							src="graphs/alloc_crypto_return_7D.png" id="grph1" width="100%"></a>
 				</div>
-			</div><!-- /.col-lg-3 --><div class="col-lg-3">
+			</div><!-- /.col-lg-3 -->
+			<div class="col-lg-3">
 				<h4><img class="rounded float-left" src="images/flag_WD.jpg" width="12" height="12">Performance YTD</br>
 				</h4>
 				<div class="row">
@@ -117,8 +147,9 @@ PAGE DE GARDE
 				</h4>
 				<p>Total market cap of the crypto asset class</p>
 				<div class="row">
-					<a href="graphs/marketcap_crypto_total_marketcap.png" target="_blank"><img class="rounded float-left"
-							src="graphs/marketcap_crypto_total_marketCap.png" id="grph2" width="500" height="300"></a>
+					<a href="graphs/marketcap_crypto_total_marketcap.png" target="_blank"><img
+							class="rounded float-left" src="graphs/marketcap_crypto_total_marketCap.png" id="grph2"
+							width="500" height="300"></a>
 				</div>
 				source: Coingecko and CoinMarketCap
 			</div><!-- /.col-lg-3 -->
@@ -147,6 +178,11 @@ PAGE DE GARDE
 						src="graphs/bt_cryptos_perf.png" id="grph3" width="100%"></a>
 			</div><!-- /.col-lg-3 -->
 		</div>
+		
+		<div class="row" style="margin-top: 3em">
+			<div id="container">aaaa</div>
+		</div>
+
 	</div><!-- /.row -->
 	<!-- ------------------ -->
 	<h3 name="mark2">Any idea?</h3>
