@@ -342,15 +342,15 @@ PAGE DE GARDE
 			</div>
 
 			<div class="col-lg-12">
-				<table id='table_positions'></table>
+				<table id='order_positions_pa_futures'></table>
 				<script>
 					$(document).ready(function () {
-						fetch('graphs/order_position_futures.csv')
+						fetch('graphs/order_positions_pa_futures.csv')
 							.then(function (response) {
 								return response.text();
 							})
 							.then(function (data) {
-								var table_container = document.getElementById('table_positions');
+								var table_container = document.getElementById('order_positions_pa_futures');
 								csv_string_to_table(data, table_container);
 								
 								var span_pnld = document.getElementById('wallet_pnl');
