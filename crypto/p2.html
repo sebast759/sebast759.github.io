@@ -30,7 +30,10 @@ PAGE DE GARDE
 	<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
 	<script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
 	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
-	<script>
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+	<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+	<!-- <script>
 		$.getJSON('graphs/btc.json', function (data) {
 			// Create the chart
 			Highcharts.stockChart('container_highcharts', {
@@ -51,6 +54,34 @@ PAGE DE GARDE
 					}
 				}]
 			});
+		});
+	</script> -->
+	<script>
+		var options = {
+			chart: {
+				renderTo: 'container_highcharts',
+				defaultSeriesType: 'spline'
+			},
+			series: [{ name: 'A', data: [1, 2, 3, 2, 1] }]
+		};
+		var chart = new Highcharts.Chart(options);
+
+		$("#list").on('change', function () {
+			//alert('f')
+			var selVal = $("#list").val();
+			if (selVal == "A" || selVal == '') {
+				options.series = [{ name: 'A', data: [1, 2, 3, 2, 1] }]
+			}
+			else if (selVal == "B") {
+				options.series = [{ name: 'B', data: [3, 2, 1, 2, 3] }]
+			}
+			else if (selVal == "C") {
+				options.series = [{ name: 'C', data: [5, 4, 8, 7, 6] }]
+			}
+			else {
+				options.series = [{ name: 'D', data: [4, 7, 9, 6, 2] }]
+			}
+			var chart = new Highcharts.Chart(options);
 		});
 	</script>
 	<title>Mozaic Crypto</title>
@@ -178,10 +209,19 @@ PAGE DE GARDE
 						src="graphs/bt_cryptos_perf.png" id="grph3" width="100%"></a>
 			</div><!-- /.col-lg-3 -->
 		</div>
-		
+
 		<div class="row" style="margin-top: 3em">
-			<div id="container_highcharts" style="height: 600px; width: 100%"></div>></div>
+			<SELECT id="list">
+				<OPTION VALUE="A">Data Set A</option>
+				<OPTION VALUE="B">Data Set B</option>
+				<OPTION VALUE="C">Data Set C</option>
+				<OPTION VALUE="D">Data Set D</option>
+			</SELECT>
+			<button id="change">Refresh Table</button>
+
+			<div id="container_highcharts" style="height: 600px; width: 100%"></div>>
 		</div>
+	</div>
 
 	</div><!-- /.row -->
 	<!-- ------------------ -->
