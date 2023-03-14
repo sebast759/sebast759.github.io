@@ -31,20 +31,20 @@ PAGE DE GARDE
 	<script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
 	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 	<script>
-		Highcharts.getJSON('graphs/btc.json', function (data) {
+		$.getJSON('graphs/btc.json', function (data) {
 			// Create the chart
-			Highcharts.stockChart('container', {
+			Highcharts.stockChart('container_highcharts', {
 				rangeSelector: {
 					selected: 1
 				},
 				title: {
-					text: 'AAPL Stock Price'
+					text: 'Bitcoin'
 				},
 				scrollbar: {
 					enabled: false
 				},
 				series: [{
-					name: 'AAPL Stock Price',
+					name: 'Bitcoin',
 					data: data,
 					tooltip: {
 						valueDecimals: 2
@@ -180,7 +180,7 @@ PAGE DE GARDE
 		</div>
 		
 		<div class="row" style="margin-top: 3em">
-			<div id="container"></div>
+			<div id="container_highcharts" style="height: 600px; width: 100%"></div>></div>
 		</div>
 
 	</div><!-- /.row -->
