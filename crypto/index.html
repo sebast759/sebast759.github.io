@@ -5,7 +5,7 @@ PAGE DE GARDE
 <html>
 
 <head>
-	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<meta charset="utf-8">
@@ -97,57 +97,49 @@ PAGE DE GARDE
 		</p>
 		<div class="row featurette">
 			<div class="col-md-12">
-				<p>Summary of fatal and non fatal reactions :</p>
-				<div class="wrap" width="30%" padding="0" overflow="hidden">
-					<a href="graphs/backtest/pict_trackrecord.jpg" target="search_iframe" id="dat_d3"
-						style="color: rgb(0, 17, 255);">Track</a> -
-					<a href="graphs/backtest/pict_monthlyreturns.jpg" target="search_iframe"
-						style="color: rgb(17, 17, 17);">Monthly Return</a>
-					<a href="graphs/backtest/pict_statistics.jpg" target="search_iframe" id="prevdat_d"
-						style="color: rgb(17, 17, 17);">Statistics</a> -
-					<a href="graphs/backtest/pict_globalmarket_correl.jpg" target="search_iframe"
-						style="color: rgb(17, 17, 17);width: 10;">correlation</a>
+				<a href="graphs/backtest/pict_trackrecord.jpg" target="search_iframe" id="dat_d3"
+					style="color: rgb(0, 17, 255);font-size:x-large;font-weight: bold;">2018-2022</a> -
+				<a href="graphs/backtest/pict_monthlyreturns.jpg" target="search_iframe"
+					style="color: rgb(17, 17, 17);font-size:x-large;font-weight: bold;">Monthly Return</a> -
+				<a href="graphs/backtest/pict_statistics.jpg" target="search_iframe" id="prevdat_d"
+					style="color: rgb(17, 17, 17);font-size:x-large;font-weight: bold;">Statistics</a> -
+				<a href="graphs/backtest/pict_globalmarket_correl.jpg" target="search_iframe"
+					style="color: rgb(17, 17, 17);font-size:x-large;font-weight: bold;">Correlation</a>
 
-					<iframe src="graphs/backtest/pict_trackrecord.jpg" width="100%" height="600"
-						name="search_iframe"></iframe>
-				</div>
-				<!-- <iframe position="absolute" width="500" height="300" id="grph2" src="graph/yellow_cards/yellow_card_recap_prev.html"></iframe> -->
+				<iframe src="graphs/backtest/pict_trackrecord.jpg" name="search_iframe" width="90%" height="666px" position="relative" allowfullscreen="true" scrolling="auto" > </iframe>
+				<!-- <iframe position=" absolute" width="500" height="300" id="grph2"
+						src="graph/yellow_cards/yellow_card_recap_prev.html"></iframe> -->
+				
 			</div>
 		</div>
-
-
-
-
-
-		<!-- <a href="index.html#mark1">A la une</a><br>
-		<a href="index.html#mark2">...mais aussi </a><br>
-		<a href="index.html#mark0">Pourquoi ce site? </a><br> -->
-
-
-		<br><br><br><br><br><br><br><br><br><br><br>
-		<h3 name="mark1" style="color: crimson;">Our mozaic strategy: last allocation and YTD performance</h3>
+		<h3 name="mark1" style="color: crimson;">2023, YTD performance - Update Daily</h3>
 		<div class="row" style="margin-top: 0.5em">
-			<div class="col-lg-6">
-				<h4>Allocation</br></h4>
-				<p>Portfolio composition</p>
-				<div class="row">
-					<a href="graphs/alloc_alloc_last.png" target="_blank"><img class="rounded float-left"
-							src="graphs/alloc_alloc_last.png" id="grph1" width="600" height="500"></a>
-				</div>
-				<!-- <p> Comment la France se comporte-t-elle par rapport à ses voisins?</p> -->
-			</div><!-- /.col-lg-3 -->
-			<div class="col-lg-6">
+			<div class="col-lg-8">
 				<!-- <h4><img class="rounded float-left" src="images/flag_WD.jpg" width="12" height="12">Track YTD</h4> -->
 				<h4>Performance YTD</h4>
 				<p> YTD track of our strategy on a binance universe</p>
 				<div class="row">
 					<a href="graphs/bt_mozaic_1.png" target="_blank"><img class="rounded float-left"
-							src="graphs/bt_mozaic_1.png" id="grph2" width="500" height="500"></a>
+							src="graphs/bt_mozaic_1.png" id="grph2" width="100%" height="500"></a>
 				</div>
-				<!-- <p> L'épidémie progresse ou régresse-t-elle dans le monde?</p> -->
 			</div><!-- /.col-lg-3 -->
-		</div><!-- /.row -->
+			<div class="col-lg-4">
+				<h4>Allocation</br></h4>
+				<p>Portfolio last composition</p>
+				<div class="row">
+					<a href="graphs/order_alloc_last_darkbg0.png" target="_blank"><img class="rounded float-left"
+							src="graphs/order_alloc_last_darkbg0.png" id="grph1" height="400"></a>
+				</div>
+				<!-- <p> Comment la France se comporte-t-elle par rapport à ses voisins?</p> -->
+			</div><!-- /.col-lg-3 -->
 
+		</div><!-- /.row -->
+<script>
+      var div = document.getElementById("target");
+      div.onload = function() {
+        div.style.height = div.contentWindow.document.body.scrollHeight + 'px';
+      }
+    </script>
 		<!-- ------------------ -->
 		<br>
 		<br>
