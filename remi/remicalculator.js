@@ -19,6 +19,7 @@ const finalMoreOutput = document.querySelector("#finalMore");
 const horizonButton1 = document.querySelector("#horizon1");
 const horizonButton2 = document.querySelector("#horizon2");
 const horizonButton3 = document.querySelector("#horizon3");
+const horizonButton4 = document.querySelector("#horizon4");
 
 const horizonOutput = document.querySelector("#horizon");
 
@@ -43,16 +44,25 @@ function horizonChange(value) {
       horizonButton1.className = "horizonButton h-active";
       horizonButton2.className = "horizonButton";
       horizonButton3.className = "horizonButton";
+      horizonButton4.className = "horizonButton";
       break;
     case 15:
       horizonButton1.className = "horizonButton";
       horizonButton2.className = "horizonButton h-active";
       horizonButton3.className = "horizonButton";
+      horizonButton4.className = "horizonButton";
+      break;
+    case 20:
+      horizonButton1.className = "horizonButton";
+      horizonButton2.className = "horizonButton";
+      horizonButton3.className = "horizonButton h-active";
+      horizonButton4.className = "horizonButton";
       break;
     case 30:
       horizonButton1.className = "horizonButton";
       horizonButton2.className = "horizonButton";
-      horizonButton3.className = "horizonButton h-active";
+      horizonButton3.className = "horizonButton";
+      horizonButton4.className = "horizonButton h-active";
       break;
   }
 
@@ -123,8 +133,8 @@ function handleOnChange() {
   finalMoreOutput.textContent = formatter.format(more);
   var data = {
     labels: label_sa,
-    series: [{ "name": "Invested", "data": s1 }, { "name": " ", "data": s2 }, { "name": " ", "data": s3 }, 
-    { "name": "Saved", "data": s4 },{ "name": " ", "data": s5 },]
+    series: [{ "name": "Invested", "data": s1 }, { "name": " ", "data": s2 }, { "name": " ", "data": s3 },
+    { "name": "Saved", "data": s4 }, { "name": " ", "data": s5 },]
   };
 
   function ctPointLabels2(options) {
@@ -142,22 +152,22 @@ function handleOnChange() {
 
       if (chart instanceof Chartist.Line) {
         chart.on('draw', function (data) {
-          if ((data.type === 'point')&&(data.index==data.series.data.length-1)
-          &&((data.seriesIndex==3)||data.seriesIndex==0)) {
+          if ((data.type === 'point') && (data.index == data.series.data.length - 1)
+            && ((data.seriesIndex == 3) || data.seriesIndex == 0)) {
             data.group.elem('text', {
-              x: data.x + options.labelOffset.x+10,
+              x: data.x + options.labelOffset.x + 10,
               y: data.y + options.labelOffset.y,
-              style: 'text-anchor: right;fill:'+(data.seriesIndex==0 ? '#882aa0': (data.seriesIndex==3 ? '#000000' :'#D0D3D4'))
-            }, 'ct-label-seb').text((data.seriesIndex==0 ? 'Invested': (data.seriesIndex==3 ? 'Saved' :'')));  // 07.11.17 added ".y"
-          
-          
-          data.group.elem('text', {
-            x: data.x + options.labelOffset.x+10,
-            y: data.y + options.labelOffset.y+15,
-            style: 'text-anchor: right;fill:'+(data.seriesIndex==0 ? '#882aa0':(data.seriesIndex==3 ? '#000000' :'rgba(0,0,0,.2)'))
-          }, 'ct-label-seb').text('£'+parseInt(data.value.y/1000)+'m');  // 07.11.17 added ".y"
-        
-        }
+              style: 'text-anchor: right;fill:' + (data.seriesIndex == 0 ? '#882aa0' : (data.seriesIndex == 3 ? '#000000' : '#D0D3D4'))
+            }, 'ct-label-seb').text((data.seriesIndex == 0 ? 'Invested' : (data.seriesIndex == 3 ? 'Saved' : '')));  // 07.11.17 added ".y"
+
+
+            data.group.elem('text', {
+              x: data.x + options.labelOffset.x + 10,
+              y: data.y + options.labelOffset.y + 15,
+              style: 'text-anchor: right;fill:' + (data.seriesIndex == 0 ? '#882aa0' : (data.seriesIndex == 3 ? '#000000' : 'rgba(0,0,0,.2)'))
+            }, 'ct-label-seb').text('£' + parseInt(data.value.y / 1000) + 'm');  // 07.11.17 added ".y"
+
+          }
         });
       }
     }
