@@ -260,35 +260,64 @@ PAGE DE GARDE
 		<a href="p3_binance.html"><img class="rounded float-left" src="images/binance.jpg" width="25" height="25"></a>
 		<h3 name="mark1" style="color: crimson;">Our portfolio and targeted adjustments</h3>
 
-		<section>
-			<h4>Running Batch</h4>
-			<!-- TABLE CONSTRUCTION-->
-			<table id='table'>
-				<!-- HEADING FORMATION -->
-				<tr>
-					<th>Programme</th>
-					<th>Last Data</th>
-					<th>Completion time</th>
-				</tr>
+		<div class="row" style="margin-top: 0.5em">
+			<div class="col-lg-4">
+				<section>
+					<h4>Running Batch</h4>
+					<!-- TABLE CONSTRUCTION-->
+					<table id='table' style="font-size: smaller;margin: 0%;">
+						<!-- HEADING FORMATION -->
+						<tr>
+							<th>Programme</th>
+							<th>Completion time</th>
+						</tr>
+
+						<script>
+							$(document).ready(function () {
+								// FETCHING DATA FROM JSON FILE
+								$.getJSON("graphs/script_lastupdate.json",
+									function (data) {
+										var html_tab = '';
+										// ITERATING THROUGH OBJECTS
+										$.each(data, function (key, value) {
+											html_tab += '<tr><td>' + key + '</td>';
+											if ( key == '6_post_trades') {
+												html_tab += '<td>' + value.lst_update + '</td></tr>';
+											} else {
+												html_tab += '<td>' + value.lst_date + '</td></tr>' 
+											} value.lst_date
+										});
+										//INSERTING ROWS INTO TABLE
+										$('#table').append(html_tab);
+									});
+							});
+						</script>
+					</table>
+				</section>
+			</div>
+			<div class="col-lg-8">
+				<h4>Text Recap</h4>
+				<pre id="output" style="height: 500px; overflow-y: scroll;color: #eeff02;"></pre>
 
 				<script>
-					$(document).ready(function () {
-						// FETCHING DATA FROM JSON FILE
-						$.getJSON("graphs/script_lastupdate.json",
-							function (data) {
-								var html_tab = '';
-								// ITERATING THROUGH OBJECTS
-								$.each(data, function (key, value) {
-									html_tab += '<tr><td>' + key + '</td>';
-									html_tab += '<td>' + value.lst_date + '</td><td>' + value.lst_update + '</td></tr>';
-								});
-								//INSERTING ROWS INTO TABLE
-								$('#table').append(html_tab);
-							});
-					});
+					// Define the URL of your JSON file
+					const url = "graphs/script_lastupdate.json";
+
+					// Use Fetch API to read the JSON file
+					fetch(url)
+						.then(response => response.json())
+						.then(data => {
+							// Get the element you want to report
+							const element = data['3_0_orderbook_forwebsite'].msg_txt + '\n' + data['6_post_trades'].msg_txt;
+
+							// Display the element in HTML text
+							document.getElementById('output').innerHTML = `${element}`;
+						})
+						.catch(error => console.error(error));
 				</script>
-			</table>
-		</section>
+			</div>
+
+		</div>
 		<div class="row" style="margin-top: 0.5em">
 			<div class="col-lg-6">
 				<h4>Portfolio Value</br></h4>
@@ -337,7 +366,7 @@ PAGE DE GARDE
 				<div id="bar_positions_w" style="height: 400px;"></div>
 				<h6>Cryptos performance of the day</h6></br>
 				<div id="bar_positions_rtd" style="height: 300px;"></div>
-				<h6> Contribution to Portfolio Daily P&L <a id="wallet_pnl"> </a></h6></br>
+				<h6> Contribution to Portfolio Daily P&L<a id="wallet_pnl"> </a></h6></br>
 				<div id="bar_positions_pnl" style="height: 300px;"></div>
 			</div>
 
@@ -354,7 +383,7 @@ PAGE DE GARDE
 								csv_string_to_table(data, table_container);
 
 								var span_pnld = document.getElementById('wallet_pnl');
-								PnL_D = data.trim().split(/\r?\n|\r/)[1].split(',')[9]
+								PnL_D = data.trim().split(/\r?\n|\r/)[1].split(',')[14] + "(trading:"+data.trim().split(/\r?\n|\r/)[1].split(',')[15] +")" 
 								span_pnld.innerHTML += PnL_D;
 							});
 					});
@@ -406,7 +435,7 @@ PAGE DE GARDE
 													})
 												};
 												if (key0 == 'in%') {
-													html_tab = html_tab.replace('Last executed trade:', value.replace(':','')+ ', ');
+													html_tab = html_tab.replace('Last executed trade:', value.replace(':', '') + ', ');
 												};
 												html_tab += '</tr><tr><td>' + key0 + '</td>';
 
@@ -435,11 +464,6 @@ PAGE DE GARDE
 							.then(function (data) {
 								var table_container = document.getElementById('posttrade_trades_pnlD_recap');
 								csv_string_to_table(data, table_container);
-
-								// var span_pnld = document.getElementById('wallet_pnl0');
-								// PnL_D = 'a finir' data.trim().split(/\r?\n|\r/)[1].split(',')[9]
-								PnL_D = 'a finir' 
-								// span_pnld.innerHTML += PnL_D;
 							});
 					});
 				</script>
@@ -451,7 +475,7 @@ PAGE DE GARDE
 				<h4>Last Trades vs. Target</br></h4>
 				<h5>Check consistency between traded portfolio and initial target portfolio</br></h5>
 				<div class="col-lg-12">
-					<table id='trades_vs_target_details'></table>
+					<table id='trades_vs_target_details' style=" margin-bottom: 50px"></table>
 					<script>
 						$(document).ready(function () {
 							fetch('graphs/posttrade_trades_vs_target_details.csv')
@@ -461,10 +485,6 @@ PAGE DE GARDE
 								.then(function (data) {
 									var table_container = document.getElementById('trades_vs_target_details');
 									csv_string_to_table(data, table_container);
-
-									var span_pnld = document.getElementById('wallet_pnl');
-									PnL_D = data.trim().split(/\r?\n|\r/)[1].split(',')[9]
-									span_pnld.innerHTML += PnL_D;
 								});
 						});
 					</script>
@@ -473,7 +493,8 @@ PAGE DE GARDE
 
 
 		</div>
-		<h4 id="realized_track">Realized track</h4>
+		<h2 id="realized_track">Performance</h2>
+		<h3>Performance vs. Bitcoin and Cryptos Investable Universe</h3>
 		<div class="row" style="margin-top: 3em">
 			<div class="col-lg-4">
 				<h4>Today's return</br>
