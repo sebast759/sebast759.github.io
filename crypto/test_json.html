@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reading JSON file</title>
+</head>
+<body>
+	<pre id="output"></pre>
+
+	<script>
+		// Define the URL of your JSON file
+		const url = "graphs/script_lastupdate.json";
+
+		// Use Fetch API to read the JSON file
+		fetch(url)
+			.then(response => response.json())
+			.then(data => {
+				// Get the element you want to report
+				const element = data['6_post_trades'].msg_txt;
+
+				// Display the element in HTML text
+				document.getElementById('output').innerHTML = `The value of the exampleElement is: ${element}`;
+			})
+			.catch(error => console.error(error));
+	</script>
+</body>
+</html>
