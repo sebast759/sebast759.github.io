@@ -302,16 +302,17 @@ PAGE DE GARDE
 				<script>
 					// Define the URL of your JSON file
 					const url = "graphs/script_lastupdate.json";
-
 					// Use Fetch API to read the JSON file
 					fetch(url)
 						.then(response => response.json())
 						.then(data => {
 							// Get the element you want to report
-							const element = data['3_0_orderbook_forwebsite'].msg_txt + '\n' + data['6_post_trades'].msg_txt;
-
+							script_recap_text = data['3_0_orderbook_forwebsite'].msg_txt + '\n' + data['6_post_trades'].msg_txt;
+							document.getElementById('output').innerHTML = `${script_recap_text}`;
 							// Display the element in HTML text
-							document.getElementById('output').innerHTML = `${element}`;
+							trades_pnl_lstupdate = data['6_post_trades'].lst_update;
+							document.getElementById('output').innerHTML = `${trades_pnl_lstupdate}`;
+							
 						})
 						.catch(error => console.error(error));
 				</script>
@@ -453,7 +454,7 @@ PAGE DE GARDE
 				</table>
 			</div>
 			<div class="col-lg-6">
-				<h5>P&L vs arrival and vs last</br></h5>
+				<h5>P&L vs. arrival and vs. last</br></h5>
 				<table id='posttrade_trades_pnlD_recap'></table>
 				<script>
 					$(document).ready(function () {
