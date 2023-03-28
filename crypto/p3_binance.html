@@ -282,10 +282,10 @@ PAGE DE GARDE
 										$.each(data, function (key, value) {
 											html_tab += '<tr><td>' + key + '</td>';
 											if ( key == '6_post_trades') {
-												html_tab += '<td>' + value.lst_update + '</td></tr>';
+												html_tab += '<td>' + value.lst_date + value.lst_update.replace(' 2023 ','>>>>>').replace(' ','').split('>>>')[1]+'</td></tr>';
 											} else {
-												html_tab += '<td>' + value.lst_date + '</td></tr>' 
-											} value.lst_date
+												html_tab += '<td>' + value.lst_update + '</td></tr>' ;
+											} 
 										});
 										//INSERTING ROWS INTO TABLE
 										$('#table').append(html_tab);
@@ -297,25 +297,7 @@ PAGE DE GARDE
 			</div>
 			<div class="col-lg-8">
 				<h4>Text Recap</h4>
-				<pre id="output" style="height: 500px; overflow-y: scroll;color: #eeff02;"></pre>
-
-				<script>
-					// Define the URL of your JSON file
-					const url = "graphs/script_lastupdate.json";
-					// Use Fetch API to read the JSON file
-					fetch(url)
-						.then(response => response.json())
-						.then(data => {
-							// Get the element you want to report
-							script_recap_text = data['3_0_orderbook_forwebsite'].msg_txt + '\n' + data['6_post_trades'].msg_txt;
-							document.getElementById('output').innerHTML = `${script_recap_text}`;
-							// Display the element in HTML text
-							trades_pnl_lstupdate = data['6_post_trades'].lst_update;
-							document.getElementById('output').innerHTML = `${trades_pnl_lstupdate}`;
-							
-						})
-						.catch(error => console.error(error));
-				</script>
+				<pre id="script_recap_text" style="height: 500px; overflow-y: scroll;color: #eeff02;"></pre>
 			</div>
 
 		</div>
@@ -454,7 +436,7 @@ PAGE DE GARDE
 				</table>
 			</div>
 			<div class="col-lg-6">
-				<h5>P&L vs. arrival and vs. last</br></h5>
+				<h5>P&L vs. arrival and vs. last (as of <a id="lst_trd_update" style="color: #eeff02;font-size: smaller;"></a>)</br></h5>
 				<table id='posttrade_trades_pnlD_recap'></table>
 				<script>
 					$(document).ready(function () {
@@ -556,6 +538,22 @@ PAGE DE GARDE
 
 
 </body>
+<script>
+	// Define the URL of your JSON file
+	const url = "graphs/script_lastupdate.json";
+	// Use Fetch API to read the JSON file
+	fetch(url)
+		.then(response => response.json())
+		.then(data => {
+			// Get the element you want to report
+			script_recap_text = data['3_0_orderbook_forwebsite'].msg_txt + '\n' + data['6_post_trades'].msg_txt;
+			document.getElementById('script_recap_text').innerHTML = `${script_recap_text}`;
+			// Display the element in HTML text
+			lst_trd_update = data['6_post_trades'].lst_update;
+			document.getElementById('lst_trd_update').innerHTML = `${lst_trd_update}`;
+		})
+		.catch(error => console.error(error));
+</script>
 <script>
 	// create à new timestamp 
 	var timestamp = new Date().getTime();
