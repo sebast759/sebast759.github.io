@@ -49,6 +49,10 @@ PAGE DE GARDE
 					chart: {
 						title: 'Current Weights',
 					},
+					vAxis: {title: 'w%',textStyle: {color: "white"}},
+					hAxis: {textStyle: {color: "white"}},
+					
+					
 					backgroundColor: 'transparent',
 					legendTextStyle: { color: 'white' },
 					titleTextStyle: { color: 'white' },
@@ -73,6 +77,9 @@ PAGE DE GARDE
 					chart: {
 						// title: 'Performance Attribution',
 					},
+					vAxis: {title: 'Return%',textStyle: {color: "white"}},
+					hAxis: {textStyle: {color: "white"}},
+					colors: ['#fffff','green'],
 					backgroundColor: 'transparent',
 					legendTextStyle: { color: 'white' },
 					titleTextStyle: { color: 'white' },
@@ -96,10 +103,14 @@ PAGE DE GARDE
 					chart: {
 						// title: 'Performance Attribution',
 					},
+					vAxis: {title: 'P&L portfolio',textStyle: {color: "white"}},
+					hAxis: {textStyle: {color: "white"}},
+					colors: ['black','green'],
 					backgroundColor: 'transparent',
 					legendTextStyle: { color: 'white' },
 					titleTextStyle: { color: 'white' },
 				};
+				
 				var chart = new google.charts.Bar(document.getElementById('bar_positions_pnl'));
 				chart.draw(data, google.charts.Bar.convertOptions(options));
 			});
@@ -121,9 +132,12 @@ PAGE DE GARDE
 						title: 'Weights Target vs. Current',
 						subtitle: 'Target w and current weight', backgroundColor: 'black',
 					},
+					vAxis: {title: 'w% current vs. w% target',textStyle: {color: "white"}},
+					hAxis: {textStyle: {color: "white"}},
 					backgroundColor: 'transparent',
 					legendTextStyle: { color: 'white' },
 					titleTextStyle: { color: 'white' },
+					
 				};
 
 
@@ -146,8 +160,11 @@ PAGE DE GARDE
 				var options = {
 					chart: {
 						title: 'To be traded',
-						subtitle: 'Targeted adjustment', backgroundColor: 'black',
+						subtitle: 'Targetted adjustment \u0394w%', backgroundColor: 'black',
 					},
+					vAxis: {title: '\u0394w%',textStyle: {color: "white"}},
+					hAxis: {textStyle: {color: "white"}},
+					
 					backgroundColor: 'transparent',
 					legendTextStyle: { color: 'white' },
 					titleTextStyle: { color: 'white' },
