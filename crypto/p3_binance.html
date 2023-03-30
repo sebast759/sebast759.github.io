@@ -371,7 +371,8 @@ PAGE DE GARDE
 			</div>
 
 			<div class="col-lg-12">
-				<table id='order_positions_pa_futures'></table>
+				<h6> Detail of Portfolio Daily P&L<a id="wallet_pn2"> </a></h6></br>
+				<table id='order_positions_pa_futures' style="margin-top: 5px;"></table>
 				<script>
 					$(document).ready(function () {
 						fetch('graphs/order_positions_pa_futures.csv')
@@ -382,8 +383,10 @@ PAGE DE GARDE
 								var table_container = document.getElementById('order_positions_pa_futures');
 								csv_string_to_table(data, table_container);
 
+								PnL_D = data.trim().split(/\r?\n|\r/)[1].split(',')[14] + " (trading:"+data.trim().split(/\r?\n|\r/)[1].split(',')[15] +")" 
 								var span_pnld = document.getElementById('wallet_pnl');
-								PnL_D = data.trim().split(/\r?\n|\r/)[1].split(',')[14] + "(trading:"+data.trim().split(/\r?\n|\r/)[1].split(',')[15] +")" 
+								span_pnld.innerHTML += PnL_D;
+								var span_pnld = document.getElementById('wallet_pn2');
 								span_pnld.innerHTML += PnL_D;
 							});
 					});
