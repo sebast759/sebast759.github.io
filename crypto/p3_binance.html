@@ -278,6 +278,50 @@ PAGE DE GARDE
 		<h3 name="mark1" style="color: crimson;">Our portfolio and targeted adjustments</h3>
 
 		<div class="row" style="margin-top: 0.5em">
+			<div class="col-lg-6">
+				<h4>Portfolio Value</br></h4>
+
+				<!-- <iframe position="absolute" width="30%" height="200" id="grph2" src="graphs/order_positions_recap.html"
+					style="background-color:white"></iframe> -->
+
+				<table id='positions_recap'></table><br>
+				<table id='trades_reca2'></table>
+				<!-- HEADING FORMATION -->
+				<script>
+					$(document).ready(function () {
+						// FETCHING DATA FROM JSON FILE
+						$.getJSON("graphs/order_positions_recap.json",
+							function (data) {
+								html_tab = ''
+								$.each(data['positions recap'], function (key, value) {
+									if (key == 'as of') {
+										html_tab += '<tr><th colspan="5">Wallet Futures ' + key + ' ' + value + '</th></tr>';
+									}
+									else {
+										html_tab += '<td>' + key + '\n' + value + '</td>';
+									}
+
+								});
+								//INSERTING ROWS INTO TABLE
+								$('#positions_recap').append(html_tab);
+							});
+					});
+				</script>
+				
+				
+			</div>
+			<div class="col-lg-6">
+				<h4>Today's performance</br></h4>
+				<p class="float-left"><a href="#realized_track">>>Historical track, performance 3 days, 7 days</a></p>
+				<a href="graphs/order_binance_performance_1D.png" target="_blank"><img class="rounded float-left"
+						src="graphs/order_binance_performance_1D.png" id="grph1" width="100%"></a>
+			</div>
+			<!-- <div class="col-lg-12">
+				<iframe position="absolute" width="80%" height="600" id="grph2" src="graphs/order_position_futures.html"
+					style="background-color:white"></iframe>
+			</div> -->
+		</div>
+		<div class="row" style="margin-top: 0.5em">
 			<div class="col-lg-4">
 				<section>
 					<h4>Running Batch</h4>
@@ -313,53 +357,12 @@ PAGE DE GARDE
 				</section>
 			</div>
 			<div class="col-lg-8">
-				<h4>Text Recap</h4>
-				<pre id="script_recap_text" style="height: 500px; overflow-y: scroll;color: #eeff02;"></pre>
+				<h4>Last Log</h4>
+				<pre id="script_recap_text" style="height: 300px; overflow-y: scroll;color: #ecf0b7;"></pre>
 			</div>
 
 		</div>
-		<div class="row" style="margin-top: 0.5em">
-			<div class="col-lg-6">
-				<h4>Portfolio Value</br></h4>
-
-				<!-- <iframe position="absolute" width="30%" height="200" id="grph2" src="graphs/order_positions_recap.html"
-					style="background-color:white"></iframe> -->
-
-				<table id='positions_recap'>
-					<!-- HEADING FORMATION -->
-					<script>
-						$(document).ready(function () {
-							// FETCHING DATA FROM JSON FILE
-							$.getJSON("graphs/order_positions_recap.json",
-								function (data) {
-									html_tab = ''
-									$.each(data['positions recap'], function (key, value) {
-										if (key == 'as of') {
-											html_tab += '<tr><th colspan="5">Wallet Futures ' + key + ' ' + value + '</th></tr>';
-										}
-										else {
-											html_tab += '<td>' + key + '\n' + value + '</td>';
-										}
-
-									});
-									//INSERTING ROWS INTO TABLE
-									$('#positions_recap').append(html_tab);
-								});
-						});
-					</script>
-				</table>
-			</div>
-			<div class="col-lg-6">
-				<h4>Today's performance</br></h4>
-				<a href="graphs/order_binance_performance_1D.png" target="_blank"><img class="rounded float-left"
-						src="graphs/order_binance_performance_1D.png" id="grph1" width="100%"></a>
-				<p class="float-left"><a href="#realized_track">>>Historical track, performance 3 days, 7 days</a></p>
-			</div>
-			<!-- <div class="col-lg-12">
-				<iframe position="absolute" width="80%" height="600" id="grph2" src="graphs/order_position_futures.html"
-					style="background-color:white"></iframe>
-			</div> -->
-		</div>
+		
 		<div class="row" style="margin-top: 0.5em">
 			<div class="col-lg-12">
 				<h4>Current portfolio</h4></br>
@@ -420,40 +423,42 @@ PAGE DE GARDE
 			</div> -->
 			<div class="col-lg-6">
 				<h5>Amount traded</br></h5>
-				<table id='trades_recap'>
+				<table id='trades_recap'></table>
+				
 					<!-- HEADING FORMATION -->
-					<script>
-						$(document).ready(function () {
-							// FETCHING DATA FROM JSON FILE
-							$.getJSON("graphs/posttrade_trades_recap.json",
-								function (data) {
-									html_tab = ''
-									$.each(data, function (key0, value) {
-										$.each(data[key0], function (key, value) {
-											if (key == 'as of') {
-												if (key0 == 'in$') {
-													html_tab += '<tr><th></th><th colspan="5">Last executed trade: ' + value + '</th></tr><tr>';
-													$.each(data[key0], function (key, value) {
-														html_tab += '<th>' + key.replace('as of', '') + '</th>';
-													})
-												};
-												if (key0 == 'in%') {
-													html_tab = html_tab.replace('Last executed trade:', value.replace(':', '') + ', ');
-												};
-												html_tab += '</tr><tr><td>' + key0 + '</td>';
+				<script>
+					$(document).ready(function () {
+						// FETCHING DATA FROM JSON FILE
+						$.getJSON("graphs/posttrade_trades_recap.json",
+							function (data) {
+								html_tab = ''
+								$.each(data, function (key0, value) {
+									$.each(data[key0], function (key, value) {
+										if (key == 'as of') {
+											if (key0 == 'in$') {
+												html_tab += '<tr><th></th><th colspan="5">Last executed trade: ' + value + '</th></tr><tr>';
+												$.each(data[key0], function (key, value) {
+													html_tab += '<th>' + key.replace('as of', '') + '</th>';
+												})
+											};
+											if (key0 == 'in%') {
+												html_tab = html_tab.replace('Last executed trade:', value.replace(':', '') + ', ');
+											};
+											html_tab += '</tr><tr><td>' + key0 + '</td>';
 
-											}
-											else {
-												html_tab += '<td>' + value + '</td>';
-											}
-										});
+										}
+										else {
+											html_tab += '<td>' + value + '</td>';
+										}
 									});
-									//INSERTING ROWS INTO TABLE
-									$('#trades_recap').append(html_tab);
 								});
-						});
-					</script>
-				</table>
+								//INSERTING ROWS INTO TABLE
+								$('#trades_recap').append(html_tab);
+								$('#trades_reca2').append(html_tab);
+							});
+					});
+				</script>
+				
 			</div>
 			<div class="col-lg-6">
 				<h5>P&L vs. arrival and vs. last (as of <a id="lst_trd_update" style="color: #eeff02;font-size: smaller;"></a>)</br></h5>
