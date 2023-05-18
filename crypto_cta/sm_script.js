@@ -28,3 +28,4 @@ function csv_string_to_table(csv_string, element_to_insert_table) {
 
     element_to_insert_table.innerHTML += table;
 }
+
