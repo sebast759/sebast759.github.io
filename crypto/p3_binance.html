@@ -49,10 +49,10 @@ PAGE DE GARDE
 					chart: {
 						title: 'Current Weights',
 					},
-					vAxis: {title: 'w%',textStyle: {color: "white"}},
-					hAxis: {textStyle: {color: "white"}},
-					
-					
+					vAxis: { title: 'w%', textStyle: { color: "white" } },
+					hAxis: { textStyle: { color: "white" } },
+
+
 					backgroundColor: 'transparent',
 					legendTextStyle: { color: 'white' },
 					titleTextStyle: { color: 'white' },
@@ -77,9 +77,9 @@ PAGE DE GARDE
 					chart: {
 						// title: 'Performance Attribution',
 					},
-					vAxis: {title: 'Return%',textStyle: {color: "white"}},
-					hAxis: {textStyle: {color: "white"}},
-					colors: ['#fffff','green'],
+					vAxis: { title: 'Return%', textStyle: { color: "white" } },
+					hAxis: { textStyle: { color: "white" } },
+					colors: ['#fffff', 'green'],
 					backgroundColor: 'transparent',
 					legendTextStyle: { color: 'white' },
 					titleTextStyle: { color: 'white' },
@@ -103,14 +103,14 @@ PAGE DE GARDE
 					chart: {
 						// title: 'Performance Attribution',
 					},
-					vAxis: {title: 'P&L portfolio',textStyle: {color: "white"}},
-					hAxis: {textStyle: {color: "white"}},
-					colors: ['black','green'],
+					vAxis: { title: 'P&L portfolio', textStyle: { color: "white" } },
+					hAxis: { textStyle: { color: "white" } },
+					colors: ['black', 'green'],
 					backgroundColor: 'transparent',
 					legendTextStyle: { color: 'white' },
 					titleTextStyle: { color: 'white' },
 				};
-				
+
 				var chart = new google.charts.Bar(document.getElementById('bar_positions_pnl'));
 				chart.draw(data, google.charts.Bar.convertOptions(options));
 			});
@@ -132,12 +132,12 @@ PAGE DE GARDE
 						title: 'Weights Target vs. Current',
 						subtitle: 'Target w and current weight', backgroundColor: 'black',
 					},
-					vAxis: {title: 'w% current vs. w% target',textStyle: {color: "white"}},
-					hAxis: {textStyle: {color: "white"}},
+					vAxis: { title: 'w% current vs. w% target', textStyle: { color: "white" } },
+					hAxis: { textStyle: { color: "white" } },
 					backgroundColor: 'transparent',
 					legendTextStyle: { color: 'white' },
 					titleTextStyle: { color: 'white' },
-					
+
 				};
 
 
@@ -162,9 +162,9 @@ PAGE DE GARDE
 						title: 'To be traded',
 						subtitle: 'Targetted adjustment \u0394w%', backgroundColor: 'black',
 					},
-					vAxis: {title: '\u0394w%',textStyle: {color: "white"}},
-					hAxis: {textStyle: {color: "white"}},
-					
+					vAxis: { title: '\u0394w%', textStyle: { color: "white" } },
+					hAxis: { textStyle: { color: "white" } },
+
 					backgroundColor: 'transparent',
 					legendTextStyle: { color: 'white' },
 					titleTextStyle: { color: 'white' },
@@ -307,8 +307,8 @@ PAGE DE GARDE
 							});
 					});
 				</script>
-				
-				
+
+
 			</div>
 			<div class="col-lg-6">
 				<h4>Today's performance</br></h4>
@@ -342,11 +342,11 @@ PAGE DE GARDE
 										// ITERATING THROUGH OBJECTS
 										$.each(data, function (key, value) {
 											html_tab += '<tr><td>' + key + '</td>';
-											if ( key == '6_post_trades') {
-												html_tab += '<td>' + value.lst_date + value.lst_update.replace(' 2023 ','>>>>>').replace(' ','').split('>>>')[1]+'</td></tr>';
+											if (key == '6_post_trades') {
+												html_tab += '<td>' + value.lst_date + value.lst_update.replace(' 2023 ', '>>>>>').replace(' ', '').split('>>>')[1] + '</td></tr>';
 											} else {
-												html_tab += '<td>' + value.lst_update + '</td></tr>' ;
-											} 
+												html_tab += '<td>' + value.lst_update + '</td></tr>';
+											}
 										});
 										//INSERTING ROWS INTO TABLE
 										$('#table').append(html_tab);
@@ -362,7 +362,7 @@ PAGE DE GARDE
 			</div>
 
 		</div>
-		
+
 		<div class="row" style="margin-top: 0.5em">
 			<div class="col-lg-12">
 				<h4>Current portfolio</h4></br>
@@ -386,7 +386,7 @@ PAGE DE GARDE
 								var table_container = document.getElementById('order_positions_pa_futures');
 								csv_string_to_table(data, table_container);
 
-								PnL_D = data.trim().split(/\r?\n|\r/)[1].split(',')[14] + " (trading:"+data.trim().split(/\r?\n|\r/)[1].split(',')[15] +")" 
+								PnL_D = data.trim().split(/\r?\n|\r/)[1].split(',')[14] + " (trading:" + data.trim().split(/\r?\n|\r/)[1].split(',')[15] + ")"
 								var span_pnld = document.getElementById('wallet_pnl');
 								span_pnld.innerHTML += PnL_D;
 								var span_pnld = document.getElementById('wallet_pn2');
@@ -424,8 +424,8 @@ PAGE DE GARDE
 			<div class="col-lg-6">
 				<h5>Amount traded</br></h5>
 				<table id='trades_recap'></table>
-				
-					<!-- HEADING FORMATION -->
+
+				<!-- HEADING FORMATION -->
 				<script>
 					$(document).ready(function () {
 						// FETCHING DATA FROM JSON FILE
@@ -458,10 +458,11 @@ PAGE DE GARDE
 							});
 					});
 				</script>
-				
+
 			</div>
 			<div class="col-lg-6">
-				<h5>P&L vs. arrival and vs. last (as of <a id="lst_trd_update" style="color: #eeff02;font-size: smaller;"></a>)</br></h5>
+				<h5>P&L vs. arrival and vs. last (as of <a id="lst_trd_update"
+						style="color: #eeff02;font-size: smaller;"></a>)</br></h5>
 				<table id='posttrade_trades_pnlD_recap'></table>
 				<script>
 					$(document).ready(function () {
@@ -533,7 +534,7 @@ PAGE DE GARDE
 
 		<div class="row" style="margin-top: 3em">
 			<div class="col-lg-6">
-				<h4>Binance Official</br>
+				<h4>Binance Official Last 7 days</br>
 				</h4>
 				<p>Binance wallet value</p>
 				<div class="row">
@@ -541,22 +542,35 @@ PAGE DE GARDE
 							src="graphs/order_binance_realized_perf.png" id="grph2" width="500" height="500"></a>
 				</div>
 			</div><!-- /.col-lg-3 -->
+		</div><!-- /.col-lg-3 -->
+
+		<div class="row" style="margin-top: 3em">
 			<div class="col-lg-6">
-				<h4>Realized vs. simulated performance</br>
+				<h4>Binance Official since implemented (feb 2022)</br>
 				</h4>
-				<p>Check that official track the simulated performance</p>
+				<p>Official track vs. Bitcoin, Investable Universe</p>
 				<div class="row">
 					<a href="graphs/order_track_real_vs_bt.png" target="_blank"><img class="rounded float-left"
 							src="graphs/order_track_real_vs_bt.png" id="grph2" width="500" height="500"></a>
 				</div>
 			</div><!-- /.col-lg-3 -->
-		</div>
-		<div class="row" style="margin-top: 0.5em">
-			<div class="col-lg-12">
+			<div class="col-lg-6">
+				<h4>Tracking Error since implemented (feb 2022)</br>
+				</h4>
+				<p>Official track vs. Backtest, cumulated</p>
+				<div class="row">
+					<a href="graphs/order_trackingerror_real_vs_bt.png" target="_blank"><img class="rounded float-left"
+							src="graphs/order_trackingerror_real_vs_bt.png" id="grph2" width="500" height="500"></a>
+				</div>
+			</div><!-- /.col-lg-3 -->
+		</div><!-- /.col-lg-3 -->
+
+		<div class="row" style="margin-top: 3em">
+			<div class="col-lg-6">
 				<h4>Performance YTD</h4>
 				<div class="row">
 					<a href="graphs/bt_mozaic_1.png" target="_blank"><img class="rounded float-left"
-							src="graphs/bt_mozaic_1.png" id="grph2" width="100%" height="500"></a>
+							src="graphs/bt_mozaic_1.png" id="grph2" width="80%" height="300"></a>
 				</div>
 			</div>
 		</div>
@@ -568,17 +582,17 @@ PAGE DE GARDE
 					<a href="graphs/bt_binance_ON_realized_perf.png" target="_blank"><img class="rounded float-left"
 							src="graphs/bt_binance_ON_realized_perf.png" id="grph3" width="500" height="500"></a>
 				</div>
-				
+
 			</div>
 			<div class="col-lg-6">
 				<h4></br></h4>
 				<p>Recap 24h</p>
-				
+
 				<div class="row">
 					<a href="graphs/bt_binance_ON_24h_perf.png" target="_blank"><img class="rounded float-left"
 							src="graphs/bt_binance_ON_24h_perf.png" id="grph4" width="500" height="500"></a>
 				</div>
-				
+
 			</div>
 		</div>
 		<!-- FOOTER -->
