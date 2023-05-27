@@ -1,13 +1,13 @@
 26May23 12:00,arrival_price,totrd_qty,totrd_usd,px_trd,qty_trd,value_trd,PnLvsClose,PnLvsArrival,!!check!!,px_lst,PnLvsLast
-XMRUSDT,150.835,-0.15,$-23.0,nan,nan,$nan,$nan,$nan,!!!KO!!!,150.68,$nan
-ETHUSDT,1824.115,0.01,$15.0,1805.813,-0.01,$-25,$-0.3,$0.1,!!!KO!!!,1826.29,$-0.3
-XRPUSDT,nan,nan,$nan,0.466,81.00,$38,$0.2,$nan,!!!KO!!!,.4688,$0.2
-MATICUSDT,nan,nan,$nan,0.895,8.00,$7,$0.1,$nan,!!!KO!!!,.9119,$0.1
-LTCUSDT,nan,nan,$nan,86.890,0.70,$61,$0.1,$nan,!!!KO!!!,87.35,$0.3
-ATOMUSDT,nan,nan,$nan,10.452,-0.57,$-6,$-0.0,$nan,!!!KO!!!,10.543,$-0.1
-BNBUSDT,nan,nan,$nan,305.780,-0.05,$-15,$-0.1,$nan,!!!KO!!!,306.72,$-0.1
-DOTUSDT,nan,nan,$nan,5.217,-2.90,$-15,$-0.1,$nan,!!!KO!!!,5.235,$-0.1
-BCHUSDT,nan,nan,$nan,112.530,0.06,$7,$0.0,$nan,!!!KO!!!,113.06,$0.0
-LINKUSDT,nan,nan,$nan,6.310,1.58,$10,$0.1,$nan,!!!KO!!!,6.335,$0.0
-ADAUSDT,nan,nan,$nan,0.357,-45.00,$-16,$-0.3,$nan,!!!KO!!!,.363,$-0.3
-XLMUSDT,nan,nan,$nan,0.088,176.00,$15,$0.0,$nan,!!!KO!!!,.08782,$0.0
+XMRUSDT,150.835,-0.15,$-23.0,nan,nan,$nan,$nan,$nan,!!!KO!!!,151.18,$nan
+ETHUSDT,1824.115,0.01,$15.0,1805.813,-0.01,$-25,$-0.3,$0.1,!!!KO!!!,1830.62,$-0.3
+XRPUSDT,nan,nan,$nan,0.466,81.00,$38,$0.2,$nan,!!!KO!!!,.472,$0.5
+MATICUSDT,nan,nan,$nan,0.895,8.00,$7,$0.1,$nan,!!!KO!!!,.9191,$0.2
+LTCUSDT,nan,nan,$nan,86.890,0.70,$61,$0.1,$nan,!!!KO!!!,88.13,$0.9
+ATOMUSDT,nan,nan,$nan,10.452,-0.57,$-6,$-0.0,$nan,!!!KO!!!,10.577,$-0.1
+BNBUSDT,nan,nan,$nan,305.780,-0.05,$-15,$-0.1,$nan,!!!KO!!!,307.19,$-0.1
+DOTUSDT,nan,nan,$nan,5.217,-2.90,$-15,$-0.1,$nan,!!!KO!!!,5.277,$-0.2
+BCHUSDT,nan,nan,$nan,112.530,0.06,$7,$0.0,$nan,!!!KO!!!,113.4,$0.1
+LINKUSDT,nan,nan,$nan,6.310,1.58,$10,$0.1,$nan,!!!KO!!!,6.372,$0.1
+ADAUSDT,nan,nan,$nan,0.357,-45.00,$-16,$-0.3,$nan,!!!KO!!!,.3654,$-0.4
+XLMUSDT,nan,nan,$nan,0.088,176.00,$15,$0.0,$nan,!!!KO!!!,.0881,$0.1
