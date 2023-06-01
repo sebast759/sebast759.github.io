@@ -1,4 +1,4 @@
 ,realizedPnl,PnLvsArrival,PnLvsLast
-in$,-0.5,0.0,0.0
-in bp 188 traded,-29 bp,1 bp,1 bp
-in bp 326 AUMs,-17 bp,1 bp,0 bp
+in$,0.0,0.0,-0.0
+in bp 94 traded,2 bp,0 bp,-1 bp
+in bp 326 AUMs,1 bp,0 bp,-0 bp
