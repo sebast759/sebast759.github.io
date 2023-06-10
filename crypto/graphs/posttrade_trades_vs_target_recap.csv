@@ -1,8 +1,8 @@
 ,index,recap,
-0,#trades,10.0,09Jun23 13:47
-1,$net,6.0,+86bp
-2,$gross,167,+24.0%
-3,$buy,87,+12.5%
-4,$sell,-81,-11.6%
-5,$P&L vs. Last,-1.6,-23bp
-6,$P&L vs. Arrival,0.0,+0bp
+0,#trades,17,10Jun23 13:49
+1,$net,-121,-17.3%
+2,$gross,513,+73.5%
+3,$buy,196,+28.1%
+4,$sell,-317,-45.4%
+5,$P&L vs. Last,0.2,+2bp
+6,$P&L vs. Arrival,0.1,+2bp
