@@ -85,25 +85,28 @@ PAGE DE GARDE
             }
 
             let tree = {
-                1: {
-                    2: {
-                        4: '',
+                    1: {
+                    2: {},
+                    3: {
                         5: '',
                         6: '',
+                        7: '',
                     },
-                    3: {7:''},
-
+                    4: {},
+                    
                 },
             };
 
             let params = {
-                1: { trad: '<b>Mozaic+Overnight</b>',href:'graphs/backtest/tearsheets/Mozaic+Overnight.html' },
-                2: { trad: '<b>Mozaic</b>' ,href:'graphs/backtest/tearsheets/Mozaic.html'},
-                3: { trad: '<b>Overnight</b>' ,href:'graphs/backtest/tearsheets/4_Overnight.html'},
-                4: { trad: '<b>Strategy1<br>Mozaic L</b><br>[100%]' ,href:'graphs/backtest/tearsheets/1_Mozaic_L.html'},
-                5: { trad: '<b>Strategy2<br>Mozaic L Flexible</b><br>[0%,+100%]' ,href:'graphs/backtest/tearsheets/2_Mozaic_SL.html'},
-                6: { trad: '<b>Strategy3<br>Mozaic L/S</b><br>net:[0%,+100%]' ,href:'graphs/backtest/tearsheets/3_Mozaic_LS.html'},
-                7: { trad: '<b>Strategy4<br>Overnight</b><br>[-100%,+100%]' ,href:'graphs/backtest/tearsheets/4_Overnight.html'},
+                1: { trad: '<b>TAME STRATEGY</b>',href:'graphs/backtest/tearsheets/Mozaic+Overnight.html' },
+                3: { trad: '<b>Coins Rotation</b>' ,href:'graphs/backtest/tearsheets/Mozaic.html'},
+                2: { trad: '<b>Overnight</b>' ,href:'graphs/backtest/tearsheets/4_Overnight.html'},
+                4: { trad: '<b>Liquity</b>' ,href:'graphs/backtest/tearsheets/4_Overnight.html'},
+                5: { trad: '<b>Strategy1<br>Mozaic L</b><br>[100%]' ,href:'graphs/backtest/tearsheets/1_Mozaic_L.html'},
+                6: { trad: '<b>Strategy2<br>Mozaic L Flexible</b><br>[0%,+100%]' ,href:'graphs/backtest/tearsheets/2_Mozaic_SL.html'},
+                7: { trad: '<b>Strategy3<br>Mozaic L/S</b><br>net:[0%,+100%]' ,href:'graphs/backtest/tearsheets/3_Mozaic_LS.html'},
+                8: { trad: '<b>Strategy4<br>Overnight</b><br>[-100%,+100%]' ,href:'graphs/backtest/tearsheets/4_Overnight.html'},
+                
             };
 
             treeMaker.default(tree, {
