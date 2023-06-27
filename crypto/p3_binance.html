@@ -349,7 +349,7 @@ PAGE DE GARDE
 										$.each(data, function (key, value) {
 											html_tab += '<tr><td>' + key + '</td>';
 											if (key == '6_post_trades') {
-												html_tab += '<td>' + value.lst_date + value.lst_update.replace(' 2023 ', '>>>>>').replace(' ', '').split('>>>')[1] + '</td></tr>';
+												html_tab += '<td>' + value.lst_date + '</td></tr>';// + value.lst_update.replace(' 2023 ', '>>>>>').replace(' ', '').split('>>>')[1] + '</td></tr>';
 											} else {
 												html_tab += '<td>' + value.lst_update + '</td></tr>';
 											}
