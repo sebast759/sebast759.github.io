@@ -233,7 +233,7 @@ PAGE DE GARDE
 	</style>
 </head>
 
-<body>
+<body onload="startTime()">
 	<header>
 		<header>
 			<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark">
@@ -259,7 +259,8 @@ PAGE DE GARDE
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="p4_substrategies_factsheets.html" style="color:white "><img
-									class="rounded float-left" src="images/quantstats.jpg" width="18" height="18">Strategies Factsheets</a>
+									class="rounded float-left" src="images/quantstats.jpg" width="18"
+									height="18">Strategies Factsheets</a>
 						</li>
 						<a class="nav-link" href="p7_about.html" style="color:white;">About</a></li>
 
@@ -327,8 +328,10 @@ PAGE DE GARDE
 		<div class="row" style="margin-top: 0.5em">
 			<div class="col-lg-4">
 				<section>
-					<h4>Running Batch</h4>
+					<h4>Running Batch <div id="txt"></div>
+					</h4>
 					<!-- TABLE CONSTRUCTION-->
+
 					<table id='table' style="font-size: smaller;margin: 0%;">
 						<!-- HEADING FORMATION -->
 						<tr>
@@ -645,6 +648,25 @@ PAGE DE GARDE
 		})
 		.catch(error => console.error(error));
 </script>
+<script>
+	function startTime() {
+		const today = new Date();
+		let h = today.getHours();
+		let h2 = today.getUTCHours();
+		let m = today.getMinutes();
+		let s = today.getSeconds();
+		m = checkTime(m);
+		s = checkTime(s);
+		document.getElementById('txt').innerHTML = h + ":" + m + ":" + s + ' (' + h2 + ":" + m + ":" + s + ' UTC)';
+		setTimeout(startTime, (5 - s % 5) * 1000);
+	}
+
+	function checkTime(i) {
+		if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+		return i;
+	}
+</script>
+
 <script>
 	// create à new timestamp 
 	var timestamp = new Date().getTime();
