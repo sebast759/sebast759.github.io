@@ -1,5 +1,6 @@
-16Jul23 13:55,arrival_price,totrd_qty,totrd_usd,px_trd,qty_trd,value_trd,PnLvsLast,PnLvsArrival,!!check!!
-LTCUSDT,94.395,-0.08,$-7.0,94.370,-0.08,$-7,$-0.0,$-0.0,ok
-MATICUSDT,0.786,8.00,$6.0,0.786,8.00,$6,$-0.0,$-0.0,ok
-UNIUSDT,5.806,-1.00,$-6.0,5.799,-1.00,$-6,$-0.0,$-0.0,ok
-ETCUSDT,19.068,0.28,$5.0,19.056,0.28,$5,$0.0,$0.0,ok
+17Jul23 13:54,arrival_price,totrd_qty,totrd_usd,px_trd,qty_trd,value_trd,PnLvsLast,PnLvsArrival,!!check!!
+UNIUSDT,5.849,2.00,$12.0,5.845,2.00,$12,$0.0,$0.0,ok
+MATICUSDT,0.785,-12.00,$-9.0,0.783,-7.00,$-5,$-0.0,$-0.0,ok
+ADAUSDT,0.316,22.00,$7.0,0.316,22.00,$7,$-0.0,$0.0,ok
+XMRUSDT,164.985,-0.04,$-6.0,165.090,-0.04,$-6,$-0.0,$0.0,ok
+BNBUSDT,244.525,-0.02,$-5.0,nan,nan,$nan,$nan,$nan,!!!KO!!!
