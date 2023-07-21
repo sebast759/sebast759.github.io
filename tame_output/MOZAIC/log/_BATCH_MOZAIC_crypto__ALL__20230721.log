@@ -1,16 +1,7 @@
-2023-07-21 20:44:53,825 - 0_dowload_data.py launched successfully.
-2023-07-21 20:45:01,112 - 1_compute_mozaic_allocation.py launched successfully.
-2023-07-21 20:45:15,257 - 2_compute_mozaic_bt_ytd.py launched successfully.
-2023-07-21 20:45:38,673 - 3_pre_trade_orderbook.py launched successfully.
-2023-07-21 20:45:46,694 - 5_post_trade_checking.py launched successfully.
-2023-07-21 20:46:49,103 - 7_crypto_map.py launched successfully.
-2023-07-21 20:46:49,250 - Failed to launch 8_BTCvsALT_update.py: Command '['python', '8_BTCvsALT_update.py']' returned non-zero exit status 1.
-2023-07-21 20:48:11,989 - 9_pygithub_4website.py launched successfully.
-2023-07-21 20:48:13,285 - 6_send_mailrecap.py launched successfully.
-2023-07-21 21:08:35,156 - 0_dowload_data.py launched successfully.
-2023-07-21 21:08:42,290 - 1_compute_mozaic_allocation.py launched successfully.
-2023-07-21 21:08:55,532 - 2_compute_mozaic_bt_ytd.py launched successfully.
-2023-07-21 21:09:18,829 - 3_pre_trade_orderbook.py launched successfully.
-2023-07-21 21:09:27,274 - 5_post_trade_checking.py launched successfully.
-2023-07-21 21:10:34,342 - 7_crypto_map.py launched successfully.
-2023-07-21 21:10:34,536 - Failed to launch 8_BTCvsALT_update.py: Command '['python', '8_BTCvsALT_update.py']' returned non-zero exit status 1.
+2023-07-21 21:31:01,798 - 0_dowload_data.py launched successfully.
+2023-07-21 21:31:09,109 - 1_compute_mozaic_allocation.py launched successfully.
+2023-07-21 21:31:22,999 - 2_compute_mozaic_bt_ytd.py launched successfully.
+2023-07-21 21:31:45,948 - 3_pre_trade_orderbook.py launched successfully.
+2023-07-21 21:31:54,079 - 5_post_trade_checking.py launched successfully.
+2023-07-21 21:33:15,673 - 7_crypto_map.py launched successfully.
+2023-07-21 21:33:15,819 - Failed to launch 8_BTCvsALT_update.py: Command '['python', '8_BTCvsALT_update.py']' returned non-zero exit status 1.
