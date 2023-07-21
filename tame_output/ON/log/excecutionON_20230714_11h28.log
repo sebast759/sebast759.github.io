@@ -1,0 +1,108 @@
+2023-07-14 11:29:01,337
+ON program started 20230714 11:28:59,
+US time: 20230714 06:29:01
+2023-07-14 11:29:01,862
+the strat is currently running @ 14-07-2023 and the target positions is NEUTRAL
+2023-07-14 11:29:03,417
+CURRENT STATUS IS NEUTRAL
+-----
+return before 14h30:
+BTCUSDT-0.87%, ETHUSDT-0.61%, XRPUSDT-0.68%
+-----
+target alloc initial:BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+alloc target x rt%<0:BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target      0.0%    0.0%    0.0%
+rt_14h30    -0.01%  -0.01%  -0.01%
+w_target_f    0.0%    0.0%    0.0%
+2023-07-14 11:29:03,440
+Portfolio was rebalanced less than 2 hours ago, 12.8 hours ago
+2023-07-14 11:29:03,441
+Status: prev = NEUTRAL <> LONG = target
+2023-07-14 11:29:03,441
+the strat is currently running @ 14-07-2023 and the target positions is NEUTRAL
+the strat was previously run @ 2023-07-13 21:43:30 UTC, success:yes 
+   and the current positions is LONG
+2023-07-14 11:29:04,818
+positions_future #1
+2023-07-14 11:29:04,819
+      symbol  positionAmt entryPrice       markPrice  unRealizedProfit  \
+215  BTCUSDT       -0.002    31173.2  31162.00000000            0.0224   
+
+     value_usd   updateTime  AUMs_account        w%  
+215    -62.324  14Jul-10:15         297.7 -0.209372  
+2023-07-14 11:29:05,153
+------------------------------
+binance_account_balance
+2023-07-14 11:29:05,154
+  asset     balance withdrawAvailable   updateTime
+7  USDT  297.648953      294.55515296  14Jul-10:15
+2023-07-14 11:29:05,719
+------------------------------
+open_orders
+2023-07-14 11:29:05,720
+Empty DataFrame
+Columns: []
+Index: []
+2023-07-14 11:29:06,519
+------------------------------
+AUMS account:297
+
+2023-07-14 11:29:06,563
+--------------- compute_futures_order_book() ----------------
+2023-07-14 11:29:08,176
+----------------------------------------------------------------------
+#1 order(s) to place
+gross$: 62$ | net$: +62$
+gross%: 21% | net%: +21%
+ || w>0%  +21% | w<0%  0%
+----------------------------------------------------------------------
+PTF Expo% -20.8% >> 0.0% (current>>target)
+PTF expo $-62.0 >> $0 (current>>target)
+----------------------------------------------------------------------
+2023-07-14 11:29:08,208
+orders_ofthe_day
+2023-07-14 11:29:08,208
+                  ptf_usd  target_usd  totrd_usd  posttrd_usd    qty  \
+2023-07-14 11:29                                                       
+BTCUSDT             -62.0         0.0       62.0          0.0  0.002   
+
+                 posttrd_qty  posttrd_w      bid      ask  
+2023-07-14 11:29                                           
+BTCUSDT                0.000        0.0  31158.0  31158.1  
+2023-07-14 11:29:10,015
+binance_place_orders_peg 20230714_112910
+2023-07-14 11:29:10,531
+{'orderId': 171139187968, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'K384zjvlS92DcuRdALZjDH', 'price': '31139.50', 'avgPrice': '0.00', 'origQty': '0.002', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1689330550286}
+2023-07-14 11:29:11,893
+update 0: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-14 11:29:15,905
++BTCUSDT: bp5.0|
+2023-07-14 11:29:16,434
+update 1: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-14 11:29:20,446
++BTCUSDT: bp5.0|
+2023-07-14 11:29:20,981
+update 2: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-14 11:29:24,993
++BTCUSDT: bp5.0|
+2023-07-14 11:29:25,520
+update 3: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-14 11:29:29,521
++BTCUSDT: bp5.0|
+2023-07-14 11:29:30,049
+update 4: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-14 11:29:34,053
++BTCUSDT: bp5.0|
+2023-07-14 11:29:34,580
+update 5: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-14 11:34:19,503
+positions_future #1
+2023-07-14 11:34:19,504
+      symbol  positionAmt entryPrice       markPrice  unRealizedProfit  \
+215  BTCUSDT       -0.002    31173.2  31142.81863102          0.060763   
+
+     value_usd   updateTime  AUMs_account        w%  
+215 -62.285637  14Jul-10:15         297.7 -0.209216  
