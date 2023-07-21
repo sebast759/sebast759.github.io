@@ -1,0 +1,195 @@
+2023-07-13 18:00:12,358
+ON program started 20230713 18:00:12,
+US time: 20230713 13:00:12
+2023-07-13 18:00:12,679
+the strat is currently running @ 13-07-2023 and the target positions is NEUTRAL
+2023-07-13 18:00:14,234
+CURRENT STATUS IS LONG
+-----
+return before 14h30:
+BTCUSDT+1.74%, ETHUSDT+5.10%, XRPUSDT+29.72%
+-----
+target alloc initial:BTCUSDT+6.67%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+alloc target x rt%<0:BTCUSDT+6.67%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target      6.7%    0.0%    0.0%
+rt_14h30     0.02%   0.05%   0.30%
+w_target_f    6.7%    0.0%    0.0%
+2023-07-13 18:00:14,252
+Portfolio was rebalanced less than 2 hours ago, 4.1 hours ago
+2023-07-13 18:00:14,256
+Status: prev = LONG <> LONG = target
+2023-07-13 18:00:14,257
+the strat is currently running @ 13-07-2023 and the target positions is LONG
+the strat was previously run @ 2023-07-13 12:51:50 UTC, success:? 
+   and the current positions is LONG
+2023-07-13 18:00:15,635
+positions_future #0
+2023-07-13 18:00:15,636
+Empty DataFrame
+Columns: [symbol, positionAmt, entryPrice, markPrice, unRealizedProfit, value_usd, updateTime, AUMs_account, w%]
+Index: []
+2023-07-13 18:00:15,951
+------------------------------
+binance_account_balance
+2023-07-13 18:00:15,951
+  asset     balance withdrawAvailable   updateTime
+7  USDT  299.348046      299.34804567  13Jul-02:39
+2023-07-13 18:00:16,266
+------------------------------
+open_orders
+2023-07-13 18:00:16,266
+Empty DataFrame
+Columns: []
+Index: []
+2023-07-13 18:00:17,083
+------------------------------
+AUMS account:299
+
+2023-07-13 18:00:17,127
+--------------- compute_futures_order_book() ----------------
+2023-07-13 18:00:18,772
+----------------------------------------------------------------------
+#1 order(s) to place
+gross$: 31$ | net$: +31$
+gross%: 10% | net%: +10%
+ || w>0%  +10% | w<0%  0%
+----------------------------------------------------------------------
+PTF Expo% 0.0% >> 6.6% (current>>target)
+PTF expo $0.0 >> $19 (current>>target)
+----------------------------------------------------------------------
+2023-07-13 18:00:18,812
+orders_ofthe_day
+2023-07-13 18:00:18,813
+                  ptf_usd  target_usd  totrd_usd  posttrd_usd    qty  \
+2023-07-13 18:00                                                       
+BTCUSDT               0.0       19.97       31.0         31.0  0.001   
+
+                 posttrd_qty  posttrd_w      bid      ask  
+2023-07-13 18:00                                           
+BTCUSDT                0.001   0.103558  30819.4  30819.5  
+2023-07-13 18:00:20,708
+binance_place_orders_peg 20230713_180020
+2023-07-13 18:00:21,264
+{'orderId': 170799582054, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': '517Z5hRxwhQA6zn2IiGd9P', 'price': '30805.00', 'avgPrice': '0.00', 'origQty': '0.001', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1689267621149}
+2023-07-13 18:00:22,600
+update 0: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-13 18:00:26,610
++BTCUSDT: bp6.0|
+2023-07-13 18:00:27,146
+update 1: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-13 18:00:31,149
++BTCUSDT: bp4.0|
+2023-07-13 18:00:31,689
+update 2: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-13 18:00:35,695
++BTCUSDT: bp6.0|
+2023-07-13 18:00:36,229
+update 3: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-13 18:00:40,240
++BTCUSDT: bp1.0|
+2023-07-13 18:00:40,775
+update 4: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-13 18:00:44,777
++BTCUSDT: bp0.0|
+2023-07-13 18:00:45,302
+update 5: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-13 18:00:49,306
++BTCUSDT: bp0.0|
+2023-07-13 18:00:49,842
+update 6: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-13 18:00:53,857
++BTCUSDT: bp1.0|
+2023-07-13 18:00:54,396
+update 7: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-13 18:00:58,408
++BTCUSDT: bp2.0|
+2023-07-13 18:00:58,943
+update 8: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-13 18:01:02,955
++BTCUSDT: bp2.0|
+2023-07-13 18:01:03,494
+update 9: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-13 18:01:07,500
++BTCUSDT: bp4.0|
+2023-07-13 18:01:08,036
+update 10: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-13 18:01:12,046
++BTCUSDT: bp6.0|
+2023-07-13 18:01:12,581
+update 11: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-13 18:01:16,595
++BTCUSDT: bp6.0|
+2023-07-13 18:01:17,140
+update 12: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-13 18:01:21,148
++BTCUSDT: bp6.0|
+2023-07-13 18:01:21,690
+update 13: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-13 18:01:25,704
++BTCUSDT: bp6.0|
+2023-07-13 18:01:26,239
+update 14: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-13 18:01:30,248
++BTCUSDT: bp6.0|
+2023-07-13 18:01:30,248
+Adjustment limit #1 ... 
+ we cancel current orders and replace
+2023-07-13 18:01:30,249
+@+/-2.5bp limit 
+2023-07-13 18:01:30,249
+binance_cancel_and_replace_orders_peg 20230713_180130
+2023-07-13 18:01:31,049
+binance_place_orders_peg 20230713_180131
+2023-07-13 18:01:31,588
+{'orderId': 170799992054, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'k5O1ve7RuFCunWOkfkCGPP', 'price': '30818.70', 'avgPrice': '0.00', 'origQty': '0.001', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1689267691456}
+2023-07-13 18:01:32,128
+update 0: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-13 18:01:36,139
++BTCUSDT: bp2.0|
+2023-07-13 18:01:36,672
+update 1: filled 0 / 1 () | working 1 / 1 (+BTCUSDT)
+2023-07-13 18:01:40,684
++BTCUSDT: bp3.0|
+2023-07-13 18:01:41,220
+update 2: filled 1 / 1 (+BTCUSDT) | working 0 / 1 ()
+2023-07-13 18:01:45,980
+Trades of the day
+in$
+as of: 13Jul 17:01>>17:01 (#trades: 1)
+trade net: +31.0 (+10.4%), trade gross: +31.0 (+10.4%), BUY: +31.0 (+10.4%), SELL: +0.0 (+0.0%)
+fees: $ 0.005 (1.6bp)
+2023-07-13 18:01:46,366
+Trades: 
+Filled #1
+______________________________________________
+                   in$ | in bp 30 traded | in bp 299 AUMs
+realizedPnl    +0      | +0      | +0     
+PnLvsArrival   +0      | +0      | +0     
+PnLvsLast      +0      | +0      | +0     
+______________________________________________
+                 | Value$ | PnL Arrival/Last 
+______________________________________________
+BTC:+0.001@30818.7 | +31$ | 0/-0
+2023-07-13 18:01:47,423
+***************************
+Positions after orders
+***************************
+2023-07-13 18:01:47,430
+      symbol  qty_ptf    execP            lstP  P&L[U]  value_usd  \
+215  BTCUSDT    0.001  30818.7  30815.65213725  -0.003     30.816   
+
+      updateTime   AUMs     w%  
+215  13Jul-17:01  299.3  0.103  
+2023-07-13 18:01:47,436
+***************************
+2023-07-13 18:01:47,772
+1 STOP orders will be placed
+2023-07-13 18:01:47,773
+@+/-500.0bp limit
+2023-07-13 18:01:47,774
+binance_place_orders_peg 20230713_180147
+2023-07-13 18:01:48,369
+{'orderId': 170800116241, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'TfDQr5gjpXskR3QBNrCiG9', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.001', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'STOP_MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '29271.10', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'STOP_MARKET', 'updateTime': 1689267708254}
