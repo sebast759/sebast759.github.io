@@ -1,7 +1,0 @@
-2023-07-22 17:31:38,667 - 0_dowload_data.py launched successfully.
-2023-07-22 17:31:46,028 - 1_compute_mozaic_allocation.py launched successfully.
-2023-07-22 17:31:57,976 - 2_compute_mozaic_bt_ytd.py launched successfully.
-2023-07-22 17:32:21,566 - 3_pre_trade_orderbook.py launched successfully.
-2023-07-22 17:32:31,075 - 5_post_trade_checking.py launched successfully.
-2023-07-22 17:34:12,873 - 7_crypto_map.py launched successfully.
-2023-07-22 17:34:13,105 - Failed to launch 8_BTCvsALT_update.py: Command '['python', '8_BTCvsALT_update.py']' returned non-zero exit status 1.
