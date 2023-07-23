@@ -1,7 +1,7 @@
-2023-07-23 20:31:23,757 - 0_dowload_data.py launched successfully.
-2023-07-23 20:31:30,779 - 1_compute_mozaic_allocation.py launched successfully.
-2023-07-23 20:31:43,906 - 2_compute_mozaic_bt_ytd.py launched successfully.
-2023-07-23 20:32:09,545 - 3_pre_trade_orderbook.py launched successfully.
-2023-07-23 20:32:18,372 - 5_post_trade_checking.py launched successfully.
-2023-07-23 20:33:16,225 - 7_crypto_map.py launched successfully.
-2023-07-23 20:33:27,795 - 8_BTCvsALT_update.py launched successfully.
+2023-07-23 21:31:33,500 - 0_dowload_data.py launched successfully.
+2023-07-23 21:31:40,506 - 1_compute_mozaic_allocation.py launched successfully.
+2023-07-23 21:31:53,140 - 2_compute_mozaic_bt_ytd.py launched successfully.
+2023-07-23 21:32:17,976 - 3_pre_trade_orderbook.py launched successfully.
+2023-07-23 21:32:26,678 - 5_post_trade_checking.py launched successfully.
+2023-07-23 21:33:33,562 - 7_crypto_map.py launched successfully.
+2023-07-23 21:33:45,507 - 8_BTCvsALT_update.py launched successfully.
