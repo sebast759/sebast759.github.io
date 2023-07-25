@@ -1,4 +1,4 @@
 25Jul23 14:01,arrival_price,totrd_qty,totrd_usd,px_trd,qty_trd,value_trd,PnLvsLast,PnLvsArrival,!!check!!
 UNIUSDT,5.765,-5.00,$-29.0,5.773,-5.00,$-29,$0.1,$0.0,ok
-DOGEUSDT,0.077,340.00,$26.0,0.077,340.00,$26,$-0.1,$0.0,ok
-AVAXUSDT,13.393,-1.00,$-13.0,13.541,-1.00,$-14,$0.3,$0.1,ok
+DOGEUSDT,0.077,340.00,$26.0,0.077,340.00,$26,$0.1,$0.0,ok
+AVAXUSDT,13.393,-1.00,$-13.0,13.541,-1.00,$-14,$0.2,$0.1,ok
