@@ -1,7 +1,7 @@
-2023-07-25 06:31:16,241 - 0_dowload_data.py launched successfully.
-2023-07-25 06:31:23,337 - 1_compute_mozaic_allocation.py launched successfully.
-2023-07-25 06:31:35,375 - 2_compute_mozaic_bt_ytd.py launched successfully.
-2023-07-25 06:31:58,580 - 3_pre_trade_orderbook.py launched successfully.
-2023-07-25 06:32:10,988 - 5_post_trade_checking.py launched successfully.
-2023-07-25 06:33:32,955 - 7_crypto_map.py launched successfully.
-2023-07-25 06:33:45,161 - 8_BTCvsALT_update.py launched successfully.
+2023-07-25 07:31:00,775 - 0_dowload_data.py launched successfully.
+2023-07-25 07:31:08,424 - 1_compute_mozaic_allocation.py launched successfully.
+2023-07-25 07:31:21,370 - 2_compute_mozaic_bt_ytd.py launched successfully.
+2023-07-25 07:31:25,606 - Failed to launch 3_pre_trade_orderbook.py: Command '['python', '3_pre_trade_orderbook.py']' returned non-zero exit status 1.
+2023-07-25 07:31:38,337 - 5_post_trade_checking.py launched successfully.
+2023-07-25 07:32:57,839 - 7_crypto_map.py launched successfully.
+2023-07-25 07:33:10,107 - 8_BTCvsALT_update.py launched successfully.
