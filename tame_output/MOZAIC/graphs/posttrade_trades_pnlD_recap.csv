@@ -1,4 +1,4 @@
-,PnLvsLast,realizedPnl
-in$,0.5,4.0
-in bp vs. 110 traded,46 bp,365 bp
-in bp vs. 814 AUMs,6 bp,49 bp
+,PnLvsLast,PnLvsArrival,realizedPnl
+in$,-0.0,0.1,-1.0
+in bp vs. 158 traded,-1 bp,4 bp,-63 bp
+in bp vs. 804 AUMs,-0 bp,1 bp,-12 bp
