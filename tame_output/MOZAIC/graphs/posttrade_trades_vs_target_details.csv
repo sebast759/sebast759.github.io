@@ -1,5 +1,5 @@
 26Jul23 14:03,arrival_price,totrd_qty,totrd_usd,px_trd,qty_trd,value_trd,PnLvsLast,PnLvsArrival,!!check!!
-SOLUSDT,24.581,-1.00,$-25.0,24.448,-1.00,$-24,$0.1,$-0.1,ok
+SOLUSDT,24.581,-1.00,$-25.0,24.448,-1.00,$-24,$-0.4,$-0.1,ok
 LINKUSDT,7.565,2.67,$20.0,7.550,2.67,$20,$0.0,$0.0,ok
 XMRUSDT,162.575,-0.11,$-18.0,nan,nan,$nan,$nan,$nan,!!!KO!!!
 DOGEUSDT,0.079,168.00,$13.0,0.079,168.00,$13,$0.0,$0.0,ok
