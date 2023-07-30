@@ -1,0 +1,69 @@
+2023-07-30 20:14:32,739
+ON program started 20230730 20:14:32,
+US time: 20230730 15:14:32
+2023-07-30 20:14:34,144
+the strat is currently running @ 30-07-2023 and the target positions is LONG
+2023-07-30 20:14:35,805
+CURRENT STATUS IS LONG
+-----
+return before 14h30:
+BTCUSDT+0.28%, ETHUSDT-0.00%, XRPUSDT+0.99%
+-----
+target alloc initial:BTCUSDT+16.67%, ETHUSDT+16.67%, XRPUSDT+16.67%
+-----
+alloc target x rt%<0:BTCUSDT+16.67%, ETHUSDT+16.67%, XRPUSDT+16.67%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target     16.7%   16.7%   16.7%
+rt_14h30     0.00%  -0.00%   0.01%
+w_target_f   16.7%   16.7%   16.7%
+2023-07-30 20:14:35,807
+Portfolio was rebalanced less than 2 hours ago, 6.7 hours ago
+2023-07-30 20:14:35,814
+Status: prev = LONG <> NEUTRAL = target
+2023-07-30 20:14:35,816
+the strat is currently running @ 30-07-2023 and the target positions is LONG
+the strat was previously run @ 2023-07-30 12:30:33 UTC, success:yes 
+   and the current positions is NEUTRAL
+2023-07-30 20:14:37,555
+positions_future #3
+2023-07-30 20:14:37,555
+      symbol  positionAmt entryPrice       markPrice  unRealizedProfit  value_usd   updateTime  AUMs_account        w%
+218  BTCUSDT        0.002    29365.5  29342.43953995         -0.046121  58.684879  30Jul-18:43         295.4  0.198663
+108  XRPUSDT       68.800     0.7157      0.71637263          0.046277  49.286437  30Jul-18:32         295.4  0.166847
+134  ETHUSDT        0.026    1875.59   1877.47000000          0.048880  48.814220  30Jul-18:38         295.4  0.165248
+2023-07-30 20:14:38,071
+------------------------------
+binance_account_balance
+2023-07-30 20:14:38,072
+  asset     balance withdrawAvailable   updateTime
+5  USDT  295.350139      287.55805484  30Jul-18:43
+2023-07-30 20:14:39,086
+------------------------------
+open_orders
+2023-07-30 20:14:39,086
+Empty DataFrame
+Columns: []
+Index: []
+2023-07-30 20:14:39,928
+------------------------------
+AUMS account:295
+
+2023-07-30 20:14:39,933
+--------------- compute_futures_order_book() ----------------
+2023-07-30 20:14:41,551
+----------------------------------------------------------------------
+#0 order(s) to place
+gross$: 0$ | net$: +0$
+gross%: 0% | net%: +0%
+ || w>0%  +0% | w<0%  0%
+----------------------------------------------------------------------
+PTF Expo% 53.1% >> 50.0% (current>>target)
+PTF expo $157.0 >> $147 (current>>target)
+----------------------------------------------------------------------
+2023-07-30 20:14:41,554
+orders_ofthe_day
+2023-07-30 20:14:41,554
+Empty DataFrame
+Columns: [ptf_usd, target_usd, totrd_usd, posttrd_usd, qty, posttrd_qty, posttrd_w, bid, ask]
+Index: []
