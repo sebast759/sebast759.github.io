@@ -1,0 +1,72 @@
+2023-07-13 11:55:30,124
+ON program started 20230713 11:55:28,
+US time: 20230713 06:55:30
+2023-07-13 11:55:30,264
+the strat is currently running @ 13-07-2023 and the target positions is NEUTRAL
+2023-07-13 11:55:31,867
+CURRENT STATUS IS LONG
+-----
+return before 14h30:
+BTCUSDT+0.87%, ETHUSDT+0.80%, XRPUSDT+0.13%
+-----
+target alloc initial:BTCUSDT+6.67%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+alloc target x rt%<0:BTCUSDT+6.67%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target      6.7%    0.0%    0.0%
+rt_14h30     0.01%   0.01%   0.00%
+w_target_f    6.7%    0.0%    0.0%
+2023-07-13 11:55:31,887
+Portfolio was rebalanced less than 2 hours ago, 20.3 hours ago
+2023-07-13 11:55:31,890
+Status: prev = LONG <> NEUTRAL = target
+2023-07-13 11:55:31,891
+the strat is currently running @ 13-07-2023 and the target positions is LONG
+the strat was previously run @ 2023-07-10 14:39:00 UTC, success:yes 
+   and the current positions is NEUTRAL
+2023-07-13 11:55:33,221
+positions_future #0
+2023-07-13 11:55:33,221
+Empty DataFrame
+Columns: [symbol, positionAmt, entryPrice, markPrice, unRealizedProfit, value_usd, updateTime, AUMs_account, w%]
+Index: []
+2023-07-13 11:55:33,523
+------------------------------
+binance_account_balance
+2023-07-13 11:55:33,523
+  asset     balance withdrawAvailable   updateTime
+7  USDT  299.348046      299.34804567  13Jul-02:39
+2023-07-13 11:55:33,822
+------------------------------
+open_orders
+2023-07-13 11:55:33,823
+Empty DataFrame
+Columns: []
+Index: []
+2023-07-13 11:55:34,625
+------------------------------
+AUMS account:299
+
+2023-07-13 11:55:34,674
+--------------- compute_futures_order_book() ----------------
+2023-07-13 11:55:36,299
+----------------------------------------------------------------------
+#1 order(s) to place
+gross$: 31$ | net$: +31$
+gross%: 10% | net%: +10%
+ || w>0%  +10% | w<0%  0%
+----------------------------------------------------------------------
+PTF Expo% 0.0% >> 6.6% (current>>target)
+PTF expo $0.0 >> $19 (current>>target)
+----------------------------------------------------------------------
+2023-07-13 11:55:36,330
+orders_ofthe_day
+2023-07-13 11:55:36,330
+                  ptf_usd  target_usd  totrd_usd  posttrd_usd    qty  \
+2023-07-13 11:55                                                       
+BTCUSDT               0.0       19.97       31.0         31.0  0.001   
+
+                 posttrd_qty  posttrd_w      bid      ask  
+2023-07-13 11:55                                           
+BTCUSDT                0.001   0.103558  30576.9  30577.0  
