@@ -1,7 +1,0 @@
-2023-07-31 18:29:49,428 - Failed to launch 0_dowload_data.py: Command '['python', '0_dowload_data.py']' returned non-zero exit status 1.
-2023-07-31 18:29:56,503 - Failed to launch 1_compute_mozaic_allocation.py: Command '['python', '1_compute_mozaic_allocation.py']' returned non-zero exit status 1.
-2023-07-31 18:30:12,967 - Failed to launch 2_compute_mozaic_bt_ytd.py: Command '['python', '2_compute_mozaic_bt_ytd.py']' returned non-zero exit status 1.
-2023-07-31 18:31:32,735 - Failed to launch 3_pre_trade_orderbook.py: Command '['python', '3_pre_trade_orderbook.py']' returned non-zero exit status 1.
-2023-07-31 18:31:45,332 - Failed to launch 5_post_trade_checking.py: Command '['python', '5_post_trade_checking.py']' returned non-zero exit status 1.
-2023-07-31 18:33:08,165 - Failed to launch 7_crypto_map.py: Command '['python', '7_crypto_map.py']' returned non-zero exit status 1.
-2023-07-31 18:33:33,551 - Failed to launch 8_BTCvsALT_update.py: Command '['python', '8_BTCvsALT_update.py']' returned non-zero exit status 1.
