@@ -1,7 +1,7 @@
-2023-08-02 01:31:15,421 - 0_dowload_data.py launched successfully.
-2023-08-02 01:31:22,865 - 1_compute_mozaic_allocation.py launched successfully.
-2023-08-02 01:31:36,911 - Failed to launch 2_compute_mozaic_bt_ytd.py: Command '['python', '2_compute_mozaic_bt_ytd.py']' returned non-zero exit status 1.
-2023-08-02 01:32:01,557 - 3_pre_trade_orderbook.py launched successfully.
-2023-08-02 01:32:13,316 - 5_post_trade_checking.py launched successfully.
-2023-08-02 01:33:27,795 - 7_crypto_map.py launched successfully.
-2023-08-02 01:33:39,944 - 8_BTCvsALT_update.py launched successfully.
+2023-08-02 02:31:43,091 - 0_dowload_data.py launched successfully.
+2023-08-02 02:31:52,315 - 1_compute_mozaic_allocation.py launched successfully.
+2023-08-02 02:32:06,801 - Failed to launch 2_compute_mozaic_bt_ytd.py: Command '['python', '2_compute_mozaic_bt_ytd.py']' returned non-zero exit status 1.
+2023-08-02 02:32:31,330 - 3_pre_trade_orderbook.py launched successfully.
+2023-08-02 02:32:41,728 - 5_post_trade_checking.py launched successfully.
+2023-08-02 02:34:01,790 - 7_crypto_map.py launched successfully.
+2023-08-02 02:34:16,316 - 8_BTCvsALT_update.py launched successfully.
