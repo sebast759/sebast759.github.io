@@ -1,0 +1,7 @@
+2023-08-02 13:31:11,063 - 0_dowload_data.py launched successfully.
+2023-08-02 13:31:18,740 - 1_compute_mozaic_allocation.py launched successfully.
+2023-08-02 13:31:32,159 - 2_compute_mozaic_bt_ytd.py launched successfully.
+2023-08-02 13:31:56,730 - 3_pre_trade_orderbook.py launched successfully.
+2023-08-02 13:32:07,094 - 5_post_trade_checking.py launched successfully.
+2023-08-02 13:33:29,973 - 7_crypto_map.py launched successfully.
+2023-08-02 13:33:42,282 - 8_BTCvsALT_update.py launched successfully.
