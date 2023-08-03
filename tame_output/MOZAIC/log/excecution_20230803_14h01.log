@@ -1,0 +1,100 @@
+2023-08-03 14:01:05,579 last trades where done more than 6 hours ago: ok
+2023-08-03 14:01:12,025 ------------------------------
+open_orders
+2023-08-03 14:01:12,025 Empty DataFrame
+Columns: []
+Index: []
+2023-08-03 14:01:23,213 binance_place_orders_peg 20230803_140123
+2023-08-03 14:01:23,634 {'orderId': 177389741871, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': '7jzpgj02l9jIfQWzgoWayf', 'price': '29161.10', 'avgPrice': '0.00', 'origQty': '0.001', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071283527}
+2023-08-03 14:01:24,052 {'orderId': 31567084257, 'symbol': 'DOGEUSDT', 'status': 'NEW', 'clientOrderId': '7gvuYtGXq8M1ezfSTA3XeY', 'price': '0.073900', 'avgPrice': '0.00', 'origQty': '323', 'executedQty': '0', 'cumQty': '0', 'cumQuote': '0.000000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.000000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071283945}
+2023-08-03 14:01:24,472 {'orderId': 27231383848, 'symbol': 'SOLUSDT', 'status': 'NEW', 'clientOrderId': 'AHqb5TfMfSnmxI9EP0T14R', 'price': '22.8700', 'avgPrice': '0.00', 'origQty': '1', 'executedQty': '0', 'cumQty': '0', 'cumQuote': '0.0000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071284364}
+2023-08-03 14:01:24,893 {'orderId': 9892454915, 'symbol': 'XMRUSDT', 'status': 'NEW', 'clientOrderId': 'nsCjswdQpKykjL5Rx5xAy5', 'price': '160.30', 'avgPrice': '0.00', 'origQty': '0.104', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071284785}
+2023-08-03 14:01:25,313 {'orderId': 21975793104, 'symbol': 'BCHUSDT', 'status': 'NEW', 'clientOrderId': 'xdUw9HsbwQ7pl6Fbx9ZiEC', 'price': '228.64', 'avgPrice': '0.00', 'origQty': '0.069', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071285206}
+2023-08-03 14:01:25,732 {'orderId': 15503297236, 'symbol': 'AVAXUSDT', 'status': 'NEW', 'clientOrderId': 'pHvZ7FLE6ARMmPa7N1jWe4', 'price': '12.5030', 'avgPrice': '0.00', 'origQty': '1', 'executedQty': '0', 'cumQty': '0', 'cumQuote': '0.0000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071285625}
+2023-08-03 14:01:26,151 {'orderId': 19184595716, 'symbol': 'UNIUSDT', 'status': 'NEW', 'clientOrderId': 'Ro3S27pmJHDrNzUbqYOokE', 'price': '6.1790', 'avgPrice': '0.00', 'origQty': '2', 'executedQty': '0', 'cumQty': '0', 'cumQuote': '0.0000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071286044}
+2023-08-03 14:01:26,572 {'orderId': 18115223664, 'symbol': 'ETCUSDT', 'status': 'NEW', 'clientOrderId': 'YgDBHt9XaomQWS8WsWwmrR', 'price': '18.006', 'avgPrice': '0.00', 'origQty': '0.62', 'executedQty': '0.00', 'cumQty': '0.00', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071286464}
+2023-08-03 14:01:26,992 {'orderId': 25523383396, 'symbol': 'LTCUSDT', 'status': 'NEW', 'clientOrderId': 'h3RkLTPnPxctfl0zLfQOCZ', 'price': '86.49', 'avgPrice': '0.00', 'origQty': '0.109', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071286885}
+2023-08-03 14:01:27,412 {'orderId': 48438268127, 'symbol': 'BNBUSDT', 'status': 'NEW', 'clientOrderId': 'lwPDNba77V8yGJf7cKTH6k', 'price': '240.900', 'avgPrice': '0.00', 'origQty': '0.03', 'executedQty': '0.00', 'cumQty': '0.00', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071287305}
+2023-08-03 14:01:27,833 {'orderId': 38715465560, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'EE76XaK0j2hypKXOOJzCY5', 'price': '0.6687', 'avgPrice': '0.00', 'origQty': '9.1', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071287725}
+2023-08-03 14:01:33,071 update 1/5: filled 0 / 11 () | working 11 / 11 (+BTCUSDT,-DOGEUSDT,-SOLUSDT,+XMRUSDT,-BCHUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,-LTCUSDT,+BNBUSDT,-XRPUSDT)
+2023-08-03 14:01:36,072 +BTCUSDT: bp13.0|-DOGEUSDT: bp12.0|-SOLUSDT: bp11.0|+XMRUSDT: bp12.0|-BCHUSDT: bp12.0|+AVAXUSDT: bp13.0|+UNIUSDT: bp15.0|+ETCUSDT: bp13.0|-LTCUSDT: bp9.0|+BNBUSDT: bp14.0|-XRPUSDT: bp10.0|
+2023-08-03 14:01:40,644 update 2/5: filled 1 / 11 (-DOGEUSDT) | working 10 / 11 (+BTCUSDT,-SOLUSDT,+XMRUSDT,-BCHUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,-LTCUSDT,+BNBUSDT,-XRPUSDT)
+2023-08-03 14:01:43,645 +BTCUSDT: bp18.0|-SOLUSDT: bp5.0|+XMRUSDT: bp13.0|-BCHUSDT: bp4.0|+AVAXUSDT: bp15.0|+UNIUSDT: bp18.0|+ETCUSDT: bp16.0|-LTCUSDT: bp8.0|+BNBUSDT: bp14.0|-XRPUSDT: bp6.0|
+2023-08-03 14:01:48,225 update 3/5: filled 2 / 11 (-DOGEUSDT,-BCHUSDT) | working 9 / 11 (+BTCUSDT,-SOLUSDT,+XMRUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,-LTCUSDT,+BNBUSDT,-XRPUSDT)
+2023-08-03 14:01:51,227 +BTCUSDT: bp17.0|-SOLUSDT: bp7.0|+XMRUSDT: bp14.0|+AVAXUSDT: bp19.0|+UNIUSDT: bp19.0|+ETCUSDT: bp18.0|-LTCUSDT: bp7.0|+BNBUSDT: bp15.0|-XRPUSDT: bp3.0|
+2023-08-03 14:01:55,799 update 4/5: filled 3 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT) | working 8 / 11 (+BTCUSDT,+XMRUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,-LTCUSDT,+BNBUSDT,-XRPUSDT)
+2023-08-03 14:01:58,800 +BTCUSDT: bp18.0|+XMRUSDT: bp15.0|+AVAXUSDT: bp18.0|+UNIUSDT: bp19.0|+ETCUSDT: bp18.0|-LTCUSDT: bp7.0|+BNBUSDT: bp14.0|-XRPUSDT: bp7.0|
+2023-08-03 14:02:03,376 update 5/5: filled 3 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT) | working 8 / 11 (+BTCUSDT,+XMRUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,-LTCUSDT,+BNBUSDT,-XRPUSDT)
+2023-08-03 14:02:06,377 +BTCUSDT: bp16.0|+XMRUSDT: bp12.0|+AVAXUSDT: bp14.0|+UNIUSDT: bp19.0|+ETCUSDT: bp18.0|-LTCUSDT: bp8.0|+BNBUSDT: bp12.0|-XRPUSDT: bp7.0|
+2023-08-03 14:02:06,377 Adjustment limit #1 ... 
+ we cancel current orders and replace
+2023-08-03 14:02:06,377 @+/-5.999999999999999bp limit 
+2023-08-03 14:02:06,378 binance_cancel_and_replace_orders_peg 20230803_140206
+2023-08-03 14:02:13,330 binance_place_orders_peg 20230803_140213
+2023-08-03 14:02:13,751 {'orderId': 177390039916, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': '6r3qxFvCUzUXjfzwTNs4VA', 'price': '29197.30', 'avgPrice': '0.00', 'origQty': '0.001', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071333641}
+2023-08-03 14:02:14,170 {'orderId': 9892457798, 'symbol': 'XMRUSDT', 'status': 'NEW', 'clientOrderId': 'tKGNOdjUt4IvAhIyVp0LA0', 'price': '160.48', 'avgPrice': '0.00', 'origQty': '0.104', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071334062}
+2023-08-03 14:02:14,590 {'orderId': 15503305044, 'symbol': 'AVAXUSDT', 'status': 'NEW', 'clientOrderId': '59RQ6GD8ov4UBUcAqWay5H', 'price': '12.5240', 'avgPrice': '0.00', 'origQty': '1', 'executedQty': '0', 'cumQty': '0', 'cumQuote': '0.0000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071334481}
+2023-08-03 14:02:15,008 {'orderId': 19184599656, 'symbol': 'UNIUSDT', 'status': 'NEW', 'clientOrderId': '24fXKRQ4FH5iKZCciLQmfM', 'price': '6.1910', 'avgPrice': '0.00', 'origQty': '2', 'executedQty': '0', 'cumQty': '0', 'cumQuote': '0.0000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071334900}
+2023-08-03 14:02:15,426 {'orderId': 18115232746, 'symbol': 'ETCUSDT', 'status': 'NEW', 'clientOrderId': '6P9GoHDuudfljfFk77vnJr', 'price': '18.042', 'avgPrice': '0.00', 'origQty': '0.62', 'executedQty': '0.00', 'cumQty': '0.00', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071335319}
+2023-08-03 14:02:15,847 {'orderId': 25523420809, 'symbol': 'LTCUSDT', 'status': 'NEW', 'clientOrderId': '2GC9kZJekR4AZhneQwq4MB', 'price': '86.53', 'avgPrice': '0.00', 'origQty': '0.109', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071335738}
+2023-08-03 14:02:16,268 {'orderId': 48438279281, 'symbol': 'BNBUSDT', 'status': 'NEW', 'clientOrderId': 'NQ4PMEHjnURd9yjxm6M4X1', 'price': '241.120', 'avgPrice': '0.00', 'origQty': '0.03', 'executedQty': '0.00', 'cumQty': '0.00', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071336158}
+2023-08-03 14:02:16,687 {'orderId': 38715534395, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'ZFjWYBYD8dPewcu87Lp5Gs', 'price': '0.6690', 'avgPrice': '0.00', 'origQty': '9.1', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071336578}
+2023-08-03 14:02:21,261 update 1/5: filled 3 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT) | working 8 / 11 (+BTCUSDT,+XMRUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,-LTCUSDT,+BNBUSDT,-XRPUSDT)
+2023-08-03 14:02:24,262 +BTCUSDT: bp6.0|+XMRUSDT: bp5.0|+AVAXUSDT: bp6.0|+UNIUSDT: bp8.0|+ETCUSDT: bp4.0|-LTCUSDT: bp8.0|+BNBUSDT: bp5.0|-XRPUSDT: bp10.0|
+2023-08-03 14:02:28,825 update 2/5: filled 6 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT) | working 5 / 11 (+BTCUSDT,+XMRUSDT,-LTCUSDT,+BNBUSDT,-XRPUSDT)
+2023-08-03 14:02:31,826 +BTCUSDT: bp2.0|+XMRUSDT: bp3.0|-LTCUSDT: bp13.0|+BNBUSDT: bp2.0|-XRPUSDT: bp15.0|
+2023-08-03 14:02:36,389 update 3/5: filled 8 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT,+BTCUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,+BNBUSDT) | working 3 / 11 (+XMRUSDT,-LTCUSDT,-XRPUSDT)
+2023-08-03 14:02:39,390 +XMRUSDT: bp3.0|-LTCUSDT: bp10.0|-XRPUSDT: bp18.0|
+2023-08-03 14:02:43,965 update 4/5: filled 8 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT,+BTCUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,+BNBUSDT) | working 3 / 11 (+XMRUSDT,-LTCUSDT,-XRPUSDT)
+2023-08-03 14:02:46,966 +XMRUSDT: bp1.0|-LTCUSDT: bp14.0|-XRPUSDT: bp15.0|
+2023-08-03 14:02:51,532 update 5/5: filled 8 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT,+BTCUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,+BNBUSDT) | working 3 / 11 (+XMRUSDT,-LTCUSDT,-XRPUSDT)
+2023-08-03 14:02:54,533 +XMRUSDT: bp3.0|-LTCUSDT: bp8.0|-XRPUSDT: bp7.0|
+2023-08-03 14:02:54,534 Adjustment limit #2 ... 
+ we cancel current orders and replace
+2023-08-03 14:02:54,534 @+/-2.9999999999999996bp limit 
+2023-08-03 14:02:54,534 binance_cancel_and_replace_orders_peg 20230803_140254
+2023-08-03 14:03:01,433 binance_place_orders_peg 20230803_140301
+2023-08-03 14:03:01,854 {'orderId': 9892460693, 'symbol': 'XMRUSDT', 'status': 'NEW', 'clientOrderId': 'X4865PRlyLsNyXETl0gZIU', 'price': '160.50', 'avgPrice': '0.00', 'origQty': '0.104', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071381744}
+2023-08-03 14:03:02,274 {'orderId': 25523461553, 'symbol': 'LTCUSDT', 'status': 'NEW', 'clientOrderId': 'HDAP0djfGC47eHW7Y1OgMF', 'price': '86.46', 'avgPrice': '0.00', 'origQty': '0.109', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071382165}
+2023-08-03 14:03:02,694 {'orderId': 38715588858, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'LKx9EQodRIFAtl3Cvh0Phf', 'price': '0.6686', 'avgPrice': '0.00', 'origQty': '9.1', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071382585}
+2023-08-03 14:03:07,298 update 1/5: filled 8 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT,+BTCUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,+BNBUSDT) | working 3 / 11 (+XMRUSDT,-LTCUSDT,-XRPUSDT)
+2023-08-03 14:03:10,299 +XMRUSDT: bp3.0|-LTCUSDT: bp5.0|-XRPUSDT: bp3.0|
+2023-08-03 14:03:14,869 update 2/5: filled 9 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT,+BTCUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,+BNBUSDT,-XRPUSDT) | working 2 / 11 (+XMRUSDT,-LTCUSDT)
+2023-08-03 14:03:17,870 +XMRUSDT: bp2.0|-LTCUSDT: bp1.0|
+2023-08-03 14:03:22,433 update 3/5: filled 9 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT,+BTCUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,+BNBUSDT,-XRPUSDT) | working 2 / 11 (+XMRUSDT,-LTCUSDT)
+2023-08-03 14:03:25,434 +XMRUSDT: bp4.0|-LTCUSDT: bp2.0|
+2023-08-03 14:03:29,999 update 4/5: filled 10 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT,+BTCUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,+BNBUSDT,-LTCUSDT,-XRPUSDT) | working 1 / 11 (+XMRUSDT)
+2023-08-03 14:03:33,000 +XMRUSDT: bp4.0|
+2023-08-03 14:03:37,572 update 5/5: filled 10 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT,+BTCUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,+BNBUSDT,-LTCUSDT,-XRPUSDT) | working 1 / 11 (+XMRUSDT)
+2023-08-03 14:03:40,573 +XMRUSDT: bp5.0|
+2023-08-03 14:03:40,573 Adjustment limit #3 ... 
+ we cancel current orders and replace
+2023-08-03 14:03:40,573 @+/-1.4999999999999998bp limit 
+2023-08-03 14:03:40,573 binance_cancel_and_replace_orders_peg 20230803_140340
+2023-08-03 14:03:47,510 binance_place_orders_peg 20230803_140347
+2023-08-03 14:03:47,930 {'orderId': 9892462337, 'symbol': 'XMRUSDT', 'status': 'NEW', 'clientOrderId': 'XKbgwPmzKgFmc31hjGhTEr', 'price': '160.57', 'avgPrice': '0.00', 'origQty': '0.104', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071427821}
+2023-08-03 14:03:52,500 update 1/5: filled 10 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT,+BTCUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,+BNBUSDT,-LTCUSDT,-XRPUSDT) | working 1 / 11 (+XMRUSDT)
+2023-08-03 14:03:55,501 +XMRUSDT: bp1.0|
+2023-08-03 14:04:00,064 update 2/5: filled 10 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT,+BTCUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,+BNBUSDT,-LTCUSDT,-XRPUSDT) | working 1 / 11 (+XMRUSDT)
+2023-08-03 14:04:03,065 +XMRUSDT: bp1.0|
+2023-08-03 14:04:07,701 update 3/5: filled 10 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT,+BTCUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,+BNBUSDT,-LTCUSDT,-XRPUSDT) | working 1 / 11 (+XMRUSDT)
+2023-08-03 14:04:10,702 +XMRUSDT: bp3.0|
+2023-08-03 14:04:15,269 update 4/5: filled 10 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT,+BTCUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,+BNBUSDT,-LTCUSDT,-XRPUSDT) | working 1 / 11 (+XMRUSDT)
+2023-08-03 14:04:18,270 +XMRUSDT: bp2.0|
+2023-08-03 14:04:22,848 update 5/5: filled 10 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT,+BTCUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,+BNBUSDT,-LTCUSDT,-XRPUSDT) | working 1 / 11 (+XMRUSDT)
+2023-08-03 14:04:25,849 +XMRUSDT: bp1.0|
+2023-08-03 14:04:25,849 Adjustment limit #4 ... 
+ we cancel current orders and replace
+2023-08-03 14:04:25,849 @+/-0.7499999999999999bp limit 
+2023-08-03 14:04:25,849 binance_cancel_and_replace_orders_peg 20230803_140425
+2023-08-03 14:04:32,749 binance_place_orders_peg 20230803_140432
+2023-08-03 14:04:33,171 {'orderId': 9892464031, 'symbol': 'XMRUSDT', 'status': 'NEW', 'clientOrderId': '89oFhV9bmIl5Wj1BJ4xAS1', 'price': '160.57', 'avgPrice': '0.00', 'origQty': '0.104', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691071473061}
+2023-08-03 14:04:37,737 update 1/5: filled 10 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT,+BTCUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,+BNBUSDT,-LTCUSDT,-XRPUSDT) | working 1 / 11 (+XMRUSDT)
+2023-08-03 14:04:40,738 +XMRUSDT: bp1.0|
+2023-08-03 14:04:45,305 update 2/5: filled 10 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT,+BTCUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,+BNBUSDT,-LTCUSDT,-XRPUSDT) | working 1 / 11 (+XMRUSDT)
+2023-08-03 14:04:48,306 +XMRUSDT: bp1.0|
+2023-08-03 14:04:52,884 update 3/5: filled 10 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT,+BTCUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,+BNBUSDT,-LTCUSDT,-XRPUSDT) | working 1 / 11 (+XMRUSDT)
+2023-08-03 14:04:55,885 +XMRUSDT: bp1.0|
+2023-08-03 14:05:00,452 update 4/5: filled 10 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT,+BTCUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,+BNBUSDT,-LTCUSDT,-XRPUSDT) | working 1 / 11 (+XMRUSDT)
+2023-08-03 14:05:03,453 +XMRUSDT: bp1.0|
+2023-08-03 14:05:08,101 update 5/5: filled 11 / 11 (-DOGEUSDT,-SOLUSDT,-BCHUSDT,+BTCUSDT,+AVAXUSDT,+UNIUSDT,+ETCUSDT,+BNBUSDT,-LTCUSDT,-XRPUSDT,+XMRUSDT) | working 0 / 11 ()
