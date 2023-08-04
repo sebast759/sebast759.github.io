@@ -1,0 +1,226 @@
+2023-08-04 18:30:44,256
+ON program started 20230804 18:30:44,
+US time: 20230804 14:30:44
+2023-08-04 18:30:44,651
+the strat is currently running @ 04-08-2023 and the target positions is LONG
+2023-08-04 18:30:45,964
+CURRENT STATUS IS LONG
+-----
+return before 14h30:
+BTCUSDT+0.13%, ETHUSDT+0.38%, XRPUSDT-0.36%
+-----
+target alloc initial:BTCUSDT+16.67%, ETHUSDT+16.67%, XRPUSDT+16.67%
+-----
+alloc target x rt%<0:BTCUSDT+16.67%, ETHUSDT+16.67%, XRPUSDT+16.67%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target     16.7%   16.7%   16.7%
+rt_14h30     0.00%   0.00%  -0.00%
+w_target_f   16.7%   16.7%   16.7%
+2023-08-04 18:30:45,966
+Portfolio was rebalanced less than 2 hours ago, 15.0 hours ago
+2023-08-04 18:30:45,969
+Status: prev = LONG <> NEUTRAL = target
+2023-08-04 18:30:45,969
+the strat is currently running @ 04-08-2023 and the target positions is LONG
+the strat was previously run @ 2023-08-04 03:30:59 UTC, success:yes 
+   and the current positions is NEUTRAL
+2023-08-04 18:30:47,070
+positions_future #0
+2023-08-04 18:30:47,071
+Empty DataFrame
+Columns: [symbol, positionAmt, entryPrice, markPrice, unRealizedProfit, value_usd, updateTime, AUMs_account, w%]
+Index: []
+2023-08-04 18:30:47,281
+------------------------------
+binance_account_balance
+2023-08-04 18:30:47,281
+  asset     balance withdrawAvailable   updateTime
+5  USDT  293.917505      293.91750530  04Aug-02:34
+2023-08-04 18:30:47,499
+------------------------------
+open_orders
+2023-08-04 18:30:47,499
+Empty DataFrame
+Columns: []
+Index: []
+2023-08-04 18:30:48,117
+------------------------------
+AUMS account:293
+
+2023-08-04 18:30:48,118
+--------------- compute_futures_order_book() ----------------
+2023-08-04 18:30:49,386
+----------------------------------------------------------------------
+#3 order(s) to place
+gross$: 157$ | net$: +157$
+gross%: 53% | net%: +53%
+ || w>0%  +53% | w<0%  0%
+----------------------------------------------------------------------
+PTF Expo% 0.0% >> 50.0% (current>>target)
+PTF expo $0.0 >> $147 (current>>target)
+----------------------------------------------------------------------
+2023-08-04 18:30:49,387
+orders_ofthe_day
+2023-08-04 18:30:49,387
+                  ptf_usd  target_usd  ...         bid         ask
+2023-08-04 18:30                       ...                        
+BTCUSDT               0.0        49.0  ...  29100.7000  29100.8000
+ETHUSDT               0.0        49.0  ...   1833.9300   1833.9400
+XRPUSDT               0.0        49.0  ...      0.6594      0.6595
+
+[3 rows x 9 columns]
+2023-08-04 18:30:51,678
+binance_place_orders_peg 20230804_183051
+2023-08-04 18:30:52,090
+{'orderId': 177709368544, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'yF76KERL70qNdEPlPWHxcC', 'price': '29091.80', 'avgPrice': '0.00', 'origQty': '0.002', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691173851986}
+2023-08-04 18:30:52,502
+{'orderId': 8389765611411237720, 'symbol': 'ETHUSDT', 'status': 'NEW', 'clientOrderId': 'DMgqz3xdiLqKPd5pNbSWkR', 'price': '1833.38', 'avgPrice': '0.00', 'origQty': '0.027', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691173852397}
+2023-08-04 18:30:52,920
+{'orderId': 38799019495, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'NlEPDYmc0oPoH5J7zHokNh', 'price': '0.6593', 'avgPrice': '0.00', 'origQty': '74.3', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691173852815}
+2023-08-04 18:30:54,818
+update 0: filled 0 / 3 () | working 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT)
+2023-08-04 18:30:58,819
++BTCUSDT: bp6.0|+ETHUSDT: bp6.0|+XRPUSDT: bp5.0|
+2023-08-04 18:31:00,058
+update 1: filled 0 / 3 () | working 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT)
+2023-08-04 18:31:04,059
++BTCUSDT: bp8.0|+ETHUSDT: bp6.0|+XRPUSDT: bp9.0|
+2023-08-04 18:31:05,292
+update 2: filled 0 / 3 () | working 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT)
+2023-08-04 18:31:09,293
++BTCUSDT: bp10.0|+ETHUSDT: bp10.0|+XRPUSDT: bp11.0|
+2023-08-04 18:31:10,529
+update 3: filled 0 / 3 () | working 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT)
+2023-08-04 18:31:14,529
++BTCUSDT: bp9.0|+ETHUSDT: bp10.0|+XRPUSDT: bp11.0|
+2023-08-04 18:31:15,765
+update 4: filled 0 / 3 () | working 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT)
+2023-08-04 18:31:19,765
++BTCUSDT: bp12.0|+ETHUSDT: bp13.0|+XRPUSDT: bp14.0|
+2023-08-04 18:31:21,002
+update 5: filled 0 / 3 () | working 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT)
+2023-08-04 18:31:25,003
++BTCUSDT: bp12.0|+ETHUSDT: bp14.0|+XRPUSDT: bp12.0|
+2023-08-04 18:31:26,240
+update 6: filled 0 / 3 () | working 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT)
+2023-08-04 18:31:30,240
++BTCUSDT: bp13.0|+ETHUSDT: bp13.0|+XRPUSDT: bp12.0|
+2023-08-04 18:31:31,475
+update 7: filled 0 / 3 () | working 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT)
+2023-08-04 18:31:35,475
++BTCUSDT: bp14.0|+ETHUSDT: bp14.0|+XRPUSDT: bp14.0|
+2023-08-04 18:31:36,718
+update 8: filled 0 / 3 () | working 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT)
+2023-08-04 18:31:40,718
++BTCUSDT: bp13.0|+ETHUSDT: bp14.0|+XRPUSDT: bp15.0|
+2023-08-04 18:31:41,953
+update 9: filled 0 / 3 () | working 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT)
+2023-08-04 18:31:45,954
++BTCUSDT: bp12.0|+ETHUSDT: bp14.0|+XRPUSDT: bp17.0|
+2023-08-04 18:31:47,191
+update 10: filled 0 / 3 () | working 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT)
+2023-08-04 18:31:51,192
++BTCUSDT: bp12.0|+ETHUSDT: bp14.0|+XRPUSDT: bp17.0|
+2023-08-04 18:31:52,431
+update 11: filled 0 / 3 () | working 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT)
+2023-08-04 18:31:56,431
++BTCUSDT: bp11.0|+ETHUSDT: bp12.0|+XRPUSDT: bp14.0|
+2023-08-04 18:31:57,671
+update 12: filled 0 / 3 () | working 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT)
+2023-08-04 18:32:01,672
++BTCUSDT: bp8.0|+ETHUSDT: bp10.0|+XRPUSDT: bp11.0|
+2023-08-04 18:32:02,910
+update 13: filled 0 / 3 () | working 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT)
+2023-08-04 18:32:06,911
++BTCUSDT: bp8.0|+ETHUSDT: bp11.0|+XRPUSDT: bp12.0|
+2023-08-04 18:32:08,151
+update 14: filled 0 / 3 () | working 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT)
+2023-08-04 18:32:12,151
++BTCUSDT: bp9.0|+ETHUSDT: bp11.0|+XRPUSDT: bp14.0|
+2023-08-04 18:32:12,151
+Adjustment limit #1 ... 
+ we cancel current orders and replace
+2023-08-04 18:32:12,152
+@+/-2.5bp limit 
+2023-08-04 18:32:12,152
+binance_cancel_and_replace_orders_peg 20230804_183212
+2023-08-04 18:32:14,029
+binance_place_orders_peg 20230804_183214
+2023-08-04 18:32:14,473
+{'orderId': 177709773452, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'Q47hfHvqCxDumJAdbR01PI', 'price': '29104.50', 'avgPrice': '0.00', 'origQty': '0.002', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691173934365}
+2023-08-04 18:32:14,887
+{'orderId': 8389765611411441236, 'symbol': 'ETHUSDT', 'status': 'NEW', 'clientOrderId': 's85dS0iBR1JPQ1sOqCoRl9', 'price': '1834.44', 'avgPrice': '0.00', 'origQty': '0.027', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691173934780}
+2023-08-04 18:32:15,303
+{'orderId': 38799099663, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'mozvf8fsJPPObskYMvO7i3', 'price': '0.6595', 'avgPrice': '0.00', 'origQty': '74.3', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1691173935196}
+2023-08-04 18:32:16,545
+update 0: filled 0 / 3 () | working 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT)
+2023-08-04 18:32:20,547
++BTCUSDT: bp2.0|+ETHUSDT: bp2.0|+XRPUSDT: bp5.0|
+2023-08-04 18:32:21,805
+update 1: filled 0 / 3 () | working 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT)
+2023-08-04 18:32:25,805
++BTCUSDT: bp2.0|+ETHUSDT: bp2.0|+XRPUSDT: bp3.0|
+2023-08-04 18:32:27,041
+update 2: filled 0 / 3 () | working 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT)
+2023-08-04 18:32:31,042
++BTCUSDT: bp3.0|+ETHUSDT: bp3.0|+XRPUSDT: bp6.0|
+2023-08-04 18:32:32,278
+update 3: filled 0 / 3 () | working 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT)
+2023-08-04 18:32:36,279
++BTCUSDT: bp4.0|+ETHUSDT: bp3.0|+XRPUSDT: bp5.0|
+2023-08-04 18:32:37,515
+update 4: filled 0 / 3 () | working 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT)
+2023-08-04 18:32:41,516
++BTCUSDT: bp3.0|+ETHUSDT: bp3.0|+XRPUSDT: bp5.0|
+2023-08-04 18:32:42,752
+update 5: filled 0 / 3 () | working 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT)
+2023-08-04 18:32:46,753
++BTCUSDT: bp3.0|+ETHUSDT: bp3.0|+XRPUSDT: bp3.0|
+2023-08-04 18:32:47,993
+update 6: filled 3 / 3 (+BTCUSDT,+ETHUSDT,+XRPUSDT) | working 0 / 3 ()
+2023-08-04 18:32:54,724
+Trades of the day
+in$
+as of: 04Aug 18:32>>18:32 (#trades: 3)
+trade net: +157.0 (+53.4%), trade gross: +157.0 (+53.4%), BUY: +157.0 (+53.4%), SELL: +0.0 (+0.0%)
+fees: $ 0.031 (2.0bp)
+2023-08-04 18:32:55,364
+Trades: 
+Filled #3
+______________________________________________
+                   in$ | in bp 156 traded | in bp 293 AUMs
+realizedPnl    +0      | +0      | +0     
+PnLvsArrival   -0.02   | -1      | -1     
+PnLvsLast      -0.02   | -1      | -1     
+______________________________________________
+                 | Value$ | PnL Arrival/Last 
+______________________________________________
+XRP:+74.3@0.6595 | +49$ | -0/-0.01
+ETH:+0.027@1834.44 | +50$ | -0.01/0
+BTC:+0.002@29104.5 | +58$ | -0.01/-0.01
+2023-08-04 18:32:55,898
+***************************
+Positions after orders
+***************************
+2023-08-04 18:32:55,898
+      symbol  qty_ptf    execP  ...   updateTime   AUMs     w%
+219  BTCUSDT    0.002  29104.5  ...  04Aug-18:32  293.9  0.198
+134  ETHUSDT    0.027  1834.44  ...  04Aug-18:32  293.9  0.169
+108  XRPUSDT   74.300   0.6595  ...  04Aug-18:32  293.9  0.167
+
+[3 rows x 9 columns]
+2023-08-04 18:32:55,905
+***************************
+2023-08-04 18:32:56,520
+3 STOP orders will be placed
+2023-08-04 18:32:56,520
+@+/-500.0bp limit
+2023-08-04 18:32:56,521
+binance_place_orders_peg 20230804_183256
+2023-08-04 18:32:56,937
+{'orderId': 177709946281, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'WPN6dxkWPziB1QbyP6a0l2', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.002', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'STOP_MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '27646.70', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'STOP_MARKET', 'updateTime': 1691173976831}
+2023-08-04 18:32:57,352
+{'orderId': 8389765611411510261, 'symbol': 'ETHUSDT', 'status': 'NEW', 'clientOrderId': 'QY273icvdAQ5NisPAbtV1S', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.027', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'STOP_MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '1742.79', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'STOP_MARKET', 'updateTime': 1691173977246}
+2023-08-04 18:32:57,766
+{'orderId': 38799136711, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'OCD10ZHoVvYZ4tW52v6TpI', 'price': '0.0000', 'avgPrice': '0.00', 'origQty': '74.3', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'STOP_MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.6263', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'STOP_MARKET', 'updateTime': 1691173977660}
