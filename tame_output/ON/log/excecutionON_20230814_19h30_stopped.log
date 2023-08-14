@@ -1,0 +1,38 @@
+2023-08-14 19:30:36,464
+ON program started 20230814 19:30:36,
+US time: 20230814 15:30:36
+2023-08-14 19:30:36,628
+the strat is currently running @ 14-08-2023 and the target positions is LONG
+2023-08-14 19:30:37,956
+CURRENT STATUS IS LONG
+-----
+return before 14h30:
+BTCUSDT+0.30%, ETHUSDT+0.04%, XRPUSDT-0.08%
+-----
+target alloc initial:BTCUSDT+16.67%, ETHUSDT+16.67%, XRPUSDT+16.67%
+-----
+alloc target x rt%<0:BTCUSDT+16.67%, ETHUSDT+16.67%, XRPUSDT+16.67%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target     16.7%   16.7%   16.7%
+rt_14h30     0.00%   0.00%  -0.00%
+w_target_f   16.7%   16.7%   16.7%
+2023-08-14 19:30:37,958
+Portfolio was rebalanced less than 2 hours ago, 0.9 hours ago
+2023-08-14 19:30:37,961
+Status: prev = LONG <> LONG = target
+2023-08-14 19:30:37,961
+the strat is currently running @ 14-08-2023 and the target positions is LONG
+the strat was previously run @ 2023-08-14 18:35:50 UTC, success:yes 
+   and the current positions is LONG
+2023-08-14 19:30:39,065
+positions_future #3
+2023-08-14 19:30:39,065
+      symbol  positionAmt entryPrice  ...   updateTime  AUMs_account        w%
+222  BTCUSDT        0.002    29317.1  ...  14Aug-18:32         289.8  0.202559
+111  XRPUSDT       77.000     0.6268  ...  14Aug-18:32         289.8  0.166955
+137  ETHUSDT        0.026    1842.88  ...  14Aug-18:35         289.8  0.165279
+
+[3 rows x 9 columns]
+2023-08-14 19:30:39,095
+programm stoppeddd!!! 20230814_193039
