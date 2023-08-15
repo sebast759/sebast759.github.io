@@ -1,0 +1,49 @@
+2023-07-30 19:28:00,419
+ON program started 20230730 19:28:00,
+US time: 20230730 14:28:00
+2023-07-30 19:32:50,601
+the strat is currently running @ 30-07-2023 and the target positions is LONG
+2023-07-30 19:33:28,309
+CURRENT STATUS IS LONG
+-----
+return before 14h30:
+BTCUSDT+0.28%, ETHUSDT-0.00%, XRPUSDT+0.99%
+-----
+target alloc initial:BTCUSDT+16.67%, ETHUSDT+16.67%, XRPUSDT+16.67%
+-----
+alloc target x rt%<0:BTCUSDT+16.67%, ETHUSDT+16.67%, XRPUSDT+16.67%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target     16.7%   16.7%   16.7%
+rt_14h30     0.00%  -0.00%   0.01%
+w_target_f   16.7%   16.7%   16.7%
+2023-07-30 19:33:32,463
+Portfolio was rebalanced less than 2 hours ago, 6.0 hours ago
+2023-07-30 19:33:32,465
+Status: prev = LONG <> NEUTRAL = target
+2023-07-30 19:33:32,465
+the strat is currently running @ 30-07-2023 and the target positions is LONG
+the strat was previously run @ 2023-07-30 12:30:33 UTC, success:yes 
+   and the current positions is NEUTRAL
+2023-07-30 19:33:42,557
+positions_future #1
+2023-07-30 19:33:42,558
+      symbol  positionAmt entryPrice   markPrice  unRealizedProfit  value_usd  \
+108  XRPUSDT         68.8     0.7157  0.71570683           0.00047   49.24063   
+
+      updateTime  AUMs_account       w%  
+108  30Jul-18:32         295.4  0.16671  
+2023-07-30 19:33:59,288
+------------------------------
+binance_account_balance
+2023-07-30 19:33:59,288
+  asset     balance withdrawAvailable   updateTime
+5  USDT  295.367338      287.51192758  30Jul-18:32
+2023-07-30 19:34:17,367
+Portfolio was rebalanced less than 2 hours ago, 6.1 hours ago
+2023-07-30 19:34:17,369
+Status: prev = LONG <> NEUTRAL = target
+2023-07-30 19:34:17,369
+the strat is currently running @ 30-07-2023 and the target positions is LONG
+the strat was previously run @ 2023-07-30 12:30:33 UTC, success:yes 
+   and the current positions is NEUTRAL

@@ -1,3 +1,12 @@
-2023-07-30 12:30:34,710 - 1_crypto_buy_ON.py launched successfully.
-2023-07-30 12:30:46,192 - 3_crypto_buy_ON_bt_update.py launched successfully.
-2023-07-30 12:30:55,620 - 2_crypto_buy_ON_posttrades.py launched successfully.
+2023-07-30 20:12:36,921 - Failed to launch 1_crypto_buy_ON.py: Command '['python', '1_crypto_buy_ON.py']' returned non-zero exit status 1.
+2023-07-30 20:12:49,222 - 3_crypto_buy_ON_bt_update.py launched successfully.
+2023-07-30 20:13:05,507 - 2_crypto_buy_ON_posttrades.py launched successfully.
+2023-07-30 20:13:43,771 - 4_pygithub_4website.py launched successfully.
+2023-07-30 20:14:41,743 - Failed to launch 1_crypto_buy_ON.py: Command '['python', '1_crypto_buy_ON.py']' returned non-zero exit status 1.
+2023-07-30 20:14:56,121 - 3_crypto_buy_ON_bt_update.py launched successfully.
+2023-07-30 20:15:15,296 - 2_crypto_buy_ON_posttrades.py launched successfully.
+2023-07-30 20:16:00,743 - 4_pygithub_4website.py launched successfully.
+2023-07-30 23:36:13,806 - 1_crypto_buy_ON.py launched successfully.
+2023-07-30 23:36:27,814 - 3_crypto_buy_ON_bt_update.py launched successfully.
+2023-07-30 23:36:45,355 - 2_crypto_buy_ON_posttrades.py launched successfully.
+2023-07-30 23:37:31,230 - 4_pygithub_4website.py launched successfully.
