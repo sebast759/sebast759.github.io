@@ -328,43 +328,67 @@ PAGE DE GARDE
 		<div class="row" style="margin-top: 0.5em">
 			<div class="col-lg-4">
 				<section>
-					<h4>Running Batch <div id="txt"></div>
+					<h4>Running Batch <div id="clock_utc"></div>
 					</h4>
 					<!-- TABLE CONSTRUCTION-->
 
-					<table id='table' style="font-size: smaller;margin: 0%;">
+					<table id='table_script_recap' style="font-size: smaller;margin: 0%;">
 						<!-- HEADING FORMATION -->
 						<tr>
 							<th>Programme</th>
 							<th>Completion time</th>
 						</tr>
 
-						<script>
-							$(document).ready(function () {
-								// FETCHING DATA FROM JSON FILE
-								$.getJSON("https://sebast759.github.io/tame_output/MOZAIC/graphs/script_lastupdate.json",
-									function (data) {
-										var html_tab = '';
-										// ITERATING THROUGH OBJECTS
-										$.each(data, function (key, value) {
-											html_tab += '<tr><td>' + key + '</td>';
-											if (key == '6_post_trades') {
-												html_tab += '<td>' + value.lst_date + '</td></tr>';// + value.lst_update.replace(' 2023 ', '>>>>>').replace(' ', '').split('>>>')[1] + '</td></tr>';
-											} else {
-												html_tab += '<td>' + value.lst_update + '</td></tr>';
-											}
-										});
-										//INSERTING ROWS INTO TABLE
-										$('#table').append(html_tab);
-									});
-							});
-						</script>
 					</table>
+					<!-- <script>
+						$(document).ready(function () {
+							// FETCHING DATA FROM JSON FILE
+							$.getJSON("https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/log/script_lastupdate.json",
+								function (data) {
+									var html_tab = '';
+									// ITERATING THROUGH OBJECTS
+									$.each(data, function (key, value) {
+										html_tab += '<tr><td>' + key + '</td>';
+										if (key == '6_post_trades') {
+											html_tab += '<td>' + value.lst_date + '</td></tr>';// + value.lst_update.replace(' 2023 ', '>>>>>').replace(' ', '').split('>>>')[1] + '</td></tr>';
+										} else {
+											html_tab += '<td>' + value.lst_update + '</td></tr>';
+										}
+									});
+									//INSERTING ROWS INTO TABLE
+									$('#table_script_recap').append(html_tab);
+								});
+						});
+					</script> -->
+					<script>
+						document.addEventListener("DOMContentLoaded", function() {
+							fetch("https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/log/script_lastupdate.json")
+								.then(response => response.json())
+								.then(data => {
+									var html_tab = '';
+					
+									Object.keys(data).forEach(key => {
+										html_tab += '<tr><td>' + key + '</td>';
+										
+										if (key === '6_post_trades') {
+											html_tab += '<td>' + data[key].lst_date + '</td></tr>';
+										} else {
+											html_tab += '<td>' + data[key].lst_update + '</td></tr>';
+										}
+									});
+					
+									document.querySelector('#table_script_recap').innerHTML = html_tab;
+								})
+								.catch(error => {
+									console.error('Error loading JSON:', error);
+								});
+						});
+					</script>
 				</section>
 			</div>
 			<div class="col-lg-8">
 				<h4>Last Log</h4>
-				<pre id="script_recap_text" style="height: 300px; overflow-y: scroll;color: #ecf0b7;"></pre>
+				<pre id="script_recap_text" style="height: 400px; overflow-y: scroll;color: #ecf0b7;"></pre>
 			</div>
 
 		</div>
@@ -635,7 +659,7 @@ PAGE DE GARDE
 </body>
 <script>
 	// Define the URL of your JSON file
-	const url = "https://sebast759.github.io/tame_output/MOZAIC/graphs/script_lastupdate.json";
+	const url = "https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/log/script_lastupdate.json";
 	// Use Fetch API to read the JSON file
 	fetch(url)
 		.then(response => response.json())
@@ -658,7 +682,7 @@ PAGE DE GARDE
 		let s = today.getSeconds();
 		m = checkTime(m);
 		s = checkTime(s);
-		document.getElementById('txt').innerHTML = 'Now: ' + h2 + ":" + m + ":" + s + ' UTC';
+		document.getElementById('clock_utc').innerHTML = 'Now: ' + h2 + ":" + m + ":" + s + ' UTC';
 		setTimeout(startTime, (5 - s % 5) * 1000);
 	}
 
