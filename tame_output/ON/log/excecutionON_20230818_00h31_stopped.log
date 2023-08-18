@@ -1,0 +1,36 @@
+2023-08-18 00:31:02,717
+ON program started 20230818 00:31:02,
+US time: 20230817 20:31:02
+2023-08-18 00:31:03,137
+the strat is currently running @ 18-08-2023 and the target positions is SHORT
+2023-08-18 00:31:04,856
+CURRENT STATUS IS SHORT, WE CHECK IF THE DAY IS A NEGATIVE ONE
+-----
+return before 14h30:
+BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+target alloc initial:BTCUSDT-4.17%, ETHUSDT+0.00%, XRPUSDT-4.17%
+-----
+alloc target x rt%<0:BTCUSDT-0.00%, ETHUSDT+0.00%, XRPUSDT-0.00%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target     -4.2%    0.0%   -4.2%
+rt_14h30     0.00%   0.00%   0.00%
+w_target_f   -0.0%    0.0%   -0.0%
+2023-08-18 00:31:04,858
+Portfolio was rebalanced less than 2 hours ago, 1.0 hours ago
+2023-08-18 00:31:04,861
+Status: prev = SHORT <> SHORT = target
+2023-08-18 00:31:04,861
+the strat is currently running @ 18-08-2023 and the target positions is SHORT
+the strat was previously run @ 2023-08-17 23:30:44 UTC, success:yes 
+   and the current positions is SHORT
+2023-08-18 00:31:05,964
+positions_future #1
+2023-08-18 00:31:05,964
+      symbol  positionAmt entryPrice  ...   updateTime  AUMs_account        w%
+111  XRPUSDT        -22.8     0.5036  ...  17Aug-22:31         275.7 -0.042395
+
+[1 rows x 9 columns]
+2023-08-18 00:31:05,990
+programm stoppeddd!!! 20230818_003105
