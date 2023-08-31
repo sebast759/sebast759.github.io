@@ -1,0 +1,189 @@
+2023-08-31 02:31:03,846
+ON program started 20230831 02:31:03,
+US time: 20230830 22:31:03
+2023-08-31 02:31:04,380
+the strat is currently running @ 31-08-2023 and the target positions is NEUTRAL
+2023-08-31 02:31:05,795
+CURRENT STATUS IS NEUTRAL
+-----
+return before 14h30:
+BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+target alloc initial:BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+alloc target x rt%<0:BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target      0.0%    0.0%    0.0%
+rt_14h30     0.00%   0.00%   0.00%
+w_target_f    0.0%    0.0%    0.0%
+2023-08-31 02:31:05,797
+Portfolio was rebalanced less than 2 hours ago, 1.0 hours ago
+2023-08-31 02:31:05,799
+Status: prev = NEUTRAL <> SHORT = target
+2023-08-31 02:31:05,800
+the strat is currently running @ 31-08-2023 and the target positions is NEUTRAL
+the strat was previously run @ 2023-08-31 01:31:11 UTC, success:yes 
+   and the current positions is SHORT
+2023-08-31 02:31:06,952
+positions_future #1
+2023-08-31 02:31:06,952
+      symbol  positionAmt entryPrice  ...   updateTime  AUMs_account        w%
+111  XRPUSDT        -21.2     0.5282  ...  30Aug-22:33         275.8 -0.040405
+
+[1 rows x 9 columns]
+2023-08-31 02:31:07,187
+------------------------------
+binance_account_balance
+2023-08-31 02:31:07,187
+  asset     balance  ... marginAvailable   updateTime
+5  USDT  275.777334  ...            True  30Aug-22:39
+
+[1 rows x 8 columns]
+2023-08-31 02:31:07,639
+------------------------------
+open_orders
+2023-08-31 02:31:07,639
+                                      0
+symbol                          XRPUSDT
+status                              NEW
+price                                 0
+avgPrice                              0
+origQty                            21.2
+executedQty                           0
+type                        STOP_MARKET
+side                                BUY
+stopPrice                        0.5548
+time         2023-08-30 22:40:11.804000
+updateTime   2023-08-30 22:40:11.804000
+2023-08-31 02:31:09,655
+------------------------------
+AUMS account:275
+
+2023-08-31 02:31:09,657
+--------------- compute_futures_order_book() ----------------
+2023-08-31 02:31:11,209
+----------------------------------------------------------------------
+#1 order(s) to place
+gross$: 11$ | net$: +11$
+gross%: 4% | net%: +4%
+ || w>0%  +4% | w<0%  0%
+----------------------------------------------------------------------
+PTF Expo% -3.9% >> 0.0% (current>>target)
+PTF expo $-11.0 >> $0 (current>>target)
+----------------------------------------------------------------------
+2023-08-31 02:31:11,211
+orders_ofthe_day
+2023-08-31 02:31:11,211
+                  ptf_usd  target_usd  totrd_usd  ...  posttrd_w     bid     ask
+2023-08-31 02:31                                  ...                           
+XRPUSDT             -11.0         0.0       11.0  ...        0.0  0.5256  0.5257
+
+[1 rows x 9 columns]
+2023-08-31 02:31:12,477
+binance_place_orders_peg 20230831_023112
+2023-08-31 02:31:12,914
+{'orderId': 40481246443, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'wYwnmToiADwpXkn4sCg4q4', 'price': '0.5253', 'avgPrice': '0.00', 'origQty': '21.2', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1693449072801}
+2023-08-31 02:31:13,353
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-08-31 02:31:17,354
++XRPUSDT: bp6.0|
+2023-08-31 02:31:17,792
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-08-31 02:31:21,793
++XRPUSDT: bp6.0|
+2023-08-31 02:31:22,233
+update 2: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-08-31 02:31:26,233
++XRPUSDT: bp10.0|
+2023-08-31 02:31:26,672
+update 3: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-08-31 02:31:30,673
++XRPUSDT: bp11.0|
+2023-08-31 02:31:31,113
+update 4: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-08-31 02:31:35,113
++XRPUSDT: bp11.0|
+2023-08-31 02:31:35,554
+update 5: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-08-31 02:31:39,555
++XRPUSDT: bp11.0|
+2023-08-31 02:31:39,993
+update 6: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-08-31 02:31:43,994
++XRPUSDT: bp10.0|
+2023-08-31 02:31:44,432
+update 7: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-08-31 02:31:48,433
++XRPUSDT: bp11.0|
+2023-08-31 02:31:48,871
+update 8: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-08-31 02:31:52,872
++XRPUSDT: bp11.0|
+2023-08-31 02:31:53,312
+update 9: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-08-31 02:31:57,312
++XRPUSDT: bp11.0|
+2023-08-31 02:31:57,751
+update 10: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-08-31 02:32:01,752
++XRPUSDT: bp10.0|
+2023-08-31 02:32:02,191
+update 11: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-08-31 02:32:06,192
++XRPUSDT: bp11.0|
+2023-08-31 02:32:06,638
+update 12: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-08-31 02:32:10,639
++XRPUSDT: bp11.0|
+2023-08-31 02:32:11,078
+update 13: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-08-31 02:32:15,079
++XRPUSDT: bp11.0|
+2023-08-31 02:32:15,520
+update 14: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-08-31 02:32:19,521
++XRPUSDT: bp11.0|
+2023-08-31 02:32:19,521
+Adjustment limit #1 ... 
+ we cancel current orders and replace
+2023-08-31 02:32:19,521
+@+/-2.5bp limit 
+2023-08-31 02:32:19,521
+binance_cancel_and_replace_orders_peg 20230831_023219
+2023-08-31 02:32:20,180
+binance_place_orders_peg 20230831_023220
+2023-08-31 02:32:20,620
+{'orderId': 40481291721, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'ehHA5cf7dqXLyjGchVoXI3', 'price': '0.5257', 'avgPrice': '0.00', 'origQty': '21.2', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1693449140507}
+2023-08-31 02:32:21,059
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-08-31 02:32:25,060
++XRPUSDT: bp4.0|
+2023-08-31 02:32:25,500
+update 1: filled 1 / 1 (+XRPUSDT) | working 0 / 1 ()
+2023-08-31 02:32:30,612
+Trades of the day
+in$
+as of: 31Aug 02:32>>02:32 (#trades: 1)
+trade net: +11.0 (+4.0%), trade gross: +11.0 (+4.0%), BUY: +11.0 (+4.0%), SELL: +0.0 (+0.0%)
+fees: $ 0.002 (2.0bp)
+2023-08-31 02:32:30,851
+Trades: 
+Filled #1
+______________________________________________
+                   in$ | in bp 11 traded | in bp 275 AUMs
+realizedPnl    +0.05   | +45     | +2     
+PnLvsArrival   +0      | +0      | +0     
+PnLvsLast      +0      | +0      | +0     
+______________________________________________
+                 | Value$ | PnL Arrival/Last 
+______________________________________________
+XRP:+21.2@0.5257 | +11$ | -0/-0
+2023-08-31 02:32:31,382
+***************************
+Positions after orders
+***************************
+2023-08-31 02:32:31,382
+********No Position************
+2023-08-31 02:32:31,382
+***************************
