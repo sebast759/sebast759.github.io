@@ -1,0 +1,3 @@
+2023-09-04 19:30:55,464 - 1_crypto_buy_ON.py launched successfully.
+2023-09-04 19:31:10,698 - 3_crypto_buy_ON_bt_update.py launched successfully.
+2023-09-04 19:31:21,692 - 2_crypto_buy_ON_posttrades.py launched successfully.
