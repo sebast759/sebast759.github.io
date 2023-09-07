@@ -1,3 +1,3 @@
-2023-09-07 21:30:31,634 - Failed to launch 1_crypto_buy_ON.py: Command '['python', '1_crypto_buy_ON.py']' returned non-zero exit status 1.
-2023-09-07 21:30:33,489 - Failed to launch 3_crypto_buy_ON_bt_update.py: Command '['python', '3_crypto_buy_ON_bt_update.py']' returned non-zero exit status 1.
-2023-09-07 21:30:35,636 - Failed to launch 2_crypto_buy_ON_posttrades.py: Command '['python', '2_crypto_buy_ON_posttrades.py']' returned non-zero exit status 1.
+2023-09-07 22:30:58,488 - Failed to launch 1_crypto_buy_ON.py: Command '['python', '1_crypto_buy_ON.py']' returned non-zero exit status 1.
+2023-09-07 22:31:00,287 - Failed to launch 3_crypto_buy_ON_bt_update.py: Command '['python', '3_crypto_buy_ON_bt_update.py']' returned non-zero exit status 1.
+2023-09-07 22:31:02,344 - Failed to launch 2_crypto_buy_ON_posttrades.py: Command '['python', '2_crypto_buy_ON_posttrades.py']' returned non-zero exit status 1.
