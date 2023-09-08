@@ -36,9 +36,9 @@ PAGE DE GARDE
 		google.charts.load('current', { 'packages': ['bar'] });
 		google.charts.setOnLoadCallback(drawChart0);
 		function drawChart0() {
-			$.getJSON("https://sebast759.github.io/tame_output/MOZAIC/graphs/order_ptw_w.json", function (obj) {
+			$.getJSON("https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_ptw_w.json", function (obj) {
 				var jsonData = $.ajax({
-					url: "https://sebast759.github.io/tame_output/MOZAIC/graphs/order_ptw_w.json",
+					url: "https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_ptw_w.json",
 					dataType: "json",
 					async: false
 				}).responseText;
@@ -148,9 +148,9 @@ PAGE DE GARDE
 		google.charts.load('current', { 'packages': ['bar'] });
 		google.charts.setOnLoadCallback(drawChart3);
 		function drawChart3() {
-			$.getJSON("https://sebast759.github.io/tame_output/MOZAIC/graphs/order_ptw_w_vs_target_diff.json", function (obj) {
+			$.getJSON("https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_ptw_w_vs_target_diff.json", function (obj) {
 				var jsonData = $.ajax({
-					url: "https://sebast759.github.io/tame_output/MOZAIC/graphs/order_ptw_w_vs_target_diff.json",
+					url: "https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_ptw_w_vs_target_diff.json",
 					dataType: "json",
 					async: false
 				}).responseText;
@@ -178,9 +178,9 @@ PAGE DE GARDE
 		google.charts.load('current', { 'packages': ['bar'] });
 		google.charts.setOnLoadCallback(drawChart4);
 		function drawChart4() {
-			$.getJSON("https://sebast759.github.io/tame_output/MOZAIC/graphs/order_binance_performance_1D.json", function (obj) {
+			$.getJSON("https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_binance_performance_1D.json", function (obj) {
 				var jsonData = $.ajax({
-					url: "https://sebast759.github.io/tame_output/MOZAIC/graphs/order_binance_performance_1D.json",
+					url: "https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_binance_performance_1D.json",
 					dataType: "json",
 					async: false
 				}).responseText;
@@ -285,7 +285,7 @@ PAGE DE GARDE
 			<div class="col-lg-6">
 				<h4>Portfolio Value</br></h4>
 
-				<!-- <iframe position="absolute" width="30%" height="200" id="grph2" src="https://sebast759.github.io/tame_output/ON/graphs/order_positions_recap.html"
+				<!-- <iframe position="absolute" width="30%" height="200" id="grph2" src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/ON/graphs/order_positions_recap.html"
 					style="background-color:white"></iframe> -->
 
 				<table id='positions_recap'></table><br>
@@ -294,7 +294,7 @@ PAGE DE GARDE
 				<script>
 					$(document).ready(function () {
 						// FETCHING DATA FROM JSON FILE
-						$.getJSON("https://sebast759.github.io/tame_output/MOZAIC/graphs/order_positions_recap.json",
+						$.getJSON("https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_positions_recap.json",
 							function (data) {
 								html_tab = ''
 								$.each(data['positions recap'], function (key, value) {
@@ -317,11 +317,11 @@ PAGE DE GARDE
 			<div class="col-lg-6">
 				<h4>Today's performance</br></h4>
 				<p class="float-left"><a href="#realized_track">>>Historical track, performance 3 days, 7 days</a></p>
-				<a href="https://sebast759.github.io/tame_output/MOZAIC/graphs/order_binance_performance_1D.png" target="_blank"><img class="rounded float-left"
-						src="https://sebast759.github.io/tame_output/MOZAIC/graphs/order_binance_performance_1D.png" id="grph1" width="100%"></a>
+				<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_binance_performance_1D.png" target="_blank"><img class="rounded float-left"
+						src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_binance_performance_1D.png" id="grph1" width="100%"></a>
 			</div>
 			<!-- <div class="col-lg-12">
-				<iframe position="absolute" width="80%" height="600" id="grph2" src="https://sebast759.github.io/tame_output/ON/graphs/order_position_futures.html"
+				<iframe position="absolute" width="80%" height="600" id="grph2" src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/ON/graphs/order_position_futures.html"
 					style="background-color:white"></iframe>
 			</div> -->
 		</div>
@@ -408,7 +408,7 @@ PAGE DE GARDE
 				<table id='order_positions_pa_futures' style="margin-top: 5px;"></table>
 				<script>
 					$(document).ready(function () {
-						fetch('https://sebast759.github.io/tame_output/MOZAIC/graphs/order_positions_pa_futures.csv')
+						fetch('https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_positions_pa_futures.csv')
 							.then(function (response) {
 								return response.text();
 							})
@@ -459,7 +459,7 @@ PAGE DE GARDE
 				<script>
 					$(document).ready(function () {
 						// FETCHING DATA FROM JSON FILE
-						$.getJSON("https://sebast759.github.io/tame_output/MOZAIC/graphs/posttrade_trades_recap.json",
+						$.getJSON("https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/posttrade_trades_recap.json",
 							function (data) {
 								html_tab = ''
 								$.each(data, function (key0, value) {
@@ -496,7 +496,7 @@ PAGE DE GARDE
 				<table id='posttrade_trades_pnlD_recap'></table>
 				<script>
 					$(document).ready(function () {
-						fetch('https://sebast759.github.io/tame_output/MOZAIC/graphs/posttrade_trades_pnlD_recap.csv')
+						fetch('https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/posttrade_trades_pnlD_recap.csv')
 							.then(function (response) {
 								return response.text();
 							})
@@ -517,7 +517,7 @@ PAGE DE GARDE
 					<table id='trades_vs_target_details' style=" margin-bottom: 50px"></table>
 					<script>
 						$(document).ready(function () {
-							fetch('https://sebast759.github.io/tame_output/MOZAIC/graphs/posttrade_trades_vs_target_details.csv')
+							fetch('https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/posttrade_trades_vs_target_details.csv')
 								.then(function (response) {
 									return response.text();
 								})
@@ -539,24 +539,24 @@ PAGE DE GARDE
 				<h4>Today's return</br>
 				</h4>
 				<div class="row">
-					<a href="https://sebast759.github.io/tame_output/MOZAIC/graphs/order_binance_performance_1D.png" target="_blank"><img class="rounded float-left"
-							src="https://sebast759.github.io/tame_output/MOZAIC/graphs/order_binance_performance_1D.png" id="grph1" width="100%"></a>
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_binance_performance_1D.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_binance_performance_1D.png" id="grph1" width="100%"></a>
 				</div>
 			</div><!-- /.col-lg-3 -->
 			<div class="col-lg-4">
 				<h4>Performance 3 days</br>
 				</h4>
 				<div class="row">
-					<a href="https://sebast759.github.io/tame_output/MOZAIC/graphs/order_binance_performance_3D.png" target="_blank"><img class="rounded float-left"
-							src="https://sebast759.github.io/tame_output/MOZAIC/graphs/order_binance_performance_3D.png" id="grph1" width="100%"></a>
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_binance_performance_3D.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_binance_performance_3D.png" id="grph1" width="100%"></a>
 				</div>
 			</div><!-- /.col-lg-3 -->
 			<div class="col-lg-4">
 				<h4>Performance 7 days</br>
 				</h4>
 				<div class="row">
-					<a href="https://sebast759.github.io/tame_output/MOZAIC/graphs/order_binance_performance_7D.png" target="_blank"><img class="rounded float-left"
-							src="https://sebast759.github.io/tame_output/MOZAIC/graphs/order_binance_performance_7D.png" id="grph1" width="100%"></a>
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_binance_performance_7D.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_binance_performance_7D.png" id="grph1" width="100%"></a>
 				</div>
 			</div><!-- /.col-lg-3 -->
 
@@ -568,8 +568,8 @@ PAGE DE GARDE
 				</h4>
 				<p>Binance wallet value</p>
 				<div class="row">
-					<a href="https://sebast759.github.io/tame_output/MOZAIC/graphs/order_binance_realized_perf.png" target="_blank"><img class="rounded float-left"
-							src="https://sebast759.github.io/tame_output/MOZAIC/graphs/order_binance_realized_perf.png" id="grph2" width="500" height="500"></a>
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_binance_realized_perf.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_binance_realized_perf.png" id="grph2" width="500" height="500"></a>
 				</div>
 			</div><!-- /.col-lg-3 -->
 		</div><!-- /.col-lg-3 -->
@@ -580,8 +580,8 @@ PAGE DE GARDE
 				</h4>
 				<p>Official track vs. Bitcoin, Investable Universe</p>
 				<div class="row">
-					<a href="https://sebast759.github.io/tame_output/MOZAIC/graphs/order_track_real_vs_bt.png" target="_blank"><img class="rounded float-left"
-							src="https://sebast759.github.io/tame_output/MOZAIC/graphs/order_track_real_vs_bt.png" id="grph2" width="500" height="500"></a>
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_track_real_vs_bt.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_track_real_vs_bt.png" id="grph2" width="500" height="500"></a>
 				</div>
 			</div><!-- /.col-lg-3 -->
 			<div class="col-lg-6">
@@ -589,8 +589,8 @@ PAGE DE GARDE
 				</h4>
 				<p>Official track vs. Backtest, cumulated</p>
 				<div class="row">
-					<a href="https://sebast759.github.io/tame_output/MOZAIC/graphs/order_trackingerror_real_vs_bt.png" target="_blank"><img class="rounded float-left"
-							src="https://sebast759.github.io/tame_output/MOZAIC/graphs/order_trackingerror_real_vs_bt.png" id="grph2" width="500" height="500"></a>
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_trackingerror_real_vs_bt.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/order_trackingerror_real_vs_bt.png" id="grph2" width="500" height="500"></a>
 				</div>
 			</div><!-- /.col-lg-3 -->
 		</div><!-- /.col-lg-3 -->
@@ -599,8 +599,8 @@ PAGE DE GARDE
 			<div class="col-lg-6">
 				<h4>Performance YTD</h4>
 				<div class="row">
-					<a href="https://sebast759.github.io/tame_output/MOZAIC/graphs/bt_mozaic_1.png" target="_blank"><img class="rounded float-left"
-							src="https://sebast759.github.io/tame_output/MOZAIC/graphs/bt_mozaic_1.png" id="grph2" width="80%" height="300"></a>
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/bt_mozaic_1.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/MOZAIC/graphs/bt_mozaic_1.png" id="grph2" width="80%" height="300"></a>
 				</div>
 			</div>
 		</div>
@@ -609,8 +609,8 @@ PAGE DE GARDE
 				<h4>ON Strategy - Last 7 days</br></h4>
 				<p>Track</p>
 				<div class="row">
-					<a href="https://sebast759.github.io/tame_output/ON/graphs/bt_binance_ON_realized_perf_G0.png" target="_blank"><img class="rounded float-left"
-							src="https://sebast759.github.io/tame_output/ON/graphs/bt_binance_ON_realized_perf_G0.png" id="grph3" width="500" height="500"></a>
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/ON/graphs/bt_binance_ON_realized_perf_G0.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/ON/graphs/bt_binance_ON_realized_perf_G0.png" id="grph3" width="500" height="500"></a>
 				</div>
 
 			</div>
@@ -618,8 +618,8 @@ PAGE DE GARDE
 				<h4>ON Strategy - since Launch</br></h4>
 				<p>Track</p>
 				<div class="row">
-					<a href="https://sebast759.github.io/tame_output/ON/graphs/bt_track_real_vs_bt.png" target="_blank"><img class="rounded float-left"
-							src="https://sebast759.github.io/tame_output/ON/graphs/bt_track_real_vs_bt.png" id="grph3" width="500" height="500"></a>
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/ON/graphs/bt_track_real_vs_bt.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/ON/graphs/bt_track_real_vs_bt.png" id="grph3" width="500" height="500"></a>
 				</div>
 
 			</div>
@@ -628,8 +628,8 @@ PAGE DE GARDE
 				<p>Recap 24h</p>
 
 				<div class="row">
-					<a href="https://sebast759.github.io/tame_output/ON/graphs/bt_binance_ON_24h_perf.png" target="_blank"><img class="rounded float-left"
-							src="https://sebast759.github.io/tame_output/ON/graphs/bt_binance_ON_24h_perf.png" id="grph4" width="500" height="500"></a>
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/ON/graphs/bt_binance_ON_24h_perf.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/ON/graphs/bt_binance_ON_24h_perf.png" id="grph4" width="500" height="500"></a>
 				</div>
 				
 
@@ -639,8 +639,8 @@ PAGE DE GARDE
 				<p>Recap 24h</p>
 
 				<div class="row">
-					<a href="https://sebast759.github.io/tame_output/ON/graphs/bt_trackingerror_real_vs_bt.png" target="_blank"><img class="rounded float-left"
-							src="https://sebast759.github.io/tame_output/ON/graphs/bt_trackingerror_real_vs_bt.png" id="grph4" width="500" height="500"></a>
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/ON/graphs/bt_trackingerror_real_vs_bt.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/ON/graphs/bt_trackingerror_real_vs_bt.png" id="grph4" width="500" height="500"></a>
 				</div>
 
 			</div>
