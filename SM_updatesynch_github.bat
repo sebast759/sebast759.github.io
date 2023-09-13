@@ -2,7 +2,7 @@ cd  "%USERPROFILE%\Dropbox\Etudes\2021\_Website\sebast759.github.io"
 
 echo %git_command%
 git add --all
-git commit -m "seb_commit"
+git commit -m "seb_benq_commit"
 git pull
 git push
 
