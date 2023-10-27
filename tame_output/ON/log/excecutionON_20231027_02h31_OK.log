@@ -1,0 +1,264 @@
+2023-10-27 02:31:02,679
+ON program started 20231027 02:31:02,
+US time: 20231026 22:31:02
+2023-10-27 02:31:03,093
+the strat is currently running @ 27-10-2023 and the target positions is NEUTRAL
+2023-10-27 02:31:04,494
+CURRENT STATUS IS NEUTRAL
+-----
+return before 14h30:
+BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+target alloc initial:BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+alloc target x rt%<0:BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target      0.0%    0.0%    0.0%
+rt_14h30     0.00%   0.00%   0.00%
+w_target_f    0.0%    0.0%    0.0%
+2023-10-27 02:31:04,496
+Portfolio was rebalanced less than 2 hours ago, 1.0 hours ago
+2023-10-27 02:31:04,499
+Status: prev = NEUTRAL <> SHORT = target
+2023-10-27 02:31:04,499
+the strat is currently running @ 27-10-2023 and the target positions is NEUTRAL
+the strat was previously run @ 2023-10-27 01:31:24 UTC, success:yes 
+   and the current positions is SHORT
+2023-10-27 02:31:05,661
+positions_future #1
+2023-10-27 02:31:05,661
+      symbol  positionAmt entryPrice  ...   updateTime AUMs_account       w%
+121  XRPUSDT        -21.0     0.5537  ...  26Oct-22:35        283.8 -0.04095
+
+[1 rows x 10 columns]
+2023-10-27 02:31:05,899
+------------------------------
+binance_account_balance
+2023-10-27 02:31:05,899
+  asset     balance  ... marginAvailable   updateTime
+5  USDT  283.766875  ...            True  26Oct-22:35
+
+[1 rows x 8 columns]
+2023-10-27 02:31:06,355
+------------------------------
+open_orders
+2023-10-27 02:31:06,355
+                                      0
+symbol                          XRPUSDT
+status                              NEW
+price                                 0
+avgPrice                              0
+origQty                              21
+executedQty                           0
+type                        STOP_MARKET
+side                                BUY
+stopPrice                        0.5815
+time         2023-10-26 22:35:27.185000
+updateTime   2023-10-26 22:35:27.185000
+2023-10-27 02:31:08,378
+------------------------------
+AUMS account:283
+
+2023-10-27 02:31:08,380
+--------------- compute_futures_order_book() ----------------
+2023-10-27 02:31:09,935
+----------------------------------------------------------------------
+#1 order(s) to place
+gross$: 12$ | net$: +12$
+gross%: 4% | net%: +4%
+ || w>0%  +4% | w<0%  0%
+----------------------------------------------------------------------
+PTF Expo% -4.2% >> 0.0% (current>>target)
+PTF expo $-12.0 >> $0 (current>>target)
+----------------------------------------------------------------------
+2023-10-27 02:31:09,936
+orders_ofthe_day
+2023-10-27 02:31:09,936
+                  ptf_usd  target_usd  totrd_usd  ...  posttrd_w     bid     ask
+2023-10-27 02:31                                  ...                           
+XRPUSDT             -12.0         0.0       12.0  ...        0.0  0.5534  0.5535
+
+[1 rows x 9 columns]
+2023-10-27 02:31:11,073
+binance_place_orders_peg 20231027_023111
+2023-10-27 02:31:11,515
+{'orderId': 43815108603, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': '767WG9KQgiKC2Qnd4CGoqj', 'price': '0.5531', 'avgPrice': '0.00', 'origQty': '21.0', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1698373871402}
+2023-10-27 02:31:11,956
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:31:15,956
++XRPUSDT: bp5.0|
+2023-10-27 02:31:16,397
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:31:20,397
++XRPUSDT: bp9.0|
+2023-10-27 02:31:20,837
+update 2: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:31:24,838
++XRPUSDT: bp7.0|
+2023-10-27 02:31:25,280
+update 3: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:31:29,280
++XRPUSDT: bp7.0|
+2023-10-27 02:31:29,720
+update 4: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:31:33,721
++XRPUSDT: bp7.0|
+2023-10-27 02:31:34,160
+update 5: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:31:38,161
++XRPUSDT: bp7.0|
+2023-10-27 02:31:38,602
+update 6: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:31:42,602
++XRPUSDT: bp4.0|
+2023-10-27 02:31:43,041
+update 7: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:31:47,041
++XRPUSDT: bp4.0|
+2023-10-27 02:31:47,479
+update 8: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:31:51,480
++XRPUSDT: bp4.0|
+2023-10-27 02:31:51,919
+update 9: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:31:55,919
++XRPUSDT: bp5.0|
+2023-10-27 02:31:56,359
+update 10: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:32:00,360
++XRPUSDT: bp4.0|
+2023-10-27 02:32:00,801
+update 11: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:32:04,802
++XRPUSDT: bp2.0|
+2023-10-27 02:32:05,243
+update 12: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:32:09,244
++XRPUSDT: bp4.0|
+2023-10-27 02:32:09,683
+update 13: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:32:13,684
++XRPUSDT: bp4.0|
+2023-10-27 02:32:14,122
+update 14: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:32:18,123
++XRPUSDT: bp-0.0|
+2023-10-27 02:32:18,123
+Adjustment limit #1 ... 
+ we cancel current orders and replace
+2023-10-27 02:32:18,123
+@+/-2.5bp limit 
+2023-10-27 02:32:18,123
+binance_cancel_and_replace_orders_peg 20231027_023218
+2023-10-27 02:32:18,786
+binance_place_orders_peg 20231027_023218
+2023-10-27 02:32:19,228
+{'orderId': 43815159880, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'TI9oKzZAjUU9ZUtmFPPelL', 'price': '0.5532', 'avgPrice': '0.00', 'origQty': '21.0', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1698373939114}
+2023-10-27 02:32:19,668
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:32:23,668
++XRPUSDT: bp-0.0|
+2023-10-27 02:32:24,108
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:32:28,109
++XRPUSDT: bp2.0|
+2023-10-27 02:32:28,548
+update 2: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:32:32,549
++XRPUSDT: bp5.0|
+2023-10-27 02:32:32,990
+update 3: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:32:36,990
++XRPUSDT: bp5.0|
+2023-10-27 02:32:37,430
+update 4: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:32:41,431
++XRPUSDT: bp5.0|
+2023-10-27 02:32:41,871
+update 5: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:32:45,872
++XRPUSDT: bp2.0|
+2023-10-27 02:32:46,311
+update 6: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:32:50,311
++XRPUSDT: bp9.0|
+2023-10-27 02:32:50,750
+update 7: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:32:54,750
++XRPUSDT: bp13.0|
+2023-10-27 02:32:55,189
+update 8: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:32:59,190
++XRPUSDT: bp11.0|
+2023-10-27 02:32:59,629
+update 9: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:33:03,630
++XRPUSDT: bp11.0|
+2023-10-27 02:33:04,069
+update 10: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:33:08,070
++XRPUSDT: bp9.0|
+2023-10-27 02:33:08,509
+update 11: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:33:12,509
++XRPUSDT: bp11.0|
+2023-10-27 02:33:12,948
+update 12: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:33:16,949
++XRPUSDT: bp11.0|
+2023-10-27 02:33:17,388
+update 13: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:33:21,388
++XRPUSDT: bp11.0|
+2023-10-27 02:33:21,832
+update 14: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:33:25,833
++XRPUSDT: bp9.0|
+2023-10-27 02:33:25,833
+Adjustment limit #2 ... 
+ we cancel current orders and replace
+2023-10-27 02:33:25,833
+@+/-1.25bp limit 
+2023-10-27 02:33:25,833
+binance_cancel_and_replace_orders_peg 20231027_023325
+2023-10-27 02:33:26,492
+binance_place_orders_peg 20231027_023326
+2023-10-27 02:33:26,939
+{'orderId': 43815207099, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'hP91srHmNAozLJilpuaQ9P', 'price': '0.5536', 'avgPrice': '0.00', 'origQty': '21.0', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1698374006820}
+2023-10-27 02:33:27,378
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:33:31,379
++XRPUSDT: bp2.0|
+2023-10-27 02:33:31,819
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-10-27 02:33:35,820
++XRPUSDT: bp4.0|
+2023-10-27 02:33:36,260
+update 2: filled 1 / 1 (+XRPUSDT) | working 0 / 1 ()
+2023-10-27 02:33:41,379
+Trades of the day
+in$
+as of: 27Oct 02:33>>02:33 (#trades: 1)
+trade net: +12.0 (+4.2%), trade gross: +12.0 (+4.2%), BUY: +12.0 (+4.2%), SELL: +0.0 (+0.0%)
+fees: $ 0.002 (2.0bp)
+2023-10-27 02:33:41,613
+Trades: 
+Filled #1
+______________________________________________
+                   in$ | in bp 11 traded | in bp 283 AUMs
+realizedPnl    +0      | +0      | +0     
+PnLvsArrival   +0      | +0      | +0     
+PnLvsLast      +0      | +0      | +0     
+______________________________________________
+                 | Value$ | PnL Arrival/Last 
+______________________________________________
+XRP:+21@0.5536  | +12$ | -0/-0
+2023-10-27 02:33:42,142
+***************************
+Positions after orders
+***************************
+2023-10-27 02:33:42,142
+********No Position************
+2023-10-27 02:33:42,143
+***************************
