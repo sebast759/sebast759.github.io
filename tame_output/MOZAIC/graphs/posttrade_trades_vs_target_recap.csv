@@ -1,8 +1,8 @@
 ,index,recap,
-0,#trades,5.0,24Sep23 14:04
-1,$net,-2.0,-28bp
-2,$gross,89,+12.3%
-3,$buy,44,+6.1%
-4,$sell,-46,-6.4%
-5,$P&L vs. Last,-0.3,-5bp
-6,$P&L vs. Arrival,-0.0,-0bp
+0,#trades,10.0,02Nov23 14:03
+1,$net,52,+5.5%
+2,$gross,147,+15.5%
+3,$buy,100,+10.5%
+4,$sell,-47,-5.0%
+5,$P&L vs. Last,1.6,+17bp
+6,$P&L vs. Arrival,0.0,+0bp
