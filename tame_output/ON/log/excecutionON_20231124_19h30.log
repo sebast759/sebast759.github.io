@@ -1,0 +1,75 @@
+2023-11-24 19:30:31,812
+ON program started 20231124 19:30:31,
+US time: 20231124 14:30:31
+2023-11-24 19:30:32,226
+the strat is currently running @ 24-11-2023 and the target positions is LONG
+2023-11-24 19:30:33,630
+CURRENT STATUS IS LONG
+-----
+return before 14h30:
+BTCUSDT+1.00%, ETHUSDT+1.12%, XRPUSDT-0.23%
+-----
+target alloc initial:BTCUSDT+16.67%, ETHUSDT+16.67%, XRPUSDT+16.67%
+-----
+alloc target x rt%<0:BTCUSDT+16.67%, ETHUSDT+16.67%, XRPUSDT+16.67%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target     16.7%   16.7%   16.7%
+rt_14h30     0.01%   0.01%  -0.00%
+w_target_f   16.7%   16.7%   16.7%
+2023-11-24 19:30:33,632
+Portfolio was rebalanced less than 2 hours ago, 15.0 hours ago
+2023-11-24 19:30:33,634
+Status: prev = LONG <> NEUTRAL = target
+2023-11-24 19:30:33,634
+the strat is currently running @ 24-11-2023 and the target positions is LONG
+the strat was previously run @ 2023-11-24 04:30:38 UTC, success:yes 
+   and the current positions is NEUTRAL
+2023-11-24 19:30:34,786
+positions_future #0
+2023-11-24 19:30:34,786
+Empty DataFrame
+Columns: [symbol, positionAmt, entryPrice, breakEvenPrice, markPrice, unRealizedProfit, value_usd, updateTime, isolated, adlQuantile, AUMs_account, w%]
+Index: []
+2023-11-24 19:30:35,005
+------------------------------
+binance_account_balance
+2023-11-24 19:30:35,005
+  asset     balance  ... marginAvailable   updateTime
+5  USDT  287.456436  ...            True  23Nov-23:31
+
+[1 rows x 8 columns]
+2023-11-24 19:30:35,237
+------------------------------
+open_orders
+2023-11-24 19:30:35,237
+Empty DataFrame
+Columns: []
+Index: []
+2023-11-24 19:30:35,886
+------------------------------
+AUMS account:287
+
+2023-11-24 19:30:35,887
+--------------- compute_futures_order_book() ----------------
+2023-11-24 19:30:37,428
+----------------------------------------------------------------------
+#2 order(s) to place
+gross$: 96$ | net$: +96$
+gross%: 33% | net%: +33%
+ || w>0%  +33% | w<0%  0%
+----------------------------------------------------------------------
+PTF Expo% 0.0% >> 50.0% (current>>target)
+PTF expo $0.0 >> $143 (current>>target)
+----------------------------------------------------------------------
+2023-11-24 19:30:37,429
+orders_ofthe_day
+2023-11-24 19:30:37,429
+                  ptf_usd  target_usd  ...       bid        ask
+2023-11-24 19:30                       ...                     
+ETHUSDT               0.0       47.92  ...  2086.660  2086.6700
+XRPUSDT               0.0       47.92  ...     0.618     0.6181
+
+[2 rows x 9 columns]
+2023-11-24 19:30:38,559
+binance_place_orders_peg 20231124_193038
