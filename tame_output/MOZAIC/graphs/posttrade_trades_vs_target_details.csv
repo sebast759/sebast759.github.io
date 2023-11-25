@@ -1,11 +1,11 @@
-24Nov23 18:08,arrival_price,totrd_qty,totrd_usd,px_trd,qty_trd,value_trd,PnLvsClose,PnLvsArrival,!!check!!,px_lst,PnLvsLast
-SOLUSDT,57.748,-1.00,$-58.0,57.586,-1.00,$-58,$0.7,$-0.2,ok,57.47,$0.1
-UNIUSDT,6.139,6.00,$37.0,6.145,6.00,$37,$0.1,$-0.0,ok,6.079,$-0.4
-BNBUSDT,232.275,-0.14,$-33.0,232.100,-0.14,$-32,$-0.1,$-0.0,ok,232.59,$-0.1
-ADAUSDT,0.387,72.00,$28.0,0.386,72.00,$28,$-0.0,$0.0,ok,.3873,$0.1
-LTCUSDT,70.525,0.30,$21.0,70.500,0.30,$21,$0.1,$0.0,ok,70.78,$0.1
-MATICUSDT,0.765,-25.00,$-19.0,0.765,-25.00,$-19,$0.1,$0.0,ok,.7665,$-0.0
-XMRUSDT,168.135,0.11,$18.0,167.950,0.11,$18,$0.3,$0.0,ok,169.99,$0.2
-DOGEUSDT,0.077,172.00,$13.0,0.077,172.00,$13,$0.1,$0.0,ok,.07767,$0.1
-TRXUSDT,0.104,63.00,$7.0,0.104,63.00,$7,$0.0,$-0.0,ok,.10484,$0.0
-ATOMUSDT,8.904,-0.83,$-7.0,8.895,-0.83,$-7,$-0.0,$-0.0,ok,8.904,$-0.0
+24Nov23 13:07,arrival_price,totrd_qty,totrd_usd,px_trd,qty_trd,value_trd,PnLvsLast,PnLvsArrival,!!check!!
+SOLUSDT,57.796,-1.00,$-58.0,nan,nan,$nan,$nan,$nan,!!!KO!!!
+UNIUSDT,6.213,6.00,$37.0,nan,nan,$nan,$nan,$nan,!!!KO!!!
+BNBUSDT,234.275,-0.14,$-33.0,nan,nan,$nan,$nan,$nan,!!!KO!!!
+ADAUSDT,0.390,72.00,$28.0,nan,nan,$nan,$nan,$nan,!!!KO!!!
+MATICUSDT,0.780,-26.00,$-20.0,nan,nan,$nan,$nan,$nan,!!!KO!!!
+XMRUSDT,168.815,0.11,$18.0,nan,nan,$nan,$nan,$nan,!!!KO!!!
+ATOMUSDT,8.922,-1.75,$-16.0,nan,nan,$nan,$nan,$nan,!!!KO!!!
+DOGEUSDT,0.077,174.00,$13.0,nan,nan,$nan,$nan,$nan,!!!KO!!!
+XRPUSDT,0.619,14.50,$9.0,nan,nan,$nan,$nan,$nan,!!!KO!!!
+TRXUSDT,0.103,65.00,$7.0,nan,nan,$nan,$nan,$nan,!!!KO!!!
