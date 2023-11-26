@@ -1,0 +1,35 @@
+2023-11-26 01:30:33,468
+ON program started 20231126 01:30:33,
+US time: 20231125 20:30:33
+2023-11-26 01:30:33,997
+the strat is currently running @ 26-11-2023 and the target positions is SHORT
+2023-11-26 01:30:35,829
+CURRENT STATUS IS SHORT, WE CHECK IF THE DAY IS A NEGATIVE ONE
+-----
+return before 14h30:
+BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+target alloc initial:BTCUSDT-4.17%, ETHUSDT+0.00%, XRPUSDT-4.17%
+-----
+alloc target x rt%<0:BTCUSDT-0.00%, ETHUSDT+0.00%, XRPUSDT-0.00%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target     -4.2%    0.0%   -4.2%
+rt_14h30     0.00%   0.00%   0.00%
+w_target_f   -0.0%    0.0%   -0.0%
+2023-11-26 01:30:35,831
+Portfolio was rebalanced less than 2 hours ago, 1.0 hours ago
+2023-11-26 01:30:35,834
+Status: prev = SHORT <> SHORT = target
+2023-11-26 01:30:35,834
+the strat is currently running @ 26-11-2023 and the target positions is SHORT
+the strat was previously run @ 2023-11-26 00:30:56 UTC, success:yes 
+   and the current positions is SHORT
+2023-11-26 01:30:37,059
+positions_future #0
+2023-11-26 01:30:37,059
+Empty DataFrame
+Columns: [symbol, positionAmt, entryPrice, breakEvenPrice, markPrice, unRealizedProfit, value_usd, updateTime, isolated, adlQuantile, AUMs_account, w%]
+Index: []
+2023-11-26 01:30:37,140
+programm stoppeddd!!! 20231126_013037
