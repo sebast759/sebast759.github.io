@@ -1,0 +1,109 @@
+2023-12-04 19:30:44,669
+ON program started 20231204 19:30:44,
+US time: 20231204 14:30:44
+2023-12-04 19:30:45,165
+the strat is currently running @ 04-12-2023 and the target positions is LONG
+2023-12-04 19:30:46,586
+CURRENT STATUS IS LONG
+-----
+return before 14h30:
+BTCUSDT+2.00%, ETHUSDT-0.03%, XRPUSDT-1.68%
+-----
+target alloc initial:BTCUSDT+16.67%, ETHUSDT+16.67%, XRPUSDT+16.67%
+-----
+alloc target x rt%<0:BTCUSDT+16.67%, ETHUSDT+16.67%, XRPUSDT+16.67%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target     16.7%   16.7%   16.7%
+rt_14h30     0.02%  -0.00%  -0.02%
+w_target_f   16.7%   16.7%   16.7%
+2023-12-04 19:30:46,587
+Portfolio was rebalanced less than 2 hours ago, 15.0 hours ago
+2023-12-04 19:30:46,590
+Status: prev = LONG <> NEUTRAL = target
+2023-12-04 19:30:46,590
+the strat is currently running @ 04-12-2023 and the target positions is LONG
+the strat was previously run @ 2023-12-04 04:30:49 UTC, success:yes 
+   and the current positions is NEUTRAL
+2023-12-04 19:30:47,807
+positions_future #0
+2023-12-04 19:30:47,807
+Empty DataFrame
+Columns: [symbol, positionAmt, entryPrice, breakEvenPrice, markPrice, unRealizedProfit, value_usd, updateTime, isolated, adlQuantile, AUMs_account, w%]
+Index: []
+2023-12-04 19:30:48,029
+------------------------------
+binance_account_balance
+2023-12-04 19:30:48,029
+  asset     balance  ... marginAvailable   updateTime
+5  USDT  289.694154  ...            True  04Dec-00:31
+
+[1 rows x 8 columns]
+2023-12-04 19:30:48,261
+------------------------------
+open_orders
+2023-12-04 19:30:48,261
+Empty DataFrame
+Columns: []
+Index: []
+2023-12-04 19:30:48,914
+------------------------------
+AUMS account:289
+
+2023-12-04 19:30:48,916
+--------------- compute_futures_order_book() ----------------
+2023-12-04 19:30:50,468
+----------------------------------------------------------------------
+#2 order(s) to place
+gross$: 97$ | net$: +97$
+gross%: 33% | net%: +33%
+ || w>0%  +33% | w<0%  0%
+----------------------------------------------------------------------
+PTF Expo% 0.0% >> 50.0% (current>>target)
+PTF expo $0.0 >> $144 (current>>target)
+----------------------------------------------------------------------
+2023-12-04 19:30:50,470
+orders_ofthe_day
+2023-12-04 19:30:50,470
+                  ptf_usd  target_usd  ...        bid        ask
+2023-12-04 19:30                       ...                      
+ETHUSDT               0.0       48.29  ...  2228.1500  2228.1600
+XRPUSDT               0.0       48.29  ...     0.6204     0.6205
+
+[2 rows x 9 columns]
+2023-12-04 19:30:51,822
+binance_place_orders_peg 20231204_193051
+2023-12-04 19:30:52,261
+{'orderId': 8389765632357978128, 'symbol': 'ETHUSDT', 'status': 'NEW', 'clientOrderId': 'waZQusuRXdvs5S1wCIzrpP', 'price': '2227.04', 'avgPrice': '0.00', 'origQty': '0.022', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1701718252149}
+2023-12-04 19:30:52,720
+{'orderId': 46152736488, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'LxyJE8vjB05utKlyIveUtM', 'price': '0.6201', 'avgPrice': '0.00', 'origQty': '77.8', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1701718252608}
+2023-12-04 19:30:54,292
+update 0: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-04 19:30:58,293
++ETHUSDT: bp5.0|+XRPUSDT: bp5.0|
+2023-12-04 19:30:59,166
+update 1: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-04 19:31:03,167
++ETHUSDT: bp3.0|+XRPUSDT: bp5.0|
+2023-12-04 19:31:04,043
+update 2: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-04 19:31:08,043
++ETHUSDT: bp2.0|+XRPUSDT: bp5.0|
+2023-12-04 19:31:08,918
+update 3: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-04 19:31:12,919
++ETHUSDT: bp2.0|+XRPUSDT: bp3.0|
+2023-12-04 19:31:13,792
+update 4: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-04 19:31:17,793
++ETHUSDT: bp2.0|+XRPUSDT: bp5.0|
+2023-12-04 19:31:18,668
+update 5: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-04 19:31:22,669
++ETHUSDT: bp1.0|+XRPUSDT: bp5.0|
+2023-12-04 19:31:23,542
+update 6: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-04 19:31:27,543
++XRPUSDT: bp3.0|
+2023-12-04 19:31:28,419
+update 7: filled 2 / 2 (+ETHUSDT,+XRPUSDT) | working 0 / 2 ()
