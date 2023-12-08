@@ -1,9 +1,8 @@
-07Dec23 14:01,arrival_price,totrd_qty,totrd_usd,px_trd,qty_trd,value_trd,PnLvsClose,PnLvsArrival,!!check!!,px_lst,PnLvsLast
-DOTUSDT,6.159,3.30,$20.0,6.003,3.80,$23,$0.9,$0.5,ok,6.599,$2.3
-ADAUSDT,0.449,29.00,$13.0,0.436,52.00,$23,$1.1,$0.4,ok,.5188,$4.3
-DOGEUSDT,nan,nan,$nan,0.094,-340.00,$-32,$-0.6,$nan,!!!KO!!!,.09755,$-1.1
-UNIUSDT,nan,nan,$nan,6.060,2.00,$12,$0.5,$nan,!!!KO!!!,6.411,$0.7
-ATOMUSDT,nan,nan,$nan,9.660,-0.87,$-8,$-0.2,$nan,!!!KO!!!,10.147,$-0.4
-XMRUSDT,nan,nan,$nan,174.320,0.03,$5,$-0.0,$nan,!!!KO!!!,172.67,$-0.1
-XRPUSDT,nan,nan,$nan,0.631,11.60,$7,$0.1,$nan,!!!KO!!!,.6497,$0.2
-BNBUSDT,nan,nan,$nan,230.600,0.05,$12,$0.1,$nan,!!!KO!!!,234.94,$0.2
+08Dec23 14:02,arrival_price,totrd_qty,totrd_usd,px_trd,qty_trd,value_trd,PnLvsLast,PnLvsArrival,!!check!!
+DOTUSDT,6.691,15.40,$103.0,6.685,15.40,$103,$-0.7,$0.1,ok
+ADAUSDT,0.520,139.00,$72.0,0.520,139.00,$72,$0.1,$0.1,ok
+DOGEUSDT,0.097,-288.00,$-28.0,0.098,-288.00,$-28,$0.1,$0.0,ok
+ETCUSDT,21.940,1.28,$28.0,21.944,1.28,$28,$-0.1,$-0.0,ok
+XLMUSDT,0.129,121.00,$16.0,0.130,121.00,$16,$-0.1,$-0.0,ok
+TRXUSDT,0.106,143.00,$15.0,0.106,143.00,$15,$-0.0,$-0.0,ok
+MATICUSDT,0.877,14.00,$12.0,0.879,14.00,$12,$-0.1,$-0.0,ok
