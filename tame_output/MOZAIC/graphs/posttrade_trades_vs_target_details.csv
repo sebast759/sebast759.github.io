@@ -1,10 +1,10 @@
 12Dec23 14:13,arrival_price,totrd_qty,totrd_usd,px_trd,qty_trd,value_trd,PnLvsClose,PnLvsArrival,!!check!!,px_lst,PnLvsLast
-ATOMUSDT,11.805,0.43,$5.0,12.041,8.78,$106,$-2.6,$-0.1,ok,10.998,$-9.2
-ADAUSDT,nan,nan,$nan,0.594,-24.00,$-14,$0.4,$nan,!!!KO!!!,.5843,$0.2
-DOTUSDT,nan,nan,$nan,7.194,3.00,$22,$-0.2,$nan,!!!KO!!!,6.816,$-1.1
-DOGEUSDT,nan,nan,$nan,0.096,-355.00,$-34,$0.8,$nan,!!!KO!!!,.09291,$1.2
-UNIUSDT,nan,nan,$nan,6.294,-6.00,$-38,$0.3,$nan,!!!KO!!!,6.053,$1.4
-XMRUSDT,nan,nan,$nan,171.710,-0.10,$-18,$0.1,$nan,!!!KO!!!,169.07,$0.3
-TRXUSDT,nan,nan,$nan,0.104,-170.00,$-18,$0.1,$nan,!!!KO!!!,.10315,$0.2
-XRPUSDT,nan,nan,$nan,0.622,-8.20,$-5,$0.0,$nan,!!!KO!!!,.6049,$0.1
-BNBUSDT,nan,nan,$nan,252.420,0.12,$30,$0.1,$nan,!!!KO!!!,250.09,$-0.3
+ATOMUSDT,11.805,0.43,$5.0,12.041,8.78,$106,$-2.6,$-0.1,ok,11.142,$-7.9
+ADAUSDT,nan,nan,$nan,0.594,-24.00,$-14,$0.4,$nan,!!!KO!!!,.6067,$-0.3
+DOTUSDT,nan,nan,$nan,7.194,3.00,$22,$-0.2,$nan,!!!KO!!!,6.981,$-0.6
+DOGEUSDT,nan,nan,$nan,0.096,-355.00,$-34,$0.8,$nan,!!!KO!!!,.09362,$0.9
+UNIUSDT,nan,nan,$nan,6.294,-6.00,$-38,$0.3,$nan,!!!KO!!!,6.131,$1.0
+XMRUSDT,nan,nan,$nan,171.710,-0.10,$-18,$0.1,$nan,!!!KO!!!,169.04,$0.3
+TRXUSDT,nan,nan,$nan,0.104,-170.00,$-18,$0.1,$nan,!!!KO!!!,.10334,$0.2
+XRPUSDT,nan,nan,$nan,0.622,-8.20,$-5,$0.0,$nan,!!!KO!!!,.6092,$0.1
+BNBUSDT,nan,nan,$nan,252.420,0.12,$30,$0.1,$nan,!!!KO!!!,250.5,$-0.2
