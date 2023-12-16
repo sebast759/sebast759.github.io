@@ -1,0 +1,108 @@
+2023-12-16 19:30:56,989
+ON program started 20231216 19:30:56,
+US time: 20231216 14:30:56
+2023-12-16 19:30:57,476
+the strat is currently running @ 16-12-2023 and the target positions is LONG
+2023-12-16 19:30:58,887
+CURRENT STATUS IS LONG
+-----
+return before 14h30:
+BTCUSDT+0.43%, ETHUSDT-0.31%, XRPUSDT-0.08%
+-----
+target alloc initial:BTCUSDT+16.67%, ETHUSDT+16.67%, XRPUSDT+16.67%
+-----
+alloc target x rt%<0:BTCUSDT+16.67%, ETHUSDT+16.67%, XRPUSDT+16.67%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target     16.7%   16.7%   16.7%
+rt_14h30     0.00%  -0.00%  -0.00%
+w_target_f   16.7%   16.7%   16.7%
+2023-12-16 19:30:58,889
+Portfolio was rebalanced less than 2 hours ago, 15.0 hours ago
+2023-12-16 19:30:58,892
+Status: prev = LONG <> NEUTRAL = target
+2023-12-16 19:30:58,892
+the strat is currently running @ 16-12-2023 and the target positions is LONG
+the strat was previously run @ 2023-12-16 04:31:16 UTC, success:yes 
+   and the current positions is NEUTRAL
+2023-12-16 19:31:00,123
+positions_future #0
+2023-12-16 19:31:00,123
+Empty DataFrame
+Columns: [symbol, positionAmt, entryPrice, breakEvenPrice, markPrice, unRealizedProfit, value_usd, updateTime, isolated, adlQuantile, AUMs_account, w%]
+Index: []
+2023-12-16 19:31:00,348
+------------------------------
+binance_account_balance
+2023-12-16 19:31:00,348
+  asset   balance  ...  marginAvailable   updateTime
+5  USDT  292.5694  ...             True  16Dec-00:31
+
+[1 rows x 8 columns]
+2023-12-16 19:31:00,583
+------------------------------
+open_orders
+2023-12-16 19:31:00,583
+Empty DataFrame
+Columns: []
+Index: []
+2023-12-16 19:31:01,243
+------------------------------
+AUMS account:292
+
+2023-12-16 19:31:01,245
+--------------- compute_futures_order_book() ----------------
+2023-12-16 19:31:02,810
+----------------------------------------------------------------------
+#2 order(s) to place
+gross$: 98$ | net$: +98$
+gross%: 33% | net%: +33%
+ || w>0%  +33% | w<0%  0%
+----------------------------------------------------------------------
+PTF Expo% 0.0% >> 50.0% (current>>target)
+PTF expo $0.0 >> $146 (current>>target)
+----------------------------------------------------------------------
+2023-12-16 19:31:02,811
+orders_ofthe_day
+2023-12-16 19:31:02,811
+                  ptf_usd  target_usd  ...       bid        ask
+2023-12-16 19:31                       ...                     
+ETHUSDT               0.0       48.77  ...  2240.880  2240.8900
+XRPUSDT               0.0       48.77  ...     0.621     0.6211
+
+[2 rows x 9 columns]
+2023-12-16 19:31:04,405
+binance_place_orders_peg 20231216_193104
+2023-12-16 19:31:04,849
+{'orderId': 8389765635515414321, 'symbol': 'ETHUSDT', 'status': 'NEW', 'clientOrderId': 'XlI0KUI3gTlaTaqPeJ7FNk', 'price': '2239.76', 'avgPrice': '0.00', 'origQty': '0.022', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1702755064739}
+2023-12-16 19:31:05,289
+{'orderId': 46926099644, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'fahucAYEZEjUNdgSKO8XtY', 'price': '0.6207', 'avgPrice': '0.00', 'origQty': '78.9', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1702755065179}
+2023-12-16 19:31:06,879
+update 0: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-16 19:31:10,879
++ETHUSDT: bp5.0|+XRPUSDT: bp6.0|
+2023-12-16 19:31:11,763
+update 1: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-16 19:31:15,764
++ETHUSDT: bp2.0|+XRPUSDT: bp6.0|
+2023-12-16 19:31:16,650
+update 2: filled 2 / 2 (+ETHUSDT,+XRPUSDT) | working 0 / 2 ()
+2023-12-16 19:31:22,662
+Trades of the day
+in$
+as of: 16Dec 19:31>>19:31 (#trades: 2)
+trade net: +98.0 (+33.5%), trade gross: +98.0 (+33.5%), BUY: +98.0 (+33.5%), SELL: +0.0 (+0.0%)
+fees: $ 0.02 (2.0bp)
+2023-12-16 19:31:23,121
+Trades: 
+Filled #2
+______________________________________________
+                   in$ | in bp 98 traded | in bp 292 AUMs
+realizedPnl    +0      | +0      | +0     
+PnLvsArrival   +0.05   | +5      | +2     
+PnLvsLast      -0.07   | -7      | -2     
+______________________________________________
+                 | Value$ | PnL Arrival/Last 
+______________________________________________
+XRP:+78.9@0.6207 | +49$ | 0.03/-0.05
+ETH:+0.022@2239.76 | +49$ | 0.02/-0.02
