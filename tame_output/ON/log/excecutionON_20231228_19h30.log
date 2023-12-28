@@ -1,0 +1,390 @@
+2023-12-28 19:30:59,320
+ON program started 20231228 19:30:59,
+US time: 20231228 14:30:59
+2023-12-28 19:30:59,901
+the strat is currently running @ 28-12-2023 and the target positions is LONG
+2023-12-28 19:31:01,322
+CURRENT STATUS IS LONG
+-----
+return before 14h30:
+BTCUSDT-1.93%, ETHUSDT-1.80%, XRPUSDT-3.43%
+-----
+target alloc initial:BTCUSDT+16.67%, ETHUSDT+16.67%, XRPUSDT+16.67%
+-----
+alloc target x rt%<0:BTCUSDT+16.67%, ETHUSDT+16.67%, XRPUSDT+16.67%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target     16.7%   16.7%   16.7%
+rt_14h30    -0.02%  -0.02%  -0.03%
+w_target_f   16.7%   16.7%   16.7%
+2023-12-28 19:31:01,324
+Portfolio was rebalanced less than 2 hours ago, 15.0 hours ago
+2023-12-28 19:31:01,328
+Status: prev = LONG <> NEUTRAL = target
+2023-12-28 19:31:01,328
+the strat is currently running @ 28-12-2023 and the target positions is LONG
+the strat was previously run @ 2023-12-28 04:30:48 UTC, success:yes 
+   and the current positions is NEUTRAL
+2023-12-28 19:31:02,631
+positions_future #0
+2023-12-28 19:31:02,631
+Empty DataFrame
+Columns: [symbol, positionAmt, entryPrice, breakEvenPrice, markPrice, unRealizedProfit, value_usd, updateTime, isolated, adlQuantile, AUMs_account, w%]
+Index: []
+2023-12-28 19:31:02,856
+------------------------------
+binance_account_balance
+2023-12-28 19:31:02,856
+  asset     balance  ...  marginAvailable   updateTime
+5  USDT  292.464439  ...             True  27Dec-23:33
+
+[1 rows x 8 columns]
+2023-12-28 19:31:03,090
+------------------------------
+open_orders
+2023-12-28 19:31:03,090
+Empty DataFrame
+Columns: []
+Index: []
+2023-12-28 19:31:03,753
+------------------------------
+AUMS account:292
+
+2023-12-28 19:31:03,755
+--------------- compute_futures_order_book() ----------------
+2023-12-28 19:31:05,324
+----------------------------------------------------------------------
+#2 order(s) to place
+gross$: 99$ | net$: +99$
+gross%: 34% | net%: +34%
+ || w>0%  +34% | w<0%  0%
+----------------------------------------------------------------------
+PTF Expo% 0.0% >> 50.0% (current>>target)
+PTF expo $0.0 >> $146 (current>>target)
+----------------------------------------------------------------------
+2023-12-28 19:31:05,326
+orders_ofthe_day
+2023-12-28 19:31:05,326
+                  ptf_usd  target_usd  ...        bid        ask
+2023-12-28 19:31                       ...                      
+ETHUSDT               0.0       48.75  ...  2369.8600  2369.8700
+XRPUSDT               0.0       48.75  ...     0.6321     0.6322
+
+[2 rows x 9 columns]
+2023-12-28 19:31:06,589
+binance_place_orders_peg 20231228_193106
+2023-12-28 19:31:07,031
+{'orderId': 8389765638726008637, 'symbol': 'ETHUSDT', 'status': 'NEW', 'clientOrderId': '9dGwfnxcn2EsMKHnTBeqd3', 'price': '2368.37', 'avgPrice': '0.00', 'origQty': '0.021', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1703791866919}
+2023-12-28 19:31:07,474
+{'orderId': 47579921838, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'n9ZFcShXiacsBDgTkUPi1N', 'price': '0.6317', 'avgPrice': '0.00', 'origQty': '77.5', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1703791867362}
+2023-12-28 19:31:09,071
+update 0: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-28 19:31:13,071
++ETHUSDT: bp8.0|+XRPUSDT: bp8.0|
+2023-12-28 19:31:13,955
+update 1: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-28 19:31:17,956
++ETHUSDT: bp5.0|+XRPUSDT: bp6.0|
+2023-12-28 19:31:18,843
+update 2: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-28 19:31:22,844
++ETHUSDT: bp5.0|+XRPUSDT: bp5.0|
+2023-12-28 19:31:23,731
+update 3: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-28 19:31:27,733
++ETHUSDT: bp7.0|+XRPUSDT: bp8.0|
+2023-12-28 19:31:28,621
+update 4: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-28 19:31:32,622
++ETHUSDT: bp8.0|+XRPUSDT: bp8.0|
+2023-12-28 19:31:33,506
+update 5: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-28 19:31:37,507
++ETHUSDT: bp7.0|+XRPUSDT: bp8.0|
+2023-12-28 19:31:38,393
+update 6: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-28 19:31:42,394
++ETHUSDT: bp6.0|+XRPUSDT: bp6.0|
+2023-12-28 19:31:43,280
+update 7: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-28 19:31:47,281
++ETHUSDT: bp6.0|+XRPUSDT: bp9.0|
+2023-12-28 19:31:48,171
+update 8: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-28 19:31:52,171
++ETHUSDT: bp6.0|+XRPUSDT: bp9.0|
+2023-12-28 19:31:53,063
+update 9: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-28 19:31:57,063
++ETHUSDT: bp6.0|+XRPUSDT: bp8.0|
+2023-12-28 19:31:57,946
+update 10: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-28 19:32:01,947
++ETHUSDT: bp6.0|+XRPUSDT: bp6.0|
+2023-12-28 19:32:02,831
+update 11: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-28 19:32:06,832
++ETHUSDT: bp3.0|+XRPUSDT: bp6.0|
+2023-12-28 19:32:07,719
+update 12: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-28 19:32:11,720
++ETHUSDT: bp4.0|+XRPUSDT: bp6.0|
+2023-12-28 19:32:12,604
+update 13: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-28 19:32:16,605
++ETHUSDT: bp4.0|+XRPUSDT: bp5.0|
+2023-12-28 19:32:17,495
+update 14: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-28 19:32:21,496
++ETHUSDT: bp4.0|+XRPUSDT: bp5.0|
+2023-12-28 19:32:21,496
+Adjustment limit #1 ... 
+ we cancel current orders and replace
+2023-12-28 19:32:21,496
+@+/-2.5bp limit 
+2023-12-28 19:32:21,496
+binance_cancel_and_replace_orders_peg 20231228_193221
+2023-12-28 19:32:23,716
+binance_place_orders_peg 20231228_193223
+2023-12-28 19:32:24,159
+{'orderId': 8389765638726252386, 'symbol': 'ETHUSDT', 'status': 'NEW', 'clientOrderId': '9dGwfnxcn2EsMKHnTBeqd3', 'price': '2369.50', 'avgPrice': '0.00', 'origQty': '0.021', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1703791944047}
+2023-12-28 19:32:24,602
+{'orderId': 47579959155, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'n9ZFcShXiacsBDgTkUPi1N', 'price': '0.6319', 'avgPrice': '0.00', 'origQty': '77.5', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1703791944489}
+2023-12-28 19:32:25,493
+update 0: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-28 19:32:29,494
++ETHUSDT: bp0.0|+XRPUSDT: bp3.0|
+2023-12-28 19:32:30,383
+update 1: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-28 19:32:34,384
++ETHUSDT: bp0.0|+XRPUSDT: bp3.0|
+2023-12-28 19:32:35,267
+update 2: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-28 19:32:39,268
++ETHUSDT: bp0.0|+XRPUSDT: bp3.0|
+2023-12-28 19:32:40,153
+update 3: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-28 19:32:44,154
++ETHUSDT: bp2.0|+XRPUSDT: bp3.0|
+2023-12-28 19:32:45,039
+update 4: filled 0 / 2 () | working 2 / 2 (+ETHUSDT,+XRPUSDT)
+2023-12-28 19:32:49,040
++ETHUSDT: bp1.0|+XRPUSDT: bp3.0|
+2023-12-28 19:32:49,924
+update 5: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:32:53,925
++XRPUSDT: bp-0.0|
+2023-12-28 19:32:54,809
+update 6: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:32:58,810
++XRPUSDT: bp-0.0|
+2023-12-28 19:32:59,695
+update 7: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:33:03,695
++XRPUSDT: bp2.0|
+2023-12-28 19:33:04,586
+update 8: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:33:08,587
++XRPUSDT: bp2.0|
+2023-12-28 19:33:09,472
+update 9: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:33:13,473
++XRPUSDT: bp3.0|
+2023-12-28 19:33:14,358
+update 10: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:33:18,358
++XRPUSDT: bp6.0|
+2023-12-28 19:33:19,242
+update 11: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:33:23,243
++XRPUSDT: bp6.0|
+2023-12-28 19:33:24,126
+update 12: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:33:28,127
++XRPUSDT: bp6.0|
+2023-12-28 19:33:29,012
+update 13: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:33:33,013
++XRPUSDT: bp5.0|
+2023-12-28 19:33:33,899
+update 14: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:33:37,899
++XRPUSDT: bp6.0|
+2023-12-28 19:33:37,899
+Adjustment limit #2 ... 
+ we cancel current orders and replace
+2023-12-28 19:33:37,899
+@+/-1.25bp limit 
+2023-12-28 19:33:37,900
+binance_cancel_and_replace_orders_peg 20231228_193337
+2023-12-28 19:33:39,456
+binance_place_orders_peg 20231228_193339
+2023-12-28 19:33:39,897
+{'orderId': 47579994777, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'n9ZFcShXiacsBDgTkUPi1N', 'price': '0.6321', 'avgPrice': '0.00', 'origQty': '77.5', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1703792019786}
+2023-12-28 19:33:40,786
+update 0: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:33:44,786
++XRPUSDT: bp3.0|
+2023-12-28 19:33:45,670
+update 1: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:33:49,670
++XRPUSDT: bp2.0|
+2023-12-28 19:33:50,553
+update 2: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:33:54,554
++XRPUSDT: bp5.0|
+2023-12-28 19:33:55,438
+update 3: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:33:59,439
++XRPUSDT: bp6.0|
+2023-12-28 19:34:00,326
+update 4: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:34:04,326
++XRPUSDT: bp6.0|
+2023-12-28 19:34:05,210
+update 5: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:34:09,211
++XRPUSDT: bp6.0|
+2023-12-28 19:34:10,095
+update 6: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:34:14,096
++XRPUSDT: bp6.0|
+2023-12-28 19:34:14,986
+update 7: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:34:18,986
++XRPUSDT: bp8.0|
+2023-12-28 19:34:19,883
+update 8: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:34:23,884
++XRPUSDT: bp8.0|
+2023-12-28 19:34:24,771
+update 9: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:34:28,771
++XRPUSDT: bp8.0|
+2023-12-28 19:34:29,657
+update 10: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:34:33,658
++XRPUSDT: bp8.0|
+2023-12-28 19:34:34,544
+update 11: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:34:38,549
++XRPUSDT: bp9.0|
+2023-12-28 19:34:39,432
+update 12: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:34:43,433
++XRPUSDT: bp11.0|
+2023-12-28 19:34:44,318
+update 13: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:34:48,319
++XRPUSDT: bp13.0|
+2023-12-28 19:34:49,203
+update 14: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:34:53,204
++XRPUSDT: bp13.0|
+2023-12-28 19:34:53,204
+Adjustment limit #3 ... 
+ we cancel current orders and replace
+2023-12-28 19:34:53,205
+@+/-0.625bp limit 
+2023-12-28 19:34:53,205
+binance_cancel_and_replace_orders_peg 20231228_193453
+2023-12-28 19:34:54,769
+binance_place_orders_peg 20231228_193454
+2023-12-28 19:34:55,210
+{'orderId': 47580029495, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'n9ZFcShXiacsBDgTkUPi1N', 'price': '0.6329', 'avgPrice': '0.00', 'origQty': '77.5', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1703792095099}
+2023-12-28 19:34:56,096
+update 0: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:35:00,097
++XRPUSDT: bp2.0|
+2023-12-28 19:35:00,982
+update 1: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:35:04,983
++XRPUSDT: bp3.0|
+2023-12-28 19:35:05,866
+update 2: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:35:09,867
++XRPUSDT: bp3.0|
+2023-12-28 19:35:10,753
+update 3: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:35:14,753
++XRPUSDT: bp5.0|
+2023-12-28 19:35:15,638
+update 4: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:35:19,639
++XRPUSDT: bp6.0|
+2023-12-28 19:35:20,528
+update 5: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:35:24,529
++XRPUSDT: bp5.0|
+2023-12-28 19:35:25,413
+update 6: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:35:29,414
++XRPUSDT: bp5.0|
+2023-12-28 19:35:30,304
+update 7: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:35:34,304
++XRPUSDT: bp6.0|
+2023-12-28 19:35:35,188
+update 8: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:35:39,189
++XRPUSDT: bp5.0|
+2023-12-28 19:35:40,076
+update 9: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:35:44,077
++XRPUSDT: bp5.0|
+2023-12-28 19:35:44,959
+update 10: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:35:48,960
++XRPUSDT: bp5.0|
+2023-12-28 19:35:49,844
+update 11: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:35:53,844
++XRPUSDT: bp5.0|
+2023-12-28 19:35:54,727
+update 12: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:35:58,728
++XRPUSDT: bp8.0|
+2023-12-28 19:35:59,614
+update 13: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:36:03,615
++XRPUSDT: bp6.0|
+2023-12-28 19:36:04,499
+update 14: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:36:08,500
++XRPUSDT: bp6.0|
+2023-12-28 19:36:08,500
+Adjustment limit #4 ... 
+ we cancel current orders and replace
+2023-12-28 19:36:08,500
+@+/-0.3125bp limit 
+2023-12-28 19:36:08,500
+binance_cancel_and_replace_orders_peg 20231228_193608
+2023-12-28 19:36:10,050
+binance_place_orders_peg 20231228_193610
+2023-12-28 19:36:10,492
+{'orderId': 47580062120, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'n9ZFcShXiacsBDgTkUPi1N', 'price': '0.6333', 'avgPrice': '0.00', 'origQty': '77.5', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1703792170380}
+2023-12-28 19:36:11,381
+update 0: filled 1 / 2 (+ETHUSDT) | working 1 / 2 (+XRPUSDT)
+2023-12-28 19:36:15,382
++XRPUSDT: bp2.0|
+2023-12-28 19:36:16,267
+update 1: filled 2 / 2 (+ETHUSDT,+XRPUSDT) | working 0 / 2 ()
+2023-12-28 19:36:22,277
+Trades of the day
+in$
+as of: 28Dec 19:32>>19:36 (#trades: 2)
+trade net: +99.0 (+33.9%), trade gross: +99.0 (+33.9%), BUY: +99.0 (+33.9%), SELL: +0.0 (+0.0%)
+fees: $ 0.02 (2.0bp)
+2023-12-28 19:36:22,735
+Trades: 
+Filled #2
+______________________________________________
+                   in$ | in bp 98 traded | in bp 292 AUMs
+realizedPnl    +0      | +0      | +0     
+PnLvsArrival   -0.08   | -8      | -3     
+PnLvsLast      +0.03   | +3      | +1     
+______________________________________________
+                 | Value$ | PnL Arrival/Last 
+______________________________________________
+XRP:+77.5@0.6333 | +49$ | -0.09/-0.02
+ETH:+0.021@2369.5 | +50$ | 0.01/0.05
