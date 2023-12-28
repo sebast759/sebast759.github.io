@@ -1,0 +1,37 @@
+2023-12-28 22:31:00,418
+ON program started 20231228 22:31:00,
+US time: 20231228 17:31:00
+2023-12-28 22:31:00,913
+the strat is currently running @ 28-12-2023 and the target positions is LONG
+2023-12-28 22:31:02,348
+CURRENT STATUS IS LONG
+-----
+return before 14h30:
+BTCUSDT-1.93%, ETHUSDT-1.80%, XRPUSDT-3.43%
+-----
+target alloc initial:BTCUSDT+16.67%, ETHUSDT+16.67%, XRPUSDT+16.67%
+-----
+alloc target x rt%<0:BTCUSDT+16.67%, ETHUSDT+16.67%, XRPUSDT+16.67%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target     16.7%   16.7%   16.7%
+rt_14h30    -0.02%  -0.02%  -0.03%
+w_target_f   16.7%   16.7%   16.7%
+2023-12-28 22:31:02,349
+Portfolio was rebalanced less than 2 hours ago, 1.0 hours ago
+2023-12-28 22:31:02,352
+Status: prev = LONG <> LONG = target
+2023-12-28 22:31:02,352
+the strat is currently running @ 28-12-2023 and the target positions is LONG
+the strat was previously run @ 2023-12-28 21:30:55 UTC, success:yes 
+   and the current positions is LONG
+2023-12-28 22:31:03,588
+positions_future #2
+2023-12-28 22:31:03,588
+      symbol  positionAmt entryPrice  ... adlQuantile AUMs_account        w%
+135  ETHUSDT        0.021     2369.5  ...           1        291.9  0.169150
+108  XRPUSDT       77.500     0.6333  ...           1        291.9  0.167637
+
+[2 rows x 12 columns]
+2023-12-28 22:31:03,705
+programm stoppeddd!!! 20231228_223103
