@@ -1,0 +1,295 @@
+2023-12-29 15:22:55,913
+ON program started 20231229 15:22:48,
+US time: 20231229 10:22:55
+2023-12-29 15:23:19,244
+the strat is currently running @ 29-12-2023 and the target positions is NEUTRAL
+2023-12-29 15:23:29,959
+the strat is currently running @ 29-12-2023 and the target positions is NEUTRAL
+2023-12-29 15:23:45,132
+CURRENT STATUS IS LONG
+-----
+return before 14h30:
+BTCUSDT+0.84%, ETHUSDT+1.28%, XRPUSDT+0.55%
+-----
+target alloc initial:BTCUSDT+6.67%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+alloc target x rt%<0:BTCUSDT+6.67%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target      6.7%    0.0%    0.0%
+rt_14h30     0.01%   0.01%   0.01%
+w_target_f    6.7%    0.0%    0.0%
+2023-12-29 15:23:52,413
+Portfolio was rebalanced less than 2 hours ago, 10.9 hours ago
+2023-12-29 15:23:52,418
+Status: prev = LONG <> NEUTRAL = target
+2023-12-29 15:23:52,418
+the strat is currently running @ 29-12-2023 and the target positions is LONG
+the strat was previously run @ 2023-12-29 04:30:54 UTC, success:yes 
+   and the current positions is NEUTRAL
+2023-12-29 15:28:40,584
+positions_future #0
+2023-12-29 15:28:40,584
+Empty DataFrame
+Columns: [symbol, positionAmt, entryPrice, breakEvenPrice, markPrice, unRealizedProfit, value_usd, updateTime, isolated, adlQuantile, AUMs_account, w%]
+Index: []
+2023-12-29 15:28:57,988
+------------------------------
+binance_account_balance
+2023-12-29 15:28:57,988
+  asset     balance  crossWalletBalance  crossUnPnl  availableBalance  \
+5  USDT  292.324692          292.324692         0.0        292.324692   
+
+   maxWithdrawAmount  marginAvailable   updateTime  
+5         292.324692             True  29Dec-00:31  
+2023-12-29 15:29:00,859
+------------------------------
+open_orders
+2023-12-29 15:29:00,859
+Empty DataFrame
+Columns: []
+Index: []
+2023-12-29 15:29:21,465
+------------------------------
+AUMS account:292
+
+2023-12-29 15:29:26,195
+--------------- compute_futures_order_book() ----------------
+2023-12-29 15:29:28,159
+----------------------------------------------------------------------
+#0 order(s) to place
+gross$: 0$ | net$: +0$
+gross%: 0% | net%: +0%
+ || w>0%  +0% | w<0%  0%
+----------------------------------------------------------------------
+PTF Expo% 0.0% >> 6.6% (current>>target)
+PTF expo $0.0 >> $19 (current>>target)
+----------------------------------------------------------------------
+2023-12-29 15:29:34,337
+orders_ofthe_day
+2023-12-29 15:29:34,337
+Empty DataFrame
+Columns: [ptf_usd, target_usd, totrd_usd, posttrd_usd, qty, posttrd_qty, posttrd_w, bid, ask]
+Index: []
+2023-12-29 15:30:04,101
+the strat is currently running @ 29-12-2023 and the target positions is NEUTRAL
+2023-12-29 15:30:07,972
+CURRENT STATUS IS LONG
+-----
+return before 14h30:
+BTCUSDT+0.13%, ETHUSDT+0.08%, XRPUSDT-0.08%
+-----
+target alloc initial:BTCUSDT+0.00%, ETHUSDT+6.67%, XRPUSDT+0.00%
+-----
+alloc target x rt%<0:BTCUSDT+0.00%, ETHUSDT+6.67%, XRPUSDT+0.00%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target      0.0%    6.7%    0.0%
+rt_14h30     0.00%   0.00%  -0.00%
+w_target_f    0.0%    6.7%    0.0%
+2023-12-29 15:30:07,989
+Portfolio was rebalanced less than 2 hours ago, 11.0 hours ago
+2023-12-29 15:30:07,992
+Status: prev = LONG <> NEUTRAL = target
+2023-12-29 15:30:07,992
+the strat is currently running @ 29-12-2023 and the target positions is LONG
+the strat was previously run @ 2023-12-29 04:30:54 UTC, success:yes 
+   and the current positions is NEUTRAL
+2023-12-29 15:30:09,882
+positions_future #0
+2023-12-29 15:30:09,882
+Empty DataFrame
+Columns: [symbol, positionAmt, entryPrice, breakEvenPrice, markPrice, unRealizedProfit, value_usd, updateTime, isolated, adlQuantile, AUMs_account, w%]
+Index: []
+2023-12-29 15:30:13,959
+------------------------------
+binance_account_balance
+2023-12-29 15:30:13,959
+  asset     balance  crossWalletBalance  crossUnPnl  availableBalance  \
+5  USDT  292.324692          292.324692         0.0        292.324692   
+
+   maxWithdrawAmount  marginAvailable   updateTime  
+5         292.324692             True  29Dec-00:31  
+2023-12-29 15:30:16,328
+------------------------------
+open_orders
+2023-12-29 15:30:16,329
+Empty DataFrame
+Columns: []
+Index: []
+2023-12-29 15:30:18,797
+------------------------------
+AUMS account:292
+
+2023-12-29 15:30:21,344
+--------------- compute_futures_order_book() ----------------
+2023-12-29 15:30:23,038
+----------------------------------------------------------------------
+#0 order(s) to place
+gross$: 0$ | net$: +0$
+gross%: 0% | net%: +0%
+ || w>0%  +0% | w<0%  0%
+----------------------------------------------------------------------
+PTF Expo% 0.0% >> 6.6% (current>>target)
+PTF expo $0.0 >> $19 (current>>target)
+----------------------------------------------------------------------
+2023-12-29 15:30:46,607
+orders_ofthe_day
+2023-12-29 15:30:46,607
+Empty DataFrame
+Columns: [ptf_usd, target_usd, totrd_usd, posttrd_usd, qty, posttrd_qty, posttrd_w, bid, ask]
+Index: []
+2023-12-29 15:31:25,061
+the strat is currently running @ 29-12-2023 and the target positions is NEUTRAL
+2023-12-29 15:31:27,952
+CURRENT STATUS IS LONG
+-----
+return before 14h30:
+BTCUSDT+0.13%, ETHUSDT+0.08%, XRPUSDT-0.08%
+-----
+target alloc initial:BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+6.67%
+-----
+alloc target x rt%<0:BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+6.67%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target      0.0%    0.0%    6.7%
+rt_14h30     0.00%   0.00%  -0.00%
+w_target_f    0.0%    0.0%    6.7%
+2023-12-29 15:31:27,970
+Portfolio was rebalanced less than 2 hours ago, 11.0 hours ago
+2023-12-29 15:31:27,973
+Status: prev = LONG <> NEUTRAL = target
+2023-12-29 15:31:27,974
+the strat is currently running @ 29-12-2023 and the target positions is LONG
+the strat was previously run @ 2023-12-29 04:30:54 UTC, success:yes 
+   and the current positions is NEUTRAL
+2023-12-29 15:31:30,226
+positions_future #0
+2023-12-29 15:31:30,226
+Empty DataFrame
+Columns: [symbol, positionAmt, entryPrice, breakEvenPrice, markPrice, unRealizedProfit, value_usd, updateTime, isolated, adlQuantile, AUMs_account, w%]
+Index: []
+2023-12-29 15:31:30,604
+------------------------------
+binance_account_balance
+2023-12-29 15:31:30,605
+  asset     balance  crossWalletBalance  crossUnPnl  availableBalance  \
+5  USDT  292.324692          292.324692         0.0        292.324692   
+
+   maxWithdrawAmount  marginAvailable   updateTime  
+5         292.324692             True  29Dec-00:31  
+2023-12-29 15:31:30,937
+------------------------------
+open_orders
+2023-12-29 15:31:30,938
+Empty DataFrame
+Columns: []
+Index: []
+2023-12-29 15:31:31,821
+------------------------------
+AUMS account:292
+
+2023-12-29 15:31:31,943
+--------------- compute_futures_order_book() ----------------
+2023-12-29 15:31:34,021
+----------------------------------------------------------------------
+#1 order(s) to place
+gross$: 19$ | net$: +19$
+gross%: 6% | net%: +6%
+ || w>0%  +6% | w<0%  0%
+----------------------------------------------------------------------
+PTF Expo% 0.0% >> 6.6% (current>>target)
+PTF expo $0.0 >> $19 (current>>target)
+----------------------------------------------------------------------
+2023-12-29 15:31:35,269
+orders_ofthe_day
+2023-12-29 15:31:35,269
+                  ptf_usd  target_usd  totrd_usd  posttrd_usd   qty  \
+2023-12-29 15:31                                                      
+XRPUSDT               0.0        19.5       19.0         19.0  30.0   
+
+                 posttrd_qty  posttrd_w     bid     ask  
+2023-12-29 15:31                                         
+XRPUSDT                 30.0   0.064996  0.6324  0.6325  
+2023-12-29 15:33:26,933
+orders_ofthe_day
+2023-12-29 15:33:26,933
+                  ptf_usd  target_usd  totrd_usd  posttrd_usd   qty  \
+2023-12-29 15:33                                                      
+XRPUSDT               0.0        19.5       19.0         19.0  30.0   
+
+                 posttrd_qty  posttrd_w     bid     ask strategy  
+2023-12-29 15:33                                                  
+XRPUSDT                 30.0   0.064996  0.6324  0.6325       ON  
+2023-12-29 15:33:57,994
+binance_place_orders_peg 20231229_153357
+2023-12-29 15:33:58,794
+{'orderId': 47618479569, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'ON', 'price': '0.6320', 'avgPrice': '0.00', 'origQty': '30.0', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1703864038654}
+2023-12-29 15:34:18,189
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-12-29 15:34:22,206
++XRPUSDT: bp6.0|
+2023-12-29 15:34:23,030
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-12-29 15:34:27,032
++XRPUSDT: bp5.0|
+2023-12-29 15:34:27,851
+update 2: filled 1 / 1 (+XRPUSDT) | working 0 / 1 ()
+2023-12-29 15:45:27,823
+binance_place_orders_peg 20231229_154527
+2023-12-29 15:45:29,243
+{'orderId': 47619062963, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'ON', 'price': '0.6275', 'avgPrice': '0.00', 'origQty': '30.0', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1703864729116}
+2023-12-29 15:46:36,971
+update 0: filled 1 / 1 (+XRPUSDT) | working 0 / 1 ()
+2023-12-29 15:49:09,571
+orders_ofthe_day
+2023-12-29 15:49:09,571
+                  ptf_usd  target_usd  totrd_usd  posttrd_usd   qty  \
+2023-12-29 15:49                                                      
+XRPUSDT               0.0        19.5       19.0         19.0  30.0   
+
+                 posttrd_qty  posttrd_w     bid     ask strategy  
+2023-12-29 15:49                                                  
+XRPUSDT                 30.0   0.064996  0.6324  0.6325  STRATON  
+2023-12-29 15:49:25,411
+binance_place_orders_peg 20231229_154925
+2023-12-29 15:49:25,972
+{'orderId': 47619308758, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '0.6257', 'avgPrice': '0.00', 'origQty': '30.0', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1703864965846}
+2023-12-29 15:49:33,976
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-12-29 15:49:37,985
++XRPUSDT: bp11.0|
+2023-12-29 15:49:38,571
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-12-29 15:49:42,573
++XRPUSDT: bp11.0|
+2023-12-29 15:49:43,161
+update 2: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-12-29 15:49:47,162
++XRPUSDT: bp2.0|
+2023-12-29 15:49:47,729
+update 3: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-12-29 15:49:51,741
++XRPUSDT: bp8.0|
+2023-12-29 15:49:52,333
+update 4: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-12-29 15:49:56,339
++XRPUSDT: bp6.0|
+2023-12-29 15:49:56,930
+update 5: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-12-29 15:50:00,934
++XRPUSDT: bp10.0|
+2023-12-29 15:50:01,539
+update 6: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-12-29 15:50:05,541
++XRPUSDT: bp6.0|
+2023-12-29 15:50:06,115
+update 7: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-12-29 15:50:10,116
++XRPUSDT: bp6.0|
+2023-12-29 15:50:10,740
+update 8: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2023-12-29 15:50:14,749
++XRPUSDT: bp3.0|
+2023-12-29 15:50:15,340
+update 9: filled 1 / 1 (+XRPUSDT) | working 0 / 1 ()
