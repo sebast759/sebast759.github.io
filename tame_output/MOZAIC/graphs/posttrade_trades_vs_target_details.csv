@@ -1,13 +1,15 @@
-07Jan24 14:33,arrival_price,totrd_qty,totrd_usd,px_trd,qty_trd,value_trd,PnLvsLast,PnLvsArrival,!!check!!
-ADAUSDT,0.519,-62.00,$-32.0,0.518,-91.00,$-47,$0.2,$-0.1,!!!KO!!!
-BCHUSDT,238.055,-0.09,$-22.0,237.710,-0.09,$-22,$0.2,$-0.0,ok
-UNIUSDT,6.284,-3.00,$-19.0,6.259,-3.00,$-19,$0.3,$-0.1,ok
-BNBUSDT,305.225,-0.06,$-18.0,305.070,-0.13,$-40,$0.1,$-0.0,!!!KO!!!
-DOTUSDT,7.207,1.80,$13.0,7.196,1.80,$13,$-0.1,$0.0,ok
-ATOMUSDT,9.843,1.02,$10.0,9.829,1.02,$10,$-0.2,$0.0,ok
-APTUSDT,8.986,-0.90,$-8.0,8.993,-0.90,$-8,$0.1,$0.0,ok
-BTCUSDT,nan,nan,$nan,44289.200,0.01,$266,$-1.9,$nan,!!!KO!!!
-TRXUSDT,nan,nan,$nan,0.104,-212.00,$-22,$0.0,$nan,!!!KO!!!
+07Jan24 16:04,arrival_price,totrd_qty,totrd_usd,px_trd,qty_trd,value_trd,PnLvsLast,PnLvsArrival,!!check!!
+LTCUSDT,65.145,0.38,$25.0,65.130,0.38,$25,$0.1,$0.0,ok
+XRPUSDT,0.566,19.40,$11.0,0.581,-5.20,$-3,$0.1,$-0.3,!!!KO!!!
+ATOMUSDT,9.707,-1.03,$-10.0,-3.046,-0.01,$0,$-0.1,$-13.1,ok
+DOTUSDT,7.172,1.00,$7.0,7.186,2.80,$20,$0.1,$-0.0,ok
+BNBUSDT,304.335,-0.02,$-6.0,304.856,-0.17,$-52,$-0.2,$0.0,!!!KO!!!
+BTCUSDT,nan,nan,$nan,44289.200,0.01,$266,$-0.6,$nan,!!!KO!!!
+TRXUSDT,nan,nan,$nan,0.104,-212.00,$-22,$-0.0,$nan,!!!KO!!!
+BCHUSDT,nan,nan,$nan,237.710,-0.09,$-22,$0.1,$nan,!!!KO!!!
+APTUSDT,nan,nan,$nan,8.993,-0.90,$-8,$0.1,$nan,!!!KO!!!
+ADAUSDT,nan,nan,$nan,0.518,-91.00,$-47,$0.1,$nan,!!!KO!!!
+UNIUSDT,nan,nan,$nan,6.259,-3.00,$-19,$0.2,$nan,!!!KO!!!
 1000SHIBUSDT,nan,nan,$nan,0.009,-633.00,$-6,$0.1,$nan,!!!KO!!!
 AVAXUSDT,nan,nan,$nan,35.159,-1.00,$-35,$0.2,$nan,!!!KO!!!
-XRPUSDT,nan,nan,$nan,0.569,-24.60,$-14,$0.1,$nan,!!!KO!!!
+DOGEUSDT,nan,nan,$nan,0.080,-100.00,$-8,$-0.0,$nan,!!!KO!!!
