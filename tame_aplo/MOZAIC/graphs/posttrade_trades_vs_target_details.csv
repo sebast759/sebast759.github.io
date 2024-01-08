@@ -1,6 +1,6 @@
 07Jan24 18:04,arrival_price,totrd_qty,totrd_usd,px_trd,qty_trd,value_trd,PnLvsClose,PnLvsArrival,!!check!!,px_lst,PnLvsLast
-BCHUSDT,235.195,-0.09,$-21.0,234.800,-0.09,$-21,$0.2,$-0.0,ok,239.11,$-0.4
-BNBUSDT,nan,nan,$nan,304.180,-0.03,$-9,$0.1,$nan,!!!KO!!!,300.28,$0.1
-TRXUSDT,nan,nan,$nan,0.104,-68.00,$-7,$0.1,$nan,!!!KO!!!,.10335,$0.0
-XRPUSDT,nan,nan,$nan,0.566,-12.40,$-7,$0.2,$nan,!!!KO!!!,.565,$0.0
-DOGEUSDT,nan,nan,$nan,0.080,-100.00,$-8,$0.2,$nan,!!!KO!!!,.07845,$0.1
+BCHUSDT,235.195,-0.09,$-21.0,234.800,-0.09,$-21,$0.2,$-0.0,ok,237.61,$-0.2
+BNBUSDT,nan,nan,$nan,304.180,-0.03,$-9,$0.1,$nan,!!!KO!!!,301.74,$0.1
+TRXUSDT,nan,nan,$nan,0.104,-68.00,$-7,$0.1,$nan,!!!KO!!!,.1029,$0.0
+XRPUSDT,nan,nan,$nan,0.566,-12.40,$-7,$0.2,$nan,!!!KO!!!,.5629,$0.0
+DOGEUSDT,nan,nan,$nan,0.080,-100.00,$-8,$0.2,$nan,!!!KO!!!,.07888,$0.1
