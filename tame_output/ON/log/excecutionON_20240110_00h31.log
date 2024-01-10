@@ -1,0 +1,105 @@
+2024-01-10 00:31:08,093
+ON program started 20240110 00:31:08,
+US time: 20240109 19:31:08
+2024-01-10 00:31:08,734
+the strat is currently running @ 10-01-2024 and the target positions is SHORT
+2024-01-10 00:31:10,137
+CURRENT STATUS IS SHORT, WE CHECK IF THE DAY IS A NEGATIVE ONE
+-----
+return before 14h30:
+BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+target alloc initial:BTCUSDT-4.17%, ETHUSDT+0.00%, XRPUSDT-4.17%
+-----
+alloc target x rt%<0:BTCUSDT-0.00%, ETHUSDT+0.00%, XRPUSDT-0.00%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target     -4.2%    0.0%   -4.2%
+rt_14h30     0.00%   0.00%   0.00%
+w_target_f   -0.0%    0.0%   -0.0%
+2024-01-10 00:31:10,139
+Portfolio was rebalanced less than 2 hours ago, 1.0 hours ago
+2024-01-10 00:31:10,142
+Status: prev = SHORT <> SHORT = target
+2024-01-10 00:31:10,142
+the strat is currently running @ 10-01-2024 and the target positions is SHORT
+the strat was previously run @ 2024-01-09 23:31:09 UTC, success:? 
+   and the current positions is SHORT
+2024-01-10 00:31:11,384
+positions_future #1
+2024-01-10 00:31:11,384
+      symbol  positionAmt entryPrice  ... adlQuantile AUMs_account        w%
+113  XRPUSDT        -21.4     0.5688  ...           2        288.8 -0.042059
+
+[1 rows x 12 columns]
+2024-01-10 00:31:11,630
+------------------------------
+binance_account_balance
+2024-01-10 00:31:11,630
+  asset     balance  ...  marginAvailable   updateTime
+5  USDT  288.796394  ...             True  09Jan-23:33
+
+[1 rows x 8 columns]
+2024-01-10 00:31:12,084
+------------------------------
+open_orders
+2024-01-10 00:31:12,084
+Empty DataFrame
+Columns: []
+Index: []
+2024-01-10 00:31:12,738
+------------------------------
+AUMS account:288
+
+2024-01-10 00:31:12,740
+--------------- compute_futures_order_book() ----------------
+2024-01-10 00:31:14,296
+----------------------------------------------------------------------
+#1 order(s) to place
+gross$: 12$ | net$: +12$
+gross%: 4% | net%: +4%
+ || w>0%  +4% | w<0%  0%
+----------------------------------------------------------------------
+PTF Expo% -4.1% >> 0.0% (current>>target)
+PTF expo $-12.0 >> $0 (current>>target)
+----------------------------------------------------------------------
+2024-01-10 00:31:14,298
+orders_ofthe_day
+2024-01-10 00:31:14,298
+                  ptf_usd  target_usd  totrd_usd  ...     bid     ask strategy
+2024-01-10 00:31                                  ...                         
+XRPUSDT             -12.0        -0.0       12.0  ...  0.5676  0.5677  STRATON
+
+[1 rows x 10 columns]
+2024-01-10 00:31:15,308
+binance_place_orders_peg 20240110_003115
+2024-01-10 00:31:15,748
+{'orderId': 48186132898, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '0.5673', 'avgPrice': '0.00', 'origQty': '21.4', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1704846675637}
+2024-01-10 00:31:16,288
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-01-10 00:31:20,288
++XRPUSDT: bp7.0|
+2024-01-10 00:31:20,736
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-01-10 00:31:24,737
++XRPUSDT: bp5.0|
+2024-01-10 00:31:25,193
+update 2: filled 1 / 1 (+XRPUSDT) | working 0 / 1 ()
+2024-01-10 00:31:30,589
+Trades of the day
+in$
+as of: 10Jan 00:31>>00:31 (#trades: 1)
+trade net: +12.0 (+4.2%), trade gross: +12.0 (+4.2%), BUY: +12.0 (+4.2%), SELL: +0.0 (+0.0%)
+fees: $ 0.002 (2.0bp)
+2024-01-10 00:31:30,849
+Trades: 
+Filled #1
+______________________________________________
+                   in$ | in bp 12 traded | in bp 288 AUMs
+realizedPnl    +0.03   | +25     | +1     
+PnLvsArrival   +0.01   | +8      | +0     
+PnLvsLast      +0      | +0      | +0     
+______________________________________________
+                 | Value$ | PnL Arrival/Last 
+______________________________________________
+XRP:+21.4@0.5673 | +12$ | 0.01/-0
