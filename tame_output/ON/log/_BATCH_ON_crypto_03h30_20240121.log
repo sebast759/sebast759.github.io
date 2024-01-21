@@ -1,3 +1,0 @@
-2024-01-21 03:31:04,848 - 1_crypto_buy_ON.py launched successfully.
-2024-01-21 03:31:16,682 - 3_crypto_buy_ON_bt_update.py launched successfully.
-2024-01-21 03:31:16,699 - Failed to launch  : Command '['python', ' ']' returned non-zero exit status 2.
