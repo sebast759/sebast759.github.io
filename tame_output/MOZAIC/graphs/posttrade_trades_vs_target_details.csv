@@ -1,11 +1,11 @@
 23Jan24 15:37,arrival_price,totrd_qty,totrd_usd,px_trd,qty_trd,value_trd,PnLvsLast,PnLvsArrival,!!check!!
-BNBUSDT,296.585,-0.04,$-12.0,295.847,-0.19,$-56,$0.5,$-0.0,!!!KO!!!
-ICPUSDT,10.209,-1.00,$-10.0,10.218,-1.00,$-10,$0.0,$0.0,ok
-TRXUSDT,0.107,84.00,$9.0,0.107,421.00,$45,$-0.2,$0.0,ok
-LINKUSDT,nan,nan,$nan,14.036,-2.07,$-29,$0.4,$nan,!!!KO!!!
-ETCUSDT,nan,nan,$nan,22.412,-3.54,$-79,$0.1,$nan,!!!KO!!!
-BCHUSDT,nan,nan,$nan,226.020,0.29,$65,$-0.6,$nan,!!!KO!!!
-1000SHIBUSDT,nan,nan,$nan,0.009,1158.00,$10,$-0.0,$nan,!!!KO!!!
-DOTUSDT,nan,nan,$nan,6.160,-1.30,$-8,$-0.0,$nan,!!!KO!!!
-ADAUSDT,nan,nan,$nan,0.467,-58.00,$-27,$0.2,$nan,!!!KO!!!
-XRPUSDT,nan,nan,$nan,0.508,27.60,$14,$-0.0,$nan,!!!KO!!!
+BNBUSDT,296.585,-0.04,$-12.0,295.847,-0.19,$-56,$-0.3,$-0.0,!!!KO!!!
+ICPUSDT,10.209,-1.00,$-10.0,10.218,-1.00,$-10,$-0.2,$0.0,ok
+TRXUSDT,0.107,84.00,$9.0,0.107,421.00,$45,$-0.0,$0.0,ok
+LINKUSDT,nan,nan,$nan,14.036,-2.07,$-29,$-0.4,$nan,!!!KO!!!
+ETCUSDT,nan,nan,$nan,22.412,-3.54,$-79,$-1.7,$nan,!!!KO!!!
+BCHUSDT,nan,nan,$nan,226.020,0.29,$65,$0.8,$nan,!!!KO!!!
+1000SHIBUSDT,nan,nan,$nan,0.009,1158.00,$10,$0.1,$nan,!!!KO!!!
+DOTUSDT,nan,nan,$nan,6.160,-1.30,$-8,$-0.2,$nan,!!!KO!!!
+ADAUSDT,nan,nan,$nan,0.467,-58.00,$-27,$-0.5,$nan,!!!KO!!!
+XRPUSDT,nan,nan,$nan,0.508,27.60,$14,$0.2,$nan,!!!KO!!!
