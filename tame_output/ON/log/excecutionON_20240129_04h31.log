@@ -1,0 +1,19 @@
+2024-01-29 04:31:09,280
+ON program started 20240129 04:31:09,
+US time: 20240128 23:31:09
+2024-01-29 04:31:09,794
+the strat is currently running @ 29-01-2024 and the target positions is NEUTRAL
+2024-01-29 04:31:11,619
+CURRENT STATUS IS NEUTRAL
+-----
+return before 14h30:
+BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+target alloc initial:BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+alloc target x rt%<0:BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target      0.0%    0.0%    0.0%
+rt_14h30     0.00%   0.00%   0.00%
+w_target_f    0.0%    0.0%    0.0%
