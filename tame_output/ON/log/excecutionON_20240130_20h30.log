@@ -1,0 +1,19 @@
+2024-01-30 20:30:39,461
+ON program started 20240130 20:30:39,
+US time: 20240130 15:30:39
+2024-01-30 20:30:39,989
+the strat is currently running @ 30-01-2024 and the target positions is LONG
+2024-01-30 20:30:41,425
+CURRENT STATUS IS LONG
+-----
+return before 14h30:
+BTCUSDT-0.11%, ETHUSDT+2.82%, XRPUSDT-2.46%
+-----
+target alloc initial:BTCUSDT+16.67%, ETHUSDT+16.67%, XRPUSDT+16.67%
+-----
+alloc target x rt%<0:BTCUSDT+16.67%, ETHUSDT+16.67%, XRPUSDT+16.67%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target     16.7%   16.7%   16.7%
+rt_14h30    -0.00%   0.03%  -0.02%
+w_target_f   16.7%   16.7%   16.7%
