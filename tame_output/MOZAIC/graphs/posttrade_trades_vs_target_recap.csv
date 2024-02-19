@@ -1,8 +1,8 @@
 ,index,recap,
-0,#trades,10.0,18Feb24 14:36
-1,$net,14,+99bp
-2,$gross,290,+20.4%
-3,$buy,152,+10.7%
-4,$sell,-138,-9.7%
-5,$P&L vs. Last,-0.0,-0bp
-6,$P&L vs. Arrival,-0.1,-1bp
+0,#trades,10.0,19Feb24 14:36
+1,$net,-12,-83bp
+2,$gross,383,+26.5%
+3,$buy,185,+12.8%
+4,$sell,-198,-13.7%
+5,$P&L vs. Last,0.6,+4bp
+6,$P&L vs. Arrival,0.2,+1bp
