@@ -1,0 +1,35 @@
+2024-03-06 04:31:05,091
+ON program started 20240306 04:31:05,
+US time: 20240305 23:31:05
+2024-03-06 04:31:05,595
+the strat is currently running @ 06-03-2024 and the target positions is NEUTRAL
+2024-03-06 04:31:07,010
+CURRENT STATUS IS NEUTRAL
+-----
+return before 14h30:
+BTCUSDT-0.50%, ETHUSDT-0.04%, XRPUSDT-1.05%
+-----
+target alloc initial:BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+alloc target x rt%<0:BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target      0.0%    0.0%    0.0%
+rt_14h30    -0.00%  -0.00%  -0.01%
+w_target_f    0.0%    0.0%    0.0%
+2024-03-06 04:31:07,012
+Portfolio was rebalanced less than 2 hours ago, 1.0 hours ago
+2024-03-06 04:31:07,013
+Status: prev = NEUTRAL <> NEUTRAL = target
+2024-03-06 04:31:07,014
+the strat is currently running @ 06-03-2024 and the target positions is NEUTRAL
+the strat was previously run @ 2024-03-06 03:31:12, success:yes 
+   and the current positions is NEUTRAL
+2024-03-06 04:31:08,236
+positions_future #0
+2024-03-06 04:31:08,236
+Empty DataFrame
+Columns: [symbol, positionAmt, entryPrice, breakEvenPrice, markPrice, unRealizedProfit, value_usd, updateTime, isolated, adlQuantile, AUMs_account, w%]
+Index: []
+2024-03-06 04:31:08,302
+programm stoppeddd!!! 20240306_043108
