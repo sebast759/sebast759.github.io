@@ -1,0 +1,121 @@
+2024-04-25 02:31:00,166
+ON program started 20240425 02:31:00,
+US time: 20240424 22:31:00
+2024-04-25 02:31:01,086
+the strat is currently running @ 25-04-2024 and the target positions is NEUTRAL
+2024-04-25 02:31:02,499
+CURRENT STATUS IS NEUTRAL
+-----
+return before 14h30:
+BTCUSDT+0.07%, ETHUSDT+0.75%, XRPUSDT-0.15%
+-----
+target alloc initial:BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+alloc target x rt%<0:BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target      0.0%    0.0%    0.0%
+rt_14h30     0.00%   0.01%  -0.00%
+w_target_f    0.0%    0.0%    0.0%
+2024-04-25 02:31:02,500
+Portfolio was rebalanced less than 2 hours ago, 1.0 hours ago
+2024-04-25 02:31:02,501
+Status: prev = NEUTRAL <> SHORT = target
+2024-04-25 02:31:02,501
+the strat is currently running @ 25-04-2024 and the target positions is NEUTRAL
+the strat was previously run @ 2024-04-25 01:31:04, success:yes 
+   and the current positions is SHORT
+2024-04-25 02:31:03,716
+positions_future #1
+2024-04-25 02:31:03,716
+      symbol  positionAmt entryPrice  ... adlQuantile AUMs_account        w%
+131  XRPUSDT        -21.9     0.5284  ...           2        281.6 -0.040945
+
+[1 rows x 12 columns]
+2024-04-25 02:31:03,958
+------------------------------
+binance_account_balance
+2024-04-25 02:31:03,958
+  asset     balance  ...  marginAvailable   updateTime
+6  USDT  281.576077  ...             True  24Apr-22:34
+
+[1 rows x 8 columns]
+2024-04-25 02:31:04,413
+------------------------------
+open_orders
+2024-04-25 02:31:04,413
+Empty DataFrame
+Columns: []
+Index: []
+2024-04-25 02:31:05,072
+------------------------------
+AUMS account:281
+
+2024-04-25 02:31:05,074
+--------------- compute_futures_order_book() ----------------
+2024-04-25 02:31:06,641
+----------------------------------------------------------------------
+#1 order(s) to place
+gross$: 12$ | net$: +12$
+gross%: 4% | net%: +4%
+ || w>0%  +4% | w<0%  0%
+----------------------------------------------------------------------
+PTF Expo% -4.2% >> 0.0% (current>>target)
+PTF expo $-12.0 >> $0 (current>>target)
+----------------------------------------------------------------------
+2024-04-25 02:31:06,642
+orders_ofthe_day
+2024-04-25 02:31:06,642
+                  ptf_usd  target_usd  totrd_usd  ...     bid     ask strategy
+2024-04-25 02:31                                  ...                         
+XRPUSDT             -12.0         0.0       12.0  ...  0.5262  0.5263  STRATON
+
+[1 rows x 10 columns]
+2024-04-25 02:31:08,127
+binance_place_orders_peg 20240425_023108
+2024-04-25 02:31:08,567
+{'orderId': 55366153813, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '0.5261', 'avgPrice': '0.00', 'origQty': '21.9', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1714012268456}
+2024-04-25 02:31:09,697
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-04-25 02:31:13,698
++XRPUSDT: bp4.0|
+2024-04-25 02:31:14,143
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-04-25 02:31:18,143
++XRPUSDT: bp6.0|
+2024-04-25 02:31:18,586
+update 2: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-04-25 02:31:22,586
++XRPUSDT: bp8.0|
+2024-04-25 02:31:23,029
+update 3: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-04-25 02:31:27,030
++XRPUSDT: bp8.0|
+2024-04-25 02:31:27,471
+update 4: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-04-25 02:31:31,472
++XRPUSDT: bp6.0|
+2024-04-25 02:31:31,915
+update 5: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-04-25 02:31:35,916
++XRPUSDT: bp2.0|
+2024-04-25 02:31:36,358
+update 6: filled 1 / 1 (+XRPUSDT) | working 0 / 1 ()
+2024-04-25 02:31:41,729
+Trades of the day
+in$
+as of: 25Apr 02:31>>02:31 (#trades: 1)
+trade net: +12.0 (+4.3%), trade gross: +12.0 (+4.3%), BUY: +12.0 (+4.3%), SELL: +0.0 (+0.0%)
+fees: $ 0.002 (2.0bp)
+2024-04-25 02:31:41,969
+Trades: 
+Filled #1
+______________________________________________
+                   in$ | in bp 11 traded | in bp 281 AUMs
+realizedPnl    +0.05   | +43     | +2     
+PnLvsArrival   +0      | +0      | +0     
+PnLvsLast      +0      | +0      | +0     
+______________________________________________
+                 | Value$ | PnL Arrival/Last 
+______________________________________________
+XRP:+21.9@0.5261 | +12$ | 0/-0
