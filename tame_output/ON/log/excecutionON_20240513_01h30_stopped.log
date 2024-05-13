@@ -1,0 +1,36 @@
+2024-05-13 01:30:51,035
+ON program started 20240513 01:30:51,
+US time: 20240512 21:30:51
+2024-05-13 01:30:52,158
+the strat is currently running @ 13-05-2024 and the target positions is SHORT
+2024-05-13 01:30:53,977
+CURRENT STATUS IS SHORT, WE CHECK IF THE DAY IS A NEGATIVE ONE
+-----
+return before 14h30:
+BTCUSDT-0.03%, ETHUSDT-0.11%, XRPUSDT+0.18%
+-----
+target alloc initial:BTCUSDT-4.17%, ETHUSDT+0.00%, XRPUSDT-4.17%
+-----
+alloc target x rt%<0:BTCUSDT-4.17%, ETHUSDT+0.00%, XRPUSDT-0.00%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target     -4.2%    0.0%   -4.2%
+rt_14h30    -0.00%  -0.00%   0.00%
+w_target_f   -4.2%    0.0%   -0.0%
+2024-05-13 01:30:53,978
+Portfolio was rebalanced less than 2 hours ago, 1.0 hours ago
+2024-05-13 01:30:53,980
+Status: prev = SHORT <> SHORT = target
+2024-05-13 01:30:53,980
+the strat is currently running @ 13-05-2024 and the target positions is SHORT
+the strat was previously run @ 2024-05-13 00:30:52, success:yes 
+   and the current positions is SHORT
+2024-05-13 01:30:55,212
+positions_future #1
+2024-05-13 01:30:55,212
+      symbol  positionAmt entryPrice  ... adlQuantile AUMs_account        w%
+134  XRPUSDT        -24.6     0.4995  ...           1        279.9 -0.043911
+
+[1 rows x 12 columns]
+2024-05-13 01:30:55,306
+programm stoppeddd!!! 20240513_013055
