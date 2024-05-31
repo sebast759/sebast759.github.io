@@ -1,0 +1,1105 @@
+2024-05-31 02:30:44,772
+ON program started 20240531 02:30:44,
+US time: 20240530 22:30:44
+2024-05-31 02:30:45,754
+the strat is currently running @ 31-05-2024 and the target positions is NEUTRAL
+2024-05-31 02:30:47,143
+CURRENT STATUS IS NEUTRAL
+-----
+return before 14h30:
+BTCUSDT+0.25%, ETHUSDT+0.29%, XRPUSDT+0.29%
+-----
+target alloc initial:BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+alloc target x rt%<0:BTCUSDT+0.00%, ETHUSDT+0.00%, XRPUSDT+0.00%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target      0.0%    0.0%    0.0%
+rt_14h30     0.00%   0.00%   0.00%
+w_target_f    0.0%    0.0%    0.0%
+2024-05-31 02:30:47,144
+Portfolio was rebalanced less than 2 hours ago, 1.0 hours ago
+2024-05-31 02:30:47,145
+Status: prev = NEUTRAL <> SHORT = target
+2024-05-31 02:30:47,145
+the strat is currently running @ 31-05-2024 and the target positions is NEUTRAL
+the strat was previously run @ 2024-05-31 01:30:51, success:yes 
+   and the current positions is SHORT
+2024-05-31 02:30:48,336
+positions_future #1
+2024-05-31 02:30:48,336
+      symbol  positionAmt entryPrice  ... adlQuantile AUMs_account        w%
+128  XRPUSDT        -22.2     0.5197  ...           1        288.4 -0.040056
+
+[1 rows x 12 columns]
+2024-05-31 02:30:48,575
+------------------------------
+binance_account_balance
+2024-05-31 02:30:48,575
+  asset     balance  ...  marginAvailable   updateTime
+6  USDT  288.435374  ...             True  30May-22:34
+
+[1 rows x 8 columns]
+2024-05-31 02:30:49,028
+------------------------------
+open_orders
+2024-05-31 02:30:49,028
+Empty DataFrame
+Columns: []
+Index: []
+2024-05-31 02:30:49,681
+------------------------------
+AUMS account:288
+
+2024-05-31 02:30:49,682
+--------------- compute_futures_order_book() ----------------
+2024-05-31 02:30:51,229
+----------------------------------------------------------------------
+#1 order(s) to place
+gross$: 12$ | net$: +12$
+gross%: 4% | net%: +4%
+ || w>0%  +4% | w<0%  0%
+----------------------------------------------------------------------
+PTF Expo% -4.1% >> 0.0% (current>>target)
+PTF expo $-12.0 >> $0 (current>>target)
+----------------------------------------------------------------------
+2024-05-31 02:30:51,230
+orders_ofthe_day
+2024-05-31 02:30:51,231
+                  ptf_usd  target_usd  totrd_usd  ...     bid     ask strategy
+2024-05-31 02:30                                  ...                         
+XRPUSDT             -12.0         0.0       12.0  ...  0.5203  0.5204  STRATON
+
+[1 rows x 10 columns]
+2024-05-31 02:30:52,867
+binance_place_orders_peg 20240531_023052
+2024-05-31 02:30:53,310
+{'orderId': 57590867724, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '0.5200', 'avgPrice': '0.00', 'origQty': '22.2', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1717122653195}
+2024-05-31 02:30:54,436
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:30:58,436
++XRPUSDT: bp8.0|
+2024-05-31 02:30:58,877
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:31:02,878
++XRPUSDT: bp8.0|
+2024-05-31 02:31:03,317
+update 2: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:31:07,318
++XRPUSDT: bp6.0|
+2024-05-31 02:31:07,756
+update 3: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:31:11,757
++XRPUSDT: bp6.0|
+2024-05-31 02:31:12,200
+update 4: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:31:16,200
++XRPUSDT: bp10.0|
+2024-05-31 02:31:16,642
+update 5: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:31:20,642
++XRPUSDT: bp10.0|
+2024-05-31 02:31:21,080
+update 6: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:31:25,081
++XRPUSDT: bp10.0|
+2024-05-31 02:31:25,521
+update 7: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:31:29,521
++XRPUSDT: bp8.0|
+2024-05-31 02:31:29,961
+update 8: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:31:33,962
++XRPUSDT: bp8.0|
+2024-05-31 02:31:34,400
+update 9: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:31:38,400
++XRPUSDT: bp8.0|
+2024-05-31 02:31:38,840
+update 10: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:31:42,840
++XRPUSDT: bp8.0|
+2024-05-31 02:31:43,281
+update 11: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:31:47,282
++XRPUSDT: bp10.0|
+2024-05-31 02:31:47,720
+update 12: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:31:51,721
++XRPUSDT: bp10.0|
+2024-05-31 02:31:52,164
+update 13: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:31:56,165
++XRPUSDT: bp8.0|
+2024-05-31 02:31:56,604
+update 14: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:32:00,604
++XRPUSDT: bp8.0|
+2024-05-31 02:32:00,605
+Adjustment limit #1 ... 
+ we cancel current orders and replace
+2024-05-31 02:32:00,605
+@+/-2.5bp limit 
+2024-05-31 02:32:00,605
+binance_cancel_and_replace_orders_peg 20240531_023200
+2024-05-31 02:32:01,703
+binance_place_orders_peg 20240531_023201
+2024-05-31 02:32:02,141
+{'orderId': 57590906463, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '0.5203', 'avgPrice': '0.00', 'origQty': '22.2', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1717122722029}
+2024-05-31 02:32:02,588
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:32:06,589
++XRPUSDT: bp2.0|
+2024-05-31 02:32:07,035
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:32:11,035
++XRPUSDT: bp2.0|
+2024-05-31 02:32:11,474
+update 2: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:32:15,475
++XRPUSDT: bp2.0|
+2024-05-31 02:32:15,917
+update 3: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:32:19,918
++XRPUSDT: bp2.0|
+2024-05-31 02:32:20,356
+update 4: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:32:24,356
++XRPUSDT: bp2.0|
+2024-05-31 02:32:24,795
+update 5: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:32:28,796
++XRPUSDT: bp2.0|
+2024-05-31 02:32:29,235
+update 6: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:32:33,236
++XRPUSDT: bp2.0|
+2024-05-31 02:32:33,674
+update 7: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:32:37,675
++XRPUSDT: bp2.0|
+2024-05-31 02:32:38,113
+update 8: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:32:42,114
++XRPUSDT: bp2.0|
+2024-05-31 02:32:42,552
+update 9: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:32:46,552
++XRPUSDT: bp2.0|
+2024-05-31 02:32:46,992
+update 10: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:32:50,993
++XRPUSDT: bp2.0|
+2024-05-31 02:32:51,431
+update 11: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:32:55,432
++XRPUSDT: bp2.0|
+2024-05-31 02:32:55,872
+update 12: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:32:59,873
++XRPUSDT: bp2.0|
+2024-05-31 02:33:00,311
+update 13: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:33:04,312
++XRPUSDT: bp2.0|
+2024-05-31 02:33:04,750
+update 14: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:33:08,751
++XRPUSDT: bp2.0|
+2024-05-31 02:33:08,751
+Adjustment limit #2 ... 
+ we cancel current orders and replace
+2024-05-31 02:33:08,751
+@+/-1.25bp limit 
+2024-05-31 02:33:08,751
+binance_cancel_and_replace_orders_peg 20240531_023308
+2024-05-31 02:33:09,856
+binance_place_orders_peg 20240531_023309
+2024-05-31 02:33:10,295
+{'orderId': 57590941900, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '0.5203', 'avgPrice': '0.00', 'origQty': '22.2', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1717122790184}
+2024-05-31 02:33:10,742
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:33:14,743
++XRPUSDT: bp2.0|
+2024-05-31 02:33:15,182
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:33:19,183
++XRPUSDT: bp4.0|
+2024-05-31 02:33:19,622
+update 2: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:33:23,622
++XRPUSDT: bp4.0|
+2024-05-31 02:33:24,061
+update 3: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:33:28,062
++XRPUSDT: bp4.0|
+2024-05-31 02:33:28,501
+update 4: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:33:32,502
++XRPUSDT: bp2.0|
+2024-05-31 02:33:32,943
+update 5: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:33:36,943
++XRPUSDT: bp2.0|
+2024-05-31 02:33:37,383
+update 6: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:33:41,383
++XRPUSDT: bp2.0|
+2024-05-31 02:33:41,821
+update 7: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:33:45,822
++XRPUSDT: bp2.0|
+2024-05-31 02:33:46,261
+update 8: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:33:50,261
++XRPUSDT: bp2.0|
+2024-05-31 02:33:50,701
+update 9: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:33:54,701
++XRPUSDT: bp4.0|
+2024-05-31 02:33:55,141
+update 10: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:33:59,142
++XRPUSDT: bp4.0|
+2024-05-31 02:33:59,580
+update 11: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:34:03,580
++XRPUSDT: bp2.0|
+2024-05-31 02:34:04,020
+update 12: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:34:08,020
++XRPUSDT: bp2.0|
+2024-05-31 02:34:08,461
+update 13: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:34:12,461
++XRPUSDT: bp2.0|
+2024-05-31 02:34:12,900
+update 14: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:34:16,901
++XRPUSDT: bp4.0|
+2024-05-31 02:34:16,901
+Adjustment limit #3 ... 
+ we cancel current orders and replace
+2024-05-31 02:34:16,901
+@+/-0.625bp limit 
+2024-05-31 02:34:16,901
+binance_cancel_and_replace_orders_peg 20240531_023416
+2024-05-31 02:34:18,002
+binance_place_orders_peg 20240531_023418
+2024-05-31 02:34:18,438
+{'orderId': 57590978944, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '0.5205', 'avgPrice': '0.00', 'origQty': '22.2', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1717122858327}
+2024-05-31 02:34:18,886
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:34:22,887
++XRPUSDT: bp-0.0|
+2024-05-31 02:34:23,325
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:34:27,326
++XRPUSDT: bp-0.0|
+2024-05-31 02:34:27,763
+update 2: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:34:31,764
++XRPUSDT: bp2.0|
+2024-05-31 02:34:32,203
+update 3: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:34:36,203
++XRPUSDT: bp-0.0|
+2024-05-31 02:34:36,648
+update 4: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:34:40,649
++XRPUSDT: bp-0.0|
+2024-05-31 02:34:41,087
+update 5: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:34:45,087
++XRPUSDT: bp2.0|
+2024-05-31 02:34:45,526
+update 6: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:34:49,527
++XRPUSDT: bp-0.0|
+2024-05-31 02:34:49,969
+update 7: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:34:53,970
++XRPUSDT: bp-0.0|
+2024-05-31 02:34:54,409
+update 8: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:34:58,410
++XRPUSDT: bp-0.0|
+2024-05-31 02:34:58,853
+update 9: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:35:02,853
++XRPUSDT: bp2.0|
+2024-05-31 02:35:03,294
+update 10: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:35:07,294
++XRPUSDT: bp-0.0|
+2024-05-31 02:35:07,737
+update 11: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:35:11,738
++XRPUSDT: bp2.0|
+2024-05-31 02:35:12,182
+update 12: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:35:16,183
++XRPUSDT: bp2.0|
+2024-05-31 02:35:16,621
+update 13: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:35:20,621
++XRPUSDT: bp2.0|
+2024-05-31 02:35:21,061
+update 14: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:35:25,062
++XRPUSDT: bp4.0|
+2024-05-31 02:35:25,062
+Adjustment limit #4 ... 
+ we cancel current orders and replace
+2024-05-31 02:35:25,062
+@+/-0.3125bp limit 
+2024-05-31 02:35:25,062
+binance_cancel_and_replace_orders_peg 20240531_023525
+2024-05-31 02:35:26,163
+binance_place_orders_peg 20240531_023526
+2024-05-31 02:35:26,607
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:35:30,608
++XRPUSDT: bp4.0|
+2024-05-31 02:35:31,047
+update 1: filled 0 / 0 () | working 0 / 0 ()
+2024-05-31 02:35:35,048
+
+2024-05-31 02:35:35,486
+update 2: filled 0 / 0 () | working 0 / 0 ()
+2024-05-31 02:35:39,486
+
+2024-05-31 02:35:39,925
+update 3: filled 0 / 0 () | working 0 / 0 ()
+2024-05-31 02:35:43,926
+
+2024-05-31 02:35:44,364
+update 4: filled 0 / 0 () | working 0 / 0 ()
+2024-05-31 02:35:48,365
+
+2024-05-31 02:35:48,803
+update 5: filled 0 / 0 () | working 0 / 0 ()
+2024-05-31 02:35:52,804
+
+2024-05-31 02:35:53,241
+update 6: filled 0 / 0 () | working 0 / 0 ()
+2024-05-31 02:35:57,242
+
+2024-05-31 02:35:57,680
+update 7: filled 0 / 0 () | working 0 / 0 ()
+2024-05-31 02:36:01,681
+
+2024-05-31 02:36:02,118
+update 8: filled 0 / 0 () | working 0 / 0 ()
+2024-05-31 02:36:06,119
+
+2024-05-31 02:36:06,557
+update 9: filled 0 / 0 () | working 0 / 0 ()
+2024-05-31 02:36:10,558
+
+2024-05-31 02:36:10,996
+update 10: filled 0 / 0 () | working 0 / 0 ()
+2024-05-31 02:36:14,996
+
+2024-05-31 02:36:15,437
+update 11: filled 0 / 0 () | working 0 / 0 ()
+2024-05-31 02:36:19,438
+
+2024-05-31 02:36:19,875
+update 12: filled 0 / 0 () | working 0 / 0 ()
+2024-05-31 02:36:23,876
+
+2024-05-31 02:36:24,316
+update 13: filled 0 / 0 () | working 0 / 0 ()
+2024-05-31 02:36:28,316
+
+2024-05-31 02:36:28,754
+update 14: filled 0 / 0 () | working 0 / 0 ()
+2024-05-31 02:36:32,754
+
+2024-05-31 02:36:32,754
+Adjustment limit #5 ... 
+ we cancel current orders and replace
+2024-05-31 02:36:32,754
+@+/-0.15625bp limit 
+2024-05-31 02:36:32,755
+binance_cancel_and_replace_orders_peg 20240531_023632
+2024-05-31 02:36:33,856
+binance_place_orders_peg 20240531_023633
+2024-05-31 02:36:34,291
+{'orderId': 57591077690, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '0.5207', 'avgPrice': '0.00', 'origQty': '22.2', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1717122994180}
+2024-05-31 02:36:34,737
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:36:38,738
++XRPUSDT: bp-0.0|
+2024-05-31 02:36:39,179
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:36:43,179
++XRPUSDT: bp-0.0|
+2024-05-31 02:36:43,619
+update 2: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:36:47,620
++XRPUSDT: bp-0.0|
+2024-05-31 02:36:48,059
+update 3: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:36:52,059
++XRPUSDT: bp-0.0|
+2024-05-31 02:36:52,498
+update 4: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:36:56,498
++XRPUSDT: bp-0.0|
+2024-05-31 02:36:56,937
+update 5: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:37:00,938
++XRPUSDT: bp-0.0|
+2024-05-31 02:37:01,376
+update 6: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:37:05,376
++XRPUSDT: bp-0.0|
+2024-05-31 02:37:05,815
+update 7: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:37:09,816
++XRPUSDT: bp2.0|
+2024-05-31 02:37:10,254
+update 8: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:37:14,255
++XRPUSDT: bp-0.0|
+2024-05-31 02:37:14,693
+update 9: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:37:18,694
++XRPUSDT: bp2.0|
+2024-05-31 02:37:19,133
+update 10: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:37:23,133
++XRPUSDT: bp2.0|
+2024-05-31 02:37:23,575
+update 11: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:37:27,575
++XRPUSDT: bp2.0|
+2024-05-31 02:37:28,014
+update 12: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:37:32,015
++XRPUSDT: bp-0.0|
+2024-05-31 02:37:32,454
+update 13: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:37:36,455
++XRPUSDT: bp-0.0|
+2024-05-31 02:37:36,897
+update 14: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:37:40,897
++XRPUSDT: bp-0.0|
+2024-05-31 02:37:40,897
+Adjustment limit #6 ... 
+ we cancel current orders and replace
+2024-05-31 02:37:40,898
+@+/-0.078125bp limit 
+2024-05-31 02:37:40,898
+binance_cancel_and_replace_orders_peg 20240531_023740
+2024-05-31 02:37:42,007
+binance_place_orders_peg 20240531_023742
+2024-05-31 02:37:42,450
+{'orderId': 57591115179, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '0.5207', 'avgPrice': '0.00', 'origQty': '22.2', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1717123062333}
+2024-05-31 02:37:42,901
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:37:46,901
++XRPUSDT: bp-0.0|
+2024-05-31 02:37:47,344
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:37:51,344
++XRPUSDT: bp2.0|
+2024-05-31 02:37:51,783
+update 2: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:37:55,783
++XRPUSDT: bp2.0|
+2024-05-31 02:37:56,222
+update 3: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:38:00,223
++XRPUSDT: bp2.0|
+2024-05-31 02:38:00,661
+update 4: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:38:04,662
++XRPUSDT: bp2.0|
+2024-05-31 02:38:05,101
+update 5: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:38:09,102
++XRPUSDT: bp2.0|
+2024-05-31 02:38:09,540
+update 6: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:38:13,541
++XRPUSDT: bp-0.0|
+2024-05-31 02:38:13,979
+update 7: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:38:17,980
++XRPUSDT: bp-0.0|
+2024-05-31 02:38:18,420
+update 8: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:38:22,421
++XRPUSDT: bp-0.0|
+2024-05-31 02:38:22,860
+update 9: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:38:26,860
++XRPUSDT: bp2.0|
+2024-05-31 02:38:27,299
+update 10: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:38:31,299
++XRPUSDT: bp2.0|
+2024-05-31 02:38:31,738
+update 11: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:38:35,738
++XRPUSDT: bp4.0|
+2024-05-31 02:38:36,179
+update 12: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:38:40,180
++XRPUSDT: bp4.0|
+2024-05-31 02:38:40,619
+update 13: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:38:44,620
++XRPUSDT: bp4.0|
+2024-05-31 02:38:45,059
+update 14: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:38:49,059
++XRPUSDT: bp2.0|
+2024-05-31 02:38:49,059
+Adjustment limit #7 ... 
+ we cancel current orders and replace
+2024-05-31 02:38:49,062
+@+/-0.0390625bp limit 
+2024-05-31 02:38:49,062
+binance_cancel_and_replace_orders_peg 20240531_023849
+2024-05-31 02:38:50,168
+binance_place_orders_peg 20240531_023850
+2024-05-31 02:38:50,610
+{'orderId': 57591149332, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '0.5208', 'avgPrice': '0.00', 'origQty': '22.2', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1717123130493}
+2024-05-31 02:38:51,056
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:38:55,057
++XRPUSDT: bp-0.0|
+2024-05-31 02:38:55,495
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:38:59,495
++XRPUSDT: bp2.0|
+2024-05-31 02:38:59,934
+update 2: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:39:03,935
++XRPUSDT: bp-0.0|
+2024-05-31 02:39:04,374
+update 3: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:39:08,375
++XRPUSDT: bp2.0|
+2024-05-31 02:39:08,814
+update 4: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:39:12,815
++XRPUSDT: bp2.0|
+2024-05-31 02:39:13,253
+update 5: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:39:17,254
++XRPUSDT: bp-0.0|
+2024-05-31 02:39:17,692
+update 6: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:39:21,692
++XRPUSDT: bp2.0|
+2024-05-31 02:39:22,133
+update 7: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:39:26,134
++XRPUSDT: bp2.0|
+2024-05-31 02:39:26,575
+update 8: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:39:30,576
++XRPUSDT: bp-0.0|
+2024-05-31 02:39:31,013
+update 9: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:39:35,014
++XRPUSDT: bp-0.0|
+2024-05-31 02:39:35,452
+update 10: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:39:39,452
++XRPUSDT: bp-0.0|
+2024-05-31 02:39:39,890
+update 11: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:39:43,891
++XRPUSDT: bp2.0|
+2024-05-31 02:39:44,330
+update 12: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:39:48,331
++XRPUSDT: bp-0.0|
+2024-05-31 02:39:48,769
+update 13: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:39:52,770
++XRPUSDT: bp-0.0|
+2024-05-31 02:39:53,208
+update 14: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:39:57,209
++XRPUSDT: bp-0.0|
+2024-05-31 02:39:57,209
+Adjustment limit #8 ... 
+ we cancel current orders and replace
+2024-05-31 02:39:57,209
+@+/-0.01953125bp limit 
+2024-05-31 02:39:57,209
+binance_cancel_and_replace_orders_peg 20240531_023957
+2024-05-31 02:39:58,312
+binance_place_orders_peg 20240531_023958
+2024-05-31 02:39:58,755
+{'orderId': 57591187270, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '0.5209', 'avgPrice': '0.00', 'origQty': '22.2', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1717123198637}
+2024-05-31 02:39:59,201
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:40:03,202
++XRPUSDT: bp-0.0|
+2024-05-31 02:40:03,643
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:40:07,644
++XRPUSDT: bp-0.0|
+2024-05-31 02:40:08,084
+update 2: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:40:12,084
++XRPUSDT: bp-0.0|
+2024-05-31 02:40:12,524
+update 3: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:40:16,525
++XRPUSDT: bp2.0|
+2024-05-31 02:40:16,964
+update 4: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:40:20,965
++XRPUSDT: bp-0.0|
+2024-05-31 02:40:21,408
+update 5: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:40:25,409
++XRPUSDT: bp-0.0|
+2024-05-31 02:40:25,848
+update 6: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:40:29,849
++XRPUSDT: bp2.0|
+2024-05-31 02:40:30,288
+update 7: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:40:34,288
++XRPUSDT: bp2.0|
+2024-05-31 02:40:34,727
+update 8: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:40:38,728
++XRPUSDT: bp2.0|
+2024-05-31 02:40:39,168
+update 9: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:40:43,169
++XRPUSDT: bp-0.0|
+2024-05-31 02:40:43,608
+update 10: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:40:47,608
++XRPUSDT: bp2.0|
+2024-05-31 02:40:48,047
+update 11: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:40:52,048
++XRPUSDT: bp-0.0|
+2024-05-31 02:40:52,487
+update 12: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:40:56,487
++XRPUSDT: bp2.0|
+2024-05-31 02:40:56,927
+update 13: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:41:00,928
++XRPUSDT: bp2.0|
+2024-05-31 02:41:01,367
+update 14: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:41:05,367
++XRPUSDT: bp-0.0|
+2024-05-31 02:41:05,368
+Adjustment limit #9 ... 
+ we cancel current orders and replace
+2024-05-31 02:41:05,368
+@+/-0.009765625bp limit 
+2024-05-31 02:41:05,368
+binance_cancel_and_replace_orders_peg 20240531_024105
+2024-05-31 02:41:06,471
+binance_place_orders_peg 20240531_024106
+2024-05-31 02:41:06,915
+{'orderId': 57591219716, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '0.5209', 'avgPrice': '0.00', 'origQty': '22.2', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1717123266796}
+2024-05-31 02:41:07,361
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:41:11,362
++XRPUSDT: bp-0.0|
+2024-05-31 02:41:11,801
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:41:15,802
++XRPUSDT: bp-0.0|
+2024-05-31 02:41:16,240
+update 2: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:41:20,241
++XRPUSDT: bp-0.0|
+2024-05-31 02:41:20,680
+update 3: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:41:24,680
++XRPUSDT: bp2.0|
+2024-05-31 02:41:25,120
+update 4: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:41:29,121
++XRPUSDT: bp2.0|
+2024-05-31 02:41:29,560
+update 5: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:41:33,561
++XRPUSDT: bp2.0|
+2024-05-31 02:41:34,000
+update 6: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:41:38,001
++XRPUSDT: bp-0.0|
+2024-05-31 02:41:38,439
+update 7: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:41:42,440
++XRPUSDT: bp2.0|
+2024-05-31 02:41:42,879
+update 8: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:41:46,879
++XRPUSDT: bp2.0|
+2024-05-31 02:41:47,318
+update 9: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:41:51,318
++XRPUSDT: bp-0.0|
+2024-05-31 02:41:51,757
+update 10: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:41:55,757
++XRPUSDT: bp-0.0|
+2024-05-31 02:41:56,196
+update 11: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:42:00,197
++XRPUSDT: bp2.0|
+2024-05-31 02:42:00,635
+update 12: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:42:04,635
++XRPUSDT: bp2.0|
+2024-05-31 02:42:05,073
+update 13: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:42:09,074
++XRPUSDT: bp2.0|
+2024-05-31 02:42:09,512
+update 14: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:42:13,512
++XRPUSDT: bp2.0|
+2024-05-31 02:42:13,512
+Adjustment limit #10 ... 
+ we cancel current orders and replace
+2024-05-31 02:42:13,512
+@+/-0.0048828125bp limit 
+2024-05-31 02:42:13,512
+binance_cancel_and_replace_orders_peg 20240531_024213
+2024-05-31 02:42:14,617
+binance_place_orders_peg 20240531_024214
+2024-05-31 02:42:15,054
+{'orderId': 57591234598, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '0.5209', 'avgPrice': '0.00', 'origQty': '22.2', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1717123334942}
+2024-05-31 02:42:15,502
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:42:19,503
++XRPUSDT: bp-0.0|
+2024-05-31 02:42:19,941
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:42:23,942
++XRPUSDT: bp-0.0|
+2024-05-31 02:42:24,381
+update 2: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:42:28,382
++XRPUSDT: bp-0.0|
+2024-05-31 02:42:28,821
+update 3: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:42:32,821
++XRPUSDT: bp-0.0|
+2024-05-31 02:42:33,259
+update 4: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:42:37,260
++XRPUSDT: bp-0.0|
+2024-05-31 02:42:37,699
+update 5: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:42:41,700
++XRPUSDT: bp2.0|
+2024-05-31 02:42:42,138
+update 6: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:42:46,139
++XRPUSDT: bp4.0|
+2024-05-31 02:42:46,578
+update 7: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:42:50,579
++XRPUSDT: bp2.0|
+2024-05-31 02:42:51,018
+update 8: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:42:55,019
++XRPUSDT: bp2.0|
+2024-05-31 02:42:55,457
+update 9: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:42:59,457
++XRPUSDT: bp2.0|
+2024-05-31 02:42:59,896
+update 10: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:43:03,897
++XRPUSDT: bp2.0|
+2024-05-31 02:43:04,336
+update 11: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:43:08,336
++XRPUSDT: bp2.0|
+2024-05-31 02:43:08,775
+update 12: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:43:12,775
++XRPUSDT: bp2.0|
+2024-05-31 02:43:13,214
+update 13: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:43:17,215
++XRPUSDT: bp4.0|
+2024-05-31 02:43:17,653
+update 14: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:43:21,654
++XRPUSDT: bp4.0|
+2024-05-31 02:43:21,654
+Adjustment limit #11 ... 
+ we cancel current orders and replace
+2024-05-31 02:43:21,654
+@+/-0.00244140625bp limit 
+2024-05-31 02:43:21,654
+binance_cancel_and_replace_orders_peg 20240531_024321
+2024-05-31 02:43:22,789
+binance_place_orders_peg 20240531_024322
+2024-05-31 02:43:23,226
+{'orderId': 57591252653, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '0.5210', 'avgPrice': '0.00', 'origQty': '22.2', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1717123403114}
+2024-05-31 02:43:23,673
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:43:27,674
++XRPUSDT: bp2.0|
+2024-05-31 02:43:28,138
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:43:32,138
++XRPUSDT: bp2.0|
+2024-05-31 02:43:32,577
+update 2: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:43:36,577
++XRPUSDT: bp-0.0|
+2024-05-31 02:43:37,015
+update 3: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:43:41,016
++XRPUSDT: bp-0.0|
+2024-05-31 02:43:41,455
+update 4: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:43:45,456
++XRPUSDT: bp2.0|
+2024-05-31 02:43:45,894
+update 5: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:43:49,895
++XRPUSDT: bp2.0|
+2024-05-31 02:43:50,333
+update 6: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:43:54,334
++XRPUSDT: bp4.0|
+2024-05-31 02:43:54,771
+update 7: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:43:58,772
++XRPUSDT: bp2.0|
+2024-05-31 02:43:59,210
+update 8: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:44:03,210
++XRPUSDT: bp4.0|
+2024-05-31 02:44:03,651
+update 9: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:44:07,651
++XRPUSDT: bp2.0|
+2024-05-31 02:44:08,090
+update 10: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:44:12,090
++XRPUSDT: bp2.0|
+2024-05-31 02:44:12,529
+update 11: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:44:16,529
++XRPUSDT: bp2.0|
+2024-05-31 02:44:16,970
+update 12: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:44:20,971
++XRPUSDT: bp4.0|
+2024-05-31 02:44:21,408
+update 13: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:44:25,409
++XRPUSDT: bp4.0|
+2024-05-31 02:44:25,847
+update 14: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:44:29,847
++XRPUSDT: bp2.0|
+2024-05-31 02:44:29,848
+Adjustment limit #12 ... 
+ we cancel current orders and replace
+2024-05-31 02:44:29,848
+@+/-0.001220703125bp limit 
+2024-05-31 02:44:29,848
+binance_cancel_and_replace_orders_peg 20240531_024429
+2024-05-31 02:44:30,956
+binance_place_orders_peg 20240531_024430
+2024-05-31 02:44:31,397
+{'orderId': 57591261771, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '0.5211', 'avgPrice': '0.00', 'origQty': '22.2', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1717123471282}
+2024-05-31 02:44:31,845
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:44:35,846
++XRPUSDT: bp-0.0|
+2024-05-31 02:44:36,285
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:44:40,285
++XRPUSDT: bp-0.0|
+2024-05-31 02:44:40,724
+update 2: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:44:44,724
++XRPUSDT: bp2.0|
+2024-05-31 02:44:45,163
+update 3: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:44:49,164
++XRPUSDT: bp2.0|
+2024-05-31 02:44:49,602
+update 4: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:44:53,603
++XRPUSDT: bp2.0|
+2024-05-31 02:44:54,042
+update 5: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:44:58,043
++XRPUSDT: bp2.0|
+2024-05-31 02:44:58,482
+update 6: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:45:02,483
++XRPUSDT: bp4.0|
+2024-05-31 02:45:02,924
+update 7: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:45:06,925
++XRPUSDT: bp2.0|
+2024-05-31 02:45:07,364
+update 8: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:45:11,364
++XRPUSDT: bp2.0|
+2024-05-31 02:45:11,802
+update 9: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:45:15,803
++XRPUSDT: bp2.0|
+2024-05-31 02:45:16,243
+update 10: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:45:20,243
++XRPUSDT: bp4.0|
+2024-05-31 02:45:20,681
+update 11: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:45:24,682
++XRPUSDT: bp4.0|
+2024-05-31 02:45:25,120
+update 12: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:45:29,121
++XRPUSDT: bp2.0|
+2024-05-31 02:45:29,561
+update 13: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:45:33,561
++XRPUSDT: bp2.0|
+2024-05-31 02:45:33,999
+update 14: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:45:38,000
++XRPUSDT: bp2.0|
+2024-05-31 02:45:38,000
+Adjustment limit #13 ... 
+ we cancel current orders and replace
+2024-05-31 02:45:38,000
+@+/-0.0006103515625bp limit 
+2024-05-31 02:45:38,001
+binance_cancel_and_replace_orders_peg 20240531_024538
+2024-05-31 02:45:39,108
+binance_place_orders_peg 20240531_024539
+2024-05-31 02:45:39,542
+{'orderId': 57591277811, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '0.5212', 'avgPrice': '0.00', 'origQty': '22.2', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1717123539432}
+2024-05-31 02:45:39,989
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:45:43,990
++XRPUSDT: bp2.0|
+2024-05-31 02:45:44,430
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:45:48,431
++XRPUSDT: bp2.0|
+2024-05-31 02:45:48,870
+update 2: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:45:52,870
++XRPUSDT: bp2.0|
+2024-05-31 02:45:53,309
+update 3: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:45:57,309
++XRPUSDT: bp2.0|
+2024-05-31 02:45:57,748
+update 4: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:46:01,749
++XRPUSDT: bp4.0|
+2024-05-31 02:46:02,187
+update 5: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:46:06,188
++XRPUSDT: bp4.0|
+2024-05-31 02:46:06,626
+update 6: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:46:10,627
++XRPUSDT: bp4.0|
+2024-05-31 02:46:11,066
+update 7: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:46:15,067
++XRPUSDT: bp4.0|
+2024-05-31 02:46:15,505
+update 8: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:46:19,506
++XRPUSDT: bp4.0|
+2024-05-31 02:46:19,945
+update 9: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:46:23,946
++XRPUSDT: bp2.0|
+2024-05-31 02:46:24,384
+update 10: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:46:28,385
++XRPUSDT: bp4.0|
+2024-05-31 02:46:28,824
+update 11: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:46:32,824
++XRPUSDT: bp4.0|
+2024-05-31 02:46:33,263
+update 12: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:46:37,264
++XRPUSDT: bp2.0|
+2024-05-31 02:46:37,704
+update 13: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:46:41,705
++XRPUSDT: bp4.0|
+2024-05-31 02:46:42,144
+update 14: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:46:46,145
++XRPUSDT: bp6.0|
+2024-05-31 02:46:46,145
+Adjustment limit #14 ... 
+ we cancel current orders and replace
+2024-05-31 02:46:46,145
+@+/-0.00030517578125bp limit 
+2024-05-31 02:46:46,145
+binance_cancel_and_replace_orders_peg 20240531_024646
+2024-05-31 02:46:47,244
+binance_place_orders_peg 20240531_024647
+2024-05-31 02:46:47,677
+{'orderId': 57591302899, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '0.5214', 'avgPrice': '0.00', 'origQty': '22.2', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1717123607568}
+2024-05-31 02:46:48,123
+update 0: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:46:52,124
++XRPUSDT: bp-0.0|
+2024-05-31 02:46:52,562
+update 1: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:46:56,563
++XRPUSDT: bp2.0|
+2024-05-31 02:46:57,004
+update 2: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:47:01,005
++XRPUSDT: bp-0.0|
+2024-05-31 02:47:01,450
+update 3: filled 0 / 1 () | working 1 / 1 (+XRPUSDT)
+2024-05-31 02:47:05,450
++XRPUSDT: bp-0.0|
+2024-05-31 02:47:05,891
+update 4: filled 1 / 1 (+XRPUSDT) | working 0 / 1 ()
+2024-05-31 02:47:11,230
+Trades of the day
+in$
+as of: 31May 02:47>>02:47 (#trades: 1)
+trade net: +12.0 (+4.2%), trade gross: +12.0 (+4.2%), BUY: +12.0 (+4.2%), SELL: +0.0 (+0.0%)
+fees: $ 0.002 (2.0bp)
+2024-05-31 02:47:11,466
+Trades: 
+Filled #1
+______________________________________________
+                   in$ | in bp 11 traded | in bp 288 AUMs
+realizedPnl    -0.04   | -35     | -1     
+PnLvsArrival   -0.02   | -17     | -1     
+PnLvsLast      +0      | +0      | +0     
+______________________________________________
+                 | Value$ | PnL Arrival/Last 
+______________________________________________
+XRP:+22.2@0.5214 | +12$ | -0.02/0
