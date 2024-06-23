@@ -1,0 +1,75 @@
+2024-06-23 23:30:50,366
+ON program started 20240623 23:30:50,
+US time: 20240623 19:30:50
+2024-06-23 23:30:51,401
+the strat is currently running @ 23-06-2024 and the target positions is SHORT
+2024-06-23 23:30:52,716
+CURRENT STATUS IS SHORT, WE CHECK IF THE DAY IS A NEGATIVE ONE
+-----
+return before 14h30:
+BTCUSDT+0.06%, ETHUSDT+0.07%, XRPUSDT-0.43%
+-----
+target alloc initial:BTCUSDT-4.17%, ETHUSDT+0.00%, XRPUSDT-4.17%
+-----
+alloc target x rt%<0:BTCUSDT-0.00%, ETHUSDT+0.00%, XRPUSDT-4.17%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target     -4.2%    0.0%   -4.2%
+rt_14h30     0.00%   0.00%  -0.00%
+w_target_f   -0.0%    0.0%   -4.2%
+2024-06-23 23:30:52,717
+Portfolio was rebalanced less than 2 hours ago, 1.0 hours ago
+2024-06-23 23:30:52,718
+Status: prev = SHORT <> SHORT = target
+2024-06-23 23:30:52,719
+the strat is currently running @ 23-06-2024 and the target positions is SHORT
+the strat was previously run @ 2024-06-23 22:31:03, success:? 
+   and the current positions is SHORT
+2024-06-23 23:30:53,884
+positions_future #1
+2024-06-23 23:30:53,884
+      symbol  positionAmt entryPrice  ... adlQuantile AUMs_account        w%
+131  XRPUSDT        -25.3       0.48  ...           1        291.6 -0.041615
+
+[1 rows x 12 columns]
+2024-06-23 23:30:54,118
+------------------------------
+binance_account_balance
+2024-06-23 23:30:54,118
+  asset     balance  ...  marginAvailable   updateTime
+4  USDT  291.563216  ...             True  23Jun-22:31
+
+[1 rows x 8 columns]
+2024-06-23 23:30:54,552
+------------------------------
+open_orders
+2024-06-23 23:30:54,553
+Empty DataFrame
+Columns: []
+Index: []
+2024-06-23 23:30:55,183
+------------------------------
+AUMS account:291
+
+2024-06-23 23:30:55,185
+--------------- compute_futures_order_book() ----------------
+2024-06-23 23:30:56,695
+----------------------------------------------------------------------
+#0 order(s) to place
+gross$: 0$ | net$: +0$
+gross%: 0% | net%: +0%
+ || w>0%  +0% | w<0%  0%
+----------------------------------------------------------------------
+PTF Expo% -4.1% >> -4.1% (current>>target)
+PTF expo $-12.0 >> $-12 (current>>target)
+----------------------------------------------------------------------
+2024-06-23 23:30:56,697
+orders_ofthe_day
+2024-06-23 23:30:56,697
+Empty DataFrame
+Columns: [ptf_usd, target_usd, totrd_usd, posttrd_usd, qty, posttrd_qty, posttrd_w, bid, ask, strategy]
+Index: []
+2024-06-23 23:30:56,760
+Orders of the day is empty, current and target potfolios are aligned
+2024-06-23 23:30:56,760
+Program stopped
