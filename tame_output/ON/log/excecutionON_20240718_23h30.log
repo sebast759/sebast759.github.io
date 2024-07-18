@@ -1,0 +1,58 @@
+2024-07-18 23:30:58,883
+ON program started 20240718 23:30:58,
+US time: 20240718 19:30:58
+2024-07-18 23:30:59,537
+the strat is currently running @ 18-07-2024 and the target positions is SHORT
+2024-07-18 23:31:00,857
+CURRENT STATUS IS SHORT, WE CHECK IF THE DAY IS A NEGATIVE ONE
+-----
+return before 14h30:
+BTCUSDT+0.79%, ETHUSDT+2.37%, XRPUSDT-7.94%
+-----
+target alloc initial:BTCUSDT-4.17%, ETHUSDT+0.00%, XRPUSDT-4.17%
+-----
+alloc target x rt%<0:BTCUSDT-0.00%, ETHUSDT+0.00%, XRPUSDT-4.17%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target     -4.2%    0.0%   -4.2%
+rt_14h30     0.01%   0.02%  -0.08%
+w_target_f   -0.0%    0.0%   -4.2%
+2024-07-18 23:31:00,858
+Portfolio was rebalanced less than 2 hours ago, 1.0 hours ago
+2024-07-18 23:31:00,860
+Status: prev = SHORT <> SHORT = target
+2024-07-18 23:31:00,860
+the strat is currently running @ 18-07-2024 and the target positions is SHORT
+the strat was previously run @ 2024-07-18 22:30:52, success:? 
+   and the current positions is SHORT
+2024-07-18 23:31:01,986
+positions_future #1
+2024-07-18 23:31:01,987
+      symbol  positionAmt entryPrice  ... adlQuantile AUMs_account        w%
+131  XRPUSDT         86.3     0.5676  ...           2        294.2  0.167378
+
+[1 rows x 12 columns]
+2024-07-18 23:31:02,211
+------------------------------
+binance_account_balance
+2024-07-18 23:31:02,212
+  asset     balance  ...  marginAvailable   updateTime
+4  USDT  293.948965  ...             True  18Jul-22:42
+
+[1 rows x 8 columns]
+2024-07-18 23:31:02,635
+------------------------------
+open_orders
+2024-07-18 23:31:02,635
+                                      0
+symbol                          XRPUSDT
+status                              NEW
+price                            0.5723
+avgPrice                              0
+origQty                           106.6
+executedQty                           0
+type                              LIMIT
+side                               SELL
+stopPrice                             0
+time         2024-07-18 22:30:58.238000
+updateTime   2024-07-18 22:30:58.238000
