@@ -1,0 +1,77 @@
+2024-07-18 00:30:31,877
+ON program started 20240718 00:30:31,
+US time: 20240717 20:30:31
+2024-07-18 00:30:32,376
+the strat is currently running @ 18-07-2024 and the target positions is SHORT
+2024-07-18 00:30:33,679
+CURRENT STATUS IS SHORT, WE CHECK IF THE DAY IS A NEGATIVE ONE
+-----
+return before 14h30:
+BTCUSDT+0.07%, ETHUSDT+0.32%, XRPUSDT+0.96%
+-----
+target alloc initial:BTCUSDT-4.17%, ETHUSDT+0.00%, XRPUSDT-4.17%
+-----
+alloc target x rt%<0:BTCUSDT-0.00%, ETHUSDT+0.00%, XRPUSDT-0.00%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target     -4.2%    0.0%   -4.2%
+rt_14h30     0.00%   0.00%   0.01%
+w_target_f   -0.0%    0.0%   -0.0%
+2024-07-18 00:30:33,681
+Portfolio was rebalanced less than 2 hours ago, 1.0 hours ago
+2024-07-18 00:30:33,682
+Status: prev = SHORT <> SHORT = target
+2024-07-18 00:30:33,682
+the strat is currently running @ 18-07-2024 and the target positions is SHORT
+the strat was previously run @ 2024-07-17 23:31:04, success:? 
+   and the current positions is SHORT
+2024-07-18 00:30:34,836
+positions_future #1
+2024-07-18 00:30:34,836
+      symbol  positionAmt entryPrice  ... adlQuantile AUMs_account        w%
+166  ETHUSDT        0.014    3416.02  ...           1        293.3  0.162209
+
+[1 rows x 12 columns]
+2024-07-18 00:30:35,060
+------------------------------
+binance_account_balance
+2024-07-18 00:30:35,060
+  asset     balance  ...  marginAvailable   updateTime
+4  USDT  293.516002  ...             True  17Jul-22:31
+
+[1 rows x 8 columns]
+2024-07-18 00:30:35,481
+------------------------------
+open_orders
+2024-07-18 00:30:35,481
+Empty DataFrame
+Columns: []
+Index: []
+2024-07-18 00:30:36,090
+------------------------------
+AUMS account:293
+
+2024-07-18 00:30:36,091
+--------------- compute_futures_order_book() ----------------
+2024-07-18 00:30:37,534
+----------------------------------------------------------------------
+#1 order(s) to place
+gross$: 48$ | net$: -48$
+gross%: 16% | net%: -16%
+ || w>0%  +0% | w<0%  -16%
+----------------------------------------------------------------------
+PTF Expo% 16.3% >> 0.0% (current>>target)
+PTF expo $48.0 >> $0 (current>>target)
+----------------------------------------------------------------------
+2024-07-18 00:30:37,535
+orders_ofthe_day
+2024-07-18 00:30:37,535
+                  ptf_usd  target_usd  totrd_usd  ...      bid     ask strategy
+2024-07-18 00:30                                  ...                          
+ETHUSDT              48.0         0.0      -48.0  ...  3397.99  3398.0  STRATON
+
+[1 rows x 10 columns]
+2024-07-18 00:30:38,874
+binance_place_orders_peg 20240718_003038
+2024-07-18 00:30:39,281
+{'orderId': 8389765702924142891, 'symbol': 'ETHUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '3399.97', 'avgPrice': '0.00', 'origQty': '0.014', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1721262639179}
