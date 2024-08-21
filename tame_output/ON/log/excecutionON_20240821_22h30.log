@@ -1,0 +1,154 @@
+2024-08-21 22:30:27,009
+ON program started 20240821 22:30:26,
+US time: 20240821 18:30:27
+2024-08-21 22:30:27,471
+the strat is currently running @ 21-08-2024 and the target positions is SHORT
+2024-08-21 22:30:29,179
+CURRENT STATUS IS SHORT, WE CHECK IF THE DAY IS A NEGATIVE ONE
+-----
+return before 14h30:
+BTCUSDT+1.55%, ETHUSDT+0.83%, XRPUSDT+0.00%
+-----
+target alloc initial:BTCUSDT-4.17%, ETHUSDT+0.00%, XRPUSDT-4.17%
+-----
+alloc target x rt%<0:BTCUSDT-0.00%, ETHUSDT+0.00%, XRPUSDT-0.00%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target     -4.2%    0.0%   -4.2%
+rt_14h30     0.02%   0.01%   0.00%
+w_target_f   -0.0%    0.0%   -0.0%
+2024-08-21 22:30:29,180
+Portfolio was rebalanced less than 2 hours ago, 1.0 hours ago
+2024-08-21 22:30:29,182
+Status: prev = SHORT <> LONG = target
+2024-08-21 22:30:29,182
+the strat is currently running @ 21-08-2024 and the target positions is SHORT
+the strat was previously run @ 2024-08-21 21:31:03, success:yes 
+   and the current positions is LONG
+2024-08-21 22:30:30,318
+positions_future #2
+2024-08-21 22:30:30,319
+      symbol  positionAmt entryPrice  ... adlQuantile AUMs_account        w%
+133  XRPUSDT       83.200     0.6009  ...           1        302.1  0.165848
+170  ETHUSDT        0.019    2642.36  ...           1        302.1  0.165823
+
+[2 rows x 12 columns]
+2024-08-21 22:30:30,559
+------------------------------
+binance_account_balance
+2024-08-21 22:30:30,559
+  asset     balance  ...  marginAvailable   updateTime
+4  USDT  302.103256  ...             True  21Aug-18:33
+
+[1 rows x 8 columns]
+2024-08-21 22:30:31,188
+------------------------------
+open_orders
+2024-08-21 22:30:31,189
+Empty DataFrame
+Columns: []
+Index: []
+2024-08-21 22:30:31,803
+------------------------------
+AUMS account:302
+
+2024-08-21 22:30:31,804
+--------------- compute_futures_order_book() ----------------
+2024-08-21 22:30:33,272
+----------------------------------------------------------------------
+#2 order(s) to place
+gross$: 100$ | net$: -100$
+gross%: 33% | net%: -33%
+ || w>0%  +0% | w<0%  -33%
+----------------------------------------------------------------------
+PTF Expo% 33.1% >> 0.0% (current>>target)
+PTF expo $100.0 >> $0 (current>>target)
+----------------------------------------------------------------------
+2024-08-21 22:30:33,273
+orders_ofthe_day
+2024-08-21 22:30:33,273
+                  ptf_usd  target_usd  totrd_usd  ...        bid        ask strategy
+2024-08-21 22:30                                  ...                               
+XRPUSDT              50.0        -0.0      -50.0  ...     0.6021     0.6022  STRATON
+ETHUSDT              50.0         0.0      -50.0  ...  2636.6100  2636.6200  STRATON
+
+[2 rows x 10 columns]
+2024-08-21 22:30:34,802
+binance_place_orders_peg 20240821_223034
+2024-08-21 22:30:35,229
+{'orderId': 63616471766, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '0.6025', 'avgPrice': '0.00', 'origQty': '83.2', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1724279435125}
+2024-08-21 22:30:35,646
+{'orderId': 8389765719261238159, 'symbol': 'ETHUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '2638.24', 'avgPrice': '0.00', 'origQty': '0.019', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1724279435538}
+2024-08-21 22:30:37,104
+update 0: filled 0 / 2 () | working 2 / 2 (-XRPUSDT,-ETHUSDT)
+2024-08-21 22:30:41,105
+-XRPUSDT: bp5.0|-ETHUSDT: bp6.0|
+2024-08-21 22:30:41,924
+update 1: filled 0 / 2 () | working 2 / 2 (-XRPUSDT,-ETHUSDT)
+2024-08-21 22:30:45,924
+-XRPUSDT: bp5.0|-ETHUSDT: bp4.0|
+2024-08-21 22:30:46,742
+update 2: filled 1 / 2 (-XRPUSDT) | working 1 / 2 (-ETHUSDT)
+2024-08-21 22:30:50,743
+-ETHUSDT: bp4.0|
+2024-08-21 22:30:51,563
+update 3: filled 1 / 2 (-XRPUSDT) | working 1 / 2 (-ETHUSDT)
+2024-08-21 22:30:55,564
+-ETHUSDT: bp3.0|
+2024-08-21 22:30:56,382
+update 4: filled 1 / 2 (-XRPUSDT) | working 1 / 2 (-ETHUSDT)
+2024-08-21 22:31:00,383
+-ETHUSDT: bp4.0|
+2024-08-21 22:31:01,200
+update 5: filled 1 / 2 (-XRPUSDT) | working 1 / 2 (-ETHUSDT)
+2024-08-21 22:31:05,200
+-ETHUSDT: bp4.0|
+2024-08-21 22:31:06,017
+update 6: filled 1 / 2 (-XRPUSDT) | working 1 / 2 (-ETHUSDT)
+2024-08-21 22:31:10,018
+-ETHUSDT: bp5.0|
+2024-08-21 22:31:10,835
+update 7: filled 1 / 2 (-XRPUSDT) | working 1 / 2 (-ETHUSDT)
+2024-08-21 22:31:14,836
+-ETHUSDT: bp3.0|
+2024-08-21 22:31:15,655
+update 8: filled 1 / 2 (-XRPUSDT) | working 1 / 2 (-ETHUSDT)
+2024-08-21 22:31:19,656
+-ETHUSDT: bp3.0|
+2024-08-21 22:31:20,472
+update 9: filled 1 / 2 (-XRPUSDT) | working 1 / 2 (-ETHUSDT)
+2024-08-21 22:31:24,473
+-ETHUSDT: bp3.0|
+2024-08-21 22:31:25,292
+update 10: filled 1 / 2 (-XRPUSDT) | working 1 / 2 (-ETHUSDT)
+2024-08-21 22:31:29,293
+-ETHUSDT: bp2.0|
+2024-08-21 22:31:30,110
+update 11: filled 1 / 2 (-XRPUSDT) | working 1 / 2 (-ETHUSDT)
+2024-08-21 22:31:34,111
+-ETHUSDT: bp1.0|
+2024-08-21 22:31:34,928
+update 12: filled 1 / 2 (-XRPUSDT) | working 1 / 2 (-ETHUSDT)
+2024-08-21 22:31:38,929
+-ETHUSDT: bp1.0|
+2024-08-21 22:31:39,752
+update 13: filled 2 / 2 (-XRPUSDT,-ETHUSDT) | working 0 / 2 ()
+2024-08-21 22:31:46,051
+Trades of the day
+in$
+as of: 21Aug 22:30>>22:31 (#trades: 2)
+trade net: -100.0 (-33.1%), trade gross: +100.0 (+33.1%), BUY: +0.0 (+0.0%), SELL: -100.0 (-33.1%)
+fees: $ 0.02 (2.0bp)
+2024-08-21 22:31:46,472
+Trades: 
+Filled #2
+______________________________________________
+                   in$ | in bp 100 traded | in bp 302 AUMs
+realizedPnl    +0.05   | +5      | +2     
+PnLvsArrival   +0.06   | +6      | +2     
+PnLvsLast      +0.05   | +5      | +2     
+______________________________________________
+                 | Value$ | PnL Arrival/Last 
+______________________________________________
+XRP:-83.2@0.6025 | -50$ | 0.03/0.05
+ETH:-0.019@2638.24 | -50$ | 0.03/-0
