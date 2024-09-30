@@ -1,0 +1,86 @@
+2024-09-30 00:31:00,742
+ON program started 20240930 00:31:00,
+US time: 20240929 20:31:00
+2024-09-30 00:31:01,375
+the strat is currently running @ 30-09-2024 and the target positions is SHORT
+2024-09-30 00:31:02,774
+CURRENT STATUS IS SHORT, WE CHECK IF THE DAY IS A NEGATIVE ONE
+-----
+return before 14h30:
+BTCUSDT-0.55%, ETHUSDT-0.61%, XRPUSDT-0.30%
+-----
+target alloc initial:BTCUSDT-4.17%, ETHUSDT+0.00%, XRPUSDT-4.17%
+-----
+alloc target x rt%<0:BTCUSDT-4.17%, ETHUSDT+0.00%, XRPUSDT-4.17%
+-----
+           BTCUSDT ETHUSDT XRPUSDT
+w_target     -4.2%    0.0%   -4.2%
+rt_14h30    -0.01%  -0.01%  -0.00%
+w_target_f   -4.2%    0.0%   -4.2%
+2024-09-30 00:31:02,775
+Portfolio was rebalanced less than 2 hours ago, 1.0 hours ago
+2024-09-30 00:31:02,777
+Status: prev = SHORT <> SHORT = target
+2024-09-30 00:31:02,777
+the strat is currently running @ 30-09-2024 and the target positions is SHORT
+the strat was previously run @ 2024-09-29 23:30:35, success:? 
+   and the current positions is SHORT
+2024-09-30 00:31:03,977
+positions_future #1
+2024-09-30 00:31:03,977
+      symbol  positionAmt entryPrice  ... adlQuantile AUMs_account        w%
+182  ETHUSDT        0.018    2678.51  ...           1        291.4  0.162974
+
+[1 rows x 12 columns]
+2024-09-30 00:31:04,219
+------------------------------
+binance_account_balance
+2024-09-30 00:31:04,219
+  asset     balance  ...  marginAvailable   updateTime
+4  USDT  292.091595  ...             True  29Sep-03:31
+
+[1 rows x 8 columns]
+2024-09-30 00:31:04,670
+------------------------------
+open_orders
+2024-09-30 00:31:04,671
+Empty DataFrame
+Columns: []
+Index: []
+2024-09-30 00:31:05,327
+------------------------------
+AUMS account:291
+
+2024-09-30 00:31:05,328
+--------------- compute_futures_order_book() ----------------
+2024-09-30 00:31:06,884
+----------------------------------------------------------------------
+#2 order(s) to place
+gross$: 59$ | net$: -59$
+gross%: 20% | net%: -20%
+ || w>0%  +0% | w<0%  -20%
+----------------------------------------------------------------------
+PTF Expo% 16.1% >> -8.3% (current>>target)
+PTF expo $47.0 >> $-24 (current>>target)
+----------------------------------------------------------------------
+2024-09-30 00:31:06,886
+orders_ofthe_day
+2024-09-30 00:31:06,886
+                  ptf_usd  target_usd  totrd_usd  ...        bid        ask strategy
+2024-09-30 00:31                                  ...                               
+ETHUSDT              47.0        0.00      -47.0  ...  2635.7500  2635.7600  STRATON
+XRPUSDT               0.0      -12.15      -12.0  ...     0.6372     0.6373  STRATON
+
+[2 rows x 10 columns]
+2024-09-30 00:31:10,703
+binance_place_orders_peg 20240930_003110
+2024-09-30 00:31:11,143
+{'orderId': 8389765739552481344, 'symbol': 'ETHUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '2637.22', 'avgPrice': '0.00', 'origQty': '0.018', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': True, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1727656271033}
+2024-09-30 00:31:11,584
+{'orderId': 66676570148, 'symbol': 'XRPUSDT', 'status': 'NEW', 'clientOrderId': 'STRATON', 'price': '0.6378', 'avgPrice': '0.00', 'origQty': '18.8', 'executedQty': '0.0', 'cumQty': '0.0', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.0000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'NONE', 'goodTillDate': 0, 'updateTime': 1727656271474}
+2024-09-30 00:31:13,159
+update 0: filled 0 / 2 () | working 2 / 2 (-ETHUSDT,-XRPUSDT)
+2024-09-30 00:31:17,160
+-ETHUSDT: bp6.0|-XRPUSDT: bp-3.0|
+2024-09-30 00:31:18,041
+update 1: filled 2 / 2 (-ETHUSDT,-XRPUSDT) | working 0 / 2 ()
