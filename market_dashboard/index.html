@@ -119,6 +119,32 @@
             color: #666;
             margin-bottom: 0.5rem;
         }
+        .crypto-tabs-container {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .crypto-tab-btn {
+            padding: 0.8rem 2rem;
+            margin: 0 0.5rem;
+            border: none;
+            background: #5ec4b6;
+            color: white;
+            cursor: pointer;
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.3s;
+        }
+
+        .crypto-tab-btn:hover {
+            background: #4db8a8;
+        }
+
+        .crypto-tab-btn.active {
+            background: #3da393;
+        }
     </style>
 </head>
 <body>
@@ -188,27 +214,41 @@
         </div>
 
         <!-- Crypto Tab -->
-        <div id="crypto" class="tab-content">
-            <div class="placeholder">
-                <h2>₿ Crypto</h2>
-                <p>Charts coming soon...</p>
+        
+        <!-- Crypto Tab -->
+<div id="crypto" class="tab-content">
+    <div class="grid">
+        <!-- Left: Bitcoin Price -->
+        <div class="card">
+            <h3>Bitcoin Price</h3>
+            <p>Placeholder for chart</p>
+        </div>
+        
+        <!-- Middle: Top 30 Performance (spans 2 columns) -->
+        <div class="card" style="grid-column: span 2;">
+            <h3>Top 30 Cryptocurrencies Performance</h3>
+            <div style="text-align: center; margin: 1rem 0;">
+                <button class="crypto-tab-btn active" data-period="today">Today</button>
+                <button class="crypto-tab-btn" data-period="yesterday">Yesterday</button>
+                <button class="crypto-tab-btn" data-period="mtd">MTD</button>
+                <button class="crypto-tab-btn" data-period="previous">Previous M</button>
+                <button class="crypto-tab-btn" data-period="ytd">YTD</button>
             </div>
-            <div class="grid">
-                <div class="card">
-                    <h3>BTC Dominance</h3>
-                    <p>Placeholder for chart</p>
-                </div>
-                <div class="card">
-                    <h3>Altcoin Performance</h3>
-                    <p>Placeholder for chart</p>
-                </div>
-                <div class="card">
-                    <h3>On-Chain Metrics</h3>
-                    <p>Placeholder for chart</p>
-                </div>
+            <div style="text-align: center;">
+                <img id="crypto-chart" 
+                     src="https://tame-cap.s3.us-east-1.amazonaws.com/TG_PROD/Dashboard/Plot_Universe_Graphs/today_performance_rainbow" 
+                     style="max-width: 90%; border: 8px solid #fff;"
+                     alt="Crypto Performance">
             </div>
         </div>
-
+        
+        <!-- Right: Bitcoin Dominance -->
+        <div class="card">
+            <h3>Bitcoin Dominance</h3>
+            <p>Placeholder for chart</p>
+        </div>
+    </div>
+</div>
         <!-- Global Tab -->
         <div id="global" class="tab-content">
             <div class="placeholder">
@@ -232,22 +272,7 @@
         </div>
     </div>
 
-    <script>
-        function showTab(tabName) {
-            // Hide all tab contents
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.remove('active'));
+    <script src="dashboard.js"></script>
 
-            // Remove active class from all tabs
-            const tabs = document.querySelectorAll('.tab');
-            tabs.forEach(tab => tab.classList.remove('active'));
-
-            // Show selected tab content
-            document.getElementById(tabName).classList.add('active');
-
-            // Add active class to clicked tab
-            event.target.classList.add('active');
-        }
-    </script>
 </body>
 </html>
