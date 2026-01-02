@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        .header {
+            background: #1a1a1a;
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .tabs {
+            background: white;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 0 2rem;
+            display: flex;
+            gap: 0;
+        }
+
+        .tab {
+            padding: 1rem 2rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            color: #666;
+        }
+
+        .tab:hover {
+            color: #1a1a1a;
+            background: #f9f9f9;
+        }
+
+        .tab.active {
+            color: #1a1a1a;
+            border-bottom-color: #2563eb;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        .tab-content {
+            display: none;
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .chart-container {
+            width: 100%;
+            height: calc(100vh - 250px);
+            min-height: 600px;
+        }
+
+        .chart-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .placeholder {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #999;
+        }
+
+        .placeholder h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        .placeholder p {
+            font-size: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .card h3 {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📊 Market Dashboard</h1>
+    </div>
+
+    <div class="tabs">
+        <div class="tab active" onclick="showTab('bonds')">Bonds</div>
+        <div class="tab" onclick="showTab('equities')">Equities</div>
+        <div class="tab" onclick="showTab('macro')">Macro</div>
+        <div class="tab" onclick="showTab('crypto')">Crypto</div>
+        <div class="tab" onclick="showTab('global')">Global</div>
+    </div>
+
+    <div class="content">
+        <!-- Bonds Tab -->
+        <div id="bonds" class="tab-content active">
+            <h2 style="margin-bottom: 1rem; color: #1a1a1a;">Government Bond Yield Curves</h2>
+            <div class="chart-container">
+                <iframe src="bond_yield_curves/bond_yield_curves.html"></iframe>
+            </div>
+        </div>
+
+        <!-- Equities Tab -->
+        <div id="equities" class="tab-content">
+            <div class="placeholder">
+                <h2>📈 Equities</h2>
+                <p>Charts coming soon...</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <h3>S&P 500 Performance</h3>
+                    <p>Placeholder for chart</p>
+                </div>
+                <div class="card">
+                    <h3>Sector Rotation</h3>
+                    <p>Placeholder for chart</p>
+                </div>
+                <div class="card">
+                    <h3>Market Breadth</h3>
+                    <p>Placeholder for chart</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Macro Tab -->
+        <div id="macro" class="tab-content">
+            <div class="placeholder">
+                <h2>🌍 Macro</h2>
+                <p>Charts coming soon...</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <h3>GDP Growth</h3>
+                    <p>Placeholder for chart</p>
+                </div>
+                <div class="card">
+                    <h3>Inflation Rates</h3>
+                    <p>Placeholder for chart</p>
+                </div>
+                <div class="card">
+                    <h3>Central Bank Rates</h3>
+                    <p>Placeholder for chart</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Crypto Tab -->
+        <div id="crypto" class="tab-content">
+            <div class="placeholder">
+                <h2>₿ Crypto</h2>
+                <p>Charts coming soon...</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <h3>BTC Dominance</h3>
+                    <p>Placeholder for chart</p>
+                </div>
+                <div class="card">
+                    <h3>Altcoin Performance</h3>
+                    <p>Placeholder for chart</p>
+                </div>
+                <div class="card">
+                    <h3>On-Chain Metrics</h3>
+                    <p>Placeholder for chart</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global Tab -->
+        <div id="global" class="tab-content">
+            <div class="placeholder">
+                <h2>🌐 Global Overview</h2>
+                <p>Charts coming soon...</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <h3>Cross-Asset Correlations</h3>
+                    <p>Placeholder for chart</p>
+                </div>
+                <div class="card">
+                    <h3>Currency Strength</h3>
+                    <p>Placeholder for chart</p>
+                </div>
+                <div class="card">
+                    <h3>Commodity Prices</h3>
+                    <p>Placeholder for chart</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
