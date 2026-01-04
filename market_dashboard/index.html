@@ -4,148 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Market Dashboard</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: #f5f5f5;
-        }
-
-        .header {
-            background: #1a1a1a;
-            color: white;
-            padding: 1rem 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .header h1 {
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        .tabs {
-            background: white;
-            border-bottom: 1px solid #e0e0e0;
-            padding: 0 2rem;
-            display: flex;
-            gap: 0;
-        }
-
-        .tab {
-            padding: 1rem 2rem;
-            cursor: pointer;
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            color: #666;
-        }
-
-        .tab:hover {
-            color: #1a1a1a;
-            background: #f9f9f9;
-        }
-
-        .tab.active {
-            color: #1a1a1a;
-            border-bottom-color: #2563eb;
-        }
-
-        .content {
-            padding: 2rem;
-        }
-
-        .tab-content {
-            display: none;
-            background: white;
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .chart-container {
-            width: 100%;
-            height: calc(100vh - 250px);
-            min-height: 600px;
-        }
-
-        .chart-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 4px;
-        }
-
-        .placeholder {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: #999;
-        }
-
-        .placeholder h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #666;
-        }
-
-        .placeholder p {
-            font-size: 1rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .card {
-            background: #f9f9f9;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid #e0e0e0;
-        }
-
-        .card h3 {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-        .crypto-tabs-container {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .crypto-tab-btn {
-            padding: 0.8rem 2rem;
-            margin: 0 0.5rem;
-            border: none;
-            background: #5ec4b6;
-            color: white;
-            cursor: pointer;
-            border-radius: 6px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: background 0.3s;
-        }
-
-        .crypto-tab-btn:hover {
-            background: #4db8a8;
-        }
-
-        .crypto-tab-btn.active {
-            background: #3da393;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="header">
@@ -163,9 +22,121 @@
     <div class="content">
         <!-- Bonds Tab -->
         <div id="bonds" class="tab-content active">
-            <h2 style="margin-bottom: 1rem; color: #1a1a1a;">Government Bond Yield Curves</h2>
-            <div class="chart-container">
-                <iframe src="bond_yield_curves/bond_yield_curves.html"></iframe>
+            <!-- Yield Curves Section -->
+            <div style="width: 60%; margin: 0 auto;">
+                <div style="margin-bottom: 1.5rem;">
+                    <h2 style="margin: 0 0 0.5rem 0; color: #1a1a1a;">Government Bond Yield Curves</h2>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 0.9rem; color: #666; font-weight: 500;">Max maturity:</span>
+                        <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 1rem;">
+                            <input type="radio" name="maturity" value="10y" checked>
+                            <span style="font-size: 0.9rem;">10Y</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer;">
+                            <input type="radio" name="maturity" value="30y">
+                            <span style="font-size: 0.9rem;">30Y</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-container" style="margin-bottom: 3rem;">
+                <iframe id="bond-chart" src="bond_yield_curves/yield_curves_10y.html" scrolling="no"></iframe>
+            </div>
+            <!-- Two Column Section: Yields & Rolldown -->
+             <div style="width: 60%; margin: 0 auto;">
+                <div style="margin-bottom: 0.0rem;">
+                    <h2 style="margin: 0 0 0.0rem 0; color: #1a1a1a;">Carry & Rolldown</h2>
+                </div>
+            </div>  
+            <div class="two-column-grid">
+                <!-- Left Column: Ranked Yields -->
+                <div class="chart-section">
+                    <div style="margin-bottom: 1rem;">
+                        <h3 style="margin: 0 0 0.5rem 0; color: #1a1a1a; font-size: 1.2rem;">Yields </h3>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="font-size: 0.85rem; color: #666; font-weight: 500;">Maturity:</span>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 0.8rem;">
+                                <input type="radio" name="ranked-maturity" value="3m">
+                                <span style="font-size: 0.85rem;">3M</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 0.8rem;">
+                                <input type="radio" name="ranked-maturity" value="2y">
+                                <span style="font-size: 0.85rem;">2Y</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 0.8rem;">
+                                <input type="radio" name="ranked-maturity" value="5y">
+                                <span style="font-size: 0.85rem;">5Y</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer;">
+                                <input type="radio" name="ranked-maturity" value="10y" checked>
+                                <span style="font-size: 0.85rem;">10Y</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="chart-container-small">
+                        <iframe id="ranked-chart" src="bond_yield_curves/yields_10y_ranked.html" scrolling="no"></iframe>
+                    </div>
+                </div>
+
+                <!-- Right Column: Rolldown -->
+                <div class="chart-section">
+                    <div style="margin-bottom: 1rem;">
+                        <h3 style="margin: 0 0 0.5rem 0; color: #1a1a1a; font-size: 1.2rem;">Rolldown</h3>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="font-size: 0.85rem; color: #666; font-weight: 500;">Spread:</span>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 0.8rem;">
+                                <input type="radio" name="rolldown-spread" value="10y2y" checked>
+                                <span style="font-size: 0.85rem;">10Y-2Y</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer;">
+                                <input type="radio" name="rolldown-spread" value="10y5y">
+                                <span style="font-size: 0.85rem;">10Y-5Y</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="chart-container-small">
+                        <iframe id="rolldown-chart" src="bond_yield_curves/spread_10y2y.html" scrolling="no"></iframe>
+                    </div>
+                </div>
+            </div>
+            <!-- After the two-column grid -->
+
+            <!-- After the two-column grid -->
+            <div style="margin-top: 3rem;">
+                <div style="width: 60%; margin: 0 auto;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <h2 style="margin: 0 0 0.5rem 0; color: #1a1a1a;">Historical 10-Year Yield</h2>
+                        <!-- Country selector -->
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="font-size: 0.9rem; color: #666; font-weight: 500;">Country:</span>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 1rem;">
+                                <input type="radio" name="history-country" value="usa" checked>
+                                <span style="font-size: 0.9rem;">United States</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 1rem;">
+                                <input type="radio" name="history-country" value="japan">
+                                <span style="font-size: 0.9rem;">Japan</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 1rem;">
+                                <input type="radio" name="history-country" value="uk">
+                                <span style="font-size: 0.9rem;">United Kingdom</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 1rem;">
+                                <input type="radio" name="history-country" value="germany">
+                                <span style="font-size: 0.9rem;">Germany</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer;">
+                                <input type="radio" name="history-country" value="france">
+                                <span style="font-size: 0.9rem;">France</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chart-container-historical">
+                    <iframe id="history-chart" src="bond_yield_curves/history_usa_10y.html" scrolling="no"></iframe>
+                </div>
             </div>
         </div>
 

@@ -1,0 +1,315 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+/* Header */
+.header {
+    background: #1a1a1a;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Tabs */
+.tabs {
+    background: white;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0 2rem;
+    display: flex;
+    gap: 0;
+}
+
+.tab {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: #666;
+}
+
+.tab:hover {
+    color: #1a1a1a;
+    background: #f9f9f9;
+}
+
+.tab.active {
+    color: #1a1a1a;
+    border-bottom-color: #2563eb;
+}
+
+/* Content */
+.content {
+    padding: 2rem;
+}
+
+.tab-content {
+    display: none;
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    overflow: hidden;  /* Clip any overflow */
+}
+.tab-content.active {
+    display: block;
+}
+
+/* Default - large screens */
+.chart-container {
+    width: 60%;
+    height: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.chart-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    overflow: hidden;
+}
+
+/* Medium screens - increase to 80% */
+@media (max-width: 1400px) {
+    .chart-container {
+        width: 80%;
+        height: 650px;
+    }
+}
+
+/* Small screens - increase to 95% */
+@media (max-width: 1024px) {
+    .chart-container {
+        width: 95%;
+        height: 600px;
+    }
+}
+
+/* Mobile - full width */
+@media (max-width: 768px) {
+    .chart-container {
+        width: 100%;
+        height: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chart-container {
+        width: 100%;
+        height: 400px;
+    }
+}
+/* Two column grid for charts - match chart-container width */
+.two-column-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem auto 0;  /* Center it like chart-container */
+    width: 70%;  /* Match chart-container */
+}
+
+.chart-section {
+    background: #fffffff6;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 0px solid #e0e0e0;
+}
+
+.chart-container-small {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.chart-container-small iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Medium screens */
+@media (max-width: 1400px) {
+    .two-column-grid {
+        width: 80%;
+    }
+}
+
+/* Small screens */
+@media (max-width: 1024px) {
+    .two-column-grid {
+        width: 95%;
+        grid-template-columns: 1fr;  /* Stack vertically */
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .two-column-grid {
+        width: 100%;
+    }
+}
+.chart-container-historical {
+    width: 60%;  /* Match other charts */
+    height: 550px;  /* Fixed height instead of 100vh */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.chart-container-historical iframe {
+    width: 100%;
+    height: 90%;
+    border: none;
+    display: block;
+}
+
+@media (max-width: 1400px) {
+    .chart-container-historical {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .chart-container-historical {
+        width: 95%;
+        height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .chart-container-historical {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+
+
+/* Placeholders */
+.placeholder {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #999;
+}
+
+.placeholder h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.placeholder p {
+    font-size: 1rem;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.card {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.card h3 {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+/* Maturity buttons (Bonds) */
+/* Maturity selector (elegant radio style) */
+.maturity-selector {
+    display: inline-flex;
+    gap: 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    background: white;
+}
+
+.maturity-radio {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    cursor: pointer;
+}
+
+.maturity-radio input[type="radio"] {
+    display: none;
+}
+
+.maturity-radio span {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #666;
+    background: white;
+    border-right: 1px solid #ddd;
+    transition: all 0.2s;
+}
+
+.maturity-radio:last-child span {
+    border-right: none;
+}
+
+.maturity-radio input[type="radio"]:checked + span {
+    background: #2563eb;
+    color: white;
+}
+
+.maturity-radio:hover span {
+    background: #f5f5f5;
+}
+
+.maturity-radio input[type="radio"]:checked + span:hover {
+    background: #1d4ed8;
+}
+/* Crypto buttons */
+.crypto-tabs-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.crypto-tab-btn {
+    padding: 0.8rem 2rem;
+    margin: 0 0.5rem;
+    border: none;
+    background: #5ec4b6;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.3s;
+}
+
+.crypto-tab-btn:hover {
+    background: #4db8a8;
+}
+
+.crypto-tab-btn.active {
+    background: #3da393;
+}

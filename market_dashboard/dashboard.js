@@ -35,3 +35,39 @@ function showCryptoPeriod(period, btn) {
     document.querySelectorAll('.crypto-tab-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 }
+
+// Bond maturity switching
+// Bond maturity switching (radio buttons)
+document.querySelectorAll('input[name="maturity"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+        const maturity = this.value;
+        document.getElementById('bond-chart').src = 
+            `bond_yield_curves/yield_curves_${maturity}.html`;
+    });
+});
+// Ranked yields maturity switching
+document.querySelectorAll('input[name="ranked-maturity"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+        const maturity = this.value;
+        document.getElementById('ranked-chart').src = 
+            `bond_yield_curves/yields_${maturity}_ranked.html`;
+    });
+});
+
+// Rolldown spread switching
+document.querySelectorAll('input[name="rolldown-spread"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+        const spread = this.value;
+        document.getElementById('rolldown-chart').src = 
+            `bond_yield_curves/spread_${spread}.html`;
+    });
+});
+
+// Historical chart country switching
+document.querySelectorAll('input[name="history-country"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+        const country = this.value;
+        document.getElementById('history-chart').src = 
+            `bond_yield_curves/history_${country}_10y.html`;
+    });
+});
