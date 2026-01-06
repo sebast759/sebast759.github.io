@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<!-- 
+PAGE DE GARDE
+-->
+<html>
+
+<head>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="icon" type="image/x-icon" href="/images/aplo.jpg">
+	<meta name="msapplication-config" content="/images/favicons/rebranded/browserconfig.xml">
+	<link rel="manifest" href="/images/favicons/rebranded/manifest.json">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv=“Pragma” content=”no-cache”>
+	<meta http-equiv=“Expires” content="Fri, 30 Oct 1998 14:19:41 GMT">
+	<meta http-equiv=“CACHE-CONTROL” content="no-cache, must-revalidate">
+	<!-- BOOTSTRAT : Many of our components require the use of JavaScript to function. -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="sm_script.js"></script>
+
+	<script>
+		// google.charts.load('current', { 'packages': ['corechart'] });
+		google.charts.load('current', { 'packages': ['bar'] });
+		google.charts.setOnLoadCallback(drawChart0);
+		function drawChart0() {
+			$.getJSON("https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_ptw_w.json", function (obj) {
+				var jsonData = $.ajax({
+					url: "https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_ptw_w.json",
+					dataType: "json",
+					async: false
+				}).responseText;
+				// Create  data table out of JSON data loaded from server.
+				var data = new google.visualization.DataTable(jsonData);
+				var options = {
+					chart: {
+						title: 'Current Weights',
+					},
+					vAxis: { title: 'w%', textStyle: { color: "white" } },
+					hAxis: { textStyle: { color: "white" } },
+
+
+					backgroundColor: 'transparent',
+					legendTextStyle: { color: 'white' },
+					titleTextStyle: { color: 'white' },
+				};
+				var chart = new google.charts.Bar(document.getElementById('bar_positions_w'));
+				chart.draw(data, google.charts.Bar.convertOptions(options));
+			});
+		};//drawChart
+
+		google.charts.load('current', { 'packages': ['bar'] });
+		google.charts.setOnLoadCallback(drawChart1_1);
+		function drawChart1_1() {
+			$.getJSON("https://sebast759.github.io/tame_aplo/MOZAIC/graphs/order_ptw_RtD.json", function (obj) {
+				var jsonData = $.ajax({
+					url: "https://sebast759.github.io/tame_aplo/MOZAIC/graphs/order_ptw_RtD.json",
+					dataType: "json",
+					async: false
+				}).responseText;
+				// Create our data table out of JSON data loaded from server.
+				var data = new google.visualization.DataTable(jsonData);
+				var options = {
+					chart: {
+						// title: 'Performance Attribution',
+					},
+					vAxis: { title: 'Return%', textStyle: { color: "white" } },
+					hAxis: { textStyle: { color: "white" } },
+					colors: ['#fffff', 'green'],
+					backgroundColor: 'transparent',
+					legendTextStyle: { color: 'white' },
+					titleTextStyle: { color: 'white' },
+				};
+				var chart = new google.charts.Bar(document.getElementById('bar_positions_rtd'));
+				chart.draw(data, google.charts.Bar.convertOptions(options));
+			});
+		};//drawChart
+		google.charts.load('current', { 'packages': ['bar'] });
+		google.charts.setOnLoadCallback(drawChart1);
+		function drawChart1() {
+			$.getJSON("https://sebast759.github.io/tame_aplo/MOZAIC/graphs/order_ptw_PnL.json", function (obj) {
+				var jsonData = $.ajax({
+					url: "https://sebast759.github.io/tame_aplo/MOZAIC/graphs/order_ptw_PnL.json",
+					dataType: "json",
+					async: false
+				}).responseText;
+				// Create our data table out of JSON data loaded from server.
+				var data = new google.visualization.DataTable(jsonData);
+				var options = {
+					chart: {
+						// title: 'Performance Attribution',
+					},
+					vAxis: { title: 'P&L portfolio', textStyle: { color: "white" } },
+					hAxis: { textStyle: { color: "white" } },
+					colors: ['black', 'green'],
+					backgroundColor: 'transparent',
+					legendTextStyle: { color: 'white' },
+					titleTextStyle: { color: 'white' },
+				};
+
+				var chart = new google.charts.Bar(document.getElementById('bar_positions_pnl'));
+				chart.draw(data, google.charts.Bar.convertOptions(options));
+			});
+		};//drawChart
+
+		google.charts.load('current', { 'packages': ['bar'] });
+		google.charts.setOnLoadCallback(drawChart2);
+		function drawChart2() {
+			$.getJSON("https://sebast759.github.io/tame_aplo/MOZAIC/graphs/order_ptw_w_vs_target.json", function (obj) {
+				var jsonData = $.ajax({
+					url: "https://sebast759.github.io/tame_aplo/MOZAIC/graphs/order_ptw_w_vs_target.json",
+					dataType: "json",
+					async: false
+				}).responseText;
+				// Create our data table out of JSON data loaded from server.
+				var data = new google.visualization.DataTable(jsonData);
+				var options = {
+					chart: {
+						title: 'Weights Target vs. Current',
+						subtitle: 'Target w and current weight', backgroundColor: 'black',
+					},
+					vAxis: { title: 'w% current vs. w% target', textStyle: { color: "white" } },
+					hAxis: { textStyle: { color: "white" } },
+					backgroundColor: 'transparent',
+					legendTextStyle: { color: 'white' },
+					titleTextStyle: { color: 'white' },
+
+				};
+
+
+				var chart = new google.charts.Bar(document.getElementById('barchart_1'));
+				chart.draw(data, google.charts.Bar.convertOptions(options));
+
+			});
+		};
+		google.charts.load('current', { 'packages': ['bar'] });
+		google.charts.setOnLoadCallback(drawChart3);
+		function drawChart3() {
+			$.getJSON("https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_ptw_w_vs_target_diff.json", function (obj) {
+				var jsonData = $.ajax({
+					url: "https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_ptw_w_vs_target_diff.json",
+					dataType: "json",
+					async: false
+				}).responseText;
+				// Create our data table out of JSON data loaded from server.
+				var data = new google.visualization.DataTable(jsonData);
+				var options = {
+					chart: {
+						title: 'To be traded',
+						subtitle: 'Targetted adjustment \u0394w%', backgroundColor: 'black',
+					},
+					vAxis: { title: '\u0394w%', textStyle: { color: "white" } },
+					hAxis: { textStyle: { color: "white" } },
+
+					backgroundColor: 'transparent',
+					legendTextStyle: { color: 'white' },
+					titleTextStyle: { color: 'white' },
+				};
+
+
+				var chart = new google.charts.Bar(document.getElementById('barchart_2'));
+				chart.draw(data, google.charts.Bar.convertOptions(options));
+
+			});
+		};
+		google.charts.load('current', { 'packages': ['bar'] });
+		google.charts.setOnLoadCallback(drawChart4);
+		function drawChart4() {
+			$.getJSON("https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_binance_performance_1D.json", function (obj) {
+				var jsonData = $.ajax({
+					url: "https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_binance_performance_1D.json",
+					dataType: "json",
+					async: false
+				}).responseText;
+				// Create our data table out of JSON data loaded from server.
+				var data = new google.visualization.DataTable(jsonData);
+				var options = {
+					chart: {
+						title: 'Current portfolio',
+						subtitle: 'Weighted of the current portfolio', backgroundColor: 'black',
+					},
+					backgroundColor: 'transparent',
+					legendTextStyle: { color: 'white' },
+					titleTextStyle: { color: 'white' },
+				};
+
+
+				var chart = new google.charts.Bar(document.getElementById('barchart_material_0'));
+				chart.draw(data, google.charts.Bar.convertOptions(options));
+
+			});
+		};
+	</script>
+
+
+	<title>Tame Crypto Portfolio</title>
+	<style>
+		body {
+			background-color: black;
+			color: white
+		}
+
+		th,
+		td {
+			color: white;
+			font-weight: bold;
+			border: 1px solid white;
+			padding: 10px;
+			text-align: center;
+		}
+
+		td {
+			font-weight: lighter;
+			background-color: rgb(26, 22, 22);
+		}
+
+		h3,
+		h4 {
+			color: rgb(110, 168, 223)
+		}
+	</style>
+</head>
+
+<body onload="startTime()">
+	<header>
+		<header>
+			<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+					aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<a class="navbar-brand  mr-0 mr-md-2" style="color:#eeff02;" style="color:#eeff02;" href="index.html">
+					<img src="images/logo.jpg" width="30" height="30" alt="">Mozaic Crypto</a>
+				<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+					<ul class="nav nav-tabs mr-auto mt-2 mt-lg-0">
+						<li class="nav-item">
+							<a class="nav-link" href="p3_binance.html" style="color:white "><img
+									class="rounded float-left" src="images/binance.jpg" width="18" height="18">Binance
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="p3_binance_aplo.html" style="color:white "><img
+									class="rounded float-left" src="images/aplo.jpg" width="18" height="18">Aplo
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="p2.html" style="color:white "><img class="rounded float-left"
+									src="images/cryptos.jpg" width="18" height="18">The crypto universe</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="p4_substrategies_factsheets.html" style="color:white "><img
+									class="rounded float-left" src="images/quantstats.jpg" width="18"
+									height="18">Strategies Factsheets</a>
+						</li>
+						<a class="nav-link" href="p7_about.html" style="color:white;">About</a></li>
+
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+	</header>
+	<!--================================================== -->
+	<!-- BUBLE MENU. -->
+	<div class="container marketing" id="Mark1" style="margin-top:3em;margin-bottom:5em;">
+		<!-- Three columns of text below the carousel -->
+		<!-- <a href="index.html#mark1">A la une</a><br>
+		<a href="index.html#mark2">...mais aussi </a><br>
+		<a href="index.html#mark0">Pourquoi ce site? </a><br> -->
+		<br><br>
+		<a href="p3_binance.html"><img class="rounded float-left" src="images/aplo.jpg" width="25" height="25"></a>
+		<h3 name="mark1" style="color: crimson;">APLO portfolio and targeted adjustments</h3>
+
+		<div class="row" style="margin-top: 0.5em">
+			<div class="col-lg-6">
+				<h4>Portfolio Value</br></h4>
+
+				<!-- <iframe position="absolute" width="30%" height="200" id="grph2" src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/ON/graphs/order_positions_recap.html"
+					style="background-color:white"></iframe> -->
+
+				<table id='positions_recap'></table><br>
+				<table id='trades_reca2'></table>
+				<!-- HEADING FORMATION -->
+				<script>
+					$(document).ready(function () {
+						// FETCHING DATA FROM JSON FILE
+						$.getJSON("https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_positions_recap.json",
+							function (data) {
+								html_tab = ''
+								$.each(data['positions recap'], function (key, value) {
+									if (key == 'as of') {
+										html_tab += '<tr><th colspan="5">APLO Futures ' + key + ' ' + value + '</th></tr>';
+									}
+									else {
+										var formattedValue;
+										if (key === 'AUMs' || key === 'P&L[U]') {
+											formattedValue = (parseInt(value.replace(/^\$?\s*/g, ''), 10) * 3).toFixed(1).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+										} else {
+											formattedValue = value;
+										}
+										html_tab += '<td>' + key + '\n' + formattedValue + '</td>';
+									}
+
+								});
+								//INSERTING ROWS INTO TABLE
+								$('#positions_recap').append(html_tab);
+							});
+					});
+				</script>
+
+
+			</div>
+			<div class="col-lg-6">
+				<h4>Today's performance</br></h4>
+				<p class="float-left"><a href="#realized_track">>>Historical track, performance 3 days, 7 days</a></p>
+				<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_binance_performance_1D.png" target="_blank"><img class="rounded float-left"
+						src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_binance_performance_1D.png" id="grph1" width="100%"></a>
+			</div>
+			<!-- <div class="col-lg-12">
+				<iframe position="absolute" width="80%" height="600" id="grph2" src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/ON/graphs/order_position_futures.html"
+					style="background-color:white"></iframe>
+			</div> -->
+		</div>
+		<div class="row" style="margin-top: 0.5em">
+			<div class="col-lg-4">
+				<section>
+					<h4>Running Batch <div id="clock_utc"></div>
+					</h4>
+					<!-- TABLE CONSTRUCTION-->
+
+					<table id='table_script_recap' style="font-size: smaller;margin: 0%;">
+						<!-- HEADING FORMATION -->
+						<tr>
+							<th>Programme</th>
+							<th>Completion time</th>
+						</tr>
+
+					</table>
+					<!-- <script>
+						$(document).ready(function () {
+							// FETCHING DATA FROM JSON FILE
+							$.getJSON("https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/log/script_lastupdate.json",
+								function (data) {
+									var html_tab = '';
+									// ITERATING THROUGH OBJECTS
+									$.each(data, function (key, value) {
+										html_tab += '<tr><td>' + key + '</td>';
+										if (key == '6_post_trades') {
+											html_tab += '<td>' + value.lst_date + '</td></tr>';// + value.lst_update.replace(' 2023 ', '>>>>>').replace(' ', '').split('>>>')[1] + '</td></tr>';
+										} else {
+											html_tab += '<td>' + value.lst_update + '</td></tr>';
+										}
+									});
+									//INSERTING ROWS INTO TABLE
+									$('#table_script_recap').append(html_tab);
+								});
+						});
+					</script> -->
+					<script>
+						document.addEventListener("DOMContentLoaded", function() {
+							fetch("https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/log/script_lastupdate.json")
+								.then(response => response.json())
+								.then(data => {
+									var html_tab = '';
+					
+									Object.keys(data).forEach(key => {
+										html_tab += '<tr><td>' + key + '</td>';
+										
+										if (key === '6_post_trades') {
+											html_tab += '<td>' + data[key].lst_date + '</td></tr>';
+										} else {
+											html_tab += '<td>' + data[key].lst_update + '</td></tr>';
+										}
+									});
+					
+									document.querySelector('#table_script_recap').innerHTML = html_tab;
+								})
+								.catch(error => {
+									console.error('Error loading JSON:', error);
+								});
+						});
+					</script>
+				</section>
+			</div>
+			<div class="col-lg-8">
+				<h4>Last Log</h4>
+				<pre id="script_recap_text" style="height: 400px; overflow-y: scroll;color: #ecf0b7;"></pre>
+			</div>
+
+		</div>
+
+		<div class="row" style="margin-top: 0.5em">
+			<div class="col-lg-12">
+				<h4>Current portfolio</h4></br>
+				<div id="bar_positions_w" style="height: 400px;"></div>
+				<h6>Cryptos performance of the day</h6></br>
+				<div id="bar_positions_rtd" style="height: 300px;"></div>
+				<h6> Contribution to Portfolio Daily P&L<a id="APLO_pnl"> </a></h6></br>
+				<div id="bar_positions_pnl" style="height: 300px;"></div>
+			</div>
+
+			<div class="col-lg-12">
+				<h6> Detail of Portfolio Daily P&L<a id="APLO_pn2"> </a></h6></br>
+				<table id='order_positions_pa_futures' style="margin-top: 5px;"></table>
+				<script>
+					$(document).ready(function () {
+						fetch('https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_positions_pa_futures.csv')
+							.then(function (response) {
+								return response.text();
+							})
+							.then(function (data) {
+								var table_container = document.getElementById('order_positions_pa_futures');
+								csv_string_to_table(data, table_container);
+
+								PnL_D = data.trim().split(/\r?\n|\r/)[1].split(',')[14] + " (trading:" + data.trim().split(/\r?\n|\r/)[1].split(',')[15] + ")"
+								var span_pnld = document.getElementById('APLO_pnl');
+								span_pnld.innerHTML += PnL_D;
+								var span_pnld = document.getElementById('APLO_pn2');
+								span_pnld.innerHTML += PnL_D;
+							});
+					});
+				</script>
+			</div>
+		</div>
+
+
+		<div class="row" style="margin-top: 0.5em">
+			<div class="col-lg-12">
+				<h4>Current vs target weights</br></h4>
+				<!-- <p>Current vs target weights</p> -->
+				<div id="barchart_1" style="height: 500px;width: 90%;"></div>
+			</div>
+			<div class="col-lg-12">
+				<p>To trade</p>
+				<div id="barchart_2" style="height: 500px;width: 90%;"></div>
+			</div>
+		</div>
+
+		<div class="col-md-12">
+			<h4>Current vs target weights</br></h4>
+			<iframe position="absolute" width="80%" height="600" id="grph2" src="https://sebast759.github.io/tame_aplo/MOZAIC/graphs/order_order_book.html"
+				style="background-color:white"></iframe>
+		</div>
+		<h2>Last Trades</br></h2>
+		<h4>Last Target Shifts</br></h4>
+		<div class="row" style="margin-top: 0.5em">
+				<p class="float-left"><a href="#realized_track">>>Historical track, performance 3 days, 7 days</a></p>
+				<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/trade_ptf_currxtarg_bystrat.png" target="_blank"><img class="rounded float-left"
+						src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/trade_ptf_currxtarg_bystrat.png" id="grph1" width="100%"></a>
+		</div>
+		<h4>Recap</h4>
+		<div class="row" style="margin-top: 0.5em">
+			<!-- <div class="col-lg-5">
+				<div id="piechart_2" style="height: 400px;align-items: flex-start;"></div>
+			</div> -->
+			<div class="col-lg-6">
+				<h5>Amount traded</br></h5>
+				<table id='trades_recap'></table>
+
+				<!-- HEADING FORMATION -->
+				<script>
+					$(document).ready(function () {
+						// FETCHING DATA FROM JSON FILE
+						$.getJSON("https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/posttrade_trades_recap.json",
+							function (data) {
+								html_tab = ''
+								$.each(data, function (key0, value) {
+									$.each(data[key0], function (key, value) {
+										if (key == 'as of') {
+											if (key0 == 'in$') {
+												html_tab += '<tr><th></th><th colspan="5">Last executed trade: ' + value + '</th></tr><tr>';
+												$.each(data[key0], function (key, value) {
+													html_tab += '<th>' + key.replace('as of', '') + '</th>';
+												})
+											};
+											if (key0 == 'in%') {
+												html_tab = html_tab.replace('Last executed trade:', value.replace(':', '') + ', ');
+											};
+											html_tab += '</tr><tr><td>' + key0 + '</td>';
+
+										}
+										else {
+											html_tab += '<td>' + value + '</td>';
+										}
+									});
+								});
+								//INSERTING ROWS INTO TABLE
+								$('#trades_recap').append(html_tab);
+								$('#trades_reca2').append(html_tab);
+							});
+					});
+				</script>
+
+			</div>
+			<div class="col-lg-6">
+				<h5>P&L vs. arrival and vs. last (as of <a id="lst_trd_update"
+						style="color: #eeff02;font-size: smaller;"></a>)</br></h5>
+				<table id='posttrade_trades_pnlD_recap'></table>
+				<script>
+					$(document).ready(function () {
+						fetch('https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/posttrade_trades_pnlD_recap.csv')
+							.then(function (response) {
+								return response.text();
+							})
+							.then(function (data) {
+								var table_container = document.getElementById('posttrade_trades_pnlD_recap');
+								csv_string_to_table(data, table_container);
+							});
+					});
+				</script>
+
+			</div>
+		</div>
+		<div class="row" style="margin-top: 1em">
+			<div class="col-lg-12">
+				<h4>Last Trades vs. Target</br></h4>
+				<h5>Check consistency between traded portfolio and initial target portfolio</br></h5>
+				<div class="col-lg-12">
+					<table id='trades_vs_target_details' style=" margin-bottom: 50px"></table>
+					<script>
+						$(document).ready(function () {
+							fetch('https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/posttrade_trades_vs_target_details.csv')
+								.then(function (response) {
+									return response.text();
+								})
+								.then(function (data) {
+									var table_container = document.getElementById('trades_vs_target_details');
+									csv_string_to_table(data, table_container);
+								});
+						});
+					</script>
+				</div>
+			</div>
+
+
+		</div>
+		<h2 id="realized_track">Performance</h2>
+		<h3>Performance vs. Bitcoin and Cryptos Investable Universe</h3>
+		<div class="row" style="margin-top: 3em">
+			<div class="col-lg-4">
+				<h4>Today's return</br>
+				</h4>
+				<div class="row">
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_binance_performance_1D.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_binance_performance_1D.png" id="grph1" width="100%"></a>
+				</div>
+			</div><!-- /.col-lg-3 -->
+			<div class="col-lg-4">
+				<h4>Performance 3 days</br>
+				</h4>
+				<div class="row">
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_binance_performance_3D.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_binance_performance_3D.png" id="grph1" width="100%"></a>
+				</div>
+			</div><!-- /.col-lg-3 -->
+			<div class="col-lg-4">
+				<h4>Performance 7 days</br>
+				</h4>
+				<div class="row">
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_binance_performance_7D.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_binance_performance_7D.png" id="grph1" width="100%"></a>
+				</div>
+			</div><!-- /.col-lg-3 -->
+
+		</div><!-- /.col-lg-3 -->
+
+		<div class="row" style="margin-top: 3em">
+			<div class="col-lg-6">
+				<h4>Binance Official Last 7 days</br>
+				</h4>
+				<p>Binance APLO value</p>
+				<div class="row">
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_binance_realized_perf.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_binance_realized_perf.png" id="grph2" width="500" height="500"></a>
+				</div>
+			</div><!-- /.col-lg-3 -->
+		</div><!-- /.col-lg-3 -->
+
+		<div class="row" style="margin-top: 3em">
+			<div class="col-lg-6">
+				<h4>Binance Official since implemented (feb 2022)</br>
+				</h4>
+				<p>Official track vs. Bitcoin, Investable Universe</p>
+				<div class="row">
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_track_real_vs_bt.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_track_real_vs_bt.png" id="grph2" width="500" height="500"></a>
+				</div>
+			</div><!-- /.col-lg-3 -->
+			<div class="col-lg-6">
+				<h4>Tracking Error since implemented (feb 2022)</br>
+				</h4>
+				<p>Official track vs. Backtest, cumulated</p>
+				<div class="row">
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_trackingerror_real_vs_bt.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/order_trackingerror_real_vs_bt.png" id="grph2" width="500" height="500"></a>
+				</div>
+			</div><!-- /.col-lg-3 -->
+		</div><!-- /.col-lg-3 -->
+
+		<div class="row" style="margin-top: 3em">
+			<div class="col-lg-6">
+				<h4>Performance YTD</h4>
+				<div class="row">
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/bt_mozaic_1.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/graphs/bt_mozaic_1.png" id="grph2" width="80%" height="300"></a>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 0.5em">
+			<div class="col-lg-6">
+				<h4>ON Strategy - Last 7 days</br></h4>
+				<p>Track</p>
+				<div class="row">
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/ON/graphs/bt_binance_ON_realized_perf_G0.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/ON/graphs/bt_binance_ON_realized_perf_G0.png" id="grph3" width="500" height="500"></a>
+				</div>
+
+			</div>
+			<div class="col-lg-6">
+				<h4>ON Strategy - since Launch</br></h4>
+				<p>Track</p>
+				<div class="row">
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/ON/graphs/bt_track_real_vs_bt.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/ON/graphs/bt_track_real_vs_bt.png" id="grph3" width="500" height="500"></a>
+				</div>
+
+			</div>
+			<div class="col-lg-6">
+				<h4></br></h4>
+				<p>Recap 24h</p>
+
+				<div class="row">
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/ON/graphs/bt_binance_ON_24h_perf.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/ON/graphs/bt_binance_ON_24h_perf.png" id="grph4" width="500" height="500"></a>
+				</div>
+				
+
+			</div>
+			<div class="col-lg-6">
+				<h4></br></h4>
+				<p>Recap 24h</p>
+
+				<div class="row">
+					<a href="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/ON/graphs/bt_trackingerror_real_vs_bt.png" target="_blank"><img class="rounded float-left"
+							src="https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_output/ON/graphs/bt_trackingerror_real_vs_bt.png" id="grph4" width="500" height="500"></a>
+				</div>
+
+			</div>
+		</div>
+		<!-- FOOTER -->
+		<footer class="container">
+			<p class="float-right"><a href="index.html">A la Une</a> <a href="#">Back to top</a></p>
+			<!-- <p>&copy; <a href="mailto:s2bmaillard@gmail.com">s2bmaillard@gmail.com</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p> -->
+			<p> contact:<a href="mailto:s2bmaillard@gmail.com">s2bmaillard@gmail.com</a><a href="#"></a>
+		</footer>
+	</div>
+
+
+
+
+</body>
+<script>
+	// Define the URL of your JSON file
+	const url = "https://raw.githubusercontent.com/sebast759/sebast759.github.io/main/tame_aplo/MOZAIC/log/script_lastupdate.json";
+	// Use Fetch API to read the JSON file
+	fetch(url)
+		.then(response => response.json())
+		.then(data => {
+			// Get the element you want to report
+			script_recap_text = data['3_0_orderbook_forwebsite'].msg_txt + '\n' + data['6_post_trades'].msg_txt;
+			document.getElementById('script_recap_text').innerHTML = `${script_recap_text}`;
+			// Display the element in HTML text
+			lst_trd_update = data['6_post_trades'].lst_update;
+			document.getElementById('lst_trd_update').innerHTML = `${lst_trd_update}`;
+		})
+		.catch(error => console.error(error));
+</script>
+<script>
+	function startTime() {
+		const today = new Date();
+		let h = today.getHours();
+		let h2 = today.getUTCHours();
+		let m = today.getMinutes();
+		let s = today.getSeconds();
+		m = checkTime(m);
+		s = checkTime(s);
+		document.getElementById('clock_utc').innerHTML = 'Now: ' + h2 + ":" + m + ":" + s + ' UTC';
+		setTimeout(startTime, (5 - s % 5) * 1000);
+	}
+
+	function checkTime(i) {
+		if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+		return i;
+	}
+</script>
+
+<script>
+	// create à new timestamp 
+	var timestamp = new Date().getTime();
+	document.getElementById('grph1').src = document.getElementById('grph1').src + "?t=" + timestamp
+	document.getElementById('grph2').src = document.getElementById('grph2').src + "?t=" + timestamp
+	document.getElementById('table_script_recap').src = document.getElementById('table_script_recap').src + "?t=" + timestamp
+	// document.getElementById('grph3').src = document.getElementById('grph3').src + "?t=" + timestamp
+	// // document.getElementById('grph4').src = document.getElementById('grph4').src + "?t=" + timestamp
+	// document.getElementById('grph5').src = document.getElementById('grph5').src + "?t=" + timestamp
+	// document.getElementById('grph6').src = document.getElementById('grph6').src + "?t=" + timestamp
+	// document.getElementById('grph7').src = document.getElementById('grph7').src + "?t=" + timestamp
+	// document.getElementById('grph8').src = document.getElementById('grph8').src + "?t=" + timestamp
+	// document.getElementById('grph9').src = document.getElementById('grph9').src + "?t=" + timestamp
+	// document.getElementById('grph10').src = document.getElementById('grph10').src + "?t=" + timestamp
+	// document.getElementById('grph11').src = document.getElementById('grph11').src + "?t=" + timestamp
+	// document.getElementById('grph12').src = document.getElementById('grph12').src + "?t=" + timestamp
+
+	var data;
+	//window.alert("Santé publique France a publié des données incomplètes et erronées ce soir. Nous les avons contactés. CryptooTracker sera de nouveau à jour dès leur correction.");
+
+</script>
+
+</html>

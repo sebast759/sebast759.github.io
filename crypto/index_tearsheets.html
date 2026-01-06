@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!-- 
+PAGE DE GARDE
+-->
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/images/logo.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Import
+		Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv=“Pragma” content=”no-cache”>
+    <meta http-equiv=“Expires” content="Fri, 30 Oct 1998 14:19:41 GMT">
+    <meta http-equiv=“CACHE-CONTROL” content="no-cache, must-revalidate">
+    <!-- BOOTSTRAT : Many of our components require the use of JavaScript to function. -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- <script src="sm_script.js"></script> -->
+
+    <link rel="stylesheet" href="tree.css">
+    <script src="tree-maker.js"></script>
+
+    <title>Crypto Active Strategies</title>
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand  mr-0 mr-md-2" style="color:#eeff02;" style="color:#eeff02;" href="index.html"> <img
+                    src="images/logo.jpg" width="30" height="30" alt="">Crypto Active Strategies</a>
+        </nav>
+
+    </header>
+    <!--================================================== -->
+    <!-- BUBLE MENU. -->
+
+    <div class="container marketing" id="Mark1" style="margin-top:3em;margin-bottom:5em;">
+        <!-- Three columns of text below the carousel -->
+        <h1 style="font-size:xx-large;">Get exposure to cryptocurrencies... with a plan</h1>
+        <p style="font-size: larger;">TAME has combined <a href="graphs/backtest/tearsheets/Mozaic+Overnight.html">track
+                record</a> a suite of 
+            strategies and offer <b>long and risk-controled
+                exposure</b> to a diversified portfolio of cryptocurrencies (Bitcoin, Ethereum and other liquid Altcoins).
+        </p>
+
+        <div id="my_tree"></div>
+        <script type="text/javascript">
+            let nestedTree = {
+                8: '',
+                9: {
+                    10: '',
+                    11: {
+                        13: '',
+                    },
+                },
+                12: '',
+            }
+
+            let tree = {
+                1: {
+                    2: {},
+                    4: {
+                        3: {
+                            5: '',
+                            6: '',
+                            7: '',
+                        }
+                    },
+
+
+                },
+            };
+
+            let params = {
+                1: { trad: '<b>TAME STRATEGY</b>', href: 'graphs/backtest/tearsheets/ts9_1+2+3.html' },
+                3: { trad: '<b>Mozaic</b>', href: 'graphs/backtest/tearsheets/ts4_mozaic.html' },
+                2: { trad: '<b>Calendar</b><br>Flows Trading', href: 'graphs/backtest/tearsheets/ts5_crypto_on.html' },
+                4: { trad: '<b>Liquity Protection</b><br>BTC vs Alt. Coins', href: 'graphs/backtest/tearsheets/ts8_1+3.html' },
+                5: { trad: '<b>Mozaic L</b><br>[100%]', href: 'graphs/backtest/tearsheets/ts1_top.html' },
+                6: { trad: '<b>Mozaic L Flexible</b><br>[0%,+100%]', href: 'graphs/backtest/tearsheets/ts2_+SL.html' },
+                7: { trad: '<b>Mozaic L/S</b><br>net:[0%,+100%]', href: 'graphs/backtest/tearsheets/ts3_TopvBot.html' },
+                8: { trad: '<b>Overnight</b><br>[-100%,+100%]', href: 'graphs/backtest/tearsheets/4_Overnight.html' },
+
+            };
+
+            treeMaker.default(tree, {
+                id: 'my_tree',
+                card_click: function (element) {
+                    console.log(element);
+                },
+                treeParams: params,
+                'link_width': '4px',
+                'link_color': '#2199e8',
+            });
+        </script>
+
+        <p style="font-size: larger;"> The <b>strategies</b> belong to what
+            we named the <b>Mozaic family</b>.
+            They are an adaptation of a dual-momentum methodology, developed 15 years ago by JP Morgan on traditional
+            financial markets, and that I have
+            been investing with success in my Global Macro fund for years. This is a very powerful and versatile
+            process to build diversified portfolio with an active protection against decline. It
+            generates a strong performance on all diversified universe, and notably cryptos. It is here designed
+            on the universe of <b style="color: rgb(19, 107, 8);"> 20-40 coins</b>, the most liquid ones.
+        </p>
+        <ol>
+            <li style="font-size: larger;font-weight:600;">Mozaic Long : Long portfolio of the best coins [w=100%]
+            </li>
+            That strategy is always 100% invested on the top performing coins.
+            <a href="graphs/backtest/tearsheets/ts1_top.html" target="_blank">(tearsheet)</a>
+            
+            <li style="font-size: larger;font-weight: 600;"> Mozaic Flexible-Long : Long portfolio of the best coins,
+                with a flexible global exposure [w=0-100%]</li>
+            That strategy is invested on the top performing coins, providing their trend is positive. The net exposure
+            is
+            [0%-100%] and can decline to 0%, should the trend turn negative.
+            <a href="graphs/backtest/tearsheets/ts2_+SL.html" target="_blank">(tearsheet)</a>
+            
+            <li style="font-size: larger;font-weight: 600;"> Mozaic Long - Short : Long / Short portfolio [+100%/-100%,
+                gross=0-200% / net = 0-100%]</li>
+            That strategy is invested in the top performing coins, providing their trend is positive and short the
+            poorly
+            performing coins, providing their trend is negative.
+            The net expo is always positive [0%-100%], and the gross expo is [0%-200%].
+            <a href="graphs/backtest/tearsheets/ts3_TopvBot.html" target="_blank">(tearsheet)</a>
+            
+            <li style="font-size: larger;font-weight: 600;"> Protection against Liquidity Crunch
+            </li>
+            On the top of the Mozaic strategy we had an active <b>'liquity crunch overlay'</b> aiming at protecting the
+            portfolio when liquidity is drying affecting notably the alt coins (vs. BTC)
+            <a href="graphs/backtest/tearsheets/ts8_1+3.html" target="_blank">(tearsheet)</a>
+            
+            <li style="font-size: larger;font-weight: 600;"> Overnight : Overnight strategy on Bitcoin / Ethereum /
+                Ripple
+            </li>
+            That strategy is exposed to Bitcoin / Ethereum / Ripple at certain times during the day.
+            At least one Long position [0%-100%] is taken every day. Short exposures can be taken should the global
+            trend is negative. <a href="graphs/backtest/tearsheets/ts5_crypto_on.html" target="_blank">(tearsheet)</a>
+        </ol>
+        The track record is net of transaction fees, assuming a 10 bp transaction cost for the Mozaic strategies (20-40 coins) and 5
+        bp
+        for the overnight strategy (Bitcoin / Ethereum / Ripple)
+        <p style="font-size: larger;">
+        <h4 style="font-size: x-large;color: rgb(40, 20, 220);">2018-2022, Mozaic Performance</h3>
+            The Mozaic strategy was developed early 2022 and performance was backtested from 2018 (5 years).
+            As of the end
+            of 2022,
+            <ul style="font-size: larger;list-style-type:circle;">
+                <li><b>Sharpe ratio > 3, gross</b> of all fees. <b>Sharpe ratio > 2, net</b> of 10 bp transaction fees.
+                </li>
+                <li>In 2022 meltdowns, the <b>strategy declined 13% compared to -60% for Bitcoin and -80% for a large
+                        universe</b> of liquid cryptos. FTX collapse (November 2022) is an out of sample event included
+                    in
+                    our track record.</li>
+                <li>Asymetric profile: the strategy is expected to capture <b>60% of Bitcoin upside but only 20% of
+                        Bitcoin
+                        declines</b></li>
+            </ul>
+            
+            The Overnight strategy was developed early 2023 and performance was backtested from 2019 (4 years).
+            </p>
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <a href="graphs/backtest/tearsheets/track_recap.jpg" target="search_iframe" id="dat_d3"
+                        style="color: rgb(0, 17, 255);font-size:x-large;font-weight: bold;"> Track </a> - 
+                    <a href="graphs/backtest/tearsheets/stats_recap.jpg" target="search_iframe"
+                        style="color: rgb(0, 17, 255);font-size:x-large;font-weight: bold;"> Statistics </a> - 
+                    <a href="graphs/backtest/tearsheets/monthly_recap.jpg" target="search_iframe"
+                        style="color: rgb(0, 17, 255);font-size:x-large;font-weight: bold;"> Monthly Rt% </a> - 
+
+                    <a href="graphs/backtest/tearsheets/ts9_1+2+3.html" target="_blank" id="dat_d3"
+                        style="color: rgb(0, 17, 255);font-size:x-large;font-weight: bold;"> Tearsheet (QuantStats) </a>
+                    -
+                    
+                    <iframe src="graphs/backtest/tearsheets/track_recap.jpg" name="search_iframe" width="90%" height="666px"
+                        position="relative" allowfullscreen="true" scrolling="auto"> </iframe>
+                    <!-- <iframe position=" absolute" width="500" height="300" id="grph2"
+						src="graph/yellow_cards/yellow_card_recap_prev.html"></iframe> -->
+
+                </div>
+            </div>
+            <h4 name="mark1" style="font-size:xx-large;color: rgb(40, 20, 220);">Mozaic: Current Portfolio</h4>
+            <div class="row" style="margin-top: 0.5em">
+                <!-- <div class="col-lg-12">
+				<h4>Performance YTD, implemented in Binance</h4>
+				<div class="row">
+					<a href="graphs/bt_mozaic_1.png" target="_blank"><img class="rounded float-left"
+							src="graphs/bt_mozaic_1.png" id="grph2" width="100%" height="500"></a>
+				</div>
+			</div> -->
+                <div class="col-lg-12">
+                    <h4>Current portfolio</h4></br>
+                    <div id="bar_positions_w" style="height: 600px;"></div>
+                </div>
+
+            </div>
+            <script>
+                var div = document.getElementById("target");
+                div.onload = function () {
+                    div.style.height = div.contentWindow.document.body.scrollHeight + 'px';
+                }
+            </script>
+            <script>
+                // google.charts.load('current', { 'packages': ['corechart'] });
+                google.charts.load('current', { 'packages': ['bar'] });
+                google.charts.setOnLoadCallback(drawChart0);
+                function drawChart0() {
+                    $.getJSON("graphs/order_ptw_w.json", function (obj) {
+                        var jsonData = $.ajax({
+                            url: "graphs/order_ptw_w.json",
+                            dataType: "json",
+                            async: false
+                        }).responseText;
+                        // Create our data table out of JSON data loaded from server.
+                        var data = new google.visualization.DataTable(jsonData);
+                        var options = {
+                            chart: {
+                                title: 'Current Weights',
+                            },
+                            vAxis: { title: 'w%', textStyle: { color: "black" } },
+                            hAxis: { textStyle: { color: "black" } },
+
+
+                            backgroundColor: 'transparent',
+                            legendTextStyle: { color: 'black' },
+                            titleTextStyle: { color: 'black' },
+                        };
+                        var chart = new google.charts.Bar(document.getElementById('bar_positions_w'));
+                        chart.draw(data, google.charts.Bar.convertOptions(options));
+                    });
+                };//drawChart
+            </script>
+            <!-- ------------------ -->
+            <br>
+            <br>
+            <br>
+
+    </div>
+
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="container">
+        <p class="float-right"><a href="index.html">A la Une</a> <a href="#">Back to top</a></p>
+        <!-- <p>&copy; <a href="mailto:s2bmaillard@gmail.com">s2bmaillard@gmail.com</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p> -->
+        <p> contact:<a href="mailto:s2bmaillard@gmail.com">s2bmaillard@gmail.com</a><a href="#"></a>
+    </footer>
+
+
+
+</body>
+<script>
+    fetch('https://sebast759.github.io/Mozaic Crypto/graph/script_lastupdate.json')
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            // Work with JSON data here
+            console.log(data);
+        })
+        .catch(err => {
+            // Do something for an error here
+        });
+    // create à new timestamp 
+    var timestamp = new Date().getTime();
+    document.getElementById('grph1').src = document.getElementById('grph1').src + "?t=" + timestamp
+    document.getElementById('grph2').src = document.getElementById('grph2').src + "?t=" + timestamp
+    document.getElementById('grph3').src = document.getElementById('grph3').src + "?t=" + timestamp
+    // document.getElementById('grph4').src = document.getElementById('grph4').src + "?t=" + timestamp
+    document.getElementById('grph5').src = document.getElementById('grph5').src + "?t=" + timestamp
+    document.getElementById('grph6').src = document.getElementById('grph6').src + "?t=" + timestamp
+    document.getElementById('grph7').src = document.getElementById('grph7').src + "?t=" + timestamp
+    document.getElementById('grph8').src = document.getElementById('grph8').src + "?t=" + timestamp
+	// document.getElementById('grph9').src = document.getElementById('grph9').src + "?t=" + timestamp
+	// document.getElementById('grph10').src = document.getElementById('grph10').src + "?t=" + timestamp
+	// document.getElementById('grph11').src = document.getElementById('grph11').src + "?t=" + timestamp
+	// document.getElementById('grph12').src = document.getElementById('grph12').src + "?t=" + timestamp
+
+
+
+</script>
+
+</html>

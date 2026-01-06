@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!-- 
+PAGE DE GARDE
+-->
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv=“Pragma” content=”no-cache”>
+    <meta http-equiv=“Expires” content="Fri, 30 Oct 1998 14:19:41 GMT">
+    <meta http-equiv=“CACHE-CONTROL” content="no-cache, must-revalidate">
+    <!-- BOOTSTRAT : Many of our components require the use of JavaScript to function. -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/data.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    
+    
+    <title>Mozaic Crypto</title>
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container marketing" id="Mark1" style="margin-top:3em;margin-bottom:5em;">
+        <div id="container_highcharts" style="height: 600px; width: 100%"></div>
+        
+        --------------------------------<br>
+        --------------------------------<br>
+        --------------------------------<br>
+
+        <SELECT id="list">
+            <OPTION VALUE="A">Data Set A</option>
+            <OPTION VALUE="B">Data Set B</option>
+            <OPTION VALUE="C">Data Set C</option>
+            <OPTION VALUE="D">Data Set D</option>    
+        </SELECT>
+        <div id="container" style="height: 400px"></div>
+        
+    </div>
+
+
+    </div><!-- /.container -->
+
+
+
+
+
+    <!-- FOOTER -->
+
+
+
+</body>
+<script>
+    $.getJSON('graphs/btc.json', function (data) {
+        // Create the chart
+        Highcharts.stockChart('container_highcharts', {
+            rangeSelector: {
+                selected: 1
+            },
+            title: {
+                text: 'Bitcoin'
+            },
+            scrollbar: {
+                enabled: false
+            },
+            series: [{
+                name: 'Bitcoin',
+                data: data,
+                tooltip: {
+                    valueDecimals: 2
+                }
+            }]
+        });
+    });
+</script>
+<script>
+    databtc = $.getJSON('graphs/btc.json')
+    var options = {
+        chart: {
+            renderTo: 'container',
+            defaultSeriesType: 'spline'
+        },
+        series: [{ name: 'A', data: [1, 2, 3, 2, 1] }]
+    };
+    var chart = new Highcharts.stockChart(options);
+
+    $("#list").on('change', function () {
+        //alert('f')
+        var selVal = $("#list").val();
+        if (selVal == "A" || selVal == '') {
+            setSeriesData('graphs/btc.json');
+            // options.series = [{ name: 'A', data: [1, 2, 3, 2, 1] }]
+        }
+        else if (selVal == "B") {
+            options.series = [{ name: 'B', data: [3, 2, 1, 2, 3] }]
+        }
+        else if (selVal == "C") {
+            options.series = [{ name: 'C', data: [5, 4, 8, 7, 6] }]
+        }
+        else {
+            options.series = [{ name: 'D', data: [4, 7, 9, 6, 2] }]
+        }
+        var chart = new Highcharts.Chart(options);
+    });
+</script>
+</html>
