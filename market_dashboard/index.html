@@ -41,7 +41,7 @@
             </div>
 
             <div class="chart-container" style="margin-bottom: 3rem;">
-                <iframe id="bond-chart" src="bond_yield_curves/yield_curves_10y.html" scrolling="no"></iframe>
+                <iframe id="bond-chart" src="graphs/bond_yield_curves/yield_curves_10y.html" scrolling="no"></iframe>
             </div>
             <!-- Two Column Section: Yields & Rolldown -->
              <div style="width: 60%; margin: 0 auto;">
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                     <div class="chart-container-small">
-                        <iframe id="ranked-chart" src="bond_yield_curves/yields_10y_ranked.html" scrolling="no"></iframe>
+                        <iframe id="ranked-chart" src="graphs/bond_yield_curves/yields_10y_ranked.html" scrolling="no"></iframe>
                     </div>
                 </div>
 
@@ -96,7 +96,7 @@
                         </div>
                     </div>
                     <div class="chart-container-small">
-                        <iframe id="rolldown-chart" src="bond_yield_curves/spread_10y2y.html" scrolling="no"></iframe>
+                        <iframe id="rolldown-chart" src="graphs/bond_yield_curves/spread_10y2y.html" scrolling="no"></iframe>
                     </div>
                 </div>
             </div>
@@ -107,11 +107,31 @@
                 <div style="width: 60%; margin: 0 auto;">
                     <div style="margin-bottom: 1.5rem;">
                         <h2 style="margin: 0 0 0.5rem 0; color: #1a1a1a;">Historical 10-Year Yield</h2>
-                        <!-- Country selector -->
+                        <!-- Region selector -->
                         <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="font-size: 0.9rem; color: #666; font-weight: 500;">Region:</span>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 1rem;">
+                                <input type="radio" name="history-region" value="g5" checked>
+                                <span style="font-size: 0.9rem;">G5</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 1.2rem;">
+                                <input type="radio" name="history-region" value="eu">
+                                <span style="font-size: 0.9rem;">EU</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-left: 1.8rem;">
+                                <input type="radio" name="history-region" value="eu-spread">
+                                <span style="font-size: 0.9rem;">EU(SPREAD)</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer;">
+                                <input type="radio" name="history-region" value="all">
+                                <span style="font-size: 0.9rem;">ALL</span>
+                            </label>
+                        </div>
+                        <!-- Individual country selector -->
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1.6rem;">
                             <span style="font-size: 0.9rem; color: #666; font-weight: 500;">Country:</span>
                             <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 1rem;">
-                                <input type="radio" name="history-country" value="usa" checked>
+                                <input type="radio" name="history-country" value="usa">
                                 <span style="font-size: 0.9rem;">United States</span>
                             </label>
                             <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 1rem;">
@@ -131,11 +151,12 @@
                                 <span style="font-size: 0.9rem;">France</span>
                             </label>
                         </div>
+                        
                     </div>
                 </div>
                 
                 <div class="chart-container-historical">
-                    <iframe id="history-chart" src="bond_yield_curves/history_usa_10y.html" scrolling="no"></iframe>
+                    <iframe id="history-chart" src="graphs/bond_yield_curves/history_g5_10y.html" scrolling="no"></iframe>
                 </div>
             </div>
         </div>

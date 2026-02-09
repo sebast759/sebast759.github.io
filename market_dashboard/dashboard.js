@@ -63,11 +63,33 @@ document.querySelectorAll('input[name="rolldown-spread"]').forEach(radio => {
     });
 });
 
-// Historical chart country switching
+// Historical chart region switching
+document.querySelectorAll('input[name="history-region"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+        const region = this.value;
+        let filename;
+
+        if (region === 'eu-spread') {
+            filename = 'graphs/bond_yield_curves/history_EU_spread_vs_germany.html';
+        } else if (region === 'g5') {
+            filename = 'graphs/bond_yield_curves/history_g5_10y.html';
+        } else if (region === 'eu') {
+            filename = 'graphs/bond_yield_curves/history_eu_10y.html';
+        } else if (region === 'all') {
+            filename = 'graphs/bond_yield_curves/history_all_10y.html';
+        } else {
+            filename = 'graphs/bond_yield_curves/history_g5_10y.html';
+        }
+
+        document.getElementById('history-chart').src = filename;
+    });
+});
+
+// Historical chart country switching (individual countries)
 document.querySelectorAll('input[name="history-country"]').forEach(radio => {
     radio.addEventListener('change', function() {
         const country = this.value;
-        document.getElementById('history-chart').src = 
-            `bond_yield_curves/history_${country}_10y.html`;
+        const filename = `graphs/bond_yield_curves/history_${country}_10y.html`;
+        document.getElementById('history-chart').src = filename;
     });
 });
