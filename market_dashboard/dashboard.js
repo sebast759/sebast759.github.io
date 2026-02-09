@@ -28,9 +28,8 @@ function showCryptoPeriod(period, btn) {
         'previous': 'prev_m_performance_rainbow',
         'ytd': 'ytd_performance_rainbow'
     };
-    
     document.getElementById('crypto-chart').src = 
-        'https://tame-cap.s3.us-east-1.amazonaws.com/TG_PROD/Dashboard/Plot_Universe_Graphs/' + urls[period];
+        'https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/' + urls[period];
     
     document.querySelectorAll('.crypto-tab-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
@@ -91,5 +90,17 @@ document.querySelectorAll('input[name="history-country"]').forEach(radio => {
         const country = this.value;
         const filename = `graphs/bond_yield_curves/history_${country}_10y.html`;
         document.getElementById('history-chart').src = filename;
+    });
+});
+
+// Price action button switching (BTC/ETH)
+document.querySelectorAll('.price_action-tab-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const asset = this.dataset.period.toUpperCase();
+        document.getElementById('price-action-chart').src = 
+            `https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/price_action_${asset}_2024`;
+        
+        document.querySelectorAll('.price_action-tab-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
     });
 });

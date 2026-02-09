@@ -158,7 +158,9 @@
                 <div class="chart-container-historical">
                     <iframe id="history-chart" src="graphs/bond_yield_curves/history_g5_10y.html" scrolling="no"></iframe>
                 </div>
+                
             </div>
+            
         </div>
 
         <!-- Equities Tab -->
@@ -206,41 +208,49 @@
         </div>
 
         <!-- Crypto Tab -->
-        
-        <!-- Crypto Tab -->
-<div id="crypto" class="tab-content">
-    <div class="grid">
-        <!-- Left: Bitcoin Price -->
-        <div class="card">
-            <h3>Bitcoin Price</h3>
-            <p>Placeholder for chart</p>
-        </div>
-        
-        <!-- Middle: Top 30 Performance (spans 2 columns) -->
-        <div class="card" style="grid-column: span 2;">
-            <h3>Top 30 Cryptocurrencies Performance</h3>
-            <div style="text-align: center; margin: 1rem 0;">
-                <button class="crypto-tab-btn active" data-period="today">Today</button>
-                <button class="crypto-tab-btn" data-period="yesterday">Yesterday</button>
-                <button class="crypto-tab-btn" data-period="mtd">MTD</button>
-                <button class="crypto-tab-btn" data-period="previous">Previous M</button>
-                <button class="crypto-tab-btn" data-period="ytd">YTD</button>
+        <div id="crypto" class="tab-content">
+            <!-- Top: Top 30 Performance (full width) -->
+            <div class="grid">
+                <div class="card" style="grid-column: span 2;">
+                    <h3>Bitcoin Price</h3>
+                    <div style="text-align: center; margin: 1rem 0;">
+                        <button class="price_action-tab-btn active" data-period="btc">BTC</button>
+                        <button class="price_action-tab-btn" data-period="eth">ETH</button>
+                    </div>
+                    <div style="text-align: center;">
+                        <img id="price-action-chart" 
+                             src="https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/price_action_BTC_2024" 
+                             style="max-width: 90%; border: 8px solid #fff;"
+                             alt="Price Action">
+                    </div>
+                </div>
+                <div class="card" style="grid-column: span 2;">
+                    <h3>Top 30 Cryptocurrencies Performance</h3>
+                    <div style="text-align: center; margin: 1rem 0;">
+                        <button class="crypto-tab-btn active" data-period="today">Today</button>
+                        <button class="crypto-tab-btn" data-period="yesterday">Yesterday</button>
+                        <button class="crypto-tab-btn" data-period="mtd">MTD</button>
+                        <button class="crypto-tab-btn" data-period="previous">Previous M</button>
+                        <button class="crypto-tab-btn" data-period="ytd">YTD</button>
+                    </div>
+                    <div style="text-align: center;">
+                        <img id="crypto-chart" 
+                             src="https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/today_performance_rainbow" 
+                             style="max-width: 90%; border: 8px solid #fff;"
+                             alt="Crypto Performance">
+                    </div>
+                </div>
+            
             </div>
-            <div style="text-align: center;">
-                <img id="crypto-chart" 
-                     src="https://tame-cap.s3.us-east-1.amazonaws.com/TG_PROD/Dashboard/Plot_Universe_Graphs/today_performance_rainbow" 
-                     style="max-width: 90%; border: 8px solid #fff;"
-                     alt="Crypto Performance">
+
+            <!-- Bottom: Bitcoin Dominance (full width) -->
+            <div class="grid">
+                <div class="card" style="grid-column: span 2;">
+                    <h3>Bitcoin Dominance</h3>
+                    <p>Placeholder for chart</p>
+                </div>
             </div>
         </div>
-        
-        <!-- Right: Bitcoin Dominance -->
-        <div class="card">
-            <h3>Bitcoin Dominance</h3>
-            <p>Placeholder for chart</p>
-        </div>
-    </div>
-</div>
         <!-- Global Tab -->
         <div id="global" class="tab-content">
             <div class="placeholder">
