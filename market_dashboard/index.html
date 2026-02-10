@@ -22,27 +22,6 @@
     <div class="content">
         <!-- Bonds Tab -->
         <div id="bonds" class="tab-content active">
-            <!-- Yield Curves Section -->
-            <div style="width: 60%; margin: 0 auto;">
-                <div style="margin-bottom: 1.5rem;">
-                    <h2 style="margin: 0 0 0.5rem 0; color: #1a1a1a;">Government Bond Yield Curves</h2>
-                    <div style="display: flex; align-items: center; gap: 0.5rem;">
-                        <span style="font-size: 0.9rem; color: #666; font-weight: 500;">Max maturity:</span>
-                        <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 1rem;">
-                            <input type="radio" name="maturity" value="10y" checked>
-                            <span style="font-size: 0.9rem;">10Y</span>
-                        </label>
-                        <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer;">
-                            <input type="radio" name="maturity" value="30y">
-                            <span style="font-size: 0.9rem;">30Y</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="chart-container" style="margin-bottom: 3rem;">
-                <iframe id="bond-chart" src="graphs/bond_yield_curves/yield_curves_10y.html" scrolling="no"></iframe>
-            </div>
             <!-- Two Column Section: Yields & Rolldown -->
              <div style="width: 60%; margin: 0 auto;">
                 <div style="margin-bottom: 0.0rem;">
@@ -101,7 +80,28 @@
                 </div>
             </div>
             <!-- After the two-column grid -->
+            <!-- Yield Curves Section -->
+            <div style="width: 60%; margin: 0 auto;">
+                <div style="margin-bottom: 1.5rem;">
+                    <h2 style="margin: 0 0 0.5rem 0; color: #1a1a1a;">Government Bond Yield Curves</h2>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 0.9rem; color: #666; font-weight: 500;">Max maturity:</span>
+                        <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 1rem;">
+                            <input type="radio" name="maturity" value="10y" checked>
+                            <span style="font-size: 0.9rem;">10Y</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer;">
+                            <input type="radio" name="maturity" value="30y">
+                            <span style="font-size: 0.9rem;">30Y</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
 
+            <div class="chart-container" style="margin-bottom: 3rem;">
+                <iframe id="bond-chart" src="graphs/bond_yield_curves/yield_curves_10y.html" scrolling="no"></iframe>
+            </div>
+            
             <!-- After the two-column grid -->
             <div style="margin-top: 3rem;">
                 <div style="width: 60%; margin: 0 auto;">
@@ -209,45 +209,59 @@
 
         <!-- Crypto Tab -->
         <div id="crypto" class="tab-content">
-            <!-- Top: Top 30 Performance (full width) -->
+            <!-- Top: Two column layout - Rainbow Chart & Treemap -->
+            <div class="two-column-grid" style="margin-top: 0; margin-bottom: 2rem;">
+                <!-- Left: Rainbow Chart -->
+                <div class="chart-section">
+                    <h3>Top 30 Cryptocurrencies Performance</h3>
+                        <div style="text-align: center; margin: 1rem 0; display: flex; flex-wrap: nowrap; justify-content: center; gap: 0.3rem; overflow-x: auto;">
+                        <button class="crypto-tab-btn active" data-period="today">Today</button>
+                        <button class="crypto-tab-btn" data-period="yesterday">Ytday</button>
+                        <button class="crypto-tab-btn" data-period="mtd">MTD</button>
+                        <button class="crypto-tab-btn" data-period="previous">Previous M</button>
+                        <button class="crypto-tab-btn" data-period="ytd">YTD</button>
+                        <button class="crypto-tab-btn" data-period="2025">2025</button>
+                        <button class="crypto-tab-btn" data-period="2024">2024</button>
+                    </div>
+                    <div style="text-align: center;">
+                        <img id="crypto-chart"
+                             src="https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/today_performance_rainbow"
+                             style="max-width: 95%; border: 8px solid #fff;"
+                             alt="Crypto Performance">
+                    </div>
+                </div>
+
+                <!-- Right: Treemap Chart -->
+                <div class="chart-section">
+                    <h3>Market Treemap</h3>
+                    <div style="text-align: center; margin: 1rem 0;">
+                        <button class="treemap-tab-btn active" data-period="ytd">YTD</button>
+                        <button class="treemap-tab-btn" data-period="2025">2025</button>
+                        <button class="treemap-tab-btn" data-period="2024">2024</button>
+                    </div>
+                    <div style="text-align: center;">
+                        <img id="treemap-chart"
+                             src="https://tame-cap.s3.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/treemap_ytd"
+                             style="max-width: 95%; border: 8px solid #fff;"
+                             alt="Treemap">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom: Price Action (reduced height) -->
             <div class="grid">
-                <div class="card" style="grid-column: span 2;">
-                    <h3>Bitcoin Price</h3>
+                <div class="card crypto-price-action-card" style="grid-column: span 2;">
+                    <h3>Price Action</h3>
                     <div style="text-align: center; margin: 1rem 0;">
                         <button class="price_action-tab-btn active" data-period="btc">BTC</button>
                         <button class="price_action-tab-btn" data-period="eth">ETH</button>
                     </div>
                     <div style="text-align: center;">
-                        <img id="price-action-chart" 
-                             src="https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/price_action_BTC_2024" 
-                             style="max-width: 90%; border: 8px solid #fff;"
+                        <img id="price-action-chart"
+                             src="https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/price_action_BTC_2024"
+                             style="max-width: 90%; max-height: 500px; border: 8px solid #fff; object-fit: contain;"
                              alt="Price Action">
                     </div>
-                </div>
-                <div class="card" style="grid-column: span 2;">
-                    <h3>Top 30 Cryptocurrencies Performance</h3>
-                    <div style="text-align: center; margin: 1rem 0;">
-                        <button class="crypto-tab-btn active" data-period="today">Today</button>
-                        <button class="crypto-tab-btn" data-period="yesterday">Yesterday</button>
-                        <button class="crypto-tab-btn" data-period="mtd">MTD</button>
-                        <button class="crypto-tab-btn" data-period="previous">Previous M</button>
-                        <button class="crypto-tab-btn" data-period="ytd">YTD</button>
-                    </div>
-                    <div style="text-align: center;">
-                        <img id="crypto-chart" 
-                             src="https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/today_performance_rainbow" 
-                             style="max-width: 90%; border: 8px solid #fff;"
-                             alt="Crypto Performance">
-                    </div>
-                </div>
-            
-            </div>
-
-            <!-- Bottom: Bitcoin Dominance (full width) -->
-            <div class="grid">
-                <div class="card" style="grid-column: span 2;">
-                    <h3>Bitcoin Dominance</h3>
-                    <p>Placeholder for chart</p>
                 </div>
             </div>
         </div>

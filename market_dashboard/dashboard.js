@@ -1,3 +1,46 @@
+document.addEventListener('DOMContentLoaded', function () {
+  const baseUrl = 'https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/';
+
+  // Helper to switch active class
+  function setActive(buttons, activeBtn) {
+    buttons.forEach(b => b.classList.remove('active'));
+    activeBtn.classList.add('active');
+  }
+
+  // Crypto rainbow chart buttons
+  const cryptoBtns = Array.from(document.querySelectorAll('.crypto-tab-btn'));
+  const cryptoImg = document.getElementById('crypto-chart');
+    // Replace "MTD" and "Previous M" labels with current/previous month in short-month + 2-digit year format (e.g. Feb26)
+    if (cryptoBtns.length) {
+        const now = new Date();
+        const monthAbbr = new Intl.DateTimeFormat('en', { month: 'short' }).format(now);
+        const yy = now.getFullYear().toString().slice(-2);
+        const mtdLabel = `${monthAbbr}${yy}`;
+        const prev = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+        const prevAbbr = new Intl.DateTimeFormat('en', { month: 'short' }).format(prev);
+        const prevLabel = `${prevAbbr}${prev.getFullYear().toString().slice(-2)}`;
+        const mtdBtn = cryptoBtns.find(b => b.dataset.period === 'mtd');
+        const prevBtn = cryptoBtns.find(b => b.dataset.period === 'previous');
+        if (mtdBtn) mtdBtn.textContent = mtdLabel;
+        if (prevBtn) prevBtn.textContent = prevLabel;
+    }
+
+
+
+  // Price action buttons
+  const priceBtns = Array.from(document.querySelectorAll('.price_action-tab-btn'));
+  const priceImg = document.getElementById('price-action-chart');
+  if (priceBtns.length && priceImg) {
+    priceBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        setActive(priceBtns, btn);
+        const period = btn.dataset.period.toUpperCase();
+        // pattern: price_action_<SYMBOL>_2024 (keep existing pattern)
+        priceImg.src = baseUrl + `price_action_${period}_2024`;
+      });
+    });
+  }
+});
 // Tab switching
 function showTab(tabName) {
     const contents = document.querySelectorAll('.tab-content');
@@ -26,7 +69,9 @@ function showCryptoPeriod(period, btn) {
         'yesterday': 'yesterday_performance_rainbow',
         'mtd': 'mtd_performance_rainbow',
         'previous': 'prev_m_performance_rainbow',
-        'ytd': 'ytd_performance_rainbow'
+        'ytd': 'ytd_performance_rainbow',
+        '2025': 'year_2025_performance_rainbow',
+        '2024': 'year_2024_performance_rainbow'
     };
     document.getElementById('crypto-chart').src = 
         'https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/' + urls[period];
@@ -97,10 +142,31 @@ document.querySelectorAll('input[name="history-country"]').forEach(radio => {
 document.querySelectorAll('.price_action-tab-btn').forEach(btn => {
     btn.addEventListener('click', function() {
         const asset = this.dataset.period.toUpperCase();
-        document.getElementById('price-action-chart').src = 
+        document.getElementById('price-action-chart').src =
             `https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/price_action_${asset}_2024`;
-        
+
         document.querySelectorAll('.price_action-tab-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+
+// Treemap button switching (YTD/2025/2024)
+document.querySelectorAll('.treemap-tab-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const period = this.dataset.period;
+        let url;
+
+        if (period === 'ytd') {
+            url = 'https://tame-cap.s3.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/treemap_ytd';
+        } else if (period === '2024') {
+            url = 'https://tame-cap.s3.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/treemap_year_2024';
+        } else if (period === '2025') {
+            url = 'https://tame-cap.s3.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/treemap_year_2025';
+        }
+
+        document.getElementById('treemap-chart').src = url;
+
+        document.querySelectorAll('.treemap-tab-btn').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
     });
 });
