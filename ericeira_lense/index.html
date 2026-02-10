@@ -33,6 +33,7 @@
     align-items: center;
   }
   header h1 { font-size: 1.4rem; font-weight: 600; }
+  header .tagline { font-size: 0.8rem; opacity: 0.6; font-weight: 300; font-style: italic; margin-top: 0.15rem; }
   header .meta { font-size: 0.85rem; opacity: 0.8; text-align: right; }
 
   /* ── Top tabs (Casas / Terrenos) ── */
@@ -207,6 +208,61 @@
     font-size: 1.1rem;
   }
 
+  /* ── About page ── */
+  .about-container {
+    max-width: 780px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    line-height: 1.75;
+    color: #444;
+  }
+  .about-container h2 {
+    font-size: 1.6rem;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+  }
+  .about-container .about-subtitle {
+    font-size: 1rem;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 2rem;
+  }
+  .about-container h3 {
+    font-size: 1.15rem;
+    color: #333;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid var(--accent-light);
+    display: inline-block;
+  }
+  .about-container p {
+    margin-bottom: 1rem;
+  }
+  .about-container .disclaimer {
+    background: #fff8e1;
+    border-left: 4px solid #f9a825;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    color: #6d5b00;
+  }
+  .about-container ul {
+    margin: 0.5rem 0 1rem 1.5rem;
+  }
+  .about-container li {
+    margin-bottom: 0.4rem;
+  }
+  .about-container .closing {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-style: italic;
+    color: #777;
+    text-align: center;
+  }
+
   /* ── Responsive ── */
   @media (max-width: 1100px) {
     .row.cols-3 { grid-template-columns: 1fr 1fr; }
@@ -222,7 +278,10 @@
 
 <!-- ═══ Header ═══ -->
 <header>
-  <h1><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="28" height="28" style="vertical-align:middle;margin-right:0.5rem"><defs><radialGradient id="hg" cx="40%" cy="35%" r="60%"><stop offset="0%" stop-color="#7ab3ff"/><stop offset="100%" stop-color="#fff"/></radialGradient></defs><circle cx="32" cy="32" r="10" fill="url(#hg)"/><g stroke="none"><polygon points="32,2 34,20 30,20" fill="#cadcf8"/><polygon points="32,62 34,44 30,44" fill="#cadcf8"/><polygon points="2,32 20,30 20,34" fill="#cadcf8"/><polygon points="62,32 44,30 44,34" fill="#cadcf8"/><polygon points="10.8,10.8 22,21 19.2,23.8" fill="#cadcf8"/><polygon points="53.2,53.2 42,43 44.8,40.2" fill="#cadcf8"/><polygon points="53.2,10.8 43,22 40.2,19.2" fill="#cadcf8"/><polygon points="10.8,53.2 21,42 23.8,44.8" fill="#cadcf8"/><polygon points="20,5.6 25,22 21.5,23" fill="#dde8fc"/><polygon points="44,58.4 39,42 42.5,41" fill="#dde8fc"/><polygon points="5.6,44 22,39 23,42.5" fill="#dde8fc"/><polygon points="58.4,20 42,25 41,21.5" fill="#dde8fc"/><polygon points="44,5.6 39,22 42.5,23" fill="#dde8fc"/><polygon points="20,58.4 25,42 21.5,41" fill="#dde8fc"/><polygon points="58.4,44 42,39 41,42.5" fill="#dde8fc"/><polygon points="5.6,20 22,25 23,21.5" fill="#dde8fc"/><polygon points="6,22 21,26 20,29" fill="#eaf1fd"/><polygon points="58,42 43,38 44,35" fill="#eaf1fd"/><polygon points="22,58 26,43 29,44" fill="#eaf1fd"/><polygon points="42,6 38,21 35,20" fill="#eaf1fd"/></g><circle cx="32" cy="32" r="7" fill="url(#hg)" stroke="#cadcf8" stroke-width="0.5"/></svg>Ericeira Lense</h1>
+  <div>
+    <h1><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="28" height="28" style="vertical-align:middle;margin-right:0.5rem"><defs><radialGradient id="hg" cx="40%" cy="35%" r="60%"><stop offset="0%" stop-color="#7ab3ff"/><stop offset="100%" stop-color="#fff"/></radialGradient></defs><circle cx="32" cy="32" r="10" fill="url(#hg)"/><g stroke="none"><polygon points="32,2 34,20 30,20" fill="#cadcf8"/><polygon points="32,62 34,44 30,44" fill="#cadcf8"/><polygon points="2,32 20,30 20,34" fill="#cadcf8"/><polygon points="62,32 44,30 44,34" fill="#cadcf8"/><polygon points="10.8,10.8 22,21 19.2,23.8" fill="#cadcf8"/><polygon points="53.2,53.2 42,43 44.8,40.2" fill="#cadcf8"/><polygon points="53.2,10.8 43,22 40.2,19.2" fill="#cadcf8"/><polygon points="10.8,53.2 21,42 23.8,44.8" fill="#cadcf8"/><polygon points="20,5.6 25,22 21.5,23" fill="#dde8fc"/><polygon points="44,58.4 39,42 42.5,41" fill="#dde8fc"/><polygon points="5.6,44 22,39 23,42.5" fill="#dde8fc"/><polygon points="58.4,20 42,25 41,21.5" fill="#dde8fc"/><polygon points="44,5.6 39,22 42.5,23" fill="#dde8fc"/><polygon points="20,58.4 25,42 21.5,41" fill="#dde8fc"/><polygon points="58.4,44 42,39 41,42.5" fill="#dde8fc"/><polygon points="5.6,20 22,25 23,21.5" fill="#dde8fc"/><polygon points="6,22 21,26 20,29" fill="#eaf1fd"/><polygon points="58,42 43,38 44,35" fill="#eaf1fd"/><polygon points="22,58 26,43 29,44" fill="#eaf1fd"/><polygon points="42,6 38,21 35,20" fill="#eaf1fd"/></g><circle cx="32" cy="32" r="7" fill="url(#hg)" stroke="#cadcf8" stroke-width="0.5"/></svg>Ericeira Lense</h1>
+    <div class="tagline">Clear your vision on Ericeira real estate</div>
+  </div>
   <div class="meta">
     n = 532 properties<br>
     Generated Feb 10, 2026
@@ -233,6 +292,7 @@
 <div class="top-tabs">
   <div class="top-tab active" data-target="casas">🏠 Casas</div>
   <div class="top-tab" data-target="terrenos">🌳 Terrenos</div>
+  <div class="top-tab" data-target="about">ℹ️ About</div>
 </div>
 
 <!-- ═══════════ CASAS ═══════════ -->
@@ -319,6 +379,57 @@
 <div id="terrenos" class="tab-content" style="display:none;">
   <div class="content">
     <div class="placeholder">Terrenos — coming soon</div>
+  </div>
+</div>
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<div id="about" class="tab-content" style="display:none;">
+  <div class="about-container">
+    <h2>Ericeira Market Lens</h2>
+    <div class="about-subtitle">A data-driven briefing on the Ericeira real estate market</div>
+
+    <p>
+      This dashboard aggregates and visualises public listing data from
+      <strong>Idealista</strong> for properties in the Ericeira area.
+      It is designed to give a structured, at-a-glance overview of
+      what is currently on the market — prices, surfaces, typologies,
+      agencies, and space efficiency.
+    </p>
+
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> This is not a valuation tool, a price
+      forecast, or financial advice. All data comes from public listings
+      and reflects <em>asking prices</em>, not transaction prices.
+      Listings may contain errors, duplicates, or outdated information.
+    </div>
+
+    <h3>An opaque market</h3>
+    <p>
+      The Portuguese real estate market — and Ericeira in particular —
+      is notoriously opaque. Transaction prices are rarely published,
+      agency commissions vary widely, and reliable comparable data is
+      hard to find. Buyers, sellers, and even professionals often
+      navigate with limited visibility.
+    </p>
+    <p>
+      This project aims to reduce that asymmetry by making the publicly
+      available listing data more accessible, structured, and comparable.
+      It does not replace professional advice, but it provides a
+      starting point for informed conversations.
+    </p>
+
+    <h3>For whom?</h3>
+    <ul>
+      <li><strong>Buyers</strong> looking to understand the current supply and relative pricing</li>
+      <li><strong>Sellers</strong> wanting to position their property against the market</li>
+      <li><strong>Agents &amp; advisors</strong> who need a quick market snapshot</li>
+      <li><strong>Curious minds</strong> interested in Ericeira real estate dynamics</li>
+    </ul>
+
+    <p class="closing">
+      The focus is on relative positioning, not absolute truth.<br>
+      See where a property stands compared to others — not what it is "worth".
+    </p>
   </div>
 </div>
 
