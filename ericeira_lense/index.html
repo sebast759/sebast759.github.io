@@ -432,7 +432,7 @@
 <div id="casas" class="tab-content active">
 
   <!-- Section intro bubbles (above tabs) -->
-  <div class="section-intro-bubble active" data-for="casas-pricing">
+  <div class="section-intro-bubble" data-for="casas-pricing">
     <h3 class="lang-en">Pricing</h3>
     <h3 class="lang-pt">Pre&ccedil;os</h3>
     <p class="lang-en">
@@ -489,33 +489,33 @@
       os T3 apresentam a maior dispers&atilde;o, o que torna a compra com base apenas na &aacute;rea bruta um risco.
     </p>
   </div>
-  <div class="section-intro-bubble" data-for="casas-map">
+  <div class="section-intro-bubble active" data-for="casas-map">
     <h3 class="lang-en">Map</h3>
     <h3 class="lang-pt">Mapa</h3>
     <p class="lang-en">
-      Interactive map showing property locations across Ericeira, color-coded by <strong>price per m&sup2; (&Aacute;rea &Uacute;til)</strong>.
-      Green markers indicate <strong>affordable properties</strong> (&le;&euro;4,000/m&sup2;), while red markers show <strong>expensive listings</strong> (&ge;&euro;6,000/m&sup2;).
+      Interactive map showing property locations across Ericeira, color-coded by <strong>price per m&sup2;</strong>.
+      Toggle between <strong>&Aacute;rea Bruta</strong> (green: &le;&euro;2,500/m&sup2;, red: &ge;&euro;4,000/m&sup2;) and <strong>&Aacute;rea &Uacute;til</strong> (green: &le;&euro;4,000/m&sup2;, red: &ge;&euro;6,000/m&sup2;) to compare pricing across both metrics.
       </br>Use your <strong>mouse wheel to zoom</strong>, drag to pan, hover over markers to see property photos, and click to open the full listing on Idealista.
       The map reveals clear <strong>geographic price patterns</strong> and helps identify value opportunities in different neighborhoods.
     </p>
     <p class="lang-pt">
-      Mapa interativo mostrando a localiza&ccedil;&atilde;o dos im&oacute;veis em Ericeira, com c&oacute;digo de cores por <strong>pre&ccedil;o por m&sup2; (&Aacute;rea &Uacute;til)</strong>.
-      Marcadores verdes indicam <strong>im&oacute;veis acess&iacute;veis</strong> (&le;&euro;4.000/m&sup2;), enquanto marcadores vermelhos mostram <strong>listagens caras</strong> (&ge;&euro;6.000/m&sup2;).
+      Mapa interativo mostrando a localiza&ccedil;&atilde;o dos im&oacute;veis em Ericeira, com c&oacute;digo de cores por <strong>pre&ccedil;o por m&sup2;</strong>.
+      Alterne entre <strong>&Aacute;rea Bruta</strong> (verde: &le;&euro;2.500/m&sup2;, vermelho: &ge;&euro;4.000/m&sup2;) e <strong>&Aacute;rea &Uacute;til</strong> (verde: &le;&euro;4.000/m&sup2;, vermelho: &ge;&euro;6.000/m&sup2;) para comparar pre&ccedil;os usando ambas as m&eacute;tricas.
       </br>Use a <strong>roda do rato para ampliar</strong>, arraste para mover, passe o rato sobre os marcadores para ver fotos, e clique para abrir o an&uacute;ncio completo no Idealista.
       O mapa revela <strong>padr&otilde;es geogr&aacute;ficos de pre&ccedil;os</strong> claros e ajuda a identificar oportunidades de valor em diferentes bairros.
     </p>
   </div>
 
   <div class="section-tabs">
-    <div class="section-tab active" data-target="casas-pricing" data-i18n="tab_pricing">💶 Pricing</div>
+    <div class="section-tab active" data-target="casas-map" data-i18n="tab_map">🌍 Map</div>
+    <div class="section-tab" data-target="casas-pricing" data-i18n="tab_pricing">💶 Pricing</div>
     <div class="section-tab" data-target="casas-agencies" data-i18n="tab_agencies">🏢 Agencies</div>
     <div class="section-tab" data-target="casas-efficiency" data-i18n="tab_efficiency">📏 Efficiency</div>
-    <div class="section-tab" data-target="casas-map" data-i18n="tab_map">🌍 Map</div>
   </div>
   <div class="content">
 
     <!-- ── PRICING ── -->
-    <div id="casas-pricing" class="section active">
+    <div id="casas-pricing" class="section">
       <div class="area-toggle">
         <div class="area-btn active" data-target="bruta-panel"><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="#c87941" stroke="#a0622f" stroke-width="0.5"/><circle cx="9" cy="9" r="4.5" fill="#e8a665" stroke="#c87941" stroke-width="0.5"/></svg>Área Bruta</div>
         <div class="area-btn" data-target="util-panel"><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="none" stroke="#d4c4b0" stroke-width="1" stroke-dasharray="2,1.5"/><circle cx="9" cy="9" r="4.5" fill="#c87941" stroke="#a0622f" stroke-width="0.5"/></svg>Área Útil</div>
@@ -583,7 +583,7 @@
     </div>
 
     <!-- ── MAP ── -->
-    <div id="casas-map" class="section">
+    <div id="casas-map" class="section active">
       <div class="area-toggle">
         <div class="area-btn active" data-target="bruta-map-panel"><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="#c87941" stroke="#a0622f" stroke-width="0.5"/><circle cx="9" cy="9" r="4.5" fill="#e8a665" stroke="#c87941" stroke-width="0.5"/></svg>Área Bruta</div>
         <div class="area-btn" data-target="util-map-panel"><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="none" stroke="#d4c4b0" stroke-width="1" stroke-dasharray="2,1.5"/><circle cx="9" cy="9" r="4.5" fill="#c87941" stroke="#a0622f" stroke-width="0.5"/></svg>Área Útil</div>
