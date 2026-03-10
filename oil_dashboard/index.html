@@ -43,6 +43,7 @@ h1 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: #f1f5f9; 
 .badge-label { font-size: 10px; font-weight: 700; margin-bottom: 2px; }
 .badge-price { font-size: 13px; font-weight: 800; color: #f1f5f9; }
 .badge-unit { font-size: 9px; color: #475569; margin-top: 1px; }
+.badge-date { font-size: 9px; color: #334155; margin-top: 3px; }
 /* TABS */
 .tabs { display: flex; }
 .tab-btn {
@@ -163,7 +164,10 @@ canvas { max-width: 100%; }
         </div>
       </div>
     </div>
-    <div class="price-badges" id="price-badges"></div>
+    <div style="text-align:right;">
+      <div class="price-badges" id="price-badges"></div>
+      <div id="brent-info" style="font-size:10px;color:#475569;margin-top:6px;"></div>
+    </div>
   </div>
   <div class="tabs">
     <button class="tab-btn active" onclick="showTab(0)">Historical Prices</button>
@@ -322,19 +326,56 @@ function showTab(n) {
 
 // ---- BADGES (header) -----------------------------------------------------
 function buildBadges() {
-  const last = DATA.dates.length - 1;
-  const wrap = $('price-badges');
+  const last       = DATA.dates.length - 1;
+  const latestDate = DATA.dates[last];
+  const wrap       = $('price-badges');
+
+  // Country badges
   CTRS.forEach(c => {
-    const v = DATA.countries[c].euro95[last];
+    const v  = DATA.countries[c].euro95[last];
     const el = document.createElement('div');
     el.className = 'badge';
     el.style.border = `1px solid ${COLORS[c]}40`;
     el.innerHTML = `
       <div class="badge-label" style="color:${COLORS[c]}">${c}</div>
       <div class="badge-price mono">€${v != null ? (v/1000).toFixed(3) : '—'}</div>
-      <div class="badge-unit">Euro-95/L</div>`;
+      <div class="badge-unit">Euro-95/L</div>
+      <div class="badge-date">${latestDate}</div>`;
     wrap.appendChild(el);
   });
+
+  // Brent badge at latest EC date
+  const brentVal = DATA.brent[last];
+  const bEl = document.createElement('div');
+  bEl.className = 'badge';
+  bEl.style.border = '1px solid #94a3b840';
+  bEl.innerHTML = `
+    <div class="badge-label" style="color:#94a3b8">Brent</div>
+    <div class="badge-price mono" style="color:#94a3b8">${brentVal != null ? '$'+brentVal.toFixed(2) : '—'}</div>
+    <div class="badge-unit">$/barrel</div>
+    <div class="badge-date">${latestDate}</div>`;
+  wrap.appendChild(bEl);
+
+  // Brent info line: latest price (most recent non-null) + week-over-week change
+  let cur = null, prev = null, curDate = latestDate;
+  for (let i = DATA.brent.length - 1; i >= 0; i--) {
+    if (DATA.brent[i] != null) {
+      if (cur === null) { cur = DATA.brent[i]; curDate = DATA.dates[i]; }
+      else              { prev = DATA.brent[i]; break; }
+    }
+  }
+  if (cur != null && prev != null) {
+    const diff  = cur - prev;
+    const pct   = (diff / prev * 100).toFixed(1);
+    const sign  = diff >= 0 ? '+' : '';
+    const arrow = diff >= 0 ? '▲' : '▼';
+    const col   = diff >= 0 ? '#ef4444' : '#10b981';
+    $('brent-info').innerHTML =
+      `Brent: <span class="mono" style="color:#cbd5e1">$${cur.toFixed(2)}/bbl</span>`
+      + ` <span style="color:#475569">(${curDate})</span>`
+      + ` &nbsp;·&nbsp; <span style="color:${col}">${arrow} ${sign}$${Math.abs(diff).toFixed(2)} (${sign}${pct}%)</span>`
+      + ` <span style="color:#334155">vs prev. week</span>`;
+  }
 }
 
 // ---- HISTORICAL CHART ----------------------------------------------------
