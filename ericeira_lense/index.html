@@ -145,9 +145,12 @@
   .section-tabs {
     display: flex;
     gap: 0.3rem;
-    padding: 0.8rem 2rem;
+    padding: 1rem 2rem 0.85rem;
     background: #fff;
+    border-top: 1px solid #d6dde8;
     border-bottom: 1px solid var(--border);
+    margin-top: 0.6rem;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.85);
   }
   .section-tab {
     padding: 0.5rem 1.2rem;
@@ -693,25 +696,28 @@
   <!-- ═══ Listing changes (vs prev month) ═══ -->
   <div class="changes-bar"><span class="changes-label">vs Mar</span><span class="change-item change-new">  <span class="ci-count">+80</span>  <span class="ci-pct">new listings</span></span><span class="change-item change-off">  <span class="ci-count">−80</span>  <span class="ci-pct">off market</span></span><span class="change-item change-up">  <span class="ci-count">▲ 7</span>  <span class="ci-pct">price up (+6.7% avg)</span></span><span class="change-item change-down">  <span class="ci-count">▼ 17</span>  <span class="ci-pct">price down (-4.2% avg)</span></span><span class="change-item">  <a href="#casas-changes" class="summary-link nav-link" data-section-target="casas-changes">See Listing Changes</a></span></div>
 
-  <!-- Section intro bubbles (above tabs) -->
+  <div class="section-tabs">
+    <div class="section-tab active" data-target="casas-map" data-i18n="tab_map">🌍 Map</div>
+    <div class="section-tab" data-target="casas-pricing" data-i18n="tab_pricing">💶 Pricing</div>
+    <div class="section-tab" data-target="casas-agencies" data-i18n="tab_agencies">🏢 Agencies</div>
+    <div class="section-tab" data-target="casas-efficiency" data-i18n="tab_efficiency">📏 Efficiency</div>
+    <div class="section-tab" data-target="casas-history"><span>📈 History</span><span class="tab-badge">★ New</span></div>
+    <div class="section-tab" data-target="casas-changes"><span>🔄 Changes</span><span class="tab-badge">★ New</span></div>
+  </div>
+
+  <!-- Section intro bubbles (below tabs) -->
   <div class="section-intro-bubble" data-for="casas-pricing">
     <h3 class="lang-en">Pricing</h3>
     <h3 class="lang-pt">Pre&ccedil;os</h3>
     <p class="lang-en">
-      <strong>&euro;5,000/m&sup2; (&Aacute;rea &Uacute;til) & &euro;3,200/m&sup2;(&Aacute;rea Bruta)</strong>    is where the Ericeira market currently sits...but smaller typologies consistently command higher prices per m&sup2;, making direct cross-type comparisons misleading.
-      </br>Overall, prices are widely dispersed: the median asking price sits around <strong>&euro;665k</strong>,
-      but the distribution is highly skewed with a long upper tail.
-      </br>Surface alone does not explain price: properties of similar size can differ by
-      several hundred thousand euros depending on <strong>layout efficiency, typology,
-      and positioning</strong>.
+      <strong>&euro;5,000/m&sup2; (&Aacute;rea &Uacute;til) &amp; &euro;3,200/m&sup2; (&Aacute;rea Bruta)</strong> is where the Ericeira market currently sits, but smaller typologies consistently command higher prices per m&sup2;, making direct cross-type comparisons misleading.
+      </br>Overall, prices are widely dispersed: the median asking price sits around <strong>&euro;665k</strong>, but the distribution is highly skewed with a long upper tail.
+      </br>Surface alone does not explain price: properties of similar size can differ by several hundred thousand euros depending on <strong>layout efficiency, typology, and positioning</strong>.
     </p>
     <p class="lang-pt">
-      Os pre&ccedil;os s&atilde;o muito dispersos, o pre&ccedil;o mediano ronda os <strong>&euro;665k</strong>,
-      mas a distribui&ccedil;&atilde;o &eacute; fortemente enviesada com uma longa cauda superior.
+      Os pre&ccedil;os s&atilde;o muito dispersos, o pre&ccedil;o mediano ronda os <strong>&euro;665k</strong>, mas a distribui&ccedil;&atilde;o &eacute; fortemente enviesada com uma longa cauda superior.
       Isto torna o &ldquo;pre&ccedil;o m&eacute;dio&rdquo; uma refer&ecirc;ncia fraca.
-      A &aacute;rea por si s&oacute; n&atilde;o explica o pre&ccedil;o: im&oacute;veis de dimens&atilde;o semelhante
-      podem diferir em <strong>v&aacute;rias centenas de milhares de euros</strong> consoante a efici&ecirc;ncia
-      do layout, tipologia e posicionamento.
+      A &aacute;rea por si s&oacute; n&atilde;o explica o pre&ccedil;o: im&oacute;veis de dimens&atilde;o semelhante podem diferir em <strong>v&aacute;rias centenas de milhares de euros</strong> consoante a efici&ecirc;ncia do layout, tipologia e posicionamento.
     </p>
   </div>
   <div class="section-intro-bubble" data-for="casas-agencies">
@@ -719,16 +725,11 @@
     <h3 class="lang-pt">Ag&ecirc;ncias</h3>
     <p class="lang-en">
       <strong>150+ Agencies.</strong> Understanding who controls the supply matters.
-      A handful of agencies concentrate the majority of listings,
-      while average listing prices vary significantly from one agency to another,
-      reflecting different segment strategies rather than different market realities.
+      A handful of agencies concentrate the majority of listings, while average listing prices vary significantly from one agency to another, reflecting different segment strategies rather than different market realities.
     </p>
     <p class="lang-pt">
       <strong>150+ Ag&ecirc;ncias.</strong> Compreender quem controla a oferta &eacute; relevante.
-      Um punhado de ag&ecirc;ncias concentra a maioria dos an&uacute;ncios,
-      enquanto o pre&ccedil;o m&eacute;dio de lista&ccedil;&atilde;o varia significativamente
-      de ag&ecirc;ncia para ag&ecirc;ncia, refletindo estrat&eacute;gias de segmento distintas,
-      e n&atilde;o realidades de mercado diferentes.
+      Um punhado de ag&ecirc;ncias concentra a maioria dos an&uacute;ncios, enquanto o pre&ccedil;o m&eacute;dio de lista&ccedil;&atilde;o varia significativamente de ag&ecirc;ncia para ag&ecirc;ncia, refletindo estrat&eacute;gias de segmento distintas, e n&atilde;o realidades de mercado diferentes.
     </p>
   </div>
   <div class="section-intro-bubble" data-for="casas-efficiency">
@@ -736,19 +737,13 @@
     <h3 class="lang-pt">Efici&ecirc;ncia</h3>
     <p class="lang-en">
       Two properties with the same gross surface (&Aacute;rea Bruta) can feel radically different to buyers.
-      The median efficiency ratio (&Aacute;rea &Uacute;til / &Aacute;rea Bruta) is around <strong>75%</strong>,
-      with roughly <strong>one in four</strong> properties falling below this level &mdash;
-      an advertised 200&nbsp;m&sup2; property often corresponds to only 150&nbsp;m&sup2; of usable space.
-      <strong>T0 and T1 perform best</strong>, but from <strong>T2 onwards efficiency becomes unpredictable</strong>:
-      T3s in particular show the widest spread, meaning buying on gross area alone is a gamble.
+      The median efficiency ratio (&Aacute;rea &Uacute;til / &Aacute;rea Bruta) is around <strong>75%</strong>, with roughly <strong>one in four</strong> properties falling below this level &mdash; an advertised 200&nbsp;m&sup2; property often corresponds to only 150&nbsp;m&sup2; of usable space.
+      <strong>T0 and T1 perform best</strong>, but from <strong>T2 onwards efficiency becomes unpredictable</strong>: T3s in particular show the widest spread, meaning buying on gross area alone is a gamble.
     </p>
     <p class="lang-pt">
       Dois im&oacute;veis com a mesma &aacute;rea bruta podem parecer radicalmente diferentes para os compradores.
-      O r&aacute;cio mediano de efici&ecirc;ncia (&Aacute;rea &Uacute;til / &Aacute;rea Bruta) ronda os <strong>75%</strong>,
-      com cerca de <strong>um em cada quatro</strong> im&oacute;veis abaixo deste n&iacute;vel &mdash;
-      um im&oacute;vel anunciado com 200&nbsp;m&sup2; corresponde frequentemente a apenas 150&nbsp;m&sup2; de espa&ccedil;o habit&aacute;vel.
-      <strong>T0 e T1 s&atilde;o os mais eficientes</strong>, mas a partir de <strong>T2 a efici&ecirc;ncia torna-se imprevis&iacute;vel</strong>:
-      os T3 apresentam a maior dispers&atilde;o, o que torna a compra com base apenas na &aacute;rea bruta um risco.
+      O r&aacute;cio mediano de efici&ecirc;ncia (&Aacute;rea &Uacute;til / &Aacute;rea Bruta) ronda os <strong>75%</strong>, com cerca de <strong>um em cada quatro</strong> im&oacute;veis abaixo deste n&iacute;vel &mdash; um im&oacute;vel anunciado com 200&nbsp;m&sup2; corresponde frequentemente a apenas 150&nbsp;m&sup2; de espa&ccedil;o habit&aacute;vel.
+      <strong>T0 e T1 s&atilde;o os mais eficientes</strong>, mas a partir de <strong>T2 a efici&ecirc;ncia torna-se imprevis&iacute;vel</strong>: os T3 apresentam a maior dispers&atilde;o, o que torna a compra com base apenas na &aacute;rea bruta um risco.
     </p>
   </div>
   <div class="section-intro-bubble active" data-for="casas-map">
@@ -786,15 +781,6 @@
     <p class="lang-pt">
       Veja o que mudou desde o m&ecirc;s passado: novos an&uacute;ncios, im&oacute;veis retirados do mercado e pre&ccedil;os pedidos que subiram ou desceram.
     </p>
-  </div>
-
-  <div class="section-tabs">
-    <div class="section-tab active" data-target="casas-map" data-i18n="tab_map">🌍 Map</div>
-    <div class="section-tab" data-target="casas-pricing" data-i18n="tab_pricing">💶 Pricing</div>
-    <div class="section-tab" data-target="casas-agencies" data-i18n="tab_agencies">🏢 Agencies</div>
-    <div class="section-tab" data-target="casas-efficiency" data-i18n="tab_efficiency">📏 Efficiency</div>
-    <div class="section-tab" data-target="casas-history"><span>📈 History</span><span class="tab-badge">★ New</span></div>
-    <div class="section-tab" data-target="casas-changes"><span>🔄 Changes</span><span class="tab-badge">★ New</span></div>
   </div>
   <div class="content">
 
