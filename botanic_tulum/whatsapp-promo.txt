@@ -1,0 +1,22 @@
+Short WhatsApp message:
+
+Private long-term rental near the beach 🌴
+
+Brand-new penthouse flat with 1 bed, 1 bath, huge private terrace, plunge pool and jungle sunset views. Full complex amenities include rooftop pool/bar, gym, coworking, yoga deck, massage room, security and elevator.
+
+Perfect for remote workers or couples who want a quiet, private home near the beach.
+
+See photos and details here:
+<your website URL once hosted>
+
+Image suggestion:
+- Use the main terrace / plunge pool photo with jungle views
+- If possible, choose an image showing the private terrace and the treetop sunset
+- Save it to `image/flat-terrace.jpg` and use that on the landing page
+
+Landing page file:
+- `index.html`
+
+Next step:
+- Upload `index.html` to your web host and replace the CTA button URL with your hosted page link.
+- Add your contact info or WhatsApp number to the page when ready.
