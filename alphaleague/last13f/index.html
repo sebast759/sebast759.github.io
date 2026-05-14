@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AlphaLeague — Last 13F</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+          background:#f8f9fa;color:#212529}
+
+    /* header */
+    .hdr{background:#368c2e;color:#fff;padding:.7rem 2rem;
+          display:flex;align-items:center;gap:1.2rem}
+    .hdr a{color:#fff;opacity:.75;font-size:.85rem;text-decoration:none}
+    .hdr a:hover{opacity:1}
+    .hdr h1{font-size:1.25rem;font-weight:700}
+
+    /* fund tabs */
+    .top-tabs{display:flex;flex-wrap:wrap;gap:.35rem;
+               padding:.9rem 2rem 0;background:#fff;
+               border-bottom:2px solid #dee2e6}
+    .top-tab{padding:.4rem 1rem;border-radius:4px 4px 0 0;cursor:pointer;
+              font-size:.88rem;font-weight:500;color:#495057;
+              background:#f1f3f5;border:1px solid #dee2e6;border-bottom:none;
+              transition:background .15s}
+    .top-tab:hover{background:#e9ecef}
+    .top-tab.active{background:#fff;color:#368c2e;font-weight:700;
+                     border-bottom:2px solid #fff;margin-bottom:-2px}
+
+    /* chart tabs */
+    .sec-tabs{display:flex;flex-wrap:wrap;gap:.3rem;padding:.6rem 0 .9rem}
+    .sec-tab{padding:.28rem .85rem;border-radius:20px;cursor:pointer;
+              font-size:.8rem;color:#495057;background:#e9ecef;
+              transition:background .12s}
+    .sec-tab:hover{background:#dee2e6}
+    .sec-tab.active{background:#368c2e;color:#fff;font-weight:600}
+
+    /* content */
+    .fund-block{padding:1rem 2rem 2.5rem}
+    .fund-block h2{color:#368c2e;font-size:1.15rem;margin-bottom:.5rem}
+    .chart-sec img{max-width:100%;border-radius:6px;
+                    box-shadow:0 2px 10px rgba(0,0,0,.09)}
+
+    @media(max-width:700px){
+      .top-tabs,.fund-block{padding-left:.8rem;padding-right:.8rem}
+    }
+  </style>
+</head>
+<body>
+
+<div class="hdr">
+  <div>
+    <a href="../index.html">← AlphaLeague</a>
+    <h1>Last 13F &mdash; Favourite Funds</h1>
+  </div>
+</div>
+
+<div class="top-tabs">
+  <div class="top-tab active" data-target="fund-SITUATIONAL_AWARENESS">Situational Awareness</div>
+  <div class="top-tab" data-target="fund-BERKSHIRE">Berkshire</div>
+  <div class="top-tab" data-target="fund-RA">Ra</div>
+  <div class="top-tab" data-target="fund-AKO">Ako</div>
+  <div class="top-tab" data-target="fund-ALPINE">Alpine</div>
+  <div class="top-tab" data-target="fund-VOLEON">Voleon</div>
+</div>
+
+<div id="fund-SITUATIONAL_AWARENESS" class="fund-block" style="display:block">
+  <h2>Situational Awareness</h2>
+  <div class="sec-tabs">
+    <span class="sec-tab active" data-fund="SITUATIONAL_AWARENESS" data-target="s-SITUATIONAL_AWARENESS-aum">AUM</span>
+    <span class="sec-tab" data-fund="SITUATIONAL_AWARENESS" data-target="s-SITUATIONAL_AWARENESS-track">Clone Track</span>
+    <span class="sec-tab" data-fund="SITUATIONAL_AWARENESS" data-target="s-SITUATIONAL_AWARENESS-positions">Positions</span>
+    <span class="sec-tab" data-fund="SITUATIONAL_AWARENESS" data-target="s-SITUATIONAL_AWARENESS-buysells">Buys & Sells</span>
+    <span class="sec-tab" data-fund="SITUATIONAL_AWARENESS" data-target="s-SITUATIONAL_AWARENESS-buysperf">Buys Perf</span>
+  </div>
+  <div id="s-SITUATIONAL_AWARENESS-aum" class="chart-sec" style="display:block">
+    <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_aum.png" alt="AUM">
+  </div>
+  <div id="s-SITUATIONAL_AWARENESS-track" class="chart-sec" style="display:none">
+    <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_clone_track.png" alt="Clone Track">
+  </div>
+  <div id="s-SITUATIONAL_AWARENESS-positions" class="chart-sec" style="display:none">
+    <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_positions.png" alt="Positions">
+  </div>
+  <div id="s-SITUATIONAL_AWARENESS-buysells" class="chart-sec" style="display:none">
+    <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_buys_sells.png" alt="Buys & Sells">
+  </div>
+  <div id="s-SITUATIONAL_AWARENESS-buysperf" class="chart-sec" style="display:none">
+    <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_buys_sells_perf.png" alt="Buys Perf">
+  </div>
+</div>
+<div id="fund-BERKSHIRE" class="fund-block" style="display:none">
+  <h2>Berkshire</h2>
+  <div class="sec-tabs">
+    <span class="sec-tab active" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-aum">AUM</span>
+    <span class="sec-tab" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-track">Clone Track</span>
+    <span class="sec-tab" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-positions">Positions</span>
+    <span class="sec-tab" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-buysells">Buys & Sells</span>
+    <span class="sec-tab" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-buysperf">Buys Perf</span>
+  </div>
+  <div id="s-BERKSHIRE-aum" class="chart-sec" style="display:block">
+    <img src="BERKSHIRE/BERKSHIRE_aum.png" alt="AUM">
+  </div>
+  <div id="s-BERKSHIRE-track" class="chart-sec" style="display:none">
+    <img src="BERKSHIRE/BERKSHIRE_clone_track.png" alt="Clone Track">
+  </div>
+  <div id="s-BERKSHIRE-positions" class="chart-sec" style="display:none">
+    <img src="BERKSHIRE/BERKSHIRE_positions.png" alt="Positions">
+  </div>
+  <div id="s-BERKSHIRE-buysells" class="chart-sec" style="display:none">
+    <img src="BERKSHIRE/BERKSHIRE_buys_sells.png" alt="Buys & Sells">
+  </div>
+  <div id="s-BERKSHIRE-buysperf" class="chart-sec" style="display:none">
+    <img src="BERKSHIRE/BERKSHIRE_buys_sells_perf.png" alt="Buys Perf">
+  </div>
+</div>
+<div id="fund-RA" class="fund-block" style="display:none">
+  <h2>Ra</h2>
+  <div class="sec-tabs">
+    <span class="sec-tab active" data-fund="RA" data-target="s-RA-aum">AUM</span>
+    <span class="sec-tab" data-fund="RA" data-target="s-RA-track">Clone Track</span>
+    <span class="sec-tab" data-fund="RA" data-target="s-RA-positions">Positions</span>
+    <span class="sec-tab" data-fund="RA" data-target="s-RA-buysells">Buys & Sells</span>
+    <span class="sec-tab" data-fund="RA" data-target="s-RA-buysperf">Buys Perf</span>
+  </div>
+  <div id="s-RA-aum" class="chart-sec" style="display:block">
+    <img src="RA/RA_aum.png" alt="AUM">
+  </div>
+  <div id="s-RA-track" class="chart-sec" style="display:none">
+    <img src="RA/RA_clone_track.png" alt="Clone Track">
+  </div>
+  <div id="s-RA-positions" class="chart-sec" style="display:none">
+    <img src="RA/RA_positions.png" alt="Positions">
+  </div>
+  <div id="s-RA-buysells" class="chart-sec" style="display:none">
+    <img src="RA/RA_buys_sells.png" alt="Buys & Sells">
+  </div>
+  <div id="s-RA-buysperf" class="chart-sec" style="display:none">
+    <img src="RA/RA_buys_sells_perf.png" alt="Buys Perf">
+  </div>
+</div>
+<div id="fund-AKO" class="fund-block" style="display:none">
+  <h2>Ako</h2>
+  <div class="sec-tabs">
+    <span class="sec-tab active" data-fund="AKO" data-target="s-AKO-aum">AUM</span>
+    <span class="sec-tab" data-fund="AKO" data-target="s-AKO-track">Clone Track</span>
+    <span class="sec-tab" data-fund="AKO" data-target="s-AKO-positions">Positions</span>
+    <span class="sec-tab" data-fund="AKO" data-target="s-AKO-buysells">Buys & Sells</span>
+    <span class="sec-tab" data-fund="AKO" data-target="s-AKO-buysperf">Buys Perf</span>
+  </div>
+  <div id="s-AKO-aum" class="chart-sec" style="display:block">
+    <img src="AKO/AKO_aum.png" alt="AUM">
+  </div>
+  <div id="s-AKO-track" class="chart-sec" style="display:none">
+    <img src="AKO/AKO_clone_track.png" alt="Clone Track">
+  </div>
+  <div id="s-AKO-positions" class="chart-sec" style="display:none">
+    <img src="AKO/AKO_positions.png" alt="Positions">
+  </div>
+  <div id="s-AKO-buysells" class="chart-sec" style="display:none">
+    <img src="AKO/AKO_buys_sells.png" alt="Buys & Sells">
+  </div>
+  <div id="s-AKO-buysperf" class="chart-sec" style="display:none">
+    <img src="AKO/AKO_buys_sells_perf.png" alt="Buys Perf">
+  </div>
+</div>
+<div id="fund-ALPINE" class="fund-block" style="display:none">
+  <h2>Alpine</h2>
+  <div class="sec-tabs">
+    <span class="sec-tab active" data-fund="ALPINE" data-target="s-ALPINE-aum">AUM</span>
+    <span class="sec-tab" data-fund="ALPINE" data-target="s-ALPINE-track">Clone Track</span>
+    <span class="sec-tab" data-fund="ALPINE" data-target="s-ALPINE-positions">Positions</span>
+    <span class="sec-tab" data-fund="ALPINE" data-target="s-ALPINE-buysells">Buys & Sells</span>
+    <span class="sec-tab" data-fund="ALPINE" data-target="s-ALPINE-buysperf">Buys Perf</span>
+  </div>
+  <div id="s-ALPINE-aum" class="chart-sec" style="display:block">
+    <img src="ALPINE/ALPINE_aum.png" alt="AUM">
+  </div>
+  <div id="s-ALPINE-track" class="chart-sec" style="display:none">
+    <img src="ALPINE/ALPINE_clone_track.png" alt="Clone Track">
+  </div>
+  <div id="s-ALPINE-positions" class="chart-sec" style="display:none">
+    <img src="ALPINE/ALPINE_positions.png" alt="Positions">
+  </div>
+  <div id="s-ALPINE-buysells" class="chart-sec" style="display:none">
+    <img src="ALPINE/ALPINE_buys_sells.png" alt="Buys & Sells">
+  </div>
+  <div id="s-ALPINE-buysperf" class="chart-sec" style="display:none">
+    <img src="ALPINE/ALPINE_buys_sells_perf.png" alt="Buys Perf">
+  </div>
+</div>
+<div id="fund-VOLEON" class="fund-block" style="display:none">
+  <h2>Voleon</h2>
+  <div class="sec-tabs">
+    <span class="sec-tab active" data-fund="VOLEON" data-target="s-VOLEON-aum">AUM</span>
+    <span class="sec-tab" data-fund="VOLEON" data-target="s-VOLEON-track">Clone Track</span>
+    <span class="sec-tab" data-fund="VOLEON" data-target="s-VOLEON-positions">Positions</span>
+    <span class="sec-tab" data-fund="VOLEON" data-target="s-VOLEON-buysells">Buys & Sells</span>
+    <span class="sec-tab" data-fund="VOLEON" data-target="s-VOLEON-buysperf">Buys Perf</span>
+  </div>
+  <div id="s-VOLEON-aum" class="chart-sec" style="display:block">
+    <img src="VOLEON/VOLEON_aum.png" alt="AUM">
+  </div>
+  <div id="s-VOLEON-track" class="chart-sec" style="display:none">
+    <img src="VOLEON/VOLEON_clone_track.png" alt="Clone Track">
+  </div>
+  <div id="s-VOLEON-positions" class="chart-sec" style="display:none">
+    <img src="VOLEON/VOLEON_positions.png" alt="Positions">
+  </div>
+  <div id="s-VOLEON-buysells" class="chart-sec" style="display:none">
+    <img src="VOLEON/VOLEON_buys_sells.png" alt="Buys & Sells">
+  </div>
+  <div id="s-VOLEON-buysperf" class="chart-sec" style="display:none">
+    <img src="VOLEON/VOLEON_buys_sells_perf.png" alt="Buys Perf">
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.top-tab').forEach(t => t.addEventListener('click', () => {
+    const id = t.dataset.target;
+    document.querySelectorAll('.top-tab').forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('.fund-block').forEach(x => x.style.display = 'none');
+    t.classList.add('active');
+    document.getElementById(id).style.display = 'block';
+  }));
+
+  document.querySelectorAll('.sec-tab').forEach(t => t.addEventListener('click', () => {
+    const fund = t.dataset.fund, id = t.dataset.target;
+    document.querySelectorAll(`.sec-tab[data-fund="${fund}"]`).forEach(x => x.classList.remove('active'));
+    document.querySelectorAll(`[id^="s-${fund}-"]`).forEach(x => x.style.display = 'none');
+    t.classList.add('active');
+    document.getElementById(id).style.display = 'block';
+  }));
+</script>
+</body>
+</html>
