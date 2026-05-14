@@ -28,7 +28,7 @@
     .top-tab:hover{background:#e9ecef}
     .top-tab.active{background:#fff;color:#368c2e;font-weight:700;
                      border-bottom:2px solid #fff;margin-bottom:-2px}
-    .top-tab img{width:30px;height:30px;border-radius:50%;object-fit:cover;flex-shrink:0;
+    .top-tab img{width:46px;height:46px;border-radius:50%;object-fit:cover;flex-shrink:0;
                   border:2px solid #dee2e6;transition:border-color .15s}
     .top-tab.active img{border-color:#368c2e}
 
@@ -39,6 +39,9 @@
               transition:background .12s}
     .sec-tab:hover{background:#dee2e6}
     .sec-tab.active{background:#368c2e;color:#fff;font-weight:600}
+    .sec-tab.featured{background:#fff8e1;color:#7c5800;border:1px solid #f5c842;font-weight:600}
+    .sec-tab.featured:hover{background:#fff0b3}
+    .sec-tab.featured.active{background:#e6a800;color:#fff;border-color:#e6a800}
 
     /* content */
     .fund-block{padding:1rem 2rem 2.5rem}
@@ -75,10 +78,10 @@
   <h2>Situational Awareness</h2>
   <div class="sec-tabs">
     <span class="sec-tab active" data-fund="SITUATIONAL_AWARENESS" data-target="s-SITUATIONAL_AWARENESS-aum">AUM</span>
-    <span class="sec-tab" data-fund="SITUATIONAL_AWARENESS" data-target="s-SITUATIONAL_AWARENESS-track">Clone Track</span>
+    <span class="sec-tab featured" data-fund="SITUATIONAL_AWARENESS" data-target="s-SITUATIONAL_AWARENESS-track">Fund Clone</span>
     <span class="sec-tab" data-fund="SITUATIONAL_AWARENESS" data-target="s-SITUATIONAL_AWARENESS-positions">Positions</span>
     <span class="sec-tab" data-fund="SITUATIONAL_AWARENESS" data-target="s-SITUATIONAL_AWARENESS-buysells">Buys & Sells</span>
-    <span class="sec-tab" data-fund="SITUATIONAL_AWARENESS" data-target="s-SITUATIONAL_AWARENESS-buysperf">Buys & Sell Perf</span>
+    <span class="sec-tab featured" data-fund="SITUATIONAL_AWARENESS" data-target="s-SITUATIONAL_AWARENESS-buysperf">Buys & Sell Perf</span>
   </div>
   <div id="s-SITUATIONAL_AWARENESS-aum" class="chart-sec" style="display:block">
     <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_aum.png" alt="AUM">
@@ -100,10 +103,10 @@
   <h2>Berkshire</h2>
   <div class="sec-tabs">
     <span class="sec-tab active" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-aum">AUM</span>
-    <span class="sec-tab" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-track">Clone Track</span>
+    <span class="sec-tab featured" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-track">Fund Clone</span>
     <span class="sec-tab" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-positions">Positions</span>
     <span class="sec-tab" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-buysells">Buys & Sells</span>
-    <span class="sec-tab" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-buysperf">Buys & Sell Perf</span>
+    <span class="sec-tab featured" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-buysperf">Buys & Sell Perf</span>
   </div>
   <div id="s-BERKSHIRE-aum" class="chart-sec" style="display:block">
     <img src="BERKSHIRE/BERKSHIRE_aum.png" alt="AUM">
@@ -125,10 +128,10 @@
   <h2>Ra</h2>
   <div class="sec-tabs">
     <span class="sec-tab active" data-fund="RA" data-target="s-RA-aum">AUM</span>
-    <span class="sec-tab" data-fund="RA" data-target="s-RA-track">Clone Track</span>
+    <span class="sec-tab featured" data-fund="RA" data-target="s-RA-track">Fund Clone</span>
     <span class="sec-tab" data-fund="RA" data-target="s-RA-positions">Positions</span>
     <span class="sec-tab" data-fund="RA" data-target="s-RA-buysells">Buys & Sells</span>
-    <span class="sec-tab" data-fund="RA" data-target="s-RA-buysperf">Buys & Sell Perf</span>
+    <span class="sec-tab featured" data-fund="RA" data-target="s-RA-buysperf">Buys & Sell Perf</span>
   </div>
   <div id="s-RA-aum" class="chart-sec" style="display:block">
     <img src="RA/RA_aum.png" alt="AUM">
@@ -150,10 +153,10 @@
   <h2>Ako</h2>
   <div class="sec-tabs">
     <span class="sec-tab active" data-fund="AKO" data-target="s-AKO-aum">AUM</span>
-    <span class="sec-tab" data-fund="AKO" data-target="s-AKO-track">Clone Track</span>
+    <span class="sec-tab featured" data-fund="AKO" data-target="s-AKO-track">Fund Clone</span>
     <span class="sec-tab" data-fund="AKO" data-target="s-AKO-positions">Positions</span>
     <span class="sec-tab" data-fund="AKO" data-target="s-AKO-buysells">Buys & Sells</span>
-    <span class="sec-tab" data-fund="AKO" data-target="s-AKO-buysperf">Buys & Sell Perf</span>
+    <span class="sec-tab featured" data-fund="AKO" data-target="s-AKO-buysperf">Buys & Sell Perf</span>
   </div>
   <div id="s-AKO-aum" class="chart-sec" style="display:block">
     <img src="AKO/AKO_aum.png" alt="AUM">
