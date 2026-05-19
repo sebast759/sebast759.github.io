@@ -54,7 +54,7 @@
     /* buys & sells bar charts: landscape, keep compact */
     [id$="-buysells"] img{max-height:60vh}
     /* buys & sells perf: multi-row chart, needs full height */
-    [id$="-buysperf"] img{max-height:95vh}
+    [id$="-buysperf"] img{max-height:155vh}
     /* stacked chart subtitles */
     .chart-subtitle{font-size:.85rem;font-weight:600;color:#495057;
                      margin:1.2rem 0 .3rem}
@@ -62,6 +62,8 @@
     /* explanatory caption below chart */
     .chart-caption{font-size:.8rem;color:#6c757d;margin-top:.8rem;
                     max-width:900px;line-height:1.5}
+    /* positions table wrapper */
+    .pos-table-wrap{margin-top:1.5rem;max-width:900px;overflow-x:auto}
 
     @media(max-width:700px){
       .top-tabs,.fund-block{padding-left:.8rem;padding-right:.8rem}
@@ -79,6 +81,15 @@
 
 <div class="top-tabs">
   <div class="top-tab active" data-target="fund-SITUATIONAL_AWARENESS"><img src="../images/managers/situational_awareness.png" alt="">Sit. Awareness</div>
+  <div class="top-tab" data-target="fund-BERKSHIRE"><img src="../images/managers/berkshire.png" alt="">Berkshire</div>
+  <div class="top-tab" data-target="fund-ARK"><img src="../images/managers/ark.png" alt="">Ark</div>
+  <div class="top-tab" data-target="fund-COATUE"><img src="../images/managers/coatue.png" alt="">Coatue</div>
+  <div class="top-tab" data-target="fund-PERSHING"><img src="../images/managers/pershing.png" alt="">Pershing</div>
+  <div class="top-tab" data-target="fund-THIRD_POINT"><img src="../images/managers/third_point.png" alt="">Third Point</div>
+  <div class="top-tab" data-target="fund-BAUPOST"><img src="../images/managers/baupost.png" alt="">Baupost</div>
+  <div class="top-tab" data-target="fund-AKO"><img src="../images/managers/ako.png" alt="">Ako</div>
+  <div class="top-tab" data-target="fund-RA"><img src="../images/managers/ra.png" alt="">Ra</div>
+  <div class="top-tab" data-target="fund-ALPINE"><img src="../images/managers/alpine.png" alt="">Alpine</div>
 </div>
 
 <div id="fund-SITUATIONAL_AWARENESS" class="fund-block" style="display:block">
@@ -91,7 +102,7 @@
     <span class="sec-tab featured" data-fund="SITUATIONAL_AWARENESS" data-target="s-SITUATIONAL_AWARENESS-buysperf">Buys & Sell Perf</span>
   </div>
   <div id="s-SITUATIONAL_AWARENESS-aum" class="chart-sec" style="display:block">
-  <p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
+  <p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>Δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
   <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_aum.png" alt="AUM">
   </div>
   <div id="s-SITUATIONAL_AWARENESS-track" class="chart-sec" style="display:none">
@@ -99,11 +110,82 @@
   <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_clone_track.png" alt="Clone Track">
   </div>
   <div id="s-SITUATIONAL_AWARENESS-positions" class="chart-sec" style="display:none">
-  <p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &delta;&thinsp;=&thinsp;25% of notional).</p>
+  <p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).</p>
   <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_positions.png" alt="Positions">
+  <div class="pos-table-wrap">
+    <h3>Long Positions</h3>
+    <table class="pos-tbl">
+      <thead><tr><th>Ticker</th><th>Name</th>
+        <th colspan="2">Mar 2026 (AUM $13.7B)</th><th colspan="2">Dec 2025 (AUM $5.5B)</th></tr>
+        <tr><th></th><th></th>
+        <th>Value</th><th>Weight</th><th>Value</th><th>Weight</th></tr>
+      </thead>
+      <tbody><tr><td><b>BE</b></td><td>BLOOM ENERGY CORP</td><td class="num">$879M</td><td class="num">6.4%</td><td class="num">$876M</td><td class="num">15.9%</td></tr>
+<tr><td><b>SNDK</b></td><td>SANDISK CORP</td><td class="num">$724M</td><td class="num">5.3%</td><td class="num">$250M</td><td class="num">4.5%</td></tr>
+<tr><td><b>CRWV</b></td><td>COREWEAVE INC</td><td class="num">$556M</td><td class="num">4.1%</td><td class="num">$437M</td><td class="num">7.9%</td></tr>
+<tr><td><b>CORZ</b></td><td>CORE SCIENTIFIC INC NEW</td><td class="num">$389M</td><td class="num">2.8%</td><td class="num">$419M</td><td class="num">7.6%</td></tr>
+<tr><td><b>APLD</b></td><td>APPLIED DIGITAL CORP</td><td class="num">$320M</td><td class="num">2.3%</td><td class="num">$278M</td><td class="num">5.0%</td></tr>
+<tr><td><b>RIOT</b></td><td>RIOT PLATFORMS INC</td><td class="num">$142M</td><td class="num">1.0%</td><td class="num">$78M</td><td class="num">1.4%</td></tr>
+<tr><td><b>CLSK</b></td><td>CLEANSPARK INC</td><td class="num">$104M</td><td class="num">0.8%</td><td class="num">$17M</td><td class="num">0.3%</td></tr>
+<tr><td><b>SEI</b></td><td>SOLARIS ENERGY INFRAS INC</td><td class="num">$62M</td><td class="num">0.5%</td><td class="num">$86M</td><td class="num">1.6%</td></tr>
+<tr><td><b>TE</b></td><td>T1 ENERGY INC</td><td class="num">$44M</td><td class="num">0.3%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>1B2</b></td><td>BITFARMS LTD</td><td class="num">$39M</td><td class="num">0.3%</td><td class="num">$16M</td><td class="num">0.3%</td></tr>
+<tr><td><b>PSIX</b></td><td>POWER SOLUTIONS INTL INC</td><td class="num">$26M</td><td class="num">0.2%</td><td class="num">$25M</td><td class="num">0.4%</td></tr>
+<tr><td><b>AMD</b></td><td>ADVANCED MICRO DEVICES INC</td><td class="num">$20M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>BW</b></td><td>BABCOCK & WILCOX ENTERPRISES</td><td class="num">$20M</td><td class="num">0.1%</td><td class="num">$9M</td><td class="num">0.2%</td></tr>
+<tr><td><b>SHAZ</b></td><td>SHARONAI HOLDINGS INC</td><td class="num">$18M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>PUMP</b></td><td>PROPETRO HLDG CORP</td><td class="num">$13M</td><td class="num">0.1%</td><td class="num">$9M</td><td class="num">0.2%</td></tr>
+<tr><td><b>SMH</b></td><td>VANECK ETF TRUST</td><td class="num">$10M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>INTC</b></td><td>INTEL CORP</td><td class="num">$9M</td><td class="num">0.1%</td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>TSM</b></td><td>TAIWAN SEMICONDUCTOR MANUFAC</td><td class="num">$8M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>HIVE</b></td><td>HIVE DIGITAL TECHNOLOGIES LT</td><td class="num">$6M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>MU</b></td><td>MICRON TECHNOLOGY INC</td><td class="num">$6M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>GLW</b></td><td>CORNING INC</td><td class="num">$1M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>NVDA</b></td><td>NVIDIA CORPORATION</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>CIFR</b></td><td>CIPHER MINING INC</td><td class="num"></td><td class="num"></td><td class="num">$155M</td><td class="num">2.8%</td></tr>
+<tr><td><b>COHR</b></td><td>COHERENT CORP</td><td class="num"></td><td class="num"></td><td class="num">$89M</td><td class="num">1.6%</td></tr>
+<tr><td><b>EQT</b></td><td>EQT CORP</td><td class="num"></td><td class="num"></td><td class="num">$133M</td><td class="num">2.4%</td></tr>
+<tr><td><b>HUT</b></td><td>HUT 8 CORP</td><td class="num"></td><td class="num"></td><td class="num">$40M</td><td class="num">0.7%</td></tr>
+<tr><td><b>KRC</b></td><td>KILROY RLTY CORP</td><td class="num"></td><td class="num"></td><td class="num">$50M</td><td class="num">0.9%</td></tr>
+<tr><td><b>LBRT</b></td><td>LIBERTY ENERGY INC</td><td class="num"></td><td class="num"></td><td class="num">$10M</td><td class="num">0.2%</td></tr>
+<tr><td><b>LITE</b></td><td>LUMENTUM HLDGS INC</td><td class="num"></td><td class="num"></td><td class="num">$479M</td><td class="num">8.7%</td></tr>
+</tbody>
+    </table>
+    
+        <h3 style="margin-top:1.5rem;color:#ad1457">Options</h3>
+        <table class="pos-tbl">
+          <thead>
+            <tr><th rowspan="2">Ticker</th><th rowspan="2">Name</th>
+              <th colspan="4" style="text-align:center;border-left:2px solid #dee2e6">Put</th>
+              <th colspan="4" style="text-align:center;border-left:2px solid #dee2e6">Call</th></tr>
+            <tr>
+              <th style="border-left:2px solid #dee2e6">Notional Mar 2026</th><th>Weight</th>
+              <th>Notional Dec 2025</th><th>Weight</th>
+              <th style="border-left:2px solid #dee2e6">Notional Mar 2026</th><th>Weight</th>
+              <th>Notional Dec 2025</th><th>Weight</th>
+            </tr>
+          </thead>
+          <tbody><tr><td><b>SMH</b></td><td>VANECK ETF TRUST</td><td class="num">$2,043M</td><td class="num">14.9%</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>NVDA</b></td><td>NVIDIA CORPORATION</td><td class="num">$1,568M</td><td class="num">11.5%</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>ORCL</b></td><td>ORACLE CORP</td><td class="num">$1,073M</td><td class="num">7.8%</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>AVGO</b></td><td>BROADCOM INC</td><td class="num">$1,006M</td><td class="num">7.4%</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>AMD</b></td><td>ADVANCED MICRO DEVICES INC</td><td class="num">$969M</td><td class="num">7.1%</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>MU</b></td><td>MICRON TECHNOLOGY INC</td><td class="num">$584M</td><td class="num">4.3%</td><td class="num"></td><td class="num"></td><td class="num">$422M</td><td class="num">3.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>TSM</b></td><td>TAIWAN SEMICONDUCTOR MANUFAC</td><td class="num">$535M</td><td class="num">3.9%</td><td class="num"></td><td class="num"></td><td class="num">$355M</td><td class="num">2.6%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>INTC</b></td><td>INTEL CORP</td><td class="num">$159M</td><td class="num">1.2%</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num">$747M</td><td class="num">13.5%</td></tr>
+<tr><td><b>GLW</b></td><td>CORNING INC</td><td class="num">$21M</td><td class="num">0.2%</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>INFY</b></td><td>INFOSYS LTD</td><td class="num">$7M</td><td class="num">0.0%</td><td class="num">$9M</td><td class="num">0.2%</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>SNDK</b></td><td>SANDISK CORP</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num">$389M</td><td class="num">2.8%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>CRWV</b></td><td>COREWEAVE INC</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num">$141M</td><td class="num">1.0%</td><td class="num">$774M</td><td class="num">14.0%</td></tr>
+<tr><td><b>BE</b></td><td>BLOOM ENERGY CORP</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num">$55M</td><td class="num">0.4%</td><td class="num">$35M</td><td class="num">0.6%</td></tr>
+<tr><td><b>EQT</b></td><td>EQT CORP</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num">$38M</td><td class="num">0.7%</td></tr>
+</tbody>
+        </table>
+        <p style="font-size:.75rem;color:#888;margin-top:.3rem">Weights at &Delta;=25% of notional</p>
+    </div>
   </div>
   <div id="s-SITUATIONAL_AWARENESS-buysells" class="chart-sec" style="display:none">
-  <p class="chart-caption">Changes in portfolio between the two most recent quarters. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates total AUM, compressing all stock weights even with no stock trades. <b>Δ$ (shares &times; price)</b> is immune to this distortion — it directly measures conviction in dollar terms and is the preferred view.</p>
+  <p class="chart-caption">Changes in portfolio between the two most recent quarters. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates total AUM, compressing all stock weights even with no stock trades. <b>Δ$ = Δ shares × implied price (value/shares from 13F)</b> — captures partial sells to take profit even when position value stays flat due to price appreciation.</p>
   <p class="chart-subtitle">By Δ% weight</p>
   <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_buys_sells.png" alt="By Δ% weight">
   <p class="chart-subtitle">By Δ$ (shares × price)</p>
@@ -112,6 +194,1045 @@
   <div id="s-SITUATIONAL_AWARENESS-buysperf" class="chart-sec" style="display:none">
   <p class="chart-caption">Price performance of the top buys and sells in the 180 days following each quarter-end, normalised to 0% at quarter-end. The dashed vertical line marks +45 days (when the 13F becomes public). Universe = same top buys / sells as the Δ$ chart. Pink dashed lines indicate Put options held on that name.</p>
   <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_buys_sells_perf.png" alt="Buys & Sell Perf">
+  </div>
+</div>
+<div id="fund-BERKSHIRE" class="fund-block" style="display:none">
+  <h2>Berkshire</h2>
+  <div class="sec-tabs">
+    <span class="sec-tab active" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-aum">AUM</span>
+    <span class="sec-tab featured" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-track">Fund Clone</span>
+    <span class="sec-tab" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-positions">Positions</span>
+    <span class="sec-tab" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-buysells">Buys & Sells</span>
+    <span class="sec-tab featured" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-buysperf">Buys & Sell Perf</span>
+  </div>
+  <div id="s-BERKSHIRE-aum" class="chart-sec" style="display:block">
+  <p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>Δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
+  <img src="BERKSHIRE/BERKSHIRE_aum.png" alt="AUM">
+  </div>
+  <div id="s-BERKSHIRE-track" class="chart-sec" style="display:none">
+  <p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights, normalised to 1 at inception. <b>Clone all</b> uses every reported position. <b>Clone top&thinsp;N</b> keeps only the largest N positions, equal-weighted. <b>+45d public</b> simulates an investor who acts only after the filing becomes public (45 days after quarter-end). Compared against SPY as benchmark.</p>
+  <img src="BERKSHIRE/BERKSHIRE_clone_track.png" alt="Clone Track">
+  </div>
+  <div id="s-BERKSHIRE-positions" class="chart-sec" style="display:none">
+  <p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).</p>
+  <img src="BERKSHIRE/BERKSHIRE_positions.png" alt="Positions">
+  <div class="pos-table-wrap">
+    <h3>Long Positions</h3>
+    <table class="pos-tbl">
+      <thead><tr><th>Ticker</th><th>Name</th>
+        <th colspan="2">Mar 2026 (AUM $263.1B)</th><th colspan="2">Dec 2025 (AUM $274.2B)</th></tr>
+        <tr><th></th><th></th>
+        <th>Value</th><th>Weight</th><th>Value</th><th>Weight</th></tr>
+      </thead>
+      <tbody><tr><td><b>AAPL</b></td><td>APPLE INC</td><td class="num">$57,843M</td><td class="num">22.0%</td><td class="num">$61,962M</td><td class="num">22.6%</td></tr>
+<tr><td><b>AXP</b></td><td>AMERICAN EXPRESS CO</td><td class="num">$45,859M</td><td class="num">17.4%</td><td class="num">$56,088M</td><td class="num">20.5%</td></tr>
+<tr><td><b>KO</b></td><td>COCA COLA CO</td><td class="num">$30,420M</td><td class="num">11.6%</td><td class="num">$27,964M</td><td class="num">10.2%</td></tr>
+<tr><td><b>BAC</b></td><td>BANK AMERICA CORP</td><td class="num">$25,039M</td><td class="num">9.5%</td><td class="num">$28,451M</td><td class="num">10.4%</td></tr>
+<tr><td><b>CVX</b></td><td>CHEVRON CORPORATION</td><td class="num">$17,457M</td><td class="num">6.6%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>OXY</b></td><td>OCCIDENTAL PETE CORP</td><td class="num">$17,221M</td><td class="num">6.5%</td><td class="num">$10,894M</td><td class="num">4.0%</td></tr>
+<tr><td><b>GOOGL</b></td><td>ALPHABET INC</td><td class="num">$15,600M</td><td class="num">5.9%</td><td class="num">$5,586M</td><td class="num">2.0%</td></tr>
+<tr><td><b>CB</b></td><td>CHUBB LTD SWITZ</td><td class="num">$11,163M</td><td class="num">4.2%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>MCO</b></td><td>MOODYS CORP</td><td class="num">$10,762M</td><td class="num">4.1%</td><td class="num">$12,603M</td><td class="num">4.6%</td></tr>
+<tr><td><b>KHC</b></td><td>KRAFT HEINZ CO</td><td class="num">$7,324M</td><td class="num">2.8%</td><td class="num">$7,897M</td><td class="num">2.9%</td></tr>
+<tr><td><b>DVA</b></td><td>DAVITA INC</td><td class="num">$4,626M</td><td class="num">1.8%</td><td class="num">$3,608M</td><td class="num">1.3%</td></tr>
+<tr><td><b>KR</b></td><td>KROGER CO</td><td class="num">$3,618M</td><td class="num">1.4%</td><td class="num">$3,124M</td><td class="num">1.1%</td></tr>
+<tr><td><b>SIRI</b></td><td>SIRIUSXM HOLDINGS INC</td><td class="num">$2,881M</td><td class="num">1.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>DAL</b></td><td>DELTA AIR LINES INC</td><td class="num">$2,647M</td><td class="num">1.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>VRSN</b></td><td>VERISIGN INC</td><td class="num">$2,233M</td><td class="num">0.8%</td><td class="num">$2,184M</td><td class="num">0.8%</td></tr>
+<tr><td><b>COF</b></td><td>CAPITAL ONE FINL CORP</td><td class="num">$1,304M</td><td class="num">0.5%</td><td class="num">$1,733M</td><td class="num">0.6%</td></tr>
+<tr><td><b>NYT</b></td><td>NEW YORK TIMES CO MTN BE</td><td class="num">$1,268M</td><td class="num">0.5%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>ALLY</b></td><td>ALLY FINL INC</td><td class="num">$1,138M</td><td class="num">0.4%</td><td class="num">$1,313M</td><td class="num">0.5%</td></tr>
+<tr><td><b>GOOG</b></td><td>ALPHABET INC</td><td class="num">$1,028M</td><td class="num">0.4%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>LLYVK</b></td><td>LIBERTY LIVE HOLDINGS INC</td><td class="num">$996M</td><td class="num">0.4%</td><td class="num">$908M</td><td class="num">0.3%</td></tr>
+<tr><td><b>LEN</b></td><td>LENNAR CORP</td><td class="num">$877M</td><td class="num">0.3%</td><td class="num">$725M</td><td class="num">0.3%</td></tr>
+<tr><td><b>NUE</b></td><td>NUCOR CORP</td><td class="num">$661M</td><td class="num">0.3%</td><td class="num">$1,045M</td><td class="num">0.4%</td></tr>
+<tr><td><b>LLYVA</b></td><td>LIBERTY LIVE HOLDINGS INC</td><td class="num">$457M</td><td class="num">0.2%</td><td class="num">$406M</td><td class="num">0.1%</td></tr>
+<tr><td><b>LPX</b></td><td>LOUISIANA PAC CORP</td><td class="num">$412M</td><td class="num">0.2%</td><td class="num">$457M</td><td class="num">0.2%</td></tr>
+<tr><td><b>CB1A</b></td><td>CONSTELLATION BRANDS INC</td><td class="num">$95M</td><td class="num">0.0%</td><td class="num">$1,793M</td><td class="num">0.7%</td></tr>
+<tr><td><b>NVR</b></td><td>NVR INC</td><td class="num">$73M</td><td class="num">0.0%</td><td class="num">$81M</td><td class="num">0.0%</td></tr>
+<tr><td><b>M</b></td><td>MACYS INC</td><td class="num">$55M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>LEN/B</b></td><td>LENNAR CORP</td><td class="num">$20M</td><td class="num">0.0%</td><td class="num">$17M</td><td class="num">0.0%</td></tr>
+<tr><td><b>JEF</b></td><td>JEFFERIES FINANCIAL GROUP IN</td><td class="num">$18M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>HEI/A</b></td><td>HEICO CORP NEW</td><td class="num"></td><td class="num"></td><td class="num">$327M</td><td class="num">0.1%</td></tr>
+<tr><td><b>UNH</b></td><td>UNITEDHEALTH GROUP INC</td><td class="num"></td><td class="num"></td><td class="num">$1,664M</td><td class="num">0.6%</td></tr>
+<tr><td><b>SIRI</b></td><td>SIRIUS XM HOLDINGS INC</td><td class="num"></td><td class="num"></td><td class="num">$2,496M</td><td class="num">0.9%</td></tr>
+<tr><td><b>POOL</b></td><td>POOL CORP</td><td class="num"></td><td class="num"></td><td class="num">$702M</td><td class="num">0.3%</td></tr>
+<tr><td><b>NYT</b></td><td>NEW YORK TIMES CO</td><td class="num"></td><td class="num"></td><td class="num">$352M</td><td class="num">0.1%</td></tr>
+<tr><td><b>MA</b></td><td>MASTERCARD INCORPORATED</td><td class="num"></td><td class="num"></td><td class="num">$2,276M</td><td class="num">0.8%</td></tr>
+<tr><td><b>LAMR</b></td><td>LAMAR ADVERTISING CO NEW</td><td class="num"></td><td class="num"></td><td class="num">$152M</td><td class="num">0.1%</td></tr>
+<tr><td><b>JEF</b></td><td>JEFFERIES FINL GROUP INC</td><td class="num"></td><td class="num"></td><td class="num">$27M</td><td class="num">0.0%</td></tr>
+<tr><td><b>DGED</b></td><td>DIAGEO PLC</td><td class="num"></td><td class="num"></td><td class="num">$20M</td><td class="num">0.0%</td></tr>
+<tr><td><b>FWONK</b></td><td>LIBERTY MEDIA CORP DEL</td><td class="num"></td><td class="num"></td><td class="num">$297M</td><td class="num">0.1%</td></tr>
+<tr><td><b>DPZ</b></td><td>DOMINOS PIZZA INC</td><td class="num"></td><td class="num"></td><td class="num">$1,396M</td><td class="num">0.5%</td></tr>
+<tr><td><b>CVX</b></td><td>CHEVRON CORP NEW</td><td class="num"></td><td class="num"></td><td class="num">$19,837M</td><td class="num">7.2%</td></tr>
+<tr><td><b>CHTR</b></td><td>CHARTER COMMUNICATIONS INC N</td><td class="num"></td><td class="num"></td><td class="num">$221M</td><td class="num">0.1%</td></tr>
+<tr><td><b>CB</b></td><td>CHUBB LIMITED</td><td class="num"></td><td class="num"></td><td class="num">$10,690M</td><td class="num">3.9%</td></tr>
+<tr><td><b>BATRK</b></td><td>ATLANTA BRAVES HLDGS INC</td><td class="num"></td><td class="num"></td><td class="num">$5M</td><td class="num">0.0%</td></tr>
+<tr><td><b>AMZN</b></td><td>AMAZON COM INC</td><td class="num"></td><td class="num"></td><td class="num">$525M</td><td class="num">0.2%</td></tr>
+<tr><td><b>V</b></td><td>VISA INC</td><td class="num"></td><td class="num"></td><td class="num">$2,910M</td><td class="num">1.1%</td></tr>
+</tbody>
+    </table>
+    
+    </div>
+  </div>
+  <div id="s-BERKSHIRE-buysells" class="chart-sec" style="display:none">
+  <p class="chart-caption">Changes in portfolio between the two most recent quarters. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates total AUM, compressing all stock weights even with no stock trades. <b>Δ$ = Δ shares × implied price (value/shares from 13F)</b> — captures partial sells to take profit even when position value stays flat due to price appreciation.</p>
+  <p class="chart-subtitle">By Δ% weight</p>
+  <img src="BERKSHIRE/BERKSHIRE_buys_sells.png" alt="By Δ% weight">
+  <p class="chart-subtitle">By Δ$ (shares × price)</p>
+  <img src="BERKSHIRE/BERKSHIRE_buys_sells_usd.png" alt="By Δ$ (shares × price)">
+  </div>
+  <div id="s-BERKSHIRE-buysperf" class="chart-sec" style="display:none">
+  <p class="chart-caption">Price performance of the top buys and sells in the 180 days following each quarter-end, normalised to 0% at quarter-end. The dashed vertical line marks +45 days (when the 13F becomes public). Universe = same top buys / sells as the Δ$ chart. Pink dashed lines indicate Put options held on that name.</p>
+  <img src="BERKSHIRE/BERKSHIRE_buys_sells_perf.png" alt="Buys & Sell Perf">
+  </div>
+</div>
+<div id="fund-ARK" class="fund-block" style="display:none">
+  <h2>Ark</h2>
+  <div class="sec-tabs">
+    <span class="sec-tab active" data-fund="ARK" data-target="s-ARK-aum">AUM</span>
+    <span class="sec-tab featured" data-fund="ARK" data-target="s-ARK-track">Fund Clone</span>
+    <span class="sec-tab" data-fund="ARK" data-target="s-ARK-positions">Positions</span>
+    <span class="sec-tab" data-fund="ARK" data-target="s-ARK-buysells">Buys & Sells</span>
+    <span class="sec-tab featured" data-fund="ARK" data-target="s-ARK-buysperf">Buys & Sell Perf</span>
+  </div>
+  <div id="s-ARK-aum" class="chart-sec" style="display:block">
+  <p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>Δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
+  <img src="ARK/ARK_aum.png" alt="AUM">
+  </div>
+  <div id="s-ARK-track" class="chart-sec" style="display:none">
+  <p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights, normalised to 1 at inception. <b>Clone all</b> uses every reported position. <b>Clone top&thinsp;N</b> keeps only the largest N positions, equal-weighted. <b>+45d public</b> simulates an investor who acts only after the filing becomes public (45 days after quarter-end). Compared against SPY as benchmark.</p>
+  <img src="ARK/ARK_clone_track.png" alt="Clone Track">
+  </div>
+  <div id="s-ARK-positions" class="chart-sec" style="display:none">
+  <p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).</p>
+  <img src="ARK/ARK_positions.png" alt="Positions">
+  <div class="pos-table-wrap">
+    <h3>Long Positions</h3>
+    <table class="pos-tbl">
+      <thead><tr><th>Ticker</th><th>Name</th>
+        <th colspan="2">Mar 2026 (AUM $12.9B)</th><th colspan="2">Dec 2025 (AUM $15.1B)</th></tr>
+        <tr><th></th><th></th>
+        <th>Value</th><th>Weight</th><th>Value</th><th>Weight</th></tr>
+      </thead>
+      <tbody><tr><td><b>TSLA</b></td><td>Tesla Inc</td><td class="num">$1,053M</td><td class="num">8.2%</td><td class="num">$1,311M</td><td class="num">8.7%</td></tr>
+<tr><td><b>AMD</b></td><td>Advanced Micro Devices Inc</td><td class="num">$552M</td><td class="num">4.3%</td><td class="num">$551M</td><td class="num">3.7%</td></tr>
+<tr><td><b>SHOP</b></td><td>Shopify Inc</td><td class="num">$496M</td><td class="num">3.9%</td><td class="num">$640M</td><td class="num">4.3%</td></tr>
+<tr><td><b>PLTR</b></td><td>Palantir Technologies Inc</td><td class="num">$455M</td><td class="num">3.5%</td><td class="num">$574M</td><td class="num">3.8%</td></tr>
+<tr><td><b>TEM</b></td><td>Tempus AI Inc</td><td class="num">$434M</td><td class="num">3.4%</td><td class="num">$446M</td><td class="num">3.0%</td></tr>
+<tr><td><b>CRCL</b></td><td>Circle Internet Group Inc</td><td class="num">$430M</td><td class="num">3.3%</td><td class="num">$328M</td><td class="num">2.2%</td></tr>
+<tr><td><b>HOOD</b></td><td>Robinhood Markets Inc</td><td class="num">$416M</td><td class="num">3.2%</td><td class="num">$544M</td><td class="num">3.6%</td></tr>
+<tr><td><b>COIN</b></td><td>Coinbase Global Inc</td><td class="num">$414M</td><td class="num">3.2%</td><td class="num">$575M</td><td class="num">3.8%</td></tr>
+<tr><td><b>TER</b></td><td>Teradyne Inc</td><td class="num">$369M</td><td class="num">2.9%</td><td class="num">$456M</td><td class="num">3.0%</td></tr>
+<tr><td><b>ROKU</b></td><td>Roku Inc</td><td class="num">$361M</td><td class="num">2.8%</td><td class="num">$638M</td><td class="num">4.2%</td></tr>
+<tr><td><b>RBLX</b></td><td>ROBLOX Corp</td><td class="num">$333M</td><td class="num">2.6%</td><td class="num">$392M</td><td class="num">2.6%</td></tr>
+<tr><td><b>TWST</b></td><td>Twist Bioscience Corp</td><td class="num">$301M</td><td class="num">2.3%</td><td class="num">$240M</td><td class="num">1.6%</td></tr>
+<tr><td><b>BEAM</b></td><td>Beam Therapeutics Inc</td><td class="num">$289M</td><td class="num">2.2%</td><td class="num">$346M</td><td class="num">2.3%</td></tr>
+<tr><td><b>AMZN</b></td><td>Amazon.com Inc</td><td class="num">$282M</td><td class="num">2.2%</td><td class="num">$280M</td><td class="num">1.9%</td></tr>
+<tr><td><b>TXG</b></td><td>10X Genomics Inc</td><td class="num">$249M</td><td class="num">1.9%</td><td class="num">$207M</td><td class="num">1.4%</td></tr>
+<tr><td><b>KTOS</b></td><td>Kratos Defense & Security Solu</td><td class="num">$246M</td><td class="num">1.9%</td><td class="num">$262M</td><td class="num">1.7%</td></tr>
+<tr><td><b>DE</b></td><td>Deere & Co</td><td class="num">$225M</td><td class="num">1.7%</td><td class="num">$196M</td><td class="num">1.3%</td></tr>
+<tr><td><b>TSM</b></td><td>Taiwan Semiconductor Manufactu</td><td class="num">$212M</td><td class="num">1.6%</td><td class="num">$227M</td><td class="num">1.5%</td></tr>
+<tr><td><b>GOOG</b></td><td>Alphabet Inc</td><td class="num">$207M</td><td class="num">1.6%</td><td class="num">$171M</td><td class="num">1.1%</td></tr>
+<tr><td><b>CRWV</b></td><td>CoreWeave Inc</td><td class="num">$197M</td><td class="num">1.5%</td><td class="num">$138M</td><td class="num">0.9%</td></tr>
+<tr><td><b>ACHR</b></td><td>Archer Aviation Inc</td><td class="num">$194M</td><td class="num">1.5%</td><td class="num">$264M</td><td class="num">1.8%</td></tr>
+<tr><td><b>BMNR</b></td><td>BitMine Immersion Technologies</td><td class="num">$192M</td><td class="num">1.5%</td><td class="num">$257M</td><td class="num">1.7%</td></tr>
+<tr><td><b>XYZ</b></td><td>Block Inc</td><td class="num">$186M</td><td class="num">1.4%</td><td class="num">$219M</td><td class="num">1.5%</td></tr>
+<tr><td><b>NTLA</b></td><td>Intellia Therapeutics Inc</td><td class="num">$186M</td><td class="num">1.4%</td><td class="num">$128M</td><td class="num">0.8%</td></tr>
+<tr><td><b>NVDA</b></td><td>NVIDIA Corp</td><td class="num">$181M</td><td class="num">1.4%</td><td class="num">$234M</td><td class="num">1.6%</td></tr>
+<tr><td><b>ARKB</b></td><td>ARK 21Shares Bitcoin ETF</td><td class="num">$151M</td><td class="num">1.2%</td><td class="num">$200M</td><td class="num">1.3%</td></tr>
+<tr><td><b>6RJ0</b></td><td>Rocket Lab Corp</td><td class="num">$144M</td><td class="num">1.1%</td><td class="num">$156M</td><td class="num">1.0%</td></tr>
+<tr><td><b>ILMN</b></td><td>Illumina Inc</td><td class="num">$139M</td><td class="num">1.1%</td><td class="num">$202M</td><td class="num">1.3%</td></tr>
+<tr><td><b>NTRA</b></td><td>Natera Inc</td><td class="num">$137M</td><td class="num">1.1%</td><td class="num">$167M</td><td class="num">1.1%</td></tr>
+<tr><td><b>LHX</b></td><td>L3Harris Technologies Inc</td><td class="num">$135M</td><td class="num">1.0%</td><td class="num">$91M</td><td class="num">0.6%</td></tr>
+<tr><td><b>BWXT</b></td><td>BWX Technologies Inc</td><td class="num">$127M</td><td class="num">1.0%</td><td class="num">$115M</td><td class="num">0.8%</td></tr>
+<tr><td><b>AVGO</b></td><td>Broadcom Inc</td><td class="num">$126M</td><td class="num">1.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>BIDUN</b></td><td>Baidu Inc</td><td class="num">$125M</td><td class="num">1.0%</td><td class="num">$151M</td><td class="num">1.0%</td></tr>
+<tr><td><b>RXRX</b></td><td>Recursion Pharmaceuticals Inc</td><td class="num">$123M</td><td class="num">1.0%</td><td class="num">$153M</td><td class="num">1.0%</td></tr>
+<tr><td><b>JPX</b></td><td>AeroVironment Inc</td><td class="num">$102M</td><td class="num">0.8%</td><td class="num">$105M</td><td class="num">0.7%</td></tr>
+<tr><td><b>VCYT</b></td><td>Veracyte Inc</td><td class="num">$98M</td><td class="num">0.8%</td><td class="num">$164M</td><td class="num">1.1%</td></tr>
+<tr><td><b>BABA</b></td><td>Alibaba Group Holding Ltd</td><td class="num">$98M</td><td class="num">0.8%</td><td class="num">$93M</td><td class="num">0.6%</td></tr>
+<tr><td><b>META</b></td><td>Meta Platforms Inc</td><td class="num">$88M</td><td class="num">0.7%</td><td class="num">$197M</td><td class="num">1.3%</td></tr>
+<tr><td><b>WGS</b></td><td>GeneDx Holdings Corp</td><td class="num">$85M</td><td class="num">0.7%</td><td class="num">$79M</td><td class="num">0.5%</td></tr>
+<tr><td><b>TRMB</b></td><td>Trimble Inc</td><td class="num">$81M</td><td class="num">0.6%</td><td class="num">$80M</td><td class="num">0.5%</td></tr>
+<tr><td><b>FIG</b></td><td>Figma Inc</td><td class="num">$72M</td><td class="num">0.6%</td><td class="num">$22M</td><td class="num">0.1%</td></tr>
+<tr><td><b>SOFI</b></td><td>SoFi Technologies Inc</td><td class="num">$61M</td><td class="num">0.5%</td><td class="num">$107M</td><td class="num">0.7%</td></tr>
+<tr><td><b>DASH</b></td><td>DoorDash Inc</td><td class="num">$52M</td><td class="num">0.4%</td><td class="num">$69M</td><td class="num">0.5%</td></tr>
+<tr><td><b>PSNL</b></td><td>Personalis Inc</td><td class="num">$51M</td><td class="num">0.4%</td><td class="num">$63M</td><td class="num">0.4%</td></tr>
+<tr><td><b>LUNR</b></td><td>Intuitive Machines Inc</td><td class="num">$49M</td><td class="num">0.4%</td><td class="num">$37M</td><td class="num">0.2%</td></tr>
+<tr><td><b>TOST</b></td><td>Toast Inc</td><td class="num">$48M</td><td class="num">0.4%</td><td class="num">$70M</td><td class="num">0.5%</td></tr>
+<tr><td><b>IRDM</b></td><td>Iridium Communications Inc</td><td class="num">$48M</td><td class="num">0.4%</td><td class="num">$50M</td><td class="num">0.3%</td></tr>
+<tr><td><b>PACB</b></td><td>Pacific Biosciences of Califor</td><td class="num">$48M</td><td class="num">0.4%</td><td class="num">$70M</td><td class="num">0.5%</td></tr>
+<tr><td><b>GH</b></td><td>Guardant Health Inc</td><td class="num">$45M</td><td class="num">0.3%</td><td class="num">$71M</td><td class="num">0.5%</td></tr>
+<tr><td><b>SYM</b></td><td>Symbotic Inc</td><td class="num">$42M</td><td class="num">0.3%</td><td class="num">$38M</td><td class="num">0.3%</td></tr>
+<tr><td><b>CAT</b></td><td>Caterpillar Inc</td><td class="num">$42M</td><td class="num">0.3%</td><td class="num">$20M</td><td class="num">0.1%</td></tr>
+<tr><td><b>MLB1</b></td><td>MercadoLibre Inc</td><td class="num">$41M</td><td class="num">0.3%</td><td class="num">$53M</td><td class="num">0.4%</td></tr>
+<tr><td><b>CRWD</b></td><td>Crowdstrike Holdings Inc</td><td class="num">$41M</td><td class="num">0.3%</td><td class="num">$58M</td><td class="num">0.4%</td></tr>
+<tr><td><b>ABSI</b></td><td>Absci Corp</td><td class="num">$41M</td><td class="num">0.3%</td><td class="num">$44M</td><td class="num">0.3%</td></tr>
+<tr><td><b>CCO</b></td><td>Cameco Corp</td><td class="num">$40M</td><td class="num">0.3%</td><td class="num">$32M</td><td class="num">0.2%</td></tr>
+<tr><td><b>CDNA</b></td><td>CareDx Inc</td><td class="num">$39M</td><td class="num">0.3%</td><td class="num">$40M</td><td class="num">0.3%</td></tr>
+<tr><td><b>NET</b></td><td>Cloudflare Inc</td><td class="num">$38M</td><td class="num">0.3%</td><td class="num">$41M</td><td class="num">0.3%</td></tr>
+<tr><td><b>CERS</b></td><td>Cerus Corp</td><td class="num">$35M</td><td class="num">0.3%</td><td class="num">$37M</td><td class="num">0.2%</td></tr>
+<tr><td><b>ISRG</b></td><td>Intuitive Surgical Inc</td><td class="num">$32M</td><td class="num">0.2%</td><td class="num">$28M</td><td class="num">0.2%</td></tr>
+<tr><td><b>SRTA</b></td><td>Strata Critical Medical Inc</td><td class="num">$31M</td><td class="num">0.2%</td><td class="num">$34M</td><td class="num">0.2%</td></tr>
+<tr><td><b>TDY</b></td><td>Teledyne Technologies Inc</td><td class="num">$31M</td><td class="num">0.2%</td><td class="num">$23M</td><td class="num">0.2%</td></tr>
+<tr><td><b>SNPS</b></td><td>Synopsys Inc</td><td class="num">$30M</td><td class="num">0.2%</td><td class="num">$29M</td><td class="num">0.2%</td></tr>
+<tr><td><b>WRD</b></td><td>WeRide Inc</td><td class="num">$30M</td><td class="num">0.2%</td><td class="num">$17M</td><td class="num">0.1%</td></tr>
+<tr><td><b>DKNG</b></td><td>DraftKings Inc</td><td class="num">$29M</td><td class="num">0.2%</td><td class="num">$156M</td><td class="num">1.0%</td></tr>
+<tr><td><b>ADPT</b></td><td>Adaptive Biotechnologies Corp</td><td class="num">$29M</td><td class="num">0.2%</td><td class="num">$35M</td><td class="num">0.2%</td></tr>
+<tr><td><b>DDOG</b></td><td>Datadog Inc</td><td class="num">$27M</td><td class="num">0.2%</td><td class="num">$30M</td><td class="num">0.2%</td></tr>
+<tr><td><b>NRIX</b></td><td>Nurix Therapeutics Inc</td><td class="num">$27M</td><td class="num">0.2%</td><td class="num">$30M</td><td class="num">0.2%</td></tr>
+<tr><td><b>AUR</b></td><td>Aurora Innovation Inc</td><td class="num">$27M</td><td class="num">0.2%</td><td class="num">$20M</td><td class="num">0.1%</td></tr>
+<tr><td><b>KDK</b></td><td>Kodiak AI Inc</td><td class="num">$26M</td><td class="num">0.2%</td><td class="num">$29M</td><td class="num">0.2%</td></tr>
+<tr><td><b>P</b></td><td>Everpure Inc</td><td class="num">$25M</td><td class="num">0.2%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>SDGR</b></td><td>Schrodinger Inc</td><td class="num">$23M</td><td class="num">0.2%</td><td class="num">$38M</td><td class="num">0.3%</td></tr>
+<tr><td><b>PRME</b></td><td>Prime Medicine Inc</td><td class="num">$22M</td><td class="num">0.2%</td><td class="num">$19M</td><td class="num">0.1%</td></tr>
+<tr><td><b>ISI</b></td><td>Ionis Pharmaceuticals Inc</td><td class="num">$22M</td><td class="num">0.2%</td><td class="num">$33M</td><td class="num">0.2%</td></tr>
+<tr><td><b>ARCT</b></td><td>Arcturus Therapeutics Holdings</td><td class="num">$21M</td><td class="num">0.2%</td><td class="num">$16M</td><td class="num">0.1%</td></tr>
+<tr><td><b>BFLY</b></td><td>Butterfly Network Inc</td><td class="num">$21M</td><td class="num">0.2%</td><td class="num">$24M</td><td class="num">0.2%</td></tr>
+<tr><td><b>NFLX</b></td><td>Netflix Inc</td><td class="num">$21M</td><td class="num">0.2%</td><td class="num">$16M</td><td class="num">0.1%</td></tr>
+<tr><td><b>ABNB</b></td><td>Airbnb Inc</td><td class="num">$20M</td><td class="num">0.2%</td><td class="num">$133M</td><td class="num">0.9%</td></tr>
+<tr><td><b>RBRK</b></td><td>Rubrik Inc</td><td class="num">$19M</td><td class="num">0.2%</td><td class="num">$35M</td><td class="num">0.2%</td></tr>
+<tr><td><b>CMPS</b></td><td>Compass Pathways Plc</td><td class="num">$18M</td><td class="num">0.1%</td><td class="num">$15M</td><td class="num">0.1%</td></tr>
+<tr><td><b>PONY</b></td><td>Pony AI Inc</td><td class="num">$18M</td><td class="num">0.1%</td><td class="num">$24M</td><td class="num">0.2%</td></tr>
+<tr><td><b>GTLB</b></td><td>Gitlab Inc</td><td class="num">$18M</td><td class="num">0.1%</td><td class="num">$32M</td><td class="num">0.2%</td></tr>
+<tr><td><b>OKLO</b></td><td>Oklo Inc</td><td class="num">$17M</td><td class="num">0.1%</td><td class="num">$16M</td><td class="num">0.1%</td></tr>
+<tr><td><b>SE</b></td><td>Sea Ltd</td><td class="num">$14M</td><td class="num">0.1%</td><td class="num">$19M</td><td class="num">0.1%</td></tr>
+<tr><td><b>CNTN</b></td><td>Canton Strategic Holdings Inc</td><td class="num">$12M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>HEI</b></td><td>HEICO Corp</td><td class="num">$12M</td><td class="num">0.1%</td><td class="num">$6M</td><td class="num">0.0%</td></tr>
+<tr><td><b>MASS</b></td><td>908 Devices Inc</td><td class="num">$12M</td><td class="num">0.1%</td><td class="num">$10M</td><td class="num">0.1%</td></tr>
+<tr><td><b>LLY</b></td><td>Eli Lilly & Co</td><td class="num">$12M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>BNTX</b></td><td>BioNTech SE</td><td class="num">$11M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>HON</b></td><td>Honeywell International Inc</td><td class="num">$9M</td><td class="num">0.1%</td><td class="num">$5M</td><td class="num">0.0%</td></tr>
+<tr><td><b>LMT</b></td><td>Lockheed Martin Corp</td><td class="num">$8M</td><td class="num">0.1%</td><td class="num">$3M</td><td class="num">0.0%</td></tr>
+<tr><td><b>Z</b></td><td>Zillow Group Inc</td><td class="num">$7M</td><td class="num">0.1%</td><td class="num">$17M</td><td class="num">0.1%</td></tr>
+<tr><td><b>ARKK</b></td><td>ARK Innovation ETF</td><td class="num">$6M</td><td class="num">0.1%</td><td class="num">$6M</td><td class="num">0.0%</td></tr>
+<tr><td><b>GENB</b></td><td>Generate Biomedicines Inc</td><td class="num">$6M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>PAYP</b></td><td>PayPay Corp</td><td class="num">$6M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>QSI</b></td><td>Quantum-Si Inc</td><td class="num">$5M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>KSPI</b></td><td>Kaspi.KZ JSC</td><td class="num">$5M</td><td class="num">0.0%</td><td class="num">$10M</td><td class="num">0.1%</td></tr>
+<tr><td><b>ICE</b></td><td>Intercontinental Exchange Inc</td><td class="num">$5M</td><td class="num">0.0%</td><td class="num">$9M</td><td class="num">0.1%</td></tr>
+<tr><td><b>XRAY</b></td><td>Dentsply Sirona Inc</td><td class="num">$3M</td><td class="num">0.0%</td><td class="num">$4M</td><td class="num">0.0%</td></tr>
+<tr><td><b>ADSK</b></td><td>Autodesk Inc</td><td class="num">$3M</td><td class="num">0.0%</td><td class="num">$4M</td><td class="num">0.0%</td></tr>
+<tr><td><b>PTC</b></td><td>PTC Inc</td><td class="num">$3M</td><td class="num">0.0%</td><td class="num">$4M</td><td class="num">0.0%</td></tr>
+<tr><td><b>PRLB</b></td><td>Proto Labs Inc</td><td class="num">$3M</td><td class="num">0.0%</td><td class="num">$3M</td><td class="num">0.0%</td></tr>
+<tr><td><b>BWAY</b></td><td>Brainsway Ltd</td><td class="num">$3M</td><td class="num">0.0%</td><td class="num">$2M</td><td class="num">0.0%</td></tr>
+<tr><td><b>NNDM</b></td><td>Nano Dimension Ltd</td><td class="num">$2M</td><td class="num">0.0%</td><td class="num">$3M</td><td class="num">0.0%</td></tr>
+<tr><td><b>MSFT</b></td><td>Microsoft Corp</td><td class="num">$2M</td><td class="num">0.0%</td><td class="num">$3M</td><td class="num">0.0%</td></tr>
+<tr><td><b>7HP</b></td><td>HP Inc</td><td class="num">$2M</td><td class="num">0.0%</td><td class="num">$2M</td><td class="num">0.0%</td></tr>
+<tr><td><b>MTLS</b></td><td>Materialise NV</td><td class="num">$2M</td><td class="num">0.0%</td><td class="num">$3M</td><td class="num">0.0%</td></tr>
+<tr><td><b>NSY</b></td><td>Nice Ltd</td><td class="num">$2M</td><td class="num">0.0%</td><td class="num">$2M</td><td class="num">0.0%</td></tr>
+<tr><td><b>TEVA</b></td><td>Teva Pharmaceutical Industries</td><td class="num">$2M</td><td class="num">0.0%</td><td class="num">$3M</td><td class="num">0.0%</td></tr>
+<tr><td><b>PANW</b></td><td>Palo Alto Networks Inc</td><td class="num">$2M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>DDD</b></td><td>3D Systems Corp</td><td class="num">$2M</td><td class="num">0.0%</td><td class="num">$2M</td><td class="num">0.0%</td></tr>
+<tr><td><b>PLTK</b></td><td>Playtika Holding Corp</td><td class="num">$2M</td><td class="num">0.0%</td><td class="num">$2M</td><td class="num">0.0%</td></tr>
+<tr><td><b>XMTR</b></td><td>Xometry Inc</td><td class="num">$2M</td><td class="num">0.0%</td><td class="num">$3M</td><td class="num">0.0%</td></tr>
+<tr><td><b>MBLY</b></td><td>Mobileye Global Inc</td><td class="num">$1M</td><td class="num">0.0%</td><td class="num">$1M</td><td class="num">0.0%</td></tr>
+<tr><td><b>MOG/A</b></td><td>Moog Inc</td><td class="num">$1M</td><td class="num">0.0%</td><td class="num">$1M</td><td class="num">0.0%</td></tr>
+<tr><td><b>LECO</b></td><td>Lincoln Electric Holdings Inc</td><td class="num">$1M</td><td class="num">0.0%</td><td class="num">$1M</td><td class="num">0.0%</td></tr>
+<tr><td><b>KALU</b></td><td>Kaiser Aluminum Corp</td><td class="num">$1M</td><td class="num">0.0%</td><td class="num">$2M</td><td class="num">0.0%</td></tr>
+<tr><td><b>CRM</b></td><td>Salesforce Inc</td><td class="num">$1M</td><td class="num">0.0%</td><td class="num">$13M</td><td class="num">0.1%</td></tr>
+<tr><td><b>VELO</b></td><td>Velo3D Inc</td><td class="num">$1M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>AFW</b></td><td>Align Technology Inc</td><td class="num">$1M</td><td class="num">0.0%</td><td class="num">$1M</td><td class="num">0.0%</td></tr>
+<tr><td><b>AME</b></td><td>AMETEK Inc</td><td class="num">$1M</td><td class="num">0.0%</td><td class="num">$1M</td><td class="num">0.0%</td></tr>
+<tr><td><b>GE</b></td><td>GE Aerospace</td><td class="num">$1M</td><td class="num">0.0%</td><td class="num">$1M</td><td class="num">0.0%</td></tr>
+<tr><td><b>PINS</b></td><td>Pinterest Inc</td><td class="num">$1M</td><td class="num">0.0%</td><td class="num">$50M</td><td class="num">0.3%</td></tr>
+<tr><td><b>ARKG</b></td><td>ARK Genomic Revolution ETF</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>CRS</b></td><td>Carpenter Technology Corp</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>ATD</b></td><td>ATI Inc</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>IWF</b></td><td>iShares Russell 1000 Growth ET</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num">$1M</td><td class="num">0.0%</td></tr>
+<tr><td><b>JBL</b></td><td>Jabil Inc</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>KMT</b></td><td>Kennametal Inc</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>ETH</b></td><td>Grayscale Ethereum Staking Min</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>AVNT</b></td><td>Avient Corp</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>MTRN</b></td><td>Materion Corp</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>MMM</b></td><td>3M Co</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>VUG</b></td><td>Vanguard Growth ETF</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>DCH</b></td><td>Dauch Corporation</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>SPY</b></td><td>State Street SPDR S&P 500 ETF </td><td class="num">$0M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>IWB</b></td><td>iShares Russell 1000 ETF</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>QSI</b></td><td>Quantum0Si Inc</td><td class="num"></td><td class="num"></td><td class="num">$8M</td><td class="num">0.1%</td></tr>
+<tr><td><b>PD</b></td><td>PagerDuty Inc</td><td class="num"></td><td class="num"></td><td class="num">$109M</td><td class="num">0.7%</td></tr>
+<tr><td><b>PRNT</b></td><td>The 3D Printing ETF</td><td class="num"></td><td class="num"></td><td class="num">$3M</td><td class="num">0.0%</td></tr>
+<tr><td><b>PYPL</b></td><td>PayPal Holdings Inc</td><td class="num"></td><td class="num"></td><td class="num">$9M</td><td class="num">0.1%</td></tr>
+<tr><td><b>Q</b></td><td>Qnity Electronics Inc</td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>QCOM</b></td><td>Qualcomm Inc</td><td class="num"></td><td class="num"></td><td class="num">$43M</td><td class="num">0.3%</td></tr>
+<tr><td><b>U</b></td><td>Unity Software Inc</td><td class="num"></td><td class="num"></td><td class="num">$43M</td><td class="num">0.3%</td></tr>
+<tr><td><b>REGN</b></td><td>Regeneron Pharmaceuticals Inc</td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>SPY</b></td><td>SPDR S&P 500 ETF Trust</td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>TTD</b></td><td>The Trade Desk Inc</td><td class="num"></td><td class="num"></td><td class="num">$111M</td><td class="num">0.7%</td></tr>
+<tr><td><b>NXDR</b></td><td>Nextdoor Holdings Inc</td><td class="num"></td><td class="num"></td><td class="num">$16M</td><td class="num">0.1%</td></tr>
+<tr><td><b>UPS</b></td><td>United Parcel Service Inc</td><td class="num"></td><td class="num"></td><td class="num">$1M</td><td class="num">0.0%</td></tr>
+<tr><td><b>VEEV</b></td><td>Veeva Systems Inc</td><td class="num"></td><td class="num"></td><td class="num">$9M</td><td class="num">0.1%</td></tr>
+<tr><td><b>P</b></td><td>Pure Storage Inc</td><td class="num"></td><td class="num"></td><td class="num">$27M</td><td class="num">0.2%</td></tr>
+<tr><td><b>HXL</b></td><td>Hexcel Corp</td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>MGIC</b></td><td>Magic Software Enterprises Ltd</td><td class="num"></td><td class="num"></td><td class="num">$3M</td><td class="num">0.0%</td></tr>
+<tr><td><b>KODK</b></td><td>Eastman Kodak Co</td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>INTU</b></td><td>Intuit Inc</td><td class="num"></td><td class="num"></td><td class="num">$10M</td><td class="num">0.1%</td></tr>
+<tr><td><b>INCY</b></td><td>Incyte Corp</td><td class="num"></td><td class="num"></td><td class="num">$14M</td><td class="num">0.1%</td></tr>
+<tr><td><b>FUTU</b></td><td>Futu Holdings Ltd</td><td class="num"></td><td class="num"></td><td class="num">$17M</td><td class="num">0.1%</td></tr>
+<tr><td><b>FLB</b></td><td>Standard BioTools Inc</td><td class="num"></td><td class="num"></td><td class="num">$4M</td><td class="num">0.0%</td></tr>
+<tr><td><b>EXK</b></td><td>Exact Sciences Corp</td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>ETHA</b></td><td>iShares Ethereum Trust ETF</td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>EMN</b></td><td>Eastman Chemical Co</td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>DD</b></td><td>DuPont de Nemours Inc</td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>CNTN</b></td><td>Tharimmune Inc</td><td class="num"></td><td class="num"></td><td class="num">$10M</td><td class="num">0.1%</td></tr>
+<tr><td><b>CAI</b></td><td>Caris Life Sciences Inc</td><td class="num"></td><td class="num"></td><td class="num">$11M</td><td class="num">0.1%</td></tr>
+<tr><td><b>ATAI</b></td><td>Atai Beckley NV</td><td class="num"></td><td class="num"></td><td class="num">$14M</td><td class="num">0.1%</td></tr>
+<tr><td><b>AMGN</b></td><td>Amgen Inc</td><td class="num"></td><td class="num"></td><td class="num">$15M</td><td class="num">0.1%</td></tr>
+<tr><td><b>VRTX</b></td><td>Vertex Pharmaceuticals Inc</td><td class="num"></td><td class="num"></td><td class="num">$12M</td><td class="num">0.1%</td></tr>
+</tbody>
+    </table>
+    
+        <h3 style="margin-top:1.5rem;color:#ad1457">Options</h3>
+        <table class="pos-tbl">
+          <thead>
+            <tr><th rowspan="2">Ticker</th><th rowspan="2">Name</th>
+              <th colspan="4" style="text-align:center;border-left:2px solid #dee2e6">Put</th>
+              <th colspan="4" style="text-align:center;border-left:2px solid #dee2e6">Call</th></tr>
+            <tr>
+              <th style="border-left:2px solid #dee2e6">Notional Mar 2026</th><th>Weight</th>
+              <th>Notional Dec 2025</th><th>Weight</th>
+              <th style="border-left:2px solid #dee2e6">Notional Mar 2026</th><th>Weight</th>
+              <th>Notional Dec 2025</th><th>Weight</th>
+            </tr>
+          </thead>
+          <tbody><tr><td><b>ARKK</b></td><td>ARK Innovation ETF</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num">$1M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+</tbody>
+        </table>
+        <p style="font-size:.75rem;color:#888;margin-top:.3rem">Weights at &Delta;=25% of notional</p>
+    </div>
+  </div>
+  <div id="s-ARK-buysells" class="chart-sec" style="display:none">
+  <p class="chart-caption">Changes in portfolio between the two most recent quarters. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates total AUM, compressing all stock weights even with no stock trades. <b>Δ$ = Δ shares × implied price (value/shares from 13F)</b> — captures partial sells to take profit even when position value stays flat due to price appreciation.</p>
+  <p class="chart-subtitle">By Δ% weight</p>
+  <img src="ARK/ARK_buys_sells.png" alt="By Δ% weight">
+  <p class="chart-subtitle">By Δ$ (shares × price)</p>
+  <img src="ARK/ARK_buys_sells_usd.png" alt="By Δ$ (shares × price)">
+  </div>
+  <div id="s-ARK-buysperf" class="chart-sec" style="display:none">
+  <p class="chart-caption">Price performance of the top buys and sells in the 180 days following each quarter-end, normalised to 0% at quarter-end. The dashed vertical line marks +45 days (when the 13F becomes public). Universe = same top buys / sells as the Δ$ chart. Pink dashed lines indicate Put options held on that name.</p>
+  <img src="ARK/ARK_buys_sells_perf.png" alt="Buys & Sell Perf">
+  </div>
+</div>
+<div id="fund-COATUE" class="fund-block" style="display:none">
+  <h2>Coatue</h2>
+  <div class="sec-tabs">
+    <span class="sec-tab active" data-fund="COATUE" data-target="s-COATUE-aum">AUM</span>
+    <span class="sec-tab featured" data-fund="COATUE" data-target="s-COATUE-track">Fund Clone</span>
+    <span class="sec-tab" data-fund="COATUE" data-target="s-COATUE-positions">Positions</span>
+    <span class="sec-tab" data-fund="COATUE" data-target="s-COATUE-buysells">Buys & Sells</span>
+    <span class="sec-tab featured" data-fund="COATUE" data-target="s-COATUE-buysperf">Buys & Sell Perf</span>
+  </div>
+  <div id="s-COATUE-aum" class="chart-sec" style="display:block">
+  <p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>Δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
+  <img src="COATUE/COATUE_aum.png" alt="AUM">
+  </div>
+  <div id="s-COATUE-track" class="chart-sec" style="display:none">
+  <p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights, normalised to 1 at inception. <b>Clone all</b> uses every reported position. <b>Clone top&thinsp;N</b> keeps only the largest N positions, equal-weighted. <b>+45d public</b> simulates an investor who acts only after the filing becomes public (45 days after quarter-end). Compared against SPY as benchmark.</p>
+  <img src="COATUE/COATUE_clone_track.png" alt="Clone Track">
+  </div>
+  <div id="s-COATUE-positions" class="chart-sec" style="display:none">
+  <p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).</p>
+  <img src="COATUE/COATUE_positions.png" alt="Positions">
+  <div class="pos-table-wrap">
+    <h3>Long Positions</h3>
+    <table class="pos-tbl">
+      <thead><tr><th>Ticker</th><th>Name</th>
+        <th colspan="2">Mar 2026 (AUM $29.1B)</th><th colspan="2">Dec 2025 (AUM $40.0B)</th></tr>
+        <tr><th></th><th></th>
+        <th>Value</th><th>Weight</th><th>Value</th><th>Weight</th></tr>
+      </thead>
+      <tbody><tr><td><b>TSM</b></td><td>TAIWAN SEMICONDUCTOR MANUFAC</td><td class="num">$3,137M</td><td class="num">10.8%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>GEV</b></td><td>GE VERNOVA INC</td><td class="num">$2,245M</td><td class="num">7.7%</td><td class="num">$2,203M</td><td class="num">5.5%</td></tr>
+<tr><td><b>LRCX</b></td><td>LAM RESEARCH CORP</td><td class="num">$2,146M</td><td class="num">7.4%</td><td class="num">$1,679M</td><td class="num">4.2%</td></tr>
+<tr><td><b>AMAT</b></td><td>APPLIED MATLS INC</td><td class="num">$1,794M</td><td class="num">6.2%</td><td class="num">$1,538M</td><td class="num">3.8%</td></tr>
+<tr><td><b>AVGO</b></td><td>BROADCOM INC</td><td class="num">$1,703M</td><td class="num">5.9%</td><td class="num">$1,907M</td><td class="num">4.8%</td></tr>
+<tr><td><b>AMZN</b></td><td>AMAZON COM INC</td><td class="num">$1,652M</td><td class="num">5.7%</td><td class="num">$2,293M</td><td class="num">5.7%</td></tr>
+<tr><td><b>META</b></td><td>META PLATFORMS INC</td><td class="num">$1,609M</td><td class="num">5.5%</td><td class="num">$2,496M</td><td class="num">6.2%</td></tr>
+<tr><td><b>CEG</b></td><td>CONSTELLATION ENERGY CORP</td><td class="num">$1,294M</td><td class="num">4.5%</td><td class="num">$2,087M</td><td class="num">5.2%</td></tr>
+<tr><td><b>GOOGL</b></td><td>ALPHABET INC</td><td class="num">$1,240M</td><td class="num">4.3%</td><td class="num">$2,141M</td><td class="num">5.4%</td></tr>
+<tr><td><b>NVDA</b></td><td>NVIDIA CORPORATION</td><td class="num">$1,104M</td><td class="num">3.8%</td><td class="num">$1,716M</td><td class="num">4.3%</td></tr>
+<tr><td><b>EQIX</b></td><td>EQUINIX INC</td><td class="num">$1,069M</td><td class="num">3.7%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>MSFT</b></td><td>MICROSOFT CORP</td><td class="num">$918M</td><td class="num">3.2%</td><td class="num">$2,501M</td><td class="num">6.3%</td></tr>
+<tr><td><b>NFLX</b></td><td>NETFLIX INC.</td><td class="num">$663M</td><td class="num">2.3%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>APP</b></td><td>APPLOVIN CORP</td><td class="num">$513M</td><td class="num">1.8%</td><td class="num">$1,473M</td><td class="num">3.7%</td></tr>
+<tr><td><b>NTRA</b></td><td>NATERA INC</td><td class="num">$508M</td><td class="num">1.7%</td><td class="num">$603M</td><td class="num">1.5%</td></tr>
+<tr><td><b>ISRG</b></td><td>INTUITIVE SURGICAL INC</td><td class="num">$394M</td><td class="num">1.4%</td><td class="num">$457M</td><td class="num">1.1%</td></tr>
+<tr><td><b>RDDT</b></td><td>REDDIT INC</td><td class="num">$376M</td><td class="num">1.3%</td><td class="num">$1,276M</td><td class="num">3.2%</td></tr>
+<tr><td><b>GOOG</b></td><td>ALPHABET INC</td><td class="num">$320M</td><td class="num">1.1%</td><td class="num">$628M</td><td class="num">1.6%</td></tr>
+<tr><td><b>SNPS</b></td><td>SYNOPSYS INC</td><td class="num">$302M</td><td class="num">1.0%</td><td class="num">$778M</td><td class="num">1.9%</td></tr>
+<tr><td><b>FCNCA</b></td><td>FIRST CTZNS BANCSHARES INC D</td><td class="num">$263M</td><td class="num">0.9%</td><td class="num">$299M</td><td class="num">0.7%</td></tr>
+<tr><td><b>VRT</b></td><td>VERTIV HOLDINGS CO</td><td class="num">$246M</td><td class="num">0.8%</td><td class="num">$134M</td><td class="num">0.3%</td></tr>
+<tr><td><b>V</b></td><td>VISA INC</td><td class="num">$217M</td><td class="num">0.7%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>CVNA</b></td><td>CARVANA CO</td><td class="num">$214M</td><td class="num">0.7%</td><td class="num">$826M</td><td class="num">2.1%</td></tr>
+<tr><td><b>CHYM</b></td><td>CHIME FINL INC</td><td class="num">$189M</td><td class="num">0.6%</td><td class="num">$254M</td><td class="num">0.6%</td></tr>
+<tr><td><b>MTZ</b></td><td>MASTEC INC</td><td class="num">$188M</td><td class="num">0.6%</td><td class="num">$147M</td><td class="num">0.4%</td></tr>
+<tr><td><b>QCOM</b></td><td>QUALCOMM INC</td><td class="num">$179M</td><td class="num">0.6%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>CAI</b></td><td>CARIS LIFE SCIENCES INC</td><td class="num">$176M</td><td class="num">0.6%</td><td class="num">$265M</td><td class="num">0.7%</td></tr>
+<tr><td><b>SOLS</b></td><td>SOLSTICE ADVANCED MATLS INC</td><td class="num">$126M</td><td class="num">0.4%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>CHRW</b></td><td>C H ROBINSON WORLDWIDE IN</td><td class="num">$95M</td><td class="num">0.3%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>SFM</b></td><td>SPROUTS FMRS MKT INC</td><td class="num">$93M</td><td class="num">0.3%</td><td class="num">$48M</td><td class="num">0.1%</td></tr>
+<tr><td><b>DASH</b></td><td>DOORDASH INC</td><td class="num">$83M</td><td class="num">0.3%</td><td class="num">$989M</td><td class="num">2.5%</td></tr>
+<tr><td><b>GNRC</b></td><td>GENERAC HLDGS INC</td><td class="num">$76M</td><td class="num">0.3%</td><td class="num">$50M</td><td class="num">0.1%</td></tr>
+<tr><td><b>ENPH</b></td><td>ENPHASE ENERGY INC</td><td class="num">$62M</td><td class="num">0.2%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>PYPL</b></td><td>PAYPAL HLDGS INC</td><td class="num">$56M</td><td class="num">0.2%</td><td class="num">$99M</td><td class="num">0.2%</td></tr>
+<tr><td><b>MU</b></td><td>MICRON TECHNOLOGY INC</td><td class="num">$56M</td><td class="num">0.2%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>ABR</b></td><td>ARBOR REALTY TRUST INC</td><td class="num">$32M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>TTD</b></td><td>THE TRADE DESK INC</td><td class="num">$31M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>NVV1</b></td><td>NOVAVAX INC</td><td class="num">$31M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>PINS</b></td><td>PINTEREST INC</td><td class="num">$31M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>Z</b></td><td>ZILLOW GROUP INC</td><td class="num">$31M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>QS</b></td><td>QUANTUMSCAPE CORP</td><td class="num">$27M</td><td class="num">0.1%</td><td class="num">$39M</td><td class="num">0.1%</td></tr>
+<tr><td><b>PATH</b></td><td>UIPATH INC</td><td class="num">$25M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>UPST</b></td><td>UPSTART HLDGS INC</td><td class="num">$22M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>TSLA</b></td><td>TESLA INC</td><td class="num">$22M</td><td class="num">0.1%</td><td class="num">$738M</td><td class="num">1.8%</td></tr>
+<tr><td><b>MPT</b></td><td>MEDICAL PROPERTIES TRUST INC</td><td class="num">$21M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>RNG</b></td><td>RINGCENTRAL INC</td><td class="num">$15M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>ZG</b></td><td>ZILLOW GROUP INC</td><td class="num">$14M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>PTON</b></td><td>PELOTON INTERACTIVE INC</td><td class="num">$11M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>PLUN</b></td><td>PLUG PWR INC</td><td class="num">$6M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>LCID</b></td><td>LUCID GROUP INC</td><td class="num">$3M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>IBIT</b></td><td>ISHARES BITCOIN TRUST ETF</td><td class="num">$3M</td><td class="num">0.0%</td><td class="num">$3M</td><td class="num">0.0%</td></tr>
+<tr><td><b>OLPX</b></td><td>OLAPLEX HLDGS INC</td><td class="num">$3M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>SFIX</b></td><td>STITCH FIX INC</td><td class="num">$2M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>HTZWW</b></td><td>HERTZ GLOBAL HLDGS INC</td><td class="num">$1M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>CHPT</b></td><td>CHARGEPOINT HOLDINGS INC</td><td class="num">$1M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>HTZ</b></td><td>HERTZ GLOBAL HLDGS INC</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>BYND</b></td><td>BEYOND MEAT INC</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>AMC</b></td><td>AMC ENTMT HLDGS INC</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>MPT</b></td><td>MEDICAL PPTYS TRUST INC</td><td class="num"></td><td class="num"></td><td class="num">$23M</td><td class="num">0.1%</td></tr>
+<tr><td><b>SPGI</b></td><td>S&P GLOBAL INC</td><td class="num"></td><td class="num"></td><td class="num">$33M</td><td class="num">0.1%</td></tr>
+<tr><td><b>SNOW</b></td><td>SNOWFLAKE INC</td><td class="num"></td><td class="num"></td><td class="num">$544M</td><td class="num">1.4%</td></tr>
+<tr><td><b>RKT</b></td><td>ROCKET COS INC</td><td class="num"></td><td class="num"></td><td class="num">$131M</td><td class="num">0.3%</td></tr>
+<tr><td><b>ORCL</b></td><td>ORACLE CORP</td><td class="num"></td><td class="num"></td><td class="num">$865M</td><td class="num">2.2%</td></tr>
+<tr><td><b>NFLX</b></td><td>NETFLIX INC</td><td class="num"></td><td class="num"></td><td class="num">$1,018M</td><td class="num">2.5%</td></tr>
+<tr><td><b>NAVN</b></td><td>NAVAN INC</td><td class="num"></td><td class="num"></td><td class="num">$10M</td><td class="num">0.0%</td></tr>
+<tr><td><b>MRVL</b></td><td>MARVELL TECHNOLOGY INC</td><td class="num"></td><td class="num"></td><td class="num">$177M</td><td class="num">0.4%</td></tr>
+<tr><td><b>MRNA</b></td><td>MODERNA INC</td><td class="num"></td><td class="num"></td><td class="num">$6M</td><td class="num">0.0%</td></tr>
+<tr><td><b>ADBE</b></td><td>ADOBE INC</td><td class="num"></td><td class="num"></td><td class="num">$306M</td><td class="num">0.8%</td></tr>
+<tr><td><b>MCO</b></td><td>MOODYS CORP</td><td class="num"></td><td class="num"></td><td class="num">$33M</td><td class="num">0.1%</td></tr>
+<tr><td><b>INFY</b></td><td>INFOSYS LTD</td><td class="num"></td><td class="num"></td><td class="num">$82M</td><td class="num">0.2%</td></tr>
+<tr><td><b>EXPD</b></td><td>EXPEDITORS INTL WASH INC</td><td class="num"></td><td class="num"></td><td class="num">$55M</td><td class="num">0.1%</td></tr>
+<tr><td><b>CHRW</b></td><td>C H ROBINSON WORLDWIDE INC</td><td class="num"></td><td class="num"></td><td class="num">$55M</td><td class="num">0.1%</td></tr>
+<tr><td><b>CHA</b></td><td>CHAGEE HLDGS LTD</td><td class="num"></td><td class="num"></td><td class="num">$37M</td><td class="num">0.1%</td></tr>
+<tr><td><b>AXON</b></td><td>AXON ENTERPRISE INC</td><td class="num"></td><td class="num"></td><td class="num">$88M</td><td class="num">0.2%</td></tr>
+<tr><td><b>ARM</b></td><td>ARM HOLDINGS PLC</td><td class="num"></td><td class="num"></td><td class="num">$251M</td><td class="num">0.6%</td></tr>
+<tr><td><b>AMD</b></td><td>ADVANCED MICRO DEVICES INC</td><td class="num"></td><td class="num"></td><td class="num">$265M</td><td class="num">0.7%</td></tr>
+<tr><td><b>TSM</b></td><td>TAIWAN SEMICONDUCTOR MFG LTD</td><td class="num"></td><td class="num"></td><td class="num">$2,622M</td><td class="num">6.6%</td></tr>
+</tbody>
+    </table>
+    
+    </div>
+  </div>
+  <div id="s-COATUE-buysells" class="chart-sec" style="display:none">
+  <p class="chart-caption">Changes in portfolio between the two most recent quarters. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates total AUM, compressing all stock weights even with no stock trades. <b>Δ$ = Δ shares × implied price (value/shares from 13F)</b> — captures partial sells to take profit even when position value stays flat due to price appreciation.</p>
+  <p class="chart-subtitle">By Δ% weight</p>
+  <img src="COATUE/COATUE_buys_sells.png" alt="By Δ% weight">
+  <p class="chart-subtitle">By Δ$ (shares × price)</p>
+  <img src="COATUE/COATUE_buys_sells_usd.png" alt="By Δ$ (shares × price)">
+  </div>
+  <div id="s-COATUE-buysperf" class="chart-sec" style="display:none">
+  <p class="chart-caption">Price performance of the top buys and sells in the 180 days following each quarter-end, normalised to 0% at quarter-end. The dashed vertical line marks +45 days (when the 13F becomes public). Universe = same top buys / sells as the Δ$ chart. Pink dashed lines indicate Put options held on that name.</p>
+  <img src="COATUE/COATUE_buys_sells_perf.png" alt="Buys & Sell Perf">
+  </div>
+</div>
+<div id="fund-PERSHING" class="fund-block" style="display:none">
+  <h2>Pershing</h2>
+  <div class="sec-tabs">
+    <span class="sec-tab active" data-fund="PERSHING" data-target="s-PERSHING-aum">AUM</span>
+    <span class="sec-tab featured" data-fund="PERSHING" data-target="s-PERSHING-track">Fund Clone</span>
+    <span class="sec-tab" data-fund="PERSHING" data-target="s-PERSHING-positions">Positions</span>
+    <span class="sec-tab" data-fund="PERSHING" data-target="s-PERSHING-buysells">Buys & Sells</span>
+    <span class="sec-tab featured" data-fund="PERSHING" data-target="s-PERSHING-buysperf">Buys & Sell Perf</span>
+  </div>
+  <div id="s-PERSHING-aum" class="chart-sec" style="display:block">
+  <p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>Δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
+  <img src="PERSHING/PERSHING_aum.png" alt="AUM">
+  </div>
+  <div id="s-PERSHING-track" class="chart-sec" style="display:none">
+  <p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights, normalised to 1 at inception. <b>Clone all</b> uses every reported position. <b>Clone top&thinsp;N</b> keeps only the largest N positions, equal-weighted. <b>+45d public</b> simulates an investor who acts only after the filing becomes public (45 days after quarter-end). Compared against SPY as benchmark.</p>
+  <img src="PERSHING/PERSHING_clone_track.png" alt="Clone Track">
+  </div>
+  <div id="s-PERSHING-positions" class="chart-sec" style="display:none">
+  <p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).</p>
+  <img src="PERSHING/PERSHING_positions.png" alt="Positions">
+  <div class="pos-table-wrap">
+    <h3>Long Positions</h3>
+    <table class="pos-tbl">
+      <thead><tr><th>Ticker</th><th>Name</th>
+        <th colspan="2">Mar 2026 (AUM $13.7B)</th><th colspan="2">Dec 2025 (AUM $15.5B)</th></tr>
+        <tr><th></th><th></th>
+        <th>Value</th><th>Weight</th><th>Value</th><th>Weight</th></tr>
+      </thead>
+      <tbody><tr><td><b>BN</b></td><td>BROOKFIELD CORP</td><td class="num">$2,416M</td><td class="num">17.6%</td><td class="num">$2,818M</td><td class="num">18.1%</td></tr>
+<tr><td><b>AMZN</b></td><td>AMAZON COM INC</td><td class="num">$2,385M</td><td class="num">17.4%</td><td class="num">$2,218M</td><td class="num">14.3%</td></tr>
+<tr><td><b>UBER</b></td><td>UBER TECHNOLOGIES INC</td><td class="num">$2,155M</td><td class="num">15.7%</td><td class="num">$2,468M</td><td class="num">15.9%</td></tr>
+<tr><td><b>MSFT</b></td><td>MICROSOFT CORP</td><td class="num">$2,093M</td><td class="num">15.3%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>QSR</b></td><td>RESTAURANT BRANDS INTL INC</td><td class="num">$1,674M</td><td class="num">12.2%</td><td class="num">$1,560M</td><td class="num">10.0%</td></tr>
+<tr><td><b>META</b></td><td>META PLATFORMS INC</td><td class="num">$1,522M</td><td class="num">11.1%</td><td class="num">$1,765M</td><td class="num">11.4%</td></tr>
+<tr><td><b>HHH</b></td><td>HOWARD HUGHES HOLDINGS INC</td><td class="num">$1,193M</td><td class="num">8.7%</td><td class="num">$1,504M</td><td class="num">9.7%</td></tr>
+<tr><td><b>SEG</b></td><td>SEAPORT ENTMT GROUP INC</td><td class="num">$108M</td><td class="num">0.8%</td><td class="num">$99M</td><td class="num">0.6%</td></tr>
+<tr><td><b>GOOG</b></td><td>ALPHABET INC</td><td class="num">$89M</td><td class="num">0.7%</td><td class="num">$1,934M</td><td class="num">12.5%</td></tr>
+<tr><td><b>HTZ</b></td><td>HERTZ GLOBAL HLDGS INC</td><td class="num">$70M</td><td class="num">0.5%</td><td class="num">$78M</td><td class="num">0.5%</td></tr>
+<tr><td><b>GOOGL</b></td><td>ALPHABET INC</td><td class="num">$9M</td><td class="num">0.1%</td><td class="num">$212M</td><td class="num">1.4%</td></tr>
+<tr><td><b>HLT</b></td><td>HILTON WORLDWIDE HLDGS INC</td><td class="num"></td><td class="num"></td><td class="num">$870M</td><td class="num">5.6%</td></tr>
+</tbody>
+    </table>
+    
+    </div>
+  </div>
+  <div id="s-PERSHING-buysells" class="chart-sec" style="display:none">
+  <p class="chart-caption">Changes in portfolio between the two most recent quarters. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates total AUM, compressing all stock weights even with no stock trades. <b>Δ$ = Δ shares × implied price (value/shares from 13F)</b> — captures partial sells to take profit even when position value stays flat due to price appreciation.</p>
+  <p class="chart-subtitle">By Δ% weight</p>
+  <img src="PERSHING/PERSHING_buys_sells.png" alt="By Δ% weight">
+  <p class="chart-subtitle">By Δ$ (shares × price)</p>
+  <img src="PERSHING/PERSHING_buys_sells_usd.png" alt="By Δ$ (shares × price)">
+  </div>
+  <div id="s-PERSHING-buysperf" class="chart-sec" style="display:none">
+  <p class="chart-caption">Price performance of the top buys and sells in the 180 days following each quarter-end, normalised to 0% at quarter-end. The dashed vertical line marks +45 days (when the 13F becomes public). Universe = same top buys / sells as the Δ$ chart. Pink dashed lines indicate Put options held on that name.</p>
+  <img src="PERSHING/PERSHING_buys_sells_perf.png" alt="Buys & Sell Perf">
+  </div>
+</div>
+<div id="fund-THIRD_POINT" class="fund-block" style="display:none">
+  <h2>Third Point</h2>
+  <div class="sec-tabs">
+    <span class="sec-tab active" data-fund="THIRD_POINT" data-target="s-THIRD_POINT-aum">AUM</span>
+    <span class="sec-tab featured" data-fund="THIRD_POINT" data-target="s-THIRD_POINT-track">Fund Clone</span>
+    <span class="sec-tab" data-fund="THIRD_POINT" data-target="s-THIRD_POINT-positions">Positions</span>
+    <span class="sec-tab" data-fund="THIRD_POINT" data-target="s-THIRD_POINT-buysells">Buys & Sells</span>
+    <span class="sec-tab featured" data-fund="THIRD_POINT" data-target="s-THIRD_POINT-buysperf">Buys & Sell Perf</span>
+  </div>
+  <div id="s-THIRD_POINT-aum" class="chart-sec" style="display:block">
+  <p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>Δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
+  <img src="THIRD_POINT/THIRD_POINT_aum.png" alt="AUM">
+  </div>
+  <div id="s-THIRD_POINT-track" class="chart-sec" style="display:none">
+  <p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights, normalised to 1 at inception. <b>Clone all</b> uses every reported position. <b>Clone top&thinsp;N</b> keeps only the largest N positions, equal-weighted. <b>+45d public</b> simulates an investor who acts only after the filing becomes public (45 days after quarter-end). Compared against SPY as benchmark.</p>
+  <img src="THIRD_POINT/THIRD_POINT_clone_track.png" alt="Clone Track">
+  </div>
+  <div id="s-THIRD_POINT-positions" class="chart-sec" style="display:none">
+  <p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).</p>
+  <img src="THIRD_POINT/THIRD_POINT_positions.png" alt="Positions">
+  <div class="pos-table-wrap">
+    <h3>Long Positions</h3>
+    <table class="pos-tbl">
+      <thead><tr><th>Ticker</th><th>Name</th>
+        <th colspan="2">Mar 2026 (AUM $2.1B)</th><th colspan="2">Dec 2025 (AUM $7.3B)</th></tr>
+        <tr><th></th><th></th>
+        <th>Value</th><th>Weight</th><th>Value</th><th>Weight</th></tr>
+      </thead>
+      <tbody><tr><td><b>AMZN</b></td><td>AMAZON COM INC</td><td class="num">$404M</td><td class="num">19.4%</td><td class="num">$500M</td><td class="num">6.9%</td></tr>
+<tr><td><b>TDS</b></td><td>TELEPHONE & DATA SYS INC</td><td class="num">$278M</td><td class="num">13.3%</td><td class="num">$274M</td><td class="num">3.8%</td></tr>
+<tr><td><b>TPD</b></td><td>SOMNIGROUP INTERNATIONAL INC</td><td class="num">$168M</td><td class="num">8.1%</td><td class="num">$304M</td><td class="num">4.2%</td></tr>
+<tr><td><b>CRS</b></td><td>CARPENTER TECHNOLOGY CORP</td><td class="num">$122M</td><td class="num">5.9%</td><td class="num">$247M</td><td class="num">3.4%</td></tr>
+<tr><td><b>MTZ</b></td><td>MASTEC INC</td><td class="num">$103M</td><td class="num">4.9%</td><td class="num">$201M</td><td class="num">2.8%</td></tr>
+<tr><td><b>DHR</b></td><td>DANAHER CORP DEL</td><td class="num">$100M</td><td class="num">4.8%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>TSM</b></td><td>TAIWAN SEMICONDUCTOR MANUFAC</td><td class="num">$93M</td><td class="num">4.5%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>APG</b></td><td>API GROUP CORP</td><td class="num">$82M</td><td class="num">3.9%</td><td class="num">$115M</td><td class="num">1.6%</td></tr>
+<tr><td><b>LYV</b></td><td>LIVE NATION ENTERTAINMENT IN</td><td class="num">$71M</td><td class="num">3.4%</td><td class="num">$246M</td><td class="num">3.4%</td></tr>
+<tr><td><b>META</b></td><td>META PLATFORMS INC</td><td class="num">$51M</td><td class="num">2.5%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>GOOGL</b></td><td>ALPHABET INC</td><td class="num">$50M</td><td class="num">2.4%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>GQ9</b></td><td>SPDR GOLD TR</td><td class="num">$41M</td><td class="num">2.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>HUT</b></td><td>HUT 8 CORP</td><td class="num">$41M</td><td class="num">2.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>NVDA</b></td><td>NVIDIA CORPORATION</td><td class="num">$33M</td><td class="num">1.6%</td><td class="num">$550M</td><td class="num">7.6%</td></tr>
+<tr><td><b>T7D</b></td><td>TRANSDIGM GROUP INC</td><td class="num">$29M</td><td class="num">1.4%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>NSC</b></td><td>NORFOLK SOUTHN CORP</td><td class="num">$29M</td><td class="num">1.4%</td><td class="num">$282M</td><td class="num">3.9%</td></tr>
+<tr><td><b>COF</b></td><td>CAPITAL ONE FINL CORP</td><td class="num">$26M</td><td class="num">1.2%</td><td class="num">$267M</td><td class="num">3.7%</td></tr>
+<tr><td><b>UNP</b></td><td>UNION PAC CORP</td><td class="num">$24M</td><td class="num">1.2%</td><td class="num">$419M</td><td class="num">5.8%</td></tr>
+<tr><td><b>SRTA</b></td><td>STRATA CRITICAL MEDICAL INC</td><td class="num">$21M</td><td class="num">1.0%</td><td class="num">$24M</td><td class="num">0.3%</td></tr>
+<tr><td><b>KLAC</b></td><td>KLA CORP</td><td class="num">$16M</td><td class="num">0.8%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>LRCX</b></td><td>LAM RESEARCH CORP</td><td class="num">$16M</td><td class="num">0.8%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>AVGO</b></td><td>BROADCOM INC</td><td class="num">$15M</td><td class="num">0.7%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>SMH</b></td><td>VANECK ETF TRUST</td><td class="num">$15M</td><td class="num">0.7%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>HTZWW</b></td><td>HERTZ GLOBAL HLDGS INC</td><td class="num">$9M</td><td class="num">0.4%</td><td class="num">$11M</td><td class="num">0.1%</td></tr>
+<tr><td><b>SPRY</b></td><td>ARS PHARMACEUTICALS INC</td><td class="num">$8M</td><td class="num">0.4%</td><td class="num">$6M</td><td class="num">0.1%</td></tr>
+<tr><td><b>AUR</b></td><td>AURORA INNOVATION INC</td><td class="num">$4M</td><td class="num">0.2%</td><td class="num">$4M</td><td class="num">0.1%</td></tr>
+<tr><td><b>FLYX</b></td><td>FLYEXCLUSIVE INC</td><td class="num">$2M</td><td class="num">0.1%</td><td class="num">$4M</td><td class="num">0.1%</td></tr>
+<tr><td><b>CTEV</b></td><td>CLARITEV CORPORATION</td><td class="num">$1M</td><td class="num">0.0%</td><td class="num">$6M</td><td class="num">0.1%</td></tr>
+<tr><td><b>AUROW</b></td><td>AURORA INNOVATION INC</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>FLYX/WS</b></td><td>FLYEXCLUSIVE INC</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>FIX</b></td><td>COMFORT SYS USA INC</td><td class="num"></td><td class="num"></td><td class="num">$98M</td><td class="num">1.3%</td></tr>
+<tr><td><b>TSM</b></td><td>TAIWAN SEMICONDUCTOR MFG LTD</td><td class="num"></td><td class="num"></td><td class="num">$129M</td><td class="num">1.8%</td></tr>
+<tr><td><b>TMO</b></td><td>THERMO FISHER SCIENTIFIC INC</td><td class="num"></td><td class="num"></td><td class="num">$29M</td><td class="num">0.4%</td></tr>
+<tr><td><b>RKT</b></td><td>ROCKET COS INC</td><td class="num"></td><td class="num"></td><td class="num">$184M</td><td class="num">2.5%</td></tr>
+<tr><td><b>PGR</b></td><td>PROGRESSIVE CORP</td><td class="num"></td><td class="num"></td><td class="num">$50M</td><td class="num">0.7%</td></tr>
+<tr><td><b>PCG</b></td><td>PG&E CORP</td><td class="num"></td><td class="num"></td><td class="num">$551M</td><td class="num">7.6%</td></tr>
+<tr><td><b>MSFT</b></td><td>MICROSOFT CORP</td><td class="num"></td><td class="num"></td><td class="num">$447M</td><td class="num">6.1%</td></tr>
+<tr><td><b>LPLA</b></td><td>LPL FINL HLDGS INC</td><td class="num"></td><td class="num"></td><td class="num">$182M</td><td class="num">2.5%</td></tr>
+<tr><td><b>KVUE</b></td><td>KENVUE INC</td><td class="num"></td><td class="num"></td><td class="num">$56M</td><td class="num">0.8%</td></tr>
+<tr><td><b>CEG</b></td><td>CONSTELLATION ENERGY CORP</td><td class="num"></td><td class="num"></td><td class="num">$168M</td><td class="num">2.3%</td></tr>
+<tr><td><b>DHR</b></td><td>DANAHER CORPORATION</td><td class="num"></td><td class="num"></td><td class="num">$137M</td><td class="num">1.9%</td></tr>
+<tr><td><b>CSX</b></td><td>CSX CORP</td><td class="num"></td><td class="num"></td><td class="num">$18M</td><td class="num">0.2%</td></tr>
+<tr><td><b>CSGP</b></td><td>COSTAR GROUP INC</td><td class="num"></td><td class="num"></td><td class="num">$213M</td><td class="num">2.9%</td></tr>
+<tr><td><b>CMG</b></td><td>CHIPOTLE MEXICAN GRILL INC</td><td class="num"></td><td class="num"></td><td class="num">$175M</td><td class="num">2.4%</td></tr>
+<tr><td><b>CASY</b></td><td>CASEYS GEN STORES INC</td><td class="num"></td><td class="num"></td><td class="num">$251M</td><td class="num">3.5%</td></tr>
+<tr><td><b>BN</b></td><td>BROOKFIELD CORP</td><td class="num"></td><td class="num"></td><td class="num">$285M</td><td class="num">3.9%</td></tr>
+<tr><td><b>BHC</b></td><td>BAUSCH HEALTH COS INC</td><td class="num"></td><td class="num"></td><td class="num">$2M</td><td class="num">0.0%</td></tr>
+<tr><td><b>BABA</b></td><td>ALIBABA GROUP HLDG LTD</td><td class="num"></td><td class="num"></td><td class="num">$121M</td><td class="num">1.7%</td></tr>
+<tr><td><b>VST</b></td><td>VISTRA CORP</td><td class="num"></td><td class="num"></td><td class="num">$162M</td><td class="num">2.2%</td></tr>
+</tbody>
+    </table>
+    
+    </div>
+  </div>
+  <div id="s-THIRD_POINT-buysells" class="chart-sec" style="display:none">
+  <p class="chart-caption">Changes in portfolio between the two most recent quarters. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates total AUM, compressing all stock weights even with no stock trades. <b>Δ$ = Δ shares × implied price (value/shares from 13F)</b> — captures partial sells to take profit even when position value stays flat due to price appreciation.</p>
+  <p class="chart-subtitle">By Δ% weight</p>
+  <img src="THIRD_POINT/THIRD_POINT_buys_sells.png" alt="By Δ% weight">
+  <p class="chart-subtitle">By Δ$ (shares × price)</p>
+  <img src="THIRD_POINT/THIRD_POINT_buys_sells_usd.png" alt="By Δ$ (shares × price)">
+  </div>
+  <div id="s-THIRD_POINT-buysperf" class="chart-sec" style="display:none">
+  <p class="chart-caption">Price performance of the top buys and sells in the 180 days following each quarter-end, normalised to 0% at quarter-end. The dashed vertical line marks +45 days (when the 13F becomes public). Universe = same top buys / sells as the Δ$ chart. Pink dashed lines indicate Put options held on that name.</p>
+  <img src="THIRD_POINT/THIRD_POINT_buys_sells_perf.png" alt="Buys & Sell Perf">
+  </div>
+</div>
+<div id="fund-BAUPOST" class="fund-block" style="display:none">
+  <h2>Baupost</h2>
+  <div class="sec-tabs">
+    <span class="sec-tab active" data-fund="BAUPOST" data-target="s-BAUPOST-aum">AUM</span>
+    <span class="sec-tab featured" data-fund="BAUPOST" data-target="s-BAUPOST-track">Fund Clone</span>
+    <span class="sec-tab" data-fund="BAUPOST" data-target="s-BAUPOST-positions">Positions</span>
+    <span class="sec-tab" data-fund="BAUPOST" data-target="s-BAUPOST-buysells">Buys & Sells</span>
+    <span class="sec-tab featured" data-fund="BAUPOST" data-target="s-BAUPOST-buysperf">Buys & Sell Perf</span>
+  </div>
+  <div id="s-BAUPOST-aum" class="chart-sec" style="display:block">
+  <p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>Δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
+  <img src="BAUPOST/BAUPOST_aum.png" alt="AUM">
+  </div>
+  <div id="s-BAUPOST-track" class="chart-sec" style="display:none">
+  <p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights, normalised to 1 at inception. <b>Clone all</b> uses every reported position. <b>Clone top&thinsp;N</b> keeps only the largest N positions, equal-weighted. <b>+45d public</b> simulates an investor who acts only after the filing becomes public (45 days after quarter-end). Compared against SPY as benchmark.</p>
+  <img src="BAUPOST/BAUPOST_clone_track.png" alt="Clone Track">
+  </div>
+  <div id="s-BAUPOST-positions" class="chart-sec" style="display:none">
+  <p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).</p>
+  <img src="BAUPOST/BAUPOST_positions.png" alt="Positions">
+  <div class="pos-table-wrap">
+    <h3>Long Positions</h3>
+    <table class="pos-tbl">
+      <thead><tr><th>Ticker</th><th>Name</th>
+        <th colspan="2">Mar 2026 (AUM $0.0B)</th><th colspan="2">Dec 2025 (AUM $0.0B)</th></tr>
+        <tr><th></th><th></th>
+        <th>Value</th><th>Weight</th><th>Value</th><th>Weight</th></tr>
+      </thead>
+      <tbody><tr><td><b>AMZN</b></td><td>AMAZON COM INC</td><td class="num">$1M</td><td class="num">12.7%</td><td class="num">$0M</td><td class="num">9.3%</td></tr>
+<tr><td><b>QSR</b></td><td>RESTAURANT BRANDS INTL INC </td><td class="num">$1M</td><td class="num">11.7%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>WCC</b></td><td>WESCO INTL INC</td><td class="num">$0M</td><td class="num">7.7%</td><td class="num">$0M</td><td class="num">6.6%</td></tr>
+<tr><td><b>UNP</b></td><td>UNION PAC CORP</td><td class="num">$0M</td><td class="num">7.3%</td><td class="num">$0M</td><td class="num">7.1%</td></tr>
+<tr><td><b>ELV</b></td><td>ELEVANCE HEALTH INC FORMERLY</td><td class="num">$0M</td><td class="num">7.3%</td><td class="num">$0M</td><td class="num">8.4%</td></tr>
+<tr><td><b>GOOG</b></td><td>ALPHABET INC</td><td class="num">$0M</td><td class="num">6.6%</td><td class="num">$0M</td><td class="num">6.5%</td></tr>
+<tr><td><b>FERG</b></td><td>FERGUSON ENTERPRISES INC</td><td class="num">$0M</td><td class="num">6.6%</td><td class="num">$0M</td><td class="num">4.8%</td></tr>
+<tr><td><b>V</b></td><td>VISA INC</td><td class="num">$0M</td><td class="num">4.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>TFX</b></td><td>TELEFLEX INCORPORATED</td><td class="num">$0M</td><td class="num">3.7%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>EXP</b></td><td>EAGLE MATLS INC</td><td class="num">$0M</td><td class="num">3.3%</td><td class="num">$0M</td><td class="num">4.6%</td></tr>
+<tr><td><b>GPC</b></td><td>GENUINE PARTS CO</td><td class="num">$0M</td><td class="num">3.1%</td><td class="num">$0M</td><td class="num">3.5%</td></tr>
+<tr><td><b>GDS</b></td><td>GDS HLDGS LTD</td><td class="num">$0M</td><td class="num">2.4%</td><td class="num">$0M</td><td class="num">2.0%</td></tr>
+<tr><td><b>COLDEUR</b></td><td>AMERICOLD REALTY TRUST INC</td><td class="num">$0M</td><td class="num">1.7%</td><td class="num">$0M</td><td class="num">0.8%</td></tr>
+<tr><td><b>MOH</b></td><td>MOLINA HEALTHCARE INC</td><td class="num">$0M</td><td class="num">1.7%</td><td class="num">$0M</td><td class="num">2.1%</td></tr>
+<tr><td><b>AERO</b></td><td>GRUPO AEROMEXICO SAB DE CV</td><td class="num">$0M</td><td class="num">1.3%</td><td class="num">$0M</td><td class="num">2.0%</td></tr>
+<tr><td><b>PCVX</b></td><td>VAXCYTE INC</td><td class="num">$0M</td><td class="num">0.9%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>DNOW</b></td><td>DNOW INC</td><td class="num">$0M</td><td class="num">0.8%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>DG</b></td><td>DOLLAR GEN CORP NEW</td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">5.2%</td></tr>
+<tr><td><b>FIS</b></td><td>FIDELITY NATL INFORMATION SV</td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">5.7%</td></tr>
+<tr><td><b>FISV</b></td><td>FISERV INC</td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">2.8%</td></tr>
+<tr><td><b>QSR</b></td><td>RESTAURANT BRANDS INTL INC</td><td class="num"></td><td class="num"></td><td class="num">$1M</td><td class="num">10.4%</td></tr>
+<tr><td><b>TBN</b></td><td>TAMBORAN RES CORP</td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">0.1%</td></tr>
+</tbody>
+    </table>
+    
+    </div>
+  </div>
+  <div id="s-BAUPOST-buysells" class="chart-sec" style="display:none">
+  <p class="chart-caption">Changes in portfolio between the two most recent quarters. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates total AUM, compressing all stock weights even with no stock trades. <b>Δ$ = Δ shares × implied price (value/shares from 13F)</b> — captures partial sells to take profit even when position value stays flat due to price appreciation.</p>
+  <p class="chart-subtitle">By Δ% weight</p>
+  <img src="BAUPOST/BAUPOST_buys_sells.png" alt="By Δ% weight">
+  <p class="chart-subtitle">By Δ$ (shares × price)</p>
+  <img src="BAUPOST/BAUPOST_buys_sells_usd.png" alt="By Δ$ (shares × price)">
+  </div>
+  <div id="s-BAUPOST-buysperf" class="chart-sec" style="display:none">
+  <p class="chart-caption">Price performance of the top buys and sells in the 180 days following each quarter-end, normalised to 0% at quarter-end. The dashed vertical line marks +45 days (when the 13F becomes public). Universe = same top buys / sells as the Δ$ chart. Pink dashed lines indicate Put options held on that name.</p>
+  <img src="BAUPOST/BAUPOST_buys_sells_perf.png" alt="Buys & Sell Perf">
+  </div>
+</div>
+<div id="fund-AKO" class="fund-block" style="display:none">
+  <h2>Ako</h2>
+  <div class="sec-tabs">
+    <span class="sec-tab active" data-fund="AKO" data-target="s-AKO-aum">AUM</span>
+    <span class="sec-tab featured" data-fund="AKO" data-target="s-AKO-track">Fund Clone</span>
+    <span class="sec-tab" data-fund="AKO" data-target="s-AKO-positions">Positions</span>
+    <span class="sec-tab" data-fund="AKO" data-target="s-AKO-buysells">Buys & Sells</span>
+    <span class="sec-tab featured" data-fund="AKO" data-target="s-AKO-buysperf">Buys & Sell Perf</span>
+  </div>
+  <div id="s-AKO-aum" class="chart-sec" style="display:block">
+  <p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>Δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
+  <img src="AKO/AKO_aum.png" alt="AUM">
+  </div>
+  <div id="s-AKO-track" class="chart-sec" style="display:none">
+  <p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights, normalised to 1 at inception. <b>Clone all</b> uses every reported position. <b>Clone top&thinsp;N</b> keeps only the largest N positions, equal-weighted. <b>+45d public</b> simulates an investor who acts only after the filing becomes public (45 days after quarter-end). Compared against SPY as benchmark.</p>
+  <img src="AKO/AKO_clone_track.png" alt="Clone Track">
+  </div>
+  <div id="s-AKO-positions" class="chart-sec" style="display:none">
+  <p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).</p>
+  <img src="AKO/AKO_positions.png" alt="Positions">
+  <div class="pos-table-wrap">
+    <h3>Long Positions</h3>
+    <table class="pos-tbl">
+      <thead><tr><th>Ticker</th><th>Name</th>
+        <th colspan="2">Mar 2026 (AUM $0.0B)</th><th colspan="2">Dec 2025 (AUM $0.0B)</th></tr>
+        <tr><th></th><th></th>
+        <th>Value</th><th>Weight</th><th>Value</th><th>Weight</th></tr>
+      </thead>
+      <tbody><tr><td><b>AMZN</b></td><td>AMAZON COM INC</td><td class="num">$0M</td><td class="num">7.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>V</b></td><td>VISA INC</td><td class="num">$0M</td><td class="num">7.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>ADI</b></td><td>ANALOG DEVICES INC</td><td class="num">$0M</td><td class="num">6.4%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>ICE</b></td><td>INTERCONTINENTAL EXCHANGE IN</td><td class="num">$0M</td><td class="num">5.7%</td><td class="num">$0M</td><td class="num">5.1%</td></tr>
+<tr><td><b>GE</b></td><td>GE AEROSPACE</td><td class="num">$0M</td><td class="num">5.5%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>MSFT</b></td><td>MICROSOFT CORP</td><td class="num">$0M</td><td class="num">5.3%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>WAT</b></td><td>WATERS CORP</td><td class="num">$0M</td><td class="num">4.8%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>CSCO</b></td><td>CISCO SYS INC</td><td class="num">$0M</td><td class="num">4.6%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>MCO</b></td><td>MOODYS CORP</td><td class="num">$0M</td><td class="num">4.4%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>CP</b></td><td>CANADIAN PACIFIC KANSAS CITY</td><td class="num">$0M</td><td class="num">4.2%</td><td class="num">$0M</td><td class="num">3.3%</td></tr>
+<tr><td><b>BKNG</b></td><td>BOOKING HOLDINGS INC</td><td class="num">$0M</td><td class="num">4.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>SUNB</b></td><td>SUNBELT RENTALS HOLDINGS INC</td><td class="num">$0M</td><td class="num">4.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>FICO</b></td><td>FAIR ISAAC CORP</td><td class="num">$0M</td><td class="num">2.7%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>WMB</b></td><td>WILLIAMS COS INC</td><td class="num">$0M</td><td class="num">2.5%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>SYK</b></td><td>STRYKER CORPORATION</td><td class="num">$0M</td><td class="num">1.6%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>MA</b></td><td>MASTERCARD INCORPORATED</td><td class="num">$0M</td><td class="num">1.5%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>EFX</b></td><td>EQUIFAX INC</td><td class="num">$0M</td><td class="num">1.4%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>APD</b></td><td>AIR PRODUCTS AND CHEMICALS I</td><td class="num">$0M</td><td class="num">1.3%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>CSL</b></td><td>CARLISLE COS INC</td><td class="num">$0M</td><td class="num">1.3%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>CRM</b></td><td>SALESFORCE INC</td><td class="num">$0M</td><td class="num">1.3%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>MRSH</b></td><td>MARSH & MCLENNAN COS INC</td><td class="num">$0M</td><td class="num">0.9%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>CPRT</b></td><td>COPART INC</td><td class="num">$0M</td><td class="num">0.2%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>RELX</b></td><td>RELX PLC</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>GE</b></td><td>GE AEROSPACE               </td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">5.2%</td></tr>
+<tr><td><b>V</b></td><td>VISA INC                   </td><td class="num"></td><td class="num"></td><td class="num">$1M</td><td class="num">7.7%</td></tr>
+<tr><td><b>MSFT</b></td><td>MICROSOFT CORP             </td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">7.5%</td></tr>
+<tr><td><b>MRSH</b></td><td>MARSH & MCLENNAN COS INC   </td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">4.2%</td></tr>
+<tr><td><b>MCO</b></td><td>MOODYS CORP                </td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">5.7%</td></tr>
+<tr><td><b>MA</b></td><td>MASTERCARD INCORPORATED    </td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">0.9%</td></tr>
+<tr><td><b>INTU</b></td><td>INTUIT                     </td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">2.4%</td></tr>
+<tr><td><b>CRM</b></td><td>SALESFORCE INC             </td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">1.3%</td></tr>
+<tr><td><b>FICO</b></td><td>FAIR ISAAC CORP            </td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">2.9%</td></tr>
+<tr><td><b>EFX</b></td><td>EQUIFAX INC                </td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">2.5%</td></tr>
+<tr><td><b>CSCO</b></td><td>CISCO SYS INC              </td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">3.7%</td></tr>
+<tr><td><b>CPRT</b></td><td>COPART INC                 </td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">3.6%</td></tr>
+<tr><td><b>BKNG</b></td><td>BOOKING HOLDINGS INC       </td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">3.5%</td></tr>
+<tr><td><b>AMZN</b></td><td>AMAZON COM INC             </td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">6.1%</td></tr>
+<tr><td><b>ADI</b></td><td>ANALOG DEVICES INC         </td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">5.2%</td></tr>
+<tr><td><b>WAT</b></td><td>WATERS CORP                </td><td class="num"></td><td class="num"></td><td class="num">$0M</td><td class="num">4.4%</td></tr>
+</tbody>
+    </table>
+    
+    </div>
+  </div>
+  <div id="s-AKO-buysells" class="chart-sec" style="display:none">
+  <p class="chart-caption">Changes in portfolio between the two most recent quarters. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates total AUM, compressing all stock weights even with no stock trades. <b>Δ$ = Δ shares × implied price (value/shares from 13F)</b> — captures partial sells to take profit even when position value stays flat due to price appreciation.</p>
+  <p class="chart-subtitle">By Δ% weight</p>
+  <img src="AKO/AKO_buys_sells.png" alt="By Δ% weight">
+  <p class="chart-subtitle">By Δ$ (shares × price)</p>
+  <img src="AKO/AKO_buys_sells_usd.png" alt="By Δ$ (shares × price)">
+  </div>
+  <div id="s-AKO-buysperf" class="chart-sec" style="display:none">
+  <p class="chart-caption">Price performance of the top buys and sells in the 180 days following each quarter-end, normalised to 0% at quarter-end. The dashed vertical line marks +45 days (when the 13F becomes public). Universe = same top buys / sells as the Δ$ chart. Pink dashed lines indicate Put options held on that name.</p>
+  <img src="AKO/AKO_buys_sells_perf.png" alt="Buys & Sell Perf">
+  </div>
+</div>
+<div id="fund-RA" class="fund-block" style="display:none">
+  <h2>Ra</h2>
+  <div class="sec-tabs">
+    <span class="sec-tab active" data-fund="RA" data-target="s-RA-aum">AUM</span>
+    <span class="sec-tab featured" data-fund="RA" data-target="s-RA-track">Fund Clone</span>
+    <span class="sec-tab" data-fund="RA" data-target="s-RA-positions">Positions</span>
+    <span class="sec-tab" data-fund="RA" data-target="s-RA-buysells">Buys & Sells</span>
+    <span class="sec-tab featured" data-fund="RA" data-target="s-RA-buysperf">Buys & Sell Perf</span>
+  </div>
+  <div id="s-RA-aum" class="chart-sec" style="display:block">
+  <p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>Δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
+  <img src="RA/RA_aum.png" alt="AUM">
+  </div>
+  <div id="s-RA-track" class="chart-sec" style="display:none">
+  <p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights, normalised to 1 at inception. <b>Clone all</b> uses every reported position. <b>Clone top&thinsp;N</b> keeps only the largest N positions, equal-weighted. <b>+45d public</b> simulates an investor who acts only after the filing becomes public (45 days after quarter-end). Compared against SPY as benchmark.</p>
+  <img src="RA/RA_clone_track.png" alt="Clone Track">
+  </div>
+  <div id="s-RA-positions" class="chart-sec" style="display:none">
+  <p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).</p>
+  <img src="RA/RA_positions.png" alt="Positions">
+  <div class="pos-table-wrap">
+    <h3>Long Positions</h3>
+    <table class="pos-tbl">
+      <thead><tr><th>Ticker</th><th>Name</th>
+        <th colspan="2">Mar 2026 (AUM $1.7B)</th><th colspan="2">Dec 2025 (AUM $1.5B)</th></tr>
+        <tr><th></th><th></th>
+        <th>Value</th><th>Weight</th><th>Value</th><th>Weight</th></tr>
+      </thead>
+      <tbody><tr><td><b>NSC</b></td><td>NORFOLK SOUTHN CORP</td><td class="num">$133M</td><td class="num">7.9%</td><td class="num">$135M</td><td class="num">9.0%</td></tr>
+<tr><td><b>AL</b></td><td>AIR LEASE CORP</td><td class="num">$90M</td><td class="num">5.3%</td><td class="num">$72M</td><td class="num">4.8%</td></tr>
+<tr><td><b>GTLS</b></td><td>CHART INDS INC</td><td class="num">$89M</td><td class="num">5.2%</td><td class="num">$89M</td><td class="num">5.9%</td></tr>
+<tr><td><b>EA</b></td><td>ELECTRONIC ARTS INC</td><td class="num">$65M</td><td class="num">3.9%</td><td class="num">$55M</td><td class="num">3.7%</td></tr>
+<tr><td><b>QRVO</b></td><td>QORVO INC</td><td class="num">$62M</td><td class="num">3.7%</td><td class="num">$35M</td><td class="num">2.3%</td></tr>
+<tr><td><b>UNF</b></td><td>UNIFIRST CORP MASS</td><td class="num">$55M</td><td class="num">3.2%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>KVUE</b></td><td>KENVUE INC</td><td class="num">$51M</td><td class="num">3.0%</td><td class="num">$37M</td><td class="num">2.5%</td></tr>
+<tr><td><b>SLAB</b></td><td>SILICON LABORATORIES INC</td><td class="num">$46M</td><td class="num">2.7%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>ACLXGBX</b></td><td>ARCELLX INC</td><td class="num">$43M</td><td class="num">2.6%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>PEN</b></td><td>PENUMBRA INC</td><td class="num">$43M</td><td class="num">2.6%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>WBD</b></td><td>WARNER BROS DISCOVERY INC</td><td class="num">$43M</td><td class="num">2.5%</td><td class="num">$16M</td><td class="num">1.1%</td></tr>
+<tr><td><b>APLSUSD</b></td><td>APELLIS PHARMACEUTICALS INC</td><td class="num">$35M</td><td class="num">2.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>CNTA</b></td><td>CENTESSA PHARMACEUTICALS PLC</td><td class="num">$34M</td><td class="num">2.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>SKYT</b></td><td>SKYWATER TECHNOLOGY INC</td><td class="num">$34M</td><td class="num">2.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>3M4</b></td><td>MASIMO CORP</td><td class="num">$34M</td><td class="num">2.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>HO1</b></td><td>HOLOGIC INC</td><td class="num">$33M</td><td class="num">1.9%</td><td class="num">$32M</td><td class="num">2.2%</td></tr>
+<tr><td><b>CSN</b></td><td>CSG SYS INTL INC</td><td class="num">$32M</td><td class="num">1.9%</td><td class="num">$4M</td><td class="num">0.2%</td></tr>
+<tr><td><b>TXNM</b></td><td>TXNM ENERGY INC</td><td class="num">$30M</td><td class="num">1.8%</td><td class="num">$30M</td><td class="num">2.0%</td></tr>
+<tr><td><b>CWAN</b></td><td>CLEARWATER ANALYTICS HLDGS I</td><td class="num">$30M</td><td class="num">1.8%</td><td class="num">$9M</td><td class="num">0.6%</td></tr>
+<tr><td><b>WBS</b></td><td>WEBSTER FINL CORP</td><td class="num">$29M</td><td class="num">1.7%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>BHF</b></td><td>BRIGHTHOUSE FINL INC</td><td class="num">$27M</td><td class="num">1.6%</td><td class="num">$24M</td><td class="num">1.6%</td></tr>
+<tr><td><b>AES</b></td><td>AES CORP</td><td class="num">$27M</td><td class="num">1.6%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>SDA</b></td><td>SEALED AIR CORP NEW</td><td class="num">$26M</td><td class="num">1.5%</td><td class="num">$18M</td><td class="num">1.2%</td></tr>
+<tr><td><b>AAUC</b></td><td>ALLIED GOLD CORP</td><td class="num">$26M</td><td class="num">1.5%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>THR</b></td><td>THERMON GROUP HLDGS INC</td><td class="num">$24M</td><td class="num">1.4%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>LBRDK</b></td><td>LIBERTY BROADBAND CORP</td><td class="num">$24M</td><td class="num">1.4%</td><td class="num">$23M</td><td class="num">1.5%</td></tr>
+<tr><td><b>PRA</b></td><td>PROASSURANCE CORP</td><td class="num">$23M</td><td class="num">1.4%</td><td class="num">$20M</td><td class="num">1.3%</td></tr>
+<tr><td><b>AM6</b></td><td>AMICUS THERAPEUTIC</td><td class="num">$23M</td><td class="num">1.4%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>UTE0</b></td><td>CANTALOUPE INC</td><td class="num">$22M</td><td class="num">1.3%</td><td class="num">$20M</td><td class="num">1.3%</td></tr>
+<tr><td><b>DBRG</b></td><td>DIGITALBRIDGE GROUP INC</td><td class="num">$22M</td><td class="num">1.3%</td><td class="num">$6M</td><td class="num">0.4%</td></tr>
+<tr><td><b>K4F</b></td><td>ONESTREAM INC</td><td class="num">$22M</td><td class="num">1.3%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>NATL</b></td><td>NCR ATLEOS CORPORATION</td><td class="num">$21M</td><td class="num">1.2%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>DAWNGBX</b></td><td>DAY ONE BIOPHARMACEUTICALS I</td><td class="num">$20M</td><td class="num">1.2%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>STKL</b></td><td>SUNOPTA INC</td><td class="num">$19M</td><td class="num">1.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>SEM</b></td><td>SELECT MED HLDGS CORP</td><td class="num">$19M</td><td class="num">1.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>SSTK</b></td><td>SHUTTERSTOCK INC</td><td class="num">$19M</td><td class="num">1.1%</td><td class="num">$22M</td><td class="num">1.5%</td></tr>
+<tr><td><b>628</b></td><td>SEMRUSH HLDGS INC</td><td class="num">$19M</td><td class="num">1.1%</td><td class="num">$10M</td><td class="num">0.7%</td></tr>
+<tr><td><b>SNCY</b></td><td>SUN CTRY AIRLS HLDGS INC</td><td class="num">$19M</td><td class="num">1.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>NSA</b></td><td>NATIONAL STORAGE AFFILIATES</td><td class="num">$18M</td><td class="num">1.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>VRE</b></td><td>VERIS RESIDENTIAL INC</td><td class="num">$14M</td><td class="num">0.8%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>SIMO</b></td><td>SILICON MOTION TECHNOLOGY CO</td><td class="num">$13M</td><td class="num">0.8%</td><td class="num">$7M</td><td class="num">0.5%</td></tr>
+<tr><td><b>SUNC</b></td><td>SUNOCOCORP LLC</td><td class="num">$12M</td><td class="num">0.7%</td><td class="num">$3M</td><td class="num">0.2%</td></tr>
+<tr><td><b>TALK</b></td><td>TALKSPACE INC</td><td class="num">$10M</td><td class="num">0.6%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>IMXI</b></td><td>INTERNATIONAL MONEY EXPRESS</td><td class="num">$9M</td><td class="num">0.6%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>AMWD</b></td><td>AMERICAN WOODMARK CORP</td><td class="num">$9M</td><td class="num">0.5%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>CDE</b></td><td>COEUR MNG INC</td><td class="num">$8M</td><td class="num">0.5%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>TWO</b></td><td>TWO HARBORS INVENTMENT CORPO</td><td class="num">$8M</td><td class="num">0.4%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>430</b></td><td>TERNS PHARMACEUTICALS INC</td><td class="num">$7M</td><td class="num">0.4%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>COMP</b></td><td>COMPASS INC</td><td class="num">$7M</td><td class="num">0.4%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>STEL</b></td><td>STELLAR BANCORP INC</td><td class="num">$7M</td><td class="num">0.4%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>CRBG</b></td><td>COREBRIDGE FINL INC</td><td class="num">$7M</td><td class="num">0.4%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>T86</b></td><td>TRI POINTE HOMES INC</td><td class="num">$7M</td><td class="num">0.4%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>TEX</b></td><td>TEREX CORP NEW</td><td class="num">$6M</td><td class="num">0.4%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>EHABUSD</b></td><td>ENHABIT INC</td><td class="num">$6M</td><td class="num">0.4%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>7WH</b></td><td>UDEMY INC</td><td class="num">$5M</td><td class="num">0.3%</td><td class="num">$3M</td><td class="num">0.2%</td></tr>
+<tr><td><b>EWCZ</b></td><td>EUROPEAN WAX CTR INC</td><td class="num">$4M</td><td class="num">0.3%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>CCO</b></td><td>CLEAR CHANNEL OUTDOOR HLDGS</td><td class="num">$4M</td><td class="num">0.2%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>CTRA</b></td><td>COTERRA ENERGY INC</td><td class="num">$3M</td><td class="num">0.2%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>GORO</b></td><td>GOLD RESOURCE CORP</td><td class="num">$2M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>KW</b></td><td>KENNEDY-WILSON HOLDINGS INC</td><td class="num">$2M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>PKST</b></td><td>PEAKSTONE REALTY TRUST</td><td class="num">$2M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>ONTF</b></td><td>ON24 INC</td><td class="num">$1M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>BCO</b></td><td>BRINKS CO</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>ALGT</b></td><td>ALLEGIANT TRAVEL CO</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>GENVR</b></td><td>GEN DIGITAL INC</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num">$1M</td><td class="num">0.1%</td></tr>
+<tr><td><b>GETY</b></td><td>GETTY IMAGES HOLDINGS INC</td><td class="num">$0M</td><td class="num">0.0%</td><td class="num">$0M</td><td class="num">0.0%</td></tr>
+<tr><td><b>IMG</b></td><td>IAMGOLD CORP</td><td class="num"></td><td class="num"></td><td class="num">$1M</td><td class="num">0.1%</td></tr>
+<tr><td><b>RKT</b></td><td>ROCKET COS INC</td><td class="num"></td><td class="num"></td><td class="num">$11M</td><td class="num">0.7%</td></tr>
+<tr><td><b>IMXI</b></td><td>INTERNATIONAL MNY EXPRESS IN</td><td class="num"></td><td class="num"></td><td class="num">$6M</td><td class="num">0.4%</td></tr>
+<tr><td><b>JAMF</b></td><td>JAMF HLDG CORP</td><td class="num"></td><td class="num"></td><td class="num">$12M</td><td class="num">0.8%</td></tr>
+<tr><td><b>NGDN</b></td><td>NEW GOLD INC CDA</td><td class="num"></td><td class="num"></td><td class="num">$82M</td><td class="num">5.4%</td></tr>
+<tr><td><b>PCH</b></td><td>POTLATCHDELTIC CORPORATION</td><td class="num"></td><td class="num"></td><td class="num">$4M</td><td class="num">0.3%</td></tr>
+<tr><td><b>PLYM</b></td><td>PLYMOUTH INDL REIT INC</td><td class="num"></td><td class="num"></td><td class="num">$4M</td><td class="num">0.3%</td></tr>
+<tr><td><b>QCOM</b></td><td>QUALCOMM INC</td><td class="num"></td><td class="num"></td><td class="num">$2M</td><td class="num">0.2%</td></tr>
+<tr><td><b>SYU1</b></td><td>SYNOVUS FINL CORP</td><td class="num"></td><td class="num"></td><td class="num">$10M</td><td class="num">0.6%</td></tr>
+<tr><td><b>RNAGBP</b></td><td>AVIDITY BIOSCIENCES INC</td><td class="num"></td><td class="num"></td><td class="num">$63M</td><td class="num">4.2%</td></tr>
+<tr><td><b>SMLR</b></td><td>SEMLER SCIENTIFIC INC</td><td class="num"></td><td class="num"></td><td class="num">$1M</td><td class="num">0.1%</td></tr>
+<tr><td><b>STAA</b></td><td>STAAR SURGICAL CO</td><td class="num"></td><td class="num"></td><td class="num">$11M</td><td class="num">0.7%</td></tr>
+<tr><td><b>TGNA</b></td><td>TEGNA INC</td><td class="num"></td><td class="num"></td><td class="num">$19M</td><td class="num">1.2%</td></tr>
+<tr><td><b>THS</b></td><td>TREEHOUSE FOODS INC</td><td class="num"></td><td class="num"></td><td class="num">$2M</td><td class="num">0.1%</td></tr>
+<tr><td><b>TWO</b></td><td>TWO HBRS INVT CORP</td><td class="num"></td><td class="num"></td><td class="num">$5M</td><td class="num">0.3%</td></tr>
+<tr><td><b>FYBR</b></td><td>FRONTIER COMMUNICATIONS PARE</td><td class="num"></td><td class="num"></td><td class="num">$73M</td><td class="num">4.8%</td></tr>
+<tr><td><b>GU9</b></td><td>GUESS INC</td><td class="num"></td><td class="num"></td><td class="num">$5M</td><td class="num">0.4%</td></tr>
+<tr><td><b>9HI</b></td><td>HILLENBRAND INC</td><td class="num"></td><td class="num"></td><td class="num">$17M</td><td class="num">1.2%</td></tr>
+<tr><td><b>FRGE</b></td><td>FORGE GLOBAL HOLDINGS INC</td><td class="num"></td><td class="num"></td><td class="num">$4M</td><td class="num">0.3%</td></tr>
+<tr><td><b>BA</b></td><td>BOEING CO</td><td class="num"></td><td class="num"></td><td class="num">$64M</td><td class="num">4.3%</td></tr>
+<tr><td><b>1RG</b></td><td>REV GROUP INC</td><td class="num"></td><td class="num"></td><td class="num">$12M</td><td class="num">0.8%</td></tr>
+<tr><td><b>75Z</b></td><td>SOHO HOUSE & CO INC</td><td class="num"></td><td class="num"></td><td class="num">$10M</td><td class="num">0.7%</td></tr>
+<tr><td><b>8QR</b></td><td>CONFLUENT INC</td><td class="num"></td><td class="num"></td><td class="num">$18M</td><td class="num">1.2%</td></tr>
+<tr><td><b>ALEX</b></td><td>ALEXANDER & BALDWIN INC NEW</td><td class="num"></td><td class="num"></td><td class="num">$5M</td><td class="num">0.3%</td></tr>
+<tr><td><b>AM6</b></td><td>AMICUS THERAPEUTICS INC</td><td class="num"></td><td class="num"></td><td class="num">$14M</td><td class="num">0.9%</td></tr>
+<tr><td><b>AMWD</b></td><td>AMERICAN WOODMARK CORPORATIO</td><td class="num"></td><td class="num"></td><td class="num">$12M</td><td class="num">0.8%</td></tr>
+<tr><td><b>CATBUSD</b></td><td>ASTRIA THERAPEUTICS INC</td><td class="num"></td><td class="num"></td><td class="num">$10M</td><td class="num">0.6%</td></tr>
+<tr><td><b>EXK</b></td><td>EXACT SCIENCES CORP</td><td class="num"></td><td class="num"></td><td class="num">$82M</td><td class="num">5.4%</td></tr>
+<tr><td><b>CDTX</b></td><td>CIDARA THERAPEUTICS INC</td><td class="num"></td><td class="num"></td><td class="num">$46M</td><td class="num">3.1%</td></tr>
+<tr><td><b>CIVI</b></td><td>CIVITAS RESOURCES INC</td><td class="num"></td><td class="num"></td><td class="num">$3M</td><td class="num">0.2%</td></tr>
+<tr><td><b>CMA</b></td><td>COMERICA INC</td><td class="num"></td><td class="num"></td><td class="num">$21M</td><td class="num">1.4%</td></tr>
+<tr><td><b>DAY</b></td><td>DAYFORCE INC</td><td class="num"></td><td class="num"></td><td class="num">$23M</td><td class="num">1.5%</td></tr>
+<tr><td><b>DVAX</b></td><td>DYNAVAX TECHNOLOGIES CORP</td><td class="num"></td><td class="num"></td><td class="num">$7M</td><td class="num">0.5%</td></tr>
+<tr><td><b>EB4</b></td><td>EVENTBRITE INC</td><td class="num"></td><td class="num"></td><td class="num">$2M</td><td class="num">0.1%</td></tr>
+<tr><td><b>VECO</b></td><td>VEECO INSTRS INC DEL</td><td class="num"></td><td class="num"></td><td class="num">$10M</td><td class="num">0.7%</td></tr>
+</tbody>
+    </table>
+    
+        <h3 style="margin-top:1.5rem;color:#ad1457">Options</h3>
+        <table class="pos-tbl">
+          <thead>
+            <tr><th rowspan="2">Ticker</th><th rowspan="2">Name</th>
+              <th colspan="4" style="text-align:center;border-left:2px solid #dee2e6">Put</th>
+              <th colspan="4" style="text-align:center;border-left:2px solid #dee2e6">Call</th></tr>
+            <tr>
+              <th style="border-left:2px solid #dee2e6">Notional Mar 2026</th><th>Weight</th>
+              <th>Notional Dec 2025</th><th>Weight</th>
+              <th style="border-left:2px solid #dee2e6">Notional Mar 2026</th><th>Weight</th>
+              <th>Notional Dec 2025</th><th>Weight</th>
+            </tr>
+          </thead>
+          <tbody><tr><td><b>TECK/B</b></td><td>TECK RESOURCES LTD</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num">$18M</td><td class="num">1.2%</td></tr>
+</tbody>
+        </table>
+        <p style="font-size:.75rem;color:#888;margin-top:.3rem">Weights at &Delta;=25% of notional</p>
+    </div>
+  </div>
+  <div id="s-RA-buysells" class="chart-sec" style="display:none">
+  <p class="chart-caption">Changes in portfolio between the two most recent quarters. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates total AUM, compressing all stock weights even with no stock trades. <b>Δ$ = Δ shares × implied price (value/shares from 13F)</b> — captures partial sells to take profit even when position value stays flat due to price appreciation.</p>
+  <p class="chart-subtitle">By Δ% weight</p>
+  <img src="RA/RA_buys_sells.png" alt="By Δ% weight">
+  <p class="chart-subtitle">By Δ$ (shares × price)</p>
+  <img src="RA/RA_buys_sells_usd.png" alt="By Δ$ (shares × price)">
+  </div>
+  <div id="s-RA-buysperf" class="chart-sec" style="display:none">
+  <p class="chart-caption">Price performance of the top buys and sells in the 180 days following each quarter-end, normalised to 0% at quarter-end. The dashed vertical line marks +45 days (when the 13F becomes public). Universe = same top buys / sells as the Δ$ chart. Pink dashed lines indicate Put options held on that name.</p>
+  <img src="RA/RA_buys_sells_perf.png" alt="Buys & Sell Perf">
+  </div>
+</div>
+<div id="fund-ALPINE" class="fund-block" style="display:none">
+  <h2>Alpine</h2>
+  <div class="sec-tabs">
+    <span class="sec-tab active" data-fund="ALPINE" data-target="s-ALPINE-aum">AUM</span>
+    <span class="sec-tab featured" data-fund="ALPINE" data-target="s-ALPINE-track">Fund Clone</span>
+    <span class="sec-tab" data-fund="ALPINE" data-target="s-ALPINE-positions">Positions</span>
+    <span class="sec-tab" data-fund="ALPINE" data-target="s-ALPINE-buysells">Buys & Sells</span>
+    <span class="sec-tab featured" data-fund="ALPINE" data-target="s-ALPINE-buysperf">Buys & Sell Perf</span>
+  </div>
+  <div id="s-ALPINE-aum" class="chart-sec" style="display:block">
+  <p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>Δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
+  <img src="ALPINE/ALPINE_aum.png" alt="AUM">
+  </div>
+  <div id="s-ALPINE-track" class="chart-sec" style="display:none">
+  <p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights, normalised to 1 at inception. <b>Clone all</b> uses every reported position. <b>Clone top&thinsp;N</b> keeps only the largest N positions, equal-weighted. <b>+45d public</b> simulates an investor who acts only after the filing becomes public (45 days after quarter-end). Compared against SPY as benchmark.</p>
+  <img src="ALPINE/ALPINE_clone_track.png" alt="Clone Track">
+  </div>
+  <div id="s-ALPINE-positions" class="chart-sec" style="display:none">
+  <p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).</p>
+  <img src="ALPINE/ALPINE_positions.png" alt="Positions">
+  <div class="pos-table-wrap">
+    <h3>Long Positions</h3>
+    <table class="pos-tbl">
+      <thead><tr><th>Ticker</th><th>Name</th>
+        <th colspan="2">Mar 2026 (AUM $9.4B)</th><th colspan="2">Dec 2025 (AUM $9.8B)</th></tr>
+        <tr><th></th><th></th>
+        <th>Value</th><th>Weight</th><th>Value</th><th>Weight</th></tr>
+      </thead>
+      <tbody><tr><td><b>ASNDUSD</b></td><td>ASCENDIS PHARMA A/S - ADR</td><td class="num">$2,352M</td><td class="num">24.9%</td><td class="num">$2,192M</td><td class="num">22.5%</td></tr>
+<tr><td><b>PCVX</b></td><td>VAXCYTE INC</td><td class="num">$667M</td><td class="num">7.1%</td><td class="num">$495M</td><td class="num">5.1%</td></tr>
+<tr><td><b>RYTM</b></td><td>RHYTHM PHARMACEUTICALS INC</td><td class="num">$580M</td><td class="num">6.1%</td><td class="num">$714M</td><td class="num">7.3%</td></tr>
+<tr><td><b>TYRA</b></td><td>TYRA BIOSCIENCES INC</td><td class="num">$467M</td><td class="num">5.0%</td><td class="num">$321M</td><td class="num">3.3%</td></tr>
+<tr><td><b>SION</b></td><td>SIONNA THERAPEUTICS INC</td><td class="num">$397M</td><td class="num">4.2%</td><td class="num">$407M</td><td class="num">4.2%</td></tr>
+<tr><td><b>EWTX</b></td><td>EDGEWISE THERAPEUTICS INC</td><td class="num">$328M</td><td class="num">3.5%</td><td class="num">$259M</td><td class="num">2.7%</td></tr>
+<tr><td><b>NUVL</b></td><td>NUVALENT INC-A</td><td class="num">$260M</td><td class="num">2.8%</td><td class="num">$189M</td><td class="num">1.9%</td></tr>
+<tr><td><b>DNTH</b></td><td>DIANTHUS THERAPEUTICS INC</td><td class="num">$219M</td><td class="num">2.3%</td><td class="num">$66M</td><td class="num">0.7%</td></tr>
+<tr><td><b>MLYS</b></td><td>MINERALYS THERAPEUTICS INC</td><td class="num">$208M</td><td class="num">2.2%</td><td class="num">$266M</td><td class="num">2.7%</td></tr>
+<tr><td><b>SGP</b></td><td>SPYGLASS PHARMA INC</td><td class="num">$208M</td><td class="num">2.2%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>SEPN</b></td><td>SEPTERNA INC</td><td class="num">$168M</td><td class="num">1.8%</td><td class="num">$195M</td><td class="num">2.0%</td></tr>
+<tr><td><b>IRON</b></td><td>DISC MEDICINE INC</td><td class="num">$157M</td><td class="num">1.7%</td><td class="num">$157M</td><td class="num">1.6%</td></tr>
+<tr><td><b>JANX</b></td><td>JANUX THERAPEUTICS INC</td><td class="num">$156M</td><td class="num">1.6%</td><td class="num">$154M</td><td class="num">1.6%</td></tr>
+<tr><td><b>BCRX</b></td><td>BIOCRYST PHARMACEUTICALS INC</td><td class="num">$151M</td><td class="num">1.6%</td><td class="num">$123M</td><td class="num">1.3%</td></tr>
+<tr><td><b>BCAX</b></td><td>BICARA THERAPEUTICS INC</td><td class="num">$144M</td><td class="num">1.5%</td><td class="num">$117M</td><td class="num">1.2%</td></tr>
+<tr><td><b>PRAX</b></td><td>PRAXIS PRECISION MEDICINES I</td><td class="num">$120M</td><td class="num">1.3%</td><td class="num">$110M</td><td class="num">1.1%</td></tr>
+<tr><td><b>ZLAB</b></td><td>ZAI LAB LTD-ADR</td><td class="num">$107M</td><td class="num">1.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>TSHA</b></td><td>TAYSHA GENE THERAPIES INC</td><td class="num">$105M</td><td class="num">1.1%</td><td class="num">$130M</td><td class="num">1.3%</td></tr>
+<tr><td><b>VOR</b></td><td>VOR BIOPHARMA INC</td><td class="num">$96M</td><td class="num">1.0%</td><td class="num">$71M</td><td class="num">0.7%</td></tr>
+<tr><td><b>GON</b></td><td>GERON CORP</td><td class="num">$95M</td><td class="num">1.0%</td><td class="num">$84M</td><td class="num">0.9%</td></tr>
+<tr><td><b>SPRY</b></td><td>ARS PHARMACEUTICALS INC</td><td class="num">$87M</td><td class="num">0.9%</td><td class="num">$127M</td><td class="num">1.3%</td></tr>
+<tr><td><b>SRPT</b></td><td>SAREPTA THERAPEUTICS INC</td><td class="num">$85M</td><td class="num">0.9%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>SYRE</b></td><td>SPYRE THERAPEUTICS INC</td><td class="num">$82M</td><td class="num">0.9%</td><td class="num">$53M</td><td class="num">0.5%</td></tr>
+<tr><td><b>EVMN</b></td><td>EVOMMUNE INC</td><td class="num">$80M</td><td class="num">0.9%</td><td class="num">$59M</td><td class="num">0.6%</td></tr>
+<tr><td><b>CLYM</b></td><td>CLIMB BIO INC</td><td class="num">$77M</td><td class="num">0.8%</td><td class="num">$78M</td><td class="num">0.8%</td></tr>
+<tr><td><b>SLDB</b></td><td>SOLID BIOSCIENCES INC</td><td class="num">$67M</td><td class="num">0.7%</td><td class="num">$33M</td><td class="num">0.3%</td></tr>
+<tr><td><b>ARTV</b></td><td>ARTIVA BIOTHERAPEUTICS INC</td><td class="num">$63M</td><td class="num">0.7%</td><td class="num">$42M</td><td class="num">0.4%</td></tr>
+<tr><td><b>DMRA</b></td><td>DAMORA THERAPEUTICS INC</td><td class="num">$62M</td><td class="num">0.7%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>XNCR</b></td><td>XENCOR INC</td><td class="num">$59M</td><td class="num">0.6%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>LBRX</b></td><td>LB PHARMACEUTICALS INC</td><td class="num">$54M</td><td class="num">0.6%</td><td class="num">$49M</td><td class="num">0.5%</td></tr>
+<tr><td><b>JBIO</b></td><td>JADE BIOSCIENCES INC</td><td class="num">$52M</td><td class="num">0.5%</td><td class="num">$57M</td><td class="num">0.6%</td></tr>
+<tr><td><b>ABOS</b></td><td>ACUMEN PHARMACEUTICALS INC</td><td class="num">$50M</td><td class="num">0.5%</td><td class="num">$32M</td><td class="num">0.3%</td></tr>
+<tr><td><b>FDMT</b></td><td>4D MOLECULAR THERAPEUTICS IN</td><td class="num">$47M</td><td class="num">0.5%</td><td class="num">$42M</td><td class="num">0.4%</td></tr>
+<tr><td><b>FULC</b></td><td>FULCRUM THERAPEUTICS INC</td><td class="num">$46M</td><td class="num">0.5%</td><td class="num">$68M</td><td class="num">0.7%</td></tr>
+<tr><td><b>CAPR</b></td><td>CAPRICOR THERAPEUTICS INC</td><td class="num">$46M</td><td class="num">0.5%</td><td class="num">$44M</td><td class="num">0.4%</td></tr>
+<tr><td><b>IPSC</b></td><td>CENTURY THERAPEUTICS INC</td><td class="num">$40M</td><td class="num">0.4%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>OLMA</b></td><td>OLEMA PHARMACEUTICALS INC</td><td class="num">$39M</td><td class="num">0.4%</td><td class="num">$65M</td><td class="num">0.7%</td></tr>
+<tr><td><b>LENZ</b></td><td>LENZ THERAPEUTICS INC</td><td class="num">$38M</td><td class="num">0.4%</td><td class="num">$67M</td><td class="num">0.7%</td></tr>
+<tr><td><b>MNPR</b></td><td>MONOPAR THERAPEUTICS INC</td><td class="num">$37M</td><td class="num">0.4%</td><td class="num">$44M</td><td class="num">0.4%</td></tr>
+<tr><td><b>PEPG</b></td><td>PEPGEN INC</td><td class="num">$36M</td><td class="num">0.4%</td><td class="num">$131M</td><td class="num">1.3%</td></tr>
+<tr><td><b>DSGN</b></td><td>DESIGN THERAPEUTICS INC</td><td class="num">$32M</td><td class="num">0.3%</td><td class="num">$14M</td><td class="num">0.1%</td></tr>
+<tr><td><b>MIRM</b></td><td>MIRUM PHARMACEUTICALS INC</td><td class="num">$29M</td><td class="num">0.3%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>BIOA</b></td><td>BIOAGE LABS INC</td><td class="num">$29M</td><td class="num">0.3%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>LXEO</b></td><td>LEXEO THERAPEUTICS INC</td><td class="num">$29M</td><td class="num">0.3%</td><td class="num">$50M</td><td class="num">0.5%</td></tr>
+<tr><td><b>ASMB</b></td><td>ASSEMBLY BIOSCIENCES INC</td><td class="num">$28M</td><td class="num">0.3%</td><td class="num">$35M</td><td class="num">0.4%</td></tr>
+<tr><td><b>RZLT</b></td><td>REZOLUTE INC</td><td class="num">$28M</td><td class="num">0.3%</td><td class="num">$22M</td><td class="num">0.2%</td></tr>
+<tr><td><b>AKTS</b></td><td>AKTIS ONCOLOGY INC</td><td class="num">$27M</td><td class="num">0.3%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>ALXO</b></td><td>ALX ONCOLOGY HOLDINGS INC</td><td class="num">$26M</td><td class="num">0.3%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>ACRS</b></td><td>ACLARIS THERAPEUTICS INC</td><td class="num">$26M</td><td class="num">0.3%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>OVID</b></td><td>OVID THERAPEUTICS INC</td><td class="num">$24M</td><td class="num">0.3%</td><td class="num">$17M</td><td class="num">0.2%</td></tr>
+<tr><td><b>NKTX</b></td><td>NKARTA INC</td><td class="num">$23M</td><td class="num">0.2%</td><td class="num">$20M</td><td class="num">0.2%</td></tr>
+<tr><td><b>TVTX</b></td><td>TRAVERE THERAPEUTICS INC</td><td class="num">$22M</td><td class="num">0.2%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>GRAL</b></td><td>GRAIL INC</td><td class="num">$22M</td><td class="num">0.2%</td><td class="num">$37M</td><td class="num">0.4%</td></tr>
+<tr><td><b>CCCC</b></td><td>C4 THERAPEUTICS INC</td><td class="num">$21M</td><td class="num">0.2%</td><td class="num">$15M</td><td class="num">0.2%</td></tr>
+<tr><td><b>RLMD</b></td><td>RELMADA THERAPEUTICS INC</td><td class="num">$21M</td><td class="num">0.2%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>BNTC</b></td><td>BENITEC BIOPHARMA INC</td><td class="num">$20M</td><td class="num">0.2%</td><td class="num">$25M</td><td class="num">0.3%</td></tr>
+<tr><td><b>DRUG</b></td><td>BRIGHT MINDS BIOSCIENCES INC</td><td class="num">$19M</td><td class="num">0.2%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>STRO</b></td><td>SUTRO BIOPHARMA INC</td><td class="num">$18M</td><td class="num">0.2%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>CTNM</b></td><td>CONTINEUM THERAPEUTICS INC-A</td><td class="num">$17M</td><td class="num">0.2%</td><td class="num">$25M</td><td class="num">0.3%</td></tr>
+<tr><td><b>SABS</b></td><td>SAB BIOTHERAPEUTICS INC</td><td class="num">$17M</td><td class="num">0.2%</td><td class="num">$16M</td><td class="num">0.2%</td></tr>
+<tr><td><b>INSP</b></td><td>INSPIRE MEDICAL SYSTEMS INC</td><td class="num">$17M</td><td class="num">0.2%</td><td class="num">$13M</td><td class="num">0.1%</td></tr>
+<tr><td><b>AVR</b></td><td>ANTERIS TECHNOLOGIES GLOBAL</td><td class="num">$17M</td><td class="num">0.2%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>OKUR</b></td><td>ONKURE THERAPEUTICS INC-A</td><td class="num">$17M</td><td class="num">0.2%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>HNGE</b></td><td>HINGE HEALTH INC-A</td><td class="num">$14M</td><td class="num">0.1%</td><td class="num">$4M</td><td class="num">0.0%</td></tr>
+<tr><td><b>WGS</b></td><td>GENEDX HOLDINGS CORP</td><td class="num">$13M</td><td class="num">0.1%</td><td class="num">$8M</td><td class="num">0.1%</td></tr>
+<tr><td><b>WAY</b></td><td>WAYSTAR HOLDING CORP</td><td class="num">$13M</td><td class="num">0.1%</td><td class="num">$5M</td><td class="num">0.0%</td></tr>
+<tr><td><b>PALI</b></td><td>PALISADE BIO INC</td><td class="num">$12M</td><td class="num">0.1%</td><td class="num">$17M</td><td class="num">0.2%</td></tr>
+<tr><td><b>ACRV</b></td><td>ACRIVON THERAPEUTICS INC</td><td class="num">$12M</td><td class="num">0.1%</td><td class="num">$20M</td><td class="num">0.2%</td></tr>
+<tr><td><b>RNA</b></td><td>ATRIUM THERAPEUTICS INC</td><td class="num">$12M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>KPTI</b></td><td>KARYOPHARM THERAPEUTICS INC</td><td class="num">$11M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>AVTX</b></td><td>AVALO THERAPEUTICS INC</td><td class="num">$10M</td><td class="num">0.1%</td><td class="num">$12M</td><td class="num">0.1%</td></tr>
+<tr><td><b>ACET</b></td><td>ADICET BIO INC</td><td class="num">$8M</td><td class="num">0.1%</td><td class="num">$8M</td><td class="num">0.1%</td></tr>
+<tr><td><b>CRVS</b></td><td>CORVUS PHARMACEUTICALS INC</td><td class="num">$7M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>RANI</b></td><td>RANI THERAPEUTICS HOLDINGS-A</td><td class="num">$6M</td><td class="num">0.1%</td><td class="num">$11M</td><td class="num">0.1%</td></tr>
+<tr><td><b>EQ</b></td><td>EQUILLIUM INC</td><td class="num">$6M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>HOWL</b></td><td>WEREWOLF THERAPEUTICS INC</td><td class="num">$6M</td><td class="num">0.1%</td><td class="num">$4M</td><td class="num">0.0%</td></tr>
+<tr><td><b>MGNX</b></td><td>MACROGENICS INC</td><td class="num">$5M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>MPLT</b></td><td>MAPLIGHT THERAPEUTICS INC</td><td class="num">$5M</td><td class="num">0.1%</td><td class="num"></td><td class="num"></td></tr>
+<tr><td><b>PTN</b></td><td>PALATIN TECHNOLOGIES INC</td><td class="num">$1M</td><td class="num">0.0%</td><td class="num">$1M</td><td class="num">0.0%</td></tr>
+<tr><td><b>ACLXGBX</b></td><td>ARCELLX INC</td><td class="num"></td><td class="num"></td><td class="num">$83M</td><td class="num">0.8%</td></tr>
+<tr><td><b>BLTE</b></td><td>BELITE BIO INC - ADR</td><td class="num"></td><td class="num"></td><td class="num">$69M</td><td class="num">0.7%</td></tr>
+<tr><td><b>CDTX</b></td><td>CIDARA THERAPEUTICS INC</td><td class="num"></td><td class="num"></td><td class="num">$743M</td><td class="num">7.6%</td></tr>
+<tr><td><b>HCAT</b></td><td>HEALTH CATALYST INC</td><td class="num"></td><td class="num"></td><td class="num">$2M</td><td class="num">0.0%</td></tr>
+<tr><td><b>IVVD</b></td><td>INVIVYD INC</td><td class="num"></td><td class="num"></td><td class="num">$42M</td><td class="num">0.4%</td></tr>
+<tr><td><b>KIDS</b></td><td>ORTHOPEDIATRICS CORP</td><td class="num"></td><td class="num"></td><td class="num">$2M</td><td class="num">0.0%</td></tr>
+<tr><td><b>MDLN</b></td><td>MEDLINE INC-CL A</td><td class="num"></td><td class="num"></td><td class="num">$14M</td><td class="num">0.1%</td></tr>
+<tr><td><b>PGNY</b></td><td>PROGYNY INC</td><td class="num"></td><td class="num"></td><td class="num">$2M</td><td class="num">0.0%</td></tr>
+<tr><td><b>RNAGBP</b></td><td>AVIDITY BIOSCIENCES INC</td><td class="num"></td><td class="num"></td><td class="num">$623M</td><td class="num">6.4%</td></tr>
+</tbody>
+    </table>
+    
+    </div>
+  </div>
+  <div id="s-ALPINE-buysells" class="chart-sec" style="display:none">
+  <p class="chart-caption">Changes in portfolio between the two most recent quarters. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates total AUM, compressing all stock weights even with no stock trades. <b>Δ$ = Δ shares × implied price (value/shares from 13F)</b> — captures partial sells to take profit even when position value stays flat due to price appreciation.</p>
+  <p class="chart-subtitle">By Δ% weight</p>
+  <img src="ALPINE/ALPINE_buys_sells.png" alt="By Δ% weight">
+  <p class="chart-subtitle">By Δ$ (shares × price)</p>
+  <img src="ALPINE/ALPINE_buys_sells_usd.png" alt="By Δ$ (shares × price)">
+  </div>
+  <div id="s-ALPINE-buysperf" class="chart-sec" style="display:none">
+  <p class="chart-caption">Price performance of the top buys and sells in the 180 days following each quarter-end, normalised to 0% at quarter-end. The dashed vertical line marks +45 days (when the 13F becomes public). Universe = same top buys / sells as the Δ$ chart. Pink dashed lines indicate Put options held on that name.</p>
+  <img src="ALPINE/ALPINE_buys_sells_perf.png" alt="Buys & Sell Perf">
   </div>
 </div>
 
