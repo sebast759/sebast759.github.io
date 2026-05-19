@@ -46,10 +46,22 @@
     /* content */
     .fund-block{padding:1rem 2rem 2.5rem}
     .fund-block h2{color:#368c2e;font-size:1.15rem;margin-bottom:.5rem}
-    .chart-sec img{max-width:100%;border-radius:6px;
+    .chart-sec img{max-width:100%;max-height:75vh;width:auto;height:auto;
+                    display:block;border-radius:6px;
                     box-shadow:0 2px 10px rgba(0,0,0,.09)}
-    /* positions chart is portrait — cap height so it doesn't dominate the page */
-    [id$="-positions"] img{max-height:90vh;width:auto;display:block}
+    /* positions: portrait, needs more vertical room */
+    [id$="-positions"] img{max-height:85vh}
+    /* buys & sells bar charts: landscape, keep compact */
+    [id$="-buysells"] img{max-height:60vh}
+    /* buys & sells perf: multi-row chart, needs full height */
+    [id$="-buysperf"] img{max-height:95vh}
+    /* stacked chart subtitles */
+    .chart-subtitle{font-size:.85rem;font-weight:600;color:#495057;
+                     margin:1.2rem 0 .3rem}
+    .chart-subtitle:first-child{margin-top:0}
+    /* explanatory caption below chart */
+    .chart-caption{font-size:.8rem;color:#6c757d;margin-top:.8rem;
+                    max-width:900px;line-height:1.5}
 
     @media(max-width:700px){
       .top-tabs,.fund-block{padding-left:.8rem;padding-right:.8rem}
@@ -67,15 +79,6 @@
 
 <div class="top-tabs">
   <div class="top-tab active" data-target="fund-SITUATIONAL_AWARENESS"><img src="../images/managers/situational_awareness.png" alt="">Sit. Awareness</div>
-  <div class="top-tab" data-target="fund-BERKSHIRE"><img src="../images/managers/berkshire.png" alt="">Berkshire</div>
-  <div class="top-tab" data-target="fund-ARK"><img src="../images/managers/ark.png" alt="">Ark</div>
-  <div class="top-tab" data-target="fund-COATUE"><img src="../images/managers/coatue.png" alt="">Coatue</div>
-  <div class="top-tab" data-target="fund-PERSHING"><img src="../images/managers/pershing.png" alt="">Pershing</div>
-  <div class="top-tab" data-target="fund-THIRD_POINT"><img src="../images/managers/third_point.png" alt="">Third Point</div>
-  <div class="top-tab" data-target="fund-BAUPOST"><img src="../images/managers/baupost.png" alt="">Baupost</div>
-  <div class="top-tab" data-target="fund-AKO"><img src="../images/managers/ako.png" alt="">Ako</div>
-  <div class="top-tab" data-target="fund-RA"><img src="../images/managers/ra.png" alt="">Ra</div>
-  <div class="top-tab" data-target="fund-ALPINE"><img src="../images/managers/alpine.png" alt="">Alpine</div>
 </div>
 
 <div id="fund-SITUATIONAL_AWARENESS" class="fund-block" style="display:block">
@@ -88,244 +91,27 @@
     <span class="sec-tab featured" data-fund="SITUATIONAL_AWARENESS" data-target="s-SITUATIONAL_AWARENESS-buysperf">Buys & Sell Perf</span>
   </div>
   <div id="s-SITUATIONAL_AWARENESS-aum" class="chart-sec" style="display:block">
-    <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_aum.png" alt="AUM">
+  <p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
+  <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_aum.png" alt="AUM">
   </div>
   <div id="s-SITUATIONAL_AWARENESS-track" class="chart-sec" style="display:none">
-    <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_clone_track.png" alt="Clone Track">
+  <p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights, normalised to 1 at inception. <b>Clone all</b> uses every reported position. <b>Clone top&thinsp;N</b> keeps only the largest N positions, equal-weighted. <b>+45d public</b> simulates an investor who acts only after the filing becomes public (45 days after quarter-end). Compared against SPY as benchmark.</p>
+  <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_clone_track.png" alt="Clone Track">
   </div>
   <div id="s-SITUATIONAL_AWARENESS-positions" class="chart-sec" style="display:none">
-    <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_positions.png" alt="Positions">
+  <p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &delta;&thinsp;=&thinsp;25% of notional).</p>
+  <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_positions.png" alt="Positions">
   </div>
   <div id="s-SITUATIONAL_AWARENESS-buysells" class="chart-sec" style="display:none">
-    <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_buys_sells.png" alt="Buys & Sells">
+  <p class="chart-caption">Changes in portfolio between the two most recent quarters. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates total AUM, compressing all stock weights even with no stock trades. <b>Δ$ (shares &times; price)</b> is immune to this distortion — it directly measures conviction in dollar terms and is the preferred view.</p>
+  <p class="chart-subtitle">By Δ% weight</p>
+  <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_buys_sells.png" alt="By Δ% weight">
+  <p class="chart-subtitle">By Δ$ (shares × price)</p>
+  <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_buys_sells_usd.png" alt="By Δ$ (shares × price)">
   </div>
   <div id="s-SITUATIONAL_AWARENESS-buysperf" class="chart-sec" style="display:none">
-    <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_buys_sells_perf.png" alt="Buys & Sell Perf">
-  </div>
-</div>
-<div id="fund-BERKSHIRE" class="fund-block" style="display:none">
-  <h2>Berkshire</h2>
-  <div class="sec-tabs">
-    <span class="sec-tab active" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-aum">AUM</span>
-    <span class="sec-tab featured" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-track">Fund Clone</span>
-    <span class="sec-tab" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-positions">Positions</span>
-    <span class="sec-tab" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-buysells">Buys & Sells</span>
-    <span class="sec-tab featured" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-buysperf">Buys & Sell Perf</span>
-  </div>
-  <div id="s-BERKSHIRE-aum" class="chart-sec" style="display:block">
-    <img src="BERKSHIRE/BERKSHIRE_aum.png" alt="AUM">
-  </div>
-  <div id="s-BERKSHIRE-track" class="chart-sec" style="display:none">
-    <img src="BERKSHIRE/BERKSHIRE_clone_track.png" alt="Clone Track">
-  </div>
-  <div id="s-BERKSHIRE-positions" class="chart-sec" style="display:none">
-    <img src="BERKSHIRE/BERKSHIRE_positions.png" alt="Positions">
-  </div>
-  <div id="s-BERKSHIRE-buysells" class="chart-sec" style="display:none">
-    <img src="BERKSHIRE/BERKSHIRE_buys_sells.png" alt="Buys & Sells">
-  </div>
-  <div id="s-BERKSHIRE-buysperf" class="chart-sec" style="display:none">
-    <img src="BERKSHIRE/BERKSHIRE_buys_sells_perf.png" alt="Buys & Sell Perf">
-  </div>
-</div>
-<div id="fund-ARK" class="fund-block" style="display:none">
-  <h2>Ark</h2>
-  <div class="sec-tabs">
-    <span class="sec-tab active" data-fund="ARK" data-target="s-ARK-aum">AUM</span>
-    <span class="sec-tab featured" data-fund="ARK" data-target="s-ARK-track">Fund Clone</span>
-    <span class="sec-tab" data-fund="ARK" data-target="s-ARK-positions">Positions</span>
-    <span class="sec-tab" data-fund="ARK" data-target="s-ARK-buysells">Buys & Sells</span>
-    <span class="sec-tab featured" data-fund="ARK" data-target="s-ARK-buysperf">Buys & Sell Perf</span>
-  </div>
-  <div id="s-ARK-aum" class="chart-sec" style="display:block">
-    <img src="ARK/ARK_aum.png" alt="AUM">
-  </div>
-  <div id="s-ARK-track" class="chart-sec" style="display:none">
-    <img src="ARK/ARK_clone_track.png" alt="Clone Track">
-  </div>
-  <div id="s-ARK-positions" class="chart-sec" style="display:none">
-    <img src="ARK/ARK_positions.png" alt="Positions">
-  </div>
-  <div id="s-ARK-buysells" class="chart-sec" style="display:none">
-    <img src="ARK/ARK_buys_sells.png" alt="Buys & Sells">
-  </div>
-  <div id="s-ARK-buysperf" class="chart-sec" style="display:none">
-    <img src="ARK/ARK_buys_sells_perf.png" alt="Buys & Sell Perf">
-  </div>
-</div>
-<div id="fund-COATUE" class="fund-block" style="display:none">
-  <h2>Coatue</h2>
-  <div class="sec-tabs">
-    <span class="sec-tab active" data-fund="COATUE" data-target="s-COATUE-aum">AUM</span>
-    <span class="sec-tab featured" data-fund="COATUE" data-target="s-COATUE-track">Fund Clone</span>
-    <span class="sec-tab" data-fund="COATUE" data-target="s-COATUE-positions">Positions</span>
-    <span class="sec-tab" data-fund="COATUE" data-target="s-COATUE-buysells">Buys & Sells</span>
-    <span class="sec-tab featured" data-fund="COATUE" data-target="s-COATUE-buysperf">Buys & Sell Perf</span>
-  </div>
-  <div id="s-COATUE-aum" class="chart-sec" style="display:block">
-    <img src="COATUE/COATUE_aum.png" alt="AUM">
-  </div>
-  <div id="s-COATUE-track" class="chart-sec" style="display:none">
-    <img src="COATUE/COATUE_clone_track.png" alt="Clone Track">
-  </div>
-  <div id="s-COATUE-positions" class="chart-sec" style="display:none">
-    <img src="COATUE/COATUE_positions.png" alt="Positions">
-  </div>
-  <div id="s-COATUE-buysells" class="chart-sec" style="display:none">
-    <img src="COATUE/COATUE_buys_sells.png" alt="Buys & Sells">
-  </div>
-  <div id="s-COATUE-buysperf" class="chart-sec" style="display:none">
-    <img src="COATUE/COATUE_buys_sells_perf.png" alt="Buys & Sell Perf">
-  </div>
-</div>
-<div id="fund-PERSHING" class="fund-block" style="display:none">
-  <h2>Pershing</h2>
-  <div class="sec-tabs">
-    <span class="sec-tab active" data-fund="PERSHING" data-target="s-PERSHING-aum">AUM</span>
-    <span class="sec-tab featured" data-fund="PERSHING" data-target="s-PERSHING-track">Fund Clone</span>
-    <span class="sec-tab" data-fund="PERSHING" data-target="s-PERSHING-positions">Positions</span>
-    <span class="sec-tab" data-fund="PERSHING" data-target="s-PERSHING-buysells">Buys & Sells</span>
-    <span class="sec-tab featured" data-fund="PERSHING" data-target="s-PERSHING-buysperf">Buys & Sell Perf</span>
-  </div>
-  <div id="s-PERSHING-aum" class="chart-sec" style="display:block">
-    <img src="PERSHING/PERSHING_aum.png" alt="AUM">
-  </div>
-  <div id="s-PERSHING-track" class="chart-sec" style="display:none">
-    <img src="PERSHING/PERSHING_clone_track.png" alt="Clone Track">
-  </div>
-  <div id="s-PERSHING-positions" class="chart-sec" style="display:none">
-    <img src="PERSHING/PERSHING_positions.png" alt="Positions">
-  </div>
-  <div id="s-PERSHING-buysells" class="chart-sec" style="display:none">
-    <img src="PERSHING/PERSHING_buys_sells.png" alt="Buys & Sells">
-  </div>
-  <div id="s-PERSHING-buysperf" class="chart-sec" style="display:none">
-    <img src="PERSHING/PERSHING_buys_sells_perf.png" alt="Buys & Sell Perf">
-  </div>
-</div>
-<div id="fund-THIRD_POINT" class="fund-block" style="display:none">
-  <h2>Third Point</h2>
-  <div class="sec-tabs">
-    <span class="sec-tab active" data-fund="THIRD_POINT" data-target="s-THIRD_POINT-aum">AUM</span>
-    <span class="sec-tab featured" data-fund="THIRD_POINT" data-target="s-THIRD_POINT-track">Fund Clone</span>
-    <span class="sec-tab" data-fund="THIRD_POINT" data-target="s-THIRD_POINT-positions">Positions</span>
-    <span class="sec-tab" data-fund="THIRD_POINT" data-target="s-THIRD_POINT-buysells">Buys & Sells</span>
-    <span class="sec-tab featured" data-fund="THIRD_POINT" data-target="s-THIRD_POINT-buysperf">Buys & Sell Perf</span>
-  </div>
-  <div id="s-THIRD_POINT-aum" class="chart-sec" style="display:block">
-    <img src="THIRD_POINT/THIRD_POINT_aum.png" alt="AUM">
-  </div>
-  <div id="s-THIRD_POINT-track" class="chart-sec" style="display:none">
-    <img src="THIRD_POINT/THIRD_POINT_clone_track.png" alt="Clone Track">
-  </div>
-  <div id="s-THIRD_POINT-positions" class="chart-sec" style="display:none">
-    <img src="THIRD_POINT/THIRD_POINT_positions.png" alt="Positions">
-  </div>
-  <div id="s-THIRD_POINT-buysells" class="chart-sec" style="display:none">
-    <img src="THIRD_POINT/THIRD_POINT_buys_sells.png" alt="Buys & Sells">
-  </div>
-  <div id="s-THIRD_POINT-buysperf" class="chart-sec" style="display:none">
-    <img src="THIRD_POINT/THIRD_POINT_buys_sells_perf.png" alt="Buys & Sell Perf">
-  </div>
-</div>
-<div id="fund-BAUPOST" class="fund-block" style="display:none">
-  <h2>Baupost</h2>
-  <div class="sec-tabs">
-    <span class="sec-tab active" data-fund="BAUPOST" data-target="s-BAUPOST-aum">AUM</span>
-    <span class="sec-tab featured" data-fund="BAUPOST" data-target="s-BAUPOST-track">Fund Clone</span>
-    <span class="sec-tab" data-fund="BAUPOST" data-target="s-BAUPOST-positions">Positions</span>
-    <span class="sec-tab" data-fund="BAUPOST" data-target="s-BAUPOST-buysells">Buys & Sells</span>
-    <span class="sec-tab featured" data-fund="BAUPOST" data-target="s-BAUPOST-buysperf">Buys & Sell Perf</span>
-  </div>
-  <div id="s-BAUPOST-aum" class="chart-sec" style="display:block">
-    <img src="BAUPOST/BAUPOST_aum.png" alt="AUM">
-  </div>
-  <div id="s-BAUPOST-track" class="chart-sec" style="display:none">
-    <img src="BAUPOST/BAUPOST_clone_track.png" alt="Clone Track">
-  </div>
-  <div id="s-BAUPOST-positions" class="chart-sec" style="display:none">
-    <img src="BAUPOST/BAUPOST_positions.png" alt="Positions">
-  </div>
-  <div id="s-BAUPOST-buysells" class="chart-sec" style="display:none">
-    <img src="BAUPOST/BAUPOST_buys_sells.png" alt="Buys & Sells">
-  </div>
-  <div id="s-BAUPOST-buysperf" class="chart-sec" style="display:none">
-    <img src="BAUPOST/BAUPOST_buys_sells_perf.png" alt="Buys & Sell Perf">
-  </div>
-</div>
-<div id="fund-AKO" class="fund-block" style="display:none">
-  <h2>Ako</h2>
-  <div class="sec-tabs">
-    <span class="sec-tab active" data-fund="AKO" data-target="s-AKO-aum">AUM</span>
-    <span class="sec-tab featured" data-fund="AKO" data-target="s-AKO-track">Fund Clone</span>
-    <span class="sec-tab" data-fund="AKO" data-target="s-AKO-positions">Positions</span>
-    <span class="sec-tab" data-fund="AKO" data-target="s-AKO-buysells">Buys & Sells</span>
-    <span class="sec-tab featured" data-fund="AKO" data-target="s-AKO-buysperf">Buys & Sell Perf</span>
-  </div>
-  <div id="s-AKO-aum" class="chart-sec" style="display:block">
-    <img src="AKO/AKO_aum.png" alt="AUM">
-  </div>
-  <div id="s-AKO-track" class="chart-sec" style="display:none">
-    <img src="AKO/AKO_clone_track.png" alt="Clone Track">
-  </div>
-  <div id="s-AKO-positions" class="chart-sec" style="display:none">
-    <img src="AKO/AKO_positions.png" alt="Positions">
-  </div>
-  <div id="s-AKO-buysells" class="chart-sec" style="display:none">
-    <img src="AKO/AKO_buys_sells.png" alt="Buys & Sells">
-  </div>
-  <div id="s-AKO-buysperf" class="chart-sec" style="display:none">
-    <img src="AKO/AKO_buys_sells_perf.png" alt="Buys & Sell Perf">
-  </div>
-</div>
-<div id="fund-RA" class="fund-block" style="display:none">
-  <h2>Ra</h2>
-  <div class="sec-tabs">
-    <span class="sec-tab active" data-fund="RA" data-target="s-RA-aum">AUM</span>
-    <span class="sec-tab featured" data-fund="RA" data-target="s-RA-track">Fund Clone</span>
-    <span class="sec-tab" data-fund="RA" data-target="s-RA-positions">Positions</span>
-    <span class="sec-tab" data-fund="RA" data-target="s-RA-buysells">Buys & Sells</span>
-    <span class="sec-tab featured" data-fund="RA" data-target="s-RA-buysperf">Buys & Sell Perf</span>
-  </div>
-  <div id="s-RA-aum" class="chart-sec" style="display:block">
-    <img src="RA/RA_aum.png" alt="AUM">
-  </div>
-  <div id="s-RA-track" class="chart-sec" style="display:none">
-    <img src="RA/RA_clone_track.png" alt="Clone Track">
-  </div>
-  <div id="s-RA-positions" class="chart-sec" style="display:none">
-    <img src="RA/RA_positions.png" alt="Positions">
-  </div>
-  <div id="s-RA-buysells" class="chart-sec" style="display:none">
-    <img src="RA/RA_buys_sells.png" alt="Buys & Sells">
-  </div>
-  <div id="s-RA-buysperf" class="chart-sec" style="display:none">
-    <img src="RA/RA_buys_sells_perf.png" alt="Buys & Sell Perf">
-  </div>
-</div>
-<div id="fund-ALPINE" class="fund-block" style="display:none">
-  <h2>Alpine</h2>
-  <div class="sec-tabs">
-    <span class="sec-tab active" data-fund="ALPINE" data-target="s-ALPINE-aum">AUM</span>
-    <span class="sec-tab featured" data-fund="ALPINE" data-target="s-ALPINE-track">Fund Clone</span>
-    <span class="sec-tab" data-fund="ALPINE" data-target="s-ALPINE-positions">Positions</span>
-    <span class="sec-tab" data-fund="ALPINE" data-target="s-ALPINE-buysells">Buys & Sells</span>
-    <span class="sec-tab featured" data-fund="ALPINE" data-target="s-ALPINE-buysperf">Buys & Sell Perf</span>
-  </div>
-  <div id="s-ALPINE-aum" class="chart-sec" style="display:block">
-    <img src="ALPINE/ALPINE_aum.png" alt="AUM">
-  </div>
-  <div id="s-ALPINE-track" class="chart-sec" style="display:none">
-    <img src="ALPINE/ALPINE_clone_track.png" alt="Clone Track">
-  </div>
-  <div id="s-ALPINE-positions" class="chart-sec" style="display:none">
-    <img src="ALPINE/ALPINE_positions.png" alt="Positions">
-  </div>
-  <div id="s-ALPINE-buysells" class="chart-sec" style="display:none">
-    <img src="ALPINE/ALPINE_buys_sells.png" alt="Buys & Sells">
-  </div>
-  <div id="s-ALPINE-buysperf" class="chart-sec" style="display:none">
-    <img src="ALPINE/ALPINE_buys_sells_perf.png" alt="Buys & Sell Perf">
+  <p class="chart-caption">Price performance of the top buys and sells in the 180 days following each quarter-end, normalised to 0% at quarter-end. The dashed vertical line marks +45 days (when the 13F becomes public). Universe = same top buys / sells as the Δ$ chart. Pink dashed lines indicate Put options held on that name.</p>
+  <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_buys_sells_perf.png" alt="Buys & Sell Perf">
   </div>
 </div>
 
