@@ -100,7 +100,7 @@
     <span class="sec-tab" data-fund="SITUATIONAL_AWARENESS" data-target="s-SITUATIONAL_AWARENESS-aum"><svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;margin-right:4px;margin-bottom:1px" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><rect x="1"  y="9"  width="3" height="4" rx="0.5"/><rect x="5.5" y="6" width="3" height="7" rx="0.5"/><rect x="10" y="2"  width="3" height="11" rx="0.5"/></g></svg>AUM</span>
   </div>
   <div id="s-SITUATIONAL_AWARENESS-positions" class="chart-sec" style="display:block">
-<p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).<br><a href="#pos-detail-SITUATIONAL_AWARENESS" style="font-size:.8rem;color:#368c2e;text-decoration:none;white-space:nowrap" title="Jump to position detail table">↓ see details by position</a></p>
+<p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM.<br>&bull; &#9733; <b>new position</b><br>&bull; &#8593; <b>biggest addition</b><br>&bull; &#8595; <b>biggest trim</b><br>&bull; <b>*(P)</b> or <b>*(C)</b> the fund also holds Put or Call options on that name (exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).<br><a href="#pos-detail-SITUATIONAL_AWARENESS" style="font-size:.8rem;color:#368c2e;text-decoration:none;white-space:nowrap" title="Jump to position detail table">↓ see details by position</a></p>
   <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_positions.png" alt="<svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;margin-right:4px;margin-bottom:1px" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="2" y1="4"  x2="10" y2="4"/><line x1="2" y1="7"  x2="12" y2="7"/><line x1="2" y1="10" x2="7"  y2="10"/></g></svg>Positions">
   <div id="pos-detail-SITUATIONAL_AWARENESS" class="pos-table-wrap"><style>
       body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
@@ -214,7 +214,7 @@
     </div>
   </div>
   <div id="s-SITUATIONAL_AWARENESS-track" class="chart-sec" style="display:none">
-<p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights, normalised to 1 at inception. <b>Clone all</b> uses every reported position. <b>Clone top&thinsp;N</b> keeps only the largest N positions, equal-weighted. <b>+45d public</b> simulates an investor who acts only after the filing becomes public (45 days after quarter-end). Compared against SPY as benchmark.</p>
+<p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights.<br>&bull; <b style="color:steelblue">All</b> uses <b>all</b> positions in the fund as reported in the 13F filings.<br>&bull; <b style="color:darkorange">Top 5</b> keeps only the <b>5 largest</b> positions.<br>&bull; <b style="color:firebrick">Top 5 +45d</b> is the truly <b>replicable track</b>. Simulates an investor who acts only after the 13F becomes public (<b>45 days</b> after quarter-end).<br>&bull; <b style="color:grey">S&amp;P 500 (SPY)</b> benchmark for comparison.</p>
   <p class="chart-subtitle">Cumulative Performance — All Positions & Top 5</p>
   <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_clone_track.png" alt="Cumulative Performance — All Positions & Top 5">
   <p class="chart-subtitle">Quarterly Performance by Strategy</p>
@@ -280,16 +280,19 @@
 </div>
   </div>
   <div id="s-SITUATIONAL_AWARENESS-trades" class="chart-sec" style="display:none">
-<p class="chart-caption">Largest buys and sells between the two most recent quarters. <b>Trade Performance</b>: price return in the 180 days after quarter-end, normalised to 0% at quarter-end; dashed line = +45d (13F public date); pink dashes = Put options. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates AUM and compresses all stock weights. <b>Δ$ = Δ shares × implied price</b> — captures partial profit-taking even when position value stays flat due to price appreciation.</p>
-  <p class="chart-subtitle">Trade Performance</p>
-  <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_buys_sells_perf.png" alt="Trade Performance">
-  <p class="chart-subtitle">By Δ% weight</p>
-  <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_buys_sells.png" alt="By Δ% weight">
-  <p class="chart-subtitle">By Δ$ (shares × price)</p>
-  <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_buys_sells_usd.png" alt="By Δ$ (shares × price)">
+<p class="chart-caption">Largest buys and sells reported in the 13F filings (quarterly). This tab contains 3 sections.</p>
+  <p class="chart-subtitle">Largest Buy / Sell Performance after the filing</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Return of the stock in the 180 days following the quarter-end date, of the Largest Stock Buys (left) and Sells (right) reported in the 13F.<br>Dashed line = Put or Call options (represented at an ad-hoc 25% delta).<br>Dashed vertical line = +45d (date the 13F becomes public).</p>
+  <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_buys_sells_perf.png" alt="Largest Buy / Sell Performance after the filing">
+  <p class="chart-subtitle">By &Delta;% weight</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Biggest position changes measured as variation in estimated portfolio weight.<br>&#9888; Can be misleading when options are present &mdash; large Put positions inflate total AUM and compress all stock weights.</p>
+  <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_buys_sells.png" alt="By &Delta;% weight">
+  <p class="chart-subtitle">By &Delta;$ = &Delta; shares &times; implied price</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Biggest position changes measured in dollar terms.<br>Captures partial profit-taking even when position value stays flat due to price appreciation.</p>
+  <img src="SITUATIONAL_AWARENESS/SITUATIONAL_AWARENESS_buys_sells_usd.png" alt="By &Delta;$ = &Delta; shares &times; implied price">
   </div>
   <div id="s-SITUATIONAL_AWARENESS-aum" class="chart-sec" style="display:none">
-<p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>Δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
+<p class="chart-caption">Assets Under Management across different reporting sources.<br>&bull; <b style="color:steelblue">13F Reported AUM</b> SEC total from quarterly 13F filing, including option notionals at underlying value.<br>&bull; <b style="color:#27ae60">Equity-only AUM</b> long equity positions only, excluding options.<br>&bull; <b style="color:#e67e22">&Delta;-adj AUM</b> long positions + 25% &times; option notionals — only shown when the fund holds options.<br>&bull; <b style="color:#8e44ad">Official AUM (Form ADV)</b> regulatory AUM as declared by the fund manager to the SEC — the most official figure.</p>
   <div class="pos-table-wrap" style="margin-bottom:1rem"><style>
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
         font-size:.85rem;color:#212529;padding:.3rem .8rem}
@@ -340,7 +343,7 @@
     <span class="sec-tab" data-fund="BERKSHIRE" data-target="s-BERKSHIRE-aum"><svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;margin-right:4px;margin-bottom:1px" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><rect x="1"  y="9"  width="3" height="4" rx="0.5"/><rect x="5.5" y="6" width="3" height="7" rx="0.5"/><rect x="10" y="2"  width="3" height="11" rx="0.5"/></g></svg>AUM</span>
   </div>
   <div id="s-BERKSHIRE-positions" class="chart-sec" style="display:block">
-<p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).<br><a href="#pos-detail-BERKSHIRE" style="font-size:.8rem;color:#368c2e;text-decoration:none;white-space:nowrap" title="Jump to position detail table">↓ see details by position</a></p>
+<p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM.<br>&bull; &#9733; <b>new position</b><br>&bull; &#8593; <b>biggest addition</b><br>&bull; &#8595; <b>biggest trim</b><br>&bull; <b>*(P)</b> or <b>*(C)</b> the fund also holds Put or Call options on that name (exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).<br><a href="#pos-detail-BERKSHIRE" style="font-size:.8rem;color:#368c2e;text-decoration:none;white-space:nowrap" title="Jump to position detail table">↓ see details by position</a></p>
   <img src="BERKSHIRE/BERKSHIRE_positions.png" alt="<svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;margin-right:4px;margin-bottom:1px" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="2" y1="4"  x2="10" y2="4"/><line x1="2" y1="7"  x2="12" y2="7"/><line x1="2" y1="10" x2="7"  y2="10"/></g></svg>Positions">
   <div id="pos-detail-BERKSHIRE" class="pos-table-wrap"><style>
       body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
@@ -435,7 +438,7 @@
     </div>
   </div>
   <div id="s-BERKSHIRE-track" class="chart-sec" style="display:none">
-<p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights, normalised to 1 at inception. <b>Clone all</b> uses every reported position. <b>Clone top&thinsp;N</b> keeps only the largest N positions, equal-weighted. <b>+45d public</b> simulates an investor who acts only after the filing becomes public (45 days after quarter-end). Compared against SPY as benchmark.</p>
+<p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights.<br>&bull; <b style="color:steelblue">All</b> uses <b>all</b> positions in the fund as reported in the 13F filings.<br>&bull; <b style="color:darkorange">Top 5</b> keeps only the <b>5 largest</b> positions.<br>&bull; <b style="color:firebrick">Top 5 +45d</b> is the truly <b>replicable track</b>. Simulates an investor who acts only after the 13F becomes public (<b>45 days</b> after quarter-end).<br>&bull; <b style="color:grey">S&amp;P 500 (SPY)</b> benchmark for comparison.</p>
   <p class="chart-subtitle">Cumulative Performance — All Positions & Top 5</p>
   <img src="BERKSHIRE/BERKSHIRE_clone_track.png" alt="Cumulative Performance — All Positions & Top 5">
   <p class="chart-subtitle">Quarterly Performance by Strategy</p>
@@ -585,16 +588,19 @@
 </div>
   </div>
   <div id="s-BERKSHIRE-trades" class="chart-sec" style="display:none">
-<p class="chart-caption">Largest buys and sells between the two most recent quarters. <b>Trade Performance</b>: price return in the 180 days after quarter-end, normalised to 0% at quarter-end; dashed line = +45d (13F public date); pink dashes = Put options. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates AUM and compresses all stock weights. <b>Δ$ = Δ shares × implied price</b> — captures partial profit-taking even when position value stays flat due to price appreciation.</p>
-  <p class="chart-subtitle">Trade Performance</p>
-  <img src="BERKSHIRE/BERKSHIRE_buys_sells_perf.png" alt="Trade Performance">
-  <p class="chart-subtitle">By Δ% weight</p>
-  <img src="BERKSHIRE/BERKSHIRE_buys_sells.png" alt="By Δ% weight">
-  <p class="chart-subtitle">By Δ$ (shares × price)</p>
-  <img src="BERKSHIRE/BERKSHIRE_buys_sells_usd.png" alt="By Δ$ (shares × price)">
+<p class="chart-caption">Largest buys and sells reported in the 13F filings (quarterly). This tab contains 3 sections.</p>
+  <p class="chart-subtitle">Largest Buy / Sell Performance after the filing</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Return of the stock in the 180 days following the quarter-end date, of the Largest Stock Buys (left) and Sells (right) reported in the 13F.<br>Dashed line = Put or Call options (represented at an ad-hoc 25% delta).<br>Dashed vertical line = +45d (date the 13F becomes public).</p>
+  <img src="BERKSHIRE/BERKSHIRE_buys_sells_perf.png" alt="Largest Buy / Sell Performance after the filing">
+  <p class="chart-subtitle">By &Delta;% weight</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Biggest position changes measured as variation in estimated portfolio weight.<br>&#9888; Can be misleading when options are present &mdash; large Put positions inflate total AUM and compress all stock weights.</p>
+  <img src="BERKSHIRE/BERKSHIRE_buys_sells.png" alt="By &Delta;% weight">
+  <p class="chart-subtitle">By &Delta;$ = &Delta; shares &times; implied price</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Biggest position changes measured in dollar terms.<br>Captures partial profit-taking even when position value stays flat due to price appreciation.</p>
+  <img src="BERKSHIRE/BERKSHIRE_buys_sells_usd.png" alt="By &Delta;$ = &Delta; shares &times; implied price">
   </div>
   <div id="s-BERKSHIRE-aum" class="chart-sec" style="display:none">
-<p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>Δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
+<p class="chart-caption">Assets Under Management across different reporting sources.<br>&bull; <b style="color:steelblue">13F Reported AUM</b> SEC total from quarterly 13F filing, including option notionals at underlying value.<br>&bull; <b style="color:#27ae60">Equity-only AUM</b> long equity positions only, excluding options.<br>&bull; <b style="color:#e67e22">&Delta;-adj AUM</b> long positions + 25% &times; option notionals — only shown when the fund holds options.<br>&bull; <b style="color:#8e44ad">Official AUM (Form ADV)</b> regulatory AUM as declared by the fund manager to the SEC — the most official figure.</p>
   <div class="pos-table-wrap" style="margin-bottom:1rem"><style>
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
         font-size:.85rem;color:#212529;padding:.3rem .8rem}
@@ -659,7 +665,7 @@
     <span class="sec-tab" data-fund="ARK" data-target="s-ARK-aum"><svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;margin-right:4px;margin-bottom:1px" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><rect x="1"  y="9"  width="3" height="4" rx="0.5"/><rect x="5.5" y="6" width="3" height="7" rx="0.5"/><rect x="10" y="2"  width="3" height="11" rx="0.5"/></g></svg>AUM</span>
   </div>
   <div id="s-ARK-positions" class="chart-sec" style="display:block">
-<p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).<br><a href="#pos-detail-ARK" style="font-size:.8rem;color:#368c2e;text-decoration:none;white-space:nowrap" title="Jump to position detail table">↓ see details by position</a></p>
+<p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM.<br>&bull; &#9733; <b>new position</b><br>&bull; &#8593; <b>biggest addition</b><br>&bull; &#8595; <b>biggest trim</b><br>&bull; <b>*(P)</b> or <b>*(C)</b> the fund also holds Put or Call options on that name (exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).<br><a href="#pos-detail-ARK" style="font-size:.8rem;color:#368c2e;text-decoration:none;white-space:nowrap" title="Jump to position detail table">↓ see details by position</a></p>
   <img src="ARK/ARK_positions.png" alt="<svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;margin-right:4px;margin-bottom:1px" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="2" y1="4"  x2="10" y2="4"/><line x1="2" y1="7"  x2="12" y2="7"/><line x1="2" y1="10" x2="7"  y2="10"/></g></svg>Positions">
   <div id="pos-detail-ARK" class="pos-table-wrap"><style>
       body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
@@ -920,7 +926,7 @@
     </div>
   </div>
   <div id="s-ARK-track" class="chart-sec" style="display:none">
-<p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights, normalised to 1 at inception. <b>Clone all</b> uses every reported position. <b>Clone top&thinsp;N</b> keeps only the largest N positions, equal-weighted. <b>+45d public</b> simulates an investor who acts only after the filing becomes public (45 days after quarter-end). Compared against SPY as benchmark.</p>
+<p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights.<br>&bull; <b style="color:steelblue">All</b> uses <b>all</b> positions in the fund as reported in the 13F filings.<br>&bull; <b style="color:darkorange">Top 5</b> keeps only the <b>5 largest</b> positions.<br>&bull; <b style="color:firebrick">Top 5 +45d</b> is the truly <b>replicable track</b>. Simulates an investor who acts only after the 13F becomes public (<b>45 days</b> after quarter-end).<br>&bull; <b style="color:grey">S&amp;P 500 (SPY)</b> benchmark for comparison.</p>
   <p class="chart-subtitle">Cumulative Performance — All Positions & Top 5</p>
   <img src="ARK/ARK_clone_track.png" alt="Cumulative Performance — All Positions & Top 5">
   <p class="chart-subtitle">Quarterly Performance by Strategy</p>
@@ -1070,16 +1076,19 @@
 </div>
   </div>
   <div id="s-ARK-trades" class="chart-sec" style="display:none">
-<p class="chart-caption">Largest buys and sells between the two most recent quarters. <b>Trade Performance</b>: price return in the 180 days after quarter-end, normalised to 0% at quarter-end; dashed line = +45d (13F public date); pink dashes = Put options. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates AUM and compresses all stock weights. <b>Δ$ = Δ shares × implied price</b> — captures partial profit-taking even when position value stays flat due to price appreciation.</p>
-  <p class="chart-subtitle">Trade Performance</p>
-  <img src="ARK/ARK_buys_sells_perf.png" alt="Trade Performance">
-  <p class="chart-subtitle">By Δ% weight</p>
-  <img src="ARK/ARK_buys_sells.png" alt="By Δ% weight">
-  <p class="chart-subtitle">By Δ$ (shares × price)</p>
-  <img src="ARK/ARK_buys_sells_usd.png" alt="By Δ$ (shares × price)">
+<p class="chart-caption">Largest buys and sells reported in the 13F filings (quarterly). This tab contains 3 sections.</p>
+  <p class="chart-subtitle">Largest Buy / Sell Performance after the filing</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Return of the stock in the 180 days following the quarter-end date, of the Largest Stock Buys (left) and Sells (right) reported in the 13F.<br>Dashed line = Put or Call options (represented at an ad-hoc 25% delta).<br>Dashed vertical line = +45d (date the 13F becomes public).</p>
+  <img src="ARK/ARK_buys_sells_perf.png" alt="Largest Buy / Sell Performance after the filing">
+  <p class="chart-subtitle">By &Delta;% weight</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Biggest position changes measured as variation in estimated portfolio weight.<br>&#9888; Can be misleading when options are present &mdash; large Put positions inflate total AUM and compress all stock weights.</p>
+  <img src="ARK/ARK_buys_sells.png" alt="By &Delta;% weight">
+  <p class="chart-subtitle">By &Delta;$ = &Delta; shares &times; implied price</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Biggest position changes measured in dollar terms.<br>Captures partial profit-taking even when position value stays flat due to price appreciation.</p>
+  <img src="ARK/ARK_buys_sells_usd.png" alt="By &Delta;$ = &Delta; shares &times; implied price">
   </div>
   <div id="s-ARK-aum" class="chart-sec" style="display:none">
-<p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>Δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
+<p class="chart-caption">Assets Under Management across different reporting sources.<br>&bull; <b style="color:steelblue">13F Reported AUM</b> SEC total from quarterly 13F filing, including option notionals at underlying value.<br>&bull; <b style="color:#27ae60">Equity-only AUM</b> long equity positions only, excluding options.<br>&bull; <b style="color:#e67e22">&Delta;-adj AUM</b> long positions + 25% &times; option notionals — only shown when the fund holds options.<br>&bull; <b style="color:#8e44ad">Official AUM (Form ADV)</b> regulatory AUM as declared by the fund manager to the SEC — the most official figure.</p>
   <div class="pos-table-wrap" style="margin-bottom:1rem"><style>
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
         font-size:.85rem;color:#212529;padding:.3rem .8rem}
@@ -1144,7 +1153,7 @@
     <span class="sec-tab" data-fund="COATUE" data-target="s-COATUE-aum"><svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;margin-right:4px;margin-bottom:1px" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><rect x="1"  y="9"  width="3" height="4" rx="0.5"/><rect x="5.5" y="6" width="3" height="7" rx="0.5"/><rect x="10" y="2"  width="3" height="11" rx="0.5"/></g></svg>AUM</span>
   </div>
   <div id="s-COATUE-positions" class="chart-sec" style="display:block">
-<p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).<br><a href="#pos-detail-COATUE" style="font-size:.8rem;color:#368c2e;text-decoration:none;white-space:nowrap" title="Jump to position detail table">↓ see details by position</a></p>
+<p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM.<br>&bull; &#9733; <b>new position</b><br>&bull; &#8593; <b>biggest addition</b><br>&bull; &#8595; <b>biggest trim</b><br>&bull; <b>*(P)</b> or <b>*(C)</b> the fund also holds Put or Call options on that name (exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).<br><a href="#pos-detail-COATUE" style="font-size:.8rem;color:#368c2e;text-decoration:none;white-space:nowrap" title="Jump to position detail table">↓ see details by position</a></p>
   <img src="COATUE/COATUE_positions.png" alt="<svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;margin-right:4px;margin-bottom:1px" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="2" y1="4"  x2="10" y2="4"/><line x1="2" y1="7"  x2="12" y2="7"/><line x1="2" y1="10" x2="7"  y2="10"/></g></svg>Positions">
   <div id="pos-detail-COATUE" class="pos-table-wrap"><style>
       body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
@@ -1271,7 +1280,7 @@
     </div>
   </div>
   <div id="s-COATUE-track" class="chart-sec" style="display:none">
-<p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights, normalised to 1 at inception. <b>Clone all</b> uses every reported position. <b>Clone top&thinsp;N</b> keeps only the largest N positions, equal-weighted. <b>+45d public</b> simulates an investor who acts only after the filing becomes public (45 days after quarter-end). Compared against SPY as benchmark.</p>
+<p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights.<br>&bull; <b style="color:steelblue">All</b> uses <b>all</b> positions in the fund as reported in the 13F filings.<br>&bull; <b style="color:darkorange">Top 5</b> keeps only the <b>5 largest</b> positions.<br>&bull; <b style="color:firebrick">Top 5 +45d</b> is the truly <b>replicable track</b>. Simulates an investor who acts only after the 13F becomes public (<b>45 days</b> after quarter-end).<br>&bull; <b style="color:grey">S&amp;P 500 (SPY)</b> benchmark for comparison.</p>
   <p class="chart-subtitle">Cumulative Performance — All Positions & Top 5</p>
   <img src="COATUE/COATUE_clone_track.png" alt="Cumulative Performance — All Positions & Top 5">
   <p class="chart-subtitle">Quarterly Performance by Strategy</p>
@@ -1421,16 +1430,19 @@
 </div>
   </div>
   <div id="s-COATUE-trades" class="chart-sec" style="display:none">
-<p class="chart-caption">Largest buys and sells between the two most recent quarters. <b>Trade Performance</b>: price return in the 180 days after quarter-end, normalised to 0% at quarter-end; dashed line = +45d (13F public date); pink dashes = Put options. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates AUM and compresses all stock weights. <b>Δ$ = Δ shares × implied price</b> — captures partial profit-taking even when position value stays flat due to price appreciation.</p>
-  <p class="chart-subtitle">Trade Performance</p>
-  <img src="COATUE/COATUE_buys_sells_perf.png" alt="Trade Performance">
-  <p class="chart-subtitle">By Δ% weight</p>
-  <img src="COATUE/COATUE_buys_sells.png" alt="By Δ% weight">
-  <p class="chart-subtitle">By Δ$ (shares × price)</p>
-  <img src="COATUE/COATUE_buys_sells_usd.png" alt="By Δ$ (shares × price)">
+<p class="chart-caption">Largest buys and sells reported in the 13F filings (quarterly). This tab contains 3 sections.</p>
+  <p class="chart-subtitle">Largest Buy / Sell Performance after the filing</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Return of the stock in the 180 days following the quarter-end date, of the Largest Stock Buys (left) and Sells (right) reported in the 13F.<br>Dashed line = Put or Call options (represented at an ad-hoc 25% delta).<br>Dashed vertical line = +45d (date the 13F becomes public).</p>
+  <img src="COATUE/COATUE_buys_sells_perf.png" alt="Largest Buy / Sell Performance after the filing">
+  <p class="chart-subtitle">By &Delta;% weight</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Biggest position changes measured as variation in estimated portfolio weight.<br>&#9888; Can be misleading when options are present &mdash; large Put positions inflate total AUM and compress all stock weights.</p>
+  <img src="COATUE/COATUE_buys_sells.png" alt="By &Delta;% weight">
+  <p class="chart-subtitle">By &Delta;$ = &Delta; shares &times; implied price</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Biggest position changes measured in dollar terms.<br>Captures partial profit-taking even when position value stays flat due to price appreciation.</p>
+  <img src="COATUE/COATUE_buys_sells_usd.png" alt="By &Delta;$ = &Delta; shares &times; implied price">
   </div>
   <div id="s-COATUE-aum" class="chart-sec" style="display:none">
-<p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>Δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
+<p class="chart-caption">Assets Under Management across different reporting sources.<br>&bull; <b style="color:steelblue">13F Reported AUM</b> SEC total from quarterly 13F filing, including option notionals at underlying value.<br>&bull; <b style="color:#27ae60">Equity-only AUM</b> long equity positions only, excluding options.<br>&bull; <b style="color:#e67e22">&Delta;-adj AUM</b> long positions + 25% &times; option notionals — only shown when the fund holds options.<br>&bull; <b style="color:#8e44ad">Official AUM (Form ADV)</b> regulatory AUM as declared by the fund manager to the SEC — the most official figure.</p>
   <div class="pos-table-wrap" style="margin-bottom:1rem"><style>
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
         font-size:.85rem;color:#212529;padding:.3rem .8rem}
@@ -1495,7 +1507,7 @@
     <span class="sec-tab" data-fund="PERSHING" data-target="s-PERSHING-aum"><svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;margin-right:4px;margin-bottom:1px" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><rect x="1"  y="9"  width="3" height="4" rx="0.5"/><rect x="5.5" y="6" width="3" height="7" rx="0.5"/><rect x="10" y="2"  width="3" height="11" rx="0.5"/></g></svg>AUM</span>
   </div>
   <div id="s-PERSHING-positions" class="chart-sec" style="display:block">
-<p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).<br><a href="#pos-detail-PERSHING" style="font-size:.8rem;color:#368c2e;text-decoration:none;white-space:nowrap" title="Jump to position detail table">↓ see details by position</a></p>
+<p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM.<br>&bull; &#9733; <b>new position</b><br>&bull; &#8593; <b>biggest addition</b><br>&bull; &#8595; <b>biggest trim</b><br>&bull; <b>*(P)</b> or <b>*(C)</b> the fund also holds Put or Call options on that name (exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).<br><a href="#pos-detail-PERSHING" style="font-size:.8rem;color:#368c2e;text-decoration:none;white-space:nowrap" title="Jump to position detail table">↓ see details by position</a></p>
   <img src="PERSHING/PERSHING_positions.png" alt="<svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;margin-right:4px;margin-bottom:1px" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="2" y1="4"  x2="10" y2="4"/><line x1="2" y1="7"  x2="12" y2="7"/><line x1="2" y1="10" x2="7"  y2="10"/></g></svg>Positions">
   <div id="pos-detail-PERSHING" class="pos-table-wrap"><style>
       body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
@@ -1556,7 +1568,7 @@
     </div>
   </div>
   <div id="s-PERSHING-track" class="chart-sec" style="display:none">
-<p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights, normalised to 1 at inception. <b>Clone all</b> uses every reported position. <b>Clone top&thinsp;N</b> keeps only the largest N positions, equal-weighted. <b>+45d public</b> simulates an investor who acts only after the filing becomes public (45 days after quarter-end). Compared against SPY as benchmark.</p>
+<p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights.<br>&bull; <b style="color:steelblue">All</b> uses <b>all</b> positions in the fund as reported in the 13F filings.<br>&bull; <b style="color:darkorange">Top 5</b> keeps only the <b>5 largest</b> positions.<br>&bull; <b style="color:firebrick">Top 5 +45d</b> is the truly <b>replicable track</b>. Simulates an investor who acts only after the 13F becomes public (<b>45 days</b> after quarter-end).<br>&bull; <b style="color:grey">S&amp;P 500 (SPY)</b> benchmark for comparison.</p>
   <p class="chart-subtitle">Cumulative Performance — All Positions & Top 5</p>
   <img src="PERSHING/PERSHING_clone_track.png" alt="Cumulative Performance — All Positions & Top 5">
   <p class="chart-subtitle">Quarterly Performance by Strategy</p>
@@ -1704,16 +1716,19 @@
 </div>
   </div>
   <div id="s-PERSHING-trades" class="chart-sec" style="display:none">
-<p class="chart-caption">Largest buys and sells between the two most recent quarters. <b>Trade Performance</b>: price return in the 180 days after quarter-end, normalised to 0% at quarter-end; dashed line = +45d (13F public date); pink dashes = Put options. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates AUM and compresses all stock weights. <b>Δ$ = Δ shares × implied price</b> — captures partial profit-taking even when position value stays flat due to price appreciation.</p>
-  <p class="chart-subtitle">Trade Performance</p>
-  <img src="PERSHING/PERSHING_buys_sells_perf.png" alt="Trade Performance">
-  <p class="chart-subtitle">By Δ% weight</p>
-  <img src="PERSHING/PERSHING_buys_sells.png" alt="By Δ% weight">
-  <p class="chart-subtitle">By Δ$ (shares × price)</p>
-  <img src="PERSHING/PERSHING_buys_sells_usd.png" alt="By Δ$ (shares × price)">
+<p class="chart-caption">Largest buys and sells reported in the 13F filings (quarterly). This tab contains 3 sections.</p>
+  <p class="chart-subtitle">Largest Buy / Sell Performance after the filing</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Return of the stock in the 180 days following the quarter-end date, of the Largest Stock Buys (left) and Sells (right) reported in the 13F.<br>Dashed line = Put or Call options (represented at an ad-hoc 25% delta).<br>Dashed vertical line = +45d (date the 13F becomes public).</p>
+  <img src="PERSHING/PERSHING_buys_sells_perf.png" alt="Largest Buy / Sell Performance after the filing">
+  <p class="chart-subtitle">By &Delta;% weight</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Biggest position changes measured as variation in estimated portfolio weight.<br>&#9888; Can be misleading when options are present &mdash; large Put positions inflate total AUM and compress all stock weights.</p>
+  <img src="PERSHING/PERSHING_buys_sells.png" alt="By &Delta;% weight">
+  <p class="chart-subtitle">By &Delta;$ = &Delta; shares &times; implied price</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Biggest position changes measured in dollar terms.<br>Captures partial profit-taking even when position value stays flat due to price appreciation.</p>
+  <img src="PERSHING/PERSHING_buys_sells_usd.png" alt="By &Delta;$ = &Delta; shares &times; implied price">
   </div>
   <div id="s-PERSHING-aum" class="chart-sec" style="display:none">
-<p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>Δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
+<p class="chart-caption">Assets Under Management across different reporting sources.<br>&bull; <b style="color:steelblue">13F Reported AUM</b> SEC total from quarterly 13F filing, including option notionals at underlying value.<br>&bull; <b style="color:#27ae60">Equity-only AUM</b> long equity positions only, excluding options.<br>&bull; <b style="color:#e67e22">&Delta;-adj AUM</b> long positions + 25% &times; option notionals — only shown when the fund holds options.<br>&bull; <b style="color:#8e44ad">Official AUM (Form ADV)</b> regulatory AUM as declared by the fund manager to the SEC — the most official figure.</p>
   <div class="pos-table-wrap" style="margin-bottom:1rem"><style>
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
         font-size:.85rem;color:#212529;padding:.3rem .8rem}
@@ -1778,7 +1793,7 @@
     <span class="sec-tab" data-fund="THIRD_POINT" data-target="s-THIRD_POINT-aum"><svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;margin-right:4px;margin-bottom:1px" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><rect x="1"  y="9"  width="3" height="4" rx="0.5"/><rect x="5.5" y="6" width="3" height="7" rx="0.5"/><rect x="10" y="2"  width="3" height="11" rx="0.5"/></g></svg>AUM</span>
   </div>
   <div id="s-THIRD_POINT-positions" class="chart-sec" style="display:block">
-<p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).<br><a href="#pos-detail-THIRD_POINT" style="font-size:.8rem;color:#368c2e;text-decoration:none;white-space:nowrap" title="Jump to position detail table">↓ see details by position</a></p>
+<p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM.<br>&bull; &#9733; <b>new position</b><br>&bull; &#8593; <b>biggest addition</b><br>&bull; &#8595; <b>biggest trim</b><br>&bull; <b>*(P)</b> or <b>*(C)</b> the fund also holds Put or Call options on that name (exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).<br><a href="#pos-detail-THIRD_POINT" style="font-size:.8rem;color:#368c2e;text-decoration:none;white-space:nowrap" title="Jump to position detail table">↓ see details by position</a></p>
   <img src="THIRD_POINT/THIRD_POINT_positions.png" alt="<svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;margin-right:4px;margin-bottom:1px" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="2" y1="4"  x2="10" y2="4"/><line x1="2" y1="7"  x2="12" y2="7"/><line x1="2" y1="10" x2="7"  y2="10"/></g></svg>Positions">
   <div id="pos-detail-THIRD_POINT" class="pos-table-wrap"><style>
       body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
@@ -1879,7 +1894,7 @@
     </div>
   </div>
   <div id="s-THIRD_POINT-track" class="chart-sec" style="display:none">
-<p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights, normalised to 1 at inception. <b>Clone all</b> uses every reported position. <b>Clone top&thinsp;N</b> keeps only the largest N positions, equal-weighted. <b>+45d public</b> simulates an investor who acts only after the filing becomes public (45 days after quarter-end). Compared against SPY as benchmark.</p>
+<p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights.<br>&bull; <b style="color:steelblue">All</b> uses <b>all</b> positions in the fund as reported in the 13F filings.<br>&bull; <b style="color:darkorange">Top 5</b> keeps only the <b>5 largest</b> positions.<br>&bull; <b style="color:firebrick">Top 5 +45d</b> is the truly <b>replicable track</b>. Simulates an investor who acts only after the 13F becomes public (<b>45 days</b> after quarter-end).<br>&bull; <b style="color:grey">S&amp;P 500 (SPY)</b> benchmark for comparison.</p>
   <p class="chart-subtitle">Cumulative Performance — All Positions & Top 5</p>
   <img src="THIRD_POINT/THIRD_POINT_clone_track.png" alt="Cumulative Performance — All Positions & Top 5">
   <p class="chart-subtitle">Quarterly Performance by Strategy</p>
@@ -2029,16 +2044,19 @@
 </div>
   </div>
   <div id="s-THIRD_POINT-trades" class="chart-sec" style="display:none">
-<p class="chart-caption">Largest buys and sells between the two most recent quarters. <b>Trade Performance</b>: price return in the 180 days after quarter-end, normalised to 0% at quarter-end; dashed line = +45d (13F public date); pink dashes = Put options. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates AUM and compresses all stock weights. <b>Δ$ = Δ shares × implied price</b> — captures partial profit-taking even when position value stays flat due to price appreciation.</p>
-  <p class="chart-subtitle">Trade Performance</p>
-  <img src="THIRD_POINT/THIRD_POINT_buys_sells_perf.png" alt="Trade Performance">
-  <p class="chart-subtitle">By Δ% weight</p>
-  <img src="THIRD_POINT/THIRD_POINT_buys_sells.png" alt="By Δ% weight">
-  <p class="chart-subtitle">By Δ$ (shares × price)</p>
-  <img src="THIRD_POINT/THIRD_POINT_buys_sells_usd.png" alt="By Δ$ (shares × price)">
+<p class="chart-caption">Largest buys and sells reported in the 13F filings (quarterly). This tab contains 3 sections.</p>
+  <p class="chart-subtitle">Largest Buy / Sell Performance after the filing</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Return of the stock in the 180 days following the quarter-end date, of the Largest Stock Buys (left) and Sells (right) reported in the 13F.<br>Dashed line = Put or Call options (represented at an ad-hoc 25% delta).<br>Dashed vertical line = +45d (date the 13F becomes public).</p>
+  <img src="THIRD_POINT/THIRD_POINT_buys_sells_perf.png" alt="Largest Buy / Sell Performance after the filing">
+  <p class="chart-subtitle">By &Delta;% weight</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Biggest position changes measured as variation in estimated portfolio weight.<br>&#9888; Can be misleading when options are present &mdash; large Put positions inflate total AUM and compress all stock weights.</p>
+  <img src="THIRD_POINT/THIRD_POINT_buys_sells.png" alt="By &Delta;% weight">
+  <p class="chart-subtitle">By &Delta;$ = &Delta; shares &times; implied price</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Biggest position changes measured in dollar terms.<br>Captures partial profit-taking even when position value stays flat due to price appreciation.</p>
+  <img src="THIRD_POINT/THIRD_POINT_buys_sells_usd.png" alt="By &Delta;$ = &Delta; shares &times; implied price">
   </div>
   <div id="s-THIRD_POINT-aum" class="chart-sec" style="display:none">
-<p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>Δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
+<p class="chart-caption">Assets Under Management across different reporting sources.<br>&bull; <b style="color:steelblue">13F Reported AUM</b> SEC total from quarterly 13F filing, including option notionals at underlying value.<br>&bull; <b style="color:#27ae60">Equity-only AUM</b> long equity positions only, excluding options.<br>&bull; <b style="color:#e67e22">&Delta;-adj AUM</b> long positions + 25% &times; option notionals — only shown when the fund holds options.<br>&bull; <b style="color:#8e44ad">Official AUM (Form ADV)</b> regulatory AUM as declared by the fund manager to the SEC — the most official figure.</p>
   <div class="pos-table-wrap" style="margin-bottom:1rem"><style>
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
         font-size:.85rem;color:#212529;padding:.3rem .8rem}
@@ -2103,7 +2121,7 @@
     <span class="sec-tab" data-fund="BAUPOST" data-target="s-BAUPOST-aum"><svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;margin-right:4px;margin-bottom:1px" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><rect x="1"  y="9"  width="3" height="4" rx="0.5"/><rect x="5.5" y="6" width="3" height="7" rx="0.5"/><rect x="10" y="2"  width="3" height="11" rx="0.5"/></g></svg>AUM</span>
   </div>
   <div id="s-BAUPOST-positions" class="chart-sec" style="display:block">
-<p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).<br><a href="#pos-detail-BAUPOST" style="font-size:.8rem;color:#368c2e;text-decoration:none;white-space:nowrap" title="Jump to position detail table">↓ see details by position</a></p>
+<p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM.<br>&bull; &#9733; <b>new position</b><br>&bull; &#8593; <b>biggest addition</b><br>&bull; &#8595; <b>biggest trim</b><br>&bull; <b>*(P)</b> or <b>*(C)</b> the fund also holds Put or Call options on that name (exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).<br><a href="#pos-detail-BAUPOST" style="font-size:.8rem;color:#368c2e;text-decoration:none;white-space:nowrap" title="Jump to position detail table">↓ see details by position</a></p>
   <img src="BAUPOST/BAUPOST_positions.png" alt="<svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;margin-right:4px;margin-bottom:1px" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="2" y1="4"  x2="10" y2="4"/><line x1="2" y1="7"  x2="12" y2="7"/><line x1="2" y1="10" x2="7"  y2="10"/></g></svg>Positions">
   <div id="pos-detail-BAUPOST" class="pos-table-wrap"><style>
       body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
@@ -2176,7 +2194,7 @@
     </div>
   </div>
   <div id="s-BAUPOST-track" class="chart-sec" style="display:none">
-<p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights, normalised to 1 at inception. <b>Clone all</b> uses every reported position. <b>Clone top&thinsp;N</b> keeps only the largest N positions, equal-weighted. <b>+45d public</b> simulates an investor who acts only after the filing becomes public (45 days after quarter-end). Compared against SPY as benchmark.</p>
+<p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights.<br>&bull; <b style="color:steelblue">All</b> uses <b>all</b> positions in the fund as reported in the 13F filings.<br>&bull; <b style="color:darkorange">Top 5</b> keeps only the <b>5 largest</b> positions.<br>&bull; <b style="color:firebrick">Top 5 +45d</b> is the truly <b>replicable track</b>. Simulates an investor who acts only after the 13F becomes public (<b>45 days</b> after quarter-end).<br>&bull; <b style="color:grey">S&amp;P 500 (SPY)</b> benchmark for comparison.</p>
   <p class="chart-subtitle">Cumulative Performance — All Positions & Top 5</p>
   <img src="BAUPOST/BAUPOST_clone_track.png" alt="Cumulative Performance — All Positions & Top 5">
   <p class="chart-subtitle">Quarterly Performance by Strategy</p>
@@ -2326,16 +2344,19 @@
 </div>
   </div>
   <div id="s-BAUPOST-trades" class="chart-sec" style="display:none">
-<p class="chart-caption">Largest buys and sells between the two most recent quarters. <b>Trade Performance</b>: price return in the 180 days after quarter-end, normalised to 0% at quarter-end; dashed line = +45d (13F public date); pink dashes = Put options. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates AUM and compresses all stock weights. <b>Δ$ = Δ shares × implied price</b> — captures partial profit-taking even when position value stays flat due to price appreciation.</p>
-  <p class="chart-subtitle">Trade Performance</p>
-  <img src="BAUPOST/BAUPOST_buys_sells_perf.png" alt="Trade Performance">
-  <p class="chart-subtitle">By Δ% weight</p>
-  <img src="BAUPOST/BAUPOST_buys_sells.png" alt="By Δ% weight">
-  <p class="chart-subtitle">By Δ$ (shares × price)</p>
-  <img src="BAUPOST/BAUPOST_buys_sells_usd.png" alt="By Δ$ (shares × price)">
+<p class="chart-caption">Largest buys and sells reported in the 13F filings (quarterly). This tab contains 3 sections.</p>
+  <p class="chart-subtitle">Largest Buy / Sell Performance after the filing</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Return of the stock in the 180 days following the quarter-end date, of the Largest Stock Buys (left) and Sells (right) reported in the 13F.<br>Dashed line = Put or Call options (represented at an ad-hoc 25% delta).<br>Dashed vertical line = +45d (date the 13F becomes public).</p>
+  <img src="BAUPOST/BAUPOST_buys_sells_perf.png" alt="Largest Buy / Sell Performance after the filing">
+  <p class="chart-subtitle">By &Delta;% weight</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Biggest position changes measured as variation in estimated portfolio weight.<br>&#9888; Can be misleading when options are present &mdash; large Put positions inflate total AUM and compress all stock weights.</p>
+  <img src="BAUPOST/BAUPOST_buys_sells.png" alt="By &Delta;% weight">
+  <p class="chart-subtitle">By &Delta;$ = &Delta; shares &times; implied price</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Biggest position changes measured in dollar terms.<br>Captures partial profit-taking even when position value stays flat due to price appreciation.</p>
+  <img src="BAUPOST/BAUPOST_buys_sells_usd.png" alt="By &Delta;$ = &Delta; shares &times; implied price">
   </div>
   <div id="s-BAUPOST-aum" class="chart-sec" style="display:none">
-<p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>Δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
+<p class="chart-caption">Assets Under Management across different reporting sources.<br>&bull; <b style="color:steelblue">13F Reported AUM</b> SEC total from quarterly 13F filing, including option notionals at underlying value.<br>&bull; <b style="color:#27ae60">Equity-only AUM</b> long equity positions only, excluding options.<br>&bull; <b style="color:#e67e22">&Delta;-adj AUM</b> long positions + 25% &times; option notionals — only shown when the fund holds options.<br>&bull; <b style="color:#8e44ad">Official AUM (Form ADV)</b> regulatory AUM as declared by the fund manager to the SEC — the most official figure.</p>
   <div class="pos-table-wrap" style="margin-bottom:1rem"><style>
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
         font-size:.85rem;color:#212529;padding:.3rem .8rem}
@@ -2400,7 +2421,7 @@
     <span class="sec-tab" data-fund="AKO" data-target="s-AKO-aum"><svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;margin-right:4px;margin-bottom:1px" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><rect x="1"  y="9"  width="3" height="4" rx="0.5"/><rect x="5.5" y="6" width="3" height="7" rx="0.5"/><rect x="10" y="2"  width="3" height="11" rx="0.5"/></g></svg>AUM</span>
   </div>
   <div id="s-AKO-positions" class="chart-sec" style="display:block">
-<p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).<br><a href="#pos-detail-AKO" style="font-size:.8rem;color:#368c2e;text-decoration:none;white-space:nowrap" title="Jump to position detail table">↓ see details by position</a></p>
+<p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM.<br>&bull; &#9733; <b>new position</b><br>&bull; &#8593; <b>biggest addition</b><br>&bull; &#8595; <b>biggest trim</b><br>&bull; <b>*(P)</b> or <b>*(C)</b> the fund also holds Put or Call options on that name (exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).<br><a href="#pos-detail-AKO" style="font-size:.8rem;color:#368c2e;text-decoration:none;white-space:nowrap" title="Jump to position detail table">↓ see details by position</a></p>
   <img src="AKO/AKO_positions.png" alt="<svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;margin-right:4px;margin-bottom:1px" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="2" y1="4"  x2="10" y2="4"/><line x1="2" y1="7"  x2="12" y2="7"/><line x1="2" y1="10" x2="7"  y2="10"/></g></svg>Positions">
   <div id="pos-detail-AKO" class="pos-table-wrap"><style>
       body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
@@ -2490,7 +2511,7 @@
     </div>
   </div>
   <div id="s-AKO-track" class="chart-sec" style="display:none">
-<p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights, normalised to 1 at inception. <b>Clone all</b> uses every reported position. <b>Clone top&thinsp;N</b> keeps only the largest N positions, equal-weighted. <b>+45d public</b> simulates an investor who acts only after the filing becomes public (45 days after quarter-end). Compared against SPY as benchmark.</p>
+<p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights.<br>&bull; <b style="color:steelblue">All</b> uses <b>all</b> positions in the fund as reported in the 13F filings.<br>&bull; <b style="color:darkorange">Top 5</b> keeps only the <b>5 largest</b> positions.<br>&bull; <b style="color:firebrick">Top 5 +45d</b> is the truly <b>replicable track</b>. Simulates an investor who acts only after the 13F becomes public (<b>45 days</b> after quarter-end).<br>&bull; <b style="color:grey">S&amp;P 500 (SPY)</b> benchmark for comparison.</p>
   <p class="chart-subtitle">Cumulative Performance — All Positions & Top 5</p>
   <img src="AKO/AKO_clone_track.png" alt="Cumulative Performance — All Positions & Top 5">
   <p class="chart-subtitle">Quarterly Performance by Strategy</p>
@@ -2640,16 +2661,19 @@
 </div>
   </div>
   <div id="s-AKO-trades" class="chart-sec" style="display:none">
-<p class="chart-caption">Largest buys and sells between the two most recent quarters. <b>Trade Performance</b>: price return in the 180 days after quarter-end, normalised to 0% at quarter-end; dashed line = +45d (13F public date); pink dashes = Put options. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates AUM and compresses all stock weights. <b>Δ$ = Δ shares × implied price</b> — captures partial profit-taking even when position value stays flat due to price appreciation.</p>
-  <p class="chart-subtitle">Trade Performance</p>
-  <img src="AKO/AKO_buys_sells_perf.png" alt="Trade Performance">
-  <p class="chart-subtitle">By Δ% weight</p>
-  <img src="AKO/AKO_buys_sells.png" alt="By Δ% weight">
-  <p class="chart-subtitle">By Δ$ (shares × price)</p>
-  <img src="AKO/AKO_buys_sells_usd.png" alt="By Δ$ (shares × price)">
+<p class="chart-caption">Largest buys and sells reported in the 13F filings (quarterly). This tab contains 3 sections.</p>
+  <p class="chart-subtitle">Largest Buy / Sell Performance after the filing</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Return of the stock in the 180 days following the quarter-end date, of the Largest Stock Buys (left) and Sells (right) reported in the 13F.<br>Dashed line = Put or Call options (represented at an ad-hoc 25% delta).<br>Dashed vertical line = +45d (date the 13F becomes public).</p>
+  <img src="AKO/AKO_buys_sells_perf.png" alt="Largest Buy / Sell Performance after the filing">
+  <p class="chart-subtitle">By &Delta;% weight</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Biggest position changes measured as variation in estimated portfolio weight.<br>&#9888; Can be misleading when options are present &mdash; large Put positions inflate total AUM and compress all stock weights.</p>
+  <img src="AKO/AKO_buys_sells.png" alt="By &Delta;% weight">
+  <p class="chart-subtitle">By &Delta;$ = &Delta; shares &times; implied price</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Biggest position changes measured in dollar terms.<br>Captures partial profit-taking even when position value stays flat due to price appreciation.</p>
+  <img src="AKO/AKO_buys_sells_usd.png" alt="By &Delta;$ = &Delta; shares &times; implied price">
   </div>
   <div id="s-AKO-aum" class="chart-sec" style="display:none">
-<p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>Δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
+<p class="chart-caption">Assets Under Management across different reporting sources.<br>&bull; <b style="color:steelblue">13F Reported AUM</b> SEC total from quarterly 13F filing, including option notionals at underlying value.<br>&bull; <b style="color:#27ae60">Equity-only AUM</b> long equity positions only, excluding options.<br>&bull; <b style="color:#e67e22">&Delta;-adj AUM</b> long positions + 25% &times; option notionals — only shown when the fund holds options.<br>&bull; <b style="color:#8e44ad">Official AUM (Form ADV)</b> regulatory AUM as declared by the fund manager to the SEC — the most official figure.</p>
   <div class="pos-table-wrap" style="margin-bottom:1rem"><style>
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
         font-size:.85rem;color:#212529;padding:.3rem .8rem}
@@ -2714,7 +2738,7 @@
     <span class="sec-tab" data-fund="RA" data-target="s-RA-aum"><svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;margin-right:4px;margin-bottom:1px" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><rect x="1"  y="9"  width="3" height="4" rx="0.5"/><rect x="5.5" y="6" width="3" height="7" rx="0.5"/><rect x="10" y="2"  width="3" height="11" rx="0.5"/></g></svg>AUM</span>
   </div>
   <div id="s-RA-positions" class="chart-sec" style="display:block">
-<p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).<br><a href="#pos-detail-RA" style="font-size:.8rem;color:#368c2e;text-decoration:none;white-space:nowrap" title="Jump to position detail table">↓ see details by position</a></p>
+<p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM.<br>&bull; &#9733; <b>new position</b><br>&bull; &#8593; <b>biggest addition</b><br>&bull; &#8595; <b>biggest trim</b><br>&bull; <b>*(P)</b> or <b>*(C)</b> the fund also holds Put or Call options on that name (exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).<br><a href="#pos-detail-RA" style="font-size:.8rem;color:#368c2e;text-decoration:none;white-space:nowrap" title="Jump to position detail table">↓ see details by position</a></p>
   <img src="RA/RA_positions.png" alt="<svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;margin-right:4px;margin-bottom:1px" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="2" y1="4"  x2="10" y2="4"/><line x1="2" y1="7"  x2="12" y2="7"/><line x1="2" y1="10" x2="7"  y2="10"/></g></svg>Positions">
   <div id="pos-detail-RA" class="pos-table-wrap"><style>
       body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
@@ -2880,7 +2904,7 @@
     </div>
   </div>
   <div id="s-RA-track" class="chart-sec" style="display:none">
-<p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights, normalised to 1 at inception. <b>Clone all</b> uses every reported position. <b>Clone top&thinsp;N</b> keeps only the largest N positions, equal-weighted. <b>+45d public</b> simulates an investor who acts only after the filing becomes public (45 days after quarter-end). Compared against SPY as benchmark.</p>
+<p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights.<br>&bull; <b style="color:steelblue">All</b> uses <b>all</b> positions in the fund as reported in the 13F filings.<br>&bull; <b style="color:darkorange">Top 5</b> keeps only the <b>5 largest</b> positions.<br>&bull; <b style="color:firebrick">Top 5 +45d</b> is the truly <b>replicable track</b>. Simulates an investor who acts only after the 13F becomes public (<b>45 days</b> after quarter-end).<br>&bull; <b style="color:grey">S&amp;P 500 (SPY)</b> benchmark for comparison.</p>
   <p class="chart-subtitle">Cumulative Performance — All Positions & Top 5</p>
   <img src="RA/RA_clone_track.png" alt="Cumulative Performance — All Positions & Top 5">
   <p class="chart-subtitle">Quarterly Performance by Strategy</p>
@@ -3001,16 +3025,19 @@
 </div>
   </div>
   <div id="s-RA-trades" class="chart-sec" style="display:none">
-<p class="chart-caption">Largest buys and sells between the two most recent quarters. <b>Trade Performance</b>: price return in the 180 days after quarter-end, normalised to 0% at quarter-end; dashed line = +45d (13F public date); pink dashes = Put options. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates AUM and compresses all stock weights. <b>Δ$ = Δ shares × implied price</b> — captures partial profit-taking even when position value stays flat due to price appreciation.</p>
-  <p class="chart-subtitle">Trade Performance</p>
-  <img src="RA/RA_buys_sells_perf.png" alt="Trade Performance">
-  <p class="chart-subtitle">By Δ% weight</p>
-  <img src="RA/RA_buys_sells.png" alt="By Δ% weight">
-  <p class="chart-subtitle">By Δ$ (shares × price)</p>
-  <img src="RA/RA_buys_sells_usd.png" alt="By Δ$ (shares × price)">
+<p class="chart-caption">Largest buys and sells reported in the 13F filings (quarterly). This tab contains 3 sections.</p>
+  <p class="chart-subtitle">Largest Buy / Sell Performance after the filing</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Return of the stock in the 180 days following the quarter-end date, of the Largest Stock Buys (left) and Sells (right) reported in the 13F.<br>Dashed line = Put or Call options (represented at an ad-hoc 25% delta).<br>Dashed vertical line = +45d (date the 13F becomes public).</p>
+  <img src="RA/RA_buys_sells_perf.png" alt="Largest Buy / Sell Performance after the filing">
+  <p class="chart-subtitle">By &Delta;% weight</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Biggest position changes measured as variation in estimated portfolio weight.<br>&#9888; Can be misleading when options are present &mdash; large Put positions inflate total AUM and compress all stock weights.</p>
+  <img src="RA/RA_buys_sells.png" alt="By &Delta;% weight">
+  <p class="chart-subtitle">By &Delta;$ = &Delta; shares &times; implied price</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Biggest position changes measured in dollar terms.<br>Captures partial profit-taking even when position value stays flat due to price appreciation.</p>
+  <img src="RA/RA_buys_sells_usd.png" alt="By &Delta;$ = &Delta; shares &times; implied price">
   </div>
   <div id="s-RA-aum" class="chart-sec" style="display:none">
-<p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>Δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
+<p class="chart-caption">Assets Under Management across different reporting sources.<br>&bull; <b style="color:steelblue">13F Reported AUM</b> SEC total from quarterly 13F filing, including option notionals at underlying value.<br>&bull; <b style="color:#27ae60">Equity-only AUM</b> long equity positions only, excluding options.<br>&bull; <b style="color:#e67e22">&Delta;-adj AUM</b> long positions + 25% &times; option notionals — only shown when the fund holds options.<br>&bull; <b style="color:#8e44ad">Official AUM (Form ADV)</b> regulatory AUM as declared by the fund manager to the SEC — the most official figure.</p>
   <div class="pos-table-wrap" style="margin-bottom:1rem"><style>
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
         font-size:.85rem;color:#212529;padding:.3rem .8rem}
@@ -3075,7 +3102,7 @@
     <span class="sec-tab" data-fund="ALPINE" data-target="s-ALPINE-aum"><svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;margin-right:4px;margin-bottom:1px" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><rect x="1"  y="9"  width="3" height="4" rx="0.5"/><rect x="5.5" y="6" width="3" height="7" rx="0.5"/><rect x="10" y="2"  width="3" height="11" rx="0.5"/></g></svg>AUM</span>
   </div>
   <div id="s-ALPINE-positions" class="chart-sec" style="display:block">
-<p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM. &#9733; new position &nbsp;|&nbsp; &#8593; biggest addition &nbsp;|&nbsp; &#8595; biggest trim. Tickers marked *(P) or *(C) indicate the fund also holds Put or Call options on that name (option exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).<br><a href="#pos-detail-ALPINE" style="font-size:.8rem;color:#368c2e;text-decoration:none;white-space:nowrap" title="Jump to position detail table">↓ see details by position</a></p>
+<p class="chart-caption">Portfolio holdings from the two most recent 13F filings. Bars show the weight of each position as a % of total reported AUM.<br>&bull; &#9733; <b>new position</b><br>&bull; &#8593; <b>biggest addition</b><br>&bull; &#8595; <b>biggest trim</b><br>&bull; <b>*(P)</b> or <b>*(C)</b> the fund also holds Put or Call options on that name (exposure estimated at &Delta;&thinsp;=&thinsp;25% of notional).<br><a href="#pos-detail-ALPINE" style="font-size:.8rem;color:#368c2e;text-decoration:none;white-space:nowrap" title="Jump to position detail table">↓ see details by position</a></p>
   <img src="ALPINE/ALPINE_positions.png" alt="<svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;margin-right:4px;margin-bottom:1px" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="2" y1="4"  x2="10" y2="4"/><line x1="2" y1="7"  x2="12" y2="7"/><line x1="2" y1="10" x2="7"  y2="10"/></g></svg>Positions">
   <div id="pos-detail-ALPINE" class="pos-table-wrap"><style>
       body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
@@ -3216,7 +3243,7 @@
     </div>
   </div>
   <div id="s-ALPINE-track" class="chart-sec" style="display:none">
-<p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights, normalised to 1 at inception. <b>Clone all</b> uses every reported position. <b>Clone top&thinsp;N</b> keeps only the largest N positions, equal-weighted. <b>+45d public</b> simulates an investor who acts only after the filing becomes public (45 days after quarter-end). Compared against SPY as benchmark.</p>
+<p class="chart-caption">Simulated clone portfolio rebalanced quarterly at 13F weights.<br>&bull; <b style="color:steelblue">All</b> uses <b>all</b> positions in the fund as reported in the 13F filings.<br>&bull; <b style="color:darkorange">Top 5</b> keeps only the <b>5 largest</b> positions.<br>&bull; <b style="color:firebrick">Top 5 +45d</b> is the truly <b>replicable track</b>. Simulates an investor who acts only after the 13F becomes public (<b>45 days</b> after quarter-end).<br>&bull; <b style="color:grey">S&amp;P 500 (SPY)</b> benchmark for comparison.</p>
   <p class="chart-subtitle">Cumulative Performance — All Positions & Top 5</p>
   <img src="ALPINE/ALPINE_clone_track.png" alt="Cumulative Performance — All Positions & Top 5">
   <p class="chart-subtitle">Quarterly Performance by Strategy</p>
@@ -3366,16 +3393,19 @@
 </div>
   </div>
   <div id="s-ALPINE-trades" class="chart-sec" style="display:none">
-<p class="chart-caption">Largest buys and sells between the two most recent quarters. <b>Trade Performance</b>: price return in the 180 days after quarter-end, normalised to 0% at quarter-end; dashed line = +45d (13F public date); pink dashes = Put options. <b>Δ% weight</b> can be misleading when options are present: adding large Put positions inflates AUM and compresses all stock weights. <b>Δ$ = Δ shares × implied price</b> — captures partial profit-taking even when position value stays flat due to price appreciation.</p>
-  <p class="chart-subtitle">Trade Performance</p>
-  <img src="ALPINE/ALPINE_buys_sells_perf.png" alt="Trade Performance">
-  <p class="chart-subtitle">By Δ% weight</p>
-  <img src="ALPINE/ALPINE_buys_sells.png" alt="By Δ% weight">
-  <p class="chart-subtitle">By Δ$ (shares × price)</p>
-  <img src="ALPINE/ALPINE_buys_sells_usd.png" alt="By Δ$ (shares × price)">
+<p class="chart-caption">Largest buys and sells reported in the 13F filings (quarterly). This tab contains 3 sections.</p>
+  <p class="chart-subtitle">Largest Buy / Sell Performance after the filing</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Return of the stock in the 180 days following the quarter-end date, of the Largest Stock Buys (left) and Sells (right) reported in the 13F.<br>Dashed line = Put or Call options (represented at an ad-hoc 25% delta).<br>Dashed vertical line = +45d (date the 13F becomes public).</p>
+  <img src="ALPINE/ALPINE_buys_sells_perf.png" alt="Largest Buy / Sell Performance after the filing">
+  <p class="chart-subtitle">By &Delta;% weight</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Biggest position changes measured as variation in estimated portfolio weight.<br>&#9888; Can be misleading when options are present &mdash; large Put positions inflate total AUM and compress all stock weights.</p>
+  <img src="ALPINE/ALPINE_buys_sells.png" alt="By &Delta;% weight">
+  <p class="chart-subtitle">By &Delta;$ = &Delta; shares &times; implied price</p>
+  <p class="chart-caption" style="margin-top:.2rem;margin-bottom:.6rem">Biggest position changes measured in dollar terms.<br>Captures partial profit-taking even when position value stays flat due to price appreciation.</p>
+  <img src="ALPINE/ALPINE_buys_sells_usd.png" alt="By &Delta;$ = &Delta; shares &times; implied price">
   </div>
   <div id="s-ALPINE-aum" class="chart-sec" style="display:none">
-<p class="chart-caption">Assets Under Management as reported in each quarterly 13F filing. <b>Reported AUM</b> = SEC total, which includes option notionals at underlying value (consistent with WhaleWisdom). <b>Δ-adj AUM</b> = long positions + 25&thinsp;% &times; option notionals — only shown when the fund holds options.</p>
+<p class="chart-caption">Assets Under Management across different reporting sources.<br>&bull; <b style="color:steelblue">13F Reported AUM</b> SEC total from quarterly 13F filing, including option notionals at underlying value.<br>&bull; <b style="color:#27ae60">Equity-only AUM</b> long equity positions only, excluding options.<br>&bull; <b style="color:#e67e22">&Delta;-adj AUM</b> long positions + 25% &times; option notionals — only shown when the fund holds options.<br>&bull; <b style="color:#8e44ad">Official AUM (Form ADV)</b> regulatory AUM as declared by the fund manager to the SEC — the most official figure.</p>
   <div class="pos-table-wrap" style="margin-bottom:1rem"><style>
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
         font-size:.85rem;color:#212529;padding:.3rem .8rem}
