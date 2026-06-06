@@ -3,16 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Recherche par sous-thème — Maths Bac Spé</title>
+<title>Révision Bac Maths Spé 2026 - Par sous themes</title>
 <style>
-:root { --blue:#2563eb; --bg:#f9fafb; --card:#fff; --border:#e5e7eb; --text:#111; --gray:#6b7280; --green:#16a34a; --orange:#d97706; --red:#dc2626; }
+:root { --blue:#2563eb; --bg:#f9fafb; --card:#fff; --border:#e5e7eb; --text:#111; --gray:#6b7280; --green:#16a34a; --orange:#d97706; --red:#dc2626; --muted:#64748b; }
 *{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{font-family:system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
-.header{background:var(--blue);color:#fff;padding:1.2rem 1.5rem}
-.header h1{font-size:1.4rem;font-weight:700}
-.header p{opacity:.85;font-size:.875rem;margin-top:.2rem}
-.back-link{color:#bfdbfe;font-size:.8rem;display:block;margin-bottom:.4rem}
-.back-link:hover{color:#fff}
+.header{background:#1e293b;color:#fff;padding:1.1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;min-height:76px}
+.header-left{display:flex;flex-direction:column;gap:.35rem;min-width:0}
+.header-bottom-row{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;min-width:0}
+.header h1{font-size:1.3rem;font-weight:700;margin:0}
+.header p{opacity:.85;font-size:.9rem;margin:0}
+
+.date-badge{background:var(--red);color:#fff;display:inline-block;padding:.35rem .85rem;border-radius:999px;font-size:.82rem;font-weight:700;text-decoration:none;}
+
+nav.pages-nav{display:flex;background:#fff;border-bottom:2px solid var(--border);padding:0 1rem;gap:.2rem}
+nav.pages-nav a{padding:.75rem 1.1rem;font-size:.9rem;font-weight:600;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px;text-decoration:none;display:flex;align-items:center}
+nav.pages-nav a.on{color:#1e293b;border-bottom-color:#1e293b}
+nav.pages-nav a:hover{color:#1e293b}
+
 .controls{background:#fff;border-bottom:1px solid var(--border);padding:.8rem 1.5rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;position:sticky;top:0;z-index:100}
 .search-wrap{flex:1;min-width:180px;position:relative}
 .search-wrap input{width:100%;padding:.45rem .7rem .45rem 2rem;border:1px solid #d1d5db;border-radius:6px;font-size:.875rem}
@@ -50,10 +59,21 @@ main{max-width:1100px;margin:0 auto;padding:1rem 1.5rem}
 <body>
 
 <div class="header">
-  <a href="/killthatbac/maths/" class="back-link">← Retour aux pièges</a>
-  <h1>Recherche par sous-thème — Bac Spé Maths</h1>
-  <p>145 sous-thèmes extraits de 92 exercices</p>
+  <div class="header-left">
+    <h1>Révision Bac Maths Spé 2026 - Par sous themes</h1>
+    <div class="header-bottom-row">
+      <a href="../index.html" class="date-badge">Épreuve : 16–17 juin 2026</a>
+      <p>145 sous-thèmes extraits de 92 exercices</p>
+    </div>
+  </div>
 </div>
+
+<nav class="pages-nav">
+  <a href="index.html">Par Pièges</a>
+  <a href="skills.html">Recherche par compétences</a>
+  <a href="sous-themes.html" class="on">Recherche par sous-thèmes</a>
+  <a href="index.html">Tous les Sujets</a>
+</nav>
 
 <div class="controls">
   <div class="search-wrap">
