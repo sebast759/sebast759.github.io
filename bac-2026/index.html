@@ -3,879 +3,877 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Révision Bac 2026</title>
+<title>Révision Bac Maths 2026</title>
 <style>
   :root {
-    --maths: #1a6fb5;
-    --phys: #2a9d4e;
-    --philo: #8b4fa8;
-    --p1: #d97706;
-    --p2: #dc2626;
-    --bg: #f8f9fa;
-    --card: #ffffff;
-    --border: #e2e8f0;
+    --p2:#dc2626; --p1:#d97706; --ok:#2a9d4e;
+    --bg:#f8f9fa; --card:#fff; --border:#e2e8f0;
+    --text:#1e293b; --muted:#64748b;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: #1e293b; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text)}
 
-  header {
-    background: #1e293b; color: white; padding: 1.2rem 1.5rem;
-    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
-  }
-  header h1 { font-size: 1.3rem; font-weight: 700; }
-  .exam-date { background: var(--p2); padding: 0.3rem 0.8rem; border-radius: 999px; font-size: 0.85rem; font-weight: 600; }
+  header{background:#1e293b;color:#fff;padding:1.1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+  header h1{font-size:1.2rem;font-weight:700}
+  .date-badge{background:var(--p2);padding:.3rem .8rem;border-radius:999px;font-size:.82rem;font-weight:700}
 
-  nav { display: flex; background: white; border-bottom: 2px solid var(--border); padding: 0 1rem; gap: 0.25rem; }
-  nav button {
-    padding: 0.8rem 1.2rem; border: none; background: transparent; cursor: pointer;
-    font-size: 0.95rem; font-weight: 600; color: #64748b; border-bottom: 3px solid transparent;
-    margin-bottom: -2px; transition: color 0.15s;
-  }
-  nav button.active-maths  { color: var(--maths); border-bottom-color: var(--maths); }
-  nav button.active-phys   { color: var(--phys);  border-bottom-color: var(--phys); }
-  nav button.active-philo  { color: var(--philo); border-bottom-color: var(--philo); }
+  nav{display:flex;background:#fff;border-bottom:2px solid var(--border);padding:0 1rem;gap:.2rem}
+  nav button{padding:.75rem 1.1rem;border:none;background:transparent;cursor:pointer;font-size:.9rem;font-weight:600;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px}
+  nav button.on{color:#1e293b;border-bottom-color:#1e293b}
 
-  .tab-content { display: none; padding: 1.5rem; max-width: 1100px; margin: 0 auto; }
-  .tab-content.visible { display: block; }
+  .tab{display:none;padding:1.5rem;max-width:1100px;margin:0 auto}
+  .tab.visible{display:block}
 
-  h2 { font-size: 1.05rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
-       margin: 1.5rem 0 0.75rem; color: #475569; }
-  h2:first-child { margin-top: 0; }
+  /* ── Par Piège ── */
+  .piege-block{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:1.2rem;overflow:hidden}
+  .piege-header{padding:.9rem 1.1rem;display:flex;align-items:flex-start;gap:.8rem;cursor:pointer;user-select:none}
+  .piege-header:hover{background:#f1f5f9}
+  .piege-num{background:#1e293b;color:#fff;border-radius:6px;padding:.2rem .55rem;font-size:.78rem;font-weight:700;white-space:nowrap;margin-top:.1rem}
+  .piege-title{font-weight:700;font-size:.95rem;flex:1}
+  .piege-rule{font-size:.82rem;color:var(--muted);margin-top:.2rem;line-height:1.5}
+  .piege-chevron{color:var(--muted);font-size:1rem;transition:transform .2s;margin-left:auto;flex-shrink:0}
+  .piege-body{display:none;border-top:1px solid var(--border);padding:.8rem 1.1rem;display:flex;flex-direction:column;gap:.7rem}
+  .piege-block.open .piege-chevron{transform:rotate(180deg)}
 
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.75rem; }
+  .exo-card{background:#f8f9fa;border:1px solid var(--border);border-radius:8px;padding:.8rem 1rem}
+  .exo-head{display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem;flex-wrap:wrap}
+  .tag{font-size:.72rem;font-weight:700;padding:.15rem .55rem;border-radius:999px;white-space:nowrap}
+  .tag-p2{background:#fee2e2;color:var(--p2)}
+  .tag-p1{background:#fef3c7;color:var(--p1)}
+  .tag-ok{background:#dcfce7;color:var(--ok)}
+  .exo-label{font-weight:700;font-size:.85rem}
+  .exo-question{font-size:.83rem;color:var(--text);line-height:1.55;margin-bottom:.4rem}
+  .exo-trap{font-size:.8rem;background:#fff7ed;border-left:3px solid var(--p1);padding:.4rem .7rem;border-radius:0 6px 6px 0;color:#92400e}
+  .exo-links{display:flex;gap:.4rem;margin-top:.5rem;flex-wrap:wrap}
+  .exo-links a{font-size:.77rem;font-weight:600;padding:.25rem .6rem;border-radius:5px;text-decoration:none}
+  .btn-s{background:#dbeafe;color:#1d4ed8}
+  .btn-c{background:#dcfce7;color:#15803d}
+  .btn-s:hover,.btn-c:hover{opacity:.75}
 
-  .card {
-    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-    padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem;
-  }
-  .card.p1 { border-left: 4px solid var(--p1); }
-  .card.p2 { border-left: 4px solid var(--p2); }
+  /* ── Par Priorités ── */
+  .section-title{font-size:.95rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:1.4rem 0 .7rem}
+  .section-title:first-child{margin-top:0}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:.7rem}
+  .pcard{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1rem;display:flex;flex-direction:column;gap:.5rem}
+  .pcard.p2{border-left:4px solid var(--p2)}
+  .pcard.p1{border-left:4px solid var(--p1)}
+  .pcard-title{font-weight:700;font-size:.9rem;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+  .pcard-links{display:flex;gap:.4rem;flex-wrap:wrap}
+  .pcard-links a{font-size:.8rem;font-weight:600;padding:.28rem .65rem;border-radius:6px;text-decoration:none}
+  .pcard-traps{font-size:.79rem;color:var(--muted);border-top:1px solid var(--border);padding-top:.45rem}
+  .pcard-traps ul{padding-left:1rem;display:flex;flex-direction:column;gap:.18rem}
+  .tl{font-weight:700;color:var(--p2)}
+  .fiche{background:#fffbeb;border:1px solid #fbbf24;border-radius:10px;padding:1rem 1.2rem;margin-bottom:1.4rem}
+  .fiche h3{font-size:.88rem;font-weight:700;color:#92400e;margin-bottom:.55rem}
+  .fiche ul{padding-left:1.1rem;font-size:.83rem;color:#78350f;display:flex;flex-direction:column;gap:.22rem}
 
-  .card-title { font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
-  .badge { font-size: 0.7rem; padding: 0.15rem 0.5rem; border-radius: 999px; font-weight: 700; white-space: nowrap; }
-  .badge-p2 { background: #fee2e2; color: var(--p2); }
-  .badge-p1 { background: #fef3c7; color: var(--p1); }
+  /* ── Tous les sujets ── */
+  .subject-year{font-size:1rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:1.3rem 0 .6rem;border-bottom:1px solid var(--border);padding-bottom:.3rem}
+  .subject-year:first-child{margin-top:0}
+  .slist{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.55rem}
+  .scard{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.7rem .9rem;display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+  .scard-name{font-size:.83rem;font-weight:600}
+  .scard-links{display:flex;gap:.35rem}
+  .scard-links a{font-size:.75rem;font-weight:600;padding:.2rem .5rem;border-radius:5px;text-decoration:none}
 
-  .links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-  .links a {
-    padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.82rem; font-weight: 600;
-    text-decoration: none; transition: opacity 0.15s;
-  }
-  .links a:hover { opacity: 0.75; }
-  .btn-s { background: #dbeafe; color: #1d4ed8; }
-  .btn-c { background: #dcfce7; color: #15803d; }
-
-  .traps { font-size: 0.8rem; color: #64748b; border-top: 1px solid var(--border); padding-top: 0.5rem; }
-  .traps ul { padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.2rem; }
-  .traps li { line-height: 1.4; }
-  .tl { font-weight: 700; color: var(--p2); }
-
-  .fiche-box {
-    background: #fffbeb; border: 1px solid #fbbf24; border-radius: 10px;
-    padding: 1rem 1.2rem; margin-bottom: 1.5rem;
-  }
-  .fiche-box h3 { font-size: 0.9rem; font-weight: 700; color: #92400e; margin-bottom: 0.6rem; }
-  .fiche-box ul { padding-left: 1.1rem; font-size: 0.85rem; color: #78350f; display: flex; flex-direction: column; gap: 0.25rem; }
-
-  @media (max-width: 600px) {
-    nav button { padding: 0.7rem 0.8rem; font-size: 0.85rem; }
-    .tab-content { padding: 1rem; }
+  @media(max-width:600px){
+    nav button{padding:.65rem .7rem;font-size:.82rem}
+    .tab{padding:1rem}
   }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Révision Bac 2026</h1>
-  <span class="exam-date">Épreuves : 16–17 juin 2026</span>
+  <h1>Révision Bac Maths Spé 2026</h1>
+  <span class="date-badge">Épreuve : 16–17 juin 2026</span>
 </header>
 
 <nav>
-  <button onclick="showTab('maths')"  id="btn-maths"  class="active-maths">Maths Spé</button>
-  <button onclick="showTab('phys')"   id="btn-phys">Physique-Chimie</button>
-  <button onclick="showTab('philo')"  id="btn-philo">Philosophie</button>
+  <button onclick="showTab('pieges')"    id="btn-pieges"    class="on">Par Pièges</button>
+  <button onclick="showTab('priorites')" id="btn-priorites">Par Priorités</button>
+  <button onclick="showTab('sujets')"    id="btn-sujets">Tous les Sujets</button>
 </nav>
 
-<!-- ══════════ MATHS ══════════ -->
-<div id="tab-maths" class="tab-content visible">
+<!-- ═══════════════════════════════════════════
+     TAB 1 — PAR PIÈGES
+═══════════════════════════════════════════ -->
+<div id="tab-pieges" class="tab visible">
 
-  <div class="fiche-box">
-    <h3>Pièges prioritaires — Maths Spé</h3>
-    <ul>
-      <li><span class="tl">PROBA :</span> "Au moins un" = complément 1 − P(aucun). Ne jamais calculer directement.</li>
-      <li><span class="tl">BIENAYMÉ-TCHEBYCHEV :</span> L'inégalité majore P(|Y−E|≥a). Pour minorer P(|Y−E|&lt;a), passer au complément.</li>
-      <li><span class="tl">V(Fn) :</span> p(1−p)/n — diviser par n, PAS par n².</li>
-      <li><span class="tl">SUITES :</span> Hérédité sur encadrement = appliquer h aux TROIS membres. Prouver la convergence AVANT d'écrire l = h(l).</li>
-      <li><span class="tl">ÉQ. DIFF. :</span> y' + ay = 0 donne e^(−ax), pas e^(+ax). Toujours fixer C avec la condition initiale.</li>
-      <li><span class="tl">GÉOMÉTRIE :</span> Distance point-plan : valeur absolue au numérateur. Projeté orthogonal : direction = vecteur normal uniquement.</li>
-      <li><span class="tl">IPP avec ln :</span> Dériver le ln, intégrer le polynôme. Ne pas oublier le crochet.</li>
-      <li><span class="tl">CONVEXITÉ :</span> f convexe ⟺ f'' ≥ 0 (≠ signe de f'). L'inégalité tangente découle de la concavité sur l'intervalle.</li>
-    </ul>
+<!-- ── PIÈGE 1 ── -->
+<div class="piege-block open">
+  <div class="piege-header" onclick="toggle(this)">
+    <span class="piege-num">P1</span>
+    <div>
+      <div class="piege-title">PROBA — "Au moins un" = 1 − P(aucun)</div>
+      <div class="piege-rule">Ne JAMAIS calculer P(X≥1) directement. Toujours passer par le complément : <strong>P(au moins un succès) = 1 − P(X=0) = 1 − (1−p)^n</strong></div>
+    </div>
+    <span class="piege-chevron">▼</span>
   </div>
+  <div class="piege-body">
 
-  <h2>Priorité absolue — 2026</h2>
-  <div class="grid">
-
-    <div class="card p2">
-      <div class="card-title">Amérique du Nord 2026 — J1 <span class="badge badge-p2">PRIORITÉ 1</span></div>
-      <div class="links">
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p2">PRIORITÉ 1</span>
+        <span class="exo-label">AN 2026 J1 — Ex.1 Partie B</span>
+        <span class="tag tag-ok">Plateforme streaming</span>
+      </div>
+      <div class="exo-question">
+        X ~ B(8, 0,4125). La question demande : sur n semaines consécutives, quelle est la probabilité qu'<strong>au moins une</strong> semaine ait eu strictement plus de 4 abonnés ayant activé H ?<br>
+        → q_n = 1 − P(X=0 chaque semaine) = <strong>1 − (0,5875)^n</strong><br>
+        Puis trouver le plus petit n tel que q_n ≥ 0,999 → résoudre par <strong>ln</strong> : n ≥ ln(0,001)/ln(0,5875).
+      </div>
+      <div class="exo-trap">Piège : calculer P(X≥1) directement avec la loi binomiale sur n semaines — impossible. Il faut modéliser la réussite d'une semaine, puis enchaîner sur n semaines indépendantes.</div>
+      <div class="exo-links">
         <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-1-sujet-officiel.pdf" target="_blank">Sujet</a>
         <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-1-corrige.pdf" target="_blank">Corrigé</a>
       </div>
-      <div class="traps"><ul>
-        <li><span class="tl">Ex.1 :</span> "Au moins un" q_n = 1−(0,5875)^n + BT avec passage au complément</li>
-        <li><span class="tl">Ex.2 :</span> Hérédité 2≤u_{n+1}≤u_n≤4 + éq. diff. y'+y=2 → signe négatif</li>
-        <li><span class="tl">Ex.3 :</span> Projeté orthogonal de O + distance = 2√5/5</li>
-        <li><span class="tl">Ex.4 :</span> Concavité → inégalité ln(x²+1) ≤ x+ln(2)−1</li>
-      </ul></div>
     </div>
 
-    <div class="card p2">
-      <div class="card-title">Amérique du Nord 2026 — J2 <span class="badge badge-p2">PRIORITÉ 1</span></div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-2-corrige.pdf" target="_blank">Corrigé</a>
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p1">Prioritaire</span>
+        <span class="exo-label">AN 2025 J1 — Ex.1 Partie B.2</span>
+        <span class="tag tag-ok">Serveurs informatiques</span>
       </div>
-      <div class="traps"><ul>
-        <li><span class="tl">Ex.1 :</span> BT sur F_n + test conformité → ne pas conclure "c'est sûr"</li>
-        <li><span class="tl">Ex.2 :</span> Suite géom. auxiliaire v_n = u_n²/(3−u_n²) raison 4</li>
-        <li><span class="tl">Ex.3 :</span> Double méthode volume/aire pour distance point-plan</li>
-        <li><span class="tl">Ex.4 :</span> IPP double ∫x(ln x)² dx — deux fois de suite</li>
-      </ul></div>
-    </div>
-
-  </div>
-
-  <h2>Prioritaires — 2025</h2>
-  <div class="grid">
-
-    <div class="card p1">
-      <div class="card-title">Métropole 2025 — J1 <span class="badge badge-p1">Prioritaire</span></div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-1-corrige.pdf" target="_blank">Corrigé</a>
+      <div class="exo-question">
+        P(serveur S fonctionne) = 0,855. Sur n serveurs en parallèle : probabilité qu'<strong>au moins un</strong> fonctionne = p_n = 1 − (1−0,855)^n = <strong>1 − (0,145)^n</strong>.<br>
+        Trouver n tel que p_n ≥ 0,99 → n ≥ ln(0,01)/ln(0,145) → <strong>n = 2</strong>.
       </div>
-      <div class="traps"><ul>
-        <li><span class="tl">Ex.1 :</span> BT : passage au complément pour P(7&lt;M_N&lt;7,28) ≥ 0,95</li>
-        <li><span class="tl">Ex.2 :</span> IPP ∫x ln x + convexité f''=(1/x)(4 ln x+1)</li>
-        <li><span class="tl">Ex.4 :</span> Hérédité 1≤u_n≤u_{n+1}≤20 + éq. diff. logistique</li>
-      </ul></div>
-    </div>
-
-    <div class="card p1">
-      <div class="card-title">Métropole 2025 — J2 <span class="badge badge-p1">Prioritaire</span></div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-      <div class="traps"><ul>
-        <li><span class="tl">Ex.1 :</span> BT : V(T)=356, montrer P(60&lt;T&lt;140)&gt;0,77</li>
-        <li><span class="tl">Ex.2 :</span> Projeté orthogonal H + distance d(S, plan) = √21/2</li>
-        <li><span class="tl">Ex.4 :</span> Éq. diff. y'+0,6y = e^(−0,6t) — solution particulière g(t)=te^(−0,6t)</li>
-      </ul></div>
-    </div>
-
-    <div class="card p1">
-      <div class="card-title">Amérique du Nord 2025 — J1 <span class="badge badge-p1">Prioritaire</span></div>
-      <div class="links">
+      <div class="exo-trap">Piège : confondre "la proba qu'au moins un fonctionne" avec "la proba que le premier fonctionne". La structure est indépendante : 1 − P(tous échouent).</div>
+      <div class="exo-links">
         <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-1-sujet-officiel.pdf" target="_blank">Sujet</a>
         <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-1-corrige.pdf" target="_blank">Corrigé</a>
       </div>
-      <div class="traps"><ul>
-        <li><span class="tl">Ex.1 :</span> "Au moins un" p_n = 1−(0,5875)^n + BT sur F_n</li>
-        <li><span class="tl">Ex.2 :</span> Suite auxiliaire a_n + hérédité a_n ≥ 3^n−1</li>
-      </ul></div>
     </div>
 
-    <div class="card p1">
-      <div class="card-title">Amérique du Nord 2025 — J2 <span class="badge badge-p1">Prioritaire</span></div>
-      <div class="links">
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p1">Prioritaire</span>
+        <span class="exo-label">Métropole 2025 J2 — Ex.1 Partie 5b</span>
+        <span class="tag tag-ok">Roller, chutes</span>
+      </div>
+      <div class="exo-question">
+        X ~ B(100, 0,24). Calculer P(X ≥ 20) = <strong>1 − P(X ≤ 19)</strong>.<br>
+        À la calculatrice : binomFRép(100 ; 0,24 ; 19) donne P(X≤19), puis 1 moins ce résultat.
+      </div>
+      <div class="exo-trap">Piège : entrer P(X≥20) directement à la calculatrice avec la mauvaise borne. La calculatrice calcule P(X≤k) ou P(X=k), pas P(X≥k) directement.</div>
+      <div class="exo-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-2-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-2-corrige.pdf" target="_blank">Corrigé</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── PIÈGE 2 ── -->
+<div class="piege-block open">
+  <div class="piege-header" onclick="toggle(this)">
+    <span class="piege-num">P2</span>
+    <div>
+      <div class="piege-title">PROBA — Bienaymé-Tchebychev : sens de l'inégalité</div>
+      <div class="piege-rule">
+        BT donne : <strong>P(|Y − E(Y)| ≥ a) ≤ V(Y)/a²</strong> (majoration).<br>
+        Pour minorer P(|Y − E(Y)| &lt; a) : passer au complément → P(...&lt;a) ≥ 1 − V(Y)/a².<br>
+        Présent dans les <strong>6 sujets prioritaires</strong>.
+      </div>
+    </div>
+    <span class="piege-chevron">▼</span>
+  </div>
+  <div class="piege-body">
+
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p2">PRIORITÉ 1</span>
+        <span class="exo-label">AN 2026 J2 — Ex.1 Partie B</span>
+        <span class="tag tag-ok">Tomates commercialisables</span>
+      </div>
+      <div class="exo-question">
+        F_n = fréquence de tomates non commercialisables. p = 0,09, V(F_n) = p(1−p)/n = 0,0819/n.<br>
+        BT : P(|F_n − 0,09| ≥ 0,05) ≤ 0,0819/(n × 0,0025) = <strong>32,76/n</strong>.<br>
+        Donc P(0,04 &lt; F_n &lt; 0,14) ≥ 1 − 32,76/n.<br>
+        <strong>Test :</strong> n=500, F_obs = 55/500 = 0,11. Est-ce que 0,11 ∈ ]0,04 ; 0,14[ ? Oui → conforme à p=9%.
+      </div>
+      <div class="exo-trap">Piège 1 : conclure "la machine est bien réglée" → non, c'est une probabilité. On dit seulement que le résultat est compatible avec p=0,09.<br>
+      Piège 2 : V(F_n) = p(1−p)/n, pas p(1−p)/n².</div>
+      <div class="exo-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-2-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-2-corrige.pdf" target="_blank">Corrigé</a>
+      </div>
+    </div>
+
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p1">Prioritaire</span>
+        <span class="exo-label">AN 2025 J2 — Ex.1 Partie B</span>
+        <span class="tag tag-ok">Basketball</span>
+      </div>
+      <div class="exo-question">
+        M_50 = moyenne de 50 matchs. E(M_50)=22, V(M_50)=V(X)/50=65/50=<strong>1,3</strong>.<br>
+        BT : P(|M_50 − 22| ≥ 3) ≤ 1,3/9 ≈ 0,144.<br>
+        Complément : P(|M_50 − 22| &lt; 3) ≥ 1 − 0,144 = <strong>0,856 > 0,85</strong>. ✓<br>
+        Bonus : l'affirmation "il n'existe aucun n tel que P(|M_n−22|≥3) &lt; 0,01" est <strong>FAUSSE</strong> — prendre n ≥ 65×100/9 ≈ 723.
+      </div>
+      <div class="exo-trap">Piège classique : écrire P(|M−22|≥3) ≥ V/a² (sens inversé). BT donne toujours une MAJORATION de P(écart grand), pas une minoration.</div>
+      <div class="exo-links">
         <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-2-sujet-officiel.pdf" target="_blank">Sujet</a>
         <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-2-corrige.pdf" target="_blank">Corrigé</a>
       </div>
-      <div class="traps"><ul>
-        <li><span class="tl">Ex.1 :</span> BT : M_50, montrer P(19&lt;M_50&lt;25) &gt; 0,85</li>
-        <li><span class="tl">Ex.2 :</span> v_n = ln(u_n) géométrique raison 1/2 → ln(2) = 2^n × ln(u_n)</li>
-        <li><span class="tl">Ex.4 :</span> IPP double ∫x(ln x)² dx — exercice canonique</li>
+    </div>
+
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p1">Prioritaire</span>
+        <span class="exo-label">Métropole 2025 J2 — Ex.1 Partie finale</span>
+        <span class="tag tag-ok">Roller</span>
+      </div>
+      <div class="exo-question">
+        T = T₁ + T₂ (deux temps indépendants). V(T) = V(T₁) + V(T₂) = 180 + 176 = <strong>356</strong>.<br>
+        E(T) = 100. BT : P(|T−100| ≥ 40) ≤ 356/1600 = 0,2225.<br>
+        Complément : P(60 &lt; T &lt; 140) ≥ 1 − 0,2225 = <strong>0,7775 > 0,77</strong>. ✓
+      </div>
+      <div class="exo-trap">Piège : V(T₁+T₂) = V(T₁)+V(T₂) seulement si T₁ et T₂ sont indépendantes. Ne pas écrire V(T)=2×V(T₁) sauf si les variances sont égales ET indépendantes.</div>
+      <div class="exo-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-2-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-2-corrige.pdf" target="_blank">Corrigé</a>
+      </div>
+    </div>
+
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p1">Prioritaire</span>
+        <span class="exo-label">Métropole 2025 J1 — Ex.1 Partie finale</span>
+        <span class="tag tag-ok">Groupes sanguins</span>
+      </div>
+      <div class="exo-question">
+        X ~ B(100, 0,0714). M_N = X/100, E(M_N)=0,0714, V(M_N)=p(1−p)/100.<br>
+        BT : montrer P(7% &lt; M_N &lt; 7,28%) ≥ 0,95.<br>
+        a = 0,0014. V/a² = p(1−p)/(100×a²). Compléter par 1 − V/a² ≥ 0,95 → vérifier V/a² ≤ 0,05.
+      </div>
+      <div class="exo-trap">Piège : la borne a de BT est la DEMI-largeur de l'intervalle, pas la largeur entière. Ici |M_N − 0,0714| &lt; 0,0014, donc a = 0,0014.</div>
+      <div class="exo-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-1-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-1-corrige.pdf" target="_blank">Corrigé</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── PIÈGE 3 ── -->
+<div class="piege-block open">
+  <div class="piege-header" onclick="toggle(this)">
+    <span class="piege-num">P3</span>
+    <div>
+      <div class="piege-title">SUITES — Hérédité sur encadrement : appliquer h aux 3 membres</div>
+      <div class="piege-rule">
+        Si h est croissante et a ≤ u_n ≤ b, alors <strong>h(a) ≤ h(u_n) ≤ h(b)</strong>.<br>
+        Ne pas oublier de montrer séparément que u_{n+1} ≤ u_n (ou u_n ≤ u_{n+1}) selon le sens de la monotonie.
+      </div>
+    </div>
+    <span class="piege-chevron">▼</span>
+  </div>
+  <div class="piege-body">
+
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p2">PRIORITÉ 1</span>
+        <span class="exo-label">AN 2026 J1 — Ex.2 Partie A</span>
+        <span class="tag tag-ok">Posidonie marine</span>
+      </div>
+      <div class="exo-question">
+        u_{n+1} = 4 − 4/u_n, h(x) = 4 − 4/x croissante sur ]0;+∞[.<br>
+        Montrer : <strong>2 ≤ u_{n+1} ≤ u_n ≤ 4</strong>.<br>
+        Étape 1 — appliquer h à l'encadrement 2 ≤ u_n ≤ 4 : h(2)=2 ≤ h(u_n) ≤ h(4)=3 ≤ 4. Donc 2 ≤ u_{n+1} ≤ 4. ✓<br>
+        Étape 2 — montrer u_{n+1} ≤ u_n : 4−4/u_n ≤ u_n ⟺ u_n²−4u_n+4 ≥ 0 ⟺ (u_n−2)² ≥ 0. ✓<br>
+        Conclusion : suite décroissante et minorée par 2 → converge. Limite l : l = 4−4/l → l²−4l+4=0 → <strong>l=2</strong>.
+      </div>
+      <div class="exo-trap">Piège classique : ne faire que l'encadrement h(a)≤h(u_n)≤h(b) sans montrer u_{n+1}≤u_n séparément. Les deux inégalités sont demandées.</div>
+      <div class="exo-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-1-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-1-corrige.pdf" target="_blank">Corrigé</a>
+      </div>
+    </div>
+
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p2">PRIORITÉ 1</span>
+        <span class="exo-label">AN 2026 J2 — Ex.2 Partie B</span>
+        <span class="tag tag-ok">Suite f(x)=2x/√(1+x²)</span>
+      </div>
+      <div class="exo-question">
+        u_{n+1} = f(u_n) = 2u_n/√(1+u_n²), f croissante. Montrer : <strong>1 ≤ u_n ≤ u_{n+1} &lt; √3</strong>.<br>
+        Encadrement croissant (u_{n+1} ≥ u_n) : f(x) ≥ x sur [1;√3[ car 2x/√(1+x²) ≥ x ⟺ 4x² ≥ x²(1+x²) ⟺ 3 ≥ x².<br>
+        Borne sup : f croissante et f(√3) = 2√3/2 = √3, donc u_{n+1} = f(u_n) &lt; f(√3) = √3 si u_n &lt; √3.
+      </div>
+      <div class="exo-trap">Piège : sens de l'inégalité inversé sur un des côtés. Ici la suite est CROISSANTE et majorée — différent de P3 ex.1 où elle est décroissante.</div>
+      <div class="exo-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-2-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-2-corrige.pdf" target="_blank">Corrigé</a>
+      </div>
+    </div>
+
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p1">Prioritaire</span>
+        <span class="exo-label">Métropole 2025 J1 — Ex.4 Partie A</span>
+        <span class="tag tag-ok">Suite logistique</span>
+      </div>
+      <div class="exo-question">
+        u_{n+1} = −0,02u_n² + 1,3u_n = g(u_n). Montrer : <strong>1 ≤ u_n ≤ u_{n+1} ≤ 20</strong>.<br>
+        g croissante sur [0;20] (vérifier g'=−0,04u+1,3 > 0 pour u &lt; 20).<br>
+        g(1)=1,28 ≥ 1, g(20)=20 ≤ 20. Appliquer g aux 3 membres de 1≤u_n≤20.
+      </div>
+      <div class="exo-trap">Piège : oublier de vérifier que g est bien croissante sur l'intervalle AVANT d'appliquer l'encadrement. Sans cette justification, l'hérédité ne tient pas.</div>
+      <div class="exo-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-1-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-1-corrige.pdf" target="_blank">Corrigé</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── PIÈGE 4 ── -->
+<div class="piege-block open">
+  <div class="piege-header" onclick="toggle(this)">
+    <span class="piege-num">P4</span>
+    <div>
+      <div class="piege-title">SUITES — Suite géométrique auxiliaire : vérifier la raison pour tout n</div>
+      <div class="piege-rule">
+        Trouver v_n = φ(u_n) tel que v_{n+1} = q × v_n pour TOUT n (pas seulement un exemple).<br>
+        Donner v_0, écrire v_n = v_0 × q^n, puis exprimer u_n en fonction de v_n.
+      </div>
+    </div>
+    <span class="piege-chevron">▼</span>
+  </div>
+  <div class="piege-body">
+
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p2">PRIORITÉ 1</span>
+        <span class="exo-label">AN 2026 J2 — Ex.2 Partie B</span>
+        <span class="tag tag-ok">Suite f(x)=2x/√(1+x²)</span>
+      </div>
+      <div class="exo-question">
+        Poser <strong>v_n = u_n² / (3 − u_n²)</strong>.<br>
+        Calcul : v_{n+1} = u_{n+1}²/(3−u_{n+1}²) = [4u_n²/(1+u_n²)] / [3 − 4u_n²/(1+u_n²)]<br>
+        = 4u_n² / (3+3u_n²−4u_n²) = 4u_n² / (3−u_n²) = <strong>4 × v_n</strong>.<br>
+        Raison q=4. v_0 = 1²/(3−1) = 1/2. Donc v_n = (1/2)×4^n.<br>
+        Retour à u_n : u_n² = 3v_n/(1+v_n) → <strong>u_n = √(3×(1/2)×4^n / (1 + (1/2)×4^n))</strong> → lim = √3.
+      </div>
+      <div class="exo-trap">Piège : vérifier que v_{n+1}=4v_n en substituant U_{n+1}=f(u_n) explicitement — ne pas juste dire "on pose v_n" sans montrer la relation de récurrence.</div>
+      <div class="exo-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-2-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-2-corrige.pdf" target="_blank">Corrigé</a>
+      </div>
+    </div>
+
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p1">Prioritaire</span>
+        <span class="exo-label">AN 2025 J2 — Ex.2</span>
+        <span class="tag tag-ok">Méthode de Briggs (approx. ln 2)</span>
+      </div>
+      <div class="exo-question">
+        u_0=2, u_{n+1}=√u_n. Poser <strong>v_n = ln(u_n)</strong>.<br>
+        v_{n+1} = ln(√u_n) = (1/2)ln(u_n) = <strong>(1/2)×v_n</strong>. Raison q=1/2.<br>
+        v_0 = ln(2). Donc v_n = ln(2)/2^n.<br>
+        Clé : ln(2) = 2^n × v_n = 2^n × ln(u_n). Pour grand n, u_n ≈ 1 donc ln(u_n) ≈ u_n − 1, d'où <strong>ln(2) ≈ 2^n × (u_n − 1)</strong>.
+      </div>
+      <div class="exo-trap">Piège : ln(u_{n+1}) = ln(√u_n) = (1/2)ln(u_n) est direct, mais certains oublient que √u_n = u_n^(1/2) et utilisent ln(u_n/2) — erreur.</div>
+      <div class="exo-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-2-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-2-corrige.pdf" target="_blank">Corrigé</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── PIÈGE 5 ── -->
+<div class="piege-block open">
+  <div class="piege-header" onclick="toggle(this)">
+    <span class="piege-num">P5</span>
+    <div>
+      <div class="piege-title">ÉQ. DIFF. — Signe dans l'exponentielle</div>
+      <div class="piege-rule">
+        y' + ay = 0 → solution générale : <strong>y = C × e^(−ax)</strong>.<br>
+        Le signe est TOUJOURS négatif dans l'exponentielle. Toujours fixer C avec la condition initiale.
+      </div>
+    </div>
+    <span class="piege-chevron">▼</span>
+  </div>
+  <div class="piege-body">
+
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p2">PRIORITÉ 1</span>
+        <span class="exo-label">AN 2026 J1 — Ex.2 Partie B</span>
+        <span class="tag tag-ok">Posidonie — modèle continu</span>
+      </div>
+      <div class="exo-question">
+        Équation : <strong>y' + y = 2</strong> (a=1, b=2).<br>
+        Homogène y'+y=0 → y_h = Ce^(−t) (signe NÉGATIF).<br>
+        Particulière constante : y_p = 2 (car y_p' = 0, 0+2=2 ✓).<br>
+        Solution générale : p(t) = Ce^(−t) + 2.<br>
+        Condition initiale p(0)=4 → C+2=4 → <strong>C=2</strong>.<br>
+        <strong>p(t) = 2e^(−t) + 2</strong>. Limite en +∞ : 2 (population d'équilibre).
+      </div>
+      <div class="exo-trap">Piège le plus courant : écrire Ce^(+t). La solution de y'+y=0 est bien e^(−t) car (e^(−t))' = −e^(−t) et −e^(−t)+e^(−t)=0.</div>
+      <div class="exo-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-1-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-1-corrige.pdf" target="_blank">Corrigé</a>
+      </div>
+    </div>
+
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p1">Prioritaire</span>
+        <span class="exo-label">Métropole 2025 J2 — Ex.4</span>
+        <span class="tag tag-ok">Freinage chariot</span>
+      </div>
+      <div class="exo-question">
+        Équation : <strong>y' + 0,6y = e^(−0,6t)</strong>.<br>
+        Homogène → y_h = Ke^(−0,6t).<br>
+        Particulière fournie : g(t) = te^(−0,6t). Vérifier : g'(t) = (1−0,6t)e^(−0,6t), g'+0,6g = e^(−0,6t) ✓<br>
+        Solution : v(t) = (K+t)e^(−0,6t). v(0)=12 → K=12.<br>
+        <strong>v(t) = (12+t)e^(−0,6t)</strong>.
+      </div>
+      <div class="exo-trap">Piège : chercher une solution particulière constante yp=c. Ici b(t)=e^(−0,6t) n'est pas constante — la solution particulière est fournie (te^(−0,6t)), il suffit de la VÉRIFIER.</div>
+      <div class="exo-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-2-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-2-corrige.pdf" target="_blank">Corrigé</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── PIÈGE 6 ── -->
+<div class="piege-block open">
+  <div class="piege-header" onclick="toggle(this)">
+    <span class="piege-num">P6</span>
+    <div>
+      <div class="piege-title">GÉOMÉTRIE — Distance point-plan : ne pas oublier la valeur absolue</div>
+      <div class="piege-rule">
+        d(M, plan ax+by+cz+d=0) = <strong>|ax₀+by₀+cz₀+d| / √(a²+b²+c²)</strong>.<br>
+        La valeur absolue au numérateur est obligatoire — le résultat est toujours positif.
+      </div>
+    </div>
+    <span class="piege-chevron">▼</span>
+  </div>
+  <div class="piege-body">
+
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p2">PRIORITÉ 1</span>
+        <span class="exo-label">AN 2026 J1 — Ex.3 Partie B</span>
+        <span class="tag tag-ok">Pyramide SABCD</span>
+      </div>
+      <div class="exo-question">
+        Plan (SBC) : équation <strong>2y + z − 2 = 0</strong>. Point O(0,0,0).<br>
+        d(O, plan) = |2×0 + 0 − 2| / √(0²+2²+1²) = <strong>2/√5 = 2√5/5</strong>.<br>
+        Vérification : volume pyramide O-SBC = (1/3) × aire(SBC) × hauteur.<br>
+        Aire(SBC) = √5 → hauteur = 3×V / Aire(SBC).
+      </div>
+      <div class="exo-trap">Piège : oublier les barres de valeur absolue et obtenir un résultat négatif → distance negative = erreur garantie. Rationaliser la fraction (2/√5 → 2√5/5).</div>
+      <div class="exo-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-1-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-1-corrige.pdf" target="_blank">Corrigé</a>
+      </div>
+    </div>
+
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p1">Prioritaire</span>
+        <span class="exo-label">AN 2025 J2 — Ex.2 Partie B</span>
+        <span class="tag tag-ok">Tétraèdre ABCS</span>
+      </div>
+      <div class="exo-question">
+        Plan (ABC) : équation <strong>x + 2y + 4z − 7 = 0</strong>. Point S(−1/2, 1, 4).<br>
+        d(S, plan) = |−1/2 + 2×1 + 4×4 − 7| / √(1+4+16) = |−1/2+2+16−7| / √21 = <strong>|10,5| / √21 = 10,5/√21 = √21/2</strong>.
+      </div>
+      <div class="exo-trap">Piège : −1/2 + 2 + 16 − 7 = 10,5 (attention au demi-entier). 10,5/√21 = 10,5×√21/21 = (1/2)×√21 = √21/2.</div>
+      <div class="exo-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-2-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-2-corrige.pdf" target="_blank">Corrigé</a>
+      </div>
+    </div>
+
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p2">PRIORITÉ 1</span>
+        <span class="exo-label">AN 2026 J2 — Ex.3 Partie C</span>
+        <span class="tag tag-ok">Double méthode volume/distance</span>
+      </div>
+      <div class="exo-question">
+        Au lieu d'utiliser la formule directe, retrouver la distance par le volume :<br>
+        V(tétraèdre ABCD) = (1/3) × Aire(ABC) × d(D, plan ABC).<br>
+        → <strong>d(D, plan ABC) = 3V / Aire(ABC)</strong>.<br>
+        Méthode utile quand le plan n'a pas d'équation simple ou pour double-vérification.
+      </div>
+      <div class="exo-trap">Piège : confondre hauteur du tétraèdre (distance D au plan ABC) avec une arête. La hauteur n'est pas une arête sauf si le tétraèdre est rectangle.</div>
+      <div class="exo-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-2-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-2-corrige.pdf" target="_blank">Corrigé</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── PIÈGE 7 ── -->
+<div class="piege-block open">
+  <div class="piege-header" onclick="toggle(this)">
+    <span class="piege-num">P7</span>
+    <div>
+      <div class="piege-title">GÉOMÉTRIE — Projeté orthogonal : direction = vecteur normal</div>
+      <div class="piege-rule">
+        Projeté H de M sur plan P : <br>
+        1) écrire la droite (MH) : M + t×<strong>n</strong> où n = vecteur normal du plan.<br>
+        2) substituer dans l'équation du plan → trouver t → calculer H.
+      </div>
+    </div>
+    <span class="piege-chevron">▼</span>
+  </div>
+  <div class="piege-body">
+
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p1">Prioritaire</span>
+        <span class="exo-label">Métropole 2025 J2 — Ex.2</span>
+        <span class="tag tag-ok">Tétraèdre ABCS</span>
+      </div>
+      <div class="exo-question">
+        Plan (ABC) : x + 2y + 4z − 7 = 0. Vecteur normal n = (1, 2, 4). Point S(−1/2, 1, 4).<br>
+        Droite (SH) : (−1/2+t ; 1+2t ; 4+4t).<br>
+        Substituer : (−1/2+t) + 2(1+2t) + 4(4+4t) − 7 = 0<br>
+        → −1/2 + t + 2 + 4t + 16 + 16t − 7 = 0 → <strong>21t + 10,5 = 0</strong> → t = −1/2.<br>
+        H = (−1/2−1/2 ; 1−1 ; 4−2) = <strong>(−1 ; 0 ; 2)</strong>.
+      </div>
+      <div class="exo-trap">Piège : prendre n'importe quel vecteur du plan comme direction (ex : AB ou AC) — le projeté serait faux. La direction DOIT être le vecteur normal.</div>
+      <div class="exo-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-2-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-2-corrige.pdf" target="_blank">Corrigé</a>
+      </div>
+    </div>
+
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p2">PRIORITÉ 1</span>
+        <span class="exo-label">AN 2026 J1 — Ex.3 Partie B</span>
+        <span class="tag tag-ok">Pyramide SABCD</span>
+      </div>
+      <div class="exo-question">
+        Plan (SBC) : 2y + z − 2 = 0. n = (0, 2, 1). Point O(0, 0, 0).<br>
+        Droite (OH) : (0 ; 2t ; t).<br>
+        Substituer : 2(2t) + t − 2 = 0 → 5t = 2 → t = 2/5.<br>
+        <strong>H = (0 ; 4/5 ; 2/5)</strong>.<br>
+        Vérification : OH doit être perpendiculaire à SB et BC (produit scalaire nul).
+      </div>
+      <div class="exo-trap">Piège : oublier la vérification. Si OH·SB ≠ 0, la direction choisie est mauvaise.</div>
+      <div class="exo-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-1-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-1-corrige.pdf" target="_blank">Corrigé</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── PIÈGE 8 ── -->
+<div class="piege-block open">
+  <div class="piege-header" onclick="toggle(this)">
+    <span class="piege-num">P8</span>
+    <div>
+      <div class="piege-title">ANALYSE — Intégration par parties double avec ln</div>
+      <div class="piege-rule">
+        Pour ∫x(ln x)² dx : <strong>dériver (ln x)², intégrer x</strong>.<br>
+        1ère IPP → apparition de ∫x ln x dx → 2ème IPP nécessaire. Ne pas oublier le crochet [ ]ₐᵇ.
+      </div>
+    </div>
+    <span class="piege-chevron">▼</span>
+  </div>
+  <div class="piege-body">
+
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p2">PRIORITÉ 1</span>
+        <span class="exo-label">AN 2026 J2 — Ex.4 et AN 2025 J2 — Ex.4</span>
+        <span class="tag tag-ok">f(x) = x(ln x)²</span>
+      </div>
+      <div class="exo-question">
+        <strong>IPP 1 :</strong> u=(ln x)², v'=x → u'=2ln(x)/x, v=x²/2.<br>
+        ∫x(ln x)²dx = [x²(ln x)²/2] − ∫x ln x dx.<br><br>
+        <strong>IPP 2 :</strong> u=ln x, v'=x → u'=1/x, v=x²/2.<br>
+        ∫x ln x dx = [x² ln x/2] − ∫x/2 dx = x² ln x/2 − x²/4 + C.<br><br>
+        <strong>Résultat final :</strong> ∫x(ln x)²dx = x²(ln x)²/2 − x² ln x/2 + x²/4 + C.<br><br>
+        Sur [α,1] (α→0) : l'intégrale vaut 1/4 car lim x²(ln x)²=0 et lim x² ln x=0 en 0.
+      </div>
+      <div class="exo-trap">Piège 1 : intervertir u et v' → dériver x et intégrer (ln x)². Impossible car ∫(ln x)² dx n'est pas immédiat.<br>
+      Piège 2 : oublier d'évaluer le crochet aux bornes après chaque IPP.</div>
+      <div class="exo-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-2-sujet-officiel.pdf" target="_blank">Sujet AN 2026 J2</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-2-corrige.pdf" target="_blank">Corrigé</a>
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-2-sujet-officiel.pdf" target="_blank">Sujet AN 2025 J2</a>
+      </div>
+    </div>
+
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p1">Prioritaire</span>
+        <span class="exo-label">Métropole 2025 J1 — Ex.2</span>
+        <span class="tag tag-ok">IPP simple ∫x ln x</span>
+      </div>
+      <div class="exo-question">
+        ∫₁ᵉ x ln x dx (IPP simple, à maîtriser avant la double).<br>
+        u=ln x, v'=x → u'=1/x, v=x²/2.<br>
+        = [x² ln x/2]₁ᵉ − ∫₁ᵉ x/2 dx = (e²/2 − 0) − [x²/4]₁ᵉ = e²/2 − (e²/4 − 1/4) = <strong>(e²+1)/4</strong>.
+      </div>
+      <div class="exo-trap">Piège : ln(1)=0 mais l'autre borne donne e²/2, pas e². Ne pas confondre [x² ln x/2] avec [x ln x/2].</div>
+      <div class="exo-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-1-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-1-corrige.pdf" target="_blank">Corrigé</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── PIÈGE 9 ── -->
+<div class="piege-block open">
+  <div class="piege-header" onclick="toggle(this)">
+    <span class="piege-num">P9</span>
+    <div>
+      <div class="piege-title">ANALYSE — Convexité → inégalité tangente</div>
+      <div class="piege-rule">
+        f convexe (f''≥0) sur I → courbe <strong>au-dessus</strong> de toute tangente.<br>
+        f concave (f''≤0) sur I → courbe <strong>en-dessous</strong> de toute tangente.<br>
+        Ne pas confondre convexité (signe f'') avec monotonie (signe f').
+      </div>
+    </div>
+    <span class="piege-chevron">▼</span>
+  </div>
+  <div class="piege-body">
+
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p2">PRIORITÉ 1</span>
+        <span class="exo-label">AN 2026 J1 — Ex.4</span>
+        <span class="tag tag-ok">f(x) = 5ln(x²+1) − 3x</span>
+      </div>
+      <div class="exo-question">
+        f''(x) = (−10x²+10)/(x²+1)² fourni. Pour x ≥ 1 : f''(x) ≤ 0 → f <strong>concave</strong> sur [1;+∞[.<br>
+        Tangente en x=1 : f(1)=5ln(2)−3, f'(1)=7.<br>
+        Tangente : T(x) = 7(x−1) + 5ln(2)−3 = 7x + 5ln(2) − 10.<br>
+        Concavité → courbe EN DESSOUS de T → <strong>f(x) ≤ T(x)</strong> pour x ≥ 1.<br>
+        → 5ln(x²+1)−3x ≤ 7x+5ln(2)−10 → <strong>ln(x²+1) ≤ x + ln(2) − 1</strong>.
+      </div>
+      <div class="exo-trap">Piège : si concave → courbe sous la tangente (inégalité ≤). Si convexe → courbe sur la tangente (inégalité ≥). Facile à inverser sous le stress.</div>
+      <div class="exo-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-1-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-1-corrige.pdf" target="_blank">Corrigé</a>
+      </div>
+    </div>
+
+    <div class="exo-card">
+      <div class="exo-head">
+        <span class="tag tag-p1">Prioritaire</span>
+        <span class="exo-label">Métropole 2025 J1 — Ex.2</span>
+        <span class="tag tag-ok">f(x) = x(2(ln x)²−3 ln x+2)</span>
+      </div>
+      <div class="exo-question">
+        f''(x) = (1/x)(4 ln x + 1). f''(x)=0 ⟺ ln x = −1/4 ⟺ x = e^(−1/4).<br>
+        Point d'inflexion en x₀ = e^(−1/4).<br>
+        Pour x &lt; e^(−1/4) : f''&lt;0 → concave. Pour x > e^(−1/4) : f''>0 → convexe.<br>
+        Aire entre Cf et la tangente au point B : utiliser la concavité/convexité pour signer l'intégrale.
+      </div>
+      <div class="exo-trap">Piège : confondre point d'inflexion (f'' change de signe) et extremum (f' change de signe).</div>
+      <div class="exo-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-1-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-1-corrige.pdf" target="_blank">Corrigé</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div><!-- fin tab-pieges -->
+
+<!-- ═══════════════════════════════════════════
+     TAB 2 — PAR PRIORITÉS
+═══════════════════════════════════════════ -->
+<div id="tab-priorites" class="tab">
+
+  <div class="fiche">
+    <h3>Ordre de travail recommandé (10 jours)</h3>
+    <ul>
+      <li><strong>J1–J2 :</strong> AN 2026 J1 et J2 — les plus proches du format 2026</li>
+      <li><strong>J3–J4 :</strong> Métropole 2025 J1 et J2</li>
+      <li><strong>J5–J6 :</strong> AN 2025 J1 et J2</li>
+      <li><strong>J7–J10 :</strong> Reprise ciblée des exercices ratés par piège (Tab 1)</li>
+    </ul>
+  </div>
+
+  <div class="section-title">Priorité absolue — 2026</div>
+  <div class="grid">
+    <div class="pcard p2">
+      <div class="pcard-title">Amérique du Nord 2026 — J1 <span class="tag tag-p2">PRIORITÉ 1</span></div>
+      <div class="pcard-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-1-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-1-corrige.pdf" target="_blank">Corrigé</a>
+      </div>
+      <div class="pcard-traps"><ul>
+        <li><span class="tl">Ex.1 :</span> P1 "au moins un" + P2 BT passage au complément</li>
+        <li><span class="tl">Ex.2 :</span> P3 hérédité (u_n−2)²≥0 + P5 éq. diff. y'+y=2</li>
+        <li><span class="tl">Ex.3 :</span> P6 distance + P7 projeté orthogonal de O</li>
+        <li><span class="tl">Ex.4 :</span> P9 concavité → inégalité ln(x²+1)</li>
       </ul></div>
     </div>
-
+    <div class="pcard p2">
+      <div class="pcard-title">Amérique du Nord 2026 — J2 <span class="tag tag-p2">PRIORITÉ 1</span></div>
+      <div class="pcard-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-2-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-2-corrige.pdf" target="_blank">Corrigé</a>
+      </div>
+      <div class="pcard-traps"><ul>
+        <li><span class="tl">Ex.1 :</span> P2 BT + test conformité → ne pas conclure "c'est sûr"</li>
+        <li><span class="tl">Ex.2 :</span> P3 hérédité croissante + P4 suite géom. v_n raison 4</li>
+        <li><span class="tl">Ex.3 :</span> P6 double méthode volume/aire pour distance</li>
+        <li><span class="tl">Ex.4 :</span> P8 IPP double ∫x(ln x)² dx</li>
+      </ul></div>
+    </div>
   </div>
 
-  <h2>Autres sujets 2025</h2>
+  <div class="section-title">Prioritaires — 2025</div>
   <div class="grid">
-
-    <div class="card">
-      <div class="card-title">Amérique du Nord 2025 — J2 bis</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-2bis-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-2bis-corrige.pdf" target="_blank">Corrigé</a>
+    <div class="pcard p1">
+      <div class="pcard-title">Métropole 2025 — J1 <span class="tag tag-p1">Prioritaire</span></div>
+      <div class="pcard-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-1-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-1-corrige.pdf" target="_blank">Corrigé</a>
       </div>
+      <div class="pcard-traps"><ul>
+        <li><span class="tl">Ex.1 :</span> P2 BT : demi-largeur a=0,0014</li>
+        <li><span class="tl">Ex.2 :</span> P8 IPP ∫x ln x + P9 point d'inflexion f''=(1/x)(4ln x+1)</li>
+        <li><span class="tl">Ex.4 :</span> P3 hérédité 1≤u_n≤20 + P5 éq. diff. logistique</li>
+      </ul></div>
     </div>
-
-    <div class="card">
-      <div class="card-title">Amérique du Sud 2025 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-sud-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-sud-1-corrige.pdf" target="_blank">Corrigé</a>
+    <div class="pcard p1">
+      <div class="pcard-title">Métropole 2025 — J2 <span class="tag tag-p1">Prioritaire</span></div>
+      <div class="pcard-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-2-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-2-corrige.pdf" target="_blank">Corrigé</a>
       </div>
+      <div class="pcard-traps"><ul>
+        <li><span class="tl">Ex.1 :</span> P2 BT : V(T₁+T₂)=356 → P(60&lt;T&lt;140)&gt;0,77</li>
+        <li><span class="tl">Ex.2 :</span> P7 projeté H=(−1,0,2) + P6 distance d=√21/2</li>
+        <li><span class="tl">Ex.4 :</span> P5 éq. diff. solution particulière g(t)=te^(−0,6t)</li>
+      </ul></div>
     </div>
-
-    <div class="card">
-      <div class="card-title">Amérique du Sud 2025 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-sud-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-sud-2-corrige.pdf" target="_blank">Corrigé</a>
+    <div class="pcard p1">
+      <div class="pcard-title">Amérique du Nord 2025 — J1 <span class="tag tag-p1">Prioritaire</span></div>
+      <div class="pcard-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-1-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-1-corrige.pdf" target="_blank">Corrigé</a>
       </div>
+      <div class="pcard-traps"><ul>
+        <li><span class="tl">Ex.1 :</span> P1 "au moins un" p_n = 1−(0,145)^n</li>
+        <li><span class="tl">Ex.2 :</span> suite auxiliaire a_n + hérédité a_n≥3^n−1</li>
+      </ul></div>
     </div>
-
-    <div class="card">
-      <div class="card-title">Asie 2025 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-asie-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-asie-1-corrige.pdf" target="_blank">Corrigé</a>
+    <div class="pcard p1">
+      <div class="pcard-title">Amérique du Nord 2025 — J2 <span class="tag tag-p1">Prioritaire</span></div>
+      <div class="pcard-links">
+        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-2-sujet-officiel.pdf" target="_blank">Sujet</a>
+        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-2-corrige.pdf" target="_blank">Corrigé</a>
       </div>
+      <div class="pcard-traps"><ul>
+        <li><span class="tl">Ex.1 :</span> P2 BT M_50 → P(19&lt;M_50&lt;25)&gt;0,85</li>
+        <li><span class="tl">Ex.2 :</span> P4 v_n=ln(u_n) géom. raison 1/2 → ln(2)=2^n×ln(u_n)</li>
+        <li><span class="tl">Ex.4 :</span> P8 IPP double ∫x(ln x)² dx — exercice canonique</li>
+      </ul></div>
     </div>
-
-    <div class="card">
-      <div class="card-title">Asie 2025 — J1 Remplacement</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-asie-1-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-asie-1-remplacement-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Asie 2025 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-asie-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-asie-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Centres étrangers 2025 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-centres-etranger-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-centres-etranger-1-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Centres étrangers 2025 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-centres-etranger-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-centres-etranger-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Polynésie 2025 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-polynesie-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-polynesie-1-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Polynésie 2025 — J1 Remplacement</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-polynesie-1-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-polynesie-1-remplacement-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Polynésie 2025 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-polynesie-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-polynesie-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Métropole 2025 — J1 Remplacement</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-1-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-1-remplacement-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Métropole 2025 — J2 Remplacement</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-2-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-2-remplacement-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
   </div>
 
-  <h2>Sujets 2024</h2>
-  <div class="grid">
+</div><!-- fin tab-priorites -->
 
-    <div class="card">
-      <div class="card-title">Métropole 2024 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-metropole-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-metropole-1-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
+<!-- ═══════════════════════════════════════════
+     TAB 3 — TOUS LES SUJETS
+═══════════════════════════════════════════ -->
+<div id="tab-sujets" class="tab">
 
-    <div class="card">
-      <div class="card-title">Métropole 2024 — J1 Remplacement</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-metropole-1-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Métropole 2024 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-metropole-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-metropole-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Métropole 2024 — J2 bis</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-metropole-2-bis-sujet-officiel.pdf" target="_blank">Sujet</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Métropole 2024 — J2 Remplacement</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-metropole-2-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Amérique du Nord 2024 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-amerique-nord-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-amerique-nord-1-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Amérique du Nord 2024 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-amerique-nord-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-amerique-nord-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Amérique du Sud 2024 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-amerique-sud-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-amerique-sud-1-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Amérique du Sud 2024 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-amerique-sud-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Asie 2024 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-asie-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Asie 2024 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-asie-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Centres étrangers 2024 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-centres-etranger-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-centres-etranger-1-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Centres étrangers 2024 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-centres-etranger-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-centres-etranger-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Polynésie 2024 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-polynesie-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-polynesie-1-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Polynésie 2024 — J1 Remplacement</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-polynesie-1-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Polynésie 2024 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-polynesie-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-polynesie-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Suède 2024 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-suede-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Zéro 2024 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-zero-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- ══════════ PHYSIQUE-CHIMIE ══════════ -->
-<div id="tab-phys" class="tab-content">
-
-  <h2>2025</h2>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title">Métropole 2025 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-metropole-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-metropole-1-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Métropole 2025 — J1 Remplacement</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-metropole-1-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-metropole-1-remplacement-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Métropole 2025 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-metropole-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-metropole-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Métropole 2025 — J2 Remplacement</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-metropole-2-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-metropole-2-remplacement-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Amérique du Nord 2025 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-amerique-nord-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-amerique-nord-1-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Amérique du Nord 2025 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-amerique-nord-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-amerique-nord-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Amérique du Nord 2025 — J2 bis</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-amerique-nord-2bis-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-amerique-nord-2bis-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Amérique du Sud 2025 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-amerique-sud-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-amerique-sud-1-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Amérique du Sud 2025 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-amerique-sud-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-amerique-sud-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Asie 2025 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-asie-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-asie-1-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Asie 2025 — J1 Remplacement</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-asie-1-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-asie-1-remplacement-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Asie 2025 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-asie-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-asie-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Centres étrangers 2025 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-centres-etranger-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-centres-etranger-1-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Centres étrangers 2025 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-centres-etranger-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-centres-etranger-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Polynésie 2025 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-polynesie-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-polynesie-1-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Polynésie 2025 — J1 Remplacement</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-polynesie-1-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-polynesie-1-remplacement-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Polynésie 2025 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-polynesie-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-physique-chimie-2025-polynesie-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
+  <div class="subject-year">2026 — Maths Spé</div>
+  <div class="slist">
+    <div class="scard"><span class="scard-name">Amérique du Nord J1</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-1-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-1-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Amérique du Nord J2</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-2-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-2-corrige.pdf" target="_blank">Corrigé</a></div></div>
   </div>
 
-  <h2>2024</h2>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title">Métropole 2024 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-metropole-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-metropole-1-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Métropole 2024 — J1 Remplacement</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-metropole-1-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-metropole-1-remplacement-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Métropole 2024 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-metropole-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-metropole-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Métropole 2024 — J2 Remplacement</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-metropole-2-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-metropole-2-remplacement-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Amérique du Nord 2024 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-amerique-nord-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-amerique-nord-1-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Amérique du Nord 2024 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-amerique-nord-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-amerique-nord-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Asie 2024 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-asie-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-asie-1-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Asie 2024 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-asie-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-asie-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Centres étrangers 2024 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-centres-etranger-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-centres-etranger-1-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Centres étrangers 2024 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-centres-etranger-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-centres-etranger-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Polynésie 2024 — J1</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-polynesie-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-polynesie-1-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Polynésie 2024 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-polynesie-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-polynesie-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Suède 2024 — J2</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-suede-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-physique-chimie-2024-suede-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- ══════════ PHILOSOPHIE ══════════ -->
-<div id="tab-philo" class="tab-content">
-
-  <h2>2026</h2>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title">Amérique du Nord 2026</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2026/philosophie-2026-amerique-nord-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2026/philosophie-2026-amerique-nord-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
+  <div class="subject-year">2025 — Maths Spé</div>
+  <div class="slist">
+    <div class="scard"><span class="scard-name">Métropole J1</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-1-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-1-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Métropole J1 Rempl.</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-1-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-1-remplacement-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Métropole J2</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-2-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-2-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Métropole J2 Rempl.</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-2-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-2-remplacement-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Amérique du Nord J1</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-1-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-1-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Amérique du Nord J2</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-2-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-2-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Amérique du Nord J2 bis</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-2bis-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-2bis-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Amérique du Sud J1</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-sud-1-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-sud-1-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Amérique du Sud J2</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-sud-2-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-sud-2-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Asie J1</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-asie-1-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-asie-1-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Asie J1 Rempl.</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-asie-1-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-asie-1-remplacement-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Asie J2</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-asie-2-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-asie-2-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Centres étrangers J1</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-centres-etranger-1-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-centres-etranger-1-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Centres étrangers J2</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-centres-etranger-2-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-centres-etranger-2-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Polynésie J1</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-polynesie-1-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-polynesie-1-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Polynésie J1 Rempl.</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-polynesie-1-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-polynesie-1-remplacement-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Polynésie J2</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-polynesie-2-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-polynesie-2-corrige.pdf" target="_blank">Corrigé</a></div></div>
   </div>
 
-  <h2>2025</h2>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title">Métropole 2025</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/philosophie-2025-metropole-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/philosophie-2025-metropole-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Métropole 2025 — Remplacement</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/philosophie-2025-metropole-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/philosophie-2025-metropole-remplacement-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Métropole 2025 — Bis Remplacement</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/philosophie-2025-metropole-bis-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/philosophie-2025-metropole-bis-remplacement-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Métropole 2025 — Secours</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/philosophie-2025-metropole-secours-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/philosophie-2025-metropole-secours-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Amérique du Nord 2025</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/philosophie-2025-amerique-nord-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/philosophie-2025-amerique-nord-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Amérique du Sud 2025</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/philosophie-2025-amerique-sud-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/philosophie-2025-amerique-sud-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Asie 2025</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/philosophie-2025-asie-sujet-officiel.pdf" target="_blank">Sujet</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Centres étrangers 2025</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/philosophie-2025-centres-etrangers-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/philosophie-2025-centres-etrangers-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Polynésie 2025</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/philosophie-2025-polynesie-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/philosophie-2025-polynesie-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Polynésie 2025 — Remplacement</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/philosophie-2025-polynesie-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/philosophie-2025-polynesie-remplacement-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
+  <div class="subject-year">2024 — Maths Spé</div>
+  <div class="slist">
+    <div class="scard"><span class="scard-name">Métropole J1</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-metropole-1-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-metropole-1-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Métropole J1 Rempl.</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-metropole-1-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a></div></div>
+    <div class="scard"><span class="scard-name">Métropole J2</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-metropole-2-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-metropole-2-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Métropole J2 bis</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-metropole-2-bis-sujet-officiel.pdf" target="_blank">Sujet</a></div></div>
+    <div class="scard"><span class="scard-name">Métropole J2 Rempl.</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-metropole-2-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a></div></div>
+    <div class="scard"><span class="scard-name">Amérique du Nord J1</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-amerique-nord-1-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-amerique-nord-1-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Amérique du Nord J2</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-amerique-nord-2-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-amerique-nord-2-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Amérique du Sud J1</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-amerique-sud-1-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-amerique-sud-1-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Amérique du Sud J2</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-amerique-sud-2-sujet-officiel.pdf" target="_blank">Sujet</a></div></div>
+    <div class="scard"><span class="scard-name">Asie J1</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-asie-1-sujet-officiel.pdf" target="_blank">Sujet</a></div></div>
+    <div class="scard"><span class="scard-name">Asie J2</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-asie-2-sujet-officiel.pdf" target="_blank">Sujet</a></div></div>
+    <div class="scard"><span class="scard-name">Centres étrangers J1</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-centres-etranger-1-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-centres-etranger-1-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Centres étrangers J2</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-centres-etranger-2-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-centres-etranger-2-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Polynésie J1</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-polynesie-1-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-polynesie-1-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Polynésie J1 Rempl.</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-polynesie-1-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a></div></div>
+    <div class="scard"><span class="scard-name">Polynésie J2</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-polynesie-2-sujet-officiel.pdf" target="_blank">Sujet</a><a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-polynesie-2-corrige.pdf" target="_blank">Corrigé</a></div></div>
+    <div class="scard"><span class="scard-name">Suède J2</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-suede-2-sujet-officiel.pdf" target="_blank">Sujet</a></div></div>
+    <div class="scard"><span class="scard-name">Zéro J1</span><div class="scard-links"><a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/spe-mathematiques-2024-zero-1-sujet-officiel.pdf" target="_blank">Sujet</a></div></div>
   </div>
 
-  <h2>2024</h2>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title">Métropole 2024</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/philosophie-2024-metropole-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/philosophie-2024-metropole-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Métropole 2024 — Remplacement</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/philosophie-2024-metropole-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/philosophie-2024-metropole-remplacement-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Amérique du Nord 2024</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/philosophie-2024-amerique-nord-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/philosophie-2024-amerique-nord-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Asie 2024</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/philosophie-2024-asie-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/philosophie-2024-asie-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Centres étrangers 2024</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/philosophie-2024-centres-etrangers-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/philosophie-2024-centres-etrangers-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Polynésie 2024</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/philosophie-2024-polynesie-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2024/philosophie-2024-polynesie-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Polynésie 2024 — Remplacement</div>
-      <div class="links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2024/philosophie-2024-polynesie-remplacement-sujet-officiel.pdf" target="_blank">Sujet</a>
-      </div>
-    </div>
-
-  </div>
-</div>
+</div><!-- fin tab-sujets -->
 
 <script>
 function showTab(name) {
-  ['maths','phys','philo'].forEach(function(t) {
-    document.getElementById('tab-' + t).classList.remove('visible');
-    document.getElementById('btn-' + t).className = '';
+  ['pieges','priorites','sujets'].forEach(function(t) {
+    document.getElementById('tab-'+t).classList.remove('visible');
+    document.getElementById('btn-'+t).classList.remove('on');
   });
-  document.getElementById('tab-' + name).classList.add('visible');
-  document.getElementById('btn-' + name).className = 'active-' + name;
+  document.getElementById('tab-'+name).classList.add('visible');
+  document.getElementById('btn-'+name).classList.add('on');
 }
+function toggle(header) {
+  var block = header.parentElement;
+  var body  = block.querySelector('.piege-body');
+  var open  = block.classList.contains('open');
+  block.classList.toggle('open', !open);
+  body.style.display = open ? 'none' : 'flex';
+}
+// init : show all open
+document.querySelectorAll('.piege-block.open .piege-body').forEach(function(b){b.style.display='flex'});
 </script>
 </body>
 </html>
