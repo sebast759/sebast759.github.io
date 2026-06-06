@@ -109,7 +109,7 @@ details.skills-list li{margin:.2rem 0}
 
 <div class="controls">
   <div class="search-wrap">
-    <input type="text" id="search" placeholder="Rechercher un sujet, une notion, une compétence…" oninput="applyFilters()">
+    <input type="text" id="search" placeholder="Ex : loi binomiale, équation différentielle, dérivée…" oninput="applyFilters()">
   </div>
   <span class="filter-label">Chapitre :</span>
   <select id="filter-chapter" onchange="applyFilters()">
@@ -2100,8 +2100,12 @@ function toggleAllEx(btn) {
   btn.textContent = btn.textContent.replace(open ? '▼' : '▶', open ? '▶' : '▼');
 }
 
+function normalizeText(text) {
+  return text.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
+}
+
 function applyFilters() {
-  const q = document.getElementById('search').value.toLowerCase().trim();
+  const q = normalizeText(document.getElementById('search').value.trim());
   const ch = document.getElementById('filter-chapter').value;
   const diff = document.getElementById('filter-diff').value;
   const yr = document.getElementById('filter-year').value;
@@ -2125,7 +2129,7 @@ function applyFilters() {
 
       const matchDiff = !diff || cardDiff === diff;
       const matchYear = !yr || cardYear === yr;
-      const matchQ = !q || cardText.includes(q);
+      const matchQ = !q || normalizeText(cardText).includes(q);
 
       if (matchDiff && matchYear && matchQ) {
         card.classList.remove('hidden-filter');
