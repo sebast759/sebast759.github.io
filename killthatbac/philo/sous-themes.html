@@ -27,9 +27,12 @@ nav.pages-nav a:hover{color:#111}
 .search-wrap::before{content:"🔍";position:absolute;left:.55rem;top:.35rem;font-size:.85rem}
 main{max-width:1100px;margin:0 auto;padding:1rem 1.5rem}
 .notion-section{margin-bottom:1.5rem;background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden}
-.notion-title{padding:.95rem 1.2rem;display:flex;align-items:center;justify-content:space-between;font-size:1rem;font-weight:700;background:#f8faff;border-bottom:1px solid var(--border)}
+.notion-title{padding:.95rem 1.2rem;display:flex;align-items:center;justify-content:space-between;font-size:1rem;font-weight:700;background:#f8faff;border-bottom:1px solid var(--border);cursor:pointer;user-select:none}
+.notion-title .chev{font-size:.8rem;color:#9ca3af;transition:transform .2s;flex-shrink:0}
+.notion-section.open .notion-title .chev{transform:rotate(180deg)}
 .count{font-weight:400;color:var(--gray);font-size:.85rem}
-.excards{display:grid;gap:.7rem;padding:1rem 1.2rem}
+.excards{display:none;gap:.7rem;padding:1rem 1.2rem}
+.notion-section.open .excards{display:grid}
 .excard{border:1px solid #e5e7eb;border-radius:8px;padding:.8rem 1rem;background:#fff;transition:box-shadow .15s}
 .excard:hover{box-shadow:0 2px 8px rgba(0,0,0,.08)}
 .excard-head{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin-bottom:.35rem}
@@ -3221,6 +3224,9 @@ main{max-width:1100px;margin:0 auto;padding:1rem 1.5rem}
 function normalizeText(text) {
   return text.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
 }
+function toggleNotion(title) {
+  title.parentElement.classList.toggle('open');
+}
 function applyFilters() {
   const q = normalizeText(document.getElementById('search').value.trim());
   document.querySelectorAll('.notion-section').forEach(sec => {
@@ -3231,7 +3237,13 @@ function applyFilters() {
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     });
-    sec.style.display = visible > 0 ? '' : 'none';
+    if (q) {
+      sec.style.display = visible > 0 ? '' : 'none';
+      if (visible > 0) sec.classList.add('open'); else sec.classList.remove('open');
+    } else {
+      sec.style.display = '';
+      sec.classList.remove('open');
+    }
   });
 }
 function filterNotion(pill) {
@@ -3254,6 +3266,10 @@ function filterNotion(pill) {
 }
 // clear active pills when user types manually
 document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.notion-title').forEach(title => {
+    title.innerHTML += '<span class="chev">▼</span>';
+    title.addEventListener('click', () => toggleNotion(title));
+  });
   document.getElementById('search').addEventListener('input', () => {
     document.querySelectorAll('.pill.nt.active').forEach(p => p.classList.remove('active'));
     applyFilters();

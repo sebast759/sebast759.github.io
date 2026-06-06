@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Révision Bac Maths Spé 2026 - Par Pieges</title>
+<title>Révision Bac Maths Spé 2026 - Par Méthodes Clés identifiées par l'Intelligence Artificielle </title>
 <style>
   :root {
     --p2:#dc2626; --p1:#d97706; --ok:#2a9d4e;
@@ -43,7 +43,13 @@
   .piege-title{font-weight:700;font-size:.95rem;flex:1}
   .piege-rule{font-size:.82rem;color:var(--muted);margin-top:.2rem;line-height:1.5}
   .piege-chevron{color:var(--muted);font-size:1rem;transition:transform .2s;margin-left:auto;flex-shrink:0}
-  .piege-body{display:none;border-top:1px solid var(--border);padding:.8rem 1.1rem;display:flex;flex-direction:column;gap:.7rem}
+  .piege-body{display:none;border-top:1px solid var(--border);padding:.8rem 1.1rem;flex-direction:column;gap:.7rem}
+
+  /* ── IA intro text ── */
+  .ai-intro{font-size:.8rem;color:var(--muted);margin-bottom:1.2rem;line-height:1.5}
+
+  /* ── Star key badge ── */
+  .star-key{color:#f59e0b;font-size:.9rem;margin-right:.3rem}
   .piege-block.open .piege-chevron{transform:rotate(180deg)}
 
   .exo-card{background:#f8f9fa;border:1px solid var(--border);border-radius:8px;padding:.8rem 1rem}
@@ -82,7 +88,7 @@
 
 <header>
   <div class="header-left">
-    <h1>Révision Bac Maths Spé 2026 - Par Pieges</h1>
+    <h1>Révision Bac Maths Spé 2026 - Par Méthodes Clés identifiées par l'Intelligence Artificielle</h1>
     <div class="header-bottom-row">
       <a href="../index.html" class="date-badge">Épreuve : 16–17 juin 2026</a>
     </div>
@@ -90,7 +96,7 @@
 </header>
 
 <nav>
-  <button onclick="showTab('pieges')"    id="btn-pieges"    class="on">Par Pièges</button>
+  <button onclick="showTab('pieges')"    id="btn-pieges"    class="on">IA★ Les Méthodes Clés</button>
   <a href="skills.html" class="nav-link-btn">Recherche par compétences</a>
   <a href="sous-themes.html" class="nav-link-btn">Recherche par sous-thèmes</a>
   <button onclick="showTab('sujets')"    id="btn-sujets">Tous les Sujets</button>
@@ -101,8 +107,10 @@
 ═══════════════════════════════════════════ -->
 <div id="tab-pieges" class="tab visible">
 
+<p class="ai-intro"><b>IA★ Les Méthodes Clés</b> et <b>pièges à éviter</b>  identifiés par l'intelligence artificielle comme les plus probables à l'épreuve de maths spé 2026.</p>
+
 <!-- ── PIÈGE 1 ── -->
-<div class="piege-block open">
+<div class="piege-block">
   <div class="piege-header" onclick="toggle(this)">
     <span class="piege-num">P1</span>
     <div>
@@ -114,7 +122,7 @@
   <div class="piege-body">
 
     <div class="methode">
-      <div class="mhead">ℹ Méthode — Loi binomiale (fiche)</div>
+      <div class="mhead"><span class="star-key">★</span> Méthode — Loi binomiale (fiche)</div>
       Justifier les 3 conditions : tirage avec remise, épreuves indépendantes, deux issues. Donner n et p.<br>
       À la calculatrice : <code>P(X=k)</code> et <code>P(X≤k)</code>.<br>
       <strong>Au moins un succès</strong> = <code>1 − P(X=0)</code> = <code>1 − (1−p)^n</code>.<br>
@@ -177,7 +185,7 @@
 </div>
 
 <!-- ── PIÈGE 2 ── -->
-<div class="piege-block open">
+<div class="piege-block">
   <div class="piege-header" onclick="toggle(this)">
     <span class="piege-num">P2</span>
     <div>
@@ -193,7 +201,7 @@
   <div class="piege-body">
 
     <div class="methode">
-      <div class="mhead">ℹ Méthode — Bienaymé-Tchebychev (fiche)</div>
+      <div class="mhead"><span class="star-key">★</span> Méthode — Bienaymé-Tchebychev (fiche)</div>
       <code>P(|Y − E(Y)| ≥ a) ≤ V(Y) / a²</code> → majoration de la proba de grand écart.<br>
       Pour <strong>minorer</strong> P(|Y−E| &lt; a) : passer au complément → <code>≥ 1 − V(Y)/a²</code>.<br>
       <strong>V(Fn) = p(1−p)/n</strong> (fréquence empirique). &nbsp;<strong>V(Mn) = σ²/n</strong> (moyenne empirique).<br>
@@ -279,7 +287,7 @@
 </div>
 
 <!-- ── PIÈGE 3 ── -->
-<div class="piege-block open">
+<div class="piege-block">
   <div class="piege-header" onclick="toggle(this)">
     <span class="piege-num">P3</span>
     <div>
@@ -294,7 +302,7 @@
   <div class="piege-body">
 
     <div class="methode">
-      <div class="mhead">ℹ Méthode — Suites : encadrement et convergence (fiche)</div>
+      <div class="mhead"><span class="star-key">★</span> Méthode — Suites : encadrement et convergence (fiche)</div>
       Si h croissante et <code>a ≤ u_n ≤ b</code> → appliquer h aux 3 membres : <code>h(a) ≤ h(u_n) ≤ h(b)</code>.<br>
       Suite décroissante minorée (ou croissante majorée) → convergente (<em>théorème suite monotone bornée</em>).<br>
       <strong>Limite l</strong> : justifier la convergence D'ABORD, puis résoudre <code>l = h(l)</code>. Choisir la racine cohérente avec l'encadrement.
@@ -360,7 +368,7 @@
 </div>
 
 <!-- ── PIÈGE 4 ── -->
-<div class="piege-block open">
+<div class="piege-block">
   <div class="piege-header" onclick="toggle(this)">
     <span class="piege-num">P4</span>
     <div>
@@ -375,7 +383,7 @@
   <div class="piege-body">
 
     <div class="methode">
-      <div class="mhead">ℹ Méthode — Suite géométrique auxiliaire (fiche)</div>
+      <div class="mhead"><span class="star-key">★</span> Méthode — Suite géométrique auxiliaire (fiche)</div>
       Poser <code>v_n = φ(u_n)</code>. Montrer <code>v_{n+1} = q × v_n</code> pour TOUT n (par calcul algébrique, pas sur un exemple).<br>
       Donner <code>v_0</code>. Écrire <code>v_n = v_0 × q^n</code>. Revenir à <code>u_n</code> par la relation inverse.<br>
       Python : boucle <code>while</code> pour un seuil (compteur n++), boucle <code>for range(p)</code> avec <code>L.append(S)</code>.
@@ -424,7 +432,7 @@
 </div>
 
 <!-- ── PIÈGE 5 ── -->
-<div class="piege-block open">
+<div class="piege-block">
   <div class="piege-header" onclick="toggle(this)">
     <span class="piege-num">P5</span>
     <div>
@@ -439,7 +447,7 @@
   <div class="piege-body">
 
     <div class="methode">
-      <div class="mhead">ℹ Méthode — Équation différentielle y' + ay = b (fiche)</div>
+      <div class="mhead"><span class="star-key">★</span> Méthode — Équation différentielle y' + ay = b (fiche)</div>
       Homogène <code>y' + ay = 0</code> → <code>y = C × e^(−ax)</code> (signe <strong>toujours négatif</strong>).<br>
       Particulière constante : <code>y_p = b/a</code>. Si y_p est fournie : juste vérifier en dérivant et substituant.<br>
       Solution générale = y_p + y_h. Fixer C avec la <strong>condition initiale</strong> : y(x₀) = y₀.
@@ -490,7 +498,7 @@
 </div>
 
 <!-- ── PIÈGE 6 ── -->
-<div class="piege-block open">
+<div class="piege-block">
   <div class="piege-header" onclick="toggle(this)">
     <span class="piege-num">P6</span>
     <div>
@@ -505,7 +513,7 @@
   <div class="piege-body">
 
     <div class="methode">
-      <div class="mhead">ℹ Méthode — Géométrie : distance point-plan (fiche)</div>
+      <div class="mhead"><span class="star-key">★</span> Méthode — Géométrie : distance point-plan (fiche)</div>
       Plan <code>ax+by+cz+d=0</code>, point M(x₀,y₀,z₀) :<br>
       <code>d(M, plan) = |ax₀+by₀+cz₀+d| / √(a²+b²+c²)</code> — valeur absolue obligatoire.<br>
       Volume tétraèdre = <code>(1/3) × Aire(base) × hauteur</code>.<br>
@@ -571,7 +579,7 @@
 </div>
 
 <!-- ── PIÈGE 7 ── -->
-<div class="piege-block open">
+<div class="piege-block">
   <div class="piege-header" onclick="toggle(this)">
     <span class="piege-num">P7</span>
     <div>
@@ -587,7 +595,7 @@
   <div class="piege-body">
 
     <div class="methode">
-      <div class="mhead">ℹ Méthode — Projeté orthogonal (fiche)</div>
+      <div class="mhead"><span class="star-key">★</span> Méthode — Projeté orthogonal (fiche)</div>
       H = projeté de M sur plan P :<br>
       1. Droite (MH) : <code>M + t × n</code> où <strong>n = vecteur normal du plan</strong> (pas un vecteur quelconque).<br>
       2. Substituer dans l'équation de P → trouver t → calculer H.<br>
@@ -638,7 +646,7 @@
 </div>
 
 <!-- ── PIÈGE 8 ── -->
-<div class="piege-block open">
+<div class="piege-block">
   <div class="piege-header" onclick="toggle(this)">
     <span class="piege-num">P8</span>
     <div>
@@ -653,7 +661,7 @@
   <div class="piege-body">
 
     <div class="methode">
-      <div class="mhead">ℹ Méthode — Intégration par parties (fiche)</div>
+      <div class="mhead"><span class="star-key">★</span> Méthode — Intégration par parties (fiche)</div>
       <code>∫u·v' = [u·v]ₐᵇ − ∫u'·v</code>. Règle : <strong>dériver le ln, intégrer le polynôme</strong>.<br>
       <code>∫x ln x</code> : u=ln x, v'=x → une IPP.<br>
       <code>∫x(ln x)²</code> : u=(ln x)², v'=x → première IPP → apparition de <code>∫x ln x</code> → deuxième IPP.<br>
@@ -705,7 +713,7 @@
 </div>
 
 <!-- ── PIÈGE 9 ── -->
-<div class="piege-block open">
+<div class="piege-block">
   <div class="piege-header" onclick="toggle(this)">
     <span class="piege-num">P9</span>
     <div>
@@ -721,7 +729,7 @@
   <div class="piege-body">
 
     <div class="methode">
-      <div class="mhead">ℹ Méthode — Convexité et inégalité tangente (fiche)</div>
+      <div class="mhead"><span class="star-key">★</span> Méthode — Convexité et inégalité tangente (fiche)</div>
       <strong>f'' ≥ 0</strong> → convexe → courbe <strong>au-dessus</strong> de toute tangente → <code>f(x) ≥ T(x)</code>.<br>
       <strong>f'' ≤ 0</strong> → concave → courbe <strong>en-dessous</strong> de toute tangente → <code>f(x) ≤ T(x)</code>.<br>
       Point d'inflexion : f'' change de signe (≠ extremum = f' change de signe).<br>
@@ -850,8 +858,6 @@ function toggle(header) {
   block.classList.toggle('open', !open);
   body.style.display = open ? 'none' : 'flex';
 }
-// init : show all open
-document.querySelectorAll('.piege-block.open .piege-body').forEach(function(b){b.style.display='flex'});
 </script>
 </body>
 </html>
