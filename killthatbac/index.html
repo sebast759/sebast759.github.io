@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kill That Bac 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #0f172a; color: #f8fafc;
+    min-height: 100vh; display: flex; flex-direction: column;
+  }
+  header {
+    padding: 2.5rem 1.5rem 1rem;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 2.8rem; font-weight: 900; letter-spacing: -0.03em;
+    background: linear-gradient(135deg, #f8fafc 30%, #94a3b8);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .subtitle {
+    margin-top: .5rem; font-size: 1rem; color: #94a3b8; font-weight: 500;
+  }
+  .countdown {
+    margin: 1.2rem auto 0;
+    display: inline-block;
+    background: #dc2626; color: #fff;
+    padding: .4rem 1.1rem; border-radius: 999px;
+    font-size: .9rem; font-weight: 700; letter-spacing: .02em;
+  }
+
+  main {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    padding: 2rem 1.5rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.2rem; width: 100%; max-width: 900px;
+  }
+  .subject-card {
+    background: #1e293b; border: 1px solid #334155;
+    border-radius: 16px; padding: 2rem 1.5rem;
+    text-decoration: none; color: inherit;
+    display: flex; flex-direction: column; gap: .6rem;
+    transition: transform .15s, border-color .15s, box-shadow .15s;
+  }
+  .subject-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    box-shadow: 0 8px 24px rgba(0,0,0,.4);
+  }
+  .subject-card .icon { font-size: 2rem; }
+  .subject-card .name { font-size: 1.2rem; font-weight: 800; }
+  .subject-card .meta { font-size: .82rem; color: #94a3b8; line-height: 1.5; }
+  .subject-card .arrow {
+    margin-top: auto; padding-top: 1rem;
+    font-size: .85rem; font-weight: 700;
+    color: var(--accent);
+  }
+
+  .maths  { --accent: #3b82f6; }
+  .phys   { --accent: #22c55e; }
+  .philo  { --accent: #a855f7; }
+
+  footer {
+    text-align: center; padding: 1.2rem;
+    font-size: .75rem; color: #475569;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Kill That Bac</h1>
+  <div class="subtitle">Terminale · Spécialités · 2026</div>
+  <div class="countdown" id="cd">Épreuve : 16–17 juin 2026</div>
+</header>
+
+<main>
+  <div class="grid">
+
+    <a class="subject-card maths" href="maths/">
+      <div class="icon">∑</div>
+      <div class="name">Maths Spé</div>
+      <div class="meta">
+        9 pièges détaillés · 6 sujets prioritaires<br>
+        AN 2026 J1&J2 · Métropole 2025 J1&J2<br>
+        Bienaymé-Tchebychev · IPP · Géométrie espace
+      </div>
+      <div class="arrow">Ouvrir →</div>
+    </a>
+
+    <a class="subject-card phys" href="physique/">
+      <div class="icon">⚛</div>
+      <div class="name">Physique-Chimie</div>
+      <div class="meta">
+        Sujets 2024 · 2025<br>
+        Métropole · Amérique du Nord · Asie<br>
+        Corrigés disponibles
+      </div>
+      <div class="arrow">Ouvrir →</div>
+    </a>
+
+    <a class="subject-card philo" href="philosophie/">
+      <div class="icon">φ</div>
+      <div class="name">Philosophie</div>
+      <div class="meta">
+        Sujets 2024 · 2025 · 2026<br>
+        Métropole · Centres étrangers · Polynésie<br>
+        Corrigés disponibles
+      </div>
+      <div class="arrow">Ouvrir →</div>
+    </a>
+
+  </div>
+</main>
+
+<footer>sebast759.github.io/killthatbac</footer>
+
+<script>
+(function() {
+  var exam = new Date('2026-06-16T08:00:00');
+  var now  = new Date();
+  var diff = exam - now;
+  if (diff <= 0) return;
+  var days = Math.floor(diff / 86400000);
+  document.getElementById('cd').textContent =
+    'J−' + days + ' avant l\'épreuve · 16–17 juin 2026';
+})();
+</script>
+
+</body>
+</html>
