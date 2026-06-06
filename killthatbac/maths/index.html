@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -20,6 +20,8 @@
   nav{display:flex;background:#fff;border-bottom:2px solid var(--border);padding:0 1rem;gap:.2rem}
   nav button{padding:.75rem 1.1rem;border:none;background:transparent;cursor:pointer;font-size:.9rem;font-weight:600;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px}
   nav button.on{color:#1e293b;border-bottom-color:#1e293b}
+  nav .nav-link-btn{padding:.75rem 1.1rem;font-size:.9rem;font-weight:600;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px;text-decoration:none;display:flex;align-items:center}
+  nav .nav-link-btn:hover{color:#1e293b}
 
   .tab{display:none;padding:1.5rem;max-width:1100px;margin:0 auto}
   .tab.visible{display:block}
@@ -58,23 +60,6 @@
   .btn-c{background:#dcfce7;color:#15803d}
   .btn-s:hover,.btn-c:hover{opacity:.75}
 
-  /* ── Par Priorités ── */
-  .section-title{font-size:.95rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:1.4rem 0 .7rem}
-  .section-title:first-child{margin-top:0}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:.7rem}
-  .pcard{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1rem;display:flex;flex-direction:column;gap:.5rem}
-  .pcard.p2{border-left:4px solid var(--p2)}
-  .pcard.p1{border-left:4px solid var(--p1)}
-  .pcard-title{font-weight:700;font-size:.9rem;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
-  .pcard-links{display:flex;gap:.4rem;flex-wrap:wrap}
-  .pcard-links a{font-size:.8rem;font-weight:600;padding:.28rem .65rem;border-radius:6px;text-decoration:none}
-  .pcard-traps{font-size:.79rem;color:var(--muted);border-top:1px solid var(--border);padding-top:.45rem}
-  .pcard-traps ul{padding-left:1rem;display:flex;flex-direction:column;gap:.18rem}
-  .tl{font-weight:700;color:var(--p2)}
-  .fiche{background:#fffbeb;border:1px solid #fbbf24;border-radius:10px;padding:1rem 1.2rem;margin-bottom:1.4rem}
-  .fiche h3{font-size:.88rem;font-weight:700;color:#92400e;margin-bottom:.55rem}
-  .fiche ul{padding-left:1.1rem;font-size:.83rem;color:#78350f;display:flex;flex-direction:column;gap:.22rem}
-
   /* ── Tous les sujets ── */
   .subject-year{font-size:1rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:1.3rem 0 .6rem;border-bottom:1px solid var(--border);padding-bottom:.3rem}
   .subject-year:first-child{margin-top:0}
@@ -99,8 +84,8 @@
 
 <nav>
   <button onclick="showTab('pieges')"    id="btn-pieges"    class="on">Par Pièges</button>
-  <button onclick="showTab('priorites')" id="btn-priorites">Par Priorités</button>
   <button onclick="showTab('sujets')"    id="btn-sujets">Tous les Sujets</button>
+  <a href="skills.html" class="nav-link-btn">Par Compétences</a>
 </nav>
 
 <!-- ═══════════════════════════════════════════
@@ -782,100 +767,7 @@
 <!-- ═══════════════════════════════════════════
      TAB 2 — PAR PRIORITÉS
 ═══════════════════════════════════════════ -->
-<div id="tab-priorites" class="tab">
 
-  <div class="fiche">
-    <h3>Ordre de travail recommandé (10 jours)</h3>
-    <ul>
-      <li><strong>J1–J2 :</strong> AN 2026 J1 et J2 — les plus proches du format 2026</li>
-      <li><strong>J3–J4 :</strong> Métropole 2025 J1 et J2</li>
-      <li><strong>J5–J6 :</strong> AN 2025 J1 et J2</li>
-      <li><strong>J7–J10 :</strong> Reprise ciblée des exercices ratés par piège (Tab 1)</li>
-    </ul>
-  </div>
-
-  <div class="section-title">Priorité absolue — 2026</div>
-  <div class="grid">
-    <div class="pcard p2">
-      <div class="pcard-title">Amérique du Nord 2026 — J1 <span class="tag tag-p2">PRIORITÉ 1</span></div>
-      <div class="pcard-links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-1-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-      <div class="pcard-traps"><ul>
-        <li><span class="tl">Ex.1 :</span> P1 "au moins un" + P2 BT passage au complément</li>
-        <li><span class="tl">Ex.2 :</span> P3 hérédité (u_n−2)²≥0 + P5 éq. diff. y'+y=2</li>
-        <li><span class="tl">Ex.3 :</span> P6 distance + P7 projeté orthogonal de O</li>
-        <li><span class="tl">Ex.4 :</span> P9 concavité → inégalité ln(x²+1)</li>
-      </ul></div>
-    </div>
-    <div class="pcard p2">
-      <div class="pcard-title">Amérique du Nord 2026 — J2 <span class="tag tag-p2">PRIORITÉ 1</span></div>
-      <div class="pcard-links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2026/spe-mathematiques-2026-amerique-nord-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-      <div class="pcard-traps"><ul>
-        <li><span class="tl">Ex.1 :</span> P2 BT + test conformité → ne pas conclure "c'est sûr"</li>
-        <li><span class="tl">Ex.2 :</span> P3 hérédité croissante + P4 suite géom. v_n raison 4</li>
-        <li><span class="tl">Ex.3 :</span> P6 double méthode volume/aire pour distance</li>
-        <li><span class="tl">Ex.4 :</span> P8 IPP double ∫x(ln x)² dx</li>
-      </ul></div>
-    </div>
-  </div>
-
-  <div class="section-title">Prioritaires — 2025</div>
-  <div class="grid">
-    <div class="pcard p1">
-      <div class="pcard-title">Métropole 2025 — J1 <span class="tag tag-p1">Prioritaire</span></div>
-      <div class="pcard-links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-1-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-      <div class="pcard-traps"><ul>
-        <li><span class="tl">Ex.1 :</span> P2 BT : demi-largeur a=0,0014</li>
-        <li><span class="tl">Ex.2 :</span> P8 IPP ∫x ln x + P9 point d'inflexion f''=(1/x)(4ln x+1)</li>
-        <li><span class="tl">Ex.4 :</span> P3 hérédité 1≤u_n≤20 + P5 éq. diff. logistique</li>
-      </ul></div>
-    </div>
-    <div class="pcard p1">
-      <div class="pcard-title">Métropole 2025 — J2 <span class="tag tag-p1">Prioritaire</span></div>
-      <div class="pcard-links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-metropole-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-      <div class="pcard-traps"><ul>
-        <li><span class="tl">Ex.1 :</span> P2 BT : V(T₁+T₂)=356 → P(60&lt;T&lt;140)&gt;0,77</li>
-        <li><span class="tl">Ex.2 :</span> P7 projeté H=(−1,0,2) + P6 distance d=√21/2</li>
-        <li><span class="tl">Ex.4 :</span> P5 éq. diff. solution particulière g(t)=te^(−0,6t)</li>
-      </ul></div>
-    </div>
-    <div class="pcard p1">
-      <div class="pcard-title">Amérique du Nord 2025 — J1 <span class="tag tag-p1">Prioritaire</span></div>
-      <div class="pcard-links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-1-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-1-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-      <div class="pcard-traps"><ul>
-        <li><span class="tl">Ex.1 :</span> P1 "au moins un" p_n = 1−(0,145)^n</li>
-        <li><span class="tl">Ex.2 :</span> suite auxiliaire a_n + hérédité a_n≥3^n−1</li>
-      </ul></div>
-    </div>
-    <div class="pcard p1">
-      <div class="pcard-title">Amérique du Nord 2025 — J2 <span class="tag tag-p1">Prioritaire</span></div>
-      <div class="pcard-links">
-        <a class="btn-s" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-2-sujet-officiel.pdf" target="_blank">Sujet</a>
-        <a class="btn-c" href="https://www.sujetdebac.fr/annales-pdf/2025/spe-mathematiques-2025-amerique-nord-2-corrige.pdf" target="_blank">Corrigé</a>
-      </div>
-      <div class="pcard-traps"><ul>
-        <li><span class="tl">Ex.1 :</span> P2 BT M_50 → P(19&lt;M_50&lt;25)&gt;0,85</li>
-        <li><span class="tl">Ex.2 :</span> P4 v_n=ln(u_n) géom. raison 1/2 → ln(2)=2^n×ln(u_n)</li>
-        <li><span class="tl">Ex.4 :</span> P8 IPP double ∫x(ln x)² dx — exercice canonique</li>
-      </ul></div>
-    </div>
-  </div>
-
-</div><!-- fin tab-priorites -->
 
 <!-- ═══════════════════════════════════════════
      TAB 3 — TOUS LES SUJETS
@@ -935,7 +827,7 @@
 
 <script>
 function showTab(name) {
-  ['pieges','priorites','sujets'].forEach(function(t) {
+  ['pieges','sujets'].forEach(function(t) {
     document.getElementById('tab-'+t).classList.remove('visible');
     document.getElementById('btn-'+t).classList.remove('on');
   });
@@ -954,3 +846,5 @@ document.querySelectorAll('.piege-block.open .piege-body').forEach(function(b){b
 </script>
 </body>
 </html>
+
+
