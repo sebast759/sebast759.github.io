@@ -51,6 +51,14 @@ function showTab(tabName) {
     
     document.getElementById(tabName).classList.add('active');
     event.target.classList.add('active');
+
+    // Markets table iframe loads while hidden (height 0) - resize once visible
+    if (tabName === 'markets') {
+        const mf = document.getElementById('markets-table');
+        if (mf && mf.contentWindow && mf.contentWindow.document.body) {
+            mf.style.height = (mf.contentWindow.document.body.scrollHeight + 20) + 'px';
+        }
+    }
 }
 
 // Crypto period switching

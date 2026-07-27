@@ -13,16 +13,17 @@
     </div>
 
     <div class="tabs">
-        <div class="tab active" onclick="showTab('bonds')">Bonds</div>
+        <div class="tab active" onclick="showTab('markets')">Markets</div>
+        <div class="tab" onclick="showTab('bonds')">Bonds</div>
+        <div class="tab" onclick="showTab('crypto')">Crypto</div>
         <div class="tab" onclick="showTab('equities')">Equities</div>
         <div class="tab" onclick="showTab('macro')">Macro</div>
-        <div class="tab" onclick="showTab('crypto')">Crypto</div>
         <div class="tab" onclick="showTab('global')">Global</div>
     </div>
 
     <div class="content">
         <!-- Bonds Tab -->
-        <div id="bonds" class="tab-content active">
+        <div id="bonds" class="tab-content">
             <!-- Two Column Section: Yields & Rolldown -->
              <div style="width: 60%; margin: 0 auto;">
                 <div style="margin-bottom: 0.0rem;">
@@ -162,6 +163,14 @@
                 
             </div>
             
+        </div>
+
+        <!-- Markets Tab -->
+        <div id="markets" class="tab-content active">
+            <div class="markets-table-container">
+                <iframe id="markets-table" src="graphs/markets/markets_table.html" scrolling="no"
+                        onload="this.style.height = (this.contentWindow.document.body.scrollHeight + 20) + 'px'"></iframe>
+            </div>
         </div>
 
         <!-- Equities Tab -->
