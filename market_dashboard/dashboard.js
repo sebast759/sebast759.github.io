@@ -59,6 +59,17 @@ function showTab(tabName) {
             mf.style.height = (mf.contentWindow.document.body.scrollHeight + 20) + 'px';
         }
     }
+
+    // Plotly charts must not render inside a hidden iframe (labels get dropped,
+    // sizing breaks). Charts use data-src and only load once their tab is shown.
+    document.querySelectorAll('#' + tabName + ' iframe[data-src]').forEach(function (f) {
+        if (!f.src) f.src = f.dataset.src;
+    });
+
+    // Already-loaded charts: fire a resize inside the iframe so they refit
+    document.querySelectorAll('#' + tabName + ' iframe').forEach(function (f) {
+        try { f.contentWindow.dispatchEvent(new Event('resize')); } catch (e) {}
+    });
 }
 
 // Crypto period switching

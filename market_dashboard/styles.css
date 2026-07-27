@@ -70,8 +70,8 @@ body {
 
 /* Default - large screens */
 .chart-container {
-    width: 60%;
-    height: 700px;
+    width: 50%;
+    height: 760px;
     margin: 0 auto;
     overflow: hidden;
 }
