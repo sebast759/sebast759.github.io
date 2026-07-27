@@ -93,16 +93,16 @@ function showCryptoPeriod(period, btn) {
 document.querySelectorAll('input[name="maturity"]').forEach(radio => {
     radio.addEventListener('change', function() {
         const maturity = this.value;
-        document.getElementById('bond-chart').src = 
-            `bond_yield_curves/yield_curves_${maturity}.html`;
+        document.getElementById('bond-chart').src =
+            `graphs/bond_yield_curves/yield_curves_${maturity}.html`;
     });
 });
 // Ranked yields maturity switching
 document.querySelectorAll('input[name="ranked-maturity"]').forEach(radio => {
     radio.addEventListener('change', function() {
         const maturity = this.value;
-        document.getElementById('ranked-chart').src = 
-            `bond_yield_curves/yields_${maturity}_ranked.html`;
+        document.getElementById('ranked-chart').src =
+            `graphs/bond_yield_curves/yields_${maturity}_ranked.html`;
     });
 });
 
@@ -110,8 +110,8 @@ document.querySelectorAll('input[name="ranked-maturity"]').forEach(radio => {
 document.querySelectorAll('input[name="rolldown-spread"]').forEach(radio => {
     radio.addEventListener('change', function() {
         const spread = this.value;
-        document.getElementById('rolldown-chart').src = 
-            `bond_yield_curves/spread_${spread}.html`;
+        document.getElementById('rolldown-chart').src =
+            `graphs/bond_yield_curves/spread_${spread}.html`;
     });
 });
 
