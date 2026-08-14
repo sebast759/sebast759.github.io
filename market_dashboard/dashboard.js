@@ -1,3 +1,10 @@
+// The markets table iframe reports its own height (on load, on resize, after sorting)
+window.addEventListener('message', function (e) {
+  if (!e.data || e.data.type !== 'mk-height') return;
+  const mf = document.getElementById('markets-table');
+  if (mf) mf.style.height = (e.data.h + 10) + 'px';
+});
+
 document.addEventListener('DOMContentLoaded', function () {
   const baseUrl = 'https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/';
 

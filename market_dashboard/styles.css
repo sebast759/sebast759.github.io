@@ -201,9 +201,10 @@ body {
 
 
 
-/* Markets table */
+/* Markets table - full width up to a readable cap so all columns fit */
 .markets-table-container {
-    width: 60%;
+    width: 100%;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -214,22 +215,20 @@ body {
     display: block;
 }
 
-@media (max-width: 1400px) {
-    .markets-table-container {
-        width: 80%;
-    }
-}
-
+/* Narrow screens: reclaim the page padding so the table gets the full width */
 @media (max-width: 1024px) {
-    .markets-table-container {
-        width: 95%;
-    }
+    .content { padding: 1rem; }
+    .tab-content { padding: 1rem; }
 }
 
-@media (max-width: 768px) {
-    .markets-table-container {
-        width: 100%;
-    }
+@media (max-width: 640px) {
+    .content { padding: 0.4rem; }
+    .tab-content { padding: 0.5rem 0.35rem; }
+    .header { padding: 0.7rem 1rem; }
+    .header h1 { font-size: 1.1rem; }
+    .tabs { padding: 0 0.25rem; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab { padding: 0.7rem 0.8rem; font-size: 0.85rem; white-space: nowrap; }
 }
 
 /* Placeholders */
