@@ -17,6 +17,9 @@ th {
     white-space: nowrap;
 }
 th.name, td.name { text-align: left; }
+thead th { background: #ffffff; }
+table.floating thead th { box-shadow: 0 3px 6px -2px rgba(0, 0, 0, 0.10); }
+table.native-sticky thead th { position: sticky; top: 0; z-index: 3; }
 td {
     text-align: right;
     padding: 0.28rem 0.6rem;
@@ -277,6 +280,55 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     const nameTh = table.querySelector('th.name');
     nameTh.addEventListener('click', reset);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const table = document.querySelector('table.mk');
+    if (!table || !table.tHead) return;
+    const thead = table.tHead;
+    if (window.parent === window) {  // table opened on its own: plain CSS sticky is enough
+        table.classList.add('native-sticky');
+        return;
+    }
+    // frameElement is null (not an error) when the parent is cross-origin, e.g. file://
+    let fe = null;
+    try { fe = window.frameElement; } catch (e) { fe = null; }
+    // The frame is as tall as its content, so nothing scrolls in here - the parent page
+    // scrolls. Follow its scroll position and slide the header row down to match.
+    // Same-origin: read the frame position directly. Cross-origin (file://): the parent
+    // posts it to us (see the mk-scroll sender in dashboard.js).
+    let pwin = null, frameTop = null;
+    if (fe) { try { pwin = fe.ownerDocument.defaultView; pwin.scrollY; } catch (e) { pwin = null; } }
+
+    let ticking = false, cur = 0;
+    function place() {
+        ticking = false;
+        let top = frameTop;
+        if (pwin) { try { top = fe.getBoundingClientRect().top; } catch (e) {} }
+        if (top === null) return;
+        const head = thead.getBoundingClientRect();          // includes the current shift
+        const natural = top + head.top - cur;
+        const max = table.getBoundingClientRect().height - head.height;
+        cur = Math.max(0, Math.min(-natural, max));
+        thead.style.transform = cur ? 'translateY(' + cur + 'px)' : '';
+        table.classList.toggle('floating', cur > 0);
+    }
+    function tick() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(place);
+    }
+    window.addEventListener('message', function (e) {
+        if (e.data && e.data.type === 'mk-scroll') { frameTop = e.data.top; tick(); }
+    });
+    if (pwin) {
+        pwin.addEventListener('scroll', tick, {passive: true});
+        pwin.addEventListener('resize', tick);
+    }
+    window.addEventListener('resize', tick);
+    if (window.ResizeObserver) new ResizeObserver(tick).observe(document.body);
+    parent.postMessage({type: 'mk-ready'}, '*');   // ask the parent for a first position
+    place();
 });
 
 (function () {

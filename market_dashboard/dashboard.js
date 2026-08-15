@@ -1,9 +1,29 @@
 // The markets table iframe reports its own height (on load, on resize, after sorting)
 window.addEventListener('message', function (e) {
-  if (!e.data || e.data.type !== 'mk-height') return;
+  if (!e.data) return;
   const mf = document.getElementById('markets-table');
-  if (mf) mf.style.height = (e.data.h + 10) + 'px';
+  if (!mf) return;
+  if (e.data.type === 'mk-height') mf.style.height = (e.data.h + 10) + 'px';
+  if (e.data.type === 'mk-ready') postScroll();
 });
+
+// Feed the table our scroll position so it can keep its header row visible.
+// Needed when the page is opened from disk (file://), where the frame cannot read us.
+let mkTicking = false;
+function postScroll() {
+  mkTicking = false;
+  const mf = document.getElementById('markets-table');
+  if (!mf || !mf.contentWindow) return;
+  mf.contentWindow.postMessage({type: 'mk-scroll', top: mf.getBoundingClientRect().top}, '*');
+}
+function mkTick() {
+  if (mkTicking) return;
+  mkTicking = true;
+  requestAnimationFrame(postScroll);
+}
+window.addEventListener('scroll', mkTick, {passive: true});
+window.addEventListener('resize', mkTick);
+window.addEventListener('load', postScroll);
 
 document.addEventListener('DOMContentLoaded', function () {
   const baseUrl = 'https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/';
