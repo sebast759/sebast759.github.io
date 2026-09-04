@@ -1,5 +1,88 @@
 [
  {
+  "run_id": 51,
+  "day": "2026-09-04",
+  "time": "17:28",
+  "slot": "sunset",
+  "spots": [
+   {
+    "spot": "Norte",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.8,
+    "swell_p": 8,
+    "swell_dir": "NW",
+    "wind_kts": 8,
+    "wind_gust": 8,
+    "wind_dir": "NE",
+    "surfers": 0,
+    "people": null,
+    "note": "knee-high crumbly windswell, no rideable shape; scanned detail and crowd crops in every frame, nobody out"
+   },
+   {
+    "spot": "Sul",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.8,
+    "swell_p": 8,
+    "swell_dir": "NW",
+    "wind_kts": 8,
+    "wind_gust": 8,
+    "wind_dir": "NE",
+    "surfers": 0,
+    "people": null,
+    "note": "glassy but near-flat, only faint lines reaching the reef; detail and crowd crops both empty, nobody out"
+   },
+   {
+    "spot": "Ribeira",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.8,
+    "swell_p": 8,
+    "swell_dir": "NW",
+    "wind_kts": 8,
+    "wind_gust": 8,
+    "wind_dir": "NE",
+    "surfers": 6,
+    "people": 5,
+    "note": "small clean lines through the lineup; ~6 counted off the contact sheet - the crowd and detail crops are mis-framed on open water this run and show no lineup"
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.8,
+    "swell_p": 8,
+    "swell_dir": "NW",
+    "wind_kts": 8,
+    "wind_gust": 8,
+    "wind_dir": "NE",
+    "surfers": 6,
+    "people": 20,
+    "note": "peeling shorebreak on the beach-level Front cam; ~6 in the water and ~20 on the sand, both approximate"
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.8,
+    "swell_p": 8,
+    "swell_dir": "NW",
+    "wind_kts": 8,
+    "wind_gust": 8,
+    "wind_dir": "NE",
+    "surfers": 7,
+    "people": null,
+    "note": "pick of the five - small reef wave with a real shoulder; 7 out, the higher of the two frames"
+   }
+  ]
+ },
+ {
   "run_id": 50,
   "day": "2026-09-04",
   "time": "17:16",
@@ -966,74 +1049,6 @@
     "surfers": 0,
     "people": 30,
     "note": "15:32 afternoon run, wide distant cam so all counts approximate. Cam clean and bright. Wave is closing out badly: a continuous wall of whitewater across the whole beach dumping straight onto the sand, wind-chopped by the 18g23kt N cross-shore, no bank holding any shape - matches the VERY_POOR rating. Opened the detail crop and scanned the whole waterline in all 3 frames plus both crowd frames: no boards, nobody sitting outside the whitewater. Two dark specks standing in the shorebreak shallows near the lifeguard flag are bathers, not surfers, so 0 surfing rather than null. On land roughly 30: scattered groups and tents along the sand, a beach-volleyball style cluster at the right by the promenade, a few walking"
-   }
-  ]
- },
- {
-  "run_id": 31,
-  "day": "2026-08-31",
-  "time": "11:31",
-  "slot": "lunch",
-  "spots": [
-   {
-    "spot": "Norte",
-    "rating": "VERY_POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.6,
-    "swell_p": 9,
-    "swell_dir": "NNW",
-    "wind_kts": 18,
-    "wind_gust": 21,
-    "wind_dir": "N",
-    "surfers": 0,
-    "people": null,
-    "note": "11:31 lunch run. Cam clear, full daylight, no glare. Tide near the 11:08 low so the reef shelf is half dry - large areas of exposed rock and drained pools across the whole inside. What swell there is breaks well outside as short weak crumbly lines over the shallow shelf, chopped by the 18g21kt N cross-shore; nothing stands up as a green wall. Scanned takeoff zone, both shoulders and the inside channel in all 3 detail frames and both crowd frames: no bodies, no boards, no paddling lines anywhere in the water. Confident 0 out - the reef is simply not surfable at this tide and size. One person walking on the dry rock shelf. Cam framed on the water, land count not applicable"
-   },
-   {
-    "spot": "Sul",
-    "rating": "VERY_POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.6,
-    "swell_p": 9,
-    "swell_dir": "NNW",
-    "wind_kts": 18,
-    "wind_gust": 21,
-    "wind_dir": "N",
-    "surfers": 0,
-    "people": null,
-    "note": "11:31 lunch run. Water fully readable, bright and legible edge to edge, no blowout. The bay is effectively flat: uniform wind ripple with only a thin wash breaking on the exposed rocks along the right-hand side, and reef showing through the shallows. No swell line stands up anywhere in the 3 detail frames or the 6 sheet frames. Scanned the open bay, the corner by the rocks and the shorebreak in every frame: nobody in the water. 0 out, and given how flat it is that is expected rather than a wasted lineup. Cam framed on the water, land count not applicable"
-   },
-   {
-    "spot": "Ribeira",
-    "rating": "FAIR",
-    "surf_min": 0.6,
-    "surf_max": 0.9,
-    "swell_h": 1.1,
-    "swell_p": 9,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 21,
-    "wind_dir": "N",
-    "surfers": 10,
-    "people": 12,
-    "note": "11:31 lunch run - CAM IS BACK UP after being 404/dead at the 09:10 sunrise run. Sunny, deep blue water, excellent visibility. Best spot by a distance: clean waist-high lines peeling right along the reef with an unbroken green face ahead of the foam in several frames, held up and groomed by the 18kt N wind blowing offshore here. Counted in the crowd crops (higher of the two frames): a cluster of roughly 6-7 sitting/paddling in the left third plus 3 further out towards the middle peak, so 10 in the water; a couple more ambiguous specks not counted. On land 2 people standing out on the rock shelf in the crowd crops, plus roughly 10 more on the sand and along the promenade railing in the contact sheet - about 12 total, approximate. 10 out is below the 16.7 average for this slot"
-   },
-   {
-    "spot": "Lizandro",
-    "rating": "POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.6,
-    "swell_p": 9,
-    "swell_dir": "NNW",
-    "wind_kts": 18,
-    "wind_gust": 21,
-    "wind_dir": "N",
-    "surfers": 0,
-    "people": 20,
-    "note": "11:31 lunch run, wide distant cam so land counts approximate. Cam clean and bright, no glare. Wave is closing out: a continuous wall of whitewater running the length of the beach and dumping straight onto the sand, wind-chopped by the 18g21kt N cross-shore, no bank holding any shape - this reads worse than the POOR rating and matches the VERY_POOR it drops to from 15:00. Opened the detail crop and scanned the whole waterline in all 3 frames plus both crowd frames: no boards and nobody sitting outside the whitewater. A few dark specks are standing in the shorebreak inside the lifeguard-flagged zone - bathers, not surfers - so 0 surfing rather than null. On land roughly 20: a scatter of sitting groups and two tents along the top of the sand, a few walking, plus a handful by the rocks at the far end"
    }
   ]
  }
