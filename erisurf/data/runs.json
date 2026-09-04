@@ -1,5 +1,12 @@
 [
  {
+  "run_id": 50,
+  "day": "2026-09-04",
+  "time": "17:16",
+  "slot": "sunset",
+  "spots": []
+ },
+ {
   "run_id": 49,
   "day": "2026-09-04",
   "time": "11:39",
@@ -1027,74 +1034,6 @@
     "surfers": 0,
     "people": 20,
     "note": "11:31 lunch run, wide distant cam so land counts approximate. Cam clean and bright, no glare. Wave is closing out: a continuous wall of whitewater running the length of the beach and dumping straight onto the sand, wind-chopped by the 18g21kt N cross-shore, no bank holding any shape - this reads worse than the POOR rating and matches the VERY_POOR it drops to from 15:00. Opened the detail crop and scanned the whole waterline in all 3 frames plus both crowd frames: no boards and nobody sitting outside the whitewater. A few dark specks are standing in the shorebreak inside the lifeguard-flagged zone - bathers, not surfers - so 0 surfing rather than null. On land roughly 20: a scatter of sitting groups and two tents along the top of the sand, a few walking, plus a handful by the rocks at the far end"
-   }
-  ]
- },
- {
-  "run_id": 30,
-  "day": "2026-08-31",
-  "time": "09:10",
-  "slot": "sunrise",
-  "spots": [
-   {
-    "spot": "Norte",
-    "rating": "POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.0,
-    "swell_p": 9,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 22,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": null
-   },
-   {
-    "spot": "Sul",
-    "rating": "POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.0,
-    "swell_p": 9,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 22,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": null
-   },
-   {
-    "spot": "Ribeira",
-    "rating": "FAIR",
-    "surf_min": 0.6,
-    "surf_max": 0.9,
-    "swell_h": 1.0,
-    "swell_p": 9,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 22,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": null
-   },
-   {
-    "spot": "Lizandro",
-    "rating": "POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.0,
-    "swell_p": 9,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 22,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": null
    }
   ]
  }
