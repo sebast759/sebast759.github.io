@@ -1,5 +1,88 @@
 [
  {
+  "run_id": 52,
+  "day": "2026-09-04",
+  "time": "18:38",
+  "slot": "sunset",
+  "spots": [
+   {
+    "spot": "Norte",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.8,
+    "swell_p": 8,
+    "swell_dir": "NW",
+    "wind_kts": 5,
+    "wind_gust": 5,
+    "wind_dir": "NE",
+    "surfers": null,
+    "people": 2,
+    "note": "detail and crowd crops both framed on the promenade this run, no water in them; sheet shows small shorebreak and 2 anglers on the sand"
+   },
+   {
+    "spot": "Sul",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.8,
+    "swell_p": 8,
+    "swell_dir": "NW",
+    "wind_kts": 5,
+    "wind_gust": 5,
+    "wind_dir": "NE",
+    "surfers": 0,
+    "people": null,
+    "note": "glassy and near-flat, only faint lines reaching the point; detail crop scanned in all 3 frames, water empty"
+   },
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.8,
+    "swell_p": 8,
+    "swell_dir": "NW",
+    "wind_kts": 5,
+    "wind_gust": 5,
+    "wind_dir": "NE",
+    "surfers": null,
+    "people": 6,
+    "note": "small clean lines, but the lineup sits in full low-sun glare and the detail/crowd crops are mis-framed on open water; ~6 on the sand and promenade"
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.8,
+    "swell_p": 8,
+    "swell_dir": "NW",
+    "wind_kts": 5,
+    "wind_gust": 5,
+    "wind_dir": "NE",
+    "surfers": 2,
+    "people": 8,
+    "note": "heavy backlit glare; 2 dark figures resolved in the shallows across the crowd frames, ~8 on the sand incl. a group by the flag - all approximate"
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.8,
+    "swell_p": 8,
+    "swell_dir": "NW",
+    "wind_kts": 5,
+    "wind_gust": 5,
+    "wind_dir": "NE",
+    "surfers": 2,
+    "people": 4,
+    "note": "best shape of the five - a clean peeling right on the reef; 2 resolved in the water in fading light, a floor not a full count, 4 watching from the ledge"
+   }
+  ]
+ },
+ {
   "run_id": 51,
   "day": "2026-09-04",
   "time": "17:28",
@@ -981,74 +1064,6 @@
     "surfers": null,
     "people": null,
     "note": null
-   }
-  ]
- },
- {
-  "run_id": 32,
-  "day": "2026-08-31",
-  "time": "15:32",
-  "slot": "afternoon",
-  "spots": [
-   {
-    "spot": "Norte",
-    "rating": "VERY_POOR",
-    "surf_min": 0.6,
-    "surf_max": 0.9,
-    "swell_h": 1.6,
-    "swell_p": 9,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": 0,
-    "people": null,
-    "note": "15:32 afternoon run. Cam clear, bright full daylight, water readable edge to edge. Surface is wind-torn by the 18g23kt N cross-shore - heavy texture everywhere, waves breaking well outside as short crumbling sections that never stand up as a green wall; the whitewater is patchy and sectiony rather than one long peeling line. Scanned takeoff zone, both shoulders and the inside in all 3 detail frames and both crowd frames: no bodies, no boards, no paddling lines. Confident 0 out. One person leaning on the promenade wall at the right edge of the frame, but the cam is framed on the water so land count not applicable"
-   },
-   {
-    "spot": "Sul",
-    "rating": "VERY_POOR",
-    "surf_min": 0.6,
-    "surf_max": 0.9,
-    "swell_h": 1.6,
-    "swell_p": 9,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": 0,
-    "people": null,
-    "note": "15:32 afternoon run. Water fully legible, no glare, no blowout. The bay is very weak: thin reform lines sliding in towards the rock point with almost no height and no face ahead of the foam, plus uniform wind ripple across the whole bay. Nothing stands up in any of the 3 detail frames or the 6 sheet frames. Scanned the open bay, the corner by the rocks and the shorebreak in every frame: nobody in the water. 0 out, and with this little wave that is expected rather than a wasted lineup. Cam framed on the water, land count not applicable"
-   },
-   {
-    "spot": "Ribeira",
-    "rating": "FAIR",
-    "surf_min": 0.6,
-    "surf_max": 0.9,
-    "swell_h": 1.6,
-    "swell_p": 9,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": 8,
-    "people": 25,
-    "note": "15:32 afternoon run - cam UP again (second good run in a row after the sunrise 404). Sunny, deep blue, good visibility. Still the only working spot: waist-high lines breaking along the reef with a green face ahead of the foam in several frames, held up by the 18g23kt N blowing offshore here, but distinctly bumpier than the 11:31 run - 23kt gusts are putting chatter on the faces. Count is approximate: a scattered line of roughly 8 dark specks sitting out the back on the outside line, consistent across the +0s and +12s sheet frames, plus 3-4 resolvable in the crowd crops inside that same zone (higher of the two frames). Heavy wind chop makes an exact count impossible so 8 is a floor-ish read, not a precise figure. On land roughly 25: about 6 along the promenade railing and 15-20 sitting or walking on the sand. 8 out is right on the 8.0 average for this slot"
-   },
-   {
-    "spot": "Lizandro",
-    "rating": "VERY_POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.6,
-    "swell_p": 9,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": 0,
-    "people": 30,
-    "note": "15:32 afternoon run, wide distant cam so all counts approximate. Cam clean and bright. Wave is closing out badly: a continuous wall of whitewater across the whole beach dumping straight onto the sand, wind-chopped by the 18g23kt N cross-shore, no bank holding any shape - matches the VERY_POOR rating. Opened the detail crop and scanned the whole waterline in all 3 frames plus both crowd frames: no boards, nobody sitting outside the whitewater. Two dark specks standing in the shorebreak shallows near the lifeguard flag are bathers, not surfers, so 0 surfing rather than null. On land roughly 30: scattered groups and tents along the sand, a beach-volleyball style cluster at the right by the promenade, a few walking"
    }
   ]
  }
