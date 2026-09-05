@@ -1,7 +1,13 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ericeira Surf - 2026-09-03 11:39</title><style>
+<title>Ericeira Surf - 2026-09-03 11:39</title>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="theme-color" media="(prefers-color-scheme:light)" content="#f6f7f9">
+<meta name="theme-color" media="(prefers-color-scheme:dark)" content="#0f1115">
+<style>
 :root{--bg:#f6f7f9;--panel:#fff;--ink:#111827;--muted:#6b7280;--line:#e5e7eb}
 @media(prefers-color-scheme:dark){:root:not([data-theme=light]){
   --bg:#0f1115;--panel:#171a21;--ink:#e8eaed;--muted:#9aa1ac;--line:#262b34}}
@@ -12,8 +18,13 @@ body{background:var(--bg);color:var(--ink);margin:0;padding:24px 18px 64px;
 a{color:inherit}
 h1{font-size:24px;margin:0 0 2px;letter-spacing:-.01em}
 .sub{color:var(--muted);margin:0 0 20px;font-size:14px}
-.nav{margin:0 0 22px;font-size:13px}
-.nav a{margin-right:14px;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+.nav{margin:0 0 22px;font-size:13px;display:flex;align-items:center;gap:14px}
+.nav a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+/* the surfer-statue mark doubles as the home button; rounded here rather than
+   baked into the file so it stays a small JPEG instead of an alpha PNG */
+.nav .brand{border-bottom:0;line-height:0;margin-right:2px}
+.nav .brand img{width:34px;height:34px;border-radius:50%;display:block;
+  border:1px solid var(--line)}
 .grid{display:grid;gap:10px;grid-template-columns:repeat(5,minmax(0,1fr))}
 @media(max-width:1000px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:640px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -56,7 +67,8 @@ figure{margin:0 0 14px}
 figure img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line);display:block}
 figcaption{color:var(--muted);font-size:12px;margin-top:5px}
 </style></head><body><div class="wrap">
-<div class="nav"><a href="../index.html">Latest</a>
+<div class="nav"><a class="brand" href="../index.html" aria-label="Ericeira Surf Log"><img
+ src="../logo.jpg" width="34" height="34" alt=""></a><a href="../index.html">Latest</a>
 <a href="../archive/index.html">Archive</a></div>
 <h1>2026-09-03 11:39</h1><p class='sub'>lunch slot &middot; run 45</p><p class="note">No report text archived for this run.</p><div class='grid'></div>
 </div></body></html>

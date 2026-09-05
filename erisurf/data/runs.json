@@ -1,5 +1,73 @@
 [
  {
+  "run_id": 56,
+  "day": "2026-09-05",
+  "time": "16:32",
+  "slot": "afternoon",
+  "spots": [
+   {
+    "spot": "Norte",
+    "rating": "POOR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.7,
+    "swell_p": 9,
+    "swell_dir": "NW",
+    "wind_kts": 7,
+    "wind_gust": 9,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": null
+   },
+   {
+    "spot": "Sul",
+    "rating": "POOR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.7,
+    "swell_p": 9,
+    "swell_dir": "NW",
+    "wind_kts": 7,
+    "wind_gust": 9,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": null
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.7,
+    "swell_p": 9,
+    "swell_dir": "NW",
+    "wind_kts": 7,
+    "wind_gust": 9,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": null
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.7,
+    "swell_p": 9,
+    "swell_dir": "WNW",
+    "wind_kts": 7,
+    "wind_gust": 9,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": null
+   }
+  ]
+ },
+ {
   "run_id": 55,
   "day": "2026-09-05",
   "time": "15:39",
@@ -1029,74 +1097,6 @@
    },
    {
     "spot": "Pedra",
-    "rating": "VERY_POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.7,
-    "swell_p": 10,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": null
-   }
-  ]
- },
- {
-  "run_id": 36,
-  "day": "2026-08-31",
-  "time": "18:03",
-  "slot": "sunset",
-  "spots": [
-   {
-    "spot": "Norte",
-    "rating": "VERY_POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.7,
-    "swell_p": 10,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": null
-   },
-   {
-    "spot": "Sul",
-    "rating": "VERY_POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.7,
-    "swell_p": 10,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": null
-   },
-   {
-    "spot": "Ribeira",
-    "rating": "FAIR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.7,
-    "swell_p": 10,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": null
-   },
-   {
-    "spot": "Lizandro",
     "rating": "VERY_POOR",
     "surf_min": 0.6,
     "surf_max": 1.1,
