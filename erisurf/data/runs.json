@@ -1,5 +1,88 @@
 [
  {
+  "run_id": 53,
+  "day": "2026-09-05",
+  "time": "07:38",
+  "slot": "sunrise",
+  "spots": [
+   {
+    "spot": "Norte",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.6,
+    "swell_p": 8,
+    "swell_dir": "WNW",
+    "wind_kts": 5,
+    "wind_gust": 5,
+    "wind_dir": "NE",
+    "surfers": null,
+    "people": null,
+    "note": "cam zoomed hard onto the sea wall and promenade - only a sliver of shorebreak in frame, no lineup visible, so nothing countable"
+   },
+   {
+    "spot": "Sul",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.6,
+    "swell_p": 8,
+    "swell_dir": "WNW",
+    "wind_kts": 5,
+    "wind_gust": 5,
+    "wind_dir": "NE",
+    "surfers": null,
+    "people": null,
+    "note": "cam framed across the bay to the headland; water glassy and empty but the beach/takeoff zone is out of shot"
+   },
+   {
+    "spot": "Ribeira",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.6,
+    "swell_p": 8,
+    "swell_dir": "WNW",
+    "wind_kts": 5,
+    "wind_gust": 5,
+    "wind_dir": "NE",
+    "surfers": null,
+    "people": null,
+    "note": "HLS stream 404 this run - no images, no cam read"
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.6,
+    "swell_p": 8,
+    "swell_dir": "WNW",
+    "wind_kts": 5,
+    "wind_gust": 5,
+    "wind_dir": "NE",
+    "surfers": 10,
+    "people": 1,
+    "note": "knee-to-waist lines peeling right along the beach, clean and glassy in the light NE; ~10 out (approx), sand essentially empty"
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.6,
+    "swell_p": 8,
+    "swell_dir": "WNW",
+    "wind_kts": 5,
+    "wind_gust": 5,
+    "wind_dir": "NE",
+    "surfers": 0,
+    "people": null,
+    "note": "small orderly lines off the ledge, checked takeoff zone and channel in both crowd frames and all three detail frames - nobody out"
+   }
+  ]
+ },
+ {
   "run_id": 52,
   "day": "2026-09-04",
   "time": "18:38",
@@ -935,74 +1018,6 @@
   "run_id": 34,
   "day": "2026-08-31",
   "time": "17:53",
-  "slot": "sunset",
-  "spots": [
-   {
-    "spot": "Norte",
-    "rating": "VERY_POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.7,
-    "swell_p": 10,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": null
-   },
-   {
-    "spot": "Sul",
-    "rating": "VERY_POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.7,
-    "swell_p": 10,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": null
-   },
-   {
-    "spot": "Ribeira",
-    "rating": "FAIR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.7,
-    "swell_p": 10,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": null
-   },
-   {
-    "spot": "Lizandro",
-    "rating": "VERY_POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.7,
-    "swell_p": 10,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": null
-   }
-  ]
- },
- {
-  "run_id": 33,
-  "day": "2026-08-31",
-  "time": "17:35",
   "slot": "sunset",
   "spots": [
    {
