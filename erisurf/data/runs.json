@@ -1,5 +1,88 @@
 [
  {
+  "run_id": 54,
+  "day": "2026-09-05",
+  "time": "11:39",
+  "slot": "lunch",
+  "spots": [
+   {
+    "spot": "Norte",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.6,
+    "swell_p": 8,
+    "swell_dir": "WNW",
+    "wind_kts": 6,
+    "wind_gust": 6,
+    "wind_dir": "NW",
+    "surfers": null,
+    "people": null,
+    "note": "cam zoomed onto the sea wall and promenade again - only a sliver of shorebreak at the top of frame, no lineup visible, nothing countable"
+   },
+   {
+    "spot": "Sul",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.6,
+    "swell_p": 8,
+    "swell_dir": "WNW",
+    "wind_kts": 6,
+    "wind_gust": 6,
+    "wind_dir": "NW",
+    "surfers": 0,
+    "people": null,
+    "note": "glassy clear water off the point, only splash on the rocks; checked all three detail frames and both crowd frames - nobody in the visible water"
+   },
+   {
+    "spot": "Ribeira",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.6,
+    "swell_p": 8,
+    "swell_dir": "WNW",
+    "wind_kts": 6,
+    "wind_gust": 6,
+    "wind_dir": "NW",
+    "surfers": 6,
+    "people": 30,
+    "note": "knee-high crumbly lines at the point, glassy; crowd crop framed empty outside water so ~6 out counted off the contact sheet (approx), ~30 on the sand"
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.6,
+    "swell_p": 8,
+    "swell_dir": "WNW",
+    "wind_kts": 6,
+    "wind_gust": 6,
+    "wind_dir": "NW",
+    "surfers": 8,
+    "people": 65,
+    "note": "ankle-to-knee shorebreak, packed summer beach; ~8 in the water (approx, mixes surfers with waders), ~65 on the sand"
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.6,
+    "swell_p": 8,
+    "swell_dir": "WNW",
+    "wind_kts": 6,
+    "wind_gust": 6,
+    "wind_dir": "NW",
+    "surfers": 5,
+    "people": 3,
+    "note": "the one real wave: clean waist-high green wall peeling off the ledge with a shoulder, glassy; ~5 out, 3 walking the clifftop"
+   }
+  ]
+ },
+ {
   "run_id": 53,
   "day": "2026-09-05",
   "time": "07:38",
@@ -950,74 +1033,6 @@
   "run_id": 35,
   "day": "2026-08-31",
   "time": "17:55",
-  "slot": "sunset",
-  "spots": [
-   {
-    "spot": "Norte",
-    "rating": "VERY_POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.7,
-    "swell_p": 10,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": null
-   },
-   {
-    "spot": "Sul",
-    "rating": "VERY_POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.7,
-    "swell_p": 10,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": null
-   },
-   {
-    "spot": "Ribeira",
-    "rating": "FAIR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.7,
-    "swell_p": 10,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": null
-   },
-   {
-    "spot": "Lizandro",
-    "rating": "VERY_POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.7,
-    "swell_p": 10,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": null
-   }
-  ]
- },
- {
-  "run_id": 34,
-  "day": "2026-08-31",
-  "time": "17:53",
   "slot": "sunset",
   "spots": [
    {
