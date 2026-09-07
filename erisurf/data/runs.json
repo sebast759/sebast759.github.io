@@ -1,5 +1,88 @@
 [
  {
+  "run_id": 61,
+  "day": "2026-09-07",
+  "time": "14:13",
+  "slot": "afternoon",
+  "spots": [
+   {
+    "spot": "Norte",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.8,
+    "swell_h": 1.6,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 16,
+    "wind_gust": 23,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": "cam still framed on the promenade and sea wall, lineup entirely out of shot; nothing countable, not an empty lineup"
+   },
+   {
+    "spot": "Sul",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.8,
+    "swell_h": 1.6,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 16,
+    "wind_gust": 23,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": null,
+    "note": "swell rolling through mostly unbroken, only breaking where it wraps into the point rocks; detail crop clear and readable, nobody out"
+   },
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.8,
+    "swell_h": 1.6,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 16,
+    "wind_gust": 23,
+    "wind_dir": "N",
+    "surfers": 7,
+    "people": 25,
+    "note": "clean waist-to-chest lines peeling down the reef, N wind offshore holding them up; 7 in the pack on the busier crowd frame, ~25 on the sand"
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.5,
+    "swell_h": 1.6,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 16,
+    "wind_gust": 23,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": 19,
+    "note": "closeouts dumping in wide bands across the whole beach, red flag flying; detail crop readable and empty, ~19 on the sand"
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.5,
+    "swell_h": 1.6,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 16,
+    "wind_gust": 23,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": null,
+    "note": "washed out, one broad band of whitewater over the bank with no rideable shoulder; nobody out, cam sees cliff not beach"
+   }
+  ]
+ },
+ {
   "run_id": 60,
   "day": "2026-09-07",
   "time": "11:39",
@@ -1026,89 +1109,6 @@
     "surfers": 3,
     "people": null,
     "note": "18:39 sunset. Best-looking water of the five: small clean rights peeling off the point with a real shoulder, groomed not chopped. 3 sitting outside on the +37s crowd frame"
-   }
-  ]
- },
- {
-  "run_id": 41,
-  "day": "2026-09-01",
-  "time": "15:39",
-  "slot": "afternoon",
-  "spots": [
-   {
-    "spot": "Norte",
-    "rating": "POOR",
-    "surf_min": 0.9,
-    "surf_max": 1.2,
-    "swell_h": 1.6,
-    "swell_p": 9,
-    "swell_dir": "NW",
-    "wind_kts": 16,
-    "wind_gust": 20,
-    "wind_dir": "N",
-    "surfers": 0,
-    "people": null,
-    "note": "15:39 afternoon. Wind-torn, disorganised whitewater over the reef, no held green face. Detail + crowd + all 6 sheet frames empty. Cam framed on water, land n/a"
-   },
-   {
-    "spot": "Sul",
-    "rating": "POOR",
-    "surf_min": 0.9,
-    "surf_max": 1.2,
-    "swell_h": 1.6,
-    "swell_p": 9,
-    "swell_dir": "NW",
-    "wind_kts": 16,
-    "wind_gust": 20,
-    "wind_dir": "N",
-    "surfers": 0,
-    "people": null,
-    "note": "15:39 afternoon. Weak crumbly reforms fizzling inside, nothing rideable. Nobody in any detail or crowd frame. Cam framed on water, land n/a"
-   },
-   {
-    "spot": "Ribeira",
-    "rating": "FAIR",
-    "surf_min": 0.6,
-    "surf_max": 0.9,
-    "swell_h": 1.6,
-    "swell_p": 9,
-    "swell_dir": "NW",
-    "wind_kts": 16,
-    "wind_gust": 20,
-    "wind_dir": "N",
-    "surfers": 8,
-    "people": 50,
-    "note": "15:39 afternoon. Small waist-high lines still peeling along the reef, chopped by the 16g20kt N cross-shore; 8 counted on the higher crowd frame, ~50 on the sand and promenade"
-   },
-   {
-    "spot": "Lizandro",
-    "rating": "VERY_POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.6,
-    "swell_p": 9,
-    "swell_dir": "NW",
-    "wind_kts": 16,
-    "wind_gust": 20,
-    "wind_dir": "N",
-    "surfers": 3,
-    "people": 25,
-    "note": "15:39 afternoon. Long closeout shorebreak, blown out. ~3 specks in the water on the higher frame (likely bathers, not surfers), ~25 on the sand. Wide cam, counts approximate"
-   },
-   {
-    "spot": "Pedra",
-    "rating": "POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.6,
-    "swell_p": 9,
-    "swell_dir": "NW",
-    "wind_kts": 16,
-    "wind_gust": 20,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": null
    }
   ]
  }
