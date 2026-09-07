@@ -1,5 +1,88 @@
 [
  {
+  "run_id": 64,
+  "day": "2026-09-07",
+  "time": "15:39",
+  "slot": "afternoon",
+  "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.5,
+    "swell_h": 1.6,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 15,
+    "wind_gust": 22,
+    "wind_dir": "N",
+    "surfers": 3,
+    "people": 35,
+    "note": "waist-to-chest lines still peeling down the reef but bumpy and wind-textured; one rider confirmed on a green face plus two sitting outside, ~35 on the sand and promenade"
+   },
+   {
+    "spot": "Norte",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.8,
+    "swell_h": 1.6,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 15,
+    "wind_gust": 22,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": "cam still framed on the promenade and sea wall, only a sliver of shorebreak in the corner; nothing countable, dead cam not an empty lineup"
+   },
+   {
+    "spot": "Sul",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.5,
+    "swell_h": 1.5,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 16,
+    "wind_gust": 23,
+    "wind_dir": "N",
+    "surfers": 7,
+    "people": null,
+    "note": "swell wrapping in and breaking wide, mostly whitewater across the inside; 7 resolvable in the water at +37s, may include bathers as they sit inside and none seen riding"
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.5,
+    "swell_h": 1.6,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 15,
+    "wind_gust": 22,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": null,
+    "note": "whitewater washing the length of the reef, heavy wind chop on the surface, no green face; all three detail frames scanned and empty"
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR",
+    "surf_min": 0.9,
+    "surf_max": 1.4,
+    "swell_h": 1.5,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 16,
+    "wind_gust": 23,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": 30,
+    "note": "one continuous closeout wall dumping the length of the beach, red flag flying; water readable and empty, roughly 30 on the sand"
+   }
+  ]
+ },
+ {
   "run_id": 63,
   "day": "2026-09-07",
   "time": "14:34",
@@ -1088,13 +1171,6 @@
   "day": "2026-09-03",
   "time": "11:39",
   "slot": "lunch",
-  "spots": []
- },
- {
-  "run_id": 44,
-  "day": "2026-09-03",
-  "time": "07:39",
-  "slot": "sunrise",
   "spots": []
  }
 ]
