@@ -1,5 +1,73 @@
 [
  {
+  "run_id": 63,
+  "day": "2026-09-07",
+  "time": "14:34",
+  "slot": "afternoon",
+  "spots": [
+   {
+    "spot": "Norte",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.8,
+    "swell_h": 1.6,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 15,
+    "wind_gust": 22,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": null
+   },
+   {
+    "spot": "Sul",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.8,
+    "swell_h": 1.6,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 15,
+    "wind_gust": 22,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": null
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.5,
+    "swell_h": 1.6,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 15,
+    "wind_gust": 22,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": null
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.5,
+    "swell_h": 1.6,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 15,
+    "wind_gust": 22,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": null
+   }
+  ]
+ },
+ {
   "run_id": 62,
   "day": "2026-09-07",
   "time": "14:26",
@@ -1028,88 +1096,5 @@
   "time": "07:39",
   "slot": "sunrise",
   "spots": []
- },
- {
-  "run_id": 43,
-  "day": "2026-09-02",
-  "time": "19:22",
-  "slot": "sunset",
-  "spots": [
-   {
-    "spot": "Ribeira",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.3,
-    "surf_max": 0.6,
-    "swell_h": 1.1,
-    "swell_p": 8,
-    "swell_dir": "NNW",
-    "wind_kts": 14,
-    "wind_gust": 20,
-    "wind_dir": "N",
-    "surfers": 0,
-    "people": 6,
-    "note": "19:22 sunset. Outside near flat, only a thin knee-high shorebreak line; water in the crowd crop is readable and empty. ~6 on the promenade and car park"
-   },
-   {
-    "spot": "Norte",
-    "rating": "POOR",
-    "surf_min": 0.6,
-    "surf_max": 0.9,
-    "swell_h": 1.0,
-    "swell_p": 6,
-    "swell_dir": "NNW",
-    "wind_kts": 14,
-    "wind_gust": 20,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": "19:22 sunset. Cam framed on open water with the sun down the lens: wind chop and one distant whitecap, the break itself barely in shot. Not readable - null, not zero"
-   },
-   {
-    "spot": "Sul",
-    "rating": "POOR",
-    "surf_min": 0.6,
-    "surf_max": 0.9,
-    "swell_h": 1.0,
-    "swell_p": 6,
-    "swell_dir": "NNW",
-    "wind_kts": 14,
-    "wind_gust": 20,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": "19:22 sunset. Glare column blanks the left half of the frame and the rest is near flat, only small reforms by the point - water not readable, surfers null not zero"
-   },
-   {
-    "spot": "Pedra",
-    "rating": "POOR",
-    "surf_min": 0.6,
-    "surf_max": 0.9,
-    "swell_h": 1.1,
-    "swell_p": 8,
-    "swell_dir": "NNW",
-    "wind_kts": 14,
-    "wind_gust": 20,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": "19:22 sunset. Cleanest of the five: small lines wrapping onto the ledge with a short green shoulder. One possible figure in the +37s crowd frame, not resolvable - null, not zero"
-   },
-   {
-    "spot": "Lizandro",
-    "rating": "POOR",
-    "surf_min": 0.3,
-    "surf_max": 0.6,
-    "swell_h": 1.0,
-    "swell_p": 6,
-    "swell_dir": "NNW",
-    "wind_kts": 14,
-    "wind_gust": 20,
-    "wind_dir": "N",
-    "surfers": 2,
-    "people": 10,
-    "note": "19:22 sunset. Knee-high crumbly shorebreak across the bank; ~2 in the water past the foam and ~10 on the sand in the crowd crops, both approximate at this range"
-   }
-  ]
  }
 ]
