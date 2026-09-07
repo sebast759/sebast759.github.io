@@ -1,5 +1,88 @@
 [
  {
+  "run_id": 65,
+  "day": "2026-09-07",
+  "time": "18:39",
+  "slot": "sunset",
+  "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR",
+    "surf_min": 0.9,
+    "surf_max": 1.4,
+    "swell_h": 1.4,
+    "swell_p": 11,
+    "swell_dir": "WNW",
+    "wind_kts": 16,
+    "wind_gust": 24,
+    "wind_dir": "N",
+    "surfers": 22,
+    "people": null,
+    "note": "clean chest-high walls peeling down the reef with real green shoulders, offshore N holding them up; 22 resolvable in the crowd crop at +0s, busiest run of the day"
+   },
+   {
+    "spot": "Norte",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.5,
+    "swell_h": 1.4,
+    "swell_p": 11,
+    "swell_dir": "WNW",
+    "wind_kts": 16,
+    "wind_gust": 24,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": "cam still pointed at the promenade and sea wall, no lineup in frame at all; nothing countable, dead cam not an empty lineup"
+   },
+   {
+    "spot": "Sul",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.5,
+    "swell_h": 1.4,
+    "swell_p": 11,
+    "swell_dir": "WNW",
+    "wind_kts": 16,
+    "wind_gust": 24,
+    "wind_dir": "N",
+    "surfers": 6,
+    "people": null,
+    "note": "swell wrapping in and breaking wide, crumbly reforming sections rather than clean walls; 6 resolvable in the water at +25s in the detail crop"
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR",
+    "surf_min": 0.9,
+    "surf_max": 1.4,
+    "swell_h": 1.4,
+    "swell_p": 11,
+    "swell_dir": "WNW",
+    "wind_kts": 16,
+    "wind_gust": 24,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": null,
+    "note": "low tide reef exposed, whitewater washing straight over it with no green face; all three detail frames plus both crowd frames scanned and empty"
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR",
+    "surf_min": 0.9,
+    "surf_max": 1.2,
+    "swell_h": 1.4,
+    "swell_p": 11,
+    "swell_dir": "WNW",
+    "wind_kts": 16,
+    "wind_gust": 24,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": 3,
+    "note": "messy cross-shore whitewater dumping onto the sand, no shape; water readable and empty, beach near deserted with the lifeguard packing up"
+   }
+  ]
+ },
+ {
   "run_id": 64,
   "day": "2026-09-07",
   "time": "15:39",
@@ -1164,13 +1247,6 @@
   "day": "2026-09-03",
   "time": "15:39",
   "slot": "afternoon",
-  "spots": []
- },
- {
-  "run_id": 45,
-  "day": "2026-09-03",
-  "time": "11:39",
-  "slot": "lunch",
   "spots": []
  }
 ]
