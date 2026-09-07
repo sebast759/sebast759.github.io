@@ -1,5 +1,88 @@
 [
  {
+  "run_id": 62,
+  "day": "2026-09-07",
+  "time": "14:26",
+  "slot": "afternoon",
+  "spots": [
+   {
+    "spot": "Norte",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.8,
+    "swell_h": 1.6,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 16,
+    "wind_gust": 23,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": null
+   },
+   {
+    "spot": "Sul",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.8,
+    "swell_h": 1.6,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 16,
+    "wind_gust": 23,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": null
+   },
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.8,
+    "swell_h": 1.6,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 16,
+    "wind_gust": 23,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": null
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.5,
+    "swell_h": 1.6,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 16,
+    "wind_gust": 23,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": null
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.5,
+    "swell_h": 1.6,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 16,
+    "wind_gust": 23,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": null
+   }
+  ]
+ },
+ {
   "run_id": 61,
   "day": "2026-09-07",
   "time": "14:13",
@@ -1026,89 +1109,6 @@
     "surfers": null,
     "people": null,
     "note": "19:22 sunset. Cleanest of the five: small lines wrapping onto the ledge with a short green shoulder. One possible figure in the +37s crowd frame, not resolvable - null, not zero"
-   }
-  ]
- },
- {
-  "run_id": 42,
-  "day": "2026-09-01",
-  "time": "18:39",
-  "slot": "sunset",
-  "spots": [
-   {
-    "spot": "Norte",
-    "rating": "VERY_POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.6,
-    "swell_p": 9,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": 0,
-    "people": null,
-    "note": "18:39 sunset. Crumbly wind-chopped reforms over the bank, no held green face. Detail, crowd and all 6 sheet frames empty; one figure in the shorebreak, not surfing. Cam on water, land n/a"
-   },
-   {
-    "spot": "Sul",
-    "rating": "VERY_POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.6,
-    "swell_p": 9,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": 0,
-    "people": null,
-    "note": "18:39 sunset. Cam looks across the bay to the point: only wind texture, nothing breaking or rideable in frame. Nobody in any frame. Cam on water, land n/a"
-   },
-   {
-    "spot": "Ribeira",
-    "rating": "FAIR",
-    "surf_min": 0.6,
-    "surf_max": 0.9,
-    "swell_h": 1.6,
-    "swell_p": 9,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": 2,
-    "people": 10,
-    "note": "18:39 sunset. Waist-high lines still peeling along the reef, offshore N holding them up; 2 in the crowd crops, ~10 on the sand and promenade. Low sun glare on the outside"
-   },
-   {
-    "spot": "Lizandro",
-    "rating": "VERY_POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.6,
-    "swell_p": 9,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": 12,
-    "note": "18:39 sunset. Messy crumbling shorebreak across the bank, cam shooting straight into the low sun so the water is not readable - surfers null, not zero. ~12 on the sand (approx)"
-   },
-   {
-    "spot": "Pedra",
-    "rating": "VERY_POOR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.6,
-    "swell_p": 9,
-    "swell_dir": "NW",
-    "wind_kts": 18,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": 3,
-    "people": null,
-    "note": "18:39 sunset. Best-looking water of the five: small clean rights peeling off the point with a real shoulder, groomed not chopped. 3 sitting outside on the +37s crowd frame"
    }
   ]
  }
