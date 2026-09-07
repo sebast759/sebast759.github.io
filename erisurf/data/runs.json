@@ -6,6 +6,21 @@
   "slot": "afternoon",
   "spots": [
    {
+    "spot": "Ribeira",
+    "rating": "FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.8,
+    "swell_h": 1.6,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 16,
+    "wind_gust": 23,
+    "wind_dir": "N",
+    "surfers": 5,
+    "people": null,
+    "note": "clean lines peeling down the reef, N wind offshore holding them up; 5 resolvable in the water across both crowd frames, crop does not reach the sand so no land count"
+   },
+   {
     "spot": "Norte",
     "rating": "POOR_TO_FAIR",
     "surf_min": 1.2,
@@ -18,7 +33,7 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": null
+    "note": "cam still zoomed onto the promenade and sea wall - not one pixel of water in frame; nothing countable, this is a dead cam not an empty lineup"
    },
    {
     "spot": "Sul",
@@ -31,39 +46,9 @@
     "wind_kts": 16,
     "wind_gust": 23,
     "wind_dir": "N",
-    "surfers": null,
+    "surfers": 0,
     "people": null,
-    "note": null
-   },
-   {
-    "spot": "Ribeira",
-    "rating": "FAIR",
-    "surf_min": 1.2,
-    "surf_max": 1.8,
-    "swell_h": 1.6,
-    "swell_p": 12,
-    "swell_dir": "WNW",
-    "wind_kts": 16,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": null
-   },
-   {
-    "spot": "Lizandro",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 1.2,
-    "surf_max": 1.5,
-    "swell_h": 1.6,
-    "swell_p": 12,
-    "swell_dir": "WNW",
-    "wind_kts": 16,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": null
+    "note": "swell passing through mostly unbroken, only breaking where it wraps into the point rocks; all three detail frames clear and empty"
    },
    {
     "spot": "Pedra",
@@ -76,9 +61,24 @@
     "wind_kts": 16,
     "wind_gust": 23,
     "wind_dir": "N",
-    "surfers": null,
+    "surfers": 2,
     "people": null,
-    "note": null
+    "note": "long white closeout down the reef; two small figures sitting outside the break at +37s, approximate - they are at the limit of what this cam resolves"
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.5,
+    "swell_h": 1.6,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 16,
+    "wind_gust": 23,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": 22,
+    "note": "one continuous closeout band dumping the length of the beach, red flag flying; water readable and empty, roughly 22 on the sand"
    }
   ]
  },
@@ -88,6 +88,21 @@
   "time": "14:13",
   "slot": "afternoon",
   "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.8,
+    "swell_h": 1.6,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 16,
+    "wind_gust": 23,
+    "wind_dir": "N",
+    "surfers": 7,
+    "people": 25,
+    "note": "clean waist-to-chest lines peeling down the reef, N wind offshore holding them up; 7 in the pack on the busier crowd frame, ~25 on the sand"
+   },
    {
     "spot": "Norte",
     "rating": "POOR_TO_FAIR",
@@ -119,19 +134,19 @@
     "note": "swell rolling through mostly unbroken, only breaking where it wraps into the point rocks; detail crop clear and readable, nobody out"
    },
    {
-    "spot": "Ribeira",
-    "rating": "FAIR",
+    "spot": "Pedra",
+    "rating": "POOR_TO_FAIR",
     "surf_min": 1.2,
-    "surf_max": 1.8,
+    "surf_max": 1.5,
     "swell_h": 1.6,
     "swell_p": 12,
     "swell_dir": "WNW",
     "wind_kts": 16,
     "wind_gust": 23,
     "wind_dir": "N",
-    "surfers": 7,
-    "people": 25,
-    "note": "clean waist-to-chest lines peeling down the reef, N wind offshore holding them up; 7 in the pack on the busier crowd frame, ~25 on the sand"
+    "surfers": 0,
+    "people": null,
+    "note": "washed out, one broad band of whitewater over the bank with no rideable shoulder; nobody out, cam sees cliff not beach"
    },
    {
     "spot": "Lizandro",
@@ -147,21 +162,6 @@
     "surfers": 0,
     "people": 19,
     "note": "closeouts dumping in wide bands across the whole beach, red flag flying; detail crop readable and empty, ~19 on the sand"
-   },
-   {
-    "spot": "Pedra",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 1.2,
-    "surf_max": 1.5,
-    "swell_h": 1.6,
-    "swell_p": 12,
-    "swell_dir": "WNW",
-    "wind_kts": 16,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": 0,
-    "people": null,
-    "note": "washed out, one broad band of whitewater over the bank with no rideable shoulder; nobody out, cam sees cliff not beach"
    }
   ]
  },
@@ -171,6 +171,21 @@
   "time": "11:39",
   "slot": "lunch",
   "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR_TO_GOOD",
+    "surf_min": 1.2,
+    "surf_max": 1.8,
+    "swell_h": 1.8,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 15,
+    "wind_gust": 21,
+    "wind_dir": "N",
+    "surfers": 18,
+    "people": 30,
+    "note": "clean chest-high lines peeling along the reef, offshore N holding them up; ~18 in the pack across both crowd frames, ~30 on the sand and promenade"
+   },
    {
     "spot": "Norte",
     "rating": "POOR_TO_FAIR",
@@ -202,19 +217,19 @@
     "note": "swell mostly passing through unbroken, weak crumble wrapping into the point rocks; water clear and readable in the detail crop, nobody out"
    },
    {
-    "spot": "Ribeira",
-    "rating": "FAIR_TO_GOOD",
+    "spot": "Pedra",
+    "rating": "POOR_TO_FAIR",
     "surf_min": 1.2,
-    "surf_max": 1.8,
+    "surf_max": 1.5,
     "swell_h": 1.8,
     "swell_p": 12,
     "swell_dir": "WNW",
     "wind_kts": 15,
     "wind_gust": 21,
     "wind_dir": "N",
-    "surfers": 18,
-    "people": 30,
-    "note": "clean chest-high lines peeling along the reef, offshore N holding them up; ~18 in the pack across both crowd frames, ~30 on the sand and promenade"
+    "surfers": 0,
+    "people": null,
+    "note": "one long white closeout down the reef, only a short green shoulder at the far end; nobody out, cam sees cliff not beach"
    },
    {
     "spot": "Lizandro",
@@ -230,21 +245,6 @@
     "surfers": 0,
     "people": 8,
     "note": "closed out, wide bands of foam across the whole beach, no green face; detail crop readable and empty, ~8 on the sand"
-   },
-   {
-    "spot": "Pedra",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 1.2,
-    "surf_max": 1.5,
-    "swell_h": 1.8,
-    "swell_p": 12,
-    "swell_dir": "WNW",
-    "wind_kts": 15,
-    "wind_gust": 21,
-    "wind_dir": "N",
-    "surfers": 0,
-    "people": null,
-    "note": "one long white closeout down the reef, only a short green shoulder at the far end; nobody out, cam sees cliff not beach"
    }
   ]
  },
@@ -254,6 +254,21 @@
   "time": "10:32",
   "slot": "lunch",
   "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR_TO_GOOD",
+    "surf_min": 1.2,
+    "surf_max": 1.8,
+    "swell_h": 1.5,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 15,
+    "wind_gust": 22,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": null
+   },
    {
     "spot": "Norte",
     "rating": "POOR_TO_FAIR",
@@ -285,10 +300,10 @@
     "note": null
    },
    {
-    "spot": "Ribeira",
-    "rating": "FAIR_TO_GOOD",
+    "spot": "Pedra",
+    "rating": "POOR_TO_FAIR",
     "surf_min": 1.2,
-    "surf_max": 1.8,
+    "surf_max": 1.5,
     "swell_h": 1.5,
     "swell_p": 12,
     "swell_dir": "WNW",
@@ -313,21 +328,6 @@
     "surfers": null,
     "people": null,
     "note": null
-   },
-   {
-    "spot": "Pedra",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 1.2,
-    "surf_max": 1.5,
-    "swell_h": 1.5,
-    "swell_p": 12,
-    "swell_dir": "WNW",
-    "wind_kts": 15,
-    "wind_gust": 22,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": null
    }
   ]
  },
@@ -337,6 +337,21 @@
   "time": "10:18",
   "slot": "lunch",
   "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR_TO_GOOD",
+    "surf_min": 1.2,
+    "surf_max": 1.8,
+    "swell_h": 1.5,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 15,
+    "wind_gust": 23,
+    "wind_dir": "N",
+    "surfers": 15,
+    "people": 14,
+    "note": "long clean lines peeling along the reef with offshore spray off the lip, best of the five; ~15 out in the pack, ~14 on the sand and promenade"
+   },
    {
     "spot": "Norte",
     "rating": "POOR_TO_FAIR",
@@ -368,19 +383,19 @@
     "note": "swell lines mostly passing through unbroken, only wrapping into the rocks by the point, wind texture on the surface; detail and crowd frames both empty"
    },
    {
-    "spot": "Ribeira",
-    "rating": "FAIR_TO_GOOD",
+    "spot": "Pedra",
+    "rating": "POOR_TO_FAIR",
     "surf_min": 1.2,
-    "surf_max": 1.8,
+    "surf_max": 1.5,
     "swell_h": 1.5,
     "swell_p": 12,
     "swell_dir": "WNW",
     "wind_kts": 15,
     "wind_gust": 23,
     "wind_dir": "N",
-    "surfers": 15,
-    "people": 14,
-    "note": "long clean lines peeling along the reef with offshore spray off the lip, best of the five; ~15 out in the pack, ~14 on the sand and promenade"
+    "surfers": 0,
+    "people": 3,
+    "note": "long white closeout down the reef, wind chop, no shape; nobody out, ~3 walking the cliff path"
    },
    {
     "spot": "Lizandro",
@@ -396,21 +411,6 @@
     "surfers": 0,
     "people": 3,
     "note": "closed-out shorebreak dumping straight onto the sand, wide bands of foam; water readable and empty in both crops, ~3 on the beach"
-   },
-   {
-    "spot": "Pedra",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 1.2,
-    "surf_max": 1.5,
-    "swell_h": 1.5,
-    "swell_p": 12,
-    "swell_dir": "WNW",
-    "wind_kts": 15,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": 0,
-    "people": 3,
-    "note": "long white closeout down the reef, wind chop, no shape; nobody out, ~3 walking the cliff path"
    }
   ]
  },
@@ -420,6 +420,21 @@
   "time": "22:30",
   "slot": "sunset",
   "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 0.9,
+    "swell_p": 14,
+    "swell_dir": "NW",
+    "wind_kts": 9,
+    "wind_gust": 12,
+    "wind_dir": "NNE",
+    "surfers": null,
+    "people": null,
+    "note": null
+   },
    {
     "spot": "Norte",
     "rating": "POOR",
@@ -451,10 +466,10 @@
     "note": null
    },
    {
-    "spot": "Ribeira",
-    "rating": "FAIR",
+    "spot": "Pedra",
+    "rating": "POOR_TO_FAIR",
     "surf_min": 0.6,
-    "surf_max": 0.9,
+    "surf_max": 1.1,
     "swell_h": 0.9,
     "swell_p": 14,
     "swell_dir": "NW",
@@ -470,21 +485,6 @@
     "rating": "POOR",
     "surf_min": 0.6,
     "surf_max": 0.9,
-    "swell_h": 0.9,
-    "swell_p": 14,
-    "swell_dir": "NW",
-    "wind_kts": 9,
-    "wind_gust": 12,
-    "wind_dir": "NNE",
-    "surfers": null,
-    "people": null,
-    "note": null
-   },
-   {
-    "spot": "Pedra",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
     "swell_h": 0.9,
     "swell_p": 14,
     "swell_dir": "NW",
@@ -534,13 +534,13 @@
     "note": null
    },
    {
-    "spot": "Lizandro",
+    "spot": "Pedra",
     "rating": "POOR",
     "surf_min": 0.3,
     "surf_max": 0.6,
     "swell_h": 0.7,
     "swell_p": 9,
-    "swell_dir": "NW",
+    "swell_dir": "WNW",
     "wind_kts": 7,
     "wind_gust": 9,
     "wind_dir": "N",
@@ -549,13 +549,13 @@
     "note": null
    },
    {
-    "spot": "Pedra",
+    "spot": "Lizandro",
     "rating": "POOR",
     "surf_min": 0.3,
     "surf_max": 0.6,
     "swell_h": 0.7,
     "swell_p": 9,
-    "swell_dir": "WNW",
+    "swell_dir": "NW",
     "wind_kts": 7,
     "wind_gust": 9,
     "wind_dir": "N",
@@ -571,6 +571,21 @@
   "time": "15:39",
   "slot": "afternoon",
   "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.6,
+    "swell_p": 9,
+    "swell_dir": "WNW",
+    "wind_kts": 6,
+    "wind_gust": 7,
+    "wind_dir": "N",
+    "surfers": 4,
+    "people": 60,
+    "note": "knee-high lines peeling along the reef, glassy but weak; 4 counted in the crowd crop (crop covers part of the lineup only), ~60 on the sand and railing"
+   },
    {
     "spot": "Norte",
     "rating": "POOR",
@@ -602,7 +617,7 @@
     "note": "glassy, soft unbroken swell lines, only splash on the rocks; checked all detail and crowd frames - nobody on a board, just bathers in the shallow corner"
    },
    {
-    "spot": "Ribeira",
+    "spot": "Pedra",
     "rating": "POOR_TO_FAIR",
     "surf_min": 0.3,
     "surf_max": 0.6,
@@ -612,9 +627,9 @@
     "wind_kts": 6,
     "wind_gust": 7,
     "wind_dir": "N",
-    "surfers": 4,
-    "people": 60,
-    "note": "knee-high lines peeling along the reef, glassy but weak; 4 counted in the crowd crop (crop covers part of the lineup only), ~60 on the sand and railing"
+    "surfers": 5,
+    "people": 2,
+    "note": "best of the five: small waves breaking with shape across the reef ledge at low tide, glassy; 5 out, 2 on the rocks"
    },
    {
     "spot": "Lizandro",
@@ -630,21 +645,6 @@
     "surfers": null,
     "people": 200,
     "note": "ankle-to-knee mush, water full of swimmers - cannot separate surfers from bathers at this framing; ~200 on the sand (approx), packed summer beach"
-   },
-   {
-    "spot": "Pedra",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.3,
-    "surf_max": 0.6,
-    "swell_h": 0.6,
-    "swell_p": 9,
-    "swell_dir": "WNW",
-    "wind_kts": 6,
-    "wind_gust": 7,
-    "wind_dir": "N",
-    "surfers": 5,
-    "people": 2,
-    "note": "best of the five: small waves breaking with shape across the reef ledge at low tide, glassy; 5 out, 2 on the rocks"
    }
   ]
  },
@@ -654,6 +654,21 @@
   "time": "11:39",
   "slot": "lunch",
   "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.6,
+    "swell_p": 8,
+    "swell_dir": "WNW",
+    "wind_kts": 6,
+    "wind_gust": 6,
+    "wind_dir": "NW",
+    "surfers": 6,
+    "people": 30,
+    "note": "knee-high crumbly lines at the point, glassy; crowd crop framed empty outside water so ~6 out counted off the contact sheet (approx), ~30 on the sand"
+   },
    {
     "spot": "Norte",
     "rating": "POOR_TO_FAIR",
@@ -685,7 +700,7 @@
     "note": "glassy clear water off the point, only splash on the rocks; checked all three detail frames and both crowd frames - nobody in the visible water"
    },
    {
-    "spot": "Ribeira",
+    "spot": "Pedra",
     "rating": "POOR_TO_FAIR",
     "surf_min": 0.3,
     "surf_max": 0.6,
@@ -695,9 +710,9 @@
     "wind_kts": 6,
     "wind_gust": 6,
     "wind_dir": "NW",
-    "surfers": 6,
-    "people": 30,
-    "note": "knee-high crumbly lines at the point, glassy; crowd crop framed empty outside water so ~6 out counted off the contact sheet (approx), ~30 on the sand"
+    "surfers": 5,
+    "people": 3,
+    "note": "the one real wave: clean waist-high green wall peeling off the ledge with a shoulder, glassy; ~5 out, 3 walking the clifftop"
    },
    {
     "spot": "Lizandro",
@@ -713,21 +728,6 @@
     "surfers": 8,
     "people": 65,
     "note": "ankle-to-knee shorebreak, packed summer beach; ~8 in the water (approx, mixes surfers with waders), ~65 on the sand"
-   },
-   {
-    "spot": "Pedra",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.3,
-    "surf_max": 0.6,
-    "swell_h": 0.6,
-    "swell_p": 8,
-    "swell_dir": "WNW",
-    "wind_kts": 6,
-    "wind_gust": 6,
-    "wind_dir": "NW",
-    "surfers": 5,
-    "people": 3,
-    "note": "the one real wave: clean waist-high green wall peeling off the ledge with a shoulder, glassy; ~5 out, 3 walking the clifftop"
    }
   ]
  },
@@ -737,6 +737,21 @@
   "time": "07:38",
   "slot": "sunrise",
   "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.6,
+    "swell_p": 8,
+    "swell_dir": "WNW",
+    "wind_kts": 5,
+    "wind_gust": 5,
+    "wind_dir": "NE",
+    "surfers": null,
+    "people": null,
+    "note": "HLS stream 404 this run - no images, no cam read"
+   },
    {
     "spot": "Norte",
     "rating": "POOR_TO_FAIR",
@@ -768,7 +783,7 @@
     "note": "cam framed across the bay to the headland; water glassy and empty but the beach/takeoff zone is out of shot"
    },
    {
-    "spot": "Ribeira",
+    "spot": "Pedra",
     "rating": "POOR_TO_FAIR",
     "surf_min": 0.3,
     "surf_max": 0.6,
@@ -778,9 +793,9 @@
     "wind_kts": 5,
     "wind_gust": 5,
     "wind_dir": "NE",
-    "surfers": null,
+    "surfers": 0,
     "people": null,
-    "note": "HLS stream 404 this run - no images, no cam read"
+    "note": "small orderly lines off the ledge, checked takeoff zone and channel in both crowd frames and all three detail frames - nobody out"
    },
    {
     "spot": "Lizandro",
@@ -796,21 +811,6 @@
     "surfers": 10,
     "people": 1,
     "note": "knee-to-waist lines peeling right along the beach, clean and glassy in the light NE; ~10 out (approx), sand essentially empty"
-   },
-   {
-    "spot": "Pedra",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.3,
-    "surf_max": 0.6,
-    "swell_h": 0.6,
-    "swell_p": 8,
-    "swell_dir": "WNW",
-    "wind_kts": 5,
-    "wind_gust": 5,
-    "wind_dir": "NE",
-    "surfers": 0,
-    "people": null,
-    "note": "small orderly lines off the ledge, checked takeoff zone and channel in both crowd frames and all three detail frames - nobody out"
    }
   ]
  },
@@ -820,6 +820,21 @@
   "time": "18:38",
   "slot": "sunset",
   "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.8,
+    "swell_p": 8,
+    "swell_dir": "NW",
+    "wind_kts": 5,
+    "wind_gust": 5,
+    "wind_dir": "NE",
+    "surfers": null,
+    "people": 6,
+    "note": "small clean lines, but the lineup sits in full low-sun glare and the detail/crowd crops are mis-framed on open water; ~6 on the sand and promenade"
+   },
    {
     "spot": "Norte",
     "rating": "POOR_TO_FAIR",
@@ -851,8 +866,8 @@
     "note": "glassy and near-flat, only faint lines reaching the point; detail crop scanned in all 3 frames, water empty"
    },
    {
-    "spot": "Ribeira",
-    "rating": "FAIR",
+    "spot": "Pedra",
+    "rating": "POOR_TO_FAIR",
     "surf_min": 0.3,
     "surf_max": 0.6,
     "swell_h": 0.8,
@@ -861,9 +876,9 @@
     "wind_kts": 5,
     "wind_gust": 5,
     "wind_dir": "NE",
-    "surfers": null,
-    "people": 6,
-    "note": "small clean lines, but the lineup sits in full low-sun glare and the detail/crowd crops are mis-framed on open water; ~6 on the sand and promenade"
+    "surfers": 2,
+    "people": 4,
+    "note": "best shape of the five - a clean peeling right on the reef; 2 resolved in the water in fading light, a floor not a full count, 4 watching from the ledge"
    },
    {
     "spot": "Lizandro",
@@ -879,21 +894,6 @@
     "surfers": 2,
     "people": 8,
     "note": "heavy backlit glare; 2 dark figures resolved in the shallows across the crowd frames, ~8 on the sand incl. a group by the flag - all approximate"
-   },
-   {
-    "spot": "Pedra",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.3,
-    "surf_max": 0.6,
-    "swell_h": 0.8,
-    "swell_p": 8,
-    "swell_dir": "NW",
-    "wind_kts": 5,
-    "wind_gust": 5,
-    "wind_dir": "NE",
-    "surfers": 2,
-    "people": 4,
-    "note": "best shape of the five - a clean peeling right on the reef; 2 resolved in the water in fading light, a floor not a full count, 4 watching from the ledge"
    }
   ]
  },
@@ -903,6 +903,21 @@
   "time": "17:28",
   "slot": "sunset",
   "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.8,
+    "swell_p": 8,
+    "swell_dir": "NW",
+    "wind_kts": 8,
+    "wind_gust": 8,
+    "wind_dir": "NE",
+    "surfers": 6,
+    "people": 5,
+    "note": "small clean lines through the lineup; ~6 counted off the contact sheet - the crowd and detail crops are mis-framed on open water this run and show no lineup"
+   },
    {
     "spot": "Norte",
     "rating": "POOR_TO_FAIR",
@@ -934,7 +949,7 @@
     "note": "glassy but near-flat, only faint lines reaching the reef; detail and crowd crops both empty, nobody out"
    },
    {
-    "spot": "Ribeira",
+    "spot": "Pedra",
     "rating": "POOR_TO_FAIR",
     "surf_min": 0.3,
     "surf_max": 0.6,
@@ -944,9 +959,9 @@
     "wind_kts": 8,
     "wind_gust": 8,
     "wind_dir": "NE",
-    "surfers": 6,
-    "people": 5,
-    "note": "small clean lines through the lineup; ~6 counted off the contact sheet - the crowd and detail crops are mis-framed on open water this run and show no lineup"
+    "surfers": 7,
+    "people": null,
+    "note": "pick of the five - small reef wave with a real shoulder; 7 out, the higher of the two frames"
    },
    {
     "spot": "Lizandro",
@@ -962,21 +977,6 @@
     "surfers": 6,
     "people": 20,
     "note": "peeling shorebreak on the beach-level Front cam; ~6 in the water and ~20 on the sand, both approximate"
-   },
-   {
-    "spot": "Pedra",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.3,
-    "surf_max": 0.6,
-    "swell_h": 0.8,
-    "swell_p": 8,
-    "swell_dir": "NW",
-    "wind_kts": 8,
-    "wind_gust": 8,
-    "wind_dir": "NE",
-    "surfers": 7,
-    "people": null,
-    "note": "pick of the five - small reef wave with a real shoulder; 7 out, the higher of the two frames"
    }
   ]
  },
@@ -1036,6 +1036,21 @@
   "slot": "sunset",
   "spots": [
    {
+    "spot": "Ribeira",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 1.1,
+    "swell_p": 8,
+    "swell_dir": "NNW",
+    "wind_kts": 14,
+    "wind_gust": 20,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": 6,
+    "note": "19:22 sunset. Outside near flat, only a thin knee-high shorebreak line; water in the crowd crop is readable and empty. ~6 on the promenade and car park"
+   },
+   {
     "spot": "Norte",
     "rating": "POOR",
     "surf_min": 0.6,
@@ -1066,19 +1081,19 @@
     "note": "19:22 sunset. Glare column blanks the left half of the frame and the rest is near flat, only small reforms by the point - water not readable, surfers null not zero"
    },
    {
-    "spot": "Ribeira",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.3,
-    "surf_max": 0.6,
+    "spot": "Pedra",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
     "swell_h": 1.1,
     "swell_p": 8,
     "swell_dir": "NNW",
     "wind_kts": 14,
     "wind_gust": 20,
     "wind_dir": "N",
-    "surfers": 0,
-    "people": 6,
-    "note": "19:22 sunset. Outside near flat, only a thin knee-high shorebreak line; water in the crowd crop is readable and empty. ~6 on the promenade and car park"
+    "surfers": null,
+    "people": null,
+    "note": "19:22 sunset. Cleanest of the five: small lines wrapping onto the ledge with a short green shoulder. One possible figure in the +37s crowd frame, not resolvable - null, not zero"
    },
    {
     "spot": "Lizandro",
@@ -1094,21 +1109,6 @@
     "surfers": 2,
     "people": 10,
     "note": "19:22 sunset. Knee-high crumbly shorebreak across the bank; ~2 in the water past the foam and ~10 on the sand in the crowd crops, both approximate at this range"
-   },
-   {
-    "spot": "Pedra",
-    "rating": "POOR",
-    "surf_min": 0.6,
-    "surf_max": 0.9,
-    "swell_h": 1.1,
-    "swell_p": 8,
-    "swell_dir": "NNW",
-    "wind_kts": 14,
-    "wind_gust": 20,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": "19:22 sunset. Cleanest of the five: small lines wrapping onto the ledge with a short green shoulder. One possible figure in the +37s crowd frame, not resolvable - null, not zero"
    }
   ]
  }
