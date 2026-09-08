@@ -1,5 +1,88 @@
 [
  {
+  "run_id": 70,
+  "day": "2026-09-08",
+  "time": "15:38",
+  "slot": "afternoon",
+  "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 1.2,
+    "swell_p": 9,
+    "swell_dir": "NW",
+    "wind_kts": 11,
+    "wind_gust": 15,
+    "wind_dir": "NNW",
+    "surfers": 8,
+    "people": 20,
+    "note": "small textured waist-high lines peeling on the reef, bumpy in the cross-shore; ~8 spread across the lineup in the contact sheet (approx), ~20 on the sand and promenade"
+   },
+   {
+    "spot": "Norte",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 1.2,
+    "swell_p": 9,
+    "swell_dir": "NW",
+    "wind_kts": 11,
+    "wind_gust": 15,
+    "wind_dir": "NNW",
+    "surfers": null,
+    "people": null,
+    "note": "cam still framed on the promenade and sea wall, only a sliver of shorebreak in the top corner; dead framing, not an empty lineup"
+   },
+   {
+    "spot": "Sul",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 1.2,
+    "swell_p": 9,
+    "swell_dir": "NW",
+    "wind_kts": 11,
+    "wind_gust": 15,
+    "wind_dir": "NNW",
+    "surfers": 0,
+    "people": null,
+    "note": "swell rolling through unbroken, breaking only on the rock shelf by the point; detail and crowd crops both scanned, nobody out"
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 1.2,
+    "swell_p": 9,
+    "swell_dir": "NW",
+    "wind_kts": 11,
+    "wind_gust": 15,
+    "wind_dir": "NNW",
+    "surfers": 8,
+    "people": null,
+    "note": "peeling walls with a green face, two riders clearly up in the crowd and detail crops; better than the POOR rating, ~8 in the pack (approx)"
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 1.2,
+    "swell_p": 9,
+    "swell_dir": "NW",
+    "wind_kts": 11,
+    "wind_gust": 15,
+    "wind_dir": "NNW",
+    "surfers": 5,
+    "people": 40,
+    "note": "mushy shorebreak mostly closing out on the sand; ~5 in the water (approx, cam too wide to separate surfers from bathers), ~40 on the beach"
+   }
+  ]
+ },
+ {
   "run_id": 69,
   "day": "2026-09-08",
   "time": "11:45",
@@ -1530,12 +1613,5 @@
     "note": "peeling shorebreak on the beach-level Front cam; ~6 in the water and ~20 on the sand, both approximate"
    }
   ]
- },
- {
-  "run_id": 50,
-  "day": "2026-09-04",
-  "time": "17:16",
-  "slot": "sunset",
-  "spots": []
  }
 ]
