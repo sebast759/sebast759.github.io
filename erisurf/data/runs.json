@@ -1,5 +1,88 @@
 [
  {
+  "run_id": 66,
+  "day": "2026-09-08",
+  "time": "07:31",
+  "slot": "sunrise",
+  "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR",
+    "surf_min": 0.9,
+    "surf_max": 1.2,
+    "swell_h": 1.3,
+    "swell_p": 10,
+    "swell_dir": "WNW",
+    "wind_kts": 13,
+    "wind_gust": 19,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": "HLS stream unavailable this run - no clip, no frames, nothing to look at. Rated FAIR and offshore, so this is the one gap that matters today"
+   },
+   {
+    "spot": "Norte",
+    "rating": "POOR",
+    "surf_min": 0.9,
+    "surf_max": 1.2,
+    "swell_h": 1.3,
+    "swell_p": 10,
+    "swell_dir": "WNW",
+    "wind_kts": 13,
+    "wind_gust": 19,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": "cam still framed on the promenade and sea wall, no water in shot at all; dead cam, not an empty lineup"
+   },
+   {
+    "spot": "Sul",
+    "rating": "POOR",
+    "surf_min": 0.9,
+    "surf_max": 1.2,
+    "swell_h": 1.3,
+    "swell_p": 10,
+    "swell_dir": "WNW",
+    "wind_kts": 13,
+    "wind_gust": 19,
+    "wind_dir": "N",
+    "surfers": 4,
+    "people": null,
+    "note": "better than its POOR rating: clean rights wrapping in and peeling off the point with real green walls, one rider up at +37s; 4 resolvable in the water"
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 1.1,
+    "swell_h": 1.3,
+    "swell_p": 10,
+    "swell_dir": "WNW",
+    "wind_kts": 13,
+    "wind_gust": 19,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": null,
+    "note": "low tide, reef shelf drained and exposed, whitewater washing over it with little shape; flat dawn light, one ambiguous mark at +37s not counted"
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 1.1,
+    "swell_h": 1.3,
+    "swell_p": 10,
+    "swell_dir": "WNW",
+    "wind_kts": 13,
+    "wind_gust": 19,
+    "wind_dir": "N",
+    "surfers": 4,
+    "people": 0,
+    "note": "wide band of whitewater, one workable corner by the rocks; 4 out near the flag, beach deserted at dawn"
+   }
+  ]
+ },
+ {
   "run_id": 65,
   "day": "2026-09-07",
   "time": "18:39",
@@ -1240,13 +1323,6 @@
   "day": "2026-09-03",
   "time": "18:39",
   "slot": "sunset",
-  "spots": []
- },
- {
-  "run_id": 46,
-  "day": "2026-09-03",
-  "time": "15:39",
-  "slot": "afternoon",
   "spots": []
  }
 ]
