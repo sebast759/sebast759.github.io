@@ -1,5 +1,88 @@
 [
  {
+  "run_id": 69,
+  "day": "2026-09-08",
+  "time": "11:45",
+  "slot": "lunch",
+  "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR",
+    "surf_min": 0.6,
+    "surf_max": 1.1,
+    "swell_h": 1.4,
+    "swell_p": 10,
+    "swell_dir": "NW",
+    "wind_kts": 12,
+    "wind_gust": 17,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": null
+   },
+   {
+    "spot": "Norte",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 1.1,
+    "swell_h": 1.1,
+    "swell_p": 10,
+    "swell_dir": "NW",
+    "wind_kts": 12,
+    "wind_gust": 17,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": null
+   },
+   {
+    "spot": "Sul",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 1.1,
+    "swell_h": 1.1,
+    "swell_p": 10,
+    "swell_dir": "NW",
+    "wind_kts": 12,
+    "wind_gust": 17,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": null
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 1.1,
+    "swell_h": 1.4,
+    "swell_p": 10,
+    "swell_dir": "NW",
+    "wind_kts": 12,
+    "wind_gust": 17,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": null
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 1.1,
+    "swell_h": 1.1,
+    "swell_p": 10,
+    "swell_dir": "NW",
+    "wind_kts": 12,
+    "wind_gust": 17,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": null
+   }
+  ]
+ },
+ {
   "run_id": 68,
   "day": "2026-09-08",
   "time": "11:39",
@@ -1453,13 +1536,6 @@
   "day": "2026-09-04",
   "time": "17:16",
   "slot": "sunset",
-  "spots": []
- },
- {
-  "run_id": 49,
-  "day": "2026-09-04",
-  "time": "11:39",
-  "slot": "lunch",
   "spots": []
  }
 ]
