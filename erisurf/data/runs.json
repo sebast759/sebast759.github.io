@@ -1,5 +1,73 @@
 [
  {
+  "run_id": 67,
+  "day": "2026-09-08",
+  "time": "07:39",
+  "slot": "sunrise",
+  "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR",
+    "surf_min": 0.9,
+    "surf_max": 1.2,
+    "swell_h": 1.3,
+    "swell_p": 10,
+    "swell_dir": "WNW",
+    "wind_kts": 13,
+    "wind_gust": 19,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": "HLS stream 404 again this run - no clip, no frames. The one FAIR spot and the one offshore spot, so this is the gap that matters"
+   },
+   {
+    "spot": "Norte",
+    "rating": "POOR",
+    "surf_min": 0.9,
+    "surf_max": 1.2,
+    "swell_h": 1.3,
+    "swell_p": 10,
+    "swell_dir": "WNW",
+    "wind_kts": 13,
+    "wind_gust": 19,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": "cam still framed on the promenade and sea wall, only a sliver of sand and a bird flock in shot; dead framing, not an empty lineup"
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 1.1,
+    "swell_h": 1.3,
+    "swell_p": 10,
+    "swell_dir": "WNW",
+    "wind_kts": 13,
+    "wind_gust": 19,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": null,
+    "note": "low tide, reef shelf drained, whitewater washing over it with almost no shape; detail and crowd crops both scanned, nobody out"
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 1.1,
+    "swell_h": 1.3,
+    "swell_p": 10,
+    "swell_dir": "WNW",
+    "wind_kts": 13,
+    "wind_gust": 19,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": 0,
+    "note": "broad whitewater band, dim dawn light; marks in the wash could be the shoreline bird flock, could not resolve surfers - 4 were countable at 07:31 so read this as unreadable, not empty. Beach itself deserted"
+   }
+  ]
+ },
+ {
   "run_id": 66,
   "day": "2026-09-08",
   "time": "07:31",
@@ -1316,13 +1384,6 @@
   "day": "2026-09-04",
   "time": "07:38",
   "slot": "sunrise",
-  "spots": []
- },
- {
-  "run_id": 47,
-  "day": "2026-09-03",
-  "time": "18:39",
-  "slot": "sunset",
   "spots": []
  }
 ]
