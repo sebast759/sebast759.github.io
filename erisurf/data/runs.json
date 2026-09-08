@@ -1,5 +1,88 @@
 [
  {
+  "run_id": 68,
+  "day": "2026-09-08",
+  "time": "11:39",
+  "slot": "lunch",
+  "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR",
+    "surf_min": 0.6,
+    "surf_max": 1.1,
+    "swell_h": 1.4,
+    "swell_p": 10,
+    "swell_dir": "NW",
+    "wind_kts": 12,
+    "wind_gust": 17,
+    "wind_dir": "N",
+    "surfers": 13,
+    "people": 30,
+    "note": "clean waist-high lines peeling down the reef in sun, N wind offshore; 13 counted across the two crowd frames, ~30 on the sand and promenade"
+   },
+   {
+    "spot": "Norte",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 1.1,
+    "swell_h": 1.1,
+    "swell_p": 10,
+    "swell_dir": "NW",
+    "wind_kts": 12,
+    "wind_gust": 17,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": "cam still framed on the promenade and sea wall, only a sliver of shorebreak at the top edge; dead framing, not an empty lineup"
+   },
+   {
+    "spot": "Sul",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 1.1,
+    "swell_h": 1.1,
+    "swell_p": 10,
+    "swell_dir": "NW",
+    "wind_kts": 12,
+    "wind_gust": 17,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": null,
+    "note": "cam on the rocky point, swell wrapping and dumping onto the rocks with no rideable face; detail and crowd crops both scanned, nobody out"
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 1.1,
+    "swell_h": 1.4,
+    "swell_p": 10,
+    "swell_dir": "NW",
+    "wind_kts": 12,
+    "wind_gust": 17,
+    "wind_dir": "N",
+    "surfers": 5,
+    "people": null,
+    "note": "lefts peeling along the reef with a clean green face, better shape than the POOR rating; 5 counted in the crowd crop, one rider up in the detail crop"
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 1.1,
+    "swell_h": 1.1,
+    "swell_p": 10,
+    "swell_dir": "NW",
+    "wind_kts": 12,
+    "wind_gust": 17,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": 55,
+    "note": "shorebreak dumping straight onto the sand, closing out; detail and crowd crops scanned, water empty while ~55 (approx) sit on the beach"
+   }
+  ]
+ },
+ {
   "run_id": 67,
   "day": "2026-09-08",
   "time": "07:39",
@@ -1377,13 +1460,6 @@
   "day": "2026-09-04",
   "time": "11:39",
   "slot": "lunch",
-  "spots": []
- },
- {
-  "run_id": 48,
-  "day": "2026-09-04",
-  "time": "07:38",
-  "slot": "sunrise",
   "spots": []
  }
 ]
