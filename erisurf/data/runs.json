@@ -1,5 +1,88 @@
 [
  {
+  "run_id": 72,
+  "day": "2026-09-09",
+  "time": "07:39",
+  "slot": "sunrise",
+  "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 1.3,
+    "swell_p": 8,
+    "swell_dir": "NNW",
+    "wind_kts": 18,
+    "wind_gust": 23,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": "no cam this run: Surfline HLS returned 404 so no frames were grabbed; FAIR and offshore on the forecast, but nothing seen"
+   },
+   {
+    "spot": "Norte",
+    "rating": "VERY_POOR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 1.3,
+    "swell_p": 8,
+    "swell_dir": "NNW",
+    "wind_kts": 18,
+    "wind_gust": 23,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": "cam still pointed at the promenade and sea wall, only a sliver of shorebreak at the top of frame; dead framing, not an empty lineup"
+   },
+   {
+    "spot": "Sul",
+    "rating": "VERY_POOR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 1.3,
+    "swell_p": 8,
+    "swell_dir": "NNW",
+    "wind_kts": 18,
+    "wind_gust": 23,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": null,
+    "note": "weak lines barely breaking, only wrapping onto the rock shelf at the point; detail and crowd crops both scanned in dawn light, nobody out"
+   },
+   {
+    "spot": "Pedra",
+    "rating": "VERY_POOR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 1.3,
+    "swell_p": 8,
+    "swell_dir": "NNW",
+    "wind_kts": 18,
+    "wind_gust": 23,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": null,
+    "note": "low tide has the reef shelf dry, waves just washing over the rock; detail and crowd crops both scanned, nobody out"
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "VERY_POOR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 1.3,
+    "swell_p": 8,
+    "swell_dir": "NNW",
+    "wind_kts": 18,
+    "wind_gust": 23,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": 0,
+    "note": "dumping shorebreak straight onto the sand, no shape; dim dawn light but sand and whitewater readable, nobody out and empty beach"
+   }
+  ]
+ },
+ {
   "run_id": 71,
   "day": "2026-09-08",
   "time": "18:38",
@@ -1528,89 +1611,6 @@
     "surfers": 10,
     "people": 1,
     "note": "knee-to-waist lines peeling right along the beach, clean and glassy in the light NE; ~10 out (approx), sand essentially empty"
-   }
-  ]
- },
- {
-  "run_id": 52,
-  "day": "2026-09-04",
-  "time": "18:38",
-  "slot": "sunset",
-  "spots": [
-   {
-    "spot": "Ribeira",
-    "rating": "FAIR",
-    "surf_min": 0.3,
-    "surf_max": 0.6,
-    "swell_h": 0.8,
-    "swell_p": 8,
-    "swell_dir": "NW",
-    "wind_kts": 5,
-    "wind_gust": 5,
-    "wind_dir": "NE",
-    "surfers": null,
-    "people": 6,
-    "note": "small clean lines, but the lineup sits in full low-sun glare and the detail/crowd crops are mis-framed on open water; ~6 on the sand and promenade"
-   },
-   {
-    "spot": "Norte",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.3,
-    "surf_max": 0.6,
-    "swell_h": 0.8,
-    "swell_p": 8,
-    "swell_dir": "NW",
-    "wind_kts": 5,
-    "wind_gust": 5,
-    "wind_dir": "NE",
-    "surfers": null,
-    "people": 2,
-    "note": "detail and crowd crops both framed on the promenade this run, no water in them; sheet shows small shorebreak and 2 anglers on the sand"
-   },
-   {
-    "spot": "Sul",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.3,
-    "surf_max": 0.6,
-    "swell_h": 0.8,
-    "swell_p": 8,
-    "swell_dir": "NW",
-    "wind_kts": 5,
-    "wind_gust": 5,
-    "wind_dir": "NE",
-    "surfers": 0,
-    "people": null,
-    "note": "glassy and near-flat, only faint lines reaching the point; detail crop scanned in all 3 frames, water empty"
-   },
-   {
-    "spot": "Pedra",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.3,
-    "surf_max": 0.6,
-    "swell_h": 0.8,
-    "swell_p": 8,
-    "swell_dir": "NW",
-    "wind_kts": 5,
-    "wind_gust": 5,
-    "wind_dir": "NE",
-    "surfers": 2,
-    "people": 4,
-    "note": "best shape of the five - a clean peeling right on the reef; 2 resolved in the water in fading light, a floor not a full count, 4 watching from the ledge"
-   },
-   {
-    "spot": "Lizandro",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.3,
-    "surf_max": 0.6,
-    "swell_h": 0.8,
-    "swell_p": 8,
-    "swell_dir": "NW",
-    "wind_kts": 5,
-    "wind_gust": 5,
-    "wind_dir": "NE",
-    "surfers": 2,
-    "people": 8,
-    "note": "heavy backlit glare; 2 dark figures resolved in the shallows across the crowd frames, ~8 on the sand incl. a group by the flag - all approximate"
    }
   ]
  }
