@@ -1,5 +1,88 @@
 [
  {
+  "run_id": 77,
+  "day": "2026-09-10",
+  "time": "11:38",
+  "slot": "lunch",
+  "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 1.7,
+    "swell_p": 11,
+    "swell_dir": "NNW",
+    "wind_kts": 17,
+    "wind_gust": 20,
+    "wind_dir": "N",
+    "surfers": 19,
+    "people": 17,
+    "note": "waist-high lines peeling down the reef, offshore N, riders on both crowd frames; ~19 out (higher of two), ~17 on sand and promenade"
+   },
+   {
+    "spot": "Norte",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 1.1,
+    "swell_h": 1.4,
+    "swell_p": 7,
+    "swell_dir": "NNW",
+    "wind_kts": 17,
+    "wind_gust": 20,
+    "wind_dir": "N",
+    "surfers": 1,
+    "people": null,
+    "note": "short crumbly peaks, crossed-up and choppy in the cross-shore N; one dark speck outside the peak in both crowd frames, likely a lone surfer"
+   },
+   {
+    "spot": "Sul",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 1.1,
+    "swell_h": 1.4,
+    "swell_p": 7,
+    "swell_dir": "NNW",
+    "wind_kts": 17,
+    "wind_gust": 20,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": null,
+    "note": "flat, swell not breaking, only wrapping onto the rock point; detail crop scanned all three frames, nobody out"
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 1.1,
+    "swell_h": 1.7,
+    "swell_p": 11,
+    "swell_dir": "NNW",
+    "wind_kts": 17,
+    "wind_gust": 20,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": null,
+    "note": "mushy whitewater and short peaks folding onto the reef shelf; detail crop scanned frame by frame, nobody out"
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 1.1,
+    "swell_h": 1.4,
+    "swell_p": 7,
+    "swell_dir": "NNW",
+    "wind_kts": 17,
+    "wind_gust": 20,
+    "wind_dir": "N",
+    "surfers": 4,
+    "people": 28,
+    "note": "small shorebreak dumping on the sand; ~4 heads beyond it (approximate, wide cam, may include swimmers), ~28 on the sand"
+   }
+  ]
+ },
+ {
   "run_id": 76,
   "day": "2026-09-10",
   "time": "10:35",
@@ -1543,89 +1626,6 @@
     "surfers": 0,
     "people": 3,
     "note": "closed-out shorebreak dumping straight onto the sand, wide bands of foam; water readable and empty in both crops, ~3 on the beach"
-   }
-  ]
- },
- {
-  "run_id": 57,
-  "day": "2026-09-05",
-  "time": "22:30",
-  "slot": "sunset",
-  "spots": [
-   {
-    "spot": "Ribeira",
-    "rating": "FAIR",
-    "surf_min": 0.6,
-    "surf_max": 0.9,
-    "swell_h": 0.9,
-    "swell_p": 14,
-    "swell_dir": "NW",
-    "wind_kts": 9,
-    "wind_gust": 12,
-    "wind_dir": "NNE",
-    "surfers": null,
-    "people": null,
-    "note": null
-   },
-   {
-    "spot": "Norte",
-    "rating": "POOR",
-    "surf_min": 0.6,
-    "surf_max": 0.9,
-    "swell_h": 0.9,
-    "swell_p": 14,
-    "swell_dir": "NW",
-    "wind_kts": 9,
-    "wind_gust": 12,
-    "wind_dir": "NNE",
-    "surfers": null,
-    "people": null,
-    "note": null
-   },
-   {
-    "spot": "Sul",
-    "rating": "POOR",
-    "surf_min": 0.6,
-    "surf_max": 0.9,
-    "swell_h": 0.9,
-    "swell_p": 14,
-    "swell_dir": "NW",
-    "wind_kts": 9,
-    "wind_gust": 12,
-    "wind_dir": "NNE",
-    "surfers": null,
-    "people": null,
-    "note": null
-   },
-   {
-    "spot": "Pedra",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 0.9,
-    "swell_p": 14,
-    "swell_dir": "NW",
-    "wind_kts": 9,
-    "wind_gust": 12,
-    "wind_dir": "NNE",
-    "surfers": null,
-    "people": null,
-    "note": null
-   },
-   {
-    "spot": "Lizandro",
-    "rating": "POOR",
-    "surf_min": 0.6,
-    "surf_max": 0.9,
-    "swell_h": 0.9,
-    "swell_p": 14,
-    "swell_dir": "NW",
-    "wind_kts": 9,
-    "wind_gust": 12,
-    "wind_dir": "NNE",
-    "surfers": null,
-    "people": null,
-    "note": null
    }
   ]
  }
