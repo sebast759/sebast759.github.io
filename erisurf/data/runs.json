@@ -1,5 +1,93 @@
 [
  {
+  "run_id": 81,
+  "day": "2026-09-11",
+  "time": "11:39",
+  "slot": "lunch",
+  "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.6,
+    "swell_p": 10,
+    "swell_dir": "NNW",
+    "wind_kts": 16,
+    "wind_gust": 19,
+    "wind_dir": "N",
+    "surfers": 4,
+    "people": 12,
+    "note": "knee-high clean lines, offshore-groomed, small whitewater bands; ~4 dark specks in the lineup across sheet and crowd frames (approx, wide cam); ~12 on sand and promenade",
+    "erisurf": null
+   },
+   {
+    "spot": "Norte",
+    "rating": "POOR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.6,
+    "swell_p": 10,
+    "swell_dir": "NNW",
+    "wind_kts": 16,
+    "wind_gust": 19,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": null,
+    "note": "small wind-chopped crumbly peaks, no real faces; nobody in any detail or crowd frame",
+    "erisurf": null
+   },
+   {
+    "spot": "Sul",
+    "rating": "POOR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.6,
+    "swell_p": 10,
+    "swell_dir": "NNW",
+    "wind_kts": 16,
+    "wind_gust": 19,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": null,
+    "note": "near flat, only wash on the rocks by the point; nobody in detail or crowd frames",
+    "erisurf": null
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.6,
+    "swell_p": 10,
+    "swell_dir": "NNW",
+    "wind_kts": 16,
+    "wind_gust": 19,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": 2,
+    "note": "weak whitewater over the reef, cross-shore texture; nobody in the water, 2 walkers on the clifftop path",
+    "erisurf": null
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.6,
+    "swell_p": 10,
+    "swell_dir": "NNW",
+    "wind_kts": 16,
+    "wind_gust": 19,
+    "wind_dir": "N",
+    "surfers": 5,
+    "people": 30,
+    "note": "small shorebreak, busy summer beach; ~12 heads in the water, ~5 look like surfers out the back, rest bathers (approx); ~30 on the sand",
+    "erisurf": null
+   }
+  ]
+ },
+ {
   "run_id": 80,
   "day": "2026-09-11",
   "time": "07:39",
@@ -18,7 +106,8 @@
     "wind_dir": "NNE",
     "surfers": null,
     "people": null,
-    "note": "cam down, stream offline this run; no picture"
+    "note": "cam down, stream offline this run; no picture",
+    "erisurf": null
    },
    {
     "spot": "Norte",
@@ -33,7 +122,8 @@
     "wind_dir": "NNE",
     "surfers": null,
     "people": null,
-    "note": "small wind-textured lines, mostly unbroken at low tide; a tight cluster of dark specks mid-lineup, likely birds, not resolvable in dawn light"
+    "note": "small wind-textured lines, mostly unbroken at low tide; a tight cluster of dark specks mid-lineup, likely birds, not resolvable in dawn light",
+    "erisurf": null
    },
    {
     "spot": "Sul",
@@ -48,7 +138,8 @@
     "wind_dir": "NNE",
     "surfers": 0,
     "people": null,
-    "note": "tiny lines wrapping by the point, barely breaking; nobody in detail or crowd frames"
+    "note": "tiny lines wrapping by the point, barely breaking; nobody in detail or crowd frames",
+    "erisurf": null
    },
    {
     "spot": "Pedra",
@@ -63,7 +154,8 @@
     "wind_dir": "NNE",
     "surfers": 0,
     "people": null,
-    "note": "weak crumbly waves over the exposed reef, offshore spray streaks; nobody out in detail crop"
+    "note": "weak crumbly waves over the exposed reef, offshore spray streaks; nobody out in detail crop",
+    "erisurf": null
    },
    {
     "spot": "Lizandro",
@@ -78,7 +170,8 @@
     "wind_dir": "NNE",
     "surfers": 0,
     "people": 0,
-    "note": "near-flat, tiny shorebreak at low tide; nobody in the water, only gulls on the sand"
+    "note": "near-flat, tiny shorebreak at low tide; nobody in the water, only gulls on the sand",
+    "erisurf": null
    }
   ]
  },
@@ -101,7 +194,8 @@
     "wind_dir": "N",
     "surfers": 22,
     "people": 15,
-    "note": "thigh-waist clean lines peeling in the offshore N, riders on waves; ~22 out (higher crowd frame, approx, glare on the right); ~15 on sand and promenade"
+    "note": "thigh-waist clean lines peeling in the offshore N, riders on waves; ~22 out (higher crowd frame, approx, glare on the right); ~15 on sand and promenade",
+    "erisurf": null
    },
    {
     "spot": "Norte",
@@ -116,7 +210,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": "choppy crumbly lines in the cross-shore N; a dark speck in two detail frames could be a lone surfer, unconfirmed"
+    "note": "choppy crumbly lines in the cross-shore N; a dark speck in two detail frames could be a lone surfer, unconfirmed",
+    "erisurf": null
    },
    {
     "spot": "Sul",
@@ -131,7 +226,8 @@
     "wind_dir": "N",
     "surfers": 1,
     "people": null,
-    "note": "small lines wrapping in, fairly clean in the lee; 1 surfer seen in all three detail frames"
+    "note": "small lines wrapping in, fairly clean in the lee; 1 surfer seen in all three detail frames",
+    "erisurf": null
    },
    {
     "spot": "Pedra",
@@ -146,7 +242,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": null,
-    "note": "wind-chopped whitewater onto the ledges; 2-3 windsurfers outside, no surfers on the reef in detail crop"
+    "note": "wind-chopped whitewater onto the ledges; 2-3 windsurfers outside, no surfers on the reef in detail crop",
+    "erisurf": null
    },
    {
     "spot": "Lizandro",
@@ -161,7 +258,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": 5,
-    "note": "sun glare over the lineup, only spray on the rocks readable; water unreadable; ~5 at the shoreline"
+    "note": "sun glare over the lineup, only spray on the rocks readable; water unreadable; ~5 at the shoreline",
+    "erisurf": null
    }
   ]
  },
@@ -184,7 +282,8 @@
     "wind_dir": "N",
     "surfers": 2,
     "people": 10,
-    "note": "thigh-high, offshore, high tide so mostly breaking on the inside; 2 sitting outside in crowd frame 1, heavy glare may hide more; ~10 on sand and promenade"
+    "note": "thigh-high, offshore, high tide so mostly breaking on the inside; 2 sitting outside in crowd frame 1, heavy glare may hide more; ~10 on sand and promenade",
+    "erisurf": null
    },
    {
     "spot": "Norte",
@@ -199,7 +298,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": "choppy crumbly lines in the cross-shore N; one dark shape in two detail frames could be a lone surfer, unconfirmed"
+    "note": "choppy crumbly lines in the cross-shore N; one dark shape in two detail frames could be a lone surfer, unconfirmed",
+    "erisurf": null
    },
    {
     "spot": "Sul",
@@ -214,7 +314,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": null,
-    "note": "barely breaking, only wrapping onto the rock point; detail crop scanned all three frames, nobody out"
+    "note": "barely breaking, only wrapping onto the rock point; detail crop scanned all three frames, nobody out",
+    "erisurf": null
    },
    {
     "spot": "Pedra",
@@ -229,7 +330,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": 2,
-    "note": "wind-chopped, whitewater onto the ledges; hard glare, a couple of specks in the whitewater unresolvable; 2 on the clifftop"
+    "note": "wind-chopped, whitewater onto the ledges; hard glare, a couple of specks in the whitewater unresolvable; 2 on the clifftop",
+    "erisurf": null
    },
    {
     "spot": "Lizandro",
@@ -244,7 +346,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": 30,
-    "note": "blown-out shorebreak dumping on the sand; only waders at the edge, nobody beyond the break (approximate, wide cam); ~30 on the sand"
+    "note": "blown-out shorebreak dumping on the sand; only waders at the edge, nobody beyond the break (approximate, wide cam); ~30 on the sand",
+    "erisurf": null
    }
   ]
  },
@@ -267,7 +370,8 @@
     "wind_dir": "N",
     "surfers": 19,
     "people": 17,
-    "note": "waist-high lines peeling down the reef, offshore N, riders on both crowd frames; ~19 out (higher of two), ~17 on sand and promenade"
+    "note": "waist-high lines peeling down the reef, offshore N, riders on both crowd frames; ~19 out (higher of two), ~17 on sand and promenade",
+    "erisurf": null
    },
    {
     "spot": "Norte",
@@ -282,7 +386,8 @@
     "wind_dir": "N",
     "surfers": 1,
     "people": null,
-    "note": "short crumbly peaks, crossed-up and choppy in the cross-shore N; one dark speck outside the peak in both crowd frames, likely a lone surfer"
+    "note": "short crumbly peaks, crossed-up and choppy in the cross-shore N; one dark speck outside the peak in both crowd frames, likely a lone surfer",
+    "erisurf": null
    },
    {
     "spot": "Sul",
@@ -297,7 +402,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": null,
-    "note": "flat, swell not breaking, only wrapping onto the rock point; detail crop scanned all three frames, nobody out"
+    "note": "flat, swell not breaking, only wrapping onto the rock point; detail crop scanned all three frames, nobody out",
+    "erisurf": null
    },
    {
     "spot": "Pedra",
@@ -312,7 +418,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": null,
-    "note": "mushy whitewater and short peaks folding onto the reef shelf; detail crop scanned frame by frame, nobody out"
+    "note": "mushy whitewater and short peaks folding onto the reef shelf; detail crop scanned frame by frame, nobody out",
+    "erisurf": null
    },
    {
     "spot": "Lizandro",
@@ -327,7 +434,8 @@
     "wind_dir": "N",
     "surfers": 4,
     "people": 28,
-    "note": "small shorebreak dumping on the sand; ~4 heads beyond it (approximate, wide cam, may include swimmers), ~28 on the sand"
+    "note": "small shorebreak dumping on the sand; ~4 heads beyond it (approximate, wide cam, may include swimmers), ~28 on the sand",
+    "erisurf": null
    }
   ]
  },
@@ -350,7 +458,8 @@
     "wind_dir": "N",
     "surfers": 22,
     "people": 12,
-    "note": "waist-high lines peeling down the reef, offshore N grooming them; ~22 out in the +37s crowd frame (higher of two), ~12 on promenade and sand"
+    "note": "waist-high lines peeling down the reef, offshore N grooming them; ~22 out in the +37s crowd frame (higher of two), ~12 on promenade and sand",
+    "erisurf": null
    },
    {
     "spot": "Norte",
@@ -365,7 +474,8 @@
     "wind_dir": "N",
     "surfers": 1,
     "people": null,
-    "note": "small crumbly peaks, short sections, cross-shore chop; one dark figure paddling near the outer peak in the detail crop"
+    "note": "small crumbly peaks, short sections, cross-shore chop; one dark figure paddling near the outer peak in the detail crop",
+    "erisurf": null
    },
    {
     "spot": "Sul",
@@ -380,7 +490,8 @@
     "wind_dir": "N",
     "surfers": 1,
     "people": null,
-    "note": "barely breaking, small lines wrapping onto the rock point; 1 figure on the inside in three sheet frames, could be a swimmer"
+    "note": "barely breaking, small lines wrapping onto the rock point; 1 figure on the inside in three sheet frames, could be a swimmer",
+    "erisurf": null
    },
    {
     "spot": "Pedra",
@@ -395,7 +506,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": 1,
-    "note": "short peaky sections folding onto the reef shelf, wind-textured; detail crop scanned frame by frame, nobody out, 1 on the cliff"
+    "note": "short peaky sections folding onto the reef shelf, wind-textured; detail crop scanned frame by frame, nobody out, 1 on the cliff",
+    "erisurf": null
    },
    {
     "spot": "Lizandro",
@@ -410,7 +522,8 @@
     "wind_dir": "N",
     "surfers": 6,
     "people": 15,
-    "note": "shorebreak closing out on the sand; ~6 in the whitewater (surf school, approximate, wide cam), ~15 on the sand incl. a group with boards"
+    "note": "shorebreak closing out on the sand; ~6 in the whitewater (surf school, approximate, wide cam), ~15 on the sand incl. a group with boards",
+    "erisurf": null
    }
   ]
  },
@@ -433,7 +546,8 @@
     "wind_dir": "N",
     "surfers": 10,
     "people": 6,
-    "note": "clean waist-high lines peeling down the reef in golden light, offshore N holding them up; counted ~10 out in the crowd crop, higher of the two frames, ~6 on the promenade"
+    "note": "clean waist-high lines peeling down the reef in golden light, offshore N holding them up; counted ~10 out in the crowd crop, higher of the two frames, ~6 on the promenade",
+    "erisurf": null
    },
    {
     "spot": "Norte",
@@ -448,7 +562,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": "cam pointed at the sea wall and promenade again, water only a sliver at the top of frame; dead framing, not an empty lineup"
+    "note": "cam pointed at the sea wall and promenade again, water only a sliver at the top of frame; dead framing, not an empty lineup",
+    "erisurf": null
    },
    {
     "spot": "Sul",
@@ -463,7 +578,8 @@
     "wind_dir": "N",
     "surfers": 2,
     "people": null,
-    "note": "barely breaking, wind texture across the bay and wash only on the rock point; 2 dots visible in both detail and crowd crops"
+    "note": "barely breaking, wind texture across the bay and wash only on the rock point; 2 dots visible in both detail and crowd crops",
+    "erisurf": null
    },
    {
     "spot": "Pedra",
@@ -478,7 +594,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": 2,
-    "note": "crumbly whitewater running onto the reef shelf, no rideable face; detail crop scanned frame by frame, nobody out, 2 walking on the rocks"
+    "note": "crumbly whitewater running onto the reef shelf, no rideable face; detail crop scanned frame by frame, nobody out, 2 walking on the rocks",
+    "erisurf": null
    },
    {
     "spot": "Lizandro",
@@ -493,7 +610,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": 4,
-    "note": "sun setting straight into the lineup, outside is a solid glare sheet and not countable; ~4 figures at the waterline, approximate, wide cam"
+    "note": "sun setting straight into the lineup, outside is a solid glare sheet and not countable; ~4 figures at the waterline, approximate, wide cam",
+    "erisurf": null
    }
   ]
  },
@@ -516,7 +634,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": "HLS stream 404 again, no frames grabbed this run; forecast-only line, nothing seen"
+    "note": "HLS stream 404 again, no frames grabbed this run; forecast-only line, nothing seen",
+    "erisurf": null
    },
    {
     "spot": "Norte",
@@ -531,7 +650,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": "cam still framed on the promenade and sea wall, water only a sliver in the top corner; dead framing, not an empty lineup"
+    "note": "cam still framed on the promenade and sea wall, water only a sliver in the top corner; dead framing, not an empty lineup",
+    "erisurf": null
    },
    {
     "spot": "Sul",
@@ -546,7 +666,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": null,
-    "note": "barely breaking, swell rolling past with wash only on the rock point, heavy wind texture; detail and crowd crops both scanned, nobody out"
+    "note": "barely breaking, swell rolling past with wash only on the rock point, heavy wind texture; detail and crowd crops both scanned, nobody out",
+    "erisurf": null
    },
    {
     "spot": "Pedra",
@@ -561,7 +682,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": "small crumbly runners onto the rock ledge, but sun glitter covers the whole lineup; not countable, null rather than a guessed zero"
+    "note": "small crumbly runners onto the rock ledge, but sun glitter covers the whole lineup; not countable, null rather than a guessed zero",
+    "erisurf": null
    },
    {
     "spot": "Lizandro",
@@ -576,7 +698,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": 20,
-    "note": "windblown whitewater right to the sand, no shape at all; nobody past the shorebreak, figures at the edge are waders, ~20 on the sand, wide cam so approximate"
+    "note": "windblown whitewater right to the sand, no shape at all; nobody past the shorebreak, figures at the edge are waders, ~20 on the sand, wide cam so approximate",
+    "erisurf": null
    }
   ]
  },
@@ -599,7 +722,8 @@
     "wind_dir": "NNW",
     "surfers": 8,
     "people": 6,
-    "note": "waist-high lines with a real face, wind bumps from the cross-shore; pack of 6-8 sitting out the back across the sheet frames, 2-4 inside on the crowd crop"
+    "note": "waist-high lines with a real face, wind bumps from the cross-shore; pack of 6-8 sitting out the back across the sheet frames, 2-4 inside on the crowd crop",
+    "erisurf": null
    },
    {
     "spot": "Norte",
@@ -614,7 +738,8 @@
     "wind_dir": "NNW",
     "surfers": null,
     "people": null,
-    "note": "cam still pointed at the promenade and sea wall, only a sliver of shorebreak in the top corner; dead framing, not an empty lineup"
+    "note": "cam still pointed at the promenade and sea wall, only a sliver of shorebreak in the top corner; dead framing, not an empty lineup",
+    "erisurf": null
    },
    {
     "spot": "Sul",
@@ -629,7 +754,8 @@
     "wind_dir": "NNW",
     "surfers": 0,
     "people": null,
-    "note": "near flat, swell rolling through unbroken with wash only on the rock point; detail and crowd crops both scanned, nobody out"
+    "note": "near flat, swell rolling through unbroken with wash only on the rock point; detail and crowd crops both scanned, nobody out",
+    "erisurf": null
    },
    {
     "spot": "Pedra",
@@ -644,7 +770,8 @@
     "wind_dir": "NNW",
     "surfers": 0,
     "people": 2,
-    "note": "small runners breaking over the reef, one with a short shoulder, gusty texture; detail and crowd crops scanned, nobody out, 2 on the headland"
+    "note": "small runners breaking over the reef, one with a short shoulder, gusty texture; detail and crowd crops scanned, nobody out, 2 on the headland",
+    "erisurf": null
    },
    {
     "spot": "Lizandro",
@@ -659,7 +786,8 @@
     "wind_dir": "NNW",
     "surfers": 4,
     "people": 25,
-    "note": "mushy shorebreak with no shape, whitewater to the sand; approx 4 in the water near the flag, cam is wide so counts are approximate, ~25 on the sand"
+    "note": "mushy shorebreak with no shape, whitewater to the sand; approx 4 in the water near the flag, cam is wide so counts are approximate, ~25 on the sand",
+    "erisurf": null
    }
   ]
  },
@@ -682,7 +810,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": "no cam this run: Surfline HLS returned 404 so no frames were grabbed; FAIR and offshore on the forecast, but nothing seen"
+    "note": "no cam this run: Surfline HLS returned 404 so no frames were grabbed; FAIR and offshore on the forecast, but nothing seen",
+    "erisurf": null
    },
    {
     "spot": "Norte",
@@ -697,7 +826,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": "cam still pointed at the promenade and sea wall, only a sliver of shorebreak at the top of frame; dead framing, not an empty lineup"
+    "note": "cam still pointed at the promenade and sea wall, only a sliver of shorebreak at the top of frame; dead framing, not an empty lineup",
+    "erisurf": null
    },
    {
     "spot": "Sul",
@@ -712,7 +842,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": null,
-    "note": "weak lines barely breaking, only wrapping onto the rock shelf at the point; detail and crowd crops both scanned in dawn light, nobody out"
+    "note": "weak lines barely breaking, only wrapping onto the rock shelf at the point; detail and crowd crops both scanned in dawn light, nobody out",
+    "erisurf": null
    },
    {
     "spot": "Pedra",
@@ -727,7 +858,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": null,
-    "note": "low tide has the reef shelf dry, waves just washing over the rock; detail and crowd crops both scanned, nobody out"
+    "note": "low tide has the reef shelf dry, waves just washing over the rock; detail and crowd crops both scanned, nobody out",
+    "erisurf": null
    },
    {
     "spot": "Lizandro",
@@ -742,7 +874,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": 0,
-    "note": "dumping shorebreak straight onto the sand, no shape; dim dawn light but sand and whitewater readable, nobody out and empty beach"
+    "note": "dumping shorebreak straight onto the sand, no shape; dim dawn light but sand and whitewater readable, nobody out and empty beach",
+    "erisurf": null
    }
   ]
  },
@@ -765,7 +898,8 @@
     "wind_dir": "NNW",
     "surfers": 11,
     "people": 30,
-    "note": "long clean lines peeling across the low-tide reef, one rider up in the detail crop; ~11 spread through the lineup (higher of the two crowd frames), ~30 on the sand and promenade"
+    "note": "long clean lines peeling across the low-tide reef, one rider up in the detail crop; ~11 spread through the lineup (higher of the two crowd frames), ~30 on the sand and promenade",
+    "erisurf": null
    },
    {
     "spot": "Norte",
@@ -780,7 +914,8 @@
     "wind_dir": "NNW",
     "surfers": null,
     "people": null,
-    "note": "cam still framed on the promenade and sea wall, only a sliver of shorebreak at the top; dead framing, not an empty lineup"
+    "note": "cam still framed on the promenade and sea wall, only a sliver of shorebreak at the top; dead framing, not an empty lineup",
+    "erisurf": null
    },
    {
     "spot": "Sul",
@@ -795,7 +930,8 @@
     "wind_dir": "NNW",
     "surfers": 1,
     "people": null,
-    "note": "weak lines barely breaking, only wrapping onto the rock shelf at the point; one lone figure sitting out in all three detail frames"
+    "note": "weak lines barely breaking, only wrapping onto the rock shelf at the point; one lone figure sitting out in all three detail frames",
+    "erisurf": null
    },
    {
     "spot": "Pedra",
@@ -810,7 +946,8 @@
     "wind_dir": "NNW",
     "surfers": 0,
     "people": 1,
-    "note": "low tide has the reef shelf dry, waves just washing whitewater over the rock; detail and crowd crops both scanned, nobody out"
+    "note": "low tide has the reef shelf dry, waves just washing whitewater over the rock; detail and crowd crops both scanned, nobody out",
+    "erisurf": null
    },
    {
     "spot": "Lizandro",
@@ -825,7 +962,8 @@
     "wind_dir": "NNW",
     "surfers": 6,
     "people": 22,
-    "note": "small crumbly shorebreak on the sandbar, a longer line down by the rocks; ~6 in the water (approx, glare and a wide frame), ~22 on the beach"
+    "note": "small crumbly shorebreak on the sandbar, a longer line down by the rocks; ~6 in the water (approx, glare and a wide frame), ~22 on the beach",
+    "erisurf": null
    }
   ]
  },
@@ -848,7 +986,8 @@
     "wind_dir": "NNW",
     "surfers": 8,
     "people": 20,
-    "note": "small textured waist-high lines peeling on the reef, bumpy in the cross-shore; ~8 spread across the lineup in the contact sheet (approx), ~20 on the sand and promenade"
+    "note": "small textured waist-high lines peeling on the reef, bumpy in the cross-shore; ~8 spread across the lineup in the contact sheet (approx), ~20 on the sand and promenade",
+    "erisurf": null
    },
    {
     "spot": "Norte",
@@ -863,7 +1002,8 @@
     "wind_dir": "NNW",
     "surfers": null,
     "people": null,
-    "note": "cam still framed on the promenade and sea wall, only a sliver of shorebreak in the top corner; dead framing, not an empty lineup"
+    "note": "cam still framed on the promenade and sea wall, only a sliver of shorebreak in the top corner; dead framing, not an empty lineup",
+    "erisurf": null
    },
    {
     "spot": "Sul",
@@ -878,7 +1018,8 @@
     "wind_dir": "NNW",
     "surfers": 0,
     "people": null,
-    "note": "swell rolling through unbroken, breaking only on the rock shelf by the point; detail and crowd crops both scanned, nobody out"
+    "note": "swell rolling through unbroken, breaking only on the rock shelf by the point; detail and crowd crops both scanned, nobody out",
+    "erisurf": null
    },
    {
     "spot": "Pedra",
@@ -893,7 +1034,8 @@
     "wind_dir": "NNW",
     "surfers": 8,
     "people": null,
-    "note": "peeling walls with a green face, two riders clearly up in the crowd and detail crops; better than the POOR rating, ~8 in the pack (approx)"
+    "note": "peeling walls with a green face, two riders clearly up in the crowd and detail crops; better than the POOR rating, ~8 in the pack (approx)",
+    "erisurf": null
    },
    {
     "spot": "Lizandro",
@@ -908,7 +1050,8 @@
     "wind_dir": "NNW",
     "surfers": 5,
     "people": 40,
-    "note": "mushy shorebreak mostly closing out on the sand; ~5 in the water (approx, cam too wide to separate surfers from bathers), ~40 on the beach"
+    "note": "mushy shorebreak mostly closing out on the sand; ~5 in the water (approx, cam too wide to separate surfers from bathers), ~40 on the beach",
+    "erisurf": null
    }
   ]
  },
@@ -931,7 +1074,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": null
+    "note": null,
+    "erisurf": null
    },
    {
     "spot": "Norte",
@@ -946,7 +1090,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": null
+    "note": null,
+    "erisurf": null
    },
    {
     "spot": "Sul",
@@ -961,7 +1106,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": null
+    "note": null,
+    "erisurf": null
    },
    {
     "spot": "Pedra",
@@ -976,7 +1122,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": null
+    "note": null,
+    "erisurf": null
    },
    {
     "spot": "Lizandro",
@@ -991,7 +1138,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": null
+    "note": null,
+    "erisurf": null
    }
   ]
  },
@@ -1014,7 +1162,8 @@
     "wind_dir": "N",
     "surfers": 13,
     "people": 30,
-    "note": "clean waist-high lines peeling down the reef in sun, N wind offshore; 13 counted across the two crowd frames, ~30 on the sand and promenade"
+    "note": "clean waist-high lines peeling down the reef in sun, N wind offshore; 13 counted across the two crowd frames, ~30 on the sand and promenade",
+    "erisurf": null
    },
    {
     "spot": "Norte",
@@ -1029,7 +1178,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": "cam still framed on the promenade and sea wall, only a sliver of shorebreak at the top edge; dead framing, not an empty lineup"
+    "note": "cam still framed on the promenade and sea wall, only a sliver of shorebreak at the top edge; dead framing, not an empty lineup",
+    "erisurf": null
    },
    {
     "spot": "Sul",
@@ -1044,7 +1194,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": null,
-    "note": "cam on the rocky point, swell wrapping and dumping onto the rocks with no rideable face; detail and crowd crops both scanned, nobody out"
+    "note": "cam on the rocky point, swell wrapping and dumping onto the rocks with no rideable face; detail and crowd crops both scanned, nobody out",
+    "erisurf": null
    },
    {
     "spot": "Pedra",
@@ -1059,7 +1210,8 @@
     "wind_dir": "N",
     "surfers": 5,
     "people": null,
-    "note": "lefts peeling along the reef with a clean green face, better shape than the POOR rating; 5 counted in the crowd crop, one rider up in the detail crop"
+    "note": "lefts peeling along the reef with a clean green face, better shape than the POOR rating; 5 counted in the crowd crop, one rider up in the detail crop",
+    "erisurf": null
    },
    {
     "spot": "Lizandro",
@@ -1074,7 +1226,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": 55,
-    "note": "shorebreak dumping straight onto the sand, closing out; detail and crowd crops scanned, water empty while ~55 (approx) sit on the beach"
+    "note": "shorebreak dumping straight onto the sand, closing out; detail and crowd crops scanned, water empty while ~55 (approx) sit on the beach",
+    "erisurf": null
    }
   ]
  },
@@ -1097,7 +1250,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": "HLS stream 404 again this run - no clip, no frames. The one FAIR spot and the one offshore spot, so this is the gap that matters"
+    "note": "HLS stream 404 again this run - no clip, no frames. The one FAIR spot and the one offshore spot, so this is the gap that matters",
+    "erisurf": null
    },
    {
     "spot": "Norte",
@@ -1112,7 +1266,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": "cam still framed on the promenade and sea wall, only a sliver of sand and a bird flock in shot; dead framing, not an empty lineup"
+    "note": "cam still framed on the promenade and sea wall, only a sliver of sand and a bird flock in shot; dead framing, not an empty lineup",
+    "erisurf": null
    },
    {
     "spot": "Pedra",
@@ -1127,7 +1282,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": null,
-    "note": "low tide, reef shelf drained, whitewater washing over it with almost no shape; detail and crowd crops both scanned, nobody out"
+    "note": "low tide, reef shelf drained, whitewater washing over it with almost no shape; detail and crowd crops both scanned, nobody out",
+    "erisurf": null
    },
    {
     "spot": "Lizandro",
@@ -1142,7 +1298,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": 0,
-    "note": "broad whitewater band, dim dawn light; marks in the wash could be the shoreline bird flock, could not resolve surfers - 4 were countable at 07:31 so read this as unreadable, not empty. Beach itself deserted"
+    "note": "broad whitewater band, dim dawn light; marks in the wash could be the shoreline bird flock, could not resolve surfers - 4 were countable at 07:31 so read this as unreadable, not empty. Beach itself deserted",
+    "erisurf": null
    }
   ]
  },
@@ -1165,7 +1322,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": "HLS stream unavailable this run - no clip, no frames, nothing to look at. Rated FAIR and offshore, so this is the one gap that matters today"
+    "note": "HLS stream unavailable this run - no clip, no frames, nothing to look at. Rated FAIR and offshore, so this is the one gap that matters today",
+    "erisurf": null
    },
    {
     "spot": "Norte",
@@ -1180,7 +1338,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": "cam still framed on the promenade and sea wall, no water in shot at all; dead cam, not an empty lineup"
+    "note": "cam still framed on the promenade and sea wall, no water in shot at all; dead cam, not an empty lineup",
+    "erisurf": null
    },
    {
     "spot": "Sul",
@@ -1195,7 +1354,8 @@
     "wind_dir": "N",
     "surfers": 4,
     "people": null,
-    "note": "better than its POOR rating: clean rights wrapping in and peeling off the point with real green walls, one rider up at +37s; 4 resolvable in the water"
+    "note": "better than its POOR rating: clean rights wrapping in and peeling off the point with real green walls, one rider up at +37s; 4 resolvable in the water",
+    "erisurf": null
    },
    {
     "spot": "Pedra",
@@ -1210,7 +1370,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": null,
-    "note": "low tide, reef shelf drained and exposed, whitewater washing over it with little shape; flat dawn light, one ambiguous mark at +37s not counted"
+    "note": "low tide, reef shelf drained and exposed, whitewater washing over it with little shape; flat dawn light, one ambiguous mark at +37s not counted",
+    "erisurf": null
    },
    {
     "spot": "Lizandro",
@@ -1225,7 +1386,8 @@
     "wind_dir": "N",
     "surfers": 4,
     "people": 0,
-    "note": "wide band of whitewater, one workable corner by the rocks; 4 out near the flag, beach deserted at dawn"
+    "note": "wide band of whitewater, one workable corner by the rocks; 4 out near the flag, beach deserted at dawn",
+    "erisurf": null
    }
   ]
  },
@@ -1248,7 +1410,8 @@
     "wind_dir": "N",
     "surfers": 22,
     "people": null,
-    "note": "clean chest-high walls peeling down the reef with real green shoulders, offshore N holding them up; 22 resolvable in the crowd crop at +0s, busiest run of the day"
+    "note": "clean chest-high walls peeling down the reef with real green shoulders, offshore N holding them up; 22 resolvable in the crowd crop at +0s, busiest run of the day",
+    "erisurf": null
    },
    {
     "spot": "Norte",
@@ -1263,7 +1426,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": "cam still pointed at the promenade and sea wall, no lineup in frame at all; nothing countable, dead cam not an empty lineup"
+    "note": "cam still pointed at the promenade and sea wall, no lineup in frame at all; nothing countable, dead cam not an empty lineup",
+    "erisurf": null
    },
    {
     "spot": "Sul",
@@ -1278,7 +1442,8 @@
     "wind_dir": "N",
     "surfers": 6,
     "people": null,
-    "note": "swell wrapping in and breaking wide, crumbly reforming sections rather than clean walls; 6 resolvable in the water at +25s in the detail crop"
+    "note": "swell wrapping in and breaking wide, crumbly reforming sections rather than clean walls; 6 resolvable in the water at +25s in the detail crop",
+    "erisurf": null
    },
    {
     "spot": "Pedra",
@@ -1293,7 +1458,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": null,
-    "note": "low tide reef exposed, whitewater washing straight over it with no green face; all three detail frames plus both crowd frames scanned and empty"
+    "note": "low tide reef exposed, whitewater washing straight over it with no green face; all three detail frames plus both crowd frames scanned and empty",
+    "erisurf": null
    },
    {
     "spot": "Lizandro",
@@ -1308,7 +1474,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": 3,
-    "note": "messy cross-shore whitewater dumping onto the sand, no shape; water readable and empty, beach near deserted with the lifeguard packing up"
+    "note": "messy cross-shore whitewater dumping onto the sand, no shape; water readable and empty, beach near deserted with the lifeguard packing up",
+    "erisurf": null
    }
   ]
  },
@@ -1331,7 +1498,8 @@
     "wind_dir": "N",
     "surfers": 3,
     "people": 35,
-    "note": "waist-to-chest lines still peeling down the reef but bumpy and wind-textured; one rider confirmed on a green face plus two sitting outside, ~35 on the sand and promenade"
+    "note": "waist-to-chest lines still peeling down the reef but bumpy and wind-textured; one rider confirmed on a green face plus two sitting outside, ~35 on the sand and promenade",
+    "erisurf": null
    },
    {
     "spot": "Norte",
@@ -1346,7 +1514,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": "cam still framed on the promenade and sea wall, only a sliver of shorebreak in the corner; nothing countable, dead cam not an empty lineup"
+    "note": "cam still framed on the promenade and sea wall, only a sliver of shorebreak in the corner; nothing countable, dead cam not an empty lineup",
+    "erisurf": null
    },
    {
     "spot": "Sul",
@@ -1361,7 +1530,8 @@
     "wind_dir": "N",
     "surfers": 7,
     "people": null,
-    "note": "swell wrapping in and breaking wide, mostly whitewater across the inside; 7 resolvable in the water at +37s, may include bathers as they sit inside and none seen riding"
+    "note": "swell wrapping in and breaking wide, mostly whitewater across the inside; 7 resolvable in the water at +37s, may include bathers as they sit inside and none seen riding",
+    "erisurf": null
    },
    {
     "spot": "Pedra",
@@ -1376,7 +1546,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": null,
-    "note": "whitewater washing the length of the reef, heavy wind chop on the surface, no green face; all three detail frames scanned and empty"
+    "note": "whitewater washing the length of the reef, heavy wind chop on the surface, no green face; all three detail frames scanned and empty",
+    "erisurf": null
    },
    {
     "spot": "Lizandro",
@@ -1391,7 +1562,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": 30,
-    "note": "one continuous closeout wall dumping the length of the beach, red flag flying; water readable and empty, roughly 30 on the sand"
+    "note": "one continuous closeout wall dumping the length of the beach, red flag flying; water readable and empty, roughly 30 on the sand",
+    "erisurf": null
    }
   ]
  },
@@ -1414,7 +1586,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": null
+    "note": null,
+    "erisurf": null
    },
    {
     "spot": "Sul",
@@ -1429,7 +1602,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": null
+    "note": null,
+    "erisurf": null
    },
    {
     "spot": "Pedra",
@@ -1444,7 +1618,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": null
+    "note": null,
+    "erisurf": null
    },
    {
     "spot": "Lizandro",
@@ -1459,7 +1634,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": null
+    "note": null,
+    "erisurf": null
    }
   ]
  },
@@ -1482,7 +1658,8 @@
     "wind_dir": "N",
     "surfers": 5,
     "people": null,
-    "note": "clean lines peeling down the reef, N wind offshore holding them up; 5 resolvable in the water across both crowd frames, crop does not reach the sand so no land count"
+    "note": "clean lines peeling down the reef, N wind offshore holding them up; 5 resolvable in the water across both crowd frames, crop does not reach the sand so no land count",
+    "erisurf": null
    },
    {
     "spot": "Norte",
@@ -1497,7 +1674,8 @@
     "wind_dir": "N",
     "surfers": null,
     "people": null,
-    "note": "cam still zoomed onto the promenade and sea wall - not one pixel of water in frame; nothing countable, this is a dead cam not an empty lineup"
+    "note": "cam still zoomed onto the promenade and sea wall - not one pixel of water in frame; nothing countable, this is a dead cam not an empty lineup",
+    "erisurf": null
    },
    {
     "spot": "Sul",
@@ -1512,7 +1690,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": null,
-    "note": "swell passing through mostly unbroken, only breaking where it wraps into the point rocks; all three detail frames clear and empty"
+    "note": "swell passing through mostly unbroken, only breaking where it wraps into the point rocks; all three detail frames clear and empty",
+    "erisurf": null
    },
    {
     "spot": "Pedra",
@@ -1527,7 +1706,8 @@
     "wind_dir": "N",
     "surfers": 2,
     "people": null,
-    "note": "long white closeout down the reef; two small figures sitting outside the break at +37s, approximate - they are at the limit of what this cam resolves"
+    "note": "long white closeout down the reef; two small figures sitting outside the break at +37s, approximate - they are at the limit of what this cam resolves",
+    "erisurf": null
    },
    {
     "spot": "Lizandro",
@@ -1542,90 +1722,8 @@
     "wind_dir": "N",
     "surfers": 0,
     "people": 22,
-    "note": "one continuous closeout band dumping the length of the beach, red flag flying; water readable and empty, roughly 22 on the sand"
-   }
-  ]
- },
- {
-  "run_id": 61,
-  "day": "2026-09-07",
-  "time": "14:13",
-  "slot": "afternoon",
-  "spots": [
-   {
-    "spot": "Ribeira",
-    "rating": "FAIR",
-    "surf_min": 1.2,
-    "surf_max": 1.8,
-    "swell_h": 1.6,
-    "swell_p": 12,
-    "swell_dir": "WNW",
-    "wind_kts": 16,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": 7,
-    "people": 25,
-    "note": "clean waist-to-chest lines peeling down the reef, N wind offshore holding them up; 7 in the pack on the busier crowd frame, ~25 on the sand"
-   },
-   {
-    "spot": "Norte",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 1.2,
-    "surf_max": 1.8,
-    "swell_h": 1.6,
-    "swell_p": 12,
-    "swell_dir": "WNW",
-    "wind_kts": 16,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": "cam still framed on the promenade and sea wall, lineup entirely out of shot; nothing countable, not an empty lineup"
-   },
-   {
-    "spot": "Sul",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 1.2,
-    "surf_max": 1.8,
-    "swell_h": 1.6,
-    "swell_p": 12,
-    "swell_dir": "WNW",
-    "wind_kts": 16,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": 0,
-    "people": null,
-    "note": "swell rolling through mostly unbroken, only breaking where it wraps into the point rocks; detail crop clear and readable, nobody out"
-   },
-   {
-    "spot": "Pedra",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 1.2,
-    "surf_max": 1.5,
-    "swell_h": 1.6,
-    "swell_p": 12,
-    "swell_dir": "WNW",
-    "wind_kts": 16,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": 0,
-    "people": null,
-    "note": "washed out, one broad band of whitewater over the bank with no rideable shoulder; nobody out, cam sees cliff not beach"
-   },
-   {
-    "spot": "Lizandro",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 1.2,
-    "surf_max": 1.5,
-    "swell_h": 1.6,
-    "swell_p": 12,
-    "swell_dir": "WNW",
-    "wind_kts": 16,
-    "wind_gust": 23,
-    "wind_dir": "N",
-    "surfers": 0,
-    "people": 19,
-    "note": "closeouts dumping in wide bands across the whole beach, red flag flying; detail crop readable and empty, ~19 on the sand"
+    "note": "one continuous closeout band dumping the length of the beach, red flag flying; water readable and empty, roughly 22 on the sand",
+    "erisurf": null
    }
   ]
  }

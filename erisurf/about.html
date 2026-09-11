@@ -34,7 +34,8 @@ h1{font-size:24px;margin:0 0 2px;letter-spacing:-.01em}
 .card header{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .card h3{margin:0;font-size:15px}
 .size{font-size:22px;margin:8px 0 2px;font-weight:650;letter-spacing:-.02em}
-.meta,.note{color:var(--muted);font-size:12.5px;margin:2px 0}
+.stars{font-size:14px;font-weight:400;letter-spacing:.02em;margin-left:6px;color:var(--accent)}
+.note{color:var(--muted);font-size:12.5px;margin:2px 0}
 .who{margin:8px 0 4px;font-size:14px}
 .badge{font-size:10.5px;font-weight:700;letter-spacing:.04em;color:#fff;
   padding:3px 7px;border-radius:999px;white-space:nowrap}
@@ -71,7 +72,7 @@ figure img{max-width:100%}
   display:inline-flex;align-items:center;gap:3px}
 .camico{width:15px;height:15px;border-radius:4px;background:#fff;padding:1px;
   box-shadow:0 0 0 1px var(--line);flex:0 0 auto}
-.note{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.note{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 figure{margin:0 0 14px}
 figure img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line);display:block}
 figcaption{color:var(--muted);font-size:12px;margin-top:5px}
@@ -81,7 +82,7 @@ figcaption{color:var(--muted);font-size:12px;margin-top:5px}
 <a href="archive/index.html">Archive</a>
 <a href="about.html">How this works</a></div>
 <h1>How this works</h1>
-<p class="sub">Ericeira Surf Log &middot; 78 runs recorded since 27 Aug 2026</p>
+<p class="sub">Ericeira Surf Log &middot; 79 runs recorded since 27 Aug 2026</p>
 <div class="report" style="white-space:normal">
 <p><b>Four times a day</b> (07:30, 11:30, 15:30, 18:00 Lisbon) the log records five
 Ericeira spots: forecast numbers from Surfline's public API, and a short clip
@@ -91,8 +92,11 @@ be doing; only the camera tells you what it is actually doing, and whether
 anyone thought it was worth paddling out. Every report says how many surfers
 are in the water, counted off the frames. When a camera is dark, misframed or
 offline, the report says so rather than guessing.</p>
-<p><b>Wind and tide</b> come as one strip covering the next 24 hours, and each
-report names the best window ahead rather than only describing now.</p>
+<p><b>Erisurf rating</b> (1 to 5 stars) starts from the forecast and is then
+adjusted by what the cameras show. Surfers in the water raise it, since that is
+live proof a spot is working. Blown-out, closing-out or barely breaking water
+lowers it. The headline says WORTH SURFING, MARGINAL or SKIP.</p>
+<p><b>Wind and tide</b> for the next 24 hours come as one strip. Wind is in km/h.</p>
 <p><b>Honest limits.</b> Counts are a snapshot from two frames about 40 seconds
 apart, not a headcount &mdash; a surfer underwater in both is missed. Wide or
 distant cameras are marked approximate. Ratings and sizes are Surfline's
