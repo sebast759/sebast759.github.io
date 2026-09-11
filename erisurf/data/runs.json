@@ -1,5 +1,88 @@
 [
  {
+  "run_id": 80,
+  "day": "2026-09-11",
+  "time": "07:39",
+  "slot": "sunrise",
+  "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 0.7,
+    "swell_p": 10,
+    "swell_dir": "NNW",
+    "wind_kts": 16,
+    "wind_gust": 25,
+    "wind_dir": "NNE",
+    "surfers": null,
+    "people": null,
+    "note": "cam down, stream offline this run; no picture"
+   },
+   {
+    "spot": "Norte",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 0.7,
+    "swell_p": 10,
+    "swell_dir": "NNW",
+    "wind_kts": 16,
+    "wind_gust": 25,
+    "wind_dir": "NNE",
+    "surfers": null,
+    "people": null,
+    "note": "small wind-textured lines, mostly unbroken at low tide; a tight cluster of dark specks mid-lineup, likely birds, not resolvable in dawn light"
+   },
+   {
+    "spot": "Sul",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 0.7,
+    "swell_p": 10,
+    "swell_dir": "NNW",
+    "wind_kts": 16,
+    "wind_gust": 25,
+    "wind_dir": "NNE",
+    "surfers": 0,
+    "people": null,
+    "note": "tiny lines wrapping by the point, barely breaking; nobody in detail or crowd frames"
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 0.7,
+    "swell_p": 10,
+    "swell_dir": "NNW",
+    "wind_kts": 16,
+    "wind_gust": 25,
+    "wind_dir": "NNE",
+    "surfers": 0,
+    "people": null,
+    "note": "weak crumbly waves over the exposed reef, offshore spray streaks; nobody out in detail crop"
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 0.7,
+    "swell_p": 10,
+    "swell_dir": "NNW",
+    "wind_kts": 16,
+    "wind_gust": 25,
+    "wind_dir": "NNE",
+    "surfers": 0,
+    "people": 0,
+    "note": "near-flat, tiny shorebreak at low tide; nobody in the water, only gulls on the sand"
+   }
+  ]
+ },
+ {
   "run_id": 79,
   "day": "2026-09-10",
   "time": "18:39",
@@ -1543,89 +1626,6 @@
     "surfers": 0,
     "people": 19,
     "note": "closeouts dumping in wide bands across the whole beach, red flag flying; detail crop readable and empty, ~19 on the sand"
-   }
-  ]
- },
- {
-  "run_id": 60,
-  "day": "2026-09-07",
-  "time": "11:39",
-  "slot": "lunch",
-  "spots": [
-   {
-    "spot": "Ribeira",
-    "rating": "FAIR_TO_GOOD",
-    "surf_min": 1.2,
-    "surf_max": 1.8,
-    "swell_h": 1.8,
-    "swell_p": 12,
-    "swell_dir": "WNW",
-    "wind_kts": 15,
-    "wind_gust": 21,
-    "wind_dir": "N",
-    "surfers": 18,
-    "people": 30,
-    "note": "clean chest-high lines peeling along the reef, offshore N holding them up; ~18 in the pack across both crowd frames, ~30 on the sand and promenade"
-   },
-   {
-    "spot": "Norte",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 1.2,
-    "surf_max": 1.8,
-    "swell_h": 1.8,
-    "swell_p": 12,
-    "swell_dir": "WNW",
-    "wind_kts": 15,
-    "wind_gust": 21,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": "cam still pointed at the promenade and sea wall, lineup entirely out of frame; nothing countable, not an empty lineup"
-   },
-   {
-    "spot": "Sul",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 1.2,
-    "surf_max": 1.8,
-    "swell_h": 1.8,
-    "swell_p": 12,
-    "swell_dir": "WNW",
-    "wind_kts": 15,
-    "wind_gust": 21,
-    "wind_dir": "N",
-    "surfers": 0,
-    "people": null,
-    "note": "swell mostly passing through unbroken, weak crumble wrapping into the point rocks; water clear and readable in the detail crop, nobody out"
-   },
-   {
-    "spot": "Pedra",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 1.2,
-    "surf_max": 1.5,
-    "swell_h": 1.8,
-    "swell_p": 12,
-    "swell_dir": "WNW",
-    "wind_kts": 15,
-    "wind_gust": 21,
-    "wind_dir": "N",
-    "surfers": 0,
-    "people": null,
-    "note": "one long white closeout down the reef, only a short green shoulder at the far end; nobody out, cam sees cliff not beach"
-   },
-   {
-    "spot": "Lizandro",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 1.2,
-    "surf_max": 1.5,
-    "swell_h": 1.8,
-    "swell_p": 12,
-    "swell_dir": "WNW",
-    "wind_kts": 15,
-    "wind_gust": 21,
-    "wind_dir": "N",
-    "surfers": 0,
-    "people": 8,
-    "note": "closed out, wide bands of foam across the whole beach, no green face; detail crop readable and empty, ~8 on the sand"
    }
   ]
  }
