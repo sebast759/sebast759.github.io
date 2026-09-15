@@ -14,7 +14,8 @@ function postScroll() {
   mkTicking = false;
   const mf = document.getElementById('markets-table');
   if (!mf || !mf.contentWindow) return;
-  mf.contentWindow.postMessage({type: 'mk-scroll', top: mf.getBoundingClientRect().top}, '*');
+  mf.contentWindow.postMessage({type: 'mk-scroll', top: mf.getBoundingClientRect().top,
+                                vh: window.innerHeight}, '*');
 }
 function mkTick() {
   if (mkTicking) return;
@@ -27,6 +28,15 @@ window.addEventListener('load', postScroll);
 
 document.addEventListener('DOMContentLoaded', function () {
   const baseUrl = 'https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/';
+
+  // Bonds tab: last scrape time, written by bond_yield_curves (needs http, not file://)
+  const bondsUpdated = document.getElementById('bonds-updated');
+  if (bondsUpdated) {
+    fetch('graphs/bond_yield_curves/last_update.html', {cache: 'no-cache'})
+      .then(r => r.ok ? r.text() : '')
+      .then(t => { bondsUpdated.textContent = t.trim(); })
+      .catch(() => {});
+  }
 
   // Helper to switch active class
   function setActive(buttons, activeBtn) {

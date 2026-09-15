@@ -201,6 +201,14 @@ body {
 
 
 
+/* "Updated at ..." line (Bonds tab; same look as the Markets table header line) */
+.updated-meta {
+    font-size: 0.72rem;
+    color: #999;
+    margin-bottom: 0.5rem;
+    min-height: 1em;
+}
+
 /* Markets table - full width up to a readable cap so all columns fit */
 .markets-table-container {
     width: 100%;
