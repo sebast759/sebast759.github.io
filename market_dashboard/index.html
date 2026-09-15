@@ -28,7 +28,7 @@
              <div style="width: 60%; margin: 0 auto;">
                 <div id="bonds-updated" class="updated-meta"></div>
                 <div style="margin-bottom: 0.0rem;">
-                    <h2 style="margin: 0 0 0.0rem 0; color: #1a1a1a;">Carry & Rolldown</h2>
+                    <h2 style="margin: 0 0 0.0rem 0; color: #1a1a1a;">Carry & Curve Slope</h2>
                 </div>
             </div>  
             <div class="two-column-grid">
@@ -61,12 +61,12 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Rolldown -->
+                <!-- Right Column: Curve Slope (long minus short yield, bp) -->
                 <div class="chart-section">
                     <div style="margin-bottom: 1rem;">
-                        <h3 style="margin: 0 0 0.5rem 0; color: #1a1a1a; font-size: 1.2rem;">Rolldown</h3>
+                        <h3 style="margin: 0 0 0.5rem 0; color: #1a1a1a; font-size: 1.2rem;">Curve Slope</h3>
                         <div style="display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="font-size: 0.85rem; color: #666; font-weight: 500;">Spread:</span>
+                            <span style="font-size: 0.85rem; color: #666; font-weight: 500;">Slope:</span>
                             <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 0.8rem;">
                                 <input type="radio" name="rolldown-spread" value="10y2y" checked>
                                 <span style="font-size: 0.85rem;">10Y-2Y</span>
@@ -164,6 +164,59 @@
                 
                 <div class="chart-container-historical">
                     <iframe id="history-chart" data-src="graphs/bond_yield_curves/history_g5_10y.html" scrolling="no"></iframe>
+                </div>
+
+                <!-- Historical curve slope (10Y minus 2Y, bp) -->
+                <div style="width: 60%; margin: 3rem auto 0;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <h2 style="margin: 0 0 0.5rem 0; color: #1a1a1a;">Historical Curve Slope (10Y−2Y)</h2>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="font-size: 0.9rem; color: #666; font-weight: 500;">Region:</span>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 1rem;">
+                                <input type="radio" name="slope-region" value="g5" checked>
+                                <span style="font-size: 0.9rem;">G5</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 1rem;">
+                                <input type="radio" name="slope-region" value="eu">
+                                <span style="font-size: 0.9rem;">EU</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer;">
+                                <input type="radio" name="slope-region" value="all">
+                                <span style="font-size: 0.9rem;">ALL</span>
+                            </label>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1.6rem;">
+                            <span style="font-size: 0.9rem; color: #666; font-weight: 500;">Country:</span>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 1rem;">
+                                <input type="radio" name="slope-country" value="usa">
+                                <span style="font-size: 0.9rem;">United States</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 1rem;">
+                                <input type="radio" name="slope-country" value="japan">
+                                <span style="font-size: 0.9rem;">Japan</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 1rem;">
+                                <input type="radio" name="slope-country" value="uk">
+                                <span style="font-size: 0.9rem;">United Kingdom</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 1rem;">
+                                <input type="radio" name="slope-country" value="germany">
+                                <span style="font-size: 0.9rem;">Germany</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer; margin-right: 1rem;">
+                                <input type="radio" name="slope-country" value="france">
+                                <span style="font-size: 0.9rem;">France</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.3rem; cursor: pointer;">
+                                <input type="radio" name="slope-country" value="switzerland">
+                                <span style="font-size: 0.9rem;">Switzerland</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-container-historical">
+                    <iframe id="slope-chart" data-src="graphs/bond_yield_curves/slope_g5_10y2y.html" scrolling="no"></iframe>
                 </div>
                 
             </div>

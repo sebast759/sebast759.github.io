@@ -194,6 +194,14 @@ document.querySelectorAll('input[name="history-country"]').forEach(radio => {
     });
 });
 
+// Historical curve slope (10Y-2Y): region or individual country
+document.querySelectorAll('input[name="slope-region"], input[name="slope-country"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+        document.getElementById('slope-chart').src =
+            `graphs/bond_yield_curves/slope_${this.value}_10y2y.html`;
+    });
+});
+
 // Price action button switching (BTC/ETH)
 document.querySelectorAll('.price_action-tab-btn').forEach(btn => {
     btn.addEventListener('click', function() {
