@@ -76,13 +76,31 @@ figure img{max-width:100%}
 figure{margin:0 0 14px}
 figure img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line);display:block}
 figcaption{color:var(--muted);font-size:12px;margin-top:5px}
+/* Plan a session: the stars and the clock carry it, the words are footnotes */
+.plans{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:560px){.plans{grid-template-columns:1fr}}
+.plan{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  padding:12px 13px;border-left:4px solid var(--accent);min-width:0}
+.plan-when{margin:0;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.plan-when b{color:var(--ink);font-size:15px;font-weight:650}
+.plan-tag{font-size:10px;text-transform:uppercase;letter-spacing:.06em;
+  border:1px solid var(--line);border-radius:999px;padding:2px 7px;margin-left:4px}
+.plan-stars{margin:7px 0 2px;font-size:20px;color:var(--accent);letter-spacing:.02em}
+.plan-spot{color:var(--ink);font-size:15px;font-weight:650;margin-left:6px}
+.plan-bits{margin:0 0 10px;font-size:12.5px;color:var(--muted)}
+/* .note is line-clamped to 2 for the cards; this one must wrap in full on a phone */
+.plan-note{display:block;-webkit-line-clamp:unset;overflow:visible}
+.cal{display:inline-block;text-decoration:none;font-size:12.5px;font-weight:650;
+  color:var(--ink);background:var(--bg);border:1px solid var(--line);
+  border-radius:8px;padding:6px 10px}
+.cal:hover{border-color:var(--accent);color:var(--accent)}
 </style></head><body><div class="wrap">
 <div class="nav"><a class="brand" href="index.html" aria-label="Ericeira Surf Log"><img
  src="logo.jpg" width="34" height="34" alt=""></a><a href="index.html">Latest</a>
 <a href="archive/index.html">Archive</a>
 <a href="about.html">How this works</a></div>
 <h1>How this works</h1>
-<p class="sub">Ericeira Surf Log &middot; 99 runs recorded since 27 Aug 2026</p>
+<p class="sub">Ericeira Surf Log &middot; 100 runs recorded since 27 Aug 2026</p>
 <div class="report" style="white-space:normal">
 <p><b>Four times a day</b> (07:30, 11:30, 15:30, 18:00 Lisbon) the log records five
 Ericeira spots: forecast numbers from Surfline's public API, and a short clip
