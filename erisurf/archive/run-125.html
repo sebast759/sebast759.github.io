@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ericeira Surf - 2026-09-23 07:41</title>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="theme-color" media="(prefers-color-scheme:light)" content="#f6f7f9">
+<meta name="theme-color" media="(prefers-color-scheme:dark)" content="#0f1115">
+<style>
+:root{--bg:#f6f7f9;--panel:#fff;--ink:#111827;--muted:#6b7280;--line:#e5e7eb}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){
+  --bg:#0f1115;--panel:#171a21;--ink:#e8eaed;--muted:#9aa1ac;--line:#262b34}}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);margin:0;padding:24px 18px 64px;
+  font:15px/1.55 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:1180px;margin:0 auto}
+a{color:inherit}
+h1{font-size:24px;margin:0 0 2px;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 20px;font-size:14px}
+.nav{margin:0 0 22px;font-size:13px;display:flex;align-items:center;gap:14px}
+.nav a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+/* the surfer-statue mark doubles as the home button; rounded here rather than
+   baked into the file so it stays a small JPEG instead of an alpha PNG */
+.nav .brand{border-bottom:0;line-height:0;margin-right:2px}
+.nav .brand img{width:34px;height:34px;border-radius:50%;display:block;
+  border:1px solid var(--line)}
+.grid{display:grid;gap:10px;grid-template-columns:repeat(5,minmax(0,1fr))}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:640px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){.grid{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  padding:12px 13px;min-width:0;border-top:4px solid var(--accent)}
+.card header{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.card h3{margin:0;font-size:15px}
+.size{font-size:22px;margin:8px 0 2px;font-weight:650;letter-spacing:-.02em}
+.stars{font-size:14px;font-weight:400;letter-spacing:.02em;margin-left:6px;color:var(--accent)}
+.note{color:var(--muted);font-size:12.5px;margin:2px 0}
+.who{margin:8px 0 4px;font-size:14px}
+.badge{font-size:10.5px;font-weight:700;letter-spacing:.04em;color:#fff;
+  padding:3px 7px;border-radius:999px;white-space:nowrap}
+h2{font-size:14px;margin:30px 0 10px;color:var(--muted);text-transform:uppercase;
+  letter-spacing:.07em}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:560px;background:var(--panel);
+  border:1px solid var(--line);border-radius:12px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);
+  font-size:13px;white-space:nowrap}
+thead th{font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+.slot{display:block;font-weight:400;font-size:11px;color:var(--muted)}
+.out{margin-left:7px;color:var(--muted);font-variant-numeric:tabular-nums}
+tr:last-child th,tr:last-child td{border-bottom:0}
+.report{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  padding:16px 18px;margin:0 0 16px;font-size:14px;white-space:pre-wrap}
+.report pre{white-space:pre-wrap;font:12.5px/1.45 ui-monospace,Menlo,Consolas,monospace;
+  background:transparent;margin:4px 0;display:block}
+.report b{font-weight:650}
+.cond{background:var(--panel);border:1px solid var(--line);border-left:4px solid #0891b2;
+  border-radius:10px;padding:10px 14px;margin:0 0 16px;font-size:13.5px}
+.nocam{color:var(--muted)}
+.mark{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--ink);font-weight:700;margin:0 1px}
+.out-yes{font-weight:700}
+.out-no{color:var(--muted);font-weight:400}
+.land{color:var(--muted);font-size:11.5px;font-weight:400}
+.cam{margin:6px 0 0;font-size:11.5px;color:var(--muted);line-height:1.7;
+  display:flex;align-items:center;flex-wrap:wrap;gap:4px}
+.camlbl{font-weight:600;color:var(--muted);margin-right:1px}
+figure{scroll-margin-top:14px}
+figure img{max-width:100%}
+#pic-conditions img,figure:first-of-type img{max-width:720px}
+.cam a{font-weight:700;text-decoration:none;color:var(--accent);letter-spacing:-.04em;
+  display:inline-flex;align-items:center;gap:3px}
+.camico{width:15px;height:15px;border-radius:4px;background:#fff;padding:1px;
+  box-shadow:0 0 0 1px var(--line);flex:0 0 auto}
+.note{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+figure{margin:0 0 14px}
+figure img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line);display:block}
+figcaption{color:var(--muted);font-size:12px;margin-top:5px}
+/* Plan a session: the stars and the clock carry it, the words are footnotes */
+.plans{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:560px){.plans{grid-template-columns:1fr}}
+.plan{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  padding:12px 13px;border-left:4px solid var(--accent);min-width:0}
+.plan-when{margin:0;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.plan-when b{color:var(--ink);font-size:15px;font-weight:650}
+.plan-tag{font-size:10px;text-transform:uppercase;letter-spacing:.06em;
+  border:1px solid var(--line);border-radius:999px;padding:2px 7px;margin-left:4px}
+.plan-stars{margin:7px 0 2px;font-size:20px;color:var(--accent);letter-spacing:.02em}
+.plan-spot{color:var(--ink);font-size:15px;font-weight:650;margin-left:6px}
+.plan-bits{margin:0 0 10px;font-size:12.5px;color:var(--muted)}
+/* .note is line-clamped to 2 for the cards; this one must wrap in full on a phone */
+.plan-note{display:block;-webkit-line-clamp:unset;overflow:visible}
+.cal{display:inline-block;text-decoration:none;font-size:12.5px;font-weight:650;
+  color:var(--ink);background:var(--bg);border:1px solid var(--line);
+  border-radius:8px;padding:6px 10px}
+.cal:hover{border-color:var(--accent);color:var(--accent)}
+</style></head><body><div class="wrap">
+<div class="nav"><a class="brand" href="../index.html" aria-label="Ericeira Surf Log"><img
+ src="../logo.jpg" width="34" height="34" alt=""></a><a href="../index.html">Latest</a>
+<a href="../archive/index.html">Archive</a>
+<a href="../about.html">How this works</a></div>
+<h1>2026-09-23 07:41</h1><p class='sub'>sunrise slot &middot; run 125</p><div class="report">👍 <b>WORTH SURFING · Ribeira ★★★½☆ · 07:41</b>
+🌊 1.4m @ 15s WNW · 💨 NNE 18 km/h, offshore at Ribeira
+↗️ Rising tide · High 13:34 → Low 19:51
+<b>VERDICT</b>
+★★★½☆ Ribeira on forecast alone, no cam confirms it. Biggest swell of the last 31 runs with NNE offshore: go this morning.
+<b>NEXT · 10:30</b>
+Wind swings NNW around 12:00, Ribeira forecast drops to ★★★☆☆ from 13:00.
+⭐️ <b>Tomorrow · Thu 08:00-09:30</b> ★★★★☆ Ribeira · 1.2-1.5m · 15 km/h N offshore · low tide <a href="https://www.surfline.com/surf-report/ribeira-d-ilhas/5842041f4e65fad6a7708bc2">📈</a> <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Surf%20%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%86%20Ribeira%20d%27Ilhas&amp;dates=20260924T070000Z/20260924T083000Z&amp;details=Fair%20To%20Good%20%C2%B7%201.2-1.5m%20%C2%B7%2015km/h%20N%20Offshore%20%C2%B7%20low%20tide%20%C2%B7%20forecast%20only%0Ahttps%3A//sebast759.github.io/erisurf/&amp;location=Ribeira%20d%27Ilhas%2C%20Ericeira%2C%20Portugal">📅</a></div><div class='grid'><article class="card" style="--accent:#1B7FBF">
+<header><h3>Ribeira</h3><span class="badge" style="background:#84cc16">FAIR-TO-GOOD</span></header>
+<p class="size">1.2&ndash;1.8 m<span class='stars' title='Erisurf rating 3.5/5'>★★★½☆</span></p>
+<p class="who"><span class='nocam'>surfers unclear</span></p><p class="note" title="close-up and MEO cams both 404; forecast only">close-up and MEO cams both 404; forecast only</p>
+<p class="cam"><span class="camlbl">Cams</span> <a href="https://www.surfline.com/surf-report/ribeira-d-ilhas/5842041f4e65fad6a7708bc2" target="_blank" rel="noopener noreferrer" title="Surfline live cam"><img class="camico" src="../icons/surfline.png" alt="Surfline"> &gt;&gt;</a> &middot; <a href="https://beachcam.meo.pt/livecams/ribeira-dilhas/" target="_blank" rel="noopener noreferrer" title="Beachcam live cam"><img class="camico" src="../icons/beachcam.png" alt="Beachcam"> &gt;&gt;</a> &middot; <a href="https://surftotal.com/camaras-report/ericeira/ribeira-d-ilhas" target="_blank" rel="noopener noreferrer" title="Surftotal live cam"><img class="camico" src="../icons/surftotal.png" alt="Surftotal"> &gt;&gt;</a></p></article><article class="card" style="--accent:#7B4FC9">
+<header><h3>Pedra</h3><span class="badge" style="background:#ca8a04">FAIR</span></header>
+<p class="size">1.2&ndash;1.8 m<span class='stars' title='Erisurf rating 3/5'>★★★☆☆</span></p>
+<p class="who"><span class='nocam'>surfers unclear</span></p><p class="note" title="cam fully grey, fog or pre-dawn murk; water unreadable, forecast stands">cam fully grey, fog or pre-dawn murk; water unreadable, forecast stands</p>
+<p class="cam"><span class="camlbl">Cams</span> <a href="https://www.surfline.com/surf-report/pedra-branca/584204204e65fad6a77096ae" target="_blank" rel="noopener noreferrer" title="Surfline live cam"><img class="camico" src="../icons/surfline.png" alt="Surfline"> &gt;&gt;</a> &middot; <a href="https://beachcam.meo.pt/livecams/ericeira/" target="_blank" rel="noopener noreferrer" title="Beachcam live cam"><img class="camico" src="../icons/beachcam.png" alt="Beachcam"> &gt;&gt;</a> &middot; <a href="#pic-pedra" title="jump to this run's frames">frames &gt;&gt;</a></p></article></div><h2>Cams</h2><figure id="pic-pedra"><img loading="lazy" src="../img/125/pedra_crowd.jpg" alt="pedra_crowd"><figcaption>Pedra Branca</figcaption></figure>
+</div></body></html>
