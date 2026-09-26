@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Posts</title>
+<style>
+  body { font-family: -apple-system, "Segoe UI", Arial, sans-serif; background:#f4f3ef; margin:0; padding:0 0 3rem; }
+  .header { background:#0b0b0b; color:#fff; padding:1.2rem 1.5rem; }
+  .header h1 { margin:0; font-size:1.4rem; }
+  .header a { color:#bbb; text-decoration:none; font-size:0.9rem; }
+  .tabs { display:flex; gap:0.5rem; padding:1rem 1.5rem 0; flex-wrap:wrap; }
+  .tab { border:none; background:#e6e5e0; color:#3d3d3b; padding:0.6rem 1.1rem; border-radius:8px;
+         font-size:0.95rem; cursor:pointer; font-weight:600; }
+  .tab.active { background:#0b0b0b; color:#fff; }
+  .panel { display:none; padding:1.5rem; gap:1.5rem; grid-template-columns:repeat(auto-fit, minmax(480px, 1fr)); }
+  .panel.active { display:grid; }
+  .card { background:#fff; border-radius:10px; padding:0.75rem; box-shadow:0 1px 3px rgba(0,0,0,0.08); }
+  .card h3 { margin:0.2rem 0.4rem 0.6rem; font-size:0.95rem; color:#3d3d3b; font-weight:600; }
+  .card img { width:100%; height:auto; border-radius:6px; display:block; }
+</style>
+</head>
+<body>
+  <div class="header"><h1>Posts</h1><a href="index.html">&larr; Back to dashboard</a></div>
+  <div class="tabs"><button class="tab active" onclick="showTab('3y', this)">Last 3Y</button><button class="tab" onclick="showTab('20y', this)">20Y</button><button class="tab" onclick="showTab('y1997', this)">Since 1997</button></div>
+  <div class="panel active" id="panel-3y"><div class="card"><h3>2 years government bond yields</h3><img src="graphs/posts/rates02Y_UKUSJPDEFRSW_last03Y.png" alt="2 years government bond yields" loading="lazy"></div><div class="card"><h3>Switzerland, the new home of the carry trade?</h3><img src="graphs/posts/rates03M_UKUSJPDEFRSW_last03Y.png" alt="Switzerland, the new home of the carry trade?" loading="lazy"></div><div class="card"><h3>The Swiss carry trade</h3><img src="graphs/posts/rates03M_exSW_UKUSJPDE_last03Y.png" alt="The Swiss carry trade" loading="lazy"></div><div class="card"><h3>10 years government bond yields</h3><img src="graphs/posts/rates10Y_UKUSJPDEFRSW_last03Y.png" alt="10 years government bond yields" loading="lazy"></div><div class="card"><h3>Steeper than Switzerland</h3><img src="graphs/posts/rates10Yx02Y_exSW_UKUSJPDE_last03Y.png" alt="Steeper than Switzerland" loading="lazy"></div><div class="card"><h3>The curve is steepening</h3><img src="graphs/posts/rates10Yx02Y_UKUSJPDEFRSW_last03Y.png" alt="The curve is steepening" loading="lazy"></div><div class="card"><h3>The revenge of the PIGS</h3><img src="graphs/posts/revenge_of_pigs_last03Y.png" alt="The revenge of the PIGS" loading="lazy"></div></div><div class="panel" id="panel-20y"><div class="card"><h3>2 years government bond yields</h3><img src="graphs/posts/rates02Y_UKUSJPDEFRSW_last20Y.png" alt="2 years government bond yields" loading="lazy"></div><div class="card"><h3>Switzerland, the new home of the carry trade?</h3><img src="graphs/posts/rates03M_UKUSJPDEFRSW_last20Y.png" alt="Switzerland, the new home of the carry trade?" loading="lazy"></div><div class="card"><h3>The Swiss carry trade</h3><img src="graphs/posts/rates03M_exSW_UKUSJPDE_last20Y.png" alt="The Swiss carry trade" loading="lazy"></div><div class="card"><h3>10 years government bond yields</h3><img src="graphs/posts/rates10Y_UKUSJPDEFRSW_last20Y.png" alt="10 years government bond yields" loading="lazy"></div><div class="card"><h3>Steeper than Switzerland</h3><img src="graphs/posts/rates10Yx02Y_exSW_UKUSJPDE_last20Y.png" alt="Steeper than Switzerland" loading="lazy"></div><div class="card"><h3>The curve is steepening</h3><img src="graphs/posts/rates10Yx02Y_UKUSJPDEFRSW_last20Y.png" alt="The curve is steepening" loading="lazy"></div><div class="card"><h3>The revenge of the PIGS</h3><img src="graphs/posts/revenge_of_pigs_last20Y.png" alt="The revenge of the PIGS" loading="lazy"></div></div><div class="panel" id="panel-y1997"><div class="card"><h3>2 years government bond yields</h3><img src="graphs/posts/rates02Y_UKUSJPDEFRSW_since1997.png" alt="2 years government bond yields" loading="lazy"></div><div class="card"><h3>Switzerland, the new home of the carry trade?</h3><img src="graphs/posts/rates03M_UKUSJPDEFRSW_since1997.png" alt="Switzerland, the new home of the carry trade?" loading="lazy"></div><div class="card"><h3>The Swiss carry trade</h3><img src="graphs/posts/rates03M_exSW_UKUSJPDE_since1997.png" alt="The Swiss carry trade" loading="lazy"></div><div class="card"><h3>10 years government bond yields</h3><img src="graphs/posts/rates10Y_UKUSJPDEFRSW_since1997.png" alt="10 years government bond yields" loading="lazy"></div><div class="card"><h3>Steeper than Switzerland</h3><img src="graphs/posts/rates10Yx02Y_exSW_UKUSJPDE_since1997.png" alt="Steeper than Switzerland" loading="lazy"></div><div class="card"><h3>The curve is steepening</h3><img src="graphs/posts/rates10Yx02Y_UKUSJPDEFRSW_since1997.png" alt="The curve is steepening" loading="lazy"></div><div class="card"><h3>The revenge of the PIGS</h3><img src="graphs/posts/revenge_of_pigs_since1997.png" alt="The revenge of the PIGS" loading="lazy"></div></div>
+  <script>
+    function showTab(slug, btn) {
+      document.querySelectorAll('.tab').forEach(function (t) { t.classList.remove('active'); });
+      document.querySelectorAll('.panel').forEach(function (p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+      document.getElementById('panel-' + slug).classList.add('active');
+    }
+  </script>
+</body>
+</html>
