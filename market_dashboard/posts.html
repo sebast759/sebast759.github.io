@@ -15,11 +15,26 @@
   @media (max-width: 1100px) { .row { grid-template-columns:1fr; } }
   .card { background:#fff; border-radius:10px; padding:0.75rem; box-shadow:0 1px 3px rgba(0,0,0,0.08); }
   .card h3 { margin:0.2rem 0.4rem 0.6rem; font-size:0.95rem; color:#3d3d3b; font-weight:600; }
-  .card img { width:100%; height:auto; border-radius:6px; display:block; }
+  .card img { width:100%; height:auto; border-radius:6px; display:block; cursor:zoom-in; }
+  #zoom { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:10;
+          align-items:center; justify-content:center; cursor:zoom-out; }
+  #zoom.open { display:flex; }
+  #zoom img { max-width:96vw; max-height:96vh; background:#fff; border-radius:6px; }
 </style>
 </head>
 <body>
   <div class="header"><h1>Posts</h1><a href="index.html">&larr; Back to dashboard</a></div>
   <div class="section"><h2>3 months</h2><div class="row"><div class="card"><h3>3M - Last 3Y</h3><img src="graphs/posts/rates03M_UKUSJPDEFRSW_last03Y.png" alt="3M - Last 3Y" loading="lazy"></div><div class="card"><h3>3M - Last 20Y</h3><img src="graphs/posts/rates03M_UKUSJPDEFRSW_last20Y.png" alt="3M - Last 20Y" loading="lazy"></div><div class="card"><h3>3M - Since 1997</h3><img src="graphs/posts/rates03M_UKUSJPDEFRSW_since1997.png" alt="3M - Since 1997" loading="lazy"></div></div><div class="row"><div class="card"><h3>3M (ex CHF) - Last 3Y</h3><img src="graphs/posts/rates03M_exSW_UKUSJPDE_last03Y.png" alt="3M (ex CHF) - Last 3Y" loading="lazy"></div><div class="card"><h3>3M (ex CHF) - Last 20Y</h3><img src="graphs/posts/rates03M_exSW_UKUSJPDE_last20Y.png" alt="3M (ex CHF) - Last 20Y" loading="lazy"></div><div class="card"><h3>3M (ex CHF) - Since 1997</h3><img src="graphs/posts/rates03M_exSW_UKUSJPDE_since1997.png" alt="3M (ex CHF) - Since 1997" loading="lazy"></div></div></div><div class="section"><h2>2 years</h2><div class="row"><div class="card"><h3>2Y - Last 3Y</h3><img src="graphs/posts/rates02Y_UKUSJPDEFRSW_last03Y.png" alt="2Y - Last 3Y" loading="lazy"></div><div class="card"><h3>2Y - Last 20Y</h3><img src="graphs/posts/rates02Y_UKUSJPDEFRSW_last20Y.png" alt="2Y - Last 20Y" loading="lazy"></div><div class="card"><h3>2Y - Since 1997</h3><img src="graphs/posts/rates02Y_UKUSJPDEFRSW_since1997.png" alt="2Y - Since 1997" loading="lazy"></div></div></div><div class="section"><h2>10 years</h2><div class="row"><div class="card"><h3>10Y - Last 3Y</h3><img src="graphs/posts/rates10Y_UKUSJPDEFRSW_last03Y.png" alt="10Y - Last 3Y" loading="lazy"></div><div class="card"><h3>10Y - Last 20Y</h3><img src="graphs/posts/rates10Y_UKUSJPDEFRSW_last20Y.png" alt="10Y - Last 20Y" loading="lazy"></div><div class="card"><h3>10Y - Since 1997</h3><img src="graphs/posts/rates10Y_UKUSJPDEFRSW_since1997.png" alt="10Y - Since 1997" loading="lazy"></div></div></div><div class="section"><h2>10-02 years</h2><div class="row"><div class="card"><h3>10Y-02Y - Last 3Y</h3><img src="graphs/posts/rates10Yx02Y_UKUSJPDEFRSW_last03Y.png" alt="10Y-02Y - Last 3Y" loading="lazy"></div><div class="card"><h3>10Y-02Y - Last 20Y</h3><img src="graphs/posts/rates10Yx02Y_UKUSJPDEFRSW_last20Y.png" alt="10Y-02Y - Last 20Y" loading="lazy"></div><div class="card"><h3>10Y-02Y - Since 1997</h3><img src="graphs/posts/rates10Yx02Y_UKUSJPDEFRSW_since1997.png" alt="10Y-02Y - Since 1997" loading="lazy"></div></div><div class="row"><div class="card"><h3>10Y-02Y (ex CHF) - Last 3Y</h3><img src="graphs/posts/rates10Yx02Y_exSW_UKUSJPDE_last03Y.png" alt="10Y-02Y (ex CHF) - Last 3Y" loading="lazy"></div><div class="card"><h3>10Y-02Y (ex CHF) - Last 20Y</h3><img src="graphs/posts/rates10Yx02Y_exSW_UKUSJPDE_last20Y.png" alt="10Y-02Y (ex CHF) - Last 20Y" loading="lazy"></div><div class="card"><h3>10Y-02Y (ex CHF) - Since 1997</h3><img src="graphs/posts/rates10Yx02Y_exSW_UKUSJPDE_since1997.png" alt="10Y-02Y (ex CHF) - Since 1997" loading="lazy"></div></div></div><div class="section"><h2>10 years EU</h2><div class="row"><div class="card"><h3>10Y EU - Last 3Y</h3><img src="graphs/posts/revenge_of_pigs_last03Y.png" alt="10Y EU - Last 3Y" loading="lazy"></div><div class="card"><h3>10Y EU - Last 20Y</h3><img src="graphs/posts/revenge_of_pigs_last20Y.png" alt="10Y EU - Last 20Y" loading="lazy"></div><div class="card"><h3>10Y EU - Since 1997</h3><img src="graphs/posts/revenge_of_pigs_since1997.png" alt="10Y EU - Since 1997" loading="lazy"></div></div></div>
+  <div id="zoom" onclick="this.classList.remove('open')"><img alt=""></div>
+  <script>
+    document.querySelectorAll('.card img').forEach(function (img) {
+      img.onclick = function () {
+        var z = document.getElementById('zoom');
+        z.querySelector('img').src = img.src;
+        z.classList.add('open');
+      };
+    });
+    document.onkeydown = function (e) { if (e.key === 'Escape') document.getElementById('zoom').classList.remove('open'); };
+  </script>
 </body>
 </html>
