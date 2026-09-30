@@ -154,6 +154,24 @@
 
     li { margin: 7px 0; }
 
+
+    table {
+      width: 100%;
+      margin: 18px 0;
+      border-collapse: collapse;
+      background: var(--paper);
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 7px 10px;
+      border-bottom: 1px solid var(--line);
+      text-align: right;
+    }
+
+    th:first-child, td:first-child { text-align: left; }
+    th { color: var(--muted); font-weight: 650; }
+
     footer {
       padding: 28px 24px 44px;
       color: var(--muted);
@@ -195,22 +213,33 @@
   <main>
     <section>
       <div class="summary">
-        <strong>Research question.</strong> Do gold and the Swiss franc express a
-        common defensive or dollar-debasement factor, and does the US-Swiss 3M yield
-        differential help explain when their relationship strengthens or breaks?
+        <strong>Key takeaways</strong>
+        <ul>
+          <li>We compare Gold and the Swiss franc (CHF): the two are visually correlated (first chart).</li>
+          <li><strong>Does Gold predict CHF?</strong> Yes, to some extent. Trading FXF (the CHF ETF)
+            on the gold signal beats simply holding FXF: Sharpe about 0.4 versus 0.0 since 2011,
+            and 0.7 versus 0.24 since 2022.</li>
+          <li><strong>Does CHF predict Gold?</strong> No. Trading GLD on the CHF signal does worse
+            than simply holding GLD.</li>
+          <li><strong>Watch the fees:</strong> the edge is thin and the strategy trades every day.
+            It stops working at roughly 1 to 2 bp of cost per trade
+            (break-even about 1.4 bp since 2011, about 1.8 to 2.7 bp since 2022).</li>
+        </ul>
       </div>
 
       <div class="definitions">
         <div class="definition">
           <strong>Gold</strong>
           Yahoo <code>GC=F</code>, a stitched nearby COMEX gold-futures quote,
-          normalized to 100 at the common starting date.
+          normalized to 100 at the common starting date. The yellow line is the GLD ETF,
+          which tracks it closely but closes at 16:00 New York.
         </div>
         <div class="definition">
           <strong>Swiss franc</strong>
           Yahoo <code>CHF=X</code> is USD/CHF. Its chart axis is inverted, so an
-          upward red line represents a stronger franc. The green line is an idealized
-          long-CHF futures investment after deducting the US-Swiss carry cost.
+          upward red line represents a stronger franc. The green line is FXF, the
+          long-CHF ETF (carry included); the dashed green line is <code>1/FXF</code> on the
+          same inverted axis, for comparison with spot.
         </div>
         <div class="definition">
           <strong>3M differential</strong>
@@ -236,8 +265,8 @@
         <figcaption>
           Daily market prices and daily Investing-derived rates. The US series combines
           the long-history <code>US_3M</code> identifier with the recent
-          <code>United States_3M</code> continuation. The green line is a normalized
-          long-CHF futures proxy rather than another exchange-rate axis.
+          <code>United States_3M</code> continuation. The green line is the normalized
+          FXF ETF; the dashed green line is 1/FXF on the inverted axis.
         </figcaption>
       </figure>
 
@@ -258,6 +287,138 @@
     </section>
 
     <section>
+      <h2>Delta-Z-score backtest on GLD and FXF</h2>
+      <p>
+        <code>ZS_N</code> is the N-day rolling z-score of log prices, N = 7, 14, 21, and
+        <code>dZS_N</code> its daily change. Both ETFs trade on NYSE Arca and close at
+        16:00 New York, so signals and returns are synchronized; FXF's NAV already accrues
+        CHF deposit interest. The weight at the close of day t is applied to the next day's
+        return; zero costs unless stated.
+      </p>
+
+      <h3>Gold &gt;&gt; CHF: trade FXF</h3>
+      <p><code>w(t) = +( dZS_N(GLD,t) - dZS_N(FXF,t) )</code></p>
+      <figure>
+        <a href="graphs/gold_chf/etf_chf_gld_fxf_dzscore_equity_curves_since_2011_lag1.png">
+          <img src="graphs/gold_chf/etf_chf_gld_fxf_dzscore_equity_curves_since_2011_lag1.png" alt="Gold >> CHF, trade FXF, since 2011.">
+        </a>
+        <figcaption>Gold >> CHF, trade FXF, since 2011.</figcaption>
+      </figure>
+      <figure>
+        <a href="graphs/gold_chf/etf_chf_gld_fxf_dzscore_equity_curves_since_2022_lag1.png">
+          <img src="graphs/gold_chf/etf_chf_gld_fxf_dzscore_equity_curves_since_2022_lag1.png" alt="Gold >> CHF, trade FXF, since 2022.">
+        </a>
+        <figcaption>Gold >> CHF, trade FXF, since 2022.</figcaption>
+      </figure>
+      <table>
+        <tr><th>Since 2011</th><th>End equity</th><th>CAGR</th><th>Sharpe</th><th>Sharpe @ 1 bp</th><th>Max DD</th></tr>
+        <tr><td>FXF buy &amp; hold</td><td>93</td><td>-0.5%</td><td>0.00</td><td>0.00</td><td>-36%</td></tr>
+        <tr><td>7-day</td><td>109</td><td>0.5%</td><td>0.10</td><td>-0.20</td><td>-29%</td></tr>
+        <tr><td>14-day</td><td>133</td><td>1.9%</td><td>0.26</td><td>-0.03</td><td>-28%</td></tr>
+        <tr><td>21-day</td><td>119</td><td>1.1%</td><td>0.19</td><td>-0.08</td><td>-21%</td></tr>
+      </table>
+      <table>
+        <tr><th>Since 2022</th><th>End equity</th><th>CAGR</th><th>Sharpe</th><th>Sharpe @ 1 bp</th><th>Max DD</th></tr>
+        <tr><td>FXF buy &amp; hold</td><td>108</td><td>1.7%</td><td>0.24</td><td>0.24</td><td>-10%</td></tr>
+        <tr><td>7-day</td><td>117</td><td>3.5%</td><td>0.40</td><td>0.08</td><td>-13%</td></tr>
+        <tr><td>14-day</td><td>129</td><td>5.6%</td><td>0.66</td><td>0.39</td><td>-7%</td></tr>
+        <tr><td>21-day</td><td>112</td><td>2.4%</td><td>0.34</td><td>0.10</td><td>-10%</td></tr>
+      </table>
+      <h3>Gold &gt;&gt; CHF with lambda = 0: trade FXF on the gold signal alone</h3>
+      <p><code>w(t) = +( dZS_N(GLD,t) - 0 x dZS_N(FXF,t) )</code></p>
+      <figure>
+        <a href="graphs/gold_chf/etf_chf_gld_fxf_dzscore_equity_curves_since_2011_lag1_lambda0.png">
+          <img src="graphs/gold_chf/etf_chf_gld_fxf_dzscore_equity_curves_since_2011_lag1_lambda0.png" alt="Gold >> CHF, trade FXF, lambda = 0, since 2011.">
+        </a>
+        <figcaption>Gold >> CHF, trade FXF, lambda = 0, since 2011.</figcaption>
+      </figure>
+      <figure>
+        <a href="graphs/gold_chf/etf_chf_gld_fxf_dzscore_equity_curves_since_2022_lag1_lambda0.png">
+          <img src="graphs/gold_chf/etf_chf_gld_fxf_dzscore_equity_curves_since_2022_lag1_lambda0.png" alt="Gold >> CHF, trade FXF, lambda = 0, since 2022.">
+        </a>
+        <figcaption>Gold >> CHF, trade FXF, lambda = 0, since 2022.</figcaption>
+      </figure>
+      <table>
+        <tr><th>Since 2011</th><th>End equity</th><th>CAGR</th><th>Sharpe</th><th>Sharpe @ 1 bp</th><th>Max DD</th></tr>
+        <tr><td>FXF buy &amp; hold</td><td>93</td><td>-0.5%</td><td>0.00</td><td>0.00</td><td>-36%</td></tr>
+        <tr><td>7-day</td><td>108</td><td>0.5%</td><td>0.10</td><td>-0.22</td><td>-27%</td></tr>
+        <tr><td>14-day</td><td>151</td><td>2.7%</td><td>0.40</td><td>0.11</td><td>-17%</td></tr>
+        <tr><td>21-day</td><td>144</td><td>2.4%</td><td>0.42</td><td>0.13</td><td>-15%</td></tr>
+      </table>
+      <table>
+        <tr><th>Since 2022</th><th>End equity</th><th>CAGR</th><th>Sharpe</th><th>Sharpe @ 1 bp</th><th>Max DD</th></tr>
+        <tr><td>FXF buy &amp; hold</td><td>108</td><td>1.7%</td><td>0.24</td><td>0.24</td><td>-10%</td></tr>
+        <tr><td>7-day</td><td>118</td><td>3.6%</td><td>0.44</td><td>0.12</td><td>-17%</td></tr>
+        <tr><td>14-day</td><td>127</td><td>5.2%</td><td>0.70</td><td>0.43</td><td>-11%</td></tr>
+        <tr><td>21-day</td><td>111</td><td>2.2%</td><td>0.37</td><td>0.10</td><td>-15%</td></tr>
+      </table>
+      <h3>CHF &gt;&gt; Gold: trade GLD</h3>
+      <p><code>w(t) = +( dZS_N(FXF,t) - dZS_N(GLD,t) )</code></p>
+      <figure>
+        <a href="graphs/gold_chf/etf_gold_gld_fxf_dzscore_equity_curves_since_2011_lag1.png">
+          <img src="graphs/gold_chf/etf_gold_gld_fxf_dzscore_equity_curves_since_2011_lag1.png" alt="CHF >> Gold, trade GLD, since 2011.">
+        </a>
+        <figcaption>CHF >> Gold, trade GLD, since 2011.</figcaption>
+      </figure>
+      <figure>
+        <a href="graphs/gold_chf/etf_gold_gld_fxf_dzscore_equity_curves_since_2022_lag1.png">
+          <img src="graphs/gold_chf/etf_gold_gld_fxf_dzscore_equity_curves_since_2022_lag1.png" alt="CHF >> Gold, trade GLD, since 2022.">
+        </a>
+        <figcaption>CHF >> Gold, trade GLD, since 2022.</figcaption>
+      </figure>
+      <table>
+        <tr><th>Since 2011</th><th>End equity</th><th>CAGR</th><th>Sharpe</th><th>Sharpe @ 1 bp</th><th>Max DD</th></tr>
+        <tr><td>GLD buy &amp; hold</td><td>262</td><td>6.4%</td><td>0.46</td><td>0.46</td><td>-46%</td></tr>
+        <tr><td>7-day</td><td>118</td><td>1.1%</td><td>0.15</td><td>-0.01</td><td>-48%</td></tr>
+        <tr><td>14-day</td><td>59</td><td>-3.4%</td><td>-0.16</td><td>-0.32</td><td>-65%</td></tr>
+        <tr><td>21-day</td><td>44</td><td>-5.2%</td><td>-0.33</td><td>-0.48</td><td>-69%</td></tr>
+      </table>
+      <table>
+        <tr><th>Since 2022</th><th>End equity</th><th>CAGR</th><th>Sharpe</th><th>Sharpe @ 1 bp</th><th>Max DD</th></tr>
+        <tr><td>GLD buy &amp; hold</td><td>227</td><td>19.3%</td><td>1.01</td><td>1.01</td><td>-26%</td></tr>
+        <tr><td>7-day</td><td>97</td><td>-0.6%</td><td>0.08</td><td>-0.06</td><td>-46%</td></tr>
+        <tr><td>14-day</td><td>75</td><td>-5.9%</td><td>-0.27</td><td>-0.41</td><td>-46%</td></tr>
+        <tr><td>21-day</td><td>83</td><td>-4.0%</td><td>-0.19</td><td>-0.31</td><td>-36%</td></tr>
+      </table>
+      <h3>CHF &gt;&gt; Gold with a zero GLD coefficient: trade GLD on the FXF signal alone</h3>
+      <p><code>w(t) = +( dZS_N(FXF,t) - 0 x dZS_N(GLD,t) )</code></p>
+      <figure>
+        <a href="graphs/gold_chf/etf_gold_gld_fxf_dzscore_equity_curves_since_2011_lag1_goldcoef0.png">
+          <img src="graphs/gold_chf/etf_gold_gld_fxf_dzscore_equity_curves_since_2011_lag1_goldcoef0.png" alt="CHF >> Gold, trade GLD, GLD coefficient = 0, since 2011.">
+        </a>
+        <figcaption>CHF >> Gold, trade GLD, GLD coefficient = 0, since 2011.</figcaption>
+      </figure>
+      <figure>
+        <a href="graphs/gold_chf/etf_gold_gld_fxf_dzscore_equity_curves_since_2022_lag1_goldcoef0.png">
+          <img src="graphs/gold_chf/etf_gold_gld_fxf_dzscore_equity_curves_since_2022_lag1_goldcoef0.png" alt="CHF >> Gold, trade GLD, GLD coefficient = 0, since 2022.">
+        </a>
+        <figcaption>CHF >> Gold, trade GLD, GLD coefficient = 0, since 2022.</figcaption>
+      </figure>
+      <table>
+        <tr><th>Since 2011</th><th>End equity</th><th>CAGR</th><th>Sharpe</th><th>Sharpe @ 1 bp</th><th>Max DD</th></tr>
+        <tr><td>GLD buy &amp; hold</td><td>262</td><td>6.4%</td><td>0.46</td><td>0.46</td><td>-46%</td></tr>
+        <tr><td>7-day</td><td>84</td><td>-1.1%</td><td>0.01</td><td>-0.16</td><td>-55%</td></tr>
+        <tr><td>14-day</td><td>65</td><td>-2.7%</td><td>-0.14</td><td>-0.30</td><td>-52%</td></tr>
+        <tr><td>21-day</td><td>61</td><td>-3.1%</td><td>-0.22</td><td>-0.38</td><td>-52%</td></tr>
+      </table>
+      <table>
+        <tr><th>Since 2022</th><th>End equity</th><th>CAGR</th><th>Sharpe</th><th>Sharpe @ 1 bp</th><th>Max DD</th></tr>
+        <tr><td>GLD buy &amp; hold</td><td>227</td><td>19.3%</td><td>1.01</td><td>1.01</td><td>-26%</td></tr>
+        <tr><td>7-day</td><td>81</td><td>-4.5%</td><td>-0.14</td><td>-0.28</td><td>-43%</td></tr>
+        <tr><td>14-day</td><td>66</td><td>-8.5%</td><td>-0.48</td><td>-0.62</td><td>-41%</td></tr>
+        <tr><td>21-day</td><td>72</td><td>-6.8%</td><td>-0.44</td><td>-0.57</td><td>-34%</td></tr>
+      </table>
+      <div class="note">
+        <strong>Reading.</strong> Gold &gt;&gt; CHF (trading FXF) beats FXF buy &amp; hold
+        before costs, most clearly since 2022 (14-day Sharpe 0.66 versus 0.24), but turnover is
+        190-330x notional per year with weights up to 7x, and at 1 bp per unit of turnover
+        the 2011 edge disappears for lambda = 1, while lambda = 0 (gold signal only) keeps a small positive Sharpe (0.11-0.13 for 14/21-day). CHF &gt;&gt; Gold (trading GLD) does not beat buy &amp; hold, with or without the GLD term.
+        An earlier version using <code>GC=F</code>, <code>CHF=X</code> and a carry proxy looked
+        strong, but that came from Yahoo's USD/CHF being stamped about one day after gold.
+      </div>
+    </section>
+
+    <section>
       <h2>Data construction</h2>
       <p>
         Rates come from <code>market_dashboard.bond_yield_history_daily</code>.
@@ -267,19 +428,14 @@
         market prices are saved locally before plotting.
       </p>
 
-      <h3>Long-CHF futures proxy</h3>
+      <h3>Instruments</h3>
       <p>
-        The daily proxy return is the percentage change in <code>1 / USDCHF</code>
-        minus the previous observation's annualized <code>US 3M - Swiss 3M</code>
-        differential divided by 252. The spread uses the same 7-observation mean as
-        the lower panel. This approximates the carry paid by a USD-funded long-CHF
-        position.
+        The top chart shows the gold future (<code>GC=F</code>) next to the GLD ETF, and
+        the spot franc (<code>CHF=X</code>, inverted axis) next to FXF and <code>1/FXF</code>.
+        The backtests use only GLD and FXF, both priced at the 16:00 New York close.
+        FXF drifts below spot CHF because it pays the (low or negative) CHF deposit rate
+        and a fee, so it already reflects the carry cost that a spot series ignores.
       </p>
-      <div class="note">
-        <strong>Approximation:</strong> this is not a contract-level futures backtest.
-        It excludes futures basis, expiry rolls, margin collateral return, commissions
-        and execution slippage.
-      </div>
 
       <h3>Next tests</h3>
       <ol>

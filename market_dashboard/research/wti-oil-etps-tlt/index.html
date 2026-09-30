@@ -408,7 +408,7 @@
   <div class="layout">
     <nav aria-label="Report contents">
       <strong>Contents</strong>
-      <a href="#summary">Executive summary</a>
+      <a href="#summary">Key takeaways</a>
       <a href="#chapter-1">1. Oil ETP performance</a>
       <a href="#chapter-2">2. USO timing</a>
       <a href="#chapter-3">3. USO and TLT</a>
@@ -419,31 +419,24 @@
     <main>
       <section id="summary">
         <div class="summary">
-          <strong>Bottom line.</strong> Oil ETP outperformance in 2026 is plausible
-          in a sharply backwardated market, but the comparison with Yahoo's
-          stitched front-future quote is not an investable apples-to-apples
-          benchmark. Simple USO trend rules remain unstable. The most interesting
-          result is the short-horizon USO/TLT change-in-z-score signal, although
-          its raw implementation has excessive turnover and leverage.
-        </div>
-
-        <div class="findings">
-          <div class="finding">
-            <b>Carry matters</b>
-            Backwardation can create positive roll return; contango produces the
-            familiar drag. Collateral interest also supported futures products.
-          </div>
-          <div class="finding">
-            <b>Trend is fragile</b>
-            One-month USO momentum led the tested grid, but still suffered a drawdown
-            above 70% and varied sharply by subperiod.
-          </div>
-          <div class="finding">
-            <b>TLT signal merits work</b>
-            The 21-day USO/TLT signal had the best zero-cost risk-adjusted result
-            (Sharpe 0.92 since 2022, 0.48 since 2007), but raw turnover exceeded
-            180 times notional per year.
-          </div>
+          <strong>Key takeaways</strong>
+          <ul>
+            <li><strong>Oil ETFs vs the WTI future:</strong> oil ETFs (USO, USL, DBO, CRUD) beat
+              the front-month WTI future in 2026 because the market is in backwardation (rolling
+              contracts earns money). Over the long run they lag (contango, fees). The WTI quote
+              on Yahoo is not a fair benchmark for them.</li>
+            <li><strong>Can we time USO with trend?</strong> Not reliably. The best rule
+              (1-month momentum) has a Sharpe of 0.42 with a -74% drawdown and varies a lot between
+              periods. Adding a carry filter made it worse.</li>
+            <li><strong>Does USO predict TLT?</strong> Yes, to some extent. The signal
+              <code>w = -(dZS(USO) + &lambda; x dZS(TLT))</code> traded on TLT beats holding TLT:
+              Sharpe 0.76 to 0.99 versus -0.78 since 2022, but only 0.29 to 0.49 versus 0.04 since
+              2007 (windows of 7 to 63 days). Most of the gain comes from the 2022+ inflation and rates period.</li>
+            <li><strong>Watch the fees:</strong> the strategy trades every day (140 to 380 times
+              notional per year, leverage up to 6x). It stops working at about 4 to 6 bp per trade
+              since 2022 and about 1.5 to 2.6 bp over the full sample since 2007, below realistic
+              trading costs.</li>
+          </ul>
         </div>
       </section>
 
@@ -641,7 +634,7 @@
         </div>
         <p>
           The weight observed at the close was applied to the next trading day's TLT
-          return. Tests used 7, 14 and 21 trading days, with <code>lambda = 1.0</code>
+          return. Tests used 7, 14, 21, 42 and 63 trading days, with <code>lambda = 1.0</code>
           and <code>lambda = 0.5</code>, over two samples: since 2022 (where the idea was
           found) and since 2007 (the full cached history). Reported results charge no
           transaction, financing or borrow costs.
@@ -661,9 +654,10 @@
             </a>
           </div>
           <figcaption>
-            Coefficient 1.0. Since 2022, 7D produced the highest terminal wealth and 21D
-            the best Sharpe ratio. Since 2007, the ranking is 21D &gt; 14D &gt; 7D on every
-            metric, and most of the gain arrives after 2022.
+            Coefficient 1.0. Since 2022, 7D produced the highest terminal wealth and 63D
+            the best Sharpe ratio (0.99, with the lowest turnover). Since 2007, 21D is best on
+            every metric, the longer 42D and 63D windows are weaker (Sharpe 0.29 and 0.34),
+            and most of the gain arrives after 2022.
             <span class="hint">Click a panel to expand; scroll or pinch to zoom.</span>
           </figcaption>
         </figure>
@@ -693,42 +687,52 @@
               <tr><th>Sample</th><th>Coefficient</th><th>Window</th><th>CAGR</th><th>Sharpe</th><th>Max drawdown</th><th>Annual turnover</th><th>Max |w|</th></tr>
             </thead>
             <tbody>
-              <tr><td>Since 2022</td><td>TLT B&amp;H</td><td>-</td><td>-11.83%</td><td>-0.73</td><td>-44.36%</td><td>-</td><td>1.00x</td></tr>
-              <tr><td>Since 2022</td><td>1.0</td><td>7D</td><td>14.05%</td><td>0.74</td><td>-23.55%</td><td class="risk">376.91x</td><td>3.97x</td></tr>
-              <tr><td>Since 2022</td><td>1.0</td><td>14D</td><td>11.82%</td><td>0.76</td><td>-21.56%</td><td class="risk">278.37x</td><td>3.58x</td></tr>
-              <tr><td>Since 2022</td><td>1.0</td><td>21D</td><td>11.73%</td><td>0.86</td><td>-19.44%</td><td class="risk">233.87x</td><td>3.27x</td></tr>
-              <tr><td>Since 2022</td><td>0.5</td><td>7D</td><td>12.22%</td><td>0.78</td><td>-18.54%</td><td class="risk">297.92x</td><td>3.41x</td></tr>
-              <tr><td>Since 2022</td><td>0.5</td><td>14D</td><td>10.20%</td><td>0.80</td><td>-16.05%</td><td class="risk">218.05x</td><td>2.90x</td></tr>
-              <tr><td>Since 2022</td><td>0.5</td><td>21D</td><td>10.36%</td><td class="best">0.92</td><td class="best">-14.88%</td><td class="risk">185.22x</td><td>2.47x</td></tr>
-              <tr><td>Since 2007</td><td>TLT B&amp;H</td><td>-</td><td>-0.53%</td><td>0.04</td><td>-54.18%</td><td>-</td><td>1.00x</td></tr>
-              <tr><td>Since 2007</td><td>1.0</td><td>7D</td><td>3.96%</td><td>0.30</td><td>-37.73%</td><td class="risk">377.51x</td><td>6.02x</td></tr>
-              <tr><td>Since 2007</td><td>1.0</td><td>14D</td><td>4.64%</td><td>0.38</td><td>-31.44%</td><td class="risk">277.04x</td><td>4.38x</td></tr>
-              <tr><td>Since 2007</td><td>1.0</td><td>21D</td><td class="best">5.35%</td><td class="best">0.48</td><td>-28.69%</td><td class="risk">229.66x</td><td>4.76x</td></tr>
-              <tr><td>Since 2007</td><td>0.5</td><td>7D</td><td>2.27%</td><td>0.23</td><td>-35.13%</td><td class="risk">298.23x</td><td>4.62x</td></tr>
-              <tr><td>Since 2007</td><td>0.5</td><td>14D</td><td>3.34%</td><td>0.34</td><td>-27.71%</td><td class="risk">218.07x</td><td>3.94x</td></tr>
-              <tr><td>Since 2007</td><td>0.5</td><td>21D</td><td>4.01%</td><td>0.44</td><td class="best">-20.79%</td><td class="risk">180.12x</td><td>4.31x</td></tr>
+              <tr><td>Since 2022</td><td>TLT B&amp;H</td><td>-</td><td>-12.53%</td><td>-0.78</td><td>-45.52%</td><td>-</td><td>1.00x</td></tr>
+              <tr><td>Since 2022</td><td>1.0</td><td>7D</td><td class="best">14.57%</td><td>0.76</td><td>-23.55%</td><td class="risk">378.70x</td><td>3.97x</td></tr>
+              <tr><td>Since 2022</td><td>1.0</td><td>14D</td><td>12.33%</td><td>0.79</td><td>-21.56%</td><td class="risk">278.57x</td><td>3.58x</td></tr>
+              <tr><td>Since 2022</td><td>1.0</td><td>21D</td><td>12.00%</td><td>0.88</td><td>-19.44%</td><td class="risk">233.21x</td><td>3.27x</td></tr>
+              <tr><td>Since 2022</td><td>1.0</td><td>42D</td><td>8.39%</td><td>0.82</td><td>-14.01%</td><td class="risk">174.14x</td><td>2.50x</td></tr>
+              <tr><td>Since 2022</td><td>1.0</td><td>63D</td><td>8.61%</td><td class="best">0.99</td><td>-11.19%</td><td class="risk">145.84x</td><td>2.24x</td></tr>
+              <tr><td>Since 2022</td><td>0.5</td><td>7D</td><td>12.45%</td><td>0.80</td><td>-18.54%</td><td class="risk">297.84x</td><td>3.41x</td></tr>
+              <tr><td>Since 2022</td><td>0.5</td><td>14D</td><td>10.36%</td><td>0.82</td><td>-16.05%</td><td class="risk">217.51x</td><td>2.90x</td></tr>
+              <tr><td>Since 2022</td><td>0.5</td><td>21D</td><td>10.43%</td><td>0.94</td><td>-14.88%</td><td class="risk">184.20x</td><td>2.47x</td></tr>
+              <tr><td>Since 2022</td><td>0.5</td><td>42D</td><td>6.64%</td><td>0.78</td><td>-11.29%</td><td class="risk">139.09x</td><td>2.37x</td></tr>
+              <tr><td>Since 2022</td><td>0.5</td><td>63D</td><td>6.19%</td><td>0.86</td><td class="best">-9.41%</td><td class="risk">117.04x</td><td>1.97x</td></tr>
+              <tr><td>Since 2007</td><td>TLT B&amp;H</td><td>-</td><td>-0.56%</td><td>0.04</td><td>-54.18%</td><td>-</td><td>1.00x</td></tr>
+              <tr><td>Since 2007</td><td>1.0</td><td>7D</td><td>3.98%</td><td>0.30</td><td>-37.73%</td><td class="risk">377.42x</td><td>6.02x</td></tr>
+              <tr><td>Since 2007</td><td>1.0</td><td>14D</td><td>4.67%</td><td>0.38</td><td>-31.44%</td><td class="risk">277.37x</td><td>4.38x</td></tr>
+              <tr><td>Since 2007</td><td>1.0</td><td>21D</td><td class="best">5.41%</td><td class="best">0.49</td><td>-28.69%</td><td class="risk">229.90x</td><td>4.76x</td></tr>
+              <tr><td>Since 2007</td><td>1.0</td><td>42D</td><td>2.39%</td><td>0.29</td><td>-31.34%</td><td class="risk">167.17x</td><td>4.23x</td></tr>
+              <tr><td>Since 2007</td><td>1.0</td><td>63D</td><td>2.55%</td><td>0.34</td><td>-32.52%</td><td class="risk">138.79x</td><td>3.59x</td></tr>
+              <tr><td>Since 2007</td><td>0.5</td><td>7D</td><td>2.24%</td><td>0.22</td><td>-35.13%</td><td class="risk">297.86x</td><td>4.62x</td></tr>
+              <tr><td>Since 2007</td><td>0.5</td><td>14D</td><td>3.31%</td><td>0.34</td><td>-27.71%</td><td class="risk">218.20x</td><td>3.94x</td></tr>
+              <tr><td>Since 2007</td><td>0.5</td><td>21D</td><td>4.02%</td><td>0.44</td><td class="best">-20.79%</td><td class="risk">180.17x</td><td>4.31x</td></tr>
+              <tr><td>Since 2007</td><td>0.5</td><td>42D</td><td>1.03%</td><td>0.17</td><td>-27.42%</td><td class="risk">129.06x</td><td>4.10x</td></tr>
+              <tr><td>Since 2007</td><td>0.5</td><td>63D</td><td>0.96%</td><td>0.18</td><td>-27.53%</td><td class="risk">106.54x</td><td>3.46x</td></tr>
             </tbody>
           </table>
         </div>
 
         <p>
           Since 2022, halving the TLT component reduced exposure, turnover and drawdown
-          while improving Sharpe ratios. The long sample tempers that conclusion. Since
-          2007, Sharpe ratios fall to roughly 0.2-0.5. Coefficient 1.0 now edges
-          coefficient 0.5 on Sharpe, while 21D keeps the best Sharpe ratio in every
-          configuration. The signal was positive over the full history, but the
-          2022-2026 inflation regime supplies a large share of the return. The
-          worst drawdowns came in multi-year flat periods (2007-2012 for the short
-          windows, 2017-2021 for 21D at coefficient 1.0).
+          and improved Sharpe for the 7D to 21D windows; for 42D and 63D coefficient 1.0 is
+          better. The long sample tempers the conclusion. Since 2007, Sharpe ratios fall to
+          roughly 0.2-0.5 and coefficient 1.0 edges coefficient 0.5 for every window. 21D has
+          the best Sharpe since 2007 at both coefficients; since 2022 the best is 63D at
+          coefficient 1.0 (0.99) and 21D at coefficient 0.5 (0.94). The signal was positive
+          over the full history, but the 2022-2026 inflation regime supplies a large share of
+          the return. The worst drawdowns came in multi-year flat periods (2007-2012 for the
+          short windows, 2017-2021 for 21D at coefficient 1.0).
         </p>
 
         <div class="warning">
           <strong>Why the result is not yet investable.</strong> The coefficient-1.0
-          strategies produced 230x-378x annual notional turnover in both samples, with
-          maximum absolute weights reaching 6.0x since 2007. Since 2022, at a
-          hypothetical 5 bp per unit of turnover, ending equity fell to 77, 88 and 99
-          for the 7D, 14D and 21D variants; over a 19-year sample, the same cost
-          (roughly 1.2%-1.9% a year) would absorb most or all of the 4%-5% gross CAGR.
+          strategies produced 139x-379x annual notional turnover, with maximum absolute
+          weights reaching 6.0x since 2007. Since 2022, at a hypothetical 5 bp per unit of
+          turnover, ending equity fell to 79, 91, 99, 97 and 105 for the 7D, 14D, 21D, 42D and
+          63D variants (from 190, 173, 171, 146 and 148 at zero cost). That cost is about
+          7%-19% a year, far above the 2%-5% gross CAGR since 2007. Break-even cost, where net
+          return falls to zero, is about 4-6 bp since 2022 and only 1.5-2.6 bp since 2007.
           The backtest also excludes TLT distributions, cash yield, financing and
           short-borrow costs.
         </div>
