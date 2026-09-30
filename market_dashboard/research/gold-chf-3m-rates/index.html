@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gold, Swiss Franc and 3M Rates - Research Note</title>
+  <style>
+    :root {
+      --ink: #242729;
+      --muted: #62686b;
+      --paper: #ffffff;
+      --page: #f3f5f4;
+      --line: #d8ddda;
+      --gold: #9a6c0c;
+      --red: #b23a48;
+      --blue: #176b9d;
+      --green: #24763a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--page);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.62;
+      letter-spacing: 0;
+    }
+
+    a { color: var(--blue); }
+
+    header {
+      padding: 42px 24px 34px;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner,
+    main {
+      width: min(1040px, 100%);
+      margin: 0 auto;
+    }
+
+    .kicker {
+      margin: 0 0 8px;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 750;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 850px;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.08;
+    }
+
+    .subtitle {
+      max-width: 800px;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 19px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    main { padding: 42px 24px 72px; }
+
+    section {
+      padding: 0 0 46px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section + section { padding-top: 46px; }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      line-height: 1.2;
+    }
+
+    h3 {
+      margin: 28px 0 8px;
+      font-size: 19px;
+    }
+
+    p { margin: 10px 0 16px; }
+
+    .summary,
+    .note {
+      padding: 19px 22px;
+      background: var(--paper);
+      border-left: 4px solid var(--gold);
+    }
+
+    .definitions {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 24px 0;
+    }
+
+    .definition {
+      padding: 16px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    .definition strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--blue);
+    }
+
+    figure {
+      margin: 30px 0;
+      padding: 10px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    figcaption {
+      padding: 10px 5px 3px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    code {
+      padding: 2px 5px;
+      background: #e9edeb;
+      border-radius: 3px;
+      font-family: "Cascadia Code", Consolas, monospace;
+      font-size: 0.9em;
+    }
+
+    li { margin: 7px 0; }
+
+    footer {
+      padding: 28px 24px 44px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      .definitions { grid-template-columns: 1fr; }
+      header { padding-top: 30px; }
+      h1 { font-size: 37px; }
+    }
+
+    @media print {
+      body { background: white; }
+      main { padding: 24px; }
+      figure, .definition { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <p class="kicker">Macro research note</p>
+      <h1>Gold, the Swiss Franc and 3M Rate Differentials</h1>
+      <p class="subtitle">
+        An initial study of gold, Swiss-franc strength and the short-rate advantage
+        between the United States and Switzerland.
+      </p>
+      <div class="meta">
+        <span>Market prices: Yahoo Finance</span>
+        <span>Rates: Investing-derived daily database</span>
+        <span>Common sample: March 2011-September 2026</span>
+        <span><a href="gold_chf_rates.py">Research code</a></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="summary">
+        <strong>Research question.</strong> Do gold and the Swiss franc express a
+        common defensive or dollar-debasement factor, and does the US-Swiss 3M yield
+        differential help explain when their relationship strengthens or breaks?
+      </div>
+
+      <div class="definitions">
+        <div class="definition">
+          <strong>Gold</strong>
+          Yahoo <code>GC=F</code>, a stitched nearby COMEX gold-futures quote,
+          normalized to 100 at the common starting date.
+        </div>
+        <div class="definition">
+          <strong>Swiss franc</strong>
+          Yahoo <code>CHF=X</code> is USD/CHF. Its chart axis is inverted, so an
+          upward red line represents a stronger franc. The green line is an idealized
+          long-CHF futures investment after deducting the US-Swiss carry cost.
+        </div>
+        <div class="definition">
+          <strong>3M differential</strong>
+          US 3M yield minus Swiss 3M yield, in percentage points, smoothed with a
+          7-observation rolling mean. A positive value means the US offers more carry.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Initial comparison</h2>
+      <p>
+        The top panel deliberately mirrors the earlier TLT-USO chart: gold is on the
+        left axis and USD/CHF is on an inverted right axis. The lower panel keeps the
+        interest-rate differential separate because it is a yield spread, not a price.
+      </p>
+
+      <figure>
+        <a href="graphs/gold_chf/gold_chf_us_swiss_3m_differential_7d_since_2011.png">
+          <img src="graphs/gold_chf/gold_chf_us_swiss_3m_differential_7d_since_2011.png"
+               alt="Gold, inverted USD CHF and smoothed US minus Swiss three-month rate differential since 2011">
+        </a>
+        <figcaption>
+          Daily market prices and daily Investing-derived rates. The US series combines
+          the long-history <code>US_3M</code> identifier with the recent
+          <code>United States_3M</code> continuation. The green line is a normalized
+          long-CHF futures proxy rather than another exchange-rate axis.
+        </figcaption>
+      </figure>
+
+      <h3>First observations</h3>
+      <ul>
+        <li>Gold and CHF strength share some broad defensive episodes, but their paths are not equivalent.</li>
+        <li>The US 3M yield has generally remained above the Swiss 3M yield, especially from 2022 onward.</li>
+        <li>Gold rose strongly alongside a wide positive US-Swiss carry differential, so the spread alone cannot explain gold's level.</li>
+        <li>The carry-adjusted CHF investment can materially lag the visual inverted USD/CHF line when the US rate advantage is large.</li>
+        <li>The relationship appears regime-dependent and should be tested on changes or returns, not inferred from two trending price levels.</li>
+      </ul>
+
+      <div class="note">
+        <strong>Important convention:</strong> a falling raw USD/CHF quote means CHF
+        appreciation. The inverted axis makes that appreciation move upward visually;
+        it does not transform the underlying cached data.
+      </div>
+    </section>
+
+    <section>
+      <h2>Data construction</h2>
+      <p>
+        Rates come from <code>market_dashboard.bond_yield_history_daily</code>.
+        <code>Switzerland_3M</code> begins on 24 March 2011. The historical US series
+        <code>US_3M</code> ends on 14 September 2026 and is continued with
+        <code>United States_3M</code> from 15 September 2026. Both source tables and
+        market prices are saved locally before plotting.
+      </p>
+
+      <h3>Long-CHF futures proxy</h3>
+      <p>
+        The daily proxy return is the percentage change in <code>1 / USDCHF</code>
+        minus the previous observation's annualized <code>US 3M - Swiss 3M</code>
+        differential divided by 252. The spread uses the same 7-observation mean as
+        the lower panel. This approximates the carry paid by a USD-funded long-CHF
+        position.
+      </p>
+      <div class="note">
+        <strong>Approximation:</strong> this is not a contract-level futures backtest.
+        It excludes futures basis, expiry rolls, margin collateral return, commissions
+        and execution slippage.
+      </div>
+
+      <h3>Next tests</h3>
+      <ol>
+        <li>Measure rolling correlations using gold returns and changes in CHF value rather than price levels.</li>
+        <li>Test whether changes in the 3M differential lead CHF or gold over 1, 5, 21 and 63 trading days.</li>
+        <li>Separate risk-off shocks from monetary-policy regimes using volatility and equity controls.</li>
+        <li>Compare gold in USD with gold in CHF to distinguish gold exposure from dollar exposure.</li>
+        <li>Use walk-forward tests before converting any relationship into a trading signal.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    Exploratory research only. Historical relationships are not investment advice.
+  </footer>
+</body>
+</html>
