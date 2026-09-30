@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WTI, Oil ETPs and TLT - Research Note</title>
+  <style>
+    :root {
+      --ink: #202326;
+      --muted: #626a70;
+      --paper: #ffffff;
+      --page: #f3f5f4;
+      --line: #d9dedb;
+      --green: #218739;
+      --purple: #7652a8;
+      --blue: #176b9d;
+      --red: #b43b35;
+      --amber: #b36b13;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--page);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.62;
+      letter-spacing: 0;
+    }
+
+    a { color: var(--blue); }
+
+    header {
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      padding: 44px 24px 34px;
+    }
+
+    .header-inner,
+    .layout {
+      width: min(1220px, 100%);
+      margin: 0 auto;
+    }
+
+    .kicker {
+      margin: 0 0 8px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 750;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.06;
+      font-weight: 760;
+    }
+
+    .subtitle {
+      max-width: 830px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 19px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 42px;
+      padding: 38px 24px 72px;
+    }
+
+    nav {
+      position: sticky;
+      top: 24px;
+      align-self: start;
+      font-size: 14px;
+    }
+
+    nav strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      display: block;
+      padding: 8px 0;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav a:hover { color: var(--blue); }
+
+    main { min-width: 0; }
+
+    section {
+      padding: 12px 0 54px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section + section { padding-top: 54px; }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 30px;
+      line-height: 1.18;
+    }
+
+    h3 {
+      margin: 32px 0 8px;
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    p { margin: 10px 0 16px; }
+
+    .chapter-number {
+      color: var(--purple);
+      font-size: 13px;
+      font-weight: 750;
+      text-transform: uppercase;
+    }
+
+    .lead {
+      max-width: 850px;
+      color: #363b3f;
+      font-size: 18px;
+    }
+
+    .summary {
+      margin: 0 0 34px;
+      padding: 22px 24px;
+      background: #eef4f0;
+      border-left: 4px solid var(--green);
+    }
+
+    .summary strong { color: #155c29; }
+
+    .findings {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 24px 0 28px;
+    }
+
+    .finding {
+      min-height: 132px;
+      padding: 17px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    .finding b {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--purple);
+      font-size: 21px;
+    }
+
+    figure {
+      margin: 28px 0 34px;
+      padding: 10px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    figcaption {
+      padding: 10px 5px 3px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    figure a { cursor: zoom-in; }
+
+    .panel-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .panel-grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .panel-grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .panel-grid a {
+      display: block;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: border-color 0.15s;
+    }
+
+    .panel-grid a:hover { border-color: var(--line); }
+
+    .panel-label {
+      display: block;
+      padding: 4px 2px 0;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      background: rgba(20, 22, 24, 0.92);
+      overflow: hidden;
+      touch-action: none;
+    }
+
+    .lightbox.open { display: block; }
+
+    .lightbox img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: none;
+      transform-origin: 0 0;
+      cursor: grab;
+      user-select: none;
+      -webkit-user-drag: none;
+      background: #fff;
+    }
+
+    .lightbox img.dragging { cursor: grabbing; }
+
+    .lightbox-bar {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 1;
+      display: flex;
+      gap: 6px;
+    }
+
+    .lightbox-bar button,
+    .lightbox-bar a {
+      min-width: 36px;
+      height: 36px;
+      padding: 0 10px;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 4px;
+      font: inherit;
+      font-size: 15px;
+      line-height: 34px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .lightbox-bar button:hover,
+    .lightbox-bar a:hover { background: rgba(255, 255, 255, 0.26); }
+
+    .lightbox-help {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 20px 0 28px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--paper);
+      font-variant-numeric: tabular-nums;
+    }
+
+    th, td {
+      padding: 11px 13px;
+      border-bottom: 1px solid var(--line);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    th:first-child, td:first-child { text-align: left; }
+
+    th {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .best { color: var(--green); font-weight: 750; }
+    .risk { color: var(--red); }
+
+    .formula {
+      overflow-x: auto;
+      margin: 18px 0;
+      padding: 16px 18px;
+      background: #24282c;
+      color: #f6f7f7;
+      border-radius: 4px;
+      font-family: "Cascadia Code", Consolas, monospace;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .note {
+      margin: 22px 0;
+      padding: 17px 20px;
+      background: #f8f0e6;
+      border-left: 4px solid var(--amber);
+    }
+
+    .warning {
+      margin: 22px 0;
+      padding: 17px 20px;
+      background: #f8eceb;
+      border-left: 4px solid var(--red);
+    }
+
+    .sources {
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 28px 24px 46px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 850px) {
+      .layout { grid-template-columns: 1fr; }
+      nav { position: static; }
+      .findings { grid-template-columns: 1fr; }
+      .panel-grid.cols-3,
+      .panel-grid.cols-2 { grid-template-columns: 1fr; }
+      .lightbox-help { display: none; }
+      header { padding-top: 30px; }
+      h1 { font-size: 38px; }
+    }
+
+    @media print {
+      body { background: white; }
+      nav { display: none; }
+      .lightbox { display: none !important; }
+      .layout { display: block; padding: 20px; }
+      section { break-inside: avoid; }
+      figure { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <p class="kicker">Quantitative research note</p>
+      <h1>WTI, Oil ETPs and TLT</h1>
+      <p class="subtitle">
+        An exploratory study of futures carry, oil-product trend signals and the
+        short-horizon relationship between USO and long-duration Treasuries.
+      </p>
+      <div class="meta">
+        <span>Data: Yahoo Finance cached closes</span>
+        <span>Sample: 2007-2026</span>
+        <span>Updated: 30 September 2026</span>
+        <span><a href="wti_crude.py">Research code</a></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav aria-label="Report contents">
+      <strong>Contents</strong>
+      <a href="#summary">Executive summary</a>
+      <a href="#chapter-1">1. Oil ETP performance</a>
+      <a href="#chapter-2">2. USO timing</a>
+      <a href="#chapter-3">3. USO and TLT</a>
+      <a href="#methodology">Methodology</a>
+      <a href="#conclusion">Conclusion</a>
+    </nav>
+
+    <main>
+      <section id="summary">
+        <div class="summary">
+          <strong>Bottom line.</strong> Oil ETP outperformance in 2026 is plausible
+          in a sharply backwardated market, but the comparison with Yahoo's
+          stitched front-future quote is not an investable apples-to-apples
+          benchmark. Simple USO trend rules remain unstable. The most interesting
+          result is the short-horizon USO/TLT change-in-z-score signal, although
+          its raw implementation has excessive turnover and leverage.
+        </div>
+
+        <div class="findings">
+          <div class="finding">
+            <b>Carry matters</b>
+            Backwardation can create positive roll return; contango produces the
+            familiar drag. Collateral interest also supported futures products.
+          </div>
+          <div class="finding">
+            <b>Trend is fragile</b>
+            One-month USO momentum led the tested grid, but still suffered a drawdown
+            above 70% and varied sharply by subperiod.
+          </div>
+          <div class="finding">
+            <b>TLT signal merits work</b>
+            The 21-day USO/TLT signal had the best zero-cost risk-adjusted result
+            (Sharpe 0.92 since 2022, 0.48 since 2007), but raw turnover exceeded
+            180 times notional per year.
+          </div>
+        </div>
+      </section>
+
+      <section id="chapter-1">
+        <div class="chapter-number">Chapitre 1</div>
+        <h2>Why oil ETPs outperformed in 2026 but lag over long horizons</h2>
+        <p class="lead">
+          The 2026 divergence is not necessarily an error. A futures fund earns the
+          change in its contracts, the effect of rolling them and interest on its
+          collateral, less fees. Yahoo's <code>CL=F</code> history is a succession
+          of front-contract quotes and does not represent that complete investment return.
+        </p>
+
+        <figure>
+          <a href="graphs/wti_future_vs_oil_etfs___etc_2026_ytd.png">
+            <img src="graphs/wti_future_vs_oil_etfs___etc_2026_ytd.png"
+                 alt="WTI futures and oil ETP normalized performance in 2026">
+          </a>
+          <figcaption>
+            2026 YTD. Futures-based products materially outpaced the stitched WTI
+            front-contract quote during a period of unusually strong backwardation.
+          </figcaption>
+        </figure>
+
+        <h3>The return decomposition</h3>
+        <div class="formula">
+          ETP return ~= futures price return + roll return + collateral yield - fees
+        </div>
+        <p>
+          In <strong>contango</strong>, the next contract is more expensive than the
+          expiring contract. Repeatedly selling low and buying high creates negative
+          roll return. In <strong>backwardation</strong>, the next contract is cheaper;
+          a long investor can acquire more exposure when rolling, and convergence can
+          create positive roll return. Storage, financing and insurance costs influence
+          the curve, but they are not a fixed fee deducted directly from every ETP.
+        </p>
+        <p>
+          Product design explains part of the cross-section. USO concentrates on the
+          nearby contract and is therefore especially exposed to front-end backwardation.
+          USL spreads exposure across twelve consecutive contracts. DBO selects a
+          contract using an optimum-yield methodology. CRUD follows a multi-tenor WTI
+          total-return index. These are related oil exposures, not interchangeable funds.
+        </p>
+
+        <figure>
+          <a href="graphs/wti_future_vs_oil_etfs___etc_since_2007.png">
+            <img src="graphs/wti_future_vs_oil_etfs___etc_since_2007.png"
+                 alt="WTI futures and oil ETP normalized performance since 2007">
+          </a>
+          <figcaption>
+            Since 2007. Extended contango, fees and repeated rolls helped produce major
+            long-run ETP underperformance, while shorter backwardated episodes reversed
+            the relationship.
+          </figcaption>
+        </figure>
+
+        <div class="note">
+          <strong>Interpretation:</strong> the charts show that carry can dominate
+          spot-like price change. They do not prove that one ETP has structural alpha.
+          A rigorous comparison requires a rolled WTI total-return benchmark using
+          actual contract settlements.
+        </div>
+      </section>
+
+      <section id="chapter-2">
+        <div class="chapter-number">Chapitre 2</div>
+        <h2>USO trend signals are not yet convincing</h2>
+        <p class="lead">
+          We tested long/short USO positions using the sign of trailing USO momentum.
+          Positions were delayed by one trading day and no transaction costs were
+          charged. The grid used 1, 2, 3, 4, 6, 9 and 12 months.
+        </p>
+
+        <figure>
+          <a href="graphs/uso_momentum_grid_equity_curves.png">
+            <img src="graphs/uso_momentum_grid_equity_curves.png"
+                 alt="USO momentum strategy equity curves across seven horizons">
+          </a>
+          <figcaption>
+            Pure time-series momentum. One month led the full sample, but the path was
+            volatile and the result was not uniformly strong across regimes.
+          </figcaption>
+        </figure>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Horizon</th><th>Ending equity</th><th>CAGR</th><th>Sharpe</th><th>Max drawdown</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1M</td><td class="best">508.67</td><td class="best">9.07%</td><td class="best">0.42</td><td>-74.41%</td></tr>
+              <tr><td>2M</td><td>316.51</td><td>6.34%</td><td>0.35</td><td class="best">-69.95%</td></tr>
+              <tr><td>3M</td><td>300.28</td><td>6.05%</td><td>0.34</td><td>-83.17%</td></tr>
+              <tr><td>9M</td><td>262.83</td><td>5.29%</td><td>0.32</td><td>-79.02%</td></tr>
+              <tr><td>6M</td><td>156.83</td><td>2.43%</td><td>0.25</td><td>-80.76%</td></tr>
+              <tr><td>4M</td><td>53.35</td><td>-3.30%</td><td>0.10</td><td>-88.18%</td></tr>
+              <tr><td>12M</td><td>30.73</td><td>-6.10%</td><td>0.02</td><td>-91.67%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          The 1M rule had the highest aggregate return, but lost 35.6% during
+          2014-2019. The 2M rule was less spectacular but positive in each broad
+          subperiod. This instability, together with very deep drawdowns, argues
+          against treating the best full-sample horizon as a settled parameter.
+        </p>
+
+        <h3>Adding an oil-carry proxy did not improve the strategy</h3>
+        <p>
+          The next test kept the 1M USO trend and required agreement with the sign of
+          <code>USO momentum(N) - WTI momentum(N)</code>. This was intended as a rough
+          proxy for relative futures-product carry. It is important to be precise:
+          this spread is <strong>not</strong> a direct measure of contango or backwardation.
+          A true curve measure requires simultaneous first- and second-month contracts.
+        </p>
+
+        <figure>
+          <a href="graphs/uso_1m_trend_relative_momentum_grid.png">
+            <img src="graphs/uso_1m_trend_relative_momentum_grid.png"
+                 alt="USO one-month trend with relative USO versus WTI momentum filters">
+          </a>
+          <figcaption>
+            The unconditional 1M trend is shown beside all relative-momentum filters.
+            The filter reduced exposure and drawdown, but also removed much of the return.
+          </figcaption>
+        </figure>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Strategy</th><th>Ending equity</th><th>CAGR</th><th>Sharpe</th><th>Max drawdown</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1M trend only</td><td class="best">466.61</td><td class="best">8.57%</td><td class="best">0.41</td><td>-76.21%</td></tr>
+              <tr><td>1M trend + relative 1M</td><td>190.81</td><td>3.51%</td><td>0.26</td><td class="best">-61.15%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          The filter improved the worst drawdown by roughly 15 percentage points but
+          more than halved terminal wealth. On the evidence available, simple trend plus
+          the USO-minus-WTI proxy is less convincing than trend alone. Direct Norgate
+          contract-curve data is the appropriate next test for genuine roll yield.
+        </p>
+      </section>
+
+      <section id="chapter-3">
+        <div class="chapter-number">Chapitre 3</div>
+        <h2>Can USO help predict TLT?</h2>
+        <p class="lead">
+          USO and TLT often moved in opposite directions during the sample, especially
+          in 2026. That visual relationship is economically plausible through inflation,
+          policy-rate expectations and duration, but it is regime-dependent and does
+          not establish causality.
+        </p>
+
+        <figure>
+          <div class="panel-grid cols-3">
+            <a href="graphs/tlt_vs_uso_inverted_2026_ytd.png">
+              <img src="graphs/tlt_vs_uso_inverted_2026_ytd.png"
+                   alt="TLT with USO displayed on an inverted axis in 2026">
+              <span class="panel-label">2026 YTD</span>
+            </a>
+            <a href="graphs/tlt_vs_uso_inverted_since_2022.png">
+              <img src="graphs/tlt_vs_uso_inverted_since_2022.png"
+                   alt="TLT with USO displayed on an inverted axis since 2022">
+              <span class="panel-label">Since 2022</span>
+            </a>
+            <a href="graphs/tlt_vs_uso_inverted_since_2007.png">
+              <img src="graphs/tlt_vs_uso_inverted_since_2007.png"
+                   alt="TLT with USO displayed on an inverted axis since 2007">
+              <span class="panel-label">Since 2007 (full sample)</span>
+            </a>
+          </div>
+          <figcaption>
+            TLT on the left axis and USO on the inverted right axis. The inverse
+            relationship was particularly strong in 2026 and visible since 2022. Over the
+            full sample the major oil crashes (2008, 2014-2016, 2020) coincided with TLT
+            rallies, but long stretches such as 2009-2014 and 2016-2019 show little
+            co-movement, and USO's roll decay makes the levels drift apart. It cannot
+            support a fixed hedge ratio.
+            <span class="hint">Click a panel to expand; scroll or pinch to zoom.</span>
+          </figcaption>
+        </figure>
+
+        <h3>Change-in-z-score weighting</h3>
+        <p>
+          For each rolling window <em>N</em>, prices were transformed into rolling
+          z-scores. The daily changes in those z-scores formed an unconstrained TLT weight:
+        </p>
+        <div class="formula">
+          w(t) = -( dZScore_N(USO,t) + lambda x dZScore_N(TLT,t) )
+        </div>
+        <p>
+          The weight observed at the close was applied to the next trading day's TLT
+          return. Tests used 7, 14 and 21 trading days, with <code>lambda = 1.0</code>
+          and <code>lambda = 0.5</code>, over two samples: since 2022 (where the idea was
+          found) and since 2007 (the full cached history). Reported results charge no
+          transaction, financing or borrow costs.
+        </p>
+
+        <figure>
+          <div class="panel-grid cols-2">
+            <a href="graphs/tlt_dzscore_sum_tlt_1p0_equity_curves_since_2022.png">
+              <img src="graphs/tlt_dzscore_sum_tlt_1p0_equity_curves_since_2022.png"
+                   alt="TLT equity curves, lambda 1.0, since 2022">
+              <span class="panel-label">lambda = 1.0 | Since 2022</span>
+            </a>
+            <a href="graphs/tlt_dzscore_sum_tlt_1p0_equity_curves_since_2007.png">
+              <img src="graphs/tlt_dzscore_sum_tlt_1p0_equity_curves_since_2007.png"
+                   alt="TLT equity curves, lambda 1.0, since 2007">
+              <span class="panel-label">lambda = 1.0 | Since 2007</span>
+            </a>
+          </div>
+          <figcaption>
+            Coefficient 1.0. Since 2022, 7D produced the highest terminal wealth and 21D
+            the best Sharpe ratio. Since 2007, the ranking is 21D &gt; 14D &gt; 7D on every
+            metric, and most of the gain arrives after 2022.
+            <span class="hint">Click a panel to expand; scroll or pinch to zoom.</span>
+          </figcaption>
+        </figure>
+
+        <figure>
+          <div class="panel-grid cols-2">
+            <a href="graphs/tlt_dzscore_sum_tlt_0p5_equity_curves_since_2022.png">
+              <img src="graphs/tlt_dzscore_sum_tlt_0p5_equity_curves_since_2022.png"
+                   alt="TLT equity curves, lambda 0.5, since 2022">
+              <span class="panel-label">lambda = 0.5 | Since 2022</span>
+            </a>
+            <a href="graphs/tlt_dzscore_sum_tlt_0p5_equity_curves_since_2007.png">
+              <img src="graphs/tlt_dzscore_sum_tlt_0p5_equity_curves_since_2007.png"
+                   alt="TLT equity curves, lambda 0.5, since 2007">
+              <span class="panel-label">lambda = 0.5 | Since 2007</span>
+            </a>
+          </div>
+          <figcaption>
+            Coefficient 0.5. Risk metrics improve in both samples, but the strategy
+            remains highly active and regularly exceeds two times absolute exposure.
+          </figcaption>
+        </figure>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Sample</th><th>Coefficient</th><th>Window</th><th>CAGR</th><th>Sharpe</th><th>Max drawdown</th><th>Annual turnover</th><th>Max |w|</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Since 2022</td><td>TLT B&amp;H</td><td>-</td><td>-11.83%</td><td>-0.73</td><td>-44.36%</td><td>-</td><td>1.00x</td></tr>
+              <tr><td>Since 2022</td><td>1.0</td><td>7D</td><td>14.05%</td><td>0.74</td><td>-23.55%</td><td class="risk">376.91x</td><td>3.97x</td></tr>
+              <tr><td>Since 2022</td><td>1.0</td><td>14D</td><td>11.82%</td><td>0.76</td><td>-21.56%</td><td class="risk">278.37x</td><td>3.58x</td></tr>
+              <tr><td>Since 2022</td><td>1.0</td><td>21D</td><td>11.73%</td><td>0.86</td><td>-19.44%</td><td class="risk">233.87x</td><td>3.27x</td></tr>
+              <tr><td>Since 2022</td><td>0.5</td><td>7D</td><td>12.22%</td><td>0.78</td><td>-18.54%</td><td class="risk">297.92x</td><td>3.41x</td></tr>
+              <tr><td>Since 2022</td><td>0.5</td><td>14D</td><td>10.20%</td><td>0.80</td><td>-16.05%</td><td class="risk">218.05x</td><td>2.90x</td></tr>
+              <tr><td>Since 2022</td><td>0.5</td><td>21D</td><td>10.36%</td><td class="best">0.92</td><td class="best">-14.88%</td><td class="risk">185.22x</td><td>2.47x</td></tr>
+              <tr><td>Since 2007</td><td>TLT B&amp;H</td><td>-</td><td>-0.53%</td><td>0.04</td><td>-54.18%</td><td>-</td><td>1.00x</td></tr>
+              <tr><td>Since 2007</td><td>1.0</td><td>7D</td><td>3.96%</td><td>0.30</td><td>-37.73%</td><td class="risk">377.51x</td><td>6.02x</td></tr>
+              <tr><td>Since 2007</td><td>1.0</td><td>14D</td><td>4.64%</td><td>0.38</td><td>-31.44%</td><td class="risk">277.04x</td><td>4.38x</td></tr>
+              <tr><td>Since 2007</td><td>1.0</td><td>21D</td><td class="best">5.35%</td><td class="best">0.48</td><td>-28.69%</td><td class="risk">229.66x</td><td>4.76x</td></tr>
+              <tr><td>Since 2007</td><td>0.5</td><td>7D</td><td>2.27%</td><td>0.23</td><td>-35.13%</td><td class="risk">298.23x</td><td>4.62x</td></tr>
+              <tr><td>Since 2007</td><td>0.5</td><td>14D</td><td>3.34%</td><td>0.34</td><td>-27.71%</td><td class="risk">218.07x</td><td>3.94x</td></tr>
+              <tr><td>Since 2007</td><td>0.5</td><td>21D</td><td>4.01%</td><td>0.44</td><td class="best">-20.79%</td><td class="risk">180.12x</td><td>4.31x</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          Since 2022, halving the TLT component reduced exposure, turnover and drawdown
+          while improving Sharpe ratios. The long sample tempers that conclusion. Since
+          2007, Sharpe ratios fall to roughly 0.2-0.5. Coefficient 1.0 now edges
+          coefficient 0.5 on Sharpe, while 21D keeps the best Sharpe ratio in every
+          configuration. The signal was positive over the full history, but the
+          2022-2026 inflation regime supplies a large share of the return. The
+          worst drawdowns came in multi-year flat periods (2007-2012 for the short
+          windows, 2017-2021 for 21D at coefficient 1.0).
+        </p>
+
+        <div class="warning">
+          <strong>Why the result is not yet investable.</strong> The coefficient-1.0
+          strategies produced 230x-378x annual notional turnover in both samples, with
+          maximum absolute weights reaching 6.0x since 2007. Since 2022, at a
+          hypothetical 5 bp per unit of turnover, ending equity fell to 77, 88 and 99
+          for the 7D, 14D and 21D variants; over a 19-year sample, the same cost
+          (roughly 1.2%-1.9% a year) would absorb most or all of the 4%-5% gross CAGR.
+          The backtest also excludes TLT distributions, cash yield, financing and
+          short-borrow costs.
+        </div>
+      </section>
+
+      <section id="methodology">
+        <h2>Methodology and limitations</h2>
+        <ul>
+          <li>Signals are calculated at the close and applied with a one-day lag.</li>
+          <li>All displayed strategy curves currently assume zero transaction costs.</li>
+          <li>The cache contains Yahoo closing prices, not a fully audited total-return dataset.</li>
+          <li>TLT distributions and interest on uninvested cash are excluded.</li>
+          <li>Shorting and leveraged weights do not include borrow or financing costs.</li>
+          <li><code>CL=F</code> is a stitched nearby-futures quote, not a rolled total-return index.</li>
+          <li>The 2022-2026 TLT test is short and dominated by an unusual inflation and rate cycle; the 2007-2026 extension roughly halves Sharpe ratios.</li>
+          <li>Parameters were examined on the full sample; results are exploratory and in-sample.</li>
+        </ul>
+
+        <h3>Next research steps</h3>
+        <ol>
+          <li>Use adjusted total-return prices for USO and TLT.</li>
+          <li>Acquire individual WTI contracts from Norgate and calculate the actual curve slope and roll return.</li>
+          <li>Cap TLT signal weights at one times exposure and test 3-5 day smoothing or weekly rebalancing.</li>
+          <li>Run walk-forward and held-out tests rather than choosing parameters on the complete history.</li>
+          <li>Report turnover, financing, borrow and execution-cost sensitivity beside every equity curve.</li>
+        </ol>
+      </section>
+
+      <section id="conclusion">
+        <h2>Conclusion</h2>
+        <p class="lead">
+          The research supports three measured conclusions. First, oil-futures carry
+          explains why ETPs can outperform a front-contract quote during backwardation
+          even though they often decay over long contango-heavy periods. Second, simple
+          USO trend and relative-momentum rules do not yet offer a stable timing model.
+          Third, changes in USO and TLT z-scores contain an intriguing short-horizon
+          relationship, but its apparent edge must survive realistic constraints and
+          out-of-sample testing before it can be treated as more than a research lead.
+        </p>
+
+        <h3>Reference material</h3>
+        <ul class="sources">
+          <li><a href="https://www.cmegroup.com/insights/economic-research/2026/how-backwardation-generates-positive-roll-returns-in-energy.html">CME: How backwardation generates positive roll returns</a></li>
+          <li><a href="https://www.uscfinvestments.com/uso">USCF: USO methodology</a></li>
+          <li><a href="https://www.uscfinvestments.com/usl">USCF: USL methodology</a></li>
+          <li><a href="https://www.invesco.com/us/en/financial-products/etfs/invesco-db-oil-fund.html">Invesco: DBO methodology</a></li>
+          <li><a href="https://www.wisdomtree.eu/fi-fi/products/ucits-etfs-unleveraged-etps/commodities/wisdomtree-wti-crude-oil">WisdomTree: CRUD methodology</a></li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    Exploratory research only. Historical simulations are not investment advice and
+    do not represent executable results.
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Expanded chart">
+    <div class="lightbox-bar">
+      <button type="button" data-action="zoom-in" title="Zoom in">+</button>
+      <button type="button" data-action="zoom-out" title="Zoom out">&minus;</button>
+      <button type="button" data-action="fit" title="Fit to screen">Fit</button>
+      <a id="lightbox-original" href="#" target="_blank" rel="noopener" title="Open original image">&#8599;</a>
+      <button type="button" data-action="close" title="Close (Esc)">&times;</button>
+    </div>
+    <img id="lightbox-img" alt="">
+    <div class="lightbox-help">Scroll to zoom &middot; drag to pan &middot; double-click to toggle zoom &middot; Esc to close</div>
+  </div>
+
+  <script>
+    (function () {
+      var box = document.getElementById("lightbox");
+      var img = document.getElementById("lightbox-img");
+      var original = document.getElementById("lightbox-original");
+      var scale = 1, fitScale = 1, x = 0, y = 0;
+      var drag = null, pointers = {}, pinch = null;
+
+      function apply() {
+        img.style.transform = "translate(" + x + "px," + y + "px) scale(" + scale + ")";
+      }
+
+      function fit() {
+        var w = img.naturalWidth, h = img.naturalHeight;
+        fitScale = Math.min((innerWidth - 40) / w, (innerHeight - 90) / h, 1);
+        scale = fitScale;
+        x = (innerWidth - w * scale) / 2;
+        y = (innerHeight - h * scale) / 2;
+        apply();
+      }
+
+      function zoomAt(factor, cx, cy) {
+        var next = Math.min(Math.max(scale * factor, fitScale * 0.5), 8);
+        x = cx - (cx - x) * (next / scale);
+        y = cy - (cy - y) * (next / scale);
+        scale = next;
+        apply();
+      }
+
+      function open(src, alt) {
+        img.onload = fit;
+        img.src = src;
+        img.alt = alt || "";
+        original.href = src;
+        box.classList.add("open");
+        document.body.style.overflow = "hidden";
+        if (img.complete && img.naturalWidth) fit();
+      }
+
+      function close() {
+        box.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      document.querySelectorAll("figure a[href$='.png']").forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          if (event.ctrlKey || event.metaKey || event.shiftKey) return;
+          event.preventDefault();
+          var thumb = link.querySelector("img");
+          open(link.getAttribute("href"), thumb && thumb.alt);
+        });
+      });
+
+      box.addEventListener("click", function (event) {
+        var action = event.target.getAttribute("data-action");
+        if (action === "close" || event.target === box) close();
+        if (action === "zoom-in") zoomAt(1.4, innerWidth / 2, innerHeight / 2);
+        if (action === "zoom-out") zoomAt(1 / 1.4, innerWidth / 2, innerHeight / 2);
+        if (action === "fit") fit();
+      });
+
+      box.addEventListener("wheel", function (event) {
+        event.preventDefault();
+        zoomAt(event.deltaY < 0 ? 1.15 : 1 / 1.15, event.clientX, event.clientY);
+      }, { passive: false });
+
+      img.addEventListener("dblclick", function (event) {
+        if (scale > fitScale * 1.05) fit();
+        else zoomAt(2.5, event.clientX, event.clientY);
+      });
+
+      img.addEventListener("pointerdown", function (event) {
+        img.setPointerCapture(event.pointerId);
+        pointers[event.pointerId] = { x: event.clientX, y: event.clientY };
+        var ids = Object.keys(pointers);
+        if (ids.length === 2) {
+          var a = pointers[ids[0]], b = pointers[ids[1]];
+          pinch = Math.hypot(a.x - b.x, a.y - b.y);
+          drag = null;
+        } else {
+          drag = { x: event.clientX - x, y: event.clientY - y };
+          img.classList.add("dragging");
+        }
+      });
+
+      img.addEventListener("pointermove", function (event) {
+        if (!pointers[event.pointerId]) return;
+        pointers[event.pointerId] = { x: event.clientX, y: event.clientY };
+        var ids = Object.keys(pointers);
+        if (ids.length === 2 && pinch) {
+          var a = pointers[ids[0]], b = pointers[ids[1]];
+          var distance = Math.hypot(a.x - b.x, a.y - b.y);
+          zoomAt(distance / pinch, (a.x + b.x) / 2, (a.y + b.y) / 2);
+          pinch = distance;
+        } else if (drag) {
+          x = event.clientX - drag.x;
+          y = event.clientY - drag.y;
+          apply();
+        }
+      });
+
+      function release(event) {
+        delete pointers[event.pointerId];
+        pinch = null;
+        drag = null;
+        img.classList.remove("dragging");
+      }
+      img.addEventListener("pointerup", release);
+      img.addEventListener("pointercancel", release);
+
+      document.addEventListener("keydown", function (event) {
+        if (!box.classList.contains("open")) return;
+        if (event.key === "Escape") close();
+        if (event.key === "+" || event.key === "=") zoomAt(1.4, innerWidth / 2, innerHeight / 2);
+        if (event.key === "-") zoomAt(1 / 1.4, innerWidth / 2, innerHeight / 2);
+        if (event.key === "0") fit();
+      });
+
+      addEventListener("resize", function () {
+        if (box.classList.contains("open")) fit();
+      });
+    })();
+  </script>
+</body>
+</html>
