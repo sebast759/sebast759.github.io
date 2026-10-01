@@ -1,5 +1,93 @@
 [
  {
+  "run_id": 165,
+  "day": "2026-10-01",
+  "time": "07:41",
+  "slot": "sunrise",
+  "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR",
+    "surf_min": 1.8,
+    "surf_max": 2.4,
+    "swell_h": 2.7,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 19,
+    "wind_gust": 24,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": "both Ribeira cams down (close-up and MEO); forecast only",
+    "erisurf": 3
+   },
+   {
+    "spot": "Norte",
+    "rating": "POOR",
+    "surf_min": 1.8,
+    "surf_max": 2.4,
+    "swell_h": 2.7,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 19,
+    "wind_gust": 24,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": "no camera frames this run; forecast only",
+    "erisurf": 1
+   },
+   {
+    "spot": "Sul",
+    "rating": "POOR",
+    "surf_min": 1.8,
+    "surf_max": 2.4,
+    "swell_h": 2.7,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 19,
+    "wind_gust": 24,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": null,
+    "note": "big lines wrapping off the point, wind-ruffled, lots of whitewater; nobody on detail crop",
+    "erisurf": 1
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR",
+    "surf_min": 1.8,
+    "surf_max": 2.4,
+    "swell_h": 2.7,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 19,
+    "wind_gust": 24,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": 0,
+    "note": "overhead walls peeling off the reef, some sections; nobody in water on detail crop",
+    "erisurf": 1
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.8,
+    "surf_max": 2.4,
+    "swell_h": 2.7,
+    "swell_p": 12,
+    "swell_dir": "WNW",
+    "wind_kts": 19,
+    "wind_gust": 24,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": 0,
+    "note": "heavy shorebreak dumping on the sand, messy outside; nobody in water, beach empty",
+    "erisurf": 1.5
+   }
+  ]
+ },
+ {
   "run_id": 164,
   "day": "2026-09-30",
   "time": "18:41",
@@ -1604,30 +1692,6 @@
     "people": 0,
     "note": "hazy, shorebreak only; water empty, beach empty",
     "erisurf": 1
-   }
-  ]
- },
- {
-  "run_id": 145,
-  "day": "2026-09-27",
-  "time": "07:41",
-  "slot": "sunrise",
-  "spots": [
-   {
-    "spot": "Pedra",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.9,
-    "surf_max": 1.4,
-    "swell_h": 1.5,
-    "swell_p": 11,
-    "swell_dir": "NW",
-    "wind_kts": 11,
-    "wind_gust": 18,
-    "wind_dir": "NNE",
-    "surfers": 0,
-    "people": 0,
-    "note": "grey light, sectiony walls on reef, cross-shore texture; nobody out in detail crop",
-    "erisurf": 1.5
    }
   ]
  }
