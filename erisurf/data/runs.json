@@ -16,10 +16,10 @@
     "wind_kts": 20,
     "wind_gust": 24,
     "wind_dir": "N",
-    "surfers": null,
+    "surfers": 0,
     "people": 3,
-    "note": "big whitewater bands; close-up blocked by contest tarp, wide cam too far to resolve surfers",
-    "erisurf": 3
+    "note": "messy whitewater bands, closing out; nobody out on crowd/detail crops (close-up blocked by contest tarp)",
+    "erisurf": 1.5
    },
    {
     "spot": "Norte",
