@@ -13,7 +13,9 @@
   .section h2 { margin:0 0 0.8rem; font-size:1.2rem; color:#0b0b0b; }
   .row { display:grid; gap:1.5rem; grid-template-columns:repeat(3, 1fr); margin-bottom:1.5rem; }
   @media (max-width: 1100px) { .row { grid-template-columns:1fr; } }
-  .card { background:#fff; border-radius:10px; padding:0.75rem; box-shadow:0 1px 3px rgba(0,0,0,0.08); }
+  .card { background:#fff; border-radius:10px; padding:0.75rem; box-shadow:0 1px 3px rgba(0,0,0,0.08);
+          min-width:0; }  /* grid items default to min-width:auto, which refuses to shrink below the
+                              image's intrinsic ~2400px and overflows the row - this lets it shrink */
   .card h3 { margin:0.2rem 0.4rem 0.6rem; font-size:0.95rem; color:#3d3d3b; font-weight:600; }
   .card img { width:100%; height:auto; border-radius:6px; display:block; cursor:zoom-in; }
   #zoom { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:10;
