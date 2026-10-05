@@ -52,6 +52,16 @@ body {
 }
 
 /* Content */
+.boards-menu { position: relative; flex-shrink: 0; }
+.boards-menu summary { list-style: none; user-select: none; }
+.boards-menu summary::-webkit-details-marker { display: none; }
+.boards-menu summary span { margin-left: 6px; }
+.boards-menu[open] summary { background: #f3f5f5; color: #1a1a1a; }
+.boards-options { position: absolute; top: 100%; right: 0; z-index: 100; min-width: 210px; padding: 5px; border: 1px solid #dce1e2; border-radius: 6px; background: white; box-shadow: 0 6px 18px #0002; }
+.boards-options a { display: block; padding: 12px; color: #202728; text-decoration: none; font-size: 14px; white-space: nowrap; }
+.boards-options a:hover, .boards-options a:focus-visible { background: #edf0f1; border-radius: 3px; }
+@media (max-width: 768px) { .boards-options { position: fixed; top: var(--boards-top); right: 8px; } }
+
 .content {
     padding: 2rem;
 }

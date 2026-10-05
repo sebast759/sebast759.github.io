@@ -19,7 +19,13 @@
         <div class="tab" onclick="showTab('equities')">Equities</div>
         <div class="tab" onclick="showTab('macro')">Macro</div>
         <div class="tab" onclick="showTab('global')">Global</div>
-        <a class="tab" href="posts.html">Posts</a>
+        <details class="boards-menu" ontoggle="this.style.setProperty('--boards-top',this.querySelector('summary').getBoundingClientRect().bottom+'px')" onkeydown="if(event.key==='Escape'){this.open=false;this.querySelector('summary').focus();}">
+            <summary class="tab">Boards <span aria-hidden="true">&#9662;</span></summary>
+            <nav class="boards-options" aria-label="Boards">
+                <a href="posts.html">Interest Rate Board</a>
+                <a href="graphs/markets/commodities.html">Commodity Board</a>
+            </nav>
+        </details>
         <a class="tab" href="research.html">Research</a>
     </div>
 

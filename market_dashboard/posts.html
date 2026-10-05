@@ -3,40 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Posts</title>
+<title>Interest Rate Board | Market Dashboard</title>
+<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 <style>
-  body { font-family: -apple-system, "Segoe UI", Arial, sans-serif; background:#f4f3ef; margin:0; padding:0 0 3rem; }
-  .header { background:#0b0b0b; color:#fff; padding:1.2rem 1.5rem; }
-  .header h1 { margin:0; font-size:1.4rem; }
-  .header a { color:#bbb; text-decoration:none; font-size:0.9rem; }
-  .section { padding:1.5rem 1.5rem 0; }
-  .section h2 { margin:0 0 0.8rem; font-size:1.2rem; color:#0b0b0b; }
-  .row { display:grid; gap:1.5rem; grid-template-columns:repeat(3, 1fr); margin-bottom:1.5rem; }
-  @media (max-width: 1100px) { .row { grid-template-columns:1fr; } }
-  .card { background:#fff; border-radius:10px; padding:0.75rem; box-shadow:0 1px 3px rgba(0,0,0,0.08);
-          min-width:0; }  /* grid items default to min-width:auto, which refuses to shrink below the
-                              image's intrinsic ~2400px and overflows the row - this lets it shrink */
-  .card h3 { margin:0.2rem 0.4rem 0.6rem; font-size:0.95rem; color:#3d3d3b; font-weight:600; }
-  .card img { width:100%; height:auto; border-radius:6px; display:block; cursor:zoom-in; }
-  #zoom { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:10;
-          align-items:center; justify-content:center; cursor:zoom-out; }
-  #zoom.open { display:flex; }
-  #zoom img { max-width:96vw; max-height:96vh; background:#fff; border-radius:6px; }
+  * { box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:#f6f7f8; color:#202728; font-size:14px; margin:0; }
+  .header { background:#fff; padding:20px 28px; border-bottom:1px solid #dce1e2; }
+  .header h1 { margin:6px 0; font-size:24px; }
+  .header a { color:#4b6864; text-decoration:none; }
+  .toolbar { display:flex; gap:16px; flex-wrap:wrap; margin-top:16px; }
+  .segments { display:flex; gap:2px; background:#edf0f1; padding:3px; border-radius:5px; }
+  .segments button { border:0; background:transparent; color:#536164; padding:7px 12px; border-radius:3px; cursor:pointer; }
+  .segments button.active { background:#fff; color:#172c29; box-shadow:0 1px 3px #0002; }
+  main { max-width:1460px; margin:auto; padding:20px 28px 48px; }
+  .section h2 { font-size:17px; margin:25px 0 12px; padding-bottom:10px; border-bottom:1px solid #dce1e2; }
+  .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+  .card { background:#fff; border:1px solid #dce1e2; border-radius:8px; padding:12px; min-width:0; }
+  .card-head { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:2px 4px 10px; }
+  .card h3 { margin:0; font-size:16px; font-weight:600; }
+  .period { font-size:12px; color:#747e80; }
+  .chart-button { display:block; width:100%; padding:0; border:0; background:#fff; cursor:zoom-in; }
+  .chart-button img { width:100%; aspect-ratio:1.5; object-fit:contain; display:block; }
+  dialog { width:min(1400px,calc(100% - 24px)); max-height:calc(100dvh - 24px); overflow:auto; border:1px solid #dce1e2; border-radius:8px; padding:16px; color:inherit; }
+  dialog::backdrop { background:#142c2b88; }
+  .dialog-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; }
+  .dialog-head h2 { font-size:18px; margin:0; }
+  .close { display:grid; place-items:center; width:32px; height:32px; border:0; border-radius:4px; background:#edf0f1; cursor:pointer; }
+  .close svg { width:18px; height:18px; }
+  dialog img { display:block; max-width:100%; max-height:calc(100dvh - 110px); margin:auto; object-fit:contain; }
+  @media(max-width:700px) { .header,main { padding:16px; } .grid { grid-template-columns:minmax(0,1fr); } .segments button { padding:7px 9px; font-size:12px; } .toolbar { gap:10px; } }
 </style>
 </head>
 <body>
-  <div class="header"><h1>Posts</h1><a href="index.html">&larr; Back to dashboard</a></div>
-  <div class="section"><h2>3 months</h2><div class="row"><div class="card"><h3>3M - Last 3Y</h3><img src="graphs/posts/rates03M_UKUSJPDEFRSW_last03Y.png" alt="3M - Last 3Y" loading="lazy"></div><div class="card"><h3>3M - Last 20Y</h3><img src="graphs/posts/rates03M_UKUSJPDEFRSW_last20Y.png" alt="3M - Last 20Y" loading="lazy"></div><div class="card"><h3>3M - Since 1997</h3><img src="graphs/posts/rates03M_UKUSJPDEFRSW_since1997.png" alt="3M - Since 1997" loading="lazy"></div></div><div class="row"><div class="card"><h3>3M (ex CHF) - Last 3Y</h3><img src="graphs/posts/rates03M_exSW_UKUSJPDE_last03Y.png" alt="3M (ex CHF) - Last 3Y" loading="lazy"></div><div class="card"><h3>3M (ex CHF) - Last 20Y</h3><img src="graphs/posts/rates03M_exSW_UKUSJPDE_last20Y.png" alt="3M (ex CHF) - Last 20Y" loading="lazy"></div><div class="card"><h3>3M (ex CHF) - Since 1997</h3><img src="graphs/posts/rates03M_exSW_UKUSJPDE_since1997.png" alt="3M (ex CHF) - Since 1997" loading="lazy"></div></div></div><div class="section"><h2>2 years</h2><div class="row"><div class="card"><h3>2Y - Last 3Y</h3><img src="graphs/posts/rates02Y_UKUSJPDEFRSW_last03Y.png" alt="2Y - Last 3Y" loading="lazy"></div><div class="card"><h3>2Y - Last 20Y</h3><img src="graphs/posts/rates02Y_UKUSJPDEFRSW_last20Y.png" alt="2Y - Last 20Y" loading="lazy"></div><div class="card"><h3>2Y - Since 1997</h3><img src="graphs/posts/rates02Y_UKUSJPDEFRSW_since1997.png" alt="2Y - Since 1997" loading="lazy"></div></div></div><div class="section"><h2>10 years</h2><div class="row"><div class="card"><h3>10Y - Last 3Y</h3><img src="graphs/posts/rates10Y_UKUSJPDEFRSW_last03Y.png" alt="10Y - Last 3Y" loading="lazy"></div><div class="card"><h3>10Y - Last 20Y</h3><img src="graphs/posts/rates10Y_UKUSJPDEFRSW_last20Y.png" alt="10Y - Last 20Y" loading="lazy"></div><div class="card"><h3>10Y - Since 1997</h3><img src="graphs/posts/rates10Y_UKUSJPDEFRSW_since1997.png" alt="10Y - Since 1997" loading="lazy"></div></div></div><div class="section"><h2>10-02 years</h2><div class="row"><div class="card"><h3>10Y-02Y - Last 3Y</h3><img src="graphs/posts/rates10Yx02Y_UKUSJPDEFRSW_last03Y.png" alt="10Y-02Y - Last 3Y" loading="lazy"></div><div class="card"><h3>10Y-02Y - Last 20Y</h3><img src="graphs/posts/rates10Yx02Y_UKUSJPDEFRSW_last20Y.png" alt="10Y-02Y - Last 20Y" loading="lazy"></div><div class="card"><h3>10Y-02Y - Since 1997</h3><img src="graphs/posts/rates10Yx02Y_UKUSJPDEFRSW_since1997.png" alt="10Y-02Y - Since 1997" loading="lazy"></div></div><div class="row"><div class="card"><h3>10Y-02Y (ex CHF) - Last 3Y</h3><img src="graphs/posts/rates10Yx02Y_exSW_UKUSJPDE_last03Y.png" alt="10Y-02Y (ex CHF) - Last 3Y" loading="lazy"></div><div class="card"><h3>10Y-02Y (ex CHF) - Last 20Y</h3><img src="graphs/posts/rates10Yx02Y_exSW_UKUSJPDE_last20Y.png" alt="10Y-02Y (ex CHF) - Last 20Y" loading="lazy"></div><div class="card"><h3>10Y-02Y (ex CHF) - Since 1997</h3><img src="graphs/posts/rates10Yx02Y_exSW_UKUSJPDE_since1997.png" alt="10Y-02Y (ex CHF) - Since 1997" loading="lazy"></div></div></div><div class="section"><h2>10 years EU</h2><div class="row"><div class="card"><h3>10Y EU - Last 3Y</h3><img src="graphs/posts/revenge_of_pigs_last03Y.png" alt="10Y EU - Last 3Y" loading="lazy"></div><div class="card"><h3>10Y EU - Last 20Y</h3><img src="graphs/posts/revenge_of_pigs_last20Y.png" alt="10Y EU - Last 20Y" loading="lazy"></div><div class="card"><h3>10Y EU - Since 1997</h3><img src="graphs/posts/revenge_of_pigs_since1997.png" alt="10Y EU - Since 1997" loading="lazy"></div></div><div class="row"><div class="card"><h3>Euro Risk - Last 3Y</h3><img src="graphs/posts/euro_area_risk_last03Y.png" alt="Euro Risk - Last 3Y" loading="lazy"></div><div class="card"><h3>Euro Risk - Last 20Y</h3><img src="graphs/posts/euro_area_risk_last20Y.png" alt="Euro Risk - Last 20Y" loading="lazy"></div><div class="card"><h3>Euro Risk - Since 1997</h3><img src="graphs/posts/euro_area_risk_since1997.png" alt="Euro Risk - Since 1997" loading="lazy"></div></div></div>
-  <div id="zoom" onclick="this.classList.remove('open')"><img alt=""></div>
+  <header class="header"><a href="index.html">Market Dashboard</a><h1>Interest Rate Board</h1>
+  <div class="toolbar"><div class="segments categories" aria-label="Category"><button class="active" data-category="All" aria-pressed="true">All</button><button data-category="3 months" aria-pressed="false">3M</button><button data-category="2 years" aria-pressed="false">2Y</button><button data-category="10 years" aria-pressed="false">10Y</button><button data-category="10-02 years" aria-pressed="false">10Y-2Y</button><button data-category="10 years EU" aria-pressed="false">EU</button></div>
+  <div class="segments ranges" aria-label="Period"><button class="active" data-range="CFG" aria-pressed="true">3Y</button><button data-range="CFG_LONG" aria-pressed="false">20Y</button><button data-range="CFG_1997" aria-pressed="false" title="Since 1997">30Y (since 1997)</button></div></div></header>
+  <main><section class="section" data-section="3 months"><h2>3 months</h2><div class="grid"><article class="card"><div class="card-head"><h3>3M</h3><span class="period">3Y</span></div><button class="chart-button" aria-label="Expand 3M chart"><img src="graphs/posts/rates03M_UKUSJPDEFRSW_last03Y.png" data-cfg="graphs/posts/rates03M_UKUSJPDEFRSW_last03Y.png" data-cfg_long="graphs/posts/rates03M_UKUSJPDEFRSW_last20Y.png" data-cfg_1997="graphs/posts/rates03M_UKUSJPDEFRSW_since1997.png" alt="3M - 3Y" loading="lazy"></button></article><article class="card"><div class="card-head"><h3>3M (ex CHF)</h3><span class="period">3Y</span></div><button class="chart-button" aria-label="Expand 3M (ex CHF) chart"><img src="graphs/posts/rates03M_exSW_UKUSJPDE_last03Y.png" data-cfg="graphs/posts/rates03M_exSW_UKUSJPDE_last03Y.png" data-cfg_long="graphs/posts/rates03M_exSW_UKUSJPDE_last20Y.png" data-cfg_1997="graphs/posts/rates03M_exSW_UKUSJPDE_since1997.png" alt="3M (ex CHF) - 3Y" loading="lazy"></button></article></div></section><section class="section" data-section="2 years"><h2>2 years</h2><div class="grid"><article class="card"><div class="card-head"><h3>2Y</h3><span class="period">3Y</span></div><button class="chart-button" aria-label="Expand 2Y chart"><img src="graphs/posts/rates02Y_UKUSJPDEFRSW_last03Y.png" data-cfg="graphs/posts/rates02Y_UKUSJPDEFRSW_last03Y.png" data-cfg_long="graphs/posts/rates02Y_UKUSJPDEFRSW_last20Y.png" data-cfg_1997="graphs/posts/rates02Y_UKUSJPDEFRSW_since1997.png" alt="2Y - 3Y" loading="lazy"></button></article></div></section><section class="section" data-section="10 years"><h2>10 years</h2><div class="grid"><article class="card"><div class="card-head"><h3>10Y</h3><span class="period">3Y</span></div><button class="chart-button" aria-label="Expand 10Y chart"><img src="graphs/posts/rates10Y_UKUSJPDEFRSW_last03Y.png" data-cfg="graphs/posts/rates10Y_UKUSJPDEFRSW_last03Y.png" data-cfg_long="graphs/posts/rates10Y_UKUSJPDEFRSW_last20Y.png" data-cfg_1997="graphs/posts/rates10Y_UKUSJPDEFRSW_since1997.png" alt="10Y - 3Y" loading="lazy"></button></article></div></section><section class="section" data-section="10-02 years"><h2>10-02 years</h2><div class="grid"><article class="card"><div class="card-head"><h3>10Y-02Y</h3><span class="period">3Y</span></div><button class="chart-button" aria-label="Expand 10Y-02Y chart"><img src="graphs/posts/rates10Yx02Y_UKUSJPDEFRSW_last03Y.png" data-cfg="graphs/posts/rates10Yx02Y_UKUSJPDEFRSW_last03Y.png" data-cfg_long="graphs/posts/rates10Yx02Y_UKUSJPDEFRSW_last20Y.png" data-cfg_1997="graphs/posts/rates10Yx02Y_UKUSJPDEFRSW_since1997.png" alt="10Y-02Y - 3Y" loading="lazy"></button></article><article class="card"><div class="card-head"><h3>10Y-02Y (ex CHF)</h3><span class="period">3Y</span></div><button class="chart-button" aria-label="Expand 10Y-02Y (ex CHF) chart"><img src="graphs/posts/rates10Yx02Y_exSW_UKUSJPDE_last03Y.png" data-cfg="graphs/posts/rates10Yx02Y_exSW_UKUSJPDE_last03Y.png" data-cfg_long="graphs/posts/rates10Yx02Y_exSW_UKUSJPDE_last20Y.png" data-cfg_1997="graphs/posts/rates10Yx02Y_exSW_UKUSJPDE_since1997.png" alt="10Y-02Y (ex CHF) - 3Y" loading="lazy"></button></article></div></section><section class="section" data-section="10 years EU"><h2>10 years EU</h2><div class="grid"><article class="card"><div class="card-head"><h3>10Y EU</h3><span class="period">3Y</span></div><button class="chart-button" aria-label="Expand 10Y EU chart"><img src="graphs/posts/revenge_of_pigs_last03Y.png" data-cfg="graphs/posts/revenge_of_pigs_last03Y.png" data-cfg_long="graphs/posts/revenge_of_pigs_last20Y.png" data-cfg_1997="graphs/posts/revenge_of_pigs_since1997.png" alt="10Y EU - 3Y" loading="lazy"></button></article><article class="card"><div class="card-head"><h3>Euro Risk</h3><span class="period">3Y</span></div><button class="chart-button" aria-label="Expand Euro Risk chart"><img src="graphs/posts/euro_area_risk_last03Y.png" data-cfg="graphs/posts/euro_area_risk_last03Y.png" data-cfg_long="graphs/posts/euro_area_risk_last20Y.png" data-cfg_1997="graphs/posts/euro_area_risk_since1997.png" alt="Euro Risk - 3Y" loading="lazy"></button></article></div></section></main>
+  <dialog id="zoom"><div class="dialog-head"><h2></h2><button class="close" aria-label="Close" title="Close"><i data-lucide="x"></i></button></div><img alt=""></dialog>
   <script>
-    document.querySelectorAll('.card img').forEach(function (img) {
-      img.onclick = function () {
-        var z = document.getElementById('zoom');
-        z.querySelector('img').src = img.src;
-        z.classList.add('open');
-      };
+    const zoom=document.getElementById('zoom');
+    if(window.lucide)lucide.createIcons();
+    document.querySelectorAll('.chart-button').forEach(button=>button.onclick=()=>{
+      const img=button.querySelector('img');zoom.querySelector('img').src=img.src;zoom.querySelector('img').alt=img.alt;
+      zoom.querySelector('h2').textContent=img.alt;zoom.showModal();
     });
-    document.onkeydown = function (e) { if (e.key === 'Escape') document.getElementById('zoom').classList.remove('open'); };
+    zoom.querySelector('.close').onclick=()=>zoom.close();
+    zoom.onclick=e=>{if(e.target===zoom){const r=zoom.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)zoom.close();}};
+    document.querySelectorAll('[data-range]').forEach(button=>button.onclick=()=>{
+      document.querySelectorAll('[data-range]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button));});
+      document.querySelectorAll('.card').forEach(card=>{const img=card.querySelector('img');img.src=img.getAttribute('data-'+button.dataset.range.toLowerCase());img.alt=card.querySelector('h3').textContent+' - '+button.textContent;card.querySelector('.period').textContent=button.textContent;});
+    });
+    document.querySelectorAll('[data-category]').forEach(button=>button.onclick=()=>{
+      document.querySelectorAll('[data-category]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button));});
+      document.querySelectorAll('.section').forEach(s=>s.hidden=button.dataset.category!=='All'&&s.dataset.section!==button.dataset.category);
+    });
   </script>
 </body>
 </html>
