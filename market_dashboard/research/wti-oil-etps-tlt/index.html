@@ -412,6 +412,7 @@
       <a href="#chapter-1">1. Oil ETP performance</a>
       <a href="#chapter-2">2. USO timing</a>
       <a href="#chapter-3">3. USO and TLT</a>
+      <a href="#appendix-gld-tlt">Appendix: GLD and TLT</a>
       <a href="#methodology">Methodology</a>
       <a href="#conclusion">Conclusion</a>
     </nav>
@@ -429,7 +430,7 @@
               (1-month momentum) has a Sharpe of 0.42 with a -74% drawdown and varies a lot between
               periods. Adding a carry filter made it worse.</li>
             <li><strong>Does USO predict TLT?</strong> Yes, to some extent. The signal
-              <code>w = -(dZS(USO) + &lambda; x dZS(TLT))</code> traded on TLT beats holding TLT:
+              <code>w_TLT = -(dZS(USO) + &lambda; x dZS(TLT))</code> traded on TLT beats holding TLT:
               Sharpe 0.76 to 0.99 versus -0.78 since 2022, but only 0.29 to 0.49 versus 0.04 since
               2007 (windows of 7 to 63 days). Most of the gain comes from the 2022+ inflation and rates period.</li>
             <li><strong>Watch the fees:</strong> the strategy trades every day (140 to 380 times
@@ -630,7 +631,7 @@
           z-scores. The daily changes in those z-scores formed an unconstrained TLT weight:
         </p>
         <div class="formula">
-          w(t) = -( dZScore_N(USO,t) + lambda x dZScore_N(TLT,t) )
+          w_TLT(t) = -( dZScore_N(USO,t) + lambda x dZScore_N(TLT,t) )
         </div>
         <p>
           The weight observed at the close was applied to the next trading day's TLT
@@ -782,6 +783,103 @@
           <li><a href="https://www.wisdomtree.eu/fi-fi/products/ucits-etfs-unleveraged-etps/commodities/wisdomtree-wti-crude-oil">WisdomTree: CRUD methodology</a></li>
         </ul>
       </section>
+    <section id="appendix-gld-tlt">
+      <h2>Appendix: GLD &gt;&gt; TLT</h2>
+      <p>
+        Trade TLT using the spread between rolling log-price z-score levels.
+        ZS_N(X,t) = (log P_X(t) - rolling mean_N) / rolling std_N, with N = 7, 14,
+        21, 42 and 63 trading days. The main specification is lambda = 1;
+        lambda = 0.5 is a sensitivity test. GLD and TLT are displayed on
+        non-inverted axes to compare moves in the same direction.
+        w_TLT is the signed TLT notional divided by portfolio equity.
+        The close-of-day weight is applied to the next trading day's TLT return.
+      </p>
+      <p><code>w_TLT(t) = ZS_N(GLD,t) - lambda x ZS_N(TLT,t)</code></p>
+      <p><code>lambda = 1: w_TLT = zs_GLD - zs_TLT</code></p>
+      <p>Z-score levels are used here; the USO test uses daily
+        changes in z-scores. Their results therefore compare different signals.</p>
+      <figure>
+        <a href="graphs/gold_chf/tlt_vs_gld_2026_ytd.png">
+          <img src="graphs/gold_chf/tlt_vs_gld_2026_ytd.png" alt="TLT and GLD on non-inverted axes in 2026.">
+        </a>
+        <figcaption>TLT and GLD (non-inverted axes), 2026 YTD.</figcaption>
+      </figure>
+      <figure>
+        <a href="graphs/gold_chf/tlt_vs_gld_since_2022.png">
+          <img src="graphs/gold_chf/tlt_vs_gld_since_2022.png" alt="TLT and GLD on non-inverted axes since 2022.">
+        </a>
+        <figcaption>TLT and GLD (non-inverted axes), since 2022.</figcaption>
+      </figure>
+      <figure>
+        <a href="graphs/gold_chf/tlt_vs_gld_since_2007.png">
+          <img src="graphs/gold_chf/tlt_vs_gld_since_2007.png" alt="TLT and GLD on non-inverted axes since 2007.">
+        </a>
+        <figcaption>TLT and GLD (non-inverted axes), since 2007.</figcaption>
+      </figure>
+
+      <h3>Z-score spread weighting, lambda = 1.0</h3>
+      <figure>
+        <a href="graphs/gold_chf/tlt_gld_zscore_spread_tlt_1p0_equity_curves_since_2022.png">
+          <img src="graphs/gold_chf/tlt_gld_zscore_spread_tlt_1p0_equity_curves_since_2022.png" alt="GLD to TLT equity curves, lambda 1.0, since 2022.">
+        </a>
+        <figcaption>GLD &gt;&gt; TLT, lambda = 1.0, since 2022.</figcaption>
+      </figure>
+      <figure>
+        <a href="graphs/gold_chf/tlt_gld_zscore_spread_tlt_1p0_equity_curves_since_2007.png">
+          <img src="graphs/gold_chf/tlt_gld_zscore_spread_tlt_1p0_equity_curves_since_2007.png" alt="GLD to TLT equity curves, lambda 1.0, since 2007.">
+        </a>
+        <figcaption>GLD &gt;&gt; TLT, lambda = 1.0, since 2007.</figcaption>
+      </figure>
+
+      <h3>Z-score spread weighting, lambda = 0.5</h3>
+      <figure>
+        <a href="graphs/gold_chf/tlt_gld_zscore_spread_tlt_0p5_equity_curves_since_2022.png">
+          <img src="graphs/gold_chf/tlt_gld_zscore_spread_tlt_0p5_equity_curves_since_2022.png" alt="GLD to TLT equity curves, lambda 0.5, since 2022.">
+        </a>
+        <figcaption>GLD &gt;&gt; TLT, lambda = 0.5, since 2022.</figcaption>
+      </figure>
+      <figure>
+        <a href="graphs/gold_chf/tlt_gld_zscore_spread_tlt_0p5_equity_curves_since_2007.png">
+          <img src="graphs/gold_chf/tlt_gld_zscore_spread_tlt_0p5_equity_curves_since_2007.png" alt="GLD to TLT equity curves, lambda 0.5, since 2007.">
+        </a>
+        <figcaption>GLD &gt;&gt; TLT, lambda = 0.5, since 2007.</figcaption>
+      </figure>
+
+      <table>
+        <tr><th>Period</th><th>Window</th><th>lambda</th><th>End equity</th><th>CAGR</th><th>Sharpe</th><th>Max DD</th><th>Turnover / yr</th><th>Max |w_TLT|</th></tr>
+        <tr><td>Since 2022</td><td>TLT B&amp;H</td><td>-</td><td>53</td><td>-12.5%</td><td>-0.78</td><td>-45.5%</td><td>0x</td><td>1.00x</td></tr>
+        <tr><td>Since 2022</td><td>7D</td><td>1.0</td><td>180</td><td>13.3%</td><td>0.65</td><td>-34.0%</td><td>239x</td><td>4.31x</td></tr>
+        <tr><td>Since 2022</td><td>14D</td><td>1.0</td><td>143</td><td>7.9%</td><td>0.43</td><td>-33.0%</td><td>183x</td><td>5.03x</td></tr>
+        <tr><td>Since 2022</td><td>21D</td><td>1.0</td><td>120</td><td>4.0%</td><td>0.28</td><td>-34.9%</td><td>154x</td><td>5.46x</td></tr>
+        <tr><td>Since 2022</td><td>42D</td><td>1.0</td><td>116</td><td>3.1%</td><td>0.25</td><td>-39.1%</td><td>111x</td><td>5.33x</td></tr>
+        <tr><td>Since 2022</td><td>63D</td><td>1.0</td><td>127</td><td>5.2%</td><td>0.32</td><td>-46.8%</td><td>90x</td><td>5.32x</td></tr>
+        <tr><td>Since 2022</td><td>7D</td><td>0.5</td><td>144</td><td>8.0%</td><td>0.50</td><td>-35.7%</td><td>190x</td><td>3.21x</td></tr>
+        <tr><td>Since 2022</td><td>14D</td><td>0.5</td><td>125</td><td>4.8%</td><td>0.33</td><td>-29.9%</td><td>144x</td><td>3.88x</td></tr>
+        <tr><td>Since 2022</td><td>21D</td><td>0.5</td><td>111</td><td>2.2%</td><td>0.21</td><td>-31.5%</td><td>121x</td><td>4.37x</td></tr>
+        <tr><td>Since 2022</td><td>42D</td><td>0.5</td><td>116</td><td>3.2%</td><td>0.25</td><td>-31.9%</td><td>87x</td><td>4.40x</td></tr>
+        <tr><td>Since 2022</td><td>63D</td><td>0.5</td><td>122</td><td>4.3%</td><td>0.30</td><td>-40.1%</td><td>70x</td><td>4.72x</td></tr>
+        <tr><td>Since 2007</td><td>TLT B&amp;H</td><td>-</td><td>89</td><td>-0.6%</td><td>0.04</td><td>-54.2%</td><td>0x</td><td>1.00x</td></tr>
+        <tr><td>Since 2007</td><td>7D</td><td>1.0</td><td>215</td><td>4.0%</td><td>0.29</td><td>-64.0%</td><td>247x</td><td>4.45x</td></tr>
+        <tr><td>Since 2007</td><td>14D</td><td>1.0</td><td>256</td><td>4.9%</td><td>0.32</td><td>-51.2%</td><td>186x</td><td>5.05x</td></tr>
+        <tr><td>Since 2007</td><td>21D</td><td>1.0</td><td>179</td><td>3.0%</td><td>0.25</td><td>-60.6%</td><td>157x</td><td>5.74x</td></tr>
+        <tr><td>Since 2007</td><td>42D</td><td>1.0</td><td>122</td><td>1.0%</td><td>0.17</td><td>-64.3%</td><td>115x</td><td>7.73x</td></tr>
+        <tr><td>Since 2007</td><td>63D</td><td>1.0</td><td>78</td><td>-1.3%</td><td>0.09</td><td>-77.9%</td><td>94x</td><td>7.42x</td></tr>
+        <tr><td>Since 2007</td><td>7D</td><td>0.5</td><td>92</td><td>-0.4%</td><td>0.07</td><td>-72.7%</td><td>195x</td><td>3.38x</td></tr>
+        <tr><td>Since 2007</td><td>14D</td><td>0.5</td><td>130</td><td>1.4%</td><td>0.17</td><td>-55.5%</td><td>146x</td><td>4.02x</td></tr>
+        <tr><td>Since 2007</td><td>21D</td><td>0.5</td><td>118</td><td>0.8%</td><td>0.15</td><td>-64.1%</td><td>123x</td><td>4.82x</td></tr>
+        <tr><td>Since 2007</td><td>42D</td><td>0.5</td><td>106</td><td>0.3%</td><td>0.12</td><td>-61.8%</td><td>88x</td><td>6.53x</td></tr>
+        <tr><td>Since 2007</td><td>63D</td><td>0.5</td><td>86</td><td>-0.8%</td><td>0.07</td><td>-69.4%</td><td>72x</td><td>6.14x</td></tr>
+      </table>
+      <div class="note">
+        <strong>Reading.</strong> With lambda = 1, the strongest Sharpe since 2022 is
+        0.65 (7D; CAGR 13.3%, maximum drawdown -34.0%). Since 2007, it is
+        0.32 (14D; CAGR 4.9%, maximum drawdown -51.2%). Longer windows can
+        lose capital despite a positive arithmetic Sharpe: the 63D lambda = 1
+        variant ends at 78 from 100 since 2007, with a -77.9% drawdown.
+        Curves assume zero transaction costs and exclude distributions,
+        financing, borrow costs and cash yield. Weights are unconstrained.
+      </div>
+    </section>
     </main>
   </div>
 

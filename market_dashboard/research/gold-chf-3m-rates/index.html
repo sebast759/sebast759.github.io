@@ -221,6 +221,10 @@
             and 0.7 versus 0.24 since 2022.</li>
           <li><strong>Does CHF predict Gold?</strong> No. Trading GLD on the CHF signal does worse
             than simply holding GLD.</li>
+          <li><strong>Gold + short CHF:</strong> shorting the franc on top of gold does not add
+            return by itself (Sharpe 0.47, same as gold alone) but it lowers the risk a little: volatility
+            16.2% versus 16.8% (17.5% versus 19.2% since 2022) and drawdown -39% versus -46%. Adding the carry (US interest on the short) lifts it to 0.57 since 2011, and to
+            1.21 versus 0.99 since 2022. The gain comes from carry, not from the franc direction.</li>
           <li><strong>Watch the fees:</strong> the edge is thin and the strategy trades every day.
             It stops working at roughly 1 to 2 bp of cost per trade
             (break-even about 1.4 bp since 2011, about 1.8 to 2.7 bp since 2022).</li>
@@ -286,6 +290,8 @@
       </div>
     </section>
 
+
+
     <section>
       <h2>Delta-Z-score backtest on GLD and FXF</h2>
       <p>
@@ -297,7 +303,7 @@
       </p>
 
       <h3>Gold &gt;&gt; CHF: trade FXF</h3>
-      <p><code>w(t) = +( dZS_N(GLD,t) - dZS_N(FXF,t) )</code></p>
+      <p><code>w_FXF(t) = +( dZS_N(GLD,t) - dZS_N(FXF,t) )</code></p>
       <figure>
         <a href="graphs/gold_chf/etf_chf_gld_fxf_dzscore_equity_curves_since_2011_lag1.png">
           <img src="graphs/gold_chf/etf_chf_gld_fxf_dzscore_equity_curves_since_2011_lag1.png" alt="Gold >> CHF, trade FXF, since 2011.">
@@ -325,7 +331,7 @@
         <tr><td>21-day</td><td>112</td><td>2.4%</td><td>0.34</td><td>0.10</td><td>-10%</td></tr>
       </table>
       <h3>Gold &gt;&gt; CHF with lambda = 0: trade FXF on the gold signal alone</h3>
-      <p><code>w(t) = +( dZS_N(GLD,t) - 0 x dZS_N(FXF,t) )</code></p>
+      <p><code>w_FXF(t) = +( dZS_N(GLD,t) - 0 x dZS_N(FXF,t) )</code></p>
       <figure>
         <a href="graphs/gold_chf/etf_chf_gld_fxf_dzscore_equity_curves_since_2011_lag1_lambda0.png">
           <img src="graphs/gold_chf/etf_chf_gld_fxf_dzscore_equity_curves_since_2011_lag1_lambda0.png" alt="Gold >> CHF, trade FXF, lambda = 0, since 2011.">
@@ -353,7 +359,7 @@
         <tr><td>21-day</td><td>111</td><td>2.2%</td><td>0.37</td><td>0.10</td><td>-15%</td></tr>
       </table>
       <h3>CHF &gt;&gt; Gold: trade GLD</h3>
-      <p><code>w(t) = +( dZS_N(FXF,t) - dZS_N(GLD,t) )</code></p>
+      <p><code>w_GLD(t) = +( dZS_N(FXF,t) - dZS_N(GLD,t) )</code></p>
       <figure>
         <a href="graphs/gold_chf/etf_gold_gld_fxf_dzscore_equity_curves_since_2011_lag1.png">
           <img src="graphs/gold_chf/etf_gold_gld_fxf_dzscore_equity_curves_since_2011_lag1.png" alt="CHF >> Gold, trade GLD, since 2011.">
@@ -381,7 +387,7 @@
         <tr><td>21-day</td><td>83</td><td>-4.0%</td><td>-0.19</td><td>-0.31</td><td>-36%</td></tr>
       </table>
       <h3>CHF &gt;&gt; Gold with a zero GLD coefficient: trade GLD on the FXF signal alone</h3>
-      <p><code>w(t) = +( dZS_N(FXF,t) - 0 x dZS_N(GLD,t) )</code></p>
+      <p><code>w_GLD(t) = +( dZS_N(FXF,t) - 0 x dZS_N(GLD,t) )</code></p>
       <figure>
         <a href="graphs/gold_chf/etf_gold_gld_fxf_dzscore_equity_curves_since_2011_lag1_goldcoef0.png">
           <img src="graphs/gold_chf/etf_gold_gld_fxf_dzscore_equity_curves_since_2011_lag1_goldcoef0.png" alt="CHF >> Gold, trade GLD, GLD coefficient = 0, since 2011.">
@@ -419,6 +425,57 @@
     </section>
 
     <section>
+      <h2>Holding gold with a short Swiss franc position</h2>
+      <p>
+        A simple static test, no signal: hold GLD, and also short the same amount of FXF
+        (1:1 notional, rebalanced daily). Two versions (plus a 2x short with carry): <strong>no carry</strong> (only the
+        price moves of GLD and FXF) and <strong>+ carry</strong> (adding the US 3M interest
+        earned on the cash from the short). FXF's price already includes the Swiss deposit
+        rate. Dashed lines show the short FXF position alone.
+      </p>
+      <figure>
+        <a href="graphs/gold_chf/gold_plus_short_chf_since_2011.png">
+          <img src="graphs/gold_chf/gold_plus_short_chf_since_2011.png" alt="GLD, GLD + short FXF and short FXF alone, with and without carry, since 2011.">
+        </a>
+        <figcaption>GLD, GLD + short FXF and short FXF alone, with and without carry, since 2011.</figcaption>
+      </figure>
+      <table>
+        <tr><th>Since 2011</th><th>End equity</th><th>CAGR</th><th>Volatility</th><th>Sharpe</th><th>Max DD</th></tr>
+        <tr><td>GLD</td><td>273</td><td>6.7%</td><td>16.8%</td><td>0.47</td><td>-46%</td></tr>
+        <tr><td>GLD + short FXF (no carry)</td><td>267</td><td>6.5%</td><td>16.2%</td><td>0.47</td><td>-39%</td></tr>
+        <tr><td>GLD + short FXF (+ carry)</td><td>343</td><td>8.3%</td><td>16.2%</td><td>0.57</td><td>-39%</td></tr>
+        <tr><td>GLD + 2x short FXF (+ carry)</td><td>367</td><td>8.7%</td><td>20.8%</td><td>0.51</td><td>-46%</td></tr>
+        <tr><td>Short FXF only (no carry)</td><td>89</td><td>-0.8%</td><td>9.8%</td><td>-0.03</td><td>-26%</td></tr>
+        <tr><td>Short FXF only (+ carry)</td><td>114</td><td>0.9%</td><td>9.8%</td><td>0.14</td><td>-22%</td></tr>
+      </table>
+      <figure>
+        <a href="graphs/gold_chf/gold_plus_short_chf_since_2022.png">
+          <img src="graphs/gold_chf/gold_plus_short_chf_since_2022.png" alt="GLD, GLD + short FXF and short FXF alone, with and without carry, since 2022.">
+        </a>
+        <figcaption>GLD, GLD + short FXF and short FXF alone, with and without carry, since 2022.</figcaption>
+      </figure>
+      <table>
+        <tr><th>Since 2022</th><th>End equity</th><th>CAGR</th><th>Volatility</th><th>Sharpe</th><th>Max DD</th></tr>
+        <tr><td>GLD</td><td>224</td><td>18.6%</td><td>19.2%</td><td>0.99</td><td>-26%</td></tr>
+        <tr><td>GLD + short FXF (no carry)</td><td>209</td><td>16.9%</td><td>17.5%</td><td>0.98</td><td>-22%</td></tr>
+        <tr><td>GLD + short FXF (+ carry)</td><td>254</td><td>21.7%</td><td>17.5%</td><td>1.21</td><td>-21%</td></tr>
+        <tr><td>GLD + 2x short FXF (+ carry)</td><td>278</td><td>24.0%</td><td>19.7%</td><td>1.20</td><td>-17%</td></tr>
+        <tr><td>Short FXF only (no carry)</td><td>90</td><td>-2.1%</td><td>8.5%</td><td>-0.21</td><td>-26%</td></tr>
+        <tr><td>Short FXF only (+ carry)</td><td>110</td><td>2.0%</td><td>8.5%</td><td>0.27</td><td>-14%</td></tr>
+      </table>
+      <div class="note">
+        <strong>Reading.</strong> Shorting the franc does not add return by itself: without
+        carry the result is the same as holding gold, with slightly lower volatility (16.2% versus
+        16.8% since 2011, 17.5% versus 19.2% since 2022) and a smaller drawdown. The hedge is
+        modest because GLD and FXF are only 0.36 correlated. The improvement
+        comes from the carry. It assumes the full US 3M rate is earned on the short proceeds
+        and ignores borrow fees on FXF, so it is an upper bound for a retail account.
+        Doubling the short (2x) lifts return but also volatility, so the Sharpe is no better than
+        with the 1x short (0.51 versus 0.57 since 2011, 1.20 versus 1.21 since 2022).
+      </div>
+    </section>
+
+    <section>
       <h2>Data construction</h2>
       <p>
         Rates come from <code>market_dashboard.bond_yield_history_daily</code>.
@@ -432,7 +489,8 @@
       <p>
         The top chart shows the gold future (<code>GC=F</code>) next to the GLD ETF, and
         the spot franc (<code>CHF=X</code>, inverted axis) next to FXF and <code>1/FXF</code>.
-        The backtests use only GLD and FXF, both priced at the 16:00 New York close.
+        The CHF backtests use GLD and FXF; the TLT rerun uses GLD and TLT. All three
+        ETFs are priced at the 16:00 New York close.
         FXF drifts below spot CHF because it pays the (low or negative) CHF deposit rate
         and a fee, so it already reflects the carry cost that a spot series ignores.
       </p>
@@ -445,6 +503,103 @@
         <li>Compare gold in USD with gold in CHF to distinguish gold exposure from dollar exposure.</li>
         <li>Use walk-forward tests before converting any relationship into a trading signal.</li>
       </ol>
+    </section>
+    <section id="appendix-gld-tlt">
+      <h2>Appendix: GLD &gt;&gt; TLT</h2>
+      <p>
+        Trade TLT using the spread between rolling log-price z-score levels.
+        ZS_N(X,t) = (log P_X(t) - rolling mean_N) / rolling std_N, with N = 7, 14,
+        21, 42 and 63 trading days. The main specification is lambda = 1;
+        lambda = 0.5 is a sensitivity test. GLD and TLT are displayed on
+        non-inverted axes to compare moves in the same direction.
+        w_TLT is the signed TLT notional divided by portfolio equity.
+        The close-of-day weight is applied to the next trading day's TLT return.
+      </p>
+      <p><code>w_TLT(t) = ZS_N(GLD,t) - lambda x ZS_N(TLT,t)</code></p>
+      <p><code>lambda = 1: w_TLT = zs_GLD - zs_TLT</code></p>
+      <p>Z-score levels are used here; the USO test uses daily
+        changes in z-scores. Their results therefore compare different signals.</p>
+      <figure>
+        <a href="graphs/gold_chf/tlt_vs_gld_2026_ytd.png">
+          <img src="graphs/gold_chf/tlt_vs_gld_2026_ytd.png" alt="TLT and GLD on non-inverted axes in 2026.">
+        </a>
+        <figcaption>TLT and GLD (non-inverted axes), 2026 YTD.</figcaption>
+      </figure>
+      <figure>
+        <a href="graphs/gold_chf/tlt_vs_gld_since_2022.png">
+          <img src="graphs/gold_chf/tlt_vs_gld_since_2022.png" alt="TLT and GLD on non-inverted axes since 2022.">
+        </a>
+        <figcaption>TLT and GLD (non-inverted axes), since 2022.</figcaption>
+      </figure>
+      <figure>
+        <a href="graphs/gold_chf/tlt_vs_gld_since_2007.png">
+          <img src="graphs/gold_chf/tlt_vs_gld_since_2007.png" alt="TLT and GLD on non-inverted axes since 2007.">
+        </a>
+        <figcaption>TLT and GLD (non-inverted axes), since 2007.</figcaption>
+      </figure>
+
+      <h3>Z-score spread weighting, lambda = 1.0</h3>
+      <figure>
+        <a href="graphs/gold_chf/tlt_gld_zscore_spread_tlt_1p0_equity_curves_since_2022.png">
+          <img src="graphs/gold_chf/tlt_gld_zscore_spread_tlt_1p0_equity_curves_since_2022.png" alt="GLD to TLT equity curves, lambda 1.0, since 2022.">
+        </a>
+        <figcaption>GLD &gt;&gt; TLT, lambda = 1.0, since 2022.</figcaption>
+      </figure>
+      <figure>
+        <a href="graphs/gold_chf/tlt_gld_zscore_spread_tlt_1p0_equity_curves_since_2007.png">
+          <img src="graphs/gold_chf/tlt_gld_zscore_spread_tlt_1p0_equity_curves_since_2007.png" alt="GLD to TLT equity curves, lambda 1.0, since 2007.">
+        </a>
+        <figcaption>GLD &gt;&gt; TLT, lambda = 1.0, since 2007.</figcaption>
+      </figure>
+
+      <h3>Z-score spread weighting, lambda = 0.5</h3>
+      <figure>
+        <a href="graphs/gold_chf/tlt_gld_zscore_spread_tlt_0p5_equity_curves_since_2022.png">
+          <img src="graphs/gold_chf/tlt_gld_zscore_spread_tlt_0p5_equity_curves_since_2022.png" alt="GLD to TLT equity curves, lambda 0.5, since 2022.">
+        </a>
+        <figcaption>GLD &gt;&gt; TLT, lambda = 0.5, since 2022.</figcaption>
+      </figure>
+      <figure>
+        <a href="graphs/gold_chf/tlt_gld_zscore_spread_tlt_0p5_equity_curves_since_2007.png">
+          <img src="graphs/gold_chf/tlt_gld_zscore_spread_tlt_0p5_equity_curves_since_2007.png" alt="GLD to TLT equity curves, lambda 0.5, since 2007.">
+        </a>
+        <figcaption>GLD &gt;&gt; TLT, lambda = 0.5, since 2007.</figcaption>
+      </figure>
+
+      <table>
+        <tr><th>Period</th><th>Window</th><th>lambda</th><th>End equity</th><th>CAGR</th><th>Sharpe</th><th>Max DD</th><th>Turnover / yr</th><th>Max |w_TLT|</th></tr>
+        <tr><td>Since 2022</td><td>TLT B&amp;H</td><td>-</td><td>53</td><td>-12.5%</td><td>-0.78</td><td>-45.5%</td><td>0x</td><td>1.00x</td></tr>
+        <tr><td>Since 2022</td><td>7D</td><td>1.0</td><td>180</td><td>13.3%</td><td>0.65</td><td>-34.0%</td><td>239x</td><td>4.31x</td></tr>
+        <tr><td>Since 2022</td><td>14D</td><td>1.0</td><td>143</td><td>7.9%</td><td>0.43</td><td>-33.0%</td><td>183x</td><td>5.03x</td></tr>
+        <tr><td>Since 2022</td><td>21D</td><td>1.0</td><td>120</td><td>4.0%</td><td>0.28</td><td>-34.9%</td><td>154x</td><td>5.46x</td></tr>
+        <tr><td>Since 2022</td><td>42D</td><td>1.0</td><td>116</td><td>3.1%</td><td>0.25</td><td>-39.1%</td><td>111x</td><td>5.33x</td></tr>
+        <tr><td>Since 2022</td><td>63D</td><td>1.0</td><td>127</td><td>5.2%</td><td>0.32</td><td>-46.8%</td><td>90x</td><td>5.32x</td></tr>
+        <tr><td>Since 2022</td><td>7D</td><td>0.5</td><td>144</td><td>8.0%</td><td>0.50</td><td>-35.7%</td><td>190x</td><td>3.21x</td></tr>
+        <tr><td>Since 2022</td><td>14D</td><td>0.5</td><td>125</td><td>4.8%</td><td>0.33</td><td>-29.9%</td><td>144x</td><td>3.88x</td></tr>
+        <tr><td>Since 2022</td><td>21D</td><td>0.5</td><td>111</td><td>2.2%</td><td>0.21</td><td>-31.5%</td><td>121x</td><td>4.37x</td></tr>
+        <tr><td>Since 2022</td><td>42D</td><td>0.5</td><td>116</td><td>3.2%</td><td>0.25</td><td>-31.9%</td><td>87x</td><td>4.40x</td></tr>
+        <tr><td>Since 2022</td><td>63D</td><td>0.5</td><td>122</td><td>4.3%</td><td>0.30</td><td>-40.1%</td><td>70x</td><td>4.72x</td></tr>
+        <tr><td>Since 2007</td><td>TLT B&amp;H</td><td>-</td><td>89</td><td>-0.6%</td><td>0.04</td><td>-54.2%</td><td>0x</td><td>1.00x</td></tr>
+        <tr><td>Since 2007</td><td>7D</td><td>1.0</td><td>215</td><td>4.0%</td><td>0.29</td><td>-64.0%</td><td>247x</td><td>4.45x</td></tr>
+        <tr><td>Since 2007</td><td>14D</td><td>1.0</td><td>256</td><td>4.9%</td><td>0.32</td><td>-51.2%</td><td>186x</td><td>5.05x</td></tr>
+        <tr><td>Since 2007</td><td>21D</td><td>1.0</td><td>179</td><td>3.0%</td><td>0.25</td><td>-60.6%</td><td>157x</td><td>5.74x</td></tr>
+        <tr><td>Since 2007</td><td>42D</td><td>1.0</td><td>122</td><td>1.0%</td><td>0.17</td><td>-64.3%</td><td>115x</td><td>7.73x</td></tr>
+        <tr><td>Since 2007</td><td>63D</td><td>1.0</td><td>78</td><td>-1.3%</td><td>0.09</td><td>-77.9%</td><td>94x</td><td>7.42x</td></tr>
+        <tr><td>Since 2007</td><td>7D</td><td>0.5</td><td>92</td><td>-0.4%</td><td>0.07</td><td>-72.7%</td><td>195x</td><td>3.38x</td></tr>
+        <tr><td>Since 2007</td><td>14D</td><td>0.5</td><td>130</td><td>1.4%</td><td>0.17</td><td>-55.5%</td><td>146x</td><td>4.02x</td></tr>
+        <tr><td>Since 2007</td><td>21D</td><td>0.5</td><td>118</td><td>0.8%</td><td>0.15</td><td>-64.1%</td><td>123x</td><td>4.82x</td></tr>
+        <tr><td>Since 2007</td><td>42D</td><td>0.5</td><td>106</td><td>0.3%</td><td>0.12</td><td>-61.8%</td><td>88x</td><td>6.53x</td></tr>
+        <tr><td>Since 2007</td><td>63D</td><td>0.5</td><td>86</td><td>-0.8%</td><td>0.07</td><td>-69.4%</td><td>72x</td><td>6.14x</td></tr>
+      </table>
+      <div class="note">
+        <strong>Reading.</strong> With lambda = 1, the strongest Sharpe since 2022 is
+        0.65 (7D; CAGR 13.3%, maximum drawdown -34.0%). Since 2007, it is
+        0.32 (14D; CAGR 4.9%, maximum drawdown -51.2%). Longer windows can
+        lose capital despite a positive arithmetic Sharpe: the 63D lambda = 1
+        variant ends at 78 from 100 since 2007, with a -77.9% drawdown.
+        Curves assume zero transaction costs and exclude distributions,
+        financing, borrow costs and cash yield. Weights are unconstrained.
+      </div>
     </section>
   </main>
 
