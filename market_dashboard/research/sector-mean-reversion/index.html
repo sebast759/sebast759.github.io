@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sector Mean Reversion</title>
+  <style>
+    :root{--ink:#171717;--muted:#666;--line:#dedede;--soft:#f6f6f4;--red:#9b2c2c}*{box-sizing:border-box}
+    body{margin:0;color:var(--ink);background:#fff;font:15px/1.45 Arial,Helvetica,sans-serif}main{width:min(980px,calc(100% - 40px));margin:48px auto 64px}
+    header{padding-bottom:20px;border-bottom:1px solid var(--line)}h1{margin:0 0 5px;font-size:25px;font-weight:600;letter-spacing:-.02em}h2{margin:34px 0 12px;font-size:17px;font-weight:600}p{margin:6px 0}.muted,.note,figcaption{color:var(--muted)}
+    figure{margin:18px 0 0}figure img{display:block;width:100%;height:auto;border:1px solid var(--line)}figcaption{margin-top:7px;font-size:12px}ol{margin:0;padding-left:22px}li{padding:4px 0}
+    table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}th,td{padding:10px 9px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--muted);background:var(--soft);font-size:12px;font-weight:600;text-transform:uppercase}th:first-child,td:first-child{text-align:left}tbody tr:last-child td{border-bottom-color:var(--ink)}.negative{color:var(--red)}
+    .takeaways{margin:24px 0 4px;padding:16px 18px;border:1px solid var(--line);background:var(--soft)}.takeaways h2{margin:0 0 8px}.takeaways ul{margin:0;padding-left:19px}.takeaways li{padding:3px 0}
+    .note{margin-top:30px;padding-top:16px;border-top:1px solid var(--line);font-size:13px}@media(max-width:720px){main{width:calc(100% - 24px);margin-top:28px}.table-wrap{overflow-x:auto}th,td{padding:8px 7px}}
+  </style>
+</head>
+<body><main>
+  <header><h1>Sector Mean Reversion</h1><p>Concretum rules using Yahoo daily data</p><p class="muted">Backtest: 4 January 2016 to 6 October 2026</p></header>
+
+  <section class="takeaways">
+    <h2>Key takeaways</h2>
+    <ul>
+      <li>The long-only strategy was profitable on SOXX, IGV, IBB and SPY over the test period.</li>
+      <li>The SOXX, IGV and IBB portfolio produced a 31.62% CAGR, a 1.43 Sharpe ratio and a -21.52% maximum drawdown.</li>
+      <li>Adding SPY reduced CAGR to 29.53%, but improved the Sharpe ratio to 1.48 and reduced maximum drawdown to -18.34%.</li>
+      <li>The symmetric short-only strategy lost money. The long and short signals are not economically symmetric.</li>
+      <li>The same rules worked on Bitcoin but failed on Ether. The result is not robust across crypto assets.</li>
+    </ul>
+  </section>
+
+  <section><h2>Long-only results by ETF</h2><figure>
+    <img src="output/equity_curves.png" alt="Full-period long-only results for SOXX, IGV, IBB and SPY">
+    <figcaption>Each blue line is the long-only strategy applied to one ETF. Grey is buy and hold. No short positions are used.</figcaption>
+  </figure></section>
+
+  <section><h2>Combined portfolios</h2><figure>
+    <img src="output/combined_portfolio.png" alt="Combined equal-allocation long-only portfolios">
+    <figcaption>The first portfolio trades SOXX, IGV and IBB. The second also trades SPY. This chart has no entry or exit markers.</figcaption>
+  </figure></section>
+
+  <section><h2>2026 trades</h2><figure>
+    <img src="output/ytd_2026_trades.png" alt="2026 long-only ETF results with entry and exit markers on the buy-and-hold line">
+    <figcaption>2026 year to date. Signals are marked on the grey ETF line: green triangle means buy and red x means sell. Values are rebased to 100 on the first trading day of 2026.</figcaption>
+  </figure></section>
+
+  <section><h2>Rules</h2><ol>
+    <li>Calculate IBS: <strong>(Close - Low) / (High - Low)</strong>.</li>
+    <li>Calculate today's range: <strong>ln(High / Low)</strong>.</li>
+    <li>Calculate relative range: today's range divided by the standard deviation of the previous 21 daily ranges.</li>
+    <li>Buy at the close when IBS is below 0.10 and relative range is above 1.</li>
+    <li>Sell the entire position at the close when IBS is above 0.90 and relative range is above 1.</li>
+    <li>Position size at entry: 1.5 times the previous day's portfolio value, divided by the number of ETFs.</li>
+    <li>Do not rebalance while a position is open. Keep the same number of shares until the sell signal.</li>
+    <li><strong>Transaction costs:</strong> subtract $0.0035 for every share bought and $0.0070 for every share sold. All reported returns are after these costs.</li>
+  </ol></section>
+
+  <section><h2>Current signal</h2><div class="table-wrap"><table>
+    <thead><tr><th>ETF</th><th>Open</th><th>High</th><th>Low</th><th>Close</th><th>IBS</th><th>Direction</th><th>Relative range</th><th>Long action</th></tr></thead>
+    <tbody>
+      <tr><td>SOXX</td><td>593.54</td><td>596.39</td><td>590.90</td><td>594.47</td><td>0.650</td><td>-0.301</td><td>1.20</td><td>Stay in cash</td></tr>
+      <tr><td>IGV</td><td>110.75</td><td>112.34</td><td>110.65</td><td>111.49</td><td>0.497</td><td>0.006</td><td>2.67</td><td>Keep long position</td></tr>
+      <tr><td>IBB</td><td>209.35</td><td>210.24</td><td>201.48</td><td>203.50</td><td>0.231</td><td>0.538</td><td>8.26</td><td>Keep long position</td></tr>
+      <tr><td>SPY</td><td>778.15</td><td>780.67</td><td>777.96</td><td>780.47</td><td>0.926</td><td class="negative">-0.852</td><td>1.19</td><td>Stay in cash</td></tr>
+    </tbody>
+  </table></div><p class="muted">Direction equals 1 - 2 x IBS. A value near +1 is bullish for this contrarian strategy. A value near -1 is bearish. A trade occurs only when relative range is above 1.</p></section>
+
+  <section><h2>Performance</h2><div class="table-wrap"><table>
+    <thead><tr><th>Portfolio</th><th>CAGR</th><th>Sharpe</th><th>Maximum drawdown</th><th>Average exposure</th><th>Total transaction costs</th></tr></thead>
+    <tbody>
+      <tr><td>Long: SOXX, IGV, IBB</td><td>31.62%</td><td>1.43</td><td>-21.52%</td><td>54.37%</td><td>$21,419.78</td></tr>
+      <tr><td>Long: SOXX, IGV, IBB, SPY</td><td>29.53%</td><td>1.48</td><td>-18.34%</td><td>53.40%</td><td>$14,326.38</td></tr>
+    </tbody>
+  </table></div></section>
+
+  <section><h2>Trading activity</h2><div class="table-wrap"><table>
+    <thead><tr><th>Strategy</th><th>Completed trades</th><th>Completed trades/year</th><th>Trading days in position</th></tr></thead>
+    <tbody>
+      <tr><td>SOXX</td><td>194</td><td>18.04</td><td>33.9%</td></tr>
+      <tr><td>IGV</td><td>159</td><td>14.79</td><td>32.1%</td></tr>
+      <tr><td>IBB</td><td>162</td><td>15.07</td><td>43.0%</td></tr>
+      <tr><td>SPY</td><td>150</td><td>13.95</td><td>33.7%</td></tr>
+      <tr><td>Combined: SOXX, IGV, IBB</td><td>515</td><td>47.89</td><td>61.9%</td></tr>
+      <tr><td>Combined: SOXX, IGV, IBB, SPY</td><td>665</td><td>61.84</td><td>66.3%</td></tr>
+    </tbody>
+  </table></div><p class="muted">A completed trade is one buy followed by one sell. For a combined portfolio, trades are counted across all ETFs. Time in position is the percentage of trading days with at least one open position.</p></section>
+
+  <section><h2>Appendix: Bitcoin and Ether</h2>
+    <p>The same long-only IBS and relative-range rules are applied to Yahoo's BTC-USD and ETH-USD daily bars. Crypto trades seven days a week and is not included in the ETF portfolios.</p>
+    <figure><img src="output/crypto_appendix.png" alt="Long-only mean-reversion strategy applied to Bitcoin and Ether in two stacked panels"><figcaption>Blue is the strategy. Grey is buy and hold. Each asset starts at 100 on its first available date.</figcaption></figure>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Asset</th><th>Start</th><th>CAGR</th><th>Sharpe</th><th>Maximum drawdown</th></tr></thead>
+      <tbody>
+        <tr><td>Bitcoin (BTC-USD)</td><td>1 Jan 2016</td><td>26.88%</td><td>0.70</td><td>-79.83%</td></tr>
+        <tr><td>Ether (ETH-USD)</td><td>9 Nov 2017</td><td class="negative">-27.34%</td><td>0.20</td><td>-99.35%</td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted">Crypto Sharpe ratios use 365.25 observations per year. The same per-unit transaction charges are applied. Exchange fees, spread, slippage and custody costs are not included.</p>
+  </section>
+
+  <section><h2>Appendix: short-only test</h2>
+    <p>The short-only test reverses the signals. It shorts when IBS is above 0.90 and covers when IBS is below 0.10. Relative range must be above 1 for both actions.</p>
+    <figure><img src="output/short_only_appendix.png" alt="Full-period short-only results by ETF"><figcaption>Short-only results by ETF. Entry and exit markers are omitted from the full-period chart.</figcaption></figure>
+    <figure><img src="output/short_combined_appendix.png" alt="Combined short-only portfolios"><figcaption>Combined short-only portfolios. Borrow costs, margin interest and locate constraints are not included.</figcaption></figure>
+  </section>
+
+  <p class="note">Yahoo adjusted daily OHLC replaces the paper's 15:45 intraday snapshot because Yahoo does not provide ten years of 15-minute history. This difference prevents an exact replication. The backtest allows fractional shares, pays no interest on cash and charges no financing cost for leverage.</p>
+</main></body></html>
