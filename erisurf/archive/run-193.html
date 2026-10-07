@@ -56,6 +56,12 @@ tr:last-child th,tr:last-child td{border-bottom:0}
   background:transparent;margin:4px 0;display:block}
 .report b{font-weight:650}
 .report s{color:var(--muted);text-decoration:none}
+/* Telegram's <code> rows: monospace so the columns align, but in the ink
+   colour (Telegram tints them blue; the site does not need to) and never
+   wrapped, so a row stays one line on a phone */
+.report code{font:13px/1.55 ui-monospace,Menlo,Consolas,monospace;white-space:pre;color:var(--ink)}
+.report{overflow-x:auto}
+@media(max-width:480px){.report{padding:12px 12px;font-size:13.5px}.report code{font-size:12px}}
 .cond{background:var(--panel);border:1px solid var(--line);border-left:4px solid #0891b2;
   border-radius:10px;padding:10px 14px;margin:0 0 16px;font-size:13.5px}
 .nocam{color:var(--muted)}
@@ -103,6 +109,16 @@ figcaption{color:var(--muted);font-size:12px;margin-top:5px}
 <h1>2026-10-06 16:40</h1><p class='sub'>sunset slot &middot; run 193</p><div class="report">👍 <b>WORTH SURFING · Ribeira ★★★☆☆ · 16:40</b>
 🌊 0.7m @ 10s NW · 💨 NW 14 km/h
 ➘➘ Falling tide · <s>High 12:07</s> → Low 18:37 → High 00:49
+<code>Ribeira  ★★★☆☆  0.3-0.6m</code> <a href="https://www.surfline.com/surf-report/ribeira-d-ilhas/5842041f4e65fad6a7708bc2">▪️</a> <a href="https://beachcam.meo.pt/livecams/ribeira-dilhas/">🔹</a> <a href="https://surftotal.com/camaras-report/ericeira/ribeira-d-ilhas">▫️</a>
+<code>Norte    ★★☆☆☆  0.3-0.6m</code> <a href="https://www.surfline.com/surf-report/praia-do-norte/6a76019026a677d19fde7f36">▪️</a> <a href="https://surftotal.com/camaras-report/ericeira/ericeira-hd">▫️</a> <a href="https://gosurf.fr/webcam/en/108/Ericeira-Spots-Praia-de-Ericeira">🔸</a>
+<code>Sul      ★☆☆☆☆  0.3-0.6m</code> <a href="https://www.surfline.com/surf-report/praia-do-sul/5fb2c2da7057d993d9d2caa3">▪️</a> <a href="https://beachcam.meo.pt/livecams/ericeira-praia-do-sul/">🔹</a> <a href="https://surftotal.com/camaras-report/ericeira/ericeira-praias-sul">▫️</a> <a href="https://gosurf.fr/webcam/en/110/Ericeira-Praia-Do-Sul">🔸</a>
+<code>Pedra    ★½☆☆☆   0.3-0.6m</code> <a href="https://www.surfline.com/surf-report/pedra-branca/584204204e65fad6a77096ae">▪️</a> <a href="https://beachcam.meo.pt/livecams/ericeira/">🔹</a>
+<code>Lizandro ★☆☆☆☆  0.3-0.6m</code> <a href="https://www.surfline.com/surf-report/foz-do-lizandro/5842041f4e65fad6a7708bbd">▪️</a> <a href="https://beachcam.meo.pt/livecams/foz-do-lizandro/">🔹</a> <a href="https://surftotal.com/camaras-report/ericeira/foz-do-lizandro">▫️</a> <a href="https://gosurf.fr/webcam/en/111/Ericeira-Praia-de-Foz-Do-Lizandro">🔸</a>
+<b>CAM · surfers out</b>
+<code>Ribeira  small, clean +1★    ~6 out</code>
+<code>Sul      flat, unbroken -1★  0</code>
+<code>Pedra    small on reef -½★   0</code>
+<code>Lizandro tiny shorebreak      ~2 out</code>
 <b>VERDICT</b>
 ★★★☆☆ Ribeira. ~6 back out on small clean lines, one riding. Go now rather than wait: NW holds 15-17 km/h to dark and nothing better is coming this evening. Pedra emptied since 13:40.
 <b>NEXT · 18:30</b>
