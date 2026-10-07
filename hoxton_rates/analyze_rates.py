@@ -343,7 +343,9 @@ def main() -> None:
         "next_night_gbp", "jump_vs_adjacent", "jump_flag", "cluster_id", "cluster_len", "weekend_flag", "source",
     ]
     anomalies[cols].round(4).to_csv(outdir / "hoxton_price_anomalies.csv", index=False)
-    (outdir / "hoxton_demand_report.md").write_text(build_report(df, anomalies, clusters, weekday_table))
+    (outdir / "hoxton_demand_report.md").write_text(
+        build_report(df, anomalies, clusters, weekday_table), encoding="utf-8"
+    )
     print(f"anomalies: {len(anomalies)} rows, clusters: {len(clusters)}")
 
 
