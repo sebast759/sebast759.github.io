@@ -136,6 +136,28 @@ function showCryptoPeriod(period, btn) {
     btn.classList.add('active');
 }
 
+// ETF cumulative flow switching (BTC + ETH / BTC / ETH)
+document.querySelectorAll('.etf-flow-tab-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const charts = {
+            combined: 'btc_eth_cumulative_inflows',
+            btc: 'btc_cumulative_inflows',
+            eth: 'eth_cumulative_inflows'
+        };
+        const labels = {
+            combined: 'Bitcoin and Ethereum ETF cumulative net flows',
+            btc: 'Bitcoin ETF cumulative net flows',
+            eth: 'Ethereum ETF cumulative net flows'
+        };
+        const chart = document.getElementById('etf-flow-chart');
+        chart.src = 'https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/' + charts[this.dataset.flow];
+        chart.alt = labels[this.dataset.flow];
+
+        document.querySelectorAll('.etf-flow-tab-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+
 // Bond maturity switching
 // Bond maturity switching (radio buttons)
 document.querySelectorAll('input[name="maturity"]').forEach(radio => {
@@ -210,27 +232,6 @@ document.querySelectorAll('.price_action-tab-btn').forEach(btn => {
             `https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/price_action_${asset}_2024`;
 
         document.querySelectorAll('.price_action-tab-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-    });
-});
-
-// Treemap button switching (YTD/2025/2024)
-document.querySelectorAll('.treemap-tab-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const period = this.dataset.period;
-        let url;
-
-        if (period === 'ytd') {
-            url = 'https://tame-cap.s3.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/treemap_ytd';
-        } else if (period === '2024') {
-            url = 'https://tame-cap.s3.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/treemap_year_2024';
-        } else if (period === '2025') {
-            url = 'https://tame-cap.s3.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/treemap_year_2025';
-        }
-
-        document.getElementById('treemap-chart').src = url;
-
-        document.querySelectorAll('.treemap-tab-btn').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
     });
 });

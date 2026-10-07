@@ -286,60 +286,69 @@
 
         <!-- Crypto Tab -->
         <div id="crypto" class="tab-content">
-            <!-- Top: Two column layout - Rainbow Chart & Treemap -->
-            <div class="two-column-grid" style="margin-top: 0; margin-bottom: 2rem;">
-                <!-- Left: Rainbow Chart -->
-                <div class="chart-section">
-                    <h3>Top 30 Cryptocurrencies Performance</h3>
-                        <div style="text-align: center; margin: 1rem 0; display: flex; flex-wrap: nowrap; justify-content: center; gap: 0.3rem; overflow-x: auto;">
-                        <button class="crypto-tab-btn active" data-period="today">Today</button>
-                        <button class="crypto-tab-btn" data-period="yesterday">Ytday</button>
-                        <button class="crypto-tab-btn" data-period="mtd">MTD</button>
-                        <button class="crypto-tab-btn" data-period="previous">Previous M</button>
-                        <button class="crypto-tab-btn" data-period="ytd">YTD</button>
-                        <button class="crypto-tab-btn" data-period="2025">2025</button>
-                        <button class="crypto-tab-btn" data-period="2024">2024</button>
+            <div class="crypto-dashboard-grid">
+                <section class="crypto-panel">
+                    <div class="crypto-panel-head">
+                        <div><span class="crypto-kicker">Market breadth</span><h3>Top 30 performance</h3></div>
+                        <div class="crypto-segmented" aria-label="Performance period">
+                            <button class="crypto-tab-btn active" data-period="today">Today</button>
+                            <button class="crypto-tab-btn" data-period="yesterday">Yesterday</button>
+                            <button class="crypto-tab-btn" data-period="mtd">MTD</button>
+                            <button class="crypto-tab-btn" data-period="previous">Previous month</button>
+                            <button class="crypto-tab-btn" data-period="ytd">YTD</button>
+                            <button class="crypto-tab-btn" data-period="2025">2025</button>
+                            <button class="crypto-tab-btn" data-period="2024">2024</button>
+                        </div>
                     </div>
-                    <div style="text-align: center;">
+                    <div class="crypto-chart-frame crypto-chart-frame--tall">
                         <img id="crypto-chart"
                              src="https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/today_performance_rainbow"
-                             style="max-width: 95%; border: 8px solid #fff;"
-                             alt="Crypto Performance">
+                             alt="Top 30 cryptocurrency performance">
                     </div>
-                </div>
+                </section>
 
-                <!-- Right: Treemap Chart -->
-                <div class="chart-section">
-                    <h3>Market Treemap</h3>
-                    <div style="text-align: center; margin: 1rem 0;">
-                        <button class="treemap-tab-btn active" data-period="ytd">YTD</button>
-                        <button class="treemap-tab-btn" data-period="2025">2025</button>
-                        <button class="treemap-tab-btn" data-period="2024">2024</button>
+                <section class="crypto-panel">
+                    <div class="crypto-panel-head">
+                        <div><span class="crypto-kicker">Spot ETFs</span><h3>Cumulative net flows</h3></div>
+                        <div class="crypto-segmented" aria-label="ETF flow asset">
+                            <button class="etf-flow-tab-btn active" data-flow="combined">BTC + ETH</button>
+                            <button class="etf-flow-tab-btn" data-flow="btc">BTC</button>
+                            <button class="etf-flow-tab-btn" data-flow="eth">ETH</button>
+                        </div>
                     </div>
-                    <div style="text-align: center;">
-                        <img id="treemap-chart"
-                             src="https://tame-cap.s3.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/treemap_ytd"
-                             style="max-width: 95%; border: 8px solid #fff;"
-                             alt="Treemap">
+                    <div class="crypto-chart-frame crypto-chart-frame--tall">
+                        <img id="etf-flow-chart"
+                             src="https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/btc_eth_cumulative_inflows"
+                             alt="Bitcoin and Ethereum ETF cumulative net flows">
                     </div>
-                </div>
-            </div>
+                </section>
 
-            <!-- Bottom: Price Action (reduced height) -->
-            <div class="grid">
-                <div class="card crypto-price-action-card" style="grid-column: span 2;">
-                    <h3>Price Action</h3>
-                    <div style="text-align: center; margin: 1rem 0;">
-                        <button class="price_action-tab-btn active" data-period="btc">BTC</button>
-                        <button class="price_action-tab-btn" data-period="eth">ETH</button>
+                <section class="crypto-panel">
+                    <div class="crypto-panel-head">
+                        <div><span class="crypto-kicker">Cycles</span><h3>Price action</h3></div>
+                        <div class="crypto-segmented" aria-label="Price action asset">
+                            <button class="price_action-tab-btn active" data-period="btc">BTC</button>
+                            <button class="price_action-tab-btn" data-period="eth">ETH</button>
+                        </div>
                     </div>
-                    <div style="text-align: center;">
+                    <div class="crypto-chart-frame">
                         <img id="price-action-chart"
                              src="https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/price_action_BTC_2024"
-                             style="max-width: 90%; max-height: 500px; border: 8px solid #fff; object-fit: contain;"
-                             alt="Price Action">
+                             alt="Bitcoin price action">
                     </div>
-                </div>
+                </section>
+
+                <section class="crypto-panel">
+                    <div class="crypto-panel-head">
+                        <div><span class="crypto-kicker">Market structure</span><h3>Market treemap</h3></div>
+                        <span class="crypto-period-badge">YTD</span>
+                    </div>
+                    <div class="crypto-chart-frame">
+                        <img id="treemap-chart"
+                             src="https://tame-cap.s3.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/treemap_ytd"
+                             alt="Cryptocurrency market treemap, year to date">
+                    </div>
+                </section>
             </div>
         </div>
         <!-- Global Tab -->
