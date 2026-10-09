@@ -1,5 +1,93 @@
 [
  {
+  "run_id": 205,
+  "day": "2026-10-09",
+  "time": "07:41",
+  "slot": "sunrise",
+  "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR",
+    "surf_min": 0.6,
+    "surf_max": 1.1,
+    "swell_h": 1.9,
+    "swell_p": 9,
+    "swell_dir": "NNW",
+    "wind_kts": 12,
+    "wind_gust": 20,
+    "wind_dir": "E",
+    "surfers": 3,
+    "people": 12,
+    "note": "clean groomed offshore lines peeling on the point; ~3 out on the detail crop (close-up mostly blocked by contest tarp); Ericeira Pro set up on the beach",
+    "erisurf": 4
+   },
+   {
+    "spot": "Norte",
+    "rating": "FAIR",
+    "surf_min": 0.9,
+    "surf_max": 1.2,
+    "swell_h": 1.9,
+    "swell_p": 9,
+    "swell_dir": "NNW",
+    "wind_kts": 12,
+    "wind_gust": 20,
+    "wind_dir": "E",
+    "surfers": null,
+    "people": null,
+    "note": "no cam frames this run, forecast only",
+    "erisurf": 3
+   },
+   {
+    "spot": "Sul",
+    "rating": "FAIR",
+    "surf_min": 0.9,
+    "surf_max": 1.2,
+    "swell_h": 1.9,
+    "swell_p": 9,
+    "swell_dir": "NNW",
+    "wind_kts": 12,
+    "wind_gust": 20,
+    "wind_dir": "E",
+    "surfers": 2,
+    "people": null,
+    "note": "small glassy organised lines wrapping the point; 2 sitting out back in every frame",
+    "erisurf": 3.5
+   },
+   {
+    "spot": "Pedra",
+    "rating": "FAIR",
+    "surf_min": 0.9,
+    "surf_max": 1.2,
+    "swell_h": 1.9,
+    "swell_p": 9,
+    "swell_dir": "NNW",
+    "wind_kts": 12,
+    "wind_gust": 20,
+    "wind_dir": "E",
+    "surfers": 0,
+    "people": 0,
+    "note": "solid lines over the low-tide reef, some sections closing; nobody out on a readable detail crop",
+    "erisurf": 2.5
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "FAIR",
+    "surf_min": 0.9,
+    "surf_max": 1.2,
+    "swell_h": 1.9,
+    "swell_p": 9,
+    "swell_dir": "NNW",
+    "wind_kts": 12,
+    "wind_gust": 20,
+    "wind_dir": "E",
+    "surfers": 0,
+    "people": 0,
+    "note": "offshore-groomed lines, several peaks breaking at once; dim dawn light, nobody seen in the water, beach empty; approximate",
+    "erisurf": 2.5
+   }
+  ]
+ },
+ {
   "run_id": 204,
   "day": "2026-10-08",
   "time": "18:40",
@@ -1620,78 +1708,6 @@
     "people": 6,
     "note": "near-flat, only wash on the headland rocks; nobody in the water, a few people at the water's edge",
     "erisurf": 1.5
-   }
-  ]
- },
- {
-  "run_id": 185,
-  "day": "2026-10-05",
-  "time": "07:41",
-  "slot": "sunrise",
-  "spots": [
-   {
-    "spot": "Ribeira",
-    "rating": "FAIR",
-    "surf_min": 0.6,
-    "surf_max": 0.9,
-    "swell_h": 1.0,
-    "swell_p": 11,
-    "swell_dir": "NW",
-    "wind_kts": 8,
-    "wind_gust": 12,
-    "wind_dir": "ENE",
-    "surfers": 11,
-    "people": null,
-    "note": "clean lines peeling down the point, offshore, one riding; ~11 out on the fallback cam, which undercounts",
-    "erisurf": 4
-   },
-   {
-    "spot": "Sul",
-    "rating": "FAIR",
-    "surf_min": 0.6,
-    "surf_max": 0.9,
-    "swell_h": 1.1,
-    "swell_p": 10,
-    "swell_dir": "NW",
-    "wind_kts": 8,
-    "wind_gust": 12,
-    "wind_dir": "ENE",
-    "surfers": 0,
-    "people": null,
-    "note": "near-flat, swell passing unbroken, only washing on the rocks; nobody out on the detail crop",
-    "erisurf": 2
-   },
-   {
-    "spot": "Pedra",
-    "rating": "FAIR",
-    "surf_min": 0.6,
-    "surf_max": 0.9,
-    "swell_h": 1.0,
-    "swell_p": 11,
-    "swell_dir": "NW",
-    "wind_kts": 8,
-    "wind_gust": 12,
-    "wind_dir": "ENE",
-    "surfers": 0,
-    "people": 0,
-    "note": "small clean peelers over the reef shelf, smooth faces; water readable, nobody out",
-    "erisurf": 3
-   },
-   {
-    "spot": "Lizandro",
-    "rating": "FAIR",
-    "surf_min": 0.6,
-    "surf_max": 0.9,
-    "swell_h": 1.1,
-    "swell_p": 10,
-    "swell_dir": "NW",
-    "wind_kts": 8,
-    "wind_gust": 12,
-    "wind_dir": "ENE",
-    "surfers": 0,
-    "people": 1,
-    "note": "small clean peak beside the headland, breaking close to the sand; nobody out, one person at the water's edge",
-    "erisurf": 2.5
    }
   ]
  }
