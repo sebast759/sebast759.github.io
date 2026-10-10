@@ -1,5 +1,93 @@
 [
  {
+  "run_id": 210,
+  "day": "2026-10-10",
+  "time": "07:41",
+  "slot": "sunrise",
+  "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR",
+    "surf_min": 0.3,
+    "surf_max": 0.6,
+    "swell_h": 1.0,
+    "swell_p": 7,
+    "swell_dir": "NNW",
+    "wind_kts": 13,
+    "wind_gust": 16,
+    "wind_dir": "N",
+    "surfers": 8,
+    "people": 4,
+    "note": "small clean offshore lines, two riding; ~8 out, counted on the wide crop because the close-up is two-thirds blocked by the contest tarp",
+    "erisurf": 4
+   },
+   {
+    "spot": "Norte",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 1.0,
+    "swell_p": 7,
+    "swell_dir": "NNW",
+    "wind_kts": 13,
+    "wind_gust": 16,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": "no cam frames this run, forecast only",
+    "erisurf": 1
+   },
+   {
+    "spot": "Sul",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 1.0,
+    "swell_p": 7,
+    "swell_dir": "NNW",
+    "wind_kts": 13,
+    "wind_gust": 16,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": "near-flat, lines passing unbroken, breaking only on the rocks; one dark speck inside, too small to call a surfer",
+    "erisurf": 1
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 1.0,
+    "swell_p": 7,
+    "swell_dir": "NNW",
+    "wind_kts": 13,
+    "wind_gust": 16,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": 1,
+    "note": "small crumbly whitewater over the reef; one unclear dark mark in the foam, nobody clearly out; one person on the rocks",
+    "erisurf": 1
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 1.0,
+    "swell_p": 7,
+    "swell_dir": "NNW",
+    "wind_kts": 13,
+    "wind_gust": 16,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": 3,
+    "note": "closeout shorebreak on the sand; nobody in the water, ~3 at the water's edge, one walking off with a board; approximate",
+    "erisurf": 1
+   }
+  ]
+ },
+ {
   "run_id": 209,
   "day": "2026-10-09",
   "time": "18:40",
@@ -1652,62 +1740,6 @@
     "people": 0,
     "note": "knee-high shorebreak only, glassy; nobody out, checked on the detail crop, beach empty",
     "erisurf": 1.5
-   }
-  ]
- },
- {
-  "run_id": 190,
-  "day": "2026-10-06",
-  "time": "07:41",
-  "slot": "sunrise",
-  "spots": [
-   {
-    "spot": "Norte",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.3,
-    "surf_max": 0.6,
-    "swell_h": 0.9,
-    "swell_p": 10,
-    "swell_dir": "NW",
-    "wind_kts": 7,
-    "wind_gust": 8,
-    "wind_dir": "SSW",
-    "surfers": null,
-    "people": null,
-    "note": "no cam frames this run, forecast only",
-    "erisurf": 2
-   },
-   {
-    "spot": "Sul",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.3,
-    "surf_max": 0.6,
-    "swell_h": 0.9,
-    "swell_p": 10,
-    "swell_dir": "NW",
-    "wind_kts": 7,
-    "wind_gust": 8,
-    "wind_dir": "SSW",
-    "surfers": 0,
-    "people": null,
-    "note": "swell lines passing unbroken, only washing on the rocks; nobody out, checked on the detail crop, grey but readable",
-    "erisurf": 1
-   },
-   {
-    "spot": "Lizandro",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.3,
-    "surf_max": 0.6,
-    "swell_h": 0.9,
-    "swell_p": 10,
-    "swell_dir": "NW",
-    "wind_kts": 7,
-    "wind_gust": 8,
-    "wind_dir": "SSW",
-    "surfers": 2,
-    "people": 2,
-    "note": "knee-high lines, one small section breaking on the sandbar, glassy and grey; ~2 out (approximate, wide cam), counted on the detail crop",
-    "erisurf": 2.5
    }
   ]
  }
