@@ -1,5 +1,77 @@
 [
  {
+  "run_id": 224,
+  "day": "2026-10-12",
+  "time": "18:41",
+  "slot": "dusk",
+  "spots": [
+   {
+    "spot": "Norte",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.5,
+    "swell_h": 1.9,
+    "swell_p": 11,
+    "swell_dir": "NW",
+    "wind_kts": 10,
+    "wind_gust": 13,
+    "wind_dir": "NNW",
+    "surfers": null,
+    "people": null,
+    "note": "no cam frames this run, forecast only",
+    "erisurf": 2
+   },
+   {
+    "spot": "Sul",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.5,
+    "swell_h": 1.9,
+    "swell_p": 11,
+    "swell_dir": "NW",
+    "wind_kts": 10,
+    "wind_gust": 13,
+    "wind_dir": "NNW",
+    "surfers": 0,
+    "people": null,
+    "note": "fat swell lines rolling through unbroken, breaking only on the rocks; nobody out on the detail crop",
+    "erisurf": 1.5
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.5,
+    "swell_h": 1.9,
+    "swell_p": 11,
+    "swell_dir": "NW",
+    "wind_kts": 10,
+    "wind_gust": 13,
+    "wind_dir": "NNW",
+    "surfers": 1,
+    "people": 1,
+    "note": "sets peeling over the reef, spray blowing off the tops; ~1 in the water on the crowd crop, 1 on the cliff",
+    "erisurf": 2.5
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR_TO_FAIR",
+    "surf_min": 1.2,
+    "surf_max": 1.5,
+    "swell_h": 1.9,
+    "swell_p": 11,
+    "swell_dir": "NW",
+    "wind_kts": 10,
+    "wind_gust": 13,
+    "wind_dir": "NNW",
+    "surfers": null,
+    "people": null,
+    "note": "low sun straight into the lens, water and beach unreadable; forecast only",
+    "erisurf": 2
+   }
+  ]
+ },
+ {
   "run_id": 223,
   "day": "2026-10-12",
   "time": "16:41",
@@ -1668,94 +1740,6 @@
     "people": 0,
     "note": "offshore-groomed lines, several peaks breaking at once; dim dawn light, nobody seen in the water, beach empty; approximate",
     "erisurf": 2.5
-   }
-  ]
- },
- {
-  "run_id": 204,
-  "day": "2026-10-08",
-  "time": "18:40",
-  "slot": "dusk",
-  "spots": [
-   {
-    "spot": "Ribeira",
-    "rating": "FAIR",
-    "surf_min": 0.9,
-    "surf_max": 1.2,
-    "swell_h": 2.2,
-    "swell_p": 9,
-    "swell_dir": "NNW",
-    "wind_kts": 18,
-    "wind_gust": 27,
-    "wind_dir": "NNE",
-    "surfers": 18,
-    "people": null,
-    "note": "clean groomed offshore lines, riders up on the point; ~18 out counted on the detail crop (close-up blocked by contest tarp); wind cap applied",
-    "erisurf": 3
-   },
-   {
-    "spot": "Norte",
-    "rating": "POOR",
-    "surf_min": 1.2,
-    "surf_max": 1.5,
-    "swell_h": 2.2,
-    "swell_p": 9,
-    "swell_dir": "NNW",
-    "wind_kts": 18,
-    "wind_gust": 27,
-    "wind_dir": "NNE",
-    "surfers": null,
-    "people": null,
-    "note": "no cam frames this run, forecast only",
-    "erisurf": 1
-   },
-   {
-    "spot": "Sul",
-    "rating": "POOR",
-    "surf_min": 1.2,
-    "surf_max": 1.5,
-    "swell_h": 2.2,
-    "swell_p": 9,
-    "swell_dir": "NNW",
-    "wind_kts": 18,
-    "wind_gust": 27,
-    "wind_dir": "NNE",
-    "surfers": 14,
-    "people": null,
-    "note": "small clean organised lines wrapping the point, sheltered from the wind; ~14 sitting in a pack on the detail crop",
-    "erisurf": 2
-   },
-   {
-    "spot": "Pedra",
-    "rating": "POOR",
-    "surf_min": 0.9,
-    "surf_max": 1.4,
-    "swell_h": 2.2,
-    "swell_p": 9,
-    "swell_dir": "NNW",
-    "wind_kts": 18,
-    "wind_gust": 27,
-    "wind_dir": "NNE",
-    "surfers": 1,
-    "people": null,
-    "note": "small lines peeling over the low-tide reef, light texture; one figure in the lineup, one walking the reef",
-    "erisurf": 1.5
-   },
-   {
-    "spot": "Lizandro",
-    "rating": "POOR",
-    "surf_min": 0.9,
-    "surf_max": 1.4,
-    "swell_h": 2.2,
-    "swell_p": 9,
-    "swell_dir": "NNW",
-    "wind_kts": 18,
-    "wind_gust": 27,
-    "wind_dir": "NNE",
-    "surfers": null,
-    "people": 2,
-    "note": "small crumbly lines on the sand; cam looks straight into the low sun, surfers not resolvable; a wader at the edge",
-    "erisurf": 1
    }
   ]
  }
