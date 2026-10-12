@@ -1,5 +1,93 @@
 [
  {
+  "run_id": 220,
+  "day": "2026-10-12",
+  "time": "07:41",
+  "slot": "sunrise",
+  "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR",
+    "surf_min": 0.6,
+    "surf_max": 1.1,
+    "swell_h": 1.3,
+    "swell_p": 11,
+    "swell_dir": "NW",
+    "wind_kts": 11,
+    "wind_gust": 12,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": 4,
+    "note": "thick fog, point and water hidden on every crop incl. the close-up; surfers not countable, forecast only; ~4 on the sand",
+    "erisurf": 3
+   },
+   {
+    "spot": "Norte",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 1.3,
+    "swell_p": 11,
+    "swell_dir": "NW",
+    "wind_kts": 11,
+    "wind_gust": 12,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": "no cam frames this run, forecast only",
+    "erisurf": 1
+   },
+   {
+    "spot": "Sul",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 1.3,
+    "swell_p": 11,
+    "swell_dir": "NW",
+    "wind_kts": 11,
+    "wind_gust": 12,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": null,
+    "note": "flat, glassy, lines passing unbroken, breaking only on the rocks; nobody in the water on the detail crop",
+    "erisurf": 1
+   },
+   {
+    "spot": "Pedra",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 1.1,
+    "swell_h": 1.3,
+    "swell_p": 11,
+    "swell_dir": "NW",
+    "wind_kts": 11,
+    "wind_gust": 12,
+    "wind_dir": "N",
+    "surfers": 0,
+    "people": null,
+    "note": "small clean waves peeling over the reef, light texture; nobody in the water on the detail crop, 1 walker on the cliff",
+    "erisurf": 1
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 1.3,
+    "swell_p": 11,
+    "swell_dir": "NW",
+    "wind_kts": 11,
+    "wind_gust": 12,
+    "wind_dir": "N",
+    "surfers": null,
+    "people": null,
+    "note": "fog and a soft-focus cam, water unreadable, surfers not countable",
+    "erisurf": 1
+   }
+  ]
+ },
+ {
   "run_id": 219,
   "day": "2026-10-11",
   "time": "18:41",
@@ -1668,78 +1756,6 @@
     "people": 6,
     "note": "wind-textured, closing out on the sand; nobody in the water on the detail crop, count approximate (wide cam)",
     "erisurf": 1.5
-   }
-  ]
- },
- {
-  "run_id": 200,
-  "day": "2026-10-08",
-  "time": "07:41",
-  "slot": "sunrise",
-  "spots": [
-   {
-    "spot": "Ribeira",
-    "rating": "FAIR_TO_GOOD",
-    "surf_min": 0.9,
-    "surf_max": 1.4,
-    "swell_h": 2.3,
-    "swell_p": 9,
-    "swell_dir": "NNW",
-    "wind_kts": 15,
-    "wind_gust": 19,
-    "wind_dir": "NNE",
-    "surfers": 2,
-    "people": 12,
-    "note": "clean offshore walls peeling at low tide, one surfer riding; ~2 out is a minimum, contest tarp blocks most of the close-up",
-    "erisurf": 4.5
-   },
-   {
-    "spot": "Norte",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 1.2,
-    "surf_max": 1.5,
-    "swell_h": 2.3,
-    "swell_p": 9,
-    "swell_dir": "NNW",
-    "wind_kts": 15,
-    "wind_gust": 19,
-    "wind_dir": "NNE",
-    "surfers": null,
-    "people": null,
-    "note": "no cam frames this run, forecast only",
-    "erisurf": 2
-   },
-   {
-    "spot": "Sul",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 1.2,
-    "surf_max": 1.5,
-    "swell_h": 2.3,
-    "swell_p": 9,
-    "swell_dir": "NNW",
-    "wind_kts": 15,
-    "wind_gust": 19,
-    "wind_dir": "NNE",
-    "surfers": 0,
-    "people": null,
-    "note": "small clean lines, only breaking by the rocks; nobody on the detail crop",
-    "erisurf": 1.5
-   },
-   {
-    "spot": "Pedra",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 1.2,
-    "surf_max": 1.5,
-    "swell_h": 2.3,
-    "swell_p": 9,
-    "swell_dir": "NNW",
-    "wind_kts": 15,
-    "wind_gust": 19,
-    "wind_dir": "NNE",
-    "surfers": null,
-    "people": null,
-    "note": "crumbly wind-textured peak on the reef; two dark specks outside the break, not resolvable as surfers",
-    "erisurf": 2
    }
   ]
  }
