@@ -235,3 +235,13 @@ document.querySelectorAll('.price_action-tab-btn').forEach(btn => {
         this.classList.add('active');
     });
 });
+
+// Open a tab straight from a link such as index.html#tab-bonds (used by the board pages' banner);
+// the 'tab-' prefix keeps the browser from also jumping to the element with the same id
+document.addEventListener('DOMContentLoaded', function () {
+  const h = location.hash.slice(1);
+  if (h.indexOf('tab-') !== 0) return;
+  const call = "showTab('" + h.slice(4) + "')";
+  const tab = Array.from(document.querySelectorAll('.tab')).find(t => (t.getAttribute('onclick') || '').includes(call));
+  if (tab) tab.click();
+});
