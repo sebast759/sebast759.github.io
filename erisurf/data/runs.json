@@ -1,5 +1,93 @@
 [
  {
+  "run_id": 254,
+  "day": "2026-10-18",
+  "time": "18:41",
+  "slot": "dusk",
+  "spots": [
+   {
+    "spot": "Ribeira",
+    "rating": "FAIR",
+    "surf_min": 0.6,
+    "surf_max": 0.9,
+    "swell_h": 1.2,
+    "swell_p": 10,
+    "swell_dir": "NW",
+    "wind_kts": 20,
+    "wind_gust": 27,
+    "wind_dir": "NNE",
+    "surfers": 27,
+    "people": 15,
+    "note": "waist-high organised lines, wind chop on top, gusts 50 km/h; ~27 out on close-up, most on the inside",
+    "erisurf": 3
+   },
+   {
+    "spot": "Norte",
+    "rating": "VERY_POOR",
+    "surf_min": 0.9,
+    "surf_max": 1.4,
+    "swell_h": 1.2,
+    "swell_p": 10,
+    "swell_dir": "NW",
+    "wind_kts": 20,
+    "wind_gust": 27,
+    "wind_dir": "NNE",
+    "surfers": null,
+    "people": null,
+    "note": "no frames this run; forecast-only",
+    "erisurf": 1
+   },
+   {
+    "spot": "Sul",
+    "rating": "VERY_POOR",
+    "surf_min": 0.9,
+    "surf_max": 1.4,
+    "swell_h": 1.2,
+    "swell_p": 10,
+    "swell_dir": "NW",
+    "wind_kts": 20,
+    "wind_gust": 27,
+    "wind_dir": "NNE",
+    "surfers": 0,
+    "people": null,
+    "note": "small swell lines barely breaking off the rocks; nobody out on detail crop",
+    "erisurf": 1
+   },
+   {
+    "spot": "Pedra",
+    "rating": "VERY_POOR",
+    "surf_min": 0.9,
+    "surf_max": 1.2,
+    "swell_h": 1.2,
+    "swell_p": 10,
+    "swell_dir": "NW",
+    "wind_kts": 20,
+    "wind_gust": 27,
+    "wind_dir": "NNE",
+    "surfers": 0,
+    "people": 1,
+    "note": "spray blowing off sectiony lips, wind-blown; nobody out on detail crop, 1 on rocks",
+    "erisurf": 1
+   },
+   {
+    "spot": "Lizandro",
+    "rating": "POOR",
+    "surf_min": 0.9,
+    "surf_max": 1.2,
+    "swell_h": 1.2,
+    "swell_p": 10,
+    "swell_dir": "NW",
+    "wind_kts": 20,
+    "wind_gust": 27,
+    "wind_dir": "NNE",
+    "surfers": null,
+    "people": null,
+    "note": "low sun glare, water unreadable; no count",
+    "erisurf": 1
+   }
+  ]
+ },
+ {
   "run_id": 253,
   "day": "2026-10-18",
   "time": "16:41",
@@ -1587,78 +1675,6 @@
     "people": 1,
     "note": "heavy shorebreak closing out on sand; nobody in water, 1 on beach",
     "erisurf": 2.5
-   }
-  ]
- },
- {
-  "run_id": 234,
-  "day": "2026-10-14",
-  "time": "18:41",
-  "slot": "dusk",
-  "spots": [
-   {
-    "spot": "Norte",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.1,
-    "swell_p": 9,
-    "swell_dir": "WNW",
-    "wind_kts": 8,
-    "wind_gust": 10,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": "no cam frames this run, forecast only",
-    "erisurf": 2
-   },
-   {
-    "spot": "Sul",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.1,
-    "swell_p": 9,
-    "swell_dir": "WNW",
-    "wind_kts": 8,
-    "wind_gust": 10,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": "thick fog, foam only on the rocks; lineup unreadable, forecast stands",
-    "erisurf": 2
-   },
-   {
-    "spot": "Pedra",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 0.8,
-    "swell_p": 14,
-    "swell_dir": "WNW",
-    "wind_kts": 8,
-    "wind_gust": 10,
-    "wind_dir": "N",
-    "surfers": 6,
-    "people": null,
-    "note": "thick fog but bodies resolvable; crumbly whitewater, ~6 out (approx)",
-    "erisurf": 3
-   },
-   {
-    "spot": "Lizandro",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.1,
-    "swell_p": 9,
-    "swell_dir": "WNW",
-    "wind_kts": 8,
-    "wind_gust": 10,
-    "wind_dir": "N",
-    "surfers": null,
-    "people": null,
-    "note": "fogged out, water unreadable; forecast only",
-    "erisurf": 2
    }
   ]
  }
