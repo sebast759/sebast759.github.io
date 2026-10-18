@@ -1,5 +1,12 @@
 [
  {
+  "run_id": 250,
+  "day": "2026-10-18",
+  "time": "07:41",
+  "slot": "sunrise",
+  "spots": []
+ },
+ {
   "run_id": 249,
   "day": "2026-10-17",
   "time": "18:41",
@@ -1652,94 +1659,6 @@
     "people": 14,
     "note": "messy dumping shorebreak; nobody in water, surfers walking on sand",
     "erisurf": 1.5
-   }
-  ]
- },
- {
-  "run_id": 230,
-  "day": "2026-10-14",
-  "time": "07:40",
-  "slot": "sunrise",
-  "spots": [
-   {
-    "spot": "Ribeira",
-    "rating": "FAIR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.1,
-    "swell_p": 9,
-    "swell_dir": "WNW",
-    "wind_kts": 7,
-    "wind_gust": 7,
-    "wind_dir": "NNE",
-    "surfers": 4,
-    "people": 2,
-    "note": "clean peeling lines off the point, one rider on a wave; ~4 out on crowd crop (close-up two-thirds blocked, a floor)",
-    "erisurf": 4
-   },
-   {
-    "spot": "Norte",
-    "rating": "FAIR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.1,
-    "swell_p": 9,
-    "swell_dir": "WNW",
-    "wind_kts": 7,
-    "wind_gust": 7,
-    "wind_dir": "NNE",
-    "surfers": null,
-    "people": null,
-    "note": "no cam frames this run, forecast only",
-    "erisurf": 3
-   },
-   {
-    "spot": "Sul",
-    "rating": "FAIR",
-    "surf_min": 0.6,
-    "surf_max": 1.1,
-    "swell_h": 1.1,
-    "swell_p": 9,
-    "swell_dir": "WNW",
-    "wind_kts": 7,
-    "wind_gust": 7,
-    "wind_dir": "NNE",
-    "surfers": 1,
-    "people": null,
-    "note": "swell lines rolling through mostly unbroken, white only on the rocks; 1 out sitting",
-    "erisurf": 3
-   },
-   {
-    "spot": "Pedra",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.6,
-    "surf_max": 0.9,
-    "swell_h": 1.1,
-    "swell_p": 9,
-    "swell_dir": "WNW",
-    "wind_kts": 7,
-    "wind_gust": 7,
-    "wind_dir": "NNE",
-    "surfers": 9,
-    "people": 0,
-    "note": "clean lines peeling along the reef; ~9 out in a pack on the shoulder",
-    "erisurf": 3
-   },
-   {
-    "spot": "Lizandro",
-    "rating": "POOR_TO_FAIR",
-    "surf_min": 0.6,
-    "surf_max": 0.9,
-    "swell_h": 1.1,
-    "swell_p": 9,
-    "swell_dir": "WNW",
-    "wind_kts": 7,
-    "wind_gust": 7,
-    "wind_dir": "NNE",
-    "surfers": 1,
-    "people": 2,
-    "note": "steep, dumpy waves on the sand, some green walls; 1 out past the flagpole",
-    "erisurf": 2.5
    }
   ]
  }
