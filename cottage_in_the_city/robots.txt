@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sebast759.github.io/cottage_in_the_city/sitemap.xml
