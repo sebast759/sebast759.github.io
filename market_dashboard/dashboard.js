@@ -150,10 +150,27 @@ document.querySelectorAll('.etf-flow-tab-btn').forEach(btn => {
             eth: 'Ethereum ETF cumulative net flows'
         };
         const chart = document.getElementById('etf-flow-chart');
-        chart.src = 'https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/' + charts[this.dataset.flow];
+        chart.src = 'https://tame-cap.s3.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/' + charts[this.dataset.flow];
         chart.alt = labels[this.dataset.flow];
 
         document.querySelectorAll('.etf-flow-tab-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+
+// Coins chart switching (treemap / weights)
+document.querySelectorAll('.structure-tab-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const charts = {treemap: 'treemap_ytd', weights: 'CCI_weights'};
+        const labels = {
+            treemap: 'Cryptocurrency market treemap, year to date',
+            weights: 'Crypto index weights'
+        };
+        const chart = document.getElementById('treemap-chart');
+        chart.src = 'https://tame-cap.s3.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/' + charts[this.dataset.structure];
+        chart.alt = labels[this.dataset.structure];
+
+        document.querySelectorAll('.structure-tab-btn').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
     });
 });

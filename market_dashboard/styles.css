@@ -385,6 +385,7 @@ body {
 
 .crypto-tab-btn,
 .price_action-tab-btn,
+.structure-tab-btn,
 .etf-flow-tab-btn {
     flex: 0 0 auto;
     padding: 0.42rem 0.65rem;
@@ -403,10 +404,12 @@ body {
 
 .crypto-tab-btn:hover,
 .price_action-tab-btn:hover,
+.structure-tab-btn:hover,
 .etf-flow-tab-btn:hover { color: #172033; }
 
 .crypto-tab-btn.active,
 .price_action-tab-btn.active,
+.structure-tab-btn.active,
 .etf-flow-tab-btn.active {
     background: #fff;
     color: #237f76;

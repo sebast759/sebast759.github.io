@@ -321,7 +321,7 @@
                     </div>
                     <div class="crypto-chart-frame crypto-chart-frame--tall">
                         <img id="etf-flow-chart"
-                             src="https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/btc_eth_cumulative_inflows"
+                             src="https://tame-cap.s3.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/btc_eth_cumulative_inflows"
                              alt="Bitcoin and Ethereum ETF cumulative net flows">
                     </div>
                 </section>
@@ -343,8 +343,11 @@
 
                 <section class="crypto-panel">
                     <div class="crypto-panel-head">
-                        <div><span class="crypto-kicker">Market structure</span><h3>Market treemap</h3></div>
-                        <span class="crypto-period-badge">YTD</span>
+                        <div><span class="crypto-kicker">Market structure</span><h3>Coins</h3></div>
+                        <div class="crypto-segmented" aria-label="Coins chart">
+                            <button class="structure-tab-btn active" data-structure="treemap">Treemap</button>
+                            <button class="structure-tab-btn" data-structure="weights">Weights</button>
+                        </div>
                     </div>
                     <div class="crypto-chart-frame">
                         <img id="treemap-chart"
