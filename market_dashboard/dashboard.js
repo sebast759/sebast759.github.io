@@ -60,6 +60,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const prevBtn = cryptoBtns.find(b => b.dataset.period === 'previous');
         if (mtdBtn) mtdBtn.textContent = mtdLabel;
         if (prevBtn) prevBtn.textContent = prevLabel;
+        // Previous quarter label, e.g. Q3 2026
+        const q = Math.floor(now.getMonth() / 3);
+        const prevQ = q === 0 ? 4 : q;
+        const prevQYear = q === 0 ? now.getFullYear() - 1 : now.getFullYear();
+        const prevQBtn = cryptoBtns.find(b => b.dataset.period === 'prevq');
+        if (prevQBtn) prevQBtn.textContent = `Q${prevQ} ${prevQYear}`;
     }
 
 
@@ -129,7 +135,12 @@ function showCryptoPeriod(period, btn) {
         '2025': 'year_2025_performance_rainbow',
         '2024': 'year_2024_performance_rainbow'
     };
-    document.getElementById('crypto-chart').src = 
+    const SEB = 'https://tame-cap.s3.amazonaws.com/public/SEB/Dashboard/Plot_Universe_Graphs/';
+    const full = {
+        'qtd': SEB + 'qtd_performance_rainbow',
+        'prevq': SEB + 'prev_q_performance_rainbow'
+    };
+    document.getElementById('crypto-chart').src = full[period] ||
         'https://tame-cap.s3.us-east-1.amazonaws.com/public/TG_PROD/Dashboard/Plot_Universe_Graphs/' + urls[period];
     
     document.querySelectorAll('.crypto-tab-btn').forEach(b => b.classList.remove('active'));
