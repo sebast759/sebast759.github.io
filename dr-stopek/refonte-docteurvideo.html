@@ -1,0 +1,1173 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Refonte DocteurVideo</title>
+<style>
+:root{
+  --bg:#f6f8fa; --card:#fff; --ink:#1b2733; --muted:#5b6b7a; --line:#d8e0e7;
+  --surg:#0f766e; --surg-bg:#d9f1ee;
+  --edu:#2457a6; --edu-bg:#dde8f8;
+  --prac:#9a5b00; --prac-bg:#fbebcf;
+  --bad:#b42318; --bad-bg:#fde4e1;
+  --ok:#17803d; --ok-bg:#dcf3e3;
+  --rdv:#d9480f;
+  --shadow:0 1px 2px rgba(20,40,60,.08),0 6px 20px rgba(20,40,60,.06);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#10161c; --card:#18212a; --ink:#e8eef4; --muted:#9fb0c0; --line:#2b3947;
+    --surg:#4fd1c5; --surg-bg:#12332f;
+    --edu:#7fb0ff; --edu-bg:#15264a;
+    --prac:#f2b45a; --prac-bg:#3a2a0d;
+    --bad:#ff8a7e; --bad-bg:#431d19;
+    --ok:#6fdc93; --ok-bg:#12341f;
+    --rdv:#ff7a45;
+    --shadow:none;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header.hero{padding:44px 0 28px;border-bottom:1px solid var(--line);background:var(--card)}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.15;margin:0 0 10px}
+h2{font-size:clamp(22px,3.4vw,30px);margin:0 0 6px;line-height:1.2}
+h3{font-size:20px;margin:0 0 6px}
+p{margin:0 0 12px}
+.lead{font-size:20px;color:var(--muted);max-width:760px}
+section{padding:42px 0 10px}
+.num{display:inline-block;background:var(--ink);color:var(--bg);border-radius:50%;width:34px;height:34px;line-height:34px;text-align:center;font-size:17px;margin-right:10px;vertical-align:middle}
+.sub{color:var(--muted);margin-bottom:18px;max-width:780px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:820px){.grid2,.grid3{grid-template-columns:1fr}}
+.chip{display:inline-block;font-size:13px;font-weight:600;border-radius:99px;padding:1px 10px;margin-right:6px;white-space:nowrap;vertical-align:middle}
+.c-orig{background:var(--ok-bg);color:var(--ok)}
+.c-adap{background:var(--prac-bg);color:var(--prac)}
+.c-new{background:var(--edu-bg);color:var(--edu)}
+.c-todo{background:var(--bad-bg);color:var(--bad)}
+.c-surg{background:var(--surg-bg);color:var(--surg)}
+.legend{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:15px;color:var(--muted);margin:10px 0 0}
+svg{width:100%;height:auto;display:block}
+svg text{font-family:inherit;fill:var(--ink)}
+.n{stroke-width:1.5}
+.n-surg{fill:var(--surg-bg);stroke:var(--surg)}
+.n-edu{fill:var(--edu-bg);stroke:var(--edu)}
+.n-prac{fill:var(--prac-bg);stroke:var(--prac)}
+.n-bad{fill:var(--bad-bg);stroke:var(--bad)}
+.n-dead{fill:var(--card);stroke:var(--muted);stroke-dasharray:4 3}
+.n-root{fill:var(--ink);stroke:var(--ink)}
+.t-root{fill:var(--bg)!important}
+svg text.t-bad{fill:var(--bad)}
+svg text.t-mut{fill:var(--muted)}
+svg text.t-rdv{fill:var(--rdv)}
+.ln{stroke:var(--muted);stroke-width:1.4;fill:none}
+.ln-bad{stroke:var(--bad);stroke-width:1.4;fill:none;stroke-dasharray:5 4}
+.badge{fill:var(--rdv)}
+.badge-t{fill:#fff!important;font-weight:700}
+.rdvbar{fill:var(--rdv)}
+.small{font-size:13px}
+.kpi{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.kpi div{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 14px;min-width:150px}
+.kpi b{display:block;font-size:26px;line-height:1.1}
+.kpi span{font-size:14px;color:var(--muted)}
+
+/* diagnostic list */
+.diag{counter-reset:d;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:820px){.diag{grid-template-columns:1fr}}
+.diag li{counter-increment:d;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--bad);border-radius:10px;padding:12px 14px 12px 14px;font-size:16px}
+.diag li.good{border-left-color:var(--ok)}
+.diag li b{display:block}
+.diag li::before{content:counter(d);float:right;color:var(--muted);font-weight:700}
+
+/* rdv strips */
+.strips{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:820px){.strips{grid-template-columns:1fr}}
+.strip{display:flex;flex-direction:column;gap:4px}
+.strip .s{display:flex;justify-content:space-between;align-items:center;border-radius:6px;padding:5px 10px;font-size:14px;background:var(--bg);border:1px solid var(--line)}
+.strip .s.r{background:var(--rdv);border-color:var(--rdv);color:#fff;font-weight:700}
+.strip .s.rc{background:var(--surg-bg);border-color:var(--surg);color:var(--surg);font-weight:600}
+
+/* journey */
+.journey{display:grid;grid-template-columns:110px repeat(4,1fr);gap:10px}
+.journey .h{font-weight:700;text-align:center;padding:8px;border-radius:10px;background:var(--ink);color:var(--bg);position:relative}
+.journey .h:not(:last-child)::after{content:"";}
+.journey .row{align-self:center;font-weight:700;color:var(--surg);font-size:16px}
+.journey .row.l{color:var(--edu)}
+.journey .c{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:14.5px;line-height:1.45}
+.journey .c q{display:block;color:var(--ink);quotes:"« " " »";margin-bottom:6px}
+@media(max-width:900px){
+  .journey{grid-template-columns:1fr}
+  .journey .h{text-align:left}
+  .journey .row{margin-top:10px;font-size:19px}
+}
+
+/* wireframes */
+.browser{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card);box-shadow:var(--shadow)}
+.bar{background:var(--bg);border-bottom:1px solid var(--line);padding:8px 12px;font-size:13px;color:var(--muted);display:flex;gap:6px;align-items:center}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.url{margin-left:10px;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1px 10px;flex:1}
+.wf{padding:0;position:relative}
+.wf-nav{display:flex;align-items:center;gap:14px;padding:12px 18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.wf-nav b{font-size:17px}
+.wf-nav small{color:var(--muted);display:block;font-size:11px;letter-spacing:.06em}
+.wf-nav ul{display:flex;gap:14px;list-style:none;margin:0 0 0 auto;padding:0;font-size:14px;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--rdv);color:#fff;font-weight:700;border-radius:8px;padding:9px 16px;font-size:15px;white-space:nowrap}
+.wf-hero{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;padding:26px 18px;align-items:center}
+@media(max-width:720px){.wf-hero{grid-template-columns:1fr}}
+.wf-hero h4{font-size:26px;line-height:1.15;margin:0 0 8px}
+.wf-hero p{font-size:16px;color:var(--muted);margin:0 0 14px}
+.ph{border:2px dashed var(--muted);border-radius:12px;min-height:150px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);font-size:14px;padding:10px;background:repeating-linear-gradient(45deg,transparent 0 10px,rgba(120,140,160,.08) 10px 20px)}
+.wf-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:0 18px 18px}
+@media(max-width:720px){.wf-cards{grid-template-columns:1fr}}
+.wcard{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card)}
+.wcard .t{position:relative;aspect-ratio:16/9;background:var(--edu-bg);display:flex;align-items:center;justify-content:center;color:var(--edu);font-size:12px;text-align:center;padding:4px}
+.wcard .t img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.wcard .t .play{position:absolute;width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center}
+.wcard .t .play::after{content:"";border-left:12px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px}
+.wcard .b{padding:9px 11px;font-size:14px}
+.wcard .b b{display:block;font-size:15px}
+.wcard .b span{color:var(--muted);font-size:13px}
+.wf-band{display:flex;gap:16px;align-items:center;padding:14px 18px;background:var(--bg);border-top:1px solid var(--line);font-size:14.5px;flex-wrap:wrap}
+.wf-band .ph{min-height:84px;width:120px;flex:none}
+.wf-band p{margin:0;flex:1;min-width:200px}
+.wf-foot{padding:12px 18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.pin{position:absolute;width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--bg);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px var(--card);z-index:2}
+.notes{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:8px;font-size:15.5px}
+.notes li{display:flex;gap:10px;align-items:flex-start}
+.notes li i{flex:none;width:24px;height:24px;border-radius:50%;background:var(--ink);color:var(--bg);font-style:normal;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.phone{width:270px;border:8px solid var(--ink);border-radius:30px;background:var(--card);overflow:hidden;position:relative;margin:0 auto;box-shadow:var(--shadow)}
+.phone .in{padding:12px;min-height:470px;font-size:14px;position:relative}
+.phone h4{font-size:19px;line-height:1.2;margin:8px 0}
+.phone .sticky{position:absolute;left:0;right:0;bottom:0;background:var(--rdv);color:#fff;font-weight:700;text-align:center;padding:14px;font-size:16px}
+.phone .mc{border:1px solid var(--line);border-radius:10px;padding:9px;margin-bottom:8px}
+.phone .mc b{display:block}
+
+/* diff */
+.diff{display:grid;gap:10px}
+.diff .d{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:16px}
+.diff small{display:block;color:var(--muted);font-size:13px;margin-bottom:2px}
+del{background:var(--bad-bg);color:var(--bad);text-decoration:line-through;padding:0 3px;border-radius:3px}
+ins{background:var(--ok-bg);color:var(--ok);text-decoration:none;padding:0 3px;border-radius:3px}
+
+table{border-collapse:collapse;width:100%;font-size:15.5px;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--bg);font-size:14px;color:var(--muted)}
+code{font:14px/1.3 ui-monospace,Consolas,monospace;background:var(--bg);padding:1px 6px;border-radius:5px;border:1px solid var(--line);word-break:break-all}
+.tag-same{color:var(--muted)} .tag-301{color:var(--rdv);font-weight:700}
+.q{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:820px){.q{grid-template-columns:1fr}}
+.q ul{list-style:none;margin:0;padding:0}
+.q li{padding:6px 0 6px 28px;position:relative;border-bottom:1px dashed var(--line);font-size:16px}
+.q li::before{content:"";position:absolute;left:2px;top:11px;width:15px;height:15px;border:2px solid var(--muted);border-radius:4px}
+footer{padding:36px 0 60px;color:var(--muted);font-size:14px}
+.scroll{overflow-x:auto}
+
+/* decision path */
+.path{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;position:relative}
+@media(max-width:900px){.path{grid-template-columns:1fr}}
+.step{background:var(--card);border:1px solid var(--line);border-top:6px solid var(--ink);border-radius:12px;padding:14px 16px;position:relative}
+.step.s1{border-top-color:var(--edu)} .step.s2{border-top-color:var(--prac)} .step.s3{border-top-color:var(--surg)} .step.s4{border-top-color:var(--rdv);background:var(--bg)}
+.step .no{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.05em}
+.step h3{font-size:22px;margin:2px 0 4px}
+.step .think{font-style:italic;color:var(--muted);font-size:16px;margin-bottom:10px}
+.step .need{font-size:15px;margin:0 0 8px}
+.step .need b{display:block;font-size:12px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;margin-bottom:2px}
+.step:not(:last-child)::after{content:"\203A";position:absolute;right:-13px;top:46%;font-size:30px;line-height:1;color:var(--muted);z-index:2}
+@media(max-width:900px){.step:not(:last-child)::after{content:"\2193";right:auto;left:50%;top:auto;bottom:-22px}}
+.mapt{font-size:14.5px;min-width:900px}
+.mapt td{vertical-align:top;padding:10px}
+.mapt td:first-child{font-weight:700;white-space:nowrap}
+.mapt q{quotes:"« " " »";display:block;margin-bottom:5px;line-height:1.4}
+.mapt .gap{background:var(--bad-bg)}
+.mapt .urg{background:var(--prac-bg)}
+.cta-ex{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.cta-ex .ce{flex:1;min-width:230px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:15px}
+.cta-ex .ce small{display:block;color:var(--muted);font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px}
+.cta-ex .ce .btn{margin-top:8px}
+.btn.soft{background:transparent;color:var(--rdv);border:2px solid var(--rdv)}
+.bands .s{border-left-width:6px}
+.bands .s.b1{border-left-color:var(--edu)} .bands .s.b2{border-left-color:var(--prac)} .bands .s.b3{border-left-color:var(--surg)} .bands .s.b4{border-left-color:var(--muted)}
+.bands .tg{font-size:12px;color:var(--muted)}
+.qlink{font-size:14px;color:var(--muted);text-decoration:underline;white-space:nowrap}
+.wf-sec{padding:20px 18px;border-top:1px solid var(--line);position:relative}
+.wf-sec .lab{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.wf-sec.m .lab{color:var(--edu)} .wf-sec.n .lab{color:var(--prac)} .wf-sec.d .lab{color:var(--surg)}
+.wf-sec h5{font-size:21px;margin:0 0 10px;line-height:1.2}
+.sit{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:720px){.sit{grid-template-columns:1fr 1fr}}
+.sit .wcard .b{font-size:13.5px}
+.when{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;font-size:14.5px}
+@media(max-width:720px){.when{grid-template-columns:1fr}}
+.when div{background:var(--prac-bg);border-radius:10px;padding:10px 12px}
+.who{display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:center}
+@media(max-width:720px){.who{grid-template-columns:1fr}}
+.proofs{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.proofs span{background:var(--surg-bg);color:var(--surg);border-radius:99px;padding:2px 10px;font-size:13px;font-weight:600}
+.wf-cta{text-align:center;padding:26px 18px;background:var(--bg);border-top:1px solid var(--line);position:relative}
+.wf-cta p{max-width:520px;margin:0 auto 12px;font-size:16px}
+
+.ang{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+@media(max-width:900px){.ang{grid-template-columns:1fr}}
+.ang .a{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:15px;border-top:5px solid var(--ink)}
+.ang .a.m{border-top-color:var(--edu)} .ang .a.n{border-top-color:var(--prac)} .ang .a.d{border-top-color:var(--surg)}
+.ang .a small{display:block;font-size:12px;letter-spacing:.06em;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.ang .a b{display:block;margin-bottom:4px;font-size:16px}
+.ang .a .src{display:block;font-size:12.5px;color:var(--muted);margin-top:6px}
+.ang a, .src a{color:var(--edu)}
+.ph2{display:grid;grid-template-columns:auto auto 1fr;gap:18px;align-items:center}
+@media(max-width:820px){.ph2{grid-template-columns:1fr 1fr}.ph2 .tx{grid-column:1/-1}}
+.amsler{width:170px;height:170px}
+.amsler line,.amsler path{stroke:var(--ink);stroke-width:1;fill:none}
+.amsler circle{fill:var(--ink)}
+.alert2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:820px){.alert2{grid-template-columns:1fr}}
+.alert2 div{border-radius:12px;padding:12px 14px;font-size:15px}
+.al1{background:var(--prac-bg);border-left:8px solid var(--prac)} .al2{background:var(--bad-bg);border-left:8px solid var(--bad)}
+.srclist{font-size:14px;color:var(--muted);columns:2;column-gap:24px}
+@media(max-width:820px){.srclist{columns:1}}
+.srclist li{margin-bottom:4px;break-inside:avoid}
+
+.top{position:sticky;top:0;z-index:100;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 2px 8px rgba(20,40,60,.06)}
+.top .row1{display:flex;gap:6px;align-items:center;padding:8px 16px;max-width:1080px;margin:0 auto;flex-wrap:wrap}
+.top .brand{font-weight:700;font-size:15px;margin-right:auto}
+.top .row1{padding:10px 16px}
+.tabb{border:1px solid var(--line);background:var(--bg);color:var(--ink);font:600 15px system-ui,sans-serif;padding:7px 14px;border-radius:99px;cursor:pointer}
+.tabb[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.toc{display:flex;gap:4px;overflow-x:auto;padding:0 16px 8px;max-width:1080px;margin:0 auto;white-space:nowrap;scrollbar-width:thin}
+.toc a{font-size:14px;color:var(--muted);text-decoration:none;padding:3px 10px;border-radius:99px;border:1px solid transparent;flex:none}
+.toc a:hover{border-color:var(--line);color:var(--ink)}
+.toc a.on{background:var(--edu-bg);color:var(--edu);font-weight:700}
+h2[id]{scroll-margin-top:118px}
+.guide{margin-top:18px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.guide h3{margin:0 0 8px}
+.gl{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media(max-width:820px){.gl{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.gl{grid-template-columns:1fr}}
+.gl a{display:block;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 12px;color:var(--ink);text-decoration:none;font-size:16px;line-height:1.3}
+.gl a b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--edu);margin-bottom:2px}
+.gl a span{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.gl a:hover{border-color:var(--edu)}
+.gl a.ask{border-color:var(--rdv)} .gl a.ask b{color:var(--rdv)}
+@media print{[hidden]{display:block!important}.top{display:none}}
+
+.c-ok{background:var(--ok-bg);color:var(--ok)}
+.dec{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:820px){.dec{grid-template-columns:1fr}}
+.dec .g{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.dec .g h3{margin-bottom:8px}
+.dec .di{padding:8px 0;border-top:1px dashed var(--line);font-size:15.5px;line-height:1.45}
+.dec .di:first-of-type{border-top:0}
+.dec .di b{display:block}
+.dec .di .chip{margin-bottom:3px}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 22px}
+@media(max-width:900px){.flow{grid-template-columns:1fr}}
+.flow .f{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--edu);border-radius:12px;padding:12px 14px;font-size:15px;position:relative}
+.flow .f:nth-child(2){border-top-color:var(--prac)} .flow .f:nth-child(3){border-top-color:var(--surg)} .flow .f:nth-child(4){border-top-color:var(--rdv)}
+.flow .f b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.flow .f:not(:last-child)::after{content:"\203A";position:absolute;right:-12px;top:40%;font-size:28px;color:var(--muted);z-index:2}
+@media(max-width:900px){.flow .f:not(:last-child)::after{content:"\2193";right:auto;left:50%;top:auto;bottom:-20px}}
+
+/* ---- navigation en arbre ---- */
+.layout{display:grid;grid-template-columns:290px minmax(0,1fr);max-width:1440px;margin:0 auto;align-items:start}
+.tree{position:sticky;top:58px;max-height:calc(100vh - 58px);overflow:auto;padding:18px 10px 40px 18px;font-size:15px;border-right:1px solid var(--line);background:var(--bg)}
+.tree h4{margin:0 0 10px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.tree ul{list-style:none;margin:0;padding:0}
+.tree details{margin:0 0 6px}
+.tree summary{cursor:pointer;font-weight:700;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);padding:5px 6px;border-radius:8px;list-style:none;display:flex;align-items:center;gap:6px}
+.tree summary::-webkit-details-marker{display:none}
+.tree summary::before{content:"\25B8";font-size:11px;color:var(--muted);transition:transform .15s}
+.tree details[open]>summary::before{transform:rotate(90deg)}
+.tree summary:hover{background:var(--card)}
+.tree .kids{margin:2px 0 4px 11px;padding-left:10px;border-left:2px solid var(--line)}
+.tree a{display:block;padding:4px 8px;border-radius:8px;color:var(--muted);text-decoration:none;line-height:1.3}
+.tree a:hover{background:var(--card);color:var(--ink)}
+.tree a .n{display:inline-block;min-width:22px;font-weight:700;color:var(--muted)}
+.tree a.on{background:var(--edu-bg);color:var(--edu);font-weight:700}
+.tree a.on .n{color:var(--edu)}
+.tree .sub2{margin:1px 0 3px 14px;padding-left:8px;border-left:1px dashed var(--line)}
+.tree .sub2 a{font-size:14px;padding:2px 8px}
+.tree .ask a{color:var(--rdv);font-weight:700}
+.content{min-width:0}
+h2[id],h3[id],.comp[id]{scroll-margin-top:74px}
+#burger{display:none}
+@media(max-width:640px){.top .brand{display:none}.top .row1{justify-content:space-between}}
+.scrim{display:none}
+@media(max-width:1000px){
+  .layout{grid-template-columns:1fr}
+  #burger{display:inline-block}
+  .tree{position:fixed;left:0;top:0;bottom:0;width:min(86vw,330px);max-height:none;z-index:200;transform:translateX(-102%);transition:transform .2s;padding-top:70px;box-shadow:0 0 30px rgba(0,0,0,.25)}
+  body.nav-open .tree{transform:none}
+  body.nav-open .scrim{display:block;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:150}
+}
+@media(max-width:1250px){#tabp .grid2{grid-template-columns:1fr!important}}
+@media print{.tree,.scrim{display:none!important}.layout{display:block}}
+
+/* ---- onglet concurrents (portée limitée) ---- */
+#tabc :root:not([data-theme="light"]){--bg:#10161c;--card:#18212a;--ink:#e8eef4;--muted:#9fb0c0;--line:#2b3947;--surg:#4fd1c5;--surg-bg:#12332f;--edu:#7fb0ff;--edu-bg:#15264a;--prac:#f2b45a;--prac-bg:#3a2a0d;--bad:#ff8a7e;--bad-bg:#431d19;--ok:#6fdc93;--ok-bg:#12341f;--rdv:#ff7a45;--shadow:none}
+#tabc header{padding:40px 0 24px;background:var(--card);border-bottom:1px solid var(--line)}
+#tabc h1{font-size:clamp(28px,5vw,40px);line-height:1.15;margin:0 0 10px}
+#tabc h2{font-size:clamp(22px,3.4vw,30px);margin:0 0 6px;line-height:1.2}
+#tabc h3{font-size:19px;margin:0 0 4px}
+#tabc p{margin:0 0 12px}
+#tabc .lead{font-size:20px;color:var(--muted);max-width:780px}
+#tabc section{padding:40px 0 8px}
+#tabc .sub{color:var(--muted);margin-bottom:16px;max-width:800px}
+#tabc .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+#tabc .chip{display:inline-block;font-size:13px;font-weight:600;border-radius:99px;padding:1px 10px;margin-right:6px;white-space:nowrap;vertical-align:middle}
+#tabc .c-fr{background:var(--edu-bg);color:var(--edu)}
+#tabc .c-us{background:var(--prac-bg);color:var(--prac)}
+#tabc .c-todo{background:var(--bad-bg);color:var(--bad)}
+#tabc .c-ok{background:var(--ok-bg);color:var(--ok)}
+#tabc .scroll{overflow-x:auto}
+#tabc table{border-collapse:collapse;width:100%;font-size:15px;background:var(--card);border:1px solid var(--line)}
+#tabc th,#tabc td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:center;vertical-align:middle}
+#tabc th{background:var(--bg);font-size:13px;color:var(--muted)}
+#tabc td:first-child,#tabc th:first-child{text-align:left;font-weight:600}
+#tabc td small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+#tabc .d{letter-spacing:2px;color:var(--ink);white-space:nowrap}
+#tabc .d i{font-style:normal;color:var(--line)}
+#tabc tr.me td{background:var(--prac-bg)}
+#tabc tr.tg td{background:var(--ok-bg)}
+#tabc .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+#tabc .grid{grid-template-columns:1fr}
+#tabc .comp{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:15.5px}
+#tabc .comp h3{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+#tabc .comp ul{margin:6px 0 0;padding-left:18px}
+#tabc .comp li{margin-bottom:3px}
+#tabc .lab{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+#tabc .plus{color:var(--ok)}
+#tabc .minus{color:var(--bad)}
+#tabc .take{color:var(--edu)}
+#tabc svg{width:100%;height:auto;display:block}
+#tabc svg text{font-family:inherit;fill:var(--ink)}
+#tabc .lessons{counter-reset:l;list-style:none;margin:0;padding:0;display:grid;gap:10px}
+#tabc .lessons li{counter-increment:l;background:var(--card);border:1px solid var(--line);border-left:6px solid var(--surg);border-radius:10px;padding:12px 16px 12px 52px;position:relative;font-size:16.5px}
+#tabc .lessons li::before{content:counter(l);position:absolute;left:14px;top:12px;width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--bg);font-weight:700;text-align:center;line-height:28px;font-size:15px}
+#tabc .lessons b{display:block}
+#tabc .borrow td{text-align:left;font-weight:400;vertical-align:top}
+#tabc .borrow td:first-child{font-weight:700;white-space:nowrap}
+#tabc a{color:var(--edu)}
+#tabc .small{font-size:14px;color:var(--muted)}
+#tabc footer{padding:30px 0 60px}
+#tabc code{font:14px ui-monospace,Consolas,monospace;background:var(--bg);padding:1px 6px;border-radius:5px;border:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="row1">
+    <button class="tabb" id="burger" aria-label="Ouvrir le sommaire">☰ Sommaire</button>
+    <span class="brand">Refonte DocteurVideo</span>
+    <button class="tabb" data-tab="p" aria-selected="true">La proposition</button>
+    <button class="tabb" data-tab="c" aria-selected="false">Les concurrents</button>
+  </div>
+  </div>
+<div class="layout">
+<aside class="tree" id="tree" aria-label="Sommaire"></aside>
+<div class="content">
+<div id="tabp">
+<header class="hero">
+  <div class="wrap">
+    <p class="small" style="color:var(--muted);margin-bottom:6px">Proposition de refonte · docteurvideo.com · analyse du 26 octobre 2026</p>
+    <h1>Garder DocteurVideo.<br>Faire du Dr Stopek le chirurgien qu'on vient consulter.</h1>
+    <p class="lead">Le site actuel est une très bonne bibliothèque de vidéos. Mais un patient ne prend pas rendez-vous parce qu'on lui montre un bouton. Il le prend quand il a répondu à trois questions : <b>pourquoi moi, pourquoi maintenant, pourquoi le Dr Stopek.</b> La refonte organise chaque page autour de ces trois réponses. Le rendez-vous arrive ensuite, une seule fois. Côté chirurgie réfractive, le SMILE passe en tête.</p>
+    <div class="kpi">
+      <div><b>14</b><span>pages analysées</span></div>
+      <div><b>0</b><span>balise H1 sur le site actuel</span></div>
+      <div><b>2 sur 14</b><span>pages avec un bouton RDV visible</span></div>
+      <div><b>4</b><span>anciennes adresses en erreur 404</span></div>
+    </div>
+
+    <div class="guide">
+      <h3>Par où commencer ?</h3>
+      <div class="gl">
+        <a href="#s1"><b>5 minutes</b> Le constat<span>sections 1 à 2</span></a>
+        <a href="#s3"><b>Le plan</b> Le nouveau plan du site<span>section 3</span></a>
+        <a href="#s4"><b>La logique</b> Pourquoi moi, maintenant, lui<span>sections 4 à 7</span></a>
+        <a href="#s8"><b>À voir</b> La maquette de l'accueil<span>section 8</span></a>
+        <a href="#c1"><b>Onglet 2</b> Les concurrents<span>France et États-Unis</span></a>
+        <a href="#s12" class="ask"><b>À valider</b> Nos décisions, sauf avis contraire<span>section 12 : une relecture de 20 minutes</span></a>
+      </div>
+      <p class="small" style="margin:10px 0 0;color:var(--muted)">Ce document a deux onglets (en haut de page) : <b>La proposition</b> et <b>Les concurrents</b>. Le sommaire à gauche (bouton « Sommaire » sur téléphone) permet de sauter d'une section à l'autre.</p>
+    </div>
+    <div class="legend">
+      <span><span class="chip c-orig">ORIGINAL</span>texte repris tel quel</span>
+      <span><span class="chip c-adap">ADAPTÉ</span>légèrement modifié</span>
+      <span><span class="chip c-new">NOUVEAU</span>court, écrit pour la refonte</span>
+      <span><span class="chip c-todo">À COMPLÉTER</span>information absente du site</span>
+    </div>
+  </div>
+</header>
+<main class="wrap">
+
+<!-- 1 -->
+<section>
+  <h2 id="s1" data-toc="Le site aujourd'hui"><span class="num">1</span>Le site aujourd'hui</h2>
+  <p class="sub">Neuf sujets au même niveau, sans parcours. Les pages qui montrent le chirurgien sont perdues parmi les sujets d'information. Trois pages ne sont reliées à aucun menu.</p>
+  <div class="card"><svg id="svgNow" viewBox="0 0 760 360" role="img" aria-label="Plan actuel du site : un accueil, neuf sujets, trois pages isolées, quatre erreurs 404"></svg>
+    <div class="legend">
+      <span><span class="chip c-surg">chirurgie</span></span>
+      <span><span class="chip c-new">information vidéo</span></span>
+      <span><span class="chip" style="background:var(--rdv);color:#fff">RDV</span>bouton visible</span>
+      <span><span class="chip c-todo">problème</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section>
+  <h2 id="s2" data-toc="Dix constats"><span class="num">2</span>Dix constats</h2>
+  <p class="sub">Trois points forts à garder, sept points à corriger.</p>
+  <ol class="diag">
+    <li class="good"><b>Des vidéos qui ont fait leurs preuves</b>« + de 1.000.000 vues », vidéos sélectionnées dans des congrès de 2009 à 2017. C'est l'actif le plus fort.</li>
+    <li class="good"><b>La page cataracte est le bon modèle</b>Questions claires, déroulé, lieux, FAQ, deux boutons RDV.</li>
+    <li class="good"><b>Un ton sobre</b>Phrases courtes, mots simples, adaptés aux patients âgés.</li>
+    <li><b>Aucune balise H1</b>Sur les 14 pages. Google comprend mal le sujet de chaque page.</li>
+    <li><b>L'accueil ne présente pas le chirurgien</b>Neuf vignettes, aucune phrase d'accroche visible.</li>
+    <li><b>Le patient n'est pas accompagné jusqu'à la décision</b>Les réponses existent, surtout sur la page cataracte, mais dispersées. Ailleurs, rien ne dit « pourquoi maintenant » ni « pourquoi lui ». Bouton RDV sur 2 pages seulement, aucun téléphone.</li>
+    <li><b>Un menu par sujets, pas par parcours</b>Pas d'entrée « Le Dr Stopek », « Contact » ou « Rendez-vous ». « More » cache la suite.</li>
+    <li><b>Doublons et restes</b>Deux pages diabète, un bloc « diabète » dans toutes les pages, quatre adresses en 404.</li>
+    <li><b>Pages sans texte</b>Charles Bonnet, lentilles, chalazion : une vidéo, presque rien à lire ni à indexer.</li>
+    <li><b>Mobile et lisibilité seniors : à tester</b>Taille des caractères, contraste, boutons. Non vérifié à l'écran.</li>
+  </ol>
+</section>
+
+<!-- 3 -->
+<section>
+  <h2 id="s3" data-toc="Plan du site"><span class="num">3</span>Le nouveau plan du site</h2>
+  <p class="sub">Six entrées au lieu de neuf. Trois familles : le chirurgien, l'information vidéo, la pratique. Chaque page suit le même chemin, du patient vers le rendez-vous.</p>
+  <div class="card"><svg id="svgNew" viewBox="0 0 900 470" role="img" aria-label="Nouveau plan du site"></svg>
+    <div class="legend">
+      <span><span class="chip c-surg">chirurgien</span></span>
+      <span><span class="chip c-new">information vidéo</span></span>
+      <span><span class="chip c-adap">pratique</span></span>
+      <span>Les adresses gardées : la plupart des pages gardent leur URL actuelle (voir section 11).</span>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section>
+  <h2 id="s4" data-toc="Chemin du patient"><span class="num">4</span>Le chemin de décision du patient</h2>
+  <p class="sub">Un bouton « Prendre rendez-vous » répété sur chaque écran ne convainc personne. Il rassure seulement ceux qui ont déjà décidé. Pour les autres, il faut d'abord répondre aux questions qu'ils se posent, dans cet ordre.</p>
+  <div class="path">
+    <div class="step s1"><div class="no">ÉTAPE 1</div><h3>Pourquoi moi ?</h3><div class="think">« Est-ce que ça me concerne ? »</div>
+      <p class="need"><b>Le site doit</b>reconnaître le patient dans ses propres mots : ses symptômes, sa situation, celle de son parent.</p>
+      <q style="display:block;font-size:14.5px;quotes:'« ' ' »'">vision floue ou voilée · gêne à la conduite nocturne · difficulté à lire</q><span class="chip c-orig">ORIGINAL</span> cataracte</div>
+    <div class="step s2"><div class="no">ÉTAPE 2</div><h3>Pourquoi maintenant ?</h3><div class="think">« Dois-je agir ? Puis-je attendre ? »</div>
+      <p class="need"><b>Le site doit</b>dire à quel moment agir, sans dramatiser ni minimiser.</p>
+      <q style="display:block;font-size:14.5px;quotes:'« ' ' »'">L'intervention est proposée lorsque la gêne visuelle devient significative dans la vie quotidienne</q><span class="chip c-orig">ORIGINAL</span> cataracte</div>
+    <div class="step s3"><div class="no">ÉTAPE 3</div><h3>Pourquoi le Dr Stopek ?</h3><div class="think">« Pourquoi lui plutôt qu'un autre ? »</div>
+      <p class="need"><b>Le site doit</b>donner des raisons de lui faire confiance : sa méthode, son parcours, ses preuves. Sans promesse de résultat.</p>
+      <q style="display:block;font-size:14.5px;quotes:'« ' ' »'">la valeur principale du chirurgien aujourd'hui n'est pas seulement technique. Elle consiste à guider le patient dans son choix.</q><span class="chip c-orig">ORIGINAL</span> cataracte</div>
+    <div class="step s4"><div class="no">ÉTAPE 4</div><h3>Le rendez-vous</h3><div class="think">« Alors, comment je fais ? »</div>
+      <p class="need"><b>Le site doit</b>proposer un seul geste, simple, au bon moment : après les trois réponses, jamais avant.</p>
+      <q style="display:block;font-size:14.5px;quotes:'« ' ' »'">Une consultation au cabinet […] permet d'évaluer la cataracte et de définir la meilleure stratégie chirurgicale adaptée à vos besoins visuels</q><span class="chip c-orig">ORIGINAL</span> cataracte</div>
+  </div>
+  <p class="small" style="margin-top:12px;color:var(--muted)">La page cataracte actuelle suit déjà ce chemin, sans le savoir : c'est pourquoi elle est la meilleure du site. La refonte étend sa logique aux autres pages.</p>
+</section>
+
+<section>
+  <h2 id="s5" data-toc="Page par page"><span class="num">5</span>Ce que le site dit déjà, page par page</h2>
+  <p class="sub">Presque toutes les réponses existent déjà dans les textes du Dr Stopek. Les cases rouges sont les trous : il faut qu'il les comble. La case orange est un cas d'urgence : le bouton n'est pas le bon outil.</p>
+  <div class="scroll"><table class="mapt">
+    <tr><th>Page</th><th>1 · Pourquoi moi ?</th><th>2 · Pourquoi maintenant ?</th><th>3 · Pourquoi le Dr Stopek ?</th><th>4 · Le rendez-vous</th></tr>
+    <tr><td>Cataracte</td>
+      <td><q>vision floue ou voilée · baisse des contrastes · gêne à la conduite nocturne · éblouissement · difficulté à lire</q><span class="chip c-orig">ORIGINAL</span></td>
+      <td><q>La décision ne dépend pas uniquement de l'examen de l'œil, mais surtout de la gêne ressentie par le patient.</q><q>Il n'y a pas d'âge précis.</q><span class="chip c-orig">ORIGINAL</span></td>
+      <td><q>Quelle vision souhaitez-vous obtenir après l'intervention ?</q><q>Il n'existe pas d'implant permettant une vision parfaite […] sans compromis.</q><span class="chip c-orig">ORIGINAL</span> + thèse 2009 sur l'information du patient opéré, vidéo retenue dans 3 congrès</td>
+      <td><q>Une consultation au cabinet […] permet d'évaluer la cataracte […]</q><span class="chip c-orig">ORIGINAL</span> → bouton</td></tr>
+    <tr><td>SMILE et laser<br><span class="small">SMILE en tête</span></td>
+      <td><q>Testez votre éligibilité au SMILE</q><span class="chip c-new">NOUVEAU</span> avec le simulateur déjà sur le site. La chirurgie n'est pas possible pour tout le monde : le test et le bilan le disent.</td>
+      <td><q>Pas d'urgence : le bon moment, c'est quand la vue est stable.</q><span class="chip c-new">NOUVEAU</span> angle sourcé (voir section 6)</td>
+      <td><q>[…] chirurgie réfractive au laser qu'il pratique depuis 15 ans.</q><q>Il […] vous guide dans votre choix.</q><span class="chip c-orig">ORIGINAL</span></td>
+      <td><q>Le Docteur STOPEK vous précisera les techniques auxquelles vous êtes éligibles</q><span class="chip c-adap">ADAPTÉ</span> → bouton</td></tr>
+    <tr><td>DMLA</td>
+      <td><q>[…] les membres de votre famille ont un risque plus élevé que la moyenne […]</q><span class="chip c-orig">ORIGINAL</span> <span class="chip c-todo">signes d'alerte à ajouter</span></td>
+      <td class="gap"><span class="chip c-todo">À COMPLÉTER</span> quand consulter ? Aucun texte. Seule la peur de l'injection est traitée : <q>L'intervention est rapide et n'est pas douloureuse</q><span class="chip c-orig">ORIGINAL</span></td>
+      <td><q>[…] suivi de pathologies (DMLA, glaucome, diabète...), 2ème avis...</q><span class="chip c-orig">ORIGINAL</span> + vidéo retenue au congrès SFO 2013</td>
+      <td><q>Informez votre famille afin qu'ils aient un suivi adapté par leur ophtalmologue.</q><span class="chip c-orig">ORIGINAL</span> → bouton</td></tr>
+    <tr><td>Diabète</td>
+      <td><q>Atteintes des organes : yeux, coeur, reins, pieds...</q><span class="chip c-orig">ORIGINAL</span></td>
+      <td><q>En cas de diabète, effectuez un contrôle ophtalmologique tous les ans</q><span class="chip c-orig">ORIGINAL</span></td>
+      <td>Vidéo retenue au congrès SFO 2015. <span class="chip c-todo">À COMPLÉTER</span> quels traitements (laser, injections) le Dr Stopek réalise-t-il ?</td>
+      <td><q>Faites un contrôle avec votre ophtalmologue tous les ans.</q><span class="chip c-orig">ORIGINAL</span> → bouton</td></tr>
+    <tr><td>Corps flottants (DPV)</td>
+      <td><q>[…] l'apparition de corps flottants +/- des flash fugaces.</q><span class="chip c-orig">ORIGINAL</span></td>
+      <td><q>En cas d'éclairs lumineux […] ou d'un voile noir persistant […] consultez votre ophtalmologue en urgence</q><span class="chip c-orig">ORIGINAL</span></td>
+      <td><q>Le Dr Stopek effectuera du laser Argon sur la déchirure rétinienne pour éviter le risque plus embêtant d'un décollement de rétine.</q><span class="chip c-orig">ORIGINAL</span></td>
+      <td class="urg"><b>Urgence : pas de bouton standard.</b> <span class="chip c-todo">À COMPLÉTER</span> numéro et consigne du cabinet</td></tr>
+    <tr><td>Charles Bonnet · chalazion · lentilles</td>
+      <td><q>"Mamie a des hallucinations alors qu'elle est malvoyante ?!" Rassurez-vous, c'est peut-être un syndrome de Charles Bonnet.</q><span class="chip c-orig">ORIGINAL</span></td>
+      <td><q>En cas de chalazions à répétition : consultez votre ophtalmologue</q><span class="chip c-orig">ORIGINAL</span></td>
+      <td class="gap"><span class="chip c-todo">À COMPLÉTER</span> pages presque sans texte : transcription des vidéos</td>
+      <td>Lien discret en fin de page, sans bouton</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2 id="s6" data-toc="Angles et sources"><span class="num">6</span>Nous ne savons pas : voici des angles, appuyés sur des sites de référence</h2>
+  <p class="sub">Là où le site du Dr Stopek est muet (cases rouges), je propose des angles de réponse. Ils s'appuient sur des sources publiques. <b>Ce ne sont pas ses mots ni ses affirmations.</b> Rien n'est publié sans sa validation. Les sources sont en bas de la section.</p>
+
+  <h3 id="s6a">SMILE et laser : le SMILE en tête <span class="chip c-new">NOUVEAU</span></h3>
+  <p class="small" style="margin:0 0 8px">Le Dr Stopek privilégie le SMILE. La page l'ouvre donc sur le SMILE. LASIK et PKR y figurent comme alternatives « selon le bilan », ce qui reprend sa phrase d'origine : « les techniques auxquelles vous êtes éligibles ». Aucune comparaison de performance n'est écrite.</p>
+  <div class="ang">
+    <div class="a m"><small>Pourquoi moi ?</small><b>« Tout le monde ne peut pas être opéré. Le bilan le dit. »</b>La chirurgie n'est pas possible pour tout le monde, et c'est le chirurgien qui décide au cas par cas. Angle honnête, qui rassure plus qu'il ne promet. Il rejoint la phrase d'origine « les techniques auxquelles vous êtes éligibles ».<span class="src">Sources : <a href="https://ansm.sante.fr/dossiers-thematiques/dans-quels-cas-la-chirurgie-lasik-peut-elle-etre-realisee/impression/88">ANSM</a> (via une recherche) · <a href="https://www.elsan.care/fr/chirurgie-refractive/les-defauts-operables">Elsan</a></span></div>
+    <div class="a n"><small>Pourquoi maintenant ?</small><b>« Pas d'urgence : le bon moment, c'est quand la vue est stable. »</b>Plusieurs sources demandent une correction stable avant d'opérer, et préviennent qu'une correction qui bouge encore rend l'intervention prématurée. Je ne reprends aucune durée : le Dr Stopek doit dire la sienne.<span class="src">Sources : <a href="https://www.elsan.care/fr/chirurgie-refractive/les-defauts-operables">Elsan</a> · <a href="https://www.allianz.fr/assurance-particulier/sante-prevoyance/assurance-sante/conseils-pratiques/operation-myopie.html">Allianz</a></span></div>
+    <div class="a d"><small>Pourquoi le Dr Stopek ?</small><b>« Il examine d'abord, il propose ensuite. »</b>Le bilan se fait à son cabinet, les techniques possibles sont expliquées une par une, et le choix se fait avec le patient. C'est déjà écrit sur son site : « Il effectue votre bilan à son cabinet, vous poropose les techniques possibles et vous guide dans votre choix. »<span class="src"><span class="chip c-orig">ORIGINAL</span> /les-lasers (description) · logique : plusieurs techniques peuvent convenir à un même patient, le choix se fait ensemble.</span></div>
+  </div>
+
+  <h3 id="s6b">DMLA <span class="chip c-new">NOUVEAU</span> <span class="chip c-todo">à valider</span></h3>
+  <div class="ang">
+    <div class="a m"><small>Pourquoi moi ?</small><b>« Les lignes droites vous paraissent déformées ? »</b>Signe le plus typique : des lignes droites qui se déforment ou se brisent, ou une tache grise ou noire au centre de la vue. Se contrôle avec la grille d'Amsler, dès 50 ans.<span class="src">Source : <a href="https://www.quechoisir.org/conseils-dmla-reperer-les-signes-n89454/">Que Choisir</a></span></div>
+    <div class="a n"><small>Pourquoi maintenant ?</small><b>« Un de ces signes : voir un ophtalmologue très rapidement. »</b>Ces signes ne veulent pas toujours dire DMLA. Mais la forme « humide » est celle qui ne doit pas attendre, car elle se traite par injections.<span class="src">Sources : <a href="https://www.quechoisir.org/conseils-dmla-reperer-les-signes-n89454/">Que Choisir</a> · <a href="https://www.allodocteurs.fr/maladies/yeux/dmla/quels-sont-les-premiers-signes-de-la-dmla_22369.html">Allodocteurs</a> · <a href="https://www.lequotidiendumedecin.fr/fmc-recos/recos-pratique/dmla-de-nouvelles-recos-pour-un-reperage-plus-precoce">Quotidien du Médecin (reco HAS)</a></span></div>
+    <div class="a d"><small>Pourquoi le Dr Stopek ?</small><b>« Un suivi dans la durée, pas seulement une injection. »</b>Sa page traite déjà le traitement, la rééducation, les aides optiques, l'ergothérapeute et le psychologue : un accompagnement complet. Angle à mettre en tête de page.<span class="src"><span class="chip c-orig">ORIGINAL</span> /dmla-humide-exsudative · vidéo retenue au congrès SFO 2013</span></div>
+  </div>
+  <div class="card ph2" style="margin-bottom:22px">
+    <div><svg class="amsler" id="amN" viewBox="0 0 170 170" role="img" aria-label="Grille d'Amsler normale"></svg><div class="small" style="text-align:center">Ce que l'on doit voir</div></div>
+    <div><svg class="amsler" id="amD" viewBox="0 0 170 170" role="img" aria-label="Grille d'Amsler avec lignes déformées au centre"></svg><div class="small" style="text-align:center">Lignes déformées au centre</div></div>
+    <div class="tx"><b>Illustration proposée : la grille d'Amsler</b> <span class="chip c-new">NOUVEAU</span><br>Un dessin simple, interactif ou imprimable, sur la page DMLA : « couvrez un œil, fixez le point central ». C'est le geste de repérage cité par les sources, et il répond à « pourquoi moi » en 10 secondes. <span class="chip c-todo">À valider par le Dr Stopek</span> avant publication (mode d'emploi, distance, mise en garde).</div>
+  </div>
+
+  <h3 id="s6c">Corps flottants et éclairs <span class="chip c-new">NOUVEAU</span> <span class="chip c-todo">à valider</span></h3>
+  <div class="ang">
+    <div class="a m"><small>Pourquoi moi ?</small><b>« Des mouches, des éclairs, un voile ? »</b>Sa page le dit déjà : le DPV se manifeste le plus souvent par des corps flottants, avec parfois des flashs brefs. Les sources ajoutent : c'est fréquent avec l'âge.<span class="src"><span class="chip c-orig">ORIGINAL</span> /corps-flottants-yeux-dpv · <a href="https://www.allodocteurs.fr/mouches-volantes-devant-les-yeux-est-ce-grave-et-comment-sen-debarrasser-36489.html">Allodocteurs</a></span></div>
+    <div class="a n"><small>Pourquoi maintenant ?</small><b>Deux niveaux d'alerte, en couleur.</b>Sa page dit « en urgence ». Les sources donnent un repère plus précis, à confirmer : consulter dans les 24 heures si éclairs ou corps flottants apparaissent brutalement.<span class="src">Source : <a href="https://lemedecin.fr/medical/pathologies/decollement-du-vitre.html">lemedecin.fr</a> · <a href="https://hug.ch/sites/hde/files/documents/decollement_retine.pdf">HUG (Genève)</a></span></div>
+    <div class="a d"><small>Pourquoi le Dr Stopek ?</small><b>« Il traite la déchirure, avant le décollement. »</b>Sa page : laser Argon sur la déchirure rétinienne, pour éviter un décollement de rétine. C'est le meilleur argument du site sur ce sujet.<span class="src"><span class="chip c-orig">ORIGINAL</span> /corps-flottants-yeux-dpv · vidéo retenue au congrès SFO 2017</span></div>
+  </div>
+  <div class="alert2" style="margin-bottom:22px">
+    <div class="al1"><b>Niveau 1 · Rapidement</b><br>Apparition brutale de corps flottants ou d'éclairs. <span class="chip c-todo">À COMPLÉTER</span> délai conseillé par le Dr Stopek (les sources parlent de 24 heures).</div>
+    <div class="al2"><b>Niveau 2 · En urgence</b><br>Voile noir persistant ou perte d'une partie de la vue d'un œil. Phrase d'origine : « consultez votre ophtalmologue en urgence ». <span class="chip c-todo">À COMPLÉTER</span> numéro et consigne du cabinet.</div>
+  </div>
+
+  <h3>Cataracte : la logique est confirmée</h3>
+  <p>Le plan d'ameli.fr sur la cataracte suit les mêmes étapes que la page du Dr Stopek : comprendre, <i>symptômes et diagnostic</i>, puis <i>« Traitement de la cataracte : quand faut-il être opéré ? »</i>. L'idée est donc la bonne. Ce qui distingue le Dr Stopek est ailleurs : <b>« Quelle vision souhaitez-vous obtenir après l'intervention ? »</b>, question absente des titres de rubriques d'ameli. Source : <a href="https://www.ameli.fr/assure/sante/themes/cataracte">ameli.fr</a> (seuls les titres de rubriques ont pu être lus).</p>
+
+  <h3 id="s6d">« Pourquoi le Dr Stopek ? » : quatre preuves déjà sur son site</h3>
+  <div class="ang" style="grid-template-columns:repeat(4,1fr)">
+    <div class="a d"><b>Il explique avant d'opérer</b>Ses vidéos « répètent et complètent les messages délivrés en consultation ». Thèse de médecine sur l'information du patient opéré de la cataracte (2009).<span class="src"><span class="chip c-orig">ORIGINAL</span> /histoire</span></div>
+    <div class="a d"><b>Il guide le choix, il ne l'impose pas</b>« Il n'existe pas d'implant permettant une vision parfaite […] sans compromis. » Une franchise qui inspire confiance.<span class="src"><span class="chip c-orig">ORIGINAL</span> /cataracte-operation</span></div>
+    <div class="a d"><b>Un même médecin, du bilan au suivi</b>Bilan et suivi à son cabinet, intervention en clinique ou en centre laser.<span class="src"><span class="chip c-orig">ORIGINAL</span> /cataracte-operation · /les-lasers</span></div>
+    <div class="a d"><b>Une reconnaissance de ses pairs</b>Vidéos retenues en congrès de 2009 à 2017 (Deauville, SFO, SAFIR). Attaché à l'Hôpital des Quinze-Vingts.<span class="src"><span class="chip c-orig">ORIGINAL</span> /dans-les-congres · /histoire</span></div>
+  </div>
+
+  <p class="small" style="color:var(--muted)"><b>Limites de cette recherche.</b> Je n'ai pas pu lire directement les sites de la SNOF, de la HAS ni de l'AAO. Les angles viennent de sources secondaires (Que Choisir, Elsan, Allianz, Allodocteurs, lemedecin.fr, Quotidien du Médecin, HUG). La page ANSM n'a pas pu être lue en détail. Les pages ameli n'ont livré que leurs titres. <b>Aucune de ces affirmations médicales ne doit être reprise sans l'accord du Dr Stopek.</b></p>
+  <ul class="srclist">
+    <li><a href="https://ansm.sante.fr/dossiers-thematiques/dans-quels-cas-la-chirurgie-lasik-peut-elle-etre-realisee/impression/88">ANSM : dans quels cas la chirurgie LASIK peut-elle être réalisée</a></li>
+    <li><a href="https://www.elsan.care/fr/chirurgie-refractive/les-defauts-operables">Elsan : les défauts opérables</a></li>
+    <li><a href="https://www.allianz.fr/assurance-particulier/sante-prevoyance/assurance-sante/conseils-pratiques/operation-myopie.html">Allianz : opération de la myopie</a></li>
+    <li><a href="https://www.quechoisir.org/conseils-dmla-reperer-les-signes-n89454/">Que Choisir : DMLA, repérer les signes</a></li>
+    <li><a href="https://www.allodocteurs.fr/maladies/yeux/dmla/quels-sont-les-premiers-signes-de-la-dmla_22369.html">Allodocteurs : premiers signes de la DMLA</a></li>
+    <li><a href="https://www.lequotidiendumedecin.fr/fmc-recos/recos-pratique/dmla-de-nouvelles-recos-pour-un-reperage-plus-precoce">Quotidien du Médecin : DMLA, repérage plus précoce</a></li>
+    <li><a href="https://lemedecin.fr/medical/pathologies/decollement-du-vitre.html">lemedecin.fr : décollement du vitré</a></li>
+    <li><a href="https://hug.ch/sites/hde/files/documents/decollement_retine.pdf">HUG : décollement de rétine</a></li>
+    <li><a href="https://www.allodocteurs.fr/mouches-volantes-devant-les-yeux-est-ce-grave-et-comment-sen-debarrasser-36489.html">Allodocteurs : mouches volantes</a></li>
+    <li><a href="https://www.ameli.fr/assure/sante/themes/cataracte">ameli.fr : cataracte</a></li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="s7" data-toc="Le rendez-vous"><span class="num">7</span>Le rendez-vous : une fois, au bon moment, avec les mots du patient</h2>
+  <p class="sub">Fini le gros bouton orange en haut, en bas et collé en permanence sur téléphone. Un seul bloc par page, après la preuve. Un simple lien « Rendez-vous » reste dans le menu pour ceux qui ont déjà décidé. C'est un lien, pas un bouton.</p>
+  <div class="strips card bands">
+    <div>
+      <h3>Aujourd'hui · page cataracte</h3>
+      <div class="strip">
+        <div class="s">Titre · vidéo</div><div class="s">Qu'est-ce que la cataracte ?</div><div class="s">Quand faut-il envisager une opération ?</div><div class="s">Bilan préopératoire</div><div class="s">L'enjeu : choisir sa vision</div><div class="s">Le rôle du chirurgien</div><div class="s">L'intervention · les lieux · les résultats</div><div class="s">FAQ · conclusion</div><div class="s r">Prendre rendez-vous <span>seul point d'action</span></div>
+      </div>
+    </div>
+    <div>
+      <h3>Demain · mêmes textes, autre ordre</h3>
+      <div class="strip">
+        <div class="s">Titre · vidéo</div>
+        <div class="s b1">Qu'est-ce que la cataracte ? <span class="tg">pourquoi moi</span></div>
+        <div class="s b2">Quand faut-il envisager une opération ? <span class="tg">pourquoi maintenant</span></div>
+        <div class="s b3">L'enjeu · le rôle du chirurgien · parcours <span class="tg">pourquoi lui</span></div>
+        <div class="s b4">Bilan · intervention · lieux · résultats <span class="tg">on me rassure</span></div>
+        <div class="s b4">FAQ · conclusion <span class="tg">on me rassure</span></div>
+        <div class="s rc">À lire aussi : DMLA · diabète</div>
+        <div class="s r">Prendre rendez-vous pour un bilan <span>une seule fois</span></div>
+      </div>
+    </div>
+  </div>
+  <h3 id="s7a" style="margin-top:22px">SMILE : une marche d'entrée avant le rendez-vous <span class="chip c-new">NOUVEAU</span></h3>
+  <p class="small" style="margin:0 0 6px">Pour augmenter les rendez-vous SMILE sans insister : on donne d'abord une raison de s'engager, un petit pas. Le site a déjà l'outil : la page « SMILE CALCULATOR » (<code>/smile-simulator</code>).</p>
+  <div class="flow">
+    <div class="f"><b>1 · Pourquoi moi</b>« Le SMILE est-il possible pour moi ? »<br><span class="small">Lien depuis l'accueil, la page SMILE et laser, la page myopie.</span></div>
+    <div class="f"><b>2 · Le petit pas</b>Test d'éligibilité en quelques questions.<br><span class="small">Outil existant, à relier au reste du site.</span></div>
+    <div class="f"><b>3 · Pourquoi maintenant</b>« Le résultat est une indication. Le bilan au cabinet confirme. »<br><span class="small">Aucune promesse de résultat.</span></div>
+    <div class="f"><b>4 · Le rendez-vous</b><span class="btn" style="margin-top:4px">Prendre rendez-vous pour un bilan</span></div>
+  </div>
+  <h3 id="s7b" style="margin-top:22px">Le libellé s'adapte à la page <span class="chip c-new">NOUVEAU</span></h3>
+  <div class="cta-ex">
+    <div class="ce"><small>Cataracte</small>« Une consultation au cabinet […] permet d'évaluer la cataracte et de définir la meilleure stratégie chirurgicale adaptée à vos besoins visuels »<br><span class="chip c-orig">ORIGINAL</span><br><span class="btn">Prendre rendez-vous pour un bilan</span></div>
+    <div class="ce"><small>Diabète</small>« Faites un contrôle avec votre ophtalmologue tous les ans. »<br><span class="chip c-orig">ORIGINAL</span><br><span class="btn">Prendre rendez-vous pour un contrôle</span></div>
+    <div class="ce"><small>SMILE et laser</small>« Le Docteur STOPEK vous précisera les techniques auxquelles vous êtes éligibles »<br><span class="chip c-adap">ADAPTÉ</span><br><span class="btn">Prendre rendez-vous pour un bilan</span></div>
+    <div class="ce"><small>Pages informatives (chalazion, lentilles…)</small>Un lien simple, sans bouton : « Le cabinet vous reçoit pour tout bilan visuel […] »<br><span class="chip c-orig">ORIGINAL</span><br><a class="qlink">Voir les modalités de rendez-vous</a></div>
+    <div class="ce" style="background:var(--prac-bg);border-color:var(--prac)"><small>Signes d'alerte (corps flottants)</small>Pas de bouton standard. Consigne d'urgence du cabinet.<br><span class="chip c-todo">À COMPLÉTER</span></div>
+  </div>
+  <p class="small" style="margin-top:10px;color:var(--muted)">Le texte du bouton « Prendre rendez-vous » est d'origine. Le complément (« pour un bilan », « pour un contrôle ») est <span class="chip c-new">NOUVEAU</span> et court. Aucune promesse de résultat.</p>
+</section>
+
+<!-- 5 -->
+<section>
+  <h2 id="s8" data-toc="Maquette accueil"><span class="num">8</span>Maquette de la nouvelle page d'accueil</h2>
+  <p class="sub">L'accueil suit le même chemin. Les textes entre guillemets viennent du site actuel. Les zones hachurées sont de vraies photos à fournir. Les vignettes sont les vraies vidéos de la chaîne, aucune image générée.</p>
+
+  <div class="grid2" style="grid-template-columns:2.1fr 1fr;align-items:start">
+    <div class="browser">
+      <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">docteurvideo.com</span></div>
+      <div class="wf">
+        <div class="wf-nav" style="position:relative">
+          <div class="pin" style="top:-4px;left:-4px">1</div>
+          <div style="margin-left:10px"><b>Dr STOPEK</b><small>OPHTALMOLOGUE - CHIRURGIEN</small></div>
+          <ul><li>Le Dr Stopek</li><li>Cataracte</li><li>SMILE et laser</li><li>Maladies en vidéo</li><li>Parcours</li><li><a class="qlink" style="color:var(--rdv)">Rendez-vous</a></li></ul>
+        </div>
+        <div style="padding:22px 18px 6px;position:relative">
+          <div class="pin" style="top:6px;right:8px">2</div>
+          <h4 style="font-size:26px;line-height:1.15;margin:0 0 6px">Dr Dan Stopek, ophtalmologue-chirurgien à Paris</h4>
+          <p style="margin:0;color:var(--muted);font-size:16px">« Spécialisé dans les corrections laser de la vision et la chirurgie de la cataracte. »</p>
+        </div>
+
+        <div class="wf-sec m" style="border-top:0">
+          <div class="pin" style="top:6px;right:8px">3</div>
+          <div class="lab">Pourquoi moi ?</div>
+          <h5>Vous vous reconnaissez ?</h5>
+          <div class="sit">
+            <div class="wcard"><div class="t"><img alt="" src="https://img.youtube.com/vi/Tx14OYcf8r8/hqdefault.jpg" onerror="this.remove()">cataracte<span class="play"></span></div><div class="b"><b>Vue floue, éblouissement</b>« gêne à la conduite nocturne · difficulté à lire »</div></div>
+            <div class="wcard"><div class="t"><img alt="" src="https://img.youtube.com/vi/Q0FfCOjziH8/hqdefault.jpg" onerror="this.remove()">corps flottants<span class="play"></span></div><div class="b"><b>Corps flottants, éclairs</b>« corps flottants +/- des flash fugaces »</div></div>
+            <div class="wcard"><div class="t"><img alt="" src="https://img.youtube.com/vi/_0Aw6SX_6rI/hqdefault.jpg" onerror="this.remove()">diabète<span class="play"></span></div><div class="b"><b>Diabète, DMLA</b>« Comprendre le diabète et protéger sa vue »</div></div>
+            <div class="wcard"><div class="t" style="background:var(--surg-bg);color:var(--surg)">photo réelle<br>à fournir</div><div class="b"><b>Laser de la myopie</b>« Présentation des 3 techniques […] »</div></div>
+          </div>
+        </div>
+
+        <div class="wf-sec n">
+          <div class="pin" style="top:6px;right:8px">4</div>
+          <div class="lab">Pourquoi maintenant ?</div>
+          <h5>Quand en parler à un ophtalmologue</h5>
+          <div class="when">
+            <div><b>Dans la vie de tous les jours</b><br>« lorsque la gêne visuelle devient significative dans la vie quotidienne »</div>
+            <div><b>Chaque année</b><br>« En cas de diabète, effectuez un contrôle ophtalmologique tous les ans »</div>
+            <div><b>En urgence</b><br>« En cas d'éclairs lumineux […] ou d'un voile noir persistant […] »</div>
+          </div>
+        </div>
+
+        <div class="wf-sec d">
+          <div class="pin" style="top:6px;right:8px">5</div>
+          <div class="lab">Pourquoi le Dr Stopek ?</div>
+          <div class="who">
+            <div class="ph" style="min-height:130px">Portrait réel<br>à fournir</div>
+            <div>
+              <h5 style="font-size:19px">« […] guider le patient dans son choix. »</h5>
+              <p style="font-size:15px;margin:0">« Dr Dan STOPEK, ophtalmologue spécialisé en lasers de la myopie et en chirurgie de la cataracte, est installé à Paris et attaché à l'Hôpital des Quinze-Vingts. »</p>
+              <div class="proofs"><span>Hôpital des Quinze-Vingts</span><span>Thèse sur l'information du patient (2009)</span><span>Vidéos retenues en congrès 2009 à 2017</span><span>+ de 1.000.000 vues</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wf-cta">
+          <div class="pin" style="top:6px;right:8px">6</div>
+          <p>« Une consultation au cabinet […] permet d'évaluer […] et de définir la meilleure stratégie […] adaptée à vos besoins visuels »</p>
+          <span class="btn">Prendre rendez-vous</span>
+          <div class="small" style="margin-top:8px;color:var(--muted)">67 boulevard de Picpus, 75012 Paris · <span class="chip c-todo">téléphone à compléter</span></div>
+        </div>
+        <div class="wf-foot"><span>DOCTEUR DAN STOPEK · 67 BOULEVARD DE PICPUS · 75012 PARIS</span><span>2011-2026 © docteurvideo.com</span></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="phone"><div class="in" style="min-height:560px">
+        <b style="font-size:13px">Dr STOPEK</b>
+        <h4>Dr Dan Stopek, ophtalmologue-chirurgien à Paris</h4>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--edu)">POURQUOI MOI ?</div>
+        <div class="mc"><b>Vue floue, éblouissement</b>gêne à la conduite nocturne</div>
+        <div class="mc"><b>Corps flottants, éclairs</b></div>
+        <div class="mc"><b>Diabète, DMLA</b></div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--prac)">POURQUOI MAINTENANT ?</div>
+        <div class="mc" style="background:var(--prac-bg);border-color:var(--prac)">Quand la gêne devient significative…</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--surg)">POURQUOI LE DR STOPEK ?</div>
+        <div class="ph" style="min-height:50px;margin-bottom:8px">Portrait réel</div>
+        <div style="text-align:center;margin-top:10px"><span class="btn" style="font-size:14px">Prendre rendez-vous</span></div>
+      </div></div>
+      <p class="small" style="text-align:center;margin-top:8px;color:var(--muted)">Sur téléphone : pas de barre collée en bas. Le bouton apparaît en fin de parcours.</p>
+    </div>
+  </div>
+
+  <ul class="notes">
+    <li><i>1</i><span>Menu à 6 entrées. Un simple lien « Rendez-vous » à droite, pas un bouton. <span class="chip c-new">NOUVEAU</span></span></li>
+    <li><i>2</i><span>H1 qui dit qui et où, sous-titre repris du site. <span class="chip c-new">NOUVEAU</span> <span class="chip c-orig">ORIGINAL</span></span></li>
+    <li><i>3</i><span><b>Pourquoi moi ?</b> Le visiteur se reconnaît dans une situation, avec les mots du Dr Stopek. Vignettes = vraies vidéos. La photo laser est à fournir. <span class="chip c-orig">ORIGINAL</span> <span class="chip c-todo">À FOURNIR</span></span></li>
+    <li><i>4</i><span><b>Pourquoi maintenant ?</b> Trois moments : la gêne au quotidien, le contrôle annuel, l'urgence. Les trois phrases existent déjà. <span class="chip c-orig">ORIGINAL</span></span></li>
+    <li><i>5</i><span><b>Pourquoi le Dr Stopek ?</b> Sa méthode (guider le choix), son lieu d'exercice, sa thèse, ses vidéos retenues en congrès. Aucun chiffre ajouté. Compteurs et diplômes à valider. <span class="chip c-orig">ORIGINAL</span> <span class="chip c-todo">À COMPLÉTER</span></span></li>
+    <li><i>6</i><span><b>Le rendez-vous, une seule fois.</b> Le texte vient de la page cataracte. Téléphone et plan d'accès à compléter. <span class="chip c-orig">ORIGINAL</span> <span class="chip c-todo">À COMPLÉTER</span></span></li>
+  </ul>
+
+  <h3 id="s8b" style="margin-top:26px">La page « SMILE et chirurgie au laser » : squelette <span class="chip c-new">NOUVEAU</span></h3>
+  <div class="strips card bands" style="grid-template-columns:1fr">
+    <div class="strip">
+      <div class="s"><span><b>H1</b> <span class="chip c-adap">ADAPTÉ</span> « SMILE et chirurgie de la vue au laser »</span><span class="tg">original : « L'opération de la vue au Laser »</span></div>
+      <div class="s"><span><span class="chip c-orig">ORIGINAL</span> « Le Docteur STOPEK est spécialisé dans les opérations de chirurgie réfractive au laser qu'il pratique depuis 15 ans. »</span></div>
+      <div class="s"><span><span class="chip c-new">NOUVEAU</span> « Le SMILE est la technique que le Dr Stopek privilégie. Le bilan au cabinet confirme si elle vous convient. »</span><span class="btn soft" style="padding:3px 10px;font-size:13px">Testez votre éligibilité</span></div>
+      <div class="s b1"><span><b>Pourquoi moi ?</b> test d'éligibilité · « tout le monde ne peut pas être opéré »</span></div>
+      <div class="s b2"><span><b>Pourquoi maintenant ?</b> « pas d'urgence : quand la vue est stable »</span></div>
+      <div class="s b3"><span><b>Pourquoi lui ?</b> <span class="chip c-orig">ORIGINAL</span> « Il effectue votre bilan à son cabinet, vous propose les techniques possibles et vous guide dans votre choix. » <span class="chip c-adap">ADAPTÉ</span> (faute corrigée)</span></div>
+      <div class="s b4"><span><b>Selon le bilan :</b> LASIK et PKR comme alternatives, une phrase chacune, sans comparaison de performance</span></div>
+      <div class="s b4"><span><span class="chip c-orig">ORIGINAL</span> Les deux centres laser · « Ses assistantes du Cabinet vous organiseront l'intervention » · « Le suivi sera assuré par le Docteur STOPEK à son cabinet. »</span></div>
+      <div class="s r"><span>Prendre rendez-vous pour un bilan</span><span>une seule fois</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section>
+  <h2 id="s9" data-toc="Parcours"><span class="num">9</span>Le parcours patient</h2>
+  <p class="sub">Nouvelle page « Votre parcours au cabinet ». Chaque case réutilise un texte du site. Les cases à compléter attendent le Dr Stopek.</p>
+  <div class="card scroll">
+    <div class="journey" style="min-width:0">
+      <div></div>
+      <div class="h">1 · Consultation</div><div class="h">2 · Bilan</div><div class="h">3 · Intervention</div><div class="h">4 · Suivi</div>
+
+      <div class="row">Cataracte</div>
+      <div class="c"><q>Le cabinet vous reçoit pour tout bilan visuel, prescription de corrections optiques, suivi de pathologies […]</q><span class="chip c-orig">ORIGINAL</span> accueil</div>
+      <div class="c"><q>de mesurer l'œil pour calculer l'implant · de vérifier la rétine et la cornée · de définir les objectifs visuels après chirurgie</q><span class="chip c-orig">ORIGINAL</span> /cataracte-operation</div>
+      <div class="c"><q>L'opération est réalisée en ambulatoire sous anesthésie locale.</q><span class="chip c-orig">ORIGINAL</span> Cliniques Mont Louis (Paris 11e) et Saint-Jean-de-Dieu (Paris 7e)<br><span class="chip c-todo">À COMPLÉTER</span> adresses</div>
+      <div class="c"><q>La reprise de la conduite dépend de la récupération visuelle et est validée lors du suivi post-opératoire.</q><span class="chip c-orig">ORIGINAL</span> FAQ<br><span class="chip c-todo">À COMPLÉTER</span> calendrier des contrôles</div>
+
+      <div class="row l">Laser</div>
+      <div class="c"><q>Le cabinet vous reçoit […]</q><span class="chip c-orig">ORIGINAL</span> accueil</div>
+      <div class="c"><q>Le Docteur STOPEK vous précisera les techniques auxquelles vous êtes éligibles, et vous guidera dans votre choix.</q><span class="chip c-orig">ORIGINAL</span> /les-lasers</div>
+      <div class="c"><q>Ses assistantes du Cabinet vous organiseront l'intervention […]</q><span class="chip c-orig">ORIGINAL</span> Centre Laser Victor Hugo · Centre Laser Vision 15-20<br><span class="chip c-todo">À COMPLÉTER</span> adresses</div>
+      <div class="c"><q>Le suivi sera assuré par le Docteur STOPEK à son cabinet.</q><span class="chip c-orig">ORIGINAL</span> /les-lasers<br><span class="chip c-todo">À COMPLÉTER</span> calendrier</div>
+    </div>
+  </div>
+  <p class="small" style="margin-top:10px;color:var(--muted)">Pas de promesse de résultat : aucun texte sur le résultat n'est ajouté. Prix, remboursement, documents à apporter : <span class="chip c-todo">À COMPLÉTER</span></p>
+</section>
+
+<!-- 7 -->
+<section>
+  <h2 id="s10" data-toc="Textes corrigés"><span class="num">10</span>Textes : ce qu'on corrige, mot pour mot</h2>
+  <p class="sub">On réorganise, on ne réécrit pas. Les seules retouches sont des fautes évidentes, listées ici. Le Dr Stopek doit les valider.</p>
+  <div class="diff">
+    <div class="d"><small>/cataracte-operation · adresse (2 fois) — pour accorder avec le pied de page</small>67 boulevard <del>du</del><ins>de</ins> Picpus</div>
+    <div class="d"><small>/diabete-retinopathie</small>LE BUT DU <del>TRATEMENT</del><ins>TRAITEMENT</ins> · Injection <del>intra-vitréeenne</del><ins>intra-vitréenne</ins></div>
+    <div class="d"><small>/histoire · titre</small>L'histoire <del>deDocteurVideo</del><ins>de DocteurVideo</ins></div>
+    <div class="d"><small>/myopie · phrase incorrecte</small>Des verres<del>,</del> incorporant des cellules optiques de défocalisation <del>periphérique</del><ins>périphérique</ins><ins>, qui</ins><del>,</del> visent à limiter le développement de la myopie<ins>,</ins> sont arrivés en France en 2001.</div>
+    <div class="d"><small>/les-lasers · description (non visible à l'écran)</small>vous <del>poropose</del><ins>propose</ins> les techniques possibles</div>
+    <div class="d"><small>/corps-flottants-yeux-dpv</small><del>Video</del><ins>Vidéo</ins> sélectionnée au congrès de la Société Française d'Ophtalmologie en 2017</div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section>
+  <h2 id="s11" data-toc="Adresses (URL)"><span class="num">11</span>Anciennes adresses → nouvelles adresses</h2>
+  <p class="sub">La plupart des adresses restent. Cinq redirections 301 à créer, plus trois nouvelles pages. Le site est sous Wix : les redirections se créent dans les réglages SEO.</p>
+  <div class="scroll"><table>
+    <tr><th>Ancienne adresse</th><th>Nouvelle adresse</th><th>Action</th></tr>
+    <tr><td><code>/histoire</code></td><td><code>/le-dr-stopek</code></td><td class="tag-301">301</td></tr>
+    <tr><td><code>/dans-les-congres</code></td><td><code>/le-dr-stopek</code></td><td class="tag-301">301 (devient une section)</td></tr>
+    <tr><td><code>/les-lasers</code></td><td><code>/chirurgie-refractive</code></td><td class="tag-301">301</td></tr>
+    <tr><td><code>/diabete</code></td><td><code>/diabete-retinopathie</code></td><td class="tag-301">301</td></tr>
+    <tr><td><code>/smile-simulator</code></td><td><code>/chirurgie-refractive</code></td><td class="tag-301">301 si l'outil est retiré</td></tr>
+    <tr><td><code>/les-cataractes</code> · <code>/les-dmla-humides</code> · <code>/les-chalazions-cxxo</code> · <code>/copie-de-accueil-dr-video</code> <span class="chip c-todo">404 aujourd'hui</span></td><td>cataracte · DMLA · chalazion · accueil</td><td class="tag-301">301 par prudence</td></tr>
+    <tr><td><code>/</code> · <code>/cataracte-operation</code> · <code>/dmla-humide-exsudative</code> · <code>/diabete-retinopathie</code> · <code>/chalazion-soins-blepharite-massage</code> · <code>/corps-flottants-yeux-dpv</code> · <code>/syndrome-de-charles-bonnet</code> · <code>/myopie</code> · <code>/lentilles-de-contact</code></td><td>identiques</td><td class="tag-same">aucune</td></tr>
+    <tr><td><i>nouvelles pages</i></td><td><code>/maladies-de-l-oeil-en-video</code> · <code>/parcours-patient</code> · <code>/rendez-vous-contact</code></td><td>à créer</td></tr>
+  </table></div>
+</section>
+
+<!-- 9 -->
+<section>
+  <h2 id="s12" data-toc="Décisions"><span class="num">12</span>Nos décisions, sauf avis contraire</h2>
+  <p class="sub">Pas de questionnaire. Chaque point a une réponse par défaut. Si le Dr Stopek ne dit rien, on applique. Cela ferme les portes et permet d'avancer vite. Les mentions « À COMPLÉTER » du document sont soit comblées par ces décisions, soit laissées de côté.</p>
+  <div class="dec">
+    <div class="g"><h3>Stratégie</h3>
+      <div class="di"><span class="chip c-ok">DÉCIDÉ</span><b>SMILE en tête, sans exclusivité.</b>La page laser s'ouvre sur le SMILE, la technique qu'il privilégie. LASIK et PKR sont des alternatives « selon le bilan ». Cataracte, DMLA, diabète et rétine gardent leur place : c'est ce qui fait la crédibilité d'un chirurgien, et ce qui évite un site à technique unique.</div>
+      <div class="di"><span class="chip c-ok">DÉCIDÉ</span><b>Le simulateur SMILE devient la porte d'entrée.</b>On garde <code>/smile-simulator</code>, rebaptisé « Testez votre éligibilité au SMILE ». Il est relié à l'accueil, à la page SMILE et à la page myopie. Résultat : un seul bouton, « Prendre rendez-vous pour un bilan ».</div>
+      <div class="di"><span class="chip c-ok">DÉCIDÉ</span><b>Un seul rendez-vous par page, après la preuve.</b>Un lien discret « Rendez-vous » reste dans le menu.</div>
+      <div class="di"><span class="chip c-ok">DÉCIDÉ</span><b>Moyen de rendez-vous : Doctolib.</b>Le téléphone et les horaires s'ajoutent s'ils sont fournis. Sinon, Doctolib seul.</div>
+    </div>
+    <div class="g"><h3>Textes</h3>
+      <div class="di"><span class="chip c-ok">DÉCIDÉ</span><b>Textes d'origine gardés tels quels.</b>Les corrections de la section 10 (orthographe) sont appliquées d'office. « très sécurisée », « 1.000.000 vues », « 5 vidéos », les noms de congrès (dont SAFIR) restent comme sur le site.</div>
+      <div class="di"><span class="chip c-ok">DÉCIDÉ</span><b>Adresse unique : « 67 boulevard de Picpus ».</b></div>
+      <div class="di"><span class="chip c-ok">DÉCIDÉ</span><b>Pas de « Cabinet Stopek &amp; Roman ».</b>Ce nom n'est pas sur le site actuel. On n'ajoute rien.</div>
+      <div class="di"><span class="chip c-ok">DÉCIDÉ</span><b>Pas de tarifs dans cette version.</b>Une page « tarifs » pourra s'ajouter plus tard.</div>
+      <div class="di"><span class="chip c-ok">DÉCIDÉ</span><b>Corps flottants : pas de délai chiffré.</b>On garde « consultez votre ophtalmologue en urgence », mot pour mot.</div>
+      <div class="di"><span class="chip c-ok">DÉCIDÉ</span><b>Diabète : base de <code>/diabete-retinopathie</code>,</b> stades repris de <code>/diabete</code> tels quels.</div>
+    </div>
+    <div class="g"><h3>Contenu à ajouter</h3>
+      <div class="di"><span class="chip c-ok">DÉCIDÉ</span><b>DMLA : grille d'Amsler et signes d'alerte.</b>Mis en ligne après une seule relecture globale.</div>
+      <div class="di"><span class="chip c-ok">DÉCIDÉ</span><b>Chalazion, Charles Bonnet, lentilles.</b>Transcription des sous-titres YouTube, relue, pour donner du texte aux pages.</div>
+      <div class="di"><span class="chip c-ok">DÉCIDÉ</span><b>Chaîne YouTube liée</b> dans le pied de page.</div>
+      <div class="di"><span class="chip c-ok">DÉCIDÉ</span><b>Pas de photos des cliniques ni des centres.</b>Seulement le portrait et le cabinet.</div>
+    </div>
+    <div class="g"><h3>Ce qu'il nous faut de lui</h3>
+      <div class="di"><b>1.</b> Un portrait et deux photos du cabinet (vraies photos).</div>
+      <div class="di"><b>2.</b> Le téléphone et les horaires, s'il veut les afficher.</div>
+      <div class="di"><b>3.</b> Les informations de mentions légales (numéro RPPS, Ordre).</div>
+      <div class="di"><b>4.</b> Une relecture globale d'environ 20 minutes avant la mise en ligne.</div>
+      <p class="small" style="margin:10px 0 0;color:var(--muted)">Les textes marqués ADAPTÉ sont de simples corrections d'orthographe. Les angles sourcés (section 6) sont relus dans la même séance.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+</div>
+<div id="tabc">
+<header class="hero"><div class="wrap">
+  <p class="small" style="margin-bottom:6px;color:var(--muted)">Onglet 2 · analyse du 26 octobre 2026</p>
+  <h1 style="font-size:clamp(26px,4.5vw,38px)">Revue des concurrents, France et États-Unis</h1>
+  <p class="lead">Qui répond bien à « pourquoi moi, pourquoi maintenant, pourquoi lui » ? Qui pousse trop le rendez-vous ? Et quelle place reste libre pour le Dr Stopek ?</p>
+  <p class="small"><b>Comment lire cette revue.</b> Il n'existe pas de classement officiel des « meilleurs » sites. J'ai choisi 11 sites parce qu'ils sont comparables (chirurgie de la cataracte, laser, grands noms ou cabinets parisiens) et parce que j'ai pu les lire. Je n'ai pas pu lire le site de la Clinique Sourdille ni retrouver celui de la Clinique de la Vision. Je n'ai pas couvert Bascom Palmer ni Mayo. Je ne les ai pas vus à l'écran : j'ai lu le texte de leurs pages. Les notes sont <b>mon appréciation</b>, pas une mesure.</p>
+</div></header>
+<main class="wrap">
+
+<section>
+  <h2 id="c1" data-toc="Notes">1 · Le tableau des notes</h2>
+  <p class="sub">Chaque colonne reprend les questions du patient, plus la discipline du bouton de rendez-vous et la transparence des prix. De ● (absent) à ●●● (très bon).</p>
+  <div class="scroll"><table>
+    <tr><th>Site</th><th>1 · Pourquoi moi ?</th><th>2 · Pourquoi maintenant ?</th><th>3 · Pourquoi eux ?</th><th>Bouton RDV mesuré</th><th>Aides à décider</th><th>Prix visibles</th></tr>
+    <tr class="me"><td>DocteurVideo aujourd'hui<small>Dr Stopek, Paris 12e</small></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td><td class="d"><i>●●●</i></td></tr>
+    <tr><td><span class="chip c-us">US</span>AAO EyeSmart<small>page cataracte</small></td><td class="d">●●●</td><td class="d">●●●</td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td></tr>
+    <tr><td><span class="chip c-us">US</span>Cleveland Clinic<small>page cataracte</small></td><td class="d">●●●</td><td class="d">●●●</td><td class="d">●<i>●●</i></td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td></tr>
+    <tr><td><span class="chip c-us">US</span>LasikPlus<small>réseau laser</small></td><td class="d">●●●</td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●●●</td><td class="d">●●●</td></tr>
+    <tr><td><span class="chip c-us">US</span>Carter Eye Center<small>cabinet, Dallas</small></td><td class="d">●●●</td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●●●</td><td class="d">●<i>●●</i></td></tr>
+    <tr><td><span class="chip c-us">US</span>Wills Eye<small>hôpital, Philadelphie</small></td><td class="d">●<i>●●</i></td><td class="d">●<i>●●</i></td><td class="d">●●●</td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td></tr>
+    <tr><td><span class="chip c-fr">FR</span>Elsan Laser Vision<small>page « opération de la myopie »</small></td><td class="d">●●●</td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td><td class="d">●●●</td><td class="d">●●●</td></tr>
+    <tr><td><span class="chip c-fr">FR</span>Point Vision<small>réseau national</small></td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d"><i>●●●</i></td></tr>
+    <tr><td><span class="chip c-fr">FR</span>Vision Santé Paris<small>cabinets Paris 11 et 12</small></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●<i>●●</i></td><td class="d"><i>●●●</i></td></tr>
+    <tr><td><span class="chip c-fr">FR</span>Quinze-Vingts<small>hôpital, Paris 12e</small></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●●●</td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td></tr>
+    <tr><td><span class="chip c-fr">FR</span>Fondation Rothschild<small>hôpital, Paris 19e</small></td><td class="d">●<i>●●</i></td><td class="d">●<i>●●</i></td><td class="d">●●●</td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d"><i>●●●</i></td></tr>
+    <tr><td><span class="chip c-fr">FR</span>Dr Yves Cohen<small>cabinet, Paris 2e</small></td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●<i>●●</i></td><td class="d">●<i>●●</i></td><td class="d"><i>●●●</i></td></tr>
+    <tr class="tg"><td>Cible de la refonte<small>si les cases rouges sont comblées</small></td><td class="d">●●●</td><td class="d">●●●</td><td class="d">●●●</td><td class="d">●●●</td><td class="d">●●●</td><td class="d">●●<i>●</i></td></tr>
+  </table></div>
+  <p class="small" style="margin-top:8px">Notes subjectives, fondées sur le contenu de chaque page capturée. Pour DocteurVideo, voir le diagnostic de la refonte. « Prix visibles » de la cible : sans tarifs dans cette version (voir les décisions, section 12 de l'onglet « La proposition »).</p>
+</section>
+
+<section>
+  <h2 id="c2" data-toc="Carte">2 · La carte : qui occupe quelle place</h2>
+  <p class="sub">Horizontalement : aide à comprendre et à décider. Verticalement : raisons de choisir <i>ce</i> praticien ou <i>ce</i> centre. La case en haut à droite est vide.</p>
+  <div class="card"><svg id="map" viewBox="0 0 900 470" role="img" aria-label="Carte de positionnement des concurrents"></svg>
+  <p class="small" style="margin:8px 0 0">Placement qualitatif, d'après ma lecture des pages. Ce n'est pas un classement.</p></div>
+</section>
+
+<section>
+  <h2 id="c3" data-toc="Enseignements">3 · Cinq enseignements</h2>
+  <ol class="lessons">
+    <li><b>Personne ne répond aux trois questions à la fois.</b>Les sites éducatifs (AAO, Cleveland Clinic) expliquent très bien « pour qui » et « quand », mais n'ont aucun visage derrière. Les grands établissements (Wills Eye, Rothschild, Quinze-Vingts) prouvent leur sérieux, mais n'aident pas à décider. Les cabinets privés français parlent surtout de vitesse et d'urgence. DocteurVideo a déjà les vidéos pédagogiques et un médecin identifiable : c'est la place libre.</li>
+    <li><b>Le bouton partout est la norme, et il se casse.</b>LasikPlus : environ six appels à la consultation dans la page, plus l'en-tête fixe. Cleveland Clinic : un bloc de rendez-vous toutes les quelques pages, entre des publicités. Carter : cinq à six points d'entrée, dont un lien mort (« # »). Vision Santé Paris : plus de dix points d'entrée. Un seul rendez-vous, au bon moment, serait donc une vraie différence.</li>
+    <li><b>En France, la vitesse remplace la raison de choisir.</b>« Urgence sans rendez-vous », « rendez-vous rapides ». Ces promesses sont celles d'un service, pas d'un chirurgien. L'angle du Dr Stopek est autre : « Quelle vision souhaitez-vous obtenir après l'intervention ? » Un conseil, pas une disponibilité.</li>
+    <li><b>Les prix sont presque absents.</b>Seuls Elsan (fourchettes par technique) et LasikPlus (prix « à partir de ») les affichent. Les cabinets parisiens consultés se taisent. DocteurVideo aussi. <span class="chip c-ok">Décision retenue</span> pas de tarifs dans cette version, le temps de vérifier les règles de communication des médecins auprès de l'Ordre. Une page « tarifs » pourra s'ajouter ensuite : ce serait un avantage de confiance.</li>
+    <li><b>À ne pas copier.</b>L'urgence commerciale (« l'offre se termine ») de LasikPlus. Les promesses vagues (« expérience garantie ») de Carter. Les chiffres qui se contredisent (Point Vision : « près de 40 cabinets » pour plus de 70 centres listés ; Elsan : deux durées d'opération différentes sur la même page). Les coquilles et les bandeaux périmés (COVID chez Carter, « navigateur dépassé » aux Quinze-Vingts). Une seule faute suffit à entamer la confiance d'un patient âgé.</li>
+  </ol>
+</section>
+
+<section>
+  <h2 id="c4" data-toc="Fiches">4 · Les fiches</h2>
+  <p class="sub">Ce que chacun fait bien, ce qu'il fait mal, et ce que le Dr Stopek peut en retenir.</p>
+  <div class="grid">
+
+    <div class="comp" id="k1"><h3><span class="chip c-us">US</span>AAO EyeSmart · page cataracte</h3>
+      <div class="lab">Bien</div><ul class="plus"><li>Plan en entonnoir : l'opération, le jour J, la récupération, les risques, la cataracte secondaire, les coûts, la FAQ.</li><li>Quand opérer : défini par la gêne dans la vie quotidienne, pas par un seuil. Même idée que la page du Dr Stopek.</li><li>Comparaison parlante : un cristallin opaque, comme un pare-brise embué.</li><li>Relecteur médecin nommé, date affichée.</li></ul>
+      <div class="lab">Moins bien</div><ul class="minus"><li>Page longue, peu d'images, coûts sans chiffres.</li></ul>
+      <div class="lab">À retenir</div><ul class="take"><li>Une image simple pour expliquer la cataracte. Un déroulé du jour J, étape par étape (déjà présent chez le Dr Stopek, à mieux montrer).</li></ul></div>
+
+    <div class="comp" id="k2"><h3><span class="chip c-us">US</span>Cleveland Clinic · cataracte</h3>
+      <div class="lab">Bien</div><ul class="plus"><li>« Qui a besoin de la chirurgie ? » lié à la vie quotidienne. Dit clairement que ce n'est pas une urgence : le patient n'est pas pressé.</li><li>Risques chiffrés (par exemple décollement de rétine environ 2 pour 1 000, infection moins de 1 pour 1 000).</li><li>Liste « quand appeler le médecin ».</li><li>Honnête sur les limites : l'opération ne soigne pas une autre maladie de l'œil.</li></ul>
+      <div class="lab">Moins bien</div><ul class="minus"><li>Aucune raison de choisir ce centre (« nos ophtalmologues sont des experts »). Trois blocs de rendez-vous et trois publicités dans le texte. Relecture datée de 2023, sans nom de relecteur.</li></ul>
+      <div class="lab">À retenir</div><ul class="take"><li>La phrase « ce n'est pas une urgence » : rassurante et crédible. La liste « quand appeler » : à ajouter sur les pages cataracte, DMLA et corps flottants. Les risques chiffrés : seulement si le Dr Stopek valide ses propres chiffres.</li></ul></div>
+
+    <div class="comp" id="k3"><h3><span class="chip c-us">US</span>LasikPlus · réseau laser</h3>
+      <div class="lab">Bien</div><ul class="plus"><li>Questionnaire de 8 questions « suis-je candidat ? », simulateur de vision, parcours en trois étapes (consultation, traitement, suivi).</li><li>Preuves en couches : note Google de 4,9 sur plus de 92 000 avis, témoignages en vidéo, engagement de retraitement.</li><li>Prix « à partir de » par œil, financement.</li></ul>
+      <div class="lab">Moins bien</div><ul class="minus"><li>Pression commerciale (« offre limitée »). Environ six boutons dans la page. Peu de détails sur les chirurgiens. Pas d'avant/après.</li></ul>
+      <div class="lab">À retenir</div><ul class="take"><li>L'idée du mini-questionnaire « pour qui ? », sans la pression. Le parcours en trois étapes.</li></ul></div>
+
+    <div class="comp" id="k4"><h3><span class="chip c-us">US</span>Carter Eye Center · Dallas</h3>
+      <div class="lab">Bien</div><ul class="plus"><li>Auto-test LASIK, page « êtes-vous candidat ? » découpée par âge (18-30 ans jusqu'à 60 ans et plus), consultation à distance, financement visible.</li><li>Règle utile : ordonnance stable depuis 12 mois.</li><li>Barre de rendez-vous fixe sur téléphone.</li></ul>
+      <div class="lab">Moins bien</div><ul class="minus"><li>Lien « Prendre rendez-vous » mort. Bandeau COVID périmé. Fautes (« Cater Eye Center »). Promesses vagues.</li></ul>
+      <div class="lab">À retenir</div><ul class="take"><li>Découper « pour qui ? » par situation de vie (ici l'âge) plutôt que par technique.</li></ul></div>
+
+    <div class="comp" id="k5"><h3><span class="chip c-us">US</span>Wills Eye · hôpital</h3>
+      <div class="lab">Bien</div><ul class="plus"><li>Crédibilité institutionnelle très forte : fondé en 1832, classements, prix de ses médecins.</li><li>Une voie « urgence » séparée de la voie « rendez-vous ».</li><li>Liens vers transparence des prix et aide financière.</li></ul>
+      <div class="lab">Moins bien</div><ul class="minus"><li>Pas d'aide à décider, pas de guide « quand opérer ». Menu à trois niveaux, bandeau de recrutement au-dessus du bouton.</li></ul>
+      <div class="lab">À retenir</div><ul class="take"><li>Séparer clairement l'urgence du rendez-vous : exactement le cas de la page corps flottants.</li></ul></div>
+
+    <div class="comp" id="k6"><h3><span class="chip c-fr">FR</span>Elsan Laser Vision · page « opération de la myopie »</h3>
+      <div class="lab">Bien</div><ul class="plus"><li>Réponse nette à « suis-je concerné ? » : conditions d'opérabilité (majorité, myopie stable depuis 1 à 2 ans, cornée suffisante, pas de grossesse).</li><li>Comparaison PKR, LASIK, SMILE. Déroulé avant, jour J, après. FAQ de six questions.</li><li>Fourchettes de prix par technique.</li></ul>
+      <div class="lab">Moins bien</div><ul class="minus"><li>Aucune raison de choisir ce centre. Contradictions internes (« n'importe quelle myopie peut être opérée » contre les contre-indications ; deux durées différentes). Coquilles. Risques sans chiffres.</li></ul>
+      <div class="lab">À retenir</div><ul class="take"><li>Le plan de la page laser : concerné, quand, techniques, déroulé, FAQ. À remplir avec les informations que le Dr Stopek doit fournir.</li></ul></div>
+
+    <div class="comp" id="k7"><h3><span class="chip c-fr">FR</span>Point Vision · réseau</h3>
+      <div class="lab">Bien</div><ul class="plus"><li>Promesse claire : rendez-vous rapides. Prise de rendez-vous par motif (cataracte, réfractive, consultation…), parcours de soin en quatre étapes avec durée indicative (environ 1 heure), certification ISO 9001.</li><li>Glossaire « Parlez-vous l'ophtalmologie ? ».</li></ul>
+      <div class="lab">Moins bien</div><ul class="minus"><li>Aucun médecin visible, aucun avis, aucun prix. Chiffres incohérents. Entrée de test visible dans la liste des centres.</li></ul>
+      <div class="lab">À retenir</div><ul class="take"><li>Le parcours en quatre étapes avec un temps indicatif. Le glossaire en mots simples (utile pour les patients âgés).</li></ul></div>
+
+    <div class="comp" id="k8"><h3><span class="chip c-fr">FR</span>Vision Santé Paris · Paris 11 et 12</h3>
+      <div class="lab">Bien</div><ul class="plus"><li>Ciblage local clair (« Paris 11 et 12 »), parcours « urgence » avec liste de symptômes pour se reconnaître, fiches par sous-spécialité, équipement cité.</li></ul>
+      <div class="lab">Moins bien</div><ul class="minus"><li>Plus de dix points d'entrée de rendez-vous, téléphone répété cinq fois. Aucun avis, aucun prix de chirurgie. Chiffre « 45 » sans explication.</li></ul>
+      <div class="lab">À retenir</div><ul class="take"><li>La liste de symptômes « Œil rouge, douleur… » pour s'auto-identifier. C'est un voisin direct (Paris 12e) : la comparaison locale se fera avec lui.</li></ul></div>
+
+    <div class="comp" id="k9"><h3><span class="chip c-fr">FR</span>Quinze-Vingts et Fondation Rothschild</h3>
+      <div class="lab">Bien</div><ul class="plus"><li>Crédibilité maximale : certification HAS « haute qualité des soins » (Rothschild), pages qualité et hygiène (Quinze-Vingts).</li><li>Tarifs, prise en charge et préparation du séjour visibles (Quinze-Vingts). Pages « La cataracte, c'est quoi ? » (Quinze-Vingts).</li></ul>
+      <div class="lab">Moins bien</div><ul class="minus"><li>Menus de plus de 60 liens avec doublons. Pas de message d'accueil propre à l'ophtalmologie. Téléphone et urgences peu visibles (Quinze-Vingts). Parcours de rendez-vous indirect (Rothschild).</li></ul>
+      <div class="lab">À retenir</div><ul class="take"><li>Le Dr Stopek est attaché au Quinze-Vingts : à le dire clairement, avec le nom exact. Les pages qualité sont un modèle de ce qu'on peut renvoyer en lien.</li></ul></div>
+
+    <div class="comp" id="k10"><h3><span class="chip c-fr">FR</span>Dr Yves Cohen · Paris 2e</h3>
+      <div class="lab">Bien</div><ul class="plus"><li>Promesse d'urgence très lisible, cartes de services courtes, ton rassurant.</li></ul>
+      <div class="lab">Moins bien</div><ul class="minus"><li>Presque aucune preuve de compétence (ni diplôme, ni hôpital, ni chiffre). Aucune entrée « cataracte » dans le menu. Liens cassés. Menus en double.</li></ul>
+      <div class="lab">À retenir</div><ul class="take"><li>Exemple de ce qu'un cabinet de chirurgien fait sans la pédagogie : le Dr Stopek a déjà ce qui lui manque.</li></ul></div>
+  </div>
+</section>
+
+<section>
+  <h2 id="c5" data-toc="À emprunter">5 · Ce que l'on peut emprunter, page par page</h2>
+  <p class="sub">Chaque idée est à valider par le Dr Stopek, et à écrire avec ses propres mots et ses propres chiffres.</p>
+  <div class="scroll"><table class="borrow">
+    <tr><th>Page de la refonte</th><th>Idée</th><th>Source d'inspiration</th></tr>
+    <tr><td>Accueil</td><td>Titre qui dit qui et où. « Vous vous reconnaissez ? » par situation, pas par technique. Un seul bouton, à la fin.</td><td>Vision Santé Paris (symptômes), Carter (découpage par âge)</td></tr>
+    <tr><td>Cataracte</td><td>Image simple de la cataracte. « Ce n'est pas une urgence ». Liste « quand appeler le médecin ». Déroulé du jour J en étapes.</td><td>AAO, Cleveland Clinic</td></tr>
+    <tr><td>SMILE et laser</td><td>Plan : suis-je concerné, quand, techniques, déroulé, FAQ. Mini-questionnaire « suis-je candidat ? ». Tout reste à fournir par le Dr Stopek.</td><td>Elsan, LasikPlus, Carter</td></tr>
+    <tr><td>DMLA et corps flottants</td><td>Grille d'Amsler. Deux niveaux d'alerte. Voie « urgence » séparée du rendez-vous.</td><td>Wills Eye (voie urgence), Cleveland Clinic (quand appeler)</td></tr>
+    <tr><td>Votre parcours</td><td>Quatre étapes avec une durée indicative. Mots simples, petit glossaire.</td><td>Point Vision</td></tr>
+    <tr><td>Infos pratiques</td><td>Téléphone, accès, tarifs et prise en charge, dits simplement.</td><td>Quinze-Vingts (tarifs), Elsan (fourchettes)</td></tr>
+    <tr><td>Le Dr Stopek</td><td>Titre, lieux d'exercice, thèse, congrès, vidéos : ses propres preuves, avec un vrai visage.</td><td>Wills Eye (prix des médecins), pages qualité des hôpitaux</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2 id="c6" data-toc="Sources">Sources consultées</h2>
+  <ul class="small" style="columns:2;column-gap:24px">
+    <li><a href="https://www.aao.org/eye-health/treatments/what-is-cataract-surgery">AAO : chirurgie de la cataracte</a></li>
+    <li><a href="https://my.clevelandclinic.org/health/treatments/21472-cataract-surgery">Cleveland Clinic : chirurgie de la cataracte</a></li>
+    <li><a href="https://www.lasikplus.com">LasikPlus</a></li>
+    <li><a href="https://cartereyecenter.com">Carter Eye Center</a></li>
+    <li><a href="https://www.willseye.org">Wills Eye</a></li>
+    <li><a href="https://www.elsan.care/fr/pathologie-et-traitement/maladies-des-yeux/operation-myopie">Elsan : opération de la myopie</a></li>
+    <li><a href="https://www.pointvision.com/">Point Vision</a></li>
+    <li><a href="https://vision-sante-paris.fr/">Vision Santé Paris</a></li>
+    <li><a href="https://www.15-20.fr">Hôpital des Quinze-Vingts</a></li>
+    <li><a href="https://www.fo-rothschild.fr">Fondation Rothschild</a></li>
+    <li><a href="https://www.dryvescohen.com">Dr Yves Cohen</a></li>
+  </ul>
+  <p class="small" style="margin-top:10px">Limites : lecture du texte des pages via un outil de résumé, sans voir la mise en page ni les images. Certaines pages (cataracte, réfractive) n'étaient pas incluses dans la capture de l'accueil pour Wills Eye, Rothschild et Point Vision. Les chiffres cités (notes, avis, pourcentages) sont ceux affichés par chaque site, non vérifiés.</p>
+</section>
+</main>
+</div>
+
+<footer style="padding:30px 0 60px;color:var(--muted);font-size:14px"><div class="wrap">Document de travail · 26 octobre 2026. Rien ne sera publié sans la validation du Dr Stopek. Les textes marqués ORIGINAL viennent de docteurvideo.com ; les textes marqués NOUVEAU sont des propositions courtes.</div></footer>
+</div>
+</div>
+<div class="scrim" id="scrim"></div>
+<script>
+(function(){
+  var NS="http://www.w3.org/2000/svg";
+  function el(p,t,a,txt){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;p.appendChild(e);return e}
+  function box(svg,x,y,w,h,cls,lines,fs,extra){
+    var g=el(svg,"g",{});
+    el(g,"rect",{x:x,y:y,width:w,height:h,rx:8,"class":"n "+cls});
+    var n=lines.length,lh=fs+2,y0=y+h/2-(n-1)*lh/2+fs*0.35;
+    lines.forEach(function(l,i){el(g,"text",{x:x+w/2,y:y0+i*lh,"text-anchor":"middle","font-size":fs,"class":(extra||"")},l)});
+    return g;
+  }
+  function badge(svg,x,y,txt){
+    el(svg,"rect",{x:x,y:y,width:30,height:15,rx:7.5,"class":"badge"});
+    el(svg,"text",{x:x+15,y:y+11,"text-anchor":"middle","font-size":9,"class":"badge-t"},txt);
+  }
+  function split(s){if(s.length<=9||s.indexOf(" ")<0)return [s];var i=s.indexOf(" ");return [s.slice(0,i),s.slice(i+1)];}
+
+  /* ---- site actuel ---- */
+  var s=document.getElementById("svgNow");
+  box(s,300,12,160,38,"n-root",["Accueil"],15,"t-root");
+  var items=[["LES LASERS","surg",1],["CATARACTE","surg",1],["CHALAZION","edu"],["CORPS FLOTTANTS","edu"],["MYOPIE","edu"],["CHARLES BONNET","edu"],["DIABETE","edu"],["DMLA","edu"],["LENTILLES","edu"]];
+  var w=80,gap=4,x0=(760-(9*w+8*gap))/2,y=120;
+  items.forEach(function(it,i){
+    var x=x0+i*(w+gap);
+    el(s,"path",{d:"M380 50 V85 H"+(x+w/2)+" V"+y,"class":"ln"});
+    box(s,x,y,w,46,"n-"+it[1],split(it[0]),11);
+    if(it[2])badge(s,x+w-24,y-8,"RDV");
+  });
+  el(s,"text",{x:380,y:200,"text-anchor":"middle","font-size":12,"class":"t-mut"},"Menu : 9 sujets au même niveau + « More »");
+  /* doublon diabete */
+  var dx=x0+6*(w+gap);
+  el(s,"path",{d:"M"+(dx+w/2)+" 166 V232","class":"ln-bad"});
+  box(s,dx-2,232,w+4,40,"n-bad",["/diabete","(doublon)"],11);
+  /* orphelines */
+  var orph=[["/histoire","aucun lien"],["/dans-les-congres","lié seulement ici"],["/smile-simulator","icône « Settings »"]];
+  orph.forEach(function(o,i){box(s,20+i*150,232,140,40,"n-dead",o,11);});
+  el(s,"text",{x:20,y:292,"font-size":12,"class":"t-bad"},"Pages isolées : introuvables depuis le menu");
+  /* 404 */
+  var dead=["/les-cataractes","/les-dmla-humides","/les-chalazions-cxxo","/copie-de-accueil-dr-video"];
+  dead.forEach(function(d,i){
+    el(s,"rect",{x:20+i*182,y:312,width:172,height:30,rx:6,"class":"n n-dead"});
+    el(s,"text",{x:20+i*182+86,y:331,"text-anchor":"middle","font-size":11},d+"  404");
+  });
+
+  /* ---- nouveau plan ---- */
+  var t=document.getElementById("svgNew");
+  box(t,350,10,200,38,"n-root",["Accueil"],15,"t-root");
+  var L1=[["Le Dr Stopek","prac"],["Cataracte","surg"],["SMILE et laser","surg"],["Maladies de l'œil en vidéo","edu"],["Votre parcours au cabinet","prac"],["Infos pratiques et RDV","prac"]];
+  var bw=136,bs=148,bx=12,by=104,bh=52;
+  L1.forEach(function(it,i){
+    var x=bx+i*bs;
+    el(t,"path",{d:"M450 48 V76 H"+(x+bw/2)+" V"+by,"class":"ln"});
+    var lines=it[0].length>16?[it[0].split(" ").slice(0,Math.ceil(it[0].split(" ").length/2)).join(" "),it[0].split(" ").slice(Math.ceil(it[0].split(" ").length/2)).join(" ")]:[it[0]];
+    box(t,x,by,bw,bh,"n-"+it[1],lines,13.5);
+  });
+  function kids(i,list,cls,w){
+    var x=bx+i*bs;
+    el(t,"path",{d:"M"+(x+12)+" "+(by+bh)+" V"+(by+bh+22+(list.length-1)*34+16),"class":"ln"});
+    list.forEach(function(k,j){
+      var yy=by+bh+14+j*34;
+      el(t,"path",{d:"M"+(x+12)+" "+(yy+16)+" H"+(x+26),"class":"ln"});
+      box(t,x+26,yy,w,32,"n-"+cls,Array.isArray(k)?k:[k],Array.isArray(k)?11:12);
+    });
+  }
+  kids(2,[["Freiner la myopie","(enfant)"]],"edu",118);
+  kids(3,["DMLA humide","Diabète et rétinopathie","Chalazion","Corps flottants (DPV)","Charles Bonnet","Lentilles de contact"],"edu",184);
+  /* chemin de decision */
+  el(t,"text",{x:12,y:398,"font-size":12,"class":"t-mut"},"Chaque page suit le même chemin :");
+  var steps=[["Pourquoi moi ?","n-edu",12,222],["Pourquoi maintenant ?","n-prac",254,222],["Pourquoi le Dr Stopek ?","n-surg",496,222],["Puis : rendez-vous","n-card",738,150]];
+  steps.forEach(function(st,i){
+    if(i<3)el(t,"text",{x:st[2]+st[3]+10,y:437,"text-anchor":"middle","font-size":22,"class":"t-mut"},"›");
+    if(i==3){el(t,"rect",{x:st[2],y:408,width:st[3],height:46,rx:8,fill:"none",stroke:"var(--rdv)","stroke-width":2});
+      el(t,"text",{x:st[2]+st[3]/2,y:436,"text-anchor":"middle","font-size":13.5,"font-weight":700,"class":"t-rdv"},st[0]);}
+    else box(t,st[2],408,st[3],46,st[1],[st[0]],14.5);
+  });
+
+  /* grilles d'Amsler */
+  function amsler(id,distort){
+    var g=document.getElementById(id); if(!g)return;
+    var n=10,c=17,o=0;
+    function pt(x,y){
+      if(!distort)return [x,y];
+      var dx=x-85,dy=y-85,r=Math.sqrt(dx*dx+dy*dy);
+      if(r>48)return [x,y];
+      var k=(1-r/48);
+      return [x+Math.sin(y/7)*6*k, y+Math.sin(x/9)*5*k];
+    }
+    for(var i=0;i<=n;i++){
+      var a="",b="";
+      for(var j=0;j<=34;j++){
+        var u=j*(n*c)/34, p=pt(o+i*c,o+u), q=pt(o+u,o+i*c);
+        a+=(j?"L":"M")+p[0].toFixed(1)+" "+p[1].toFixed(1);
+        b+=(j?"L":"M")+q[0].toFixed(1)+" "+q[1].toFixed(1);
+      }
+      el(g,"path",{d:a}); el(g,"path",{d:b});
+    }
+    el(g,"circle",{cx:85,cy:85,r:3});
+  }
+  amsler("amN",false); amsler("amD",true);
+})();
+</script>
+<script>
+(function(){
+  var NS="http://www.w3.org/2000/svg",s=document.getElementById("map");
+  function el(t,a,x){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(x!=null)e.textContent=x;s.appendChild(e);return e}
+  var L=70,R=880,T=20,B=420;
+  function X(v){return L+(R-L)*v/10}
+  function Y(v){return B-(B-T)*v/10}
+  el("rect",{x:L,y:T,width:R-L,height:B-T,rx:10,fill:"none",stroke:"var(--line)","stroke-width":1.5});
+  el("line",{x1:X(5),y1:T,x2:X(5),y2:B,stroke:"var(--line)","stroke-dasharray":"4 4"});
+  el("line",{x1:L,y1:Y(5),x2:R,y2:Y(5),stroke:"var(--line)","stroke-dasharray":"4 4"});
+  el("text",{x:(L+R)/2,y:455,"text-anchor":"middle","font-size":14,fill:"var(--muted)"},"Aide à comprendre et à décider  →");
+  var t=el("text",{x:20,y:(T+B)/2,"text-anchor":"middle","font-size":14,transform:"rotate(-90 20 "+(T+B)/2+")"},"Raisons de choisir CE praticien ou centre  →");
+  el("text",{x:X(0.2),y:T+20,"font-size":12,fill:"var(--muted)"},"Prestige sans pédagogie");
+  el("text",{x:X(9.8),y:B-10,"text-anchor":"end","font-size":12,fill:"var(--muted)"},"Pédagogie sans visage");
+  el("text",{x:X(0.2),y:B-10,"font-size":12,fill:"var(--muted)"},"Cabinets : service, pas de preuve");
+  el("text",{x:X(9.8),y:T+20,"text-anchor":"end","font-size":12,fill:"var(--ok)","font-weight":700},"Place libre : pédagogie + un chirurgien identifiable");
+  var pts=[["AAO",9.1,2.6,"us"],["Cleveland Clinic",7.9,3.6,"us"],["Elsan Laser",8.2,1.6,"fr"],["LasikPlus",7.1,5.9,"us"],["Carter",7.9,4.7,"us"],["Wills Eye",2.0,8.7,"us"],["Rothschild",1.5,7.6,"fr"],["Quinze-Vingts",3.1,7.3,"fr"],["Point Vision",3.4,5.3,"fr"],["Vision Santé Paris",2.5,4.2,"fr"],["Dr Cohen",1.1,1.4,"fr"],["DocteurVideo aujourd'hui",6.0,4.2,"me"]];
+  pts.forEach(function(p){
+    var cx=X(p[1]),cy=Y(p[2]),col=p[3]=="fr"?"var(--edu)":p[3]=="us"?"var(--prac)":"var(--rdv)";
+    el("circle",{cx:cx,cy:cy,r:p[3]=="me"?9:7,fill:col,stroke:"var(--card)","stroke-width":2});
+    var right=cx<700;
+    el("text",{x:right?cx+13:cx-13,y:cy+4,"text-anchor":right?"start":"end","font-size":13,"font-weight":p[3]=="me"?700:400},p[0]);
+  });
+  /* cible */
+  var cx=X(8.6),cy=Y(8.3);
+  el("path",{d:"M"+X(6.1)+" "+Y(4.5)+" Q"+X(7)+" "+Y(8)+" "+(cx-14)+" "+(cy+4),fill:"none",stroke:"var(--ok)","stroke-width":2.5,"stroke-dasharray":"6 4"});
+  el("circle",{cx:cx,cy:cy,r:13,fill:"var(--ok)",stroke:"var(--card)","stroke-width":2});
+  el("text",{x:cx,y:cy+5,"text-anchor":"middle","font-size":14,fill:"#fff",style:"fill:#fff;font-weight:700"},"★");
+  el("text",{x:cx,y:cy+32,"text-anchor":"middle","font-size":13,"font-weight":700,fill:"var(--ok)",style:"fill:var(--ok)"},"Cible : Dr Stopek refondu");
+  /* legende */
+  el("circle",{cx:L+10,cy:T-4+0,r:0});
+})();
+</script>
+
+<script>
+(function(){
+  document.documentElement.classList.add("js");
+  var tabs={p:document.getElementById("tabp"),c:document.getElementById("tabc")};
+  var btns=document.querySelectorAll("[data-tab]"),tree=document.getElementById("tree"),cur="p",obs=null;
+  var TREE={
+    p:[
+      {t:"Le constat",c:[["s1","1","Le site aujourd'hui"],["s2","2","Dix constats"]]},
+      {t:"Le plan du site",c:[["s3","3","Nouveau plan du site"]]},
+      {t:"La logique patient",c:[
+        ["s4","4","Chemin de décision"],
+        ["s5","5","Ce que le site dit déjà"],
+        ["s6","6","Angles sourcés",[["s6a","SMILE et laser"],["s6b","DMLA et grille d'Amsler"],["s6c","Corps flottants"],["s6d","Quatre preuves : pourquoi lui"]]],
+        ["s7","7","Un seul rendez-vous",[["s7a","Parcours SMILE"],["s7b","Libellés du bouton"]]]]},
+      {t:"Les maquettes",c:[
+        ["s8","8","Maquette de l'accueil",[["s8b","Squelette page SMILE"]]],
+        ["s9","9","Parcours patient"]]},
+      {t:"Mise en œuvre",c:[["s10","10","Textes corrigés"],["s11","11","Anciennes → nouvelles adresses"],["s12","12","Nos décisions",null,"ask"]]}
+    ],
+    c:[
+      {t:"Comparer",c:[["c1","1","Tableau des notes"],["c2","2","Carte de positionnement"]]},
+      {t:"Comprendre",c:[
+        ["c3","3","Cinq enseignements"],
+        ["c4","4","Les fiches",[["k1","AAO"],["k2","Cleveland Clinic"],["k3","LasikPlus"],["k4","Carter Eye Center"],["k5","Wills Eye"],["k6","Elsan Laser Vision"],["k7","Point Vision"],["k8","Vision Santé Paris"],["k9","Quinze-Vingts, Rothschild"],["k10","Dr Yves Cohen"]]],
+        ["c5","5","À emprunter, page par page"]]},
+      {t:"Sources",c:[["c6","","Sources consultées"]]}
+    ]};
+  function mk(id,num,label,cls){var a=document.createElement("a");a.href="#"+id;a.setAttribute("data-for",id);a.innerHTML=(num?'<span class="n">'+num+'</span>':'')+label;return a}
+  function build(k){
+    tree.innerHTML='<h4>Sommaire</h4>';
+    TREE[k].forEach(function(g){
+      var d=document.createElement("details");d.open=true;
+      var sm=document.createElement("summary");sm.textContent=g.t;d.appendChild(sm);
+      var ul=document.createElement("ul");ul.className="kids";
+      g.c.forEach(function(it){
+        var li=document.createElement("li");
+        if(it[4])li.className=it[4];
+        li.appendChild(mk(it[0],it[1],it[2]));
+        if(it[3]){var u2=document.createElement("ul");u2.className="sub2";
+          it[3].forEach(function(ch){var l2=document.createElement("li");l2.appendChild(mk(ch[0],"",ch[1]));u2.appendChild(l2)});
+          li.appendChild(u2)}
+        ul.appendChild(li)});
+      d.appendChild(ul);tree.appendChild(d)});
+    if(obs)obs.disconnect();
+    if("IntersectionObserver" in window){
+      obs=new IntersectionObserver(function(es){
+        es.forEach(function(e){if(e.isIntersecting){
+          var on=null;
+          tree.querySelectorAll("a").forEach(function(a){var m=a.getAttribute("data-for")===e.target.id;a.classList.toggle("on",m);if(m)on=a});
+          if(on){var d=on.closest("details");if(d)d.open=true;
+            var r=on.getBoundingClientRect(),tr=tree.getBoundingClientRect();
+            if(r.top<tr.top+40||r.bottom>tr.bottom-40)tree.scrollTop+=r.top-tr.top-120}
+        }})
+      },{rootMargin:"-80px 0px -75% 0px"});
+      tree.querySelectorAll("a").forEach(function(a){var t=document.getElementById(a.getAttribute("data-for"));if(t)obs.observe(t)});
+    }
+  }
+  function show(k,top){
+    cur=k;for(var x in tabs)tabs[x].hidden=(x!==k);
+    btns.forEach(function(b){b.setAttribute("aria-selected",String(b.getAttribute("data-tab")===k))});
+    build(k);if(top)window.scrollTo(0,0)}
+  btns.forEach(function(b){b.addEventListener("click",function(){show(b.getAttribute("data-tab"),true)})});
+  var bg=document.getElementById("burger"),sc=document.getElementById("scrim");
+  bg.addEventListener("click",function(){document.body.classList.toggle("nav-open")});
+  sc.addEventListener("click",function(){document.body.classList.remove("nav-open")});
+  document.addEventListener("click",function(ev){
+    var a=ev.target.closest&&ev.target.closest('a[href^="#"]');if(!a)return;
+    var id=a.getAttribute("href").slice(1),t=document.getElementById(id);if(!t)return;
+    var k=tabs.c.contains(t)?"c":"p";ev.preventDefault();
+    document.body.classList.remove("nav-open");
+    if(k!==cur)show(k,false);
+    setTimeout(function(){t.scrollIntoView({behavior:"smooth",block:"start"})},30)});
+  show("p",false);
+  if(location.hash){var t=document.getElementById(location.hash.slice(1));if(t){show(tabs.c.contains(t)?"c":"p",false);setTimeout(function(){t.scrollIntoView()},60)}}
+})();
+</script>
+</body>
+</html>
