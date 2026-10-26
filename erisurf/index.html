@@ -104,6 +104,22 @@ figcaption{color:var(--muted);font-size:12px;margin-top:5px}
   color:var(--ink);background:var(--bg);border:1px solid var(--line);
   border-radius:8px;padding:4px 9px}
 .cal:hover{border-color:var(--accent);color:var(--accent)}
+/* Live strip: five tiles across on a desktop, a swipeable row on a phone */
+.live{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;padding-bottom:4px}
+.lcam{flex:0 0 calc((100% - 40px)/5);min-width:200px;scroll-snap-align:start;
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  overflow:hidden;border-top:4px solid var(--accent)}
+.lcam header{display:flex;justify-content:space-between;align-items:center;
+  padding:6px 10px;font-size:12.5px;font-weight:650}
+.lcam header a{color:var(--muted);font-weight:400;text-decoration:none;font-size:11.5px}
+.lcam .vid{position:relative;aspect-ratio:16/9;background:#111}
+.lcam video{width:100%;height:100%;object-fit:cover;display:block}
+.lcam .off{display:none;position:absolute;inset:0;align-items:center;
+  justify-content:center;color:#9aa1ac;font-size:12.5px}
+.lcam.offline .off{display:flex}
+.lcam.offline video{visibility:hidden}
+@media(max-width:640px){.lcam{flex-basis:82%}}
 </style></head><body><div class="wrap">
 <div class="nav"><a class="brand" href="index.html" aria-label="Ericeira Surf Log"><img
  src="logo.jpg" width="34" height="34" alt=""></a><a href="index.html">Latest</a>
@@ -125,7 +141,28 @@ figcaption{color:var(--muted);font-size:12px;margin-top:5px}
 <b>VERDICT</b>
 ★★★☆☆ Ribeira on forecast only, fog blinds every cam. Wind stays under 10 km/h to dark: commit to an evening session.
 <b>NEXT · 16:30</b>
-⭐️ <b>Tomorrow · Tue 07:00-08:30</b> ★★★½☆ Norte · 1.2-1.5m · 9 km/h SSW cross-shore · low tide <a href="https://www.surfline.com/surf-report/praia-do-norte/6a76019026a677d19fde7f36">📈</a> <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Surf%20%E2%98%85%E2%98%85%E2%98%85%C2%BD%E2%98%86%20Praia%20do%20Norte&amp;dates=20261027T070000Z/20261027T083000Z&amp;details=Fair%20%C2%B7%201.2-1.5m%20%C2%B7%209km/h%20SSW%20Cross-shore%20%C2%B7%20low%20tide%20%C2%B7%20forecast%20only%0Ahttps%3A//sebast759.github.io/erisurf/&amp;location=Praia%20do%20Norte%2C%20Ericeira%2C%20Portugal">📅</a></div><h2>Plan a session<span class="plan-fc">forecast only</span></h2><div class="plans"><article class="plan" title="Tomorrow" style="--accent:#D7263D"><span class="plan-when"><b>Tue 07:00</b>&ndash;08:30</span><span class="plan-stars">★★★½☆</span><span class="plan-spot">Norte</span><span class="plan-bits">1.2-1.5m · 9km/h SSW · low tide</span><a class="cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Surf%20%E2%98%85%E2%98%85%E2%98%85%C2%BD%E2%98%86%20Praia%20do%20Norte&amp;dates=20261027T070000Z/20261027T083000Z&amp;details=Fair%20%C2%B7%201.2-1.5m%20%C2%B7%209km/h%20SSW%20Cross-shore%20%C2%B7%20low%20tide%20%C2%B7%20forecast%20only%0Ahttps%3A//sebast759.github.io/erisurf/&amp;location=Praia%20do%20Norte%2C%20Ericeira%2C%20Portugal" target="_blank" rel="noopener noreferrer" title="Block 90 minutes in Google Calendar">&#128197; Block</a></article></div><h2>Cams</h2><figure><img loading="lazy" src="img/289/conditions.png" alt="wind and tide"><figcaption>Wind &amp; tide, next 24h</figcaption></figure><figure id="pic-ribeira"><img loading="lazy" src="img/289/ribeira_crowd.jpg" alt="ribeira_crowd"><figcaption>Ribeira d&#x27;Ilhas</figcaption></figure><figure id="pic-sul"><img loading="lazy" src="img/289/sul_crowd.jpg" alt="sul_crowd"><figcaption>Praia do Sul</figcaption></figure><figure id="pic-pedra"><img loading="lazy" src="img/289/pedra_crowd.jpg" alt="pedra_crowd"><figcaption>Pedra Branca</figcaption></figure><figure id="pic-lizandro"><img loading="lazy" src="img/289/lizandro_crowd.jpg" alt="lizandro_crowd"><figcaption>Foz do Lizandro</figcaption></figure><h2>Spot notes</h2><div class='grid'><article class="card" style="--accent:#1B7FBF">
+⭐️ <b>Tomorrow · Tue 07:00-08:30</b> ★★★½☆ Norte · 1.2-1.5m · 9 km/h SSW cross-shore · low tide <a href="https://www.surfline.com/surf-report/praia-do-norte/6a76019026a677d19fde7f36">📈</a> <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Surf%20%E2%98%85%E2%98%85%E2%98%85%C2%BD%E2%98%86%20Praia%20do%20Norte&amp;dates=20261027T070000Z/20261027T083000Z&amp;details=Fair%20%C2%B7%201.2-1.5m%20%C2%B7%209km/h%20SSW%20Cross-shore%20%C2%B7%20low%20tide%20%C2%B7%20forecast%20only%0Ahttps%3A//sebast759.github.io/erisurf/&amp;location=Praia%20do%20Norte%2C%20Ericeira%2C%20Portugal">📅</a></div><h2>Plan a session<span class="plan-fc">forecast only</span></h2><div class="plans"><article class="plan" title="Tomorrow" style="--accent:#D7263D"><span class="plan-when"><b>Tue 07:00</b>&ndash;08:30</span><span class="plan-stars">★★★½☆</span><span class="plan-spot">Norte</span><span class="plan-bits">1.2-1.5m · 9km/h SSW · low tide</span><a class="cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Surf%20%E2%98%85%E2%98%85%E2%98%85%C2%BD%E2%98%86%20Praia%20do%20Norte&amp;dates=20261027T070000Z/20261027T083000Z&amp;details=Fair%20%C2%B7%201.2-1.5m%20%C2%B7%209km/h%20SSW%20Cross-shore%20%C2%B7%20low%20tide%20%C2%B7%20forecast%20only%0Ahttps%3A//sebast759.github.io/erisurf/&amp;location=Praia%20do%20Norte%2C%20Ericeira%2C%20Portugal" target="_blank" rel="noopener noreferrer" title="Block 90 minutes in Google Calendar">&#128197; Block</a></article></div><h2>Live cams<span class="plan-fc">Beachcam, live</span></h2><div class="live"><article class="lcam" style="--accent:#1B7FBF"><header><span>Ribeira d&#x27;Ilhas</span><a href="https://beachcam.meo.pt/livecams/ribeira-dilhas/" target="_blank" rel="noopener noreferrer">Beachcam &gt;&gt;</a></header><div class="vid"><video muted playsinline controls preload="none" data-src="https://video-auth1.iol.pt/beachcam/bcmafraribeira/playlist.m3u8"></video><span class="off">offline</span></div></article><article class="lcam" style="--accent:#6b7280"><header><span>Pescadores</span><a href="https://beachcam.meo.pt/livecams/praia-dos-pescadores/" target="_blank" rel="noopener noreferrer">Beachcam &gt;&gt;</a></header><div class="vid"><video muted playsinline controls preload="none" data-src="https://video-auth1.iol.pt/beachcam/bcpescadores/playlist.m3u8"></video><span class="off">offline</span></div></article><article class="lcam" style="--accent:#F4820B"><header><span>Praia do Sul</span><a href="https://beachcam.meo.pt/livecams/ericeira-praia-do-sul/" target="_blank" rel="noopener noreferrer">Beachcam &gt;&gt;</a></header><div class="vid"><video muted playsinline controls preload="none" data-src="https://video-auth1.iol.pt/beachcam/praiadosulericeira/playlist.m3u8"></video><span class="off">offline</span></div></article><article class="lcam" style="--accent:#7B4FC9"><header><span>Pedra Branca</span><a href="https://beachcam.meo.pt/livecams/ericeira/" target="_blank" rel="noopener noreferrer">Beachcam &gt;&gt;</a></header><div class="vid"><video muted playsinline controls preload="none" data-src="https://video-auth1.iol.pt/beachcam/ericeiraspots/playlist.m3u8"></video><span class="off">offline</span></div></article><article class="lcam" style="--accent:#2E9E5B"><header><span>Foz do Lizandro</span><a href="https://beachcam.meo.pt/livecams/foz-do-lizandro/" target="_blank" rel="noopener noreferrer">Beachcam &gt;&gt;</a></header><div class="vid"><video muted playsinline controls preload="none" data-src="https://video-auth1.iol.pt/beachcam/fozdolizandro/playlist.m3u8"></video><span class="off">offline</span></div></article></div><script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.15/dist/hls.min.js"></script><script>
+(function(){
+  var vids=document.querySelectorAll('.lcam video');
+  function start(v){
+    if(v._on)return; v._on=1;
+    var src=v.dataset.src, tile=v.closest('.lcam');
+    if(window.Hls&&Hls.isSupported()){
+      var h=new Hls({lowLatencyMode:true}); h.loadSource(src); h.attachMedia(v);
+      h.on(Hls.Events.ERROR,function(e,d){if(d.fatal){tile.classList.add('offline');h.destroy();}});
+    }else if(v.canPlayType('application/vnd.apple.mpegurl')){
+      v.src=src; v.onerror=function(){tile.classList.add('offline');};
+    }else{tile.classList.add('offline');return;}
+    v.play().catch(function(){});
+  }
+  if(!('IntersectionObserver' in window)){vids.forEach(start);return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    var v=e.target;
+    if(e.isIntersecting){start(v);v.play().catch(function(){});}else if(v._on){v.pause();}
+  });},{threshold:0.25});
+  vids.forEach(function(v){io.observe(v);});
+})();
+</script><h2>Cams</h2><figure><img loading="lazy" src="img/289/conditions.png" alt="wind and tide"><figcaption>Wind &amp; tide, next 24h</figcaption></figure><figure id="pic-ribeira"><img loading="lazy" src="img/289/ribeira_crowd.jpg" alt="ribeira_crowd"><figcaption>Ribeira d&#x27;Ilhas</figcaption></figure><figure id="pic-sul"><img loading="lazy" src="img/289/sul_crowd.jpg" alt="sul_crowd"><figcaption>Praia do Sul</figcaption></figure><figure id="pic-pedra"><img loading="lazy" src="img/289/pedra_crowd.jpg" alt="pedra_crowd"><figcaption>Pedra Branca</figcaption></figure><figure id="pic-lizandro"><img loading="lazy" src="img/289/lizandro_crowd.jpg" alt="lizandro_crowd"><figcaption>Foz do Lizandro</figcaption></figure><h2>Spot notes</h2><div class='grid'><article class="card" style="--accent:#1B7FBF">
 <header><h3>Ribeira</h3><span class="badge" style="background:#ca8a04">FAIR</span></header>
 <p class="size">1.2&ndash;2.0 m<span class='stars' title='Erisurf rating 3/5'>★★★☆☆</span></p>
 <p class="who"><span class='nocam'>surfers unclear</span></p><p class="note" title="thick fog, lineup unreadable on close-up and crops; 1-2 surfers carrying boards on sand">thick fog, lineup unreadable on close-up and crops; 1-2 surfers carrying boards on sand</p>

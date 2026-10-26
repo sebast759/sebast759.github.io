@@ -104,6 +104,22 @@ figcaption{color:var(--muted);font-size:12px;margin-top:5px}
   color:var(--ink);background:var(--bg);border:1px solid var(--line);
   border-radius:8px;padding:4px 9px}
 .cal:hover{border-color:var(--accent);color:var(--accent)}
+/* Live strip: five tiles across on a desktop, a swipeable row on a phone */
+.live{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;padding-bottom:4px}
+.lcam{flex:0 0 calc((100% - 40px)/5);min-width:200px;scroll-snap-align:start;
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  overflow:hidden;border-top:4px solid var(--accent)}
+.lcam header{display:flex;justify-content:space-between;align-items:center;
+  padding:6px 10px;font-size:12.5px;font-weight:650}
+.lcam header a{color:var(--muted);font-weight:400;text-decoration:none;font-size:11.5px}
+.lcam .vid{position:relative;aspect-ratio:16/9;background:#111}
+.lcam video{width:100%;height:100%;object-fit:cover;display:block}
+.lcam .off{display:none;position:absolute;inset:0;align-items:center;
+  justify-content:center;color:#9aa1ac;font-size:12.5px}
+.lcam.offline .off{display:flex}
+.lcam.offline video{visibility:hidden}
+@media(max-width:640px){.lcam{flex-basis:82%}}
 </style></head><body><div class="wrap">
 <div class="nav"><a class="brand" href="index.html" aria-label="Ericeira Surf Log"><img
  src="logo.jpg" width="34" height="34" alt=""></a><a href="index.html">Latest</a>
