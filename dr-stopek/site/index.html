@@ -100,6 +100,35 @@ footer.f .w{display:flex;gap:24px;flex-wrap:wrap;justify-content:space-between}
 .pair svg path{stroke:#1c2b33;stroke-width:1;fill:none}
 .todo{display:inline-block;background:#fde4e1;color:#b42318;font-size:13px;font-weight:700;border-radius:99px;padding:1px 10px}
 .mini{font-size:14px;color:var(--muted)}
+
+.ph2{border-radius:20px;overflow:hidden;background:#dfe9e7;position:relative}
+.ph2 img{width:100%;height:100%;object-fit:cover;display:block}
+.ph2.p45{aspect-ratio:4/5}.ph2.p169{aspect-ratio:16/9}.ph2.p43{aspect-ratio:4/3}.ph2.p11{aspect-ratio:1/1}.ph2.p916{aspect-ratio:9/16}
+.trust{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.trust span{background:#fff;border:1px solid var(--line);border-radius:99px;padding:5px 14px;font-size:15px}
+.trust b{color:var(--teal)}
+nav.m a.tel{font-weight:700;color:var(--navy);white-space:nowrap}
+.rev{background:#fff;border-radius:18px;padding:18px 20px;box-shadow:0 1px 3px rgba(20,49,63,.08)}
+.rev .st{color:#e0a100;letter-spacing:2px;font-size:18px}
+.rev p{margin:6px 0 8px;font-size:16.5px}
+.rev small{color:var(--muted)}
+.gal{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.gal .ph2{aspect-ratio:4/3}
+.shorts{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));max-width:760px}
+.shorts .vid{aspect-ratio:9/16;border-radius:16px}
+.soc{display:flex;gap:10px;flex-wrap:wrap}
+.soc a{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 16px;text-decoration:none;color:var(--ink);font-size:16px}
+.clin{background:linear-gradient(135deg,#d3e9e5,#efe3d0);height:110px;display:flex;align-items:center;justify-content:center;gap:10px;color:var(--teal);font-family:Georgia,serif;font-size:24px}
+.clin svg{width:38px;height:38px}
+table.h{border-collapse:collapse;width:100%;font-size:16px}
+table.h td{padding:5px 0;border-bottom:1px solid var(--line)}
+table.h td:last-child{text-align:right;color:var(--muted)}
+.acc{display:grid;gap:8px;margin:0;padding:0;list-style:none;font-size:16px}
+.acc li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 14px}
+.team{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.team div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:15px}
+.team b{display:block;font-size:17px;color:var(--navy)}
+.criteria{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
@@ -125,21 +154,22 @@ footer.f .w{display:flex;gap:24px;flex-wrap:wrap;justify-content:space-between}
 <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></symbol>
 <symbol id="i-cam" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol>
 </defs></svg>
-<div class="ribbon">Exemple de site pour le Dr Stopek · maquette non officielle · les cases hachurées sont de vraies photos à fournir · <a href="../">retour à la proposition</a></div>
+<div class="ribbon">Exemple de site pour le Dr Stopek · maquette non officielle · photos et informations reprises de dr-stopek.fr · <a href="../">retour à la proposition</a></div>
 <header class="top"><div class="w"><a class="logo" href="index.html"><b>Dr STOPEK</b><small>OPHTALMOLOGUE - CHIRURGIEN</small></a>
-<button id="bg" aria-label="Menu">Menu</button><nav class="m" id="nv"><a href="index.html" class="on">Accueil</a><a href="cataracte.html">Cataracte</a><a href="smile-laser.html">SMILE et laser</a><a href="maladies.html">Maladies en vidéo</a><a href="cabinet.html">Votre parcours</a><a class="rdv" href="cabinet.html#rdv">Rendez-vous</a></nav></div></header>
+<button id="bg" aria-label="Menu">Menu</button><nav class="m" id="nv"><a href="index.html" class="on">Accueil</a><a href="cataracte.html">Cataracte</a><a href="smile-laser.html">SMILE et laser</a><a href="maladies.html">Maladies en vidéo</a><a href="cabinet.html">Votre parcours</a><a class="tel" href="tel:+33143076600">01 43 07 66 00</a><a class="rdv" href="cabinet.html#rdv">Rendez-vous</a></nav></div></header>
 
 <section class="hero"><div class="w"><div>
 <h1>Dr Dan Stopek, ophtalmologue-chirurgien à Paris</h1>
 <p class="lead">« Spécialisé dans les corrections laser de la vision et la chirurgie de la cataracte. »</p>
+<div class="trust"><span><b>4,6 ★</b> 138 avis Google</span><span><b>20 ans</b> d'expérience</span><span>Attaché aux <b>Quinze-Vingts</b></span></div>
 <div class="acts"><a class="btn soft" href="smile-laser.html#test">Testez votre éligibilité au SMILE</a><a href="cataracte.html">Chirurgie de la cataracte →</a></div>
-</div><div class="pic"><div class="ph p45"><div><svg class="ico" aria-hidden="true"><use href="#i-cam"/></svg>Portrait réel du Dr Stopek<br><span class="mini">à fournir</span></div></div></div></div></section>
+</div><div class="pic"><div class="ph2 p45"><img src="img/portrait.jpg" alt="Dr Dan Stopek" loading="lazy" style="object-position:50% 12%"></div></div></div></section>
 
 <section class="alt"><div class="w">
 <div class="sec-h"><div class="k">Pourquoi moi ?</div><h2>Vous vous reconnaissez ?</h2></div>
 <div class="grid">
 <a class="card" href="cataracte.html"><button class="vid" data-id="Tx14OYcf8r8" aria-label="Lire la vidéo : La cataracte"><img src="https://i.ytimg.com/vi/Tx14OYcf8r8/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="pl"></span><span class="tag">cataracte</span></button><div class="b"><h3>Vue floue, éblouissement</h3><p>« gêne à la conduite nocturne · difficulté à lire »</p><span class="go">Comprendre la cataracte →</span></div></a>
-<a class="card" href="smile-laser.html"><div class="ph p169"><div><svg class="ico" aria-hidden="true"><use href="#i-cam"/></svg>Photo réelle<br><span class="mini">laser, à fournir</span></div></div><div class="b"><h3>Corriger la myopie au laser</h3><p>« Présentation des 3 techniques de correction de la myopie au Laser »</p><span class="go">SMILE et laser →</span></div></a>
+<a class="card" href="smile-laser.html"><div class="ph2 p169"><img src="img/laser.jpg" alt="Laser de chirurgie réfractive" loading="lazy" style="object-position:center"></div><div class="b"><h3>Corriger la myopie au laser</h3><p>« Présentation des 3 techniques de correction de la myopie au Laser »</p><span class="go">SMILE et laser →</span></div></a>
 <a class="card" href="maladies.html#dpv"><button class="vid" data-id="Q0FfCOjziH8" aria-label="Lire la vidéo : Corps flottants"><img src="https://i.ytimg.com/vi/Q0FfCOjziH8/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="pl"></span><span class="tag">corps flottants</span></button><div class="b"><h3>Corps flottants, éclairs</h3><p>« corps flottants +/- des flash fugaces »</p><span class="go">Que faire ? →</span></div></a>
 <a class="card" href="maladies.html#diabete"><button class="vid" data-id="_0Aw6SX_6rI" aria-label="Lire la vidéo : Diabète"><img src="https://i.ytimg.com/vi/_0Aw6SX_6rI/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="pl"></span><span class="tag">diabète</span></button><div class="b"><h3>Diabète, DMLA</h3><p>« Comprendre le diabète et protéger sa vue »</p><span class="go">Voir les vidéos →</span></div></a>
 </div></div></section>
@@ -153,17 +183,34 @@ footer.f .w{display:flex;gap:24px;flex-wrap:wrap;justify-content:space-between}
 </div></div></section>
 
 <section class="alt"><div class="w split">
-<div class="ph p43"><div><svg class="ico" aria-hidden="true"><use href="#i-cam"/></svg>Photo réelle du cabinet<br><span class="mini">à fournir</span></div></div>
+<div class="ph2 p11"><img src="img/chirurgien.jpg" alt="Le Dr Stopek au microscope opératoire" loading="lazy" style="object-position:60% 50%"></div>
 <div><div class="sec-h" style="margin-bottom:12px"><div class="k">Pourquoi le Dr Stopek ?</div></div>
 <p class="quote">« […] guider le patient dans son choix. »</p>
 <p>« Dr Dan STOPEK, ophtalmologue spécialisé en lasers de la myopie et en chirurgie de la cataracte, est installé à Paris et attaché à l'Hôpital des Quinze-Vingts. »</p>
-<div class="nums"><div><b>+ de 1.000.000</b>vues de ses vidéos</div><div><b>5 vidéos</b>sélectionnées en congrès</div><div><b>2009</b>thèse sur l'information du patient opéré de la cataracte</div></div>
-<p style="margin-top:14px"><a href="cabinet.html">Son parcours et le cabinet →</a></p></div>
+<div class="nums"><div><b>Pionnier du SMILE</b>en France depuis 2013</div><div><b>2 M+</b>vues de ses vidéos sur YouTube</div><div><b>2009</b>thèse sur l'information du patient opéré de la cataracte</div></div>
+<p style="margin-top:14px"><a href="cabinet.html">Le cabinet et l'équipe →</a></p></div>
 </div></section>
-<section><div class="w"><div class="cta"><h2>Prendre rendez-vous</h2><p>« Une consultation au cabinet du Dr Dan Stopek à Paris permet d'évaluer […] et de définir la meilleure stratégie […] adaptée à vos besoins visuels »</p><a class="btn" href="https://www.doctolib.fr/ophtalmologue/paris/dan-stopek" target="_blank" rel="noopener">Prendre rendez-vous</a><small>67 boulevard de Picpus, 75012 Paris · Téléphone <span class="todo">à compléter</span></small></div></div></section>
+
+<section><div class="w"><div class="sec-h"><div class="k">Avis patients</div><h2>4,6 ★ sur 138 avis Google</h2></div>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+<div class="rev"><div class="st">★★★★★</div><p>« Dès la première consultation, le Dr Stopek a fait preuve d'un grand professionnalisme et d'une pédagogie remarquable… »</p><small>Axel</small></div>
+<div class="rev"><div class="st">★★★★★</div><p>« Son équipe et lui-même très attentionnés. Un accueil chaleureux, la salle d'attente lumineuse, un suivi post opératoire avec rigueur. »</p><small>Agnès N.</small></div>
+</div></div></section>
+
+<section class="alt"><div class="w"><div class="sec-h"><div class="k">Suivez le Dr Stopek</div><h2>Vidéos et réseaux</h2></div>
+<div class="shorts"><div class="ph2 p916" style="border-radius:16px"><button class="vid" data-id="9SVE5JMnQGs" aria-label="Lire la vidéo : Une astuce de bloc"><img src="https://i.ytimg.com/vi/9SVE5JMnQGs/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="pl"></span></button></div><div class="ph2 p916" style="border-radius:16px"><button class="vid" data-id="lLdzplymYDk" aria-label="Lire la vidéo : Glaucome"><img src="https://i.ytimg.com/vi/lLdzplymYDk/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="pl"></span></button></div><div class="ph2 p916" style="border-radius:16px"><button class="vid" data-id="wUmphFmfDgI" aria-label="Lire la vidéo : Task lenses"><img src="https://i.ytimg.com/vi/wUmphFmfDgI/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="pl"></span></button></div></div>
+<div class="soc" style="margin-top:16px"><a href="https://www.youtube.com/@DrStopek" target="_blank" rel="noopener">▶ YouTube</a><a href="https://www.instagram.com/dr.stopek" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/dan-stopek-4b88b01a6/" target="_blank" rel="noopener">LinkedIn</a></div></div></section>
+
+<section><div class="w split">
+<div class="gal" style="grid-template-columns:1fr 1fr"><div class="ph2 p43"><img src="img/cabinet-1.jpg" alt="Salle d'attente du cabinet" loading="lazy" style="object-position:center"></div><div class="ph2 p43"><img src="img/cabinet-3.jpg" alt="Salle de consultation" loading="lazy" style="object-position:center"></div></div>
+<div><div class="sec-h" style="margin-bottom:12px"><div class="k">Où consulter</div><h2>Le cabinet, Paris 12e</h2></div>
+<p>67 boulevard de Picpus, 75012 Paris<br>Métro Nation (lignes 1, 2, 6, 9) · RER A Nation</p>
+<p><a href="cabinet.html">Horaires, accès et équipe →</a></p></div>
+</div></section>
+<section><div class="w"><div class="cta"><h2>Prendre rendez-vous</h2><p>« Une consultation au cabinet du Dr Dan Stopek à Paris permet d'évaluer […] et de définir la meilleure stratégie […] adaptée à vos besoins visuels »</p><a class="btn" href="https://www.doctolib.fr/ophtalmologue/paris/dan-stopek" target="_blank" rel="noopener">Prendre rendez-vous</a><small>67 boulevard de Picpus, 75012 Paris · <a href="tel:+33143076600" style="color:#ffd9c8">01 43 07 66 00</a></small></div></div></section>
 
 <footer class="f"><div class="w"><div><b>DOCTEUR DAN STOPEK</b><br>OPHTALMOLOGUE - CHIRURGIEN<br>67 BOULEVARD DE PICPUS<br>75012 PARIS</div>
-<div><a href="https://www.youtube.com/@DrStopek" target="_blank" rel="noopener">Chaîne YouTube</a> · <a href="https://www.docteurvideo.com" target="_blank" rel="noopener">docteurvideo.com</a><br>Mentions légales <span class="todo">à compléter</span><br>2011-2026 © docteurvideo.com - Tous droits réservés.</div></div></footer>
+<div><a href="https://www.youtube.com/@DrStopek" target="_blank" rel="noopener">Chaîne YouTube</a> · <a href="https://www.docteurvideo.com" target="_blank" rel="noopener">docteurvideo.com</a><br><a href="https://www.dr-stopek.fr/" target="_blank" rel="noopener">dr-stopek.fr</a> · Mentions légales<br>2011-2026 © docteurvideo.com - Tous droits réservés.</div></div></footer>
 <script>
 document.getElementById("bg").onclick=function(){document.getElementById("nv").classList.toggle("open")};
 document.addEventListener("click",function(e){var v=e.target.closest(".vid");if(!v||v.querySelector("iframe"))return;

@@ -100,6 +100,35 @@ footer.f .w{display:flex;gap:24px;flex-wrap:wrap;justify-content:space-between}
 .pair svg path{stroke:#1c2b33;stroke-width:1;fill:none}
 .todo{display:inline-block;background:#fde4e1;color:#b42318;font-size:13px;font-weight:700;border-radius:99px;padding:1px 10px}
 .mini{font-size:14px;color:var(--muted)}
+
+.ph2{border-radius:20px;overflow:hidden;background:#dfe9e7;position:relative}
+.ph2 img{width:100%;height:100%;object-fit:cover;display:block}
+.ph2.p45{aspect-ratio:4/5}.ph2.p169{aspect-ratio:16/9}.ph2.p43{aspect-ratio:4/3}.ph2.p11{aspect-ratio:1/1}.ph2.p916{aspect-ratio:9/16}
+.trust{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.trust span{background:#fff;border:1px solid var(--line);border-radius:99px;padding:5px 14px;font-size:15px}
+.trust b{color:var(--teal)}
+nav.m a.tel{font-weight:700;color:var(--navy);white-space:nowrap}
+.rev{background:#fff;border-radius:18px;padding:18px 20px;box-shadow:0 1px 3px rgba(20,49,63,.08)}
+.rev .st{color:#e0a100;letter-spacing:2px;font-size:18px}
+.rev p{margin:6px 0 8px;font-size:16.5px}
+.rev small{color:var(--muted)}
+.gal{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.gal .ph2{aspect-ratio:4/3}
+.shorts{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));max-width:760px}
+.shorts .vid{aspect-ratio:9/16;border-radius:16px}
+.soc{display:flex;gap:10px;flex-wrap:wrap}
+.soc a{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 16px;text-decoration:none;color:var(--ink);font-size:16px}
+.clin{background:linear-gradient(135deg,#d3e9e5,#efe3d0);height:110px;display:flex;align-items:center;justify-content:center;gap:10px;color:var(--teal);font-family:Georgia,serif;font-size:24px}
+.clin svg{width:38px;height:38px}
+table.h{border-collapse:collapse;width:100%;font-size:16px}
+table.h td{padding:5px 0;border-bottom:1px solid var(--line)}
+table.h td:last-child{text-align:right;color:var(--muted)}
+.acc{display:grid;gap:8px;margin:0;padding:0;list-style:none;font-size:16px}
+.acc li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 14px}
+.team{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.team div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:15px}
+.team b{display:block;font-size:17px;color:var(--navy)}
+.criteria{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
@@ -125,30 +154,39 @@ footer.f .w{display:flex;gap:24px;flex-wrap:wrap;justify-content:space-between}
 <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></symbol>
 <symbol id="i-cam" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol>
 </defs></svg>
-<div class="ribbon">Exemple de site pour le Dr Stopek · maquette non officielle · les cases hachurées sont de vraies photos à fournir · <a href="../">retour à la proposition</a></div>
+<div class="ribbon">Exemple de site pour le Dr Stopek · maquette non officielle · photos et informations reprises de dr-stopek.fr · <a href="../">retour à la proposition</a></div>
 <header class="top"><div class="w"><a class="logo" href="index.html"><b>Dr STOPEK</b><small>OPHTALMOLOGUE - CHIRURGIEN</small></a>
-<button id="bg" aria-label="Menu">Menu</button><nav class="m" id="nv"><a href="index.html">Accueil</a><a href="cataracte.html">Cataracte</a><a href="smile-laser.html">SMILE et laser</a><a href="maladies.html">Maladies en vidéo</a><a href="cabinet.html" class="on">Votre parcours</a><a class="rdv" href="cabinet.html#rdv">Rendez-vous</a></nav></div></header>
+<button id="bg" aria-label="Menu">Menu</button><nav class="m" id="nv"><a href="index.html">Accueil</a><a href="cataracte.html">Cataracte</a><a href="smile-laser.html">SMILE et laser</a><a href="maladies.html">Maladies en vidéo</a><a href="cabinet.html" class="on">Votre parcours</a><a class="tel" href="tel:+33143076600">01 43 07 66 00</a><a class="rdv" href="cabinet.html#rdv">Rendez-vous</a></nav></div></header>
 
 <section class="hero"><div class="w"><div>
 <h1>Votre parcours au cabinet</h1>
-<p class="lead">Le bilan préopératoire et le suivi s'effectuent au cabinet du Dr Stopek.</p></div><div class="pic"><div class="ph p43"><div><svg class="ico" aria-hidden="true"><use href="#i-cam"/></svg>Photo réelle du cabinet<br><span class="mini">à fournir</span></div></div></div></div></section>
+<p class="lead">Le bilan préopératoire et le suivi s'effectuent au cabinet du Dr Stopek.</p>
+<p>Le Dr Stopek assure personnellement l'ensemble du parcours de soin, de la consultation à l'intervention jusqu'au suivi post-opératoire.</p></div><div class="pic"><div class="ph2 p43"><img src="img/cabinet-1.jpg" alt="Salle d'attente du cabinet" loading="lazy" style="object-position:center"></div></div></div></section>
 
 <section class="alt"><div class="w"><div class="sec-h"><h2>Quatre étapes</h2></div>
 <div class="steps">
 <div class="step"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg><b>La consultation</b><span>Le cabinet vous reçoit pour tout bilan visuel, prescription de corrections optiques, suivi de pathologies (DMLA, glaucome, diabète...), 2ème avis...</span></div>
-<div class="step"><svg class="ico" aria-hidden="true"><use href="#i-list"/></svg><b>Le bilan préopératoire</b><span>Cataracte : évaluer précisément la cataracte, mesurer l'œil pour calculer l'implant, vérifier la rétine et la cornée.<br>Laser : le Docteur STOPEK vous précisera les techniques auxquelles vous êtes éligibles.</span></div>
-<div class="step"><svg class="ico" aria-hidden="true"><use href="#i-hosp"/></svg><b>L'intervention</b><span>Cataracte : Clinique Mont Louis (Paris 11e) ou Clinique Saint-Jean-de-Dieu (Paris 7e).<br>Laser : Centre Laser Victor Hugo ou Centre Laser Vision 15-20.</span></div>
-<div class="step"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><b>Le suivi</b><span>Le suivi est assuré par le Docteur STOPEK à son cabinet.</span></div></div></div></section>
+<div class="step"><svg class="ico" aria-hidden="true"><use href="#i-list"/></svg><b>Le bilan préopératoire</b><span>Cataracte : évaluer précisément la cataracte, mesurer l'œil pour calculer l'implant, vérifier la rétine et la cornée.<br>Laser : le Dr Stopek vous précisera les techniques auxquelles vous êtes éligible.</span></div>
+<div class="step"><svg class="ico" aria-hidden="true"><use href="#i-hosp"/></svg><b>L'intervention</b><span>Cataracte : Clinique du Mont-Louis ou Clinique Saint-Jean de Dieu.<br>Laser : Centre Laser Victor Hugo ou Centre Laser Vision 15-20.</span></div>
+<div class="step"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><b>Le suivi</b><span>Le suivi est assuré par le Dr Stopek à son cabinet.</span></div></div></div></section>
 
-<section id="rdv"><div class="w split"><div><h2>Infos pratiques</h2>
-<p><b>DOCTEUR DAN STOPEK</b><br>OPHTALMOLOGUE - CHIRURGIEN<br>67 BOULEVARD DE PICPUS<br>75012 PARIS</p>
-<p>Téléphone et horaires <span class="todo">à compléter</span><br>Métro, bus, accès <span class="todo">à compléter</span></p>
-<p><a href="https://www.openstreetmap.org/search?query=67%20boulevard%20de%20Picpus%2075012%20Paris" target="_blank" rel="noopener">Voir sur la carte →</a></p>
-<div class="alert2" style="grid-template-columns:1fr"><div class="a2"><b>Signe d'alerte</b><br>En cas d'éclairs lumineux […] ou d'un voile noir persistant […] consultez votre ophtalmologue en urgence.</div></div>
-</div><div><div class="ph p43"><div><svg class="ico" aria-hidden="true"><use href="#i-cam"/></svg>Photo réelle de l'entrée<br><span class="mini">à fournir</span></div></div><div style="text-align:center;margin-top:20px"><a class="btn" href="https://www.doctolib.fr/ophtalmologue/paris/dan-stopek" target="_blank" rel="noopener">Prendre rendez-vous</a><p class="mini" style="margin-top:8px">Prise de rendez-vous en ligne sur Doctolib</p></div></div></div></section>
+<section><div class="w"><div class="sec-h"><div class="k">Le cabinet Stopek &amp; Roman</div><h2>Un espace dédié à votre vision</h2></div>
+<div class="gal"><div class="ph2 p43"><img src="img/cabinet-2.jpg" alt="Salle d'attente" loading="lazy" style="object-position:center"></div><div class="ph2 p43"><img src="img/cabinet-3.jpg" alt="Salle de consultation" loading="lazy" style="object-position:center"></div><div class="ph2 p43"><img src="img/cabinet-4.jpg" alt="Accueil du cabinet" loading="lazy" style="object-position:center"></div><div class="ph2 p43"><img src="img/portrait.jpg" alt="Le Dr Stopek" loading="lazy" style="object-position:50% 15%"></div></div>
+<h3 style="margin-top:26px">L'équipe</h3>
+<div class="team"><div><b>Dr Dan Stopek</b>Chirurgien ophtalmologue</div><div><b>Dr Roman</b>Chirurgien ophtalmologue</div><div><b>Clara</b>Orthoptiste</div><div><b>Maëva</b>Secrétaire</div></div></div></section>
+
+<section class="alt" id="rdv"><div class="w split"><div><h2>Infos pratiques</h2>
+<p><b>Cabinet Stopek &amp; Roman</b><br>67 boulevard de Picpus, 75012 Paris<br><a href="tel:+33143076600"><b>01 43 07 66 00</b></a></p>
+<table class="h"><tr><td>Lundi, mardi</td><td>9h – 19h</td></tr><tr><td>Mercredi</td><td>9h – 17h</td></tr><tr><td>Jeudi, vendredi</td><td>9h – 18h</td></tr><tr><td>Samedi</td><td>9h – 12h</td></tr><tr><td>Dimanche</td><td>fermé</td></tr></table>
+<h3 style="margin-top:18px">Comment venir</h3>
+<ul class="acc"><li>Métro Nation (lignes 1, 2, 6, 9) · RER A Nation</li><li>Bus 26, 56, 57, 71, 86, 215 et 351</li><li>Voiture : parking Indigo à 20 m · Vélib' : 2 stations à proximité</li></ul>
+<div class="alert2" style="grid-template-columns:1fr;margin-top:16px"><div class="a2"><b>Signe d'alerte</b><br>En cas d'éclairs lumineux […] ou d'un voile noir persistant […] consultez votre ophtalmologue en urgence.</div></div>
+</div><div><h3>Où se font les interventions</h3>
+<ul class="acc"><li><b>Clinique du Mont-Louis</b> · 8-10 rue de la Folie-Regnault, Paris 11e</li><li><b>Clinique Saint-Jean de Dieu</b> · 2 rue Rousselet, Paris 7e</li><li><b>Centre Laser Victor Hugo</b> · 6 rue du Dôme, Paris 16e</li><li><b>Centre Laser Vision 15-20</b> · 13 rue Moreau, Paris 12e</li></ul>
+<div style="text-align:center;margin-top:24px"><a class="btn" href="https://www.doctolib.fr/ophtalmologue/paris/dan-stopek" target="_blank" rel="noopener">Prendre rendez-vous</a><p class="mini" style="margin-top:8px">Prise de rendez-vous en ligne sur Doctolib, ou par téléphone</p></div></div></div></section>
 
 <footer class="f"><div class="w"><div><b>DOCTEUR DAN STOPEK</b><br>OPHTALMOLOGUE - CHIRURGIEN<br>67 BOULEVARD DE PICPUS<br>75012 PARIS</div>
-<div><a href="https://www.youtube.com/@DrStopek" target="_blank" rel="noopener">Chaîne YouTube</a> · <a href="https://www.docteurvideo.com" target="_blank" rel="noopener">docteurvideo.com</a><br>Mentions légales <span class="todo">à compléter</span><br>2011-2026 © docteurvideo.com - Tous droits réservés.</div></div></footer>
+<div><a href="https://www.youtube.com/@DrStopek" target="_blank" rel="noopener">Chaîne YouTube</a> · <a href="https://www.docteurvideo.com" target="_blank" rel="noopener">docteurvideo.com</a><br><a href="https://www.dr-stopek.fr/" target="_blank" rel="noopener">dr-stopek.fr</a> · Mentions légales<br>2011-2026 © docteurvideo.com - Tous droits réservés.</div></div></footer>
 <script>
 document.getElementById("bg").onclick=function(){document.getElementById("nv").classList.toggle("open")};
 document.addEventListener("click",function(e){var v=e.target.closest(".vid");if(!v||v.querySelector("iframe"))return;
