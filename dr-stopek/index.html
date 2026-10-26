@@ -254,6 +254,8 @@ h2[id]{scroll-margin-top:118px}
 @media print{[hidden]{display:block!important}.top{display:none}}
 
 .c-ok{background:var(--ok-bg);color:var(--ok)}
+svg a text{fill:var(--edu);text-decoration:underline;cursor:pointer}
+svg a:hover text{fill:var(--rdv)}
 .dec{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:820px){.dec{grid-template-columns:1fr}}
 .dec .g{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
@@ -827,18 +829,18 @@ h2[id],h3[id],.comp[id]{scroll-margin-top:74px}
   <p class="sub">Chaque colonne reprend les questions du patient, plus la discipline du bouton de rendez-vous et la transparence des prix. De ● (absent) à ●●● (très bon).</p>
   <div class="scroll"><table>
     <tr><th>Site</th><th>1 · Pourquoi moi ?</th><th>2 · Pourquoi maintenant ?</th><th>3 · Pourquoi eux ?</th><th>Bouton RDV mesuré</th><th>Aides à décider</th><th>Prix visibles</th></tr>
-    <tr class="me"><td>DocteurVideo aujourd'hui<small>Dr Stopek, Paris 12e</small></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td><td class="d"><i>●●●</i></td></tr>
-    <tr><td><span class="chip c-us">US</span>AAO EyeSmart<small>page cataracte</small></td><td class="d">●●●</td><td class="d">●●●</td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td></tr>
-    <tr><td><span class="chip c-us">US</span>Cleveland Clinic<small>page cataracte</small></td><td class="d">●●●</td><td class="d">●●●</td><td class="d">●<i>●●</i></td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td></tr>
-    <tr><td><span class="chip c-us">US</span>LasikPlus<small>réseau laser</small></td><td class="d">●●●</td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●●●</td><td class="d">●●●</td></tr>
-    <tr><td><span class="chip c-us">US</span>Carter Eye Center<small>cabinet, Dallas</small></td><td class="d">●●●</td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●●●</td><td class="d">●<i>●●</i></td></tr>
-    <tr><td><span class="chip c-us">US</span>Wills Eye<small>hôpital, Philadelphie</small></td><td class="d">●<i>●●</i></td><td class="d">●<i>●●</i></td><td class="d">●●●</td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td></tr>
-    <tr><td><span class="chip c-fr">FR</span>Elsan Laser Vision<small>page « opération de la myopie »</small></td><td class="d">●●●</td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td><td class="d">●●●</td><td class="d">●●●</td></tr>
-    <tr><td><span class="chip c-fr">FR</span>Point Vision<small>réseau national</small></td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d"><i>●●●</i></td></tr>
-    <tr><td><span class="chip c-fr">FR</span>Vision Santé Paris<small>cabinets Paris 11 et 12</small></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●<i>●●</i></td><td class="d"><i>●●●</i></td></tr>
-    <tr><td><span class="chip c-fr">FR</span>Quinze-Vingts<small>hôpital, Paris 12e</small></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●●●</td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td></tr>
-    <tr><td><span class="chip c-fr">FR</span>Fondation Rothschild<small>hôpital, Paris 19e</small></td><td class="d">●<i>●●</i></td><td class="d">●<i>●●</i></td><td class="d">●●●</td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d"><i>●●●</i></td></tr>
-    <tr><td><span class="chip c-fr">FR</span>Dr Yves Cohen<small>cabinet, Paris 2e</small></td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●<i>●●</i></td><td class="d">●<i>●●</i></td><td class="d"><i>●●●</i></td></tr>
+    <tr class="me"><td><a href="https://www.docteurvideo.com" target="_blank" rel="noopener">DocteurVideo aujourd'hui</a><small>Dr Stopek, Paris 12e</small></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td><td class="d"><i>●●●</i></td></tr>
+    <tr><td><span class="chip c-us">US</span><a href="https://www.aao.org/eye-health/treatments/what-is-cataract-surgery" target="_blank" rel="noopener">AAO EyeSmart</a><small>page cataracte</small></td><td class="d">●●●</td><td class="d">●●●</td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td></tr>
+    <tr><td><span class="chip c-us">US</span><a href="https://my.clevelandclinic.org/health/treatments/21472-cataract-surgery" target="_blank" rel="noopener">Cleveland Clinic</a><small>page cataracte</small></td><td class="d">●●●</td><td class="d">●●●</td><td class="d">●<i>●●</i></td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td></tr>
+    <tr><td><span class="chip c-us">US</span><a href="https://www.lasikplus.com" target="_blank" rel="noopener">LasikPlus</a><small>réseau laser</small></td><td class="d">●●●</td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●●●</td><td class="d">●●●</td></tr>
+    <tr><td><span class="chip c-us">US</span><a href="https://cartereyecenter.com" target="_blank" rel="noopener">Carter Eye Center</a><small>cabinet, Dallas</small></td><td class="d">●●●</td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●●●</td><td class="d">●<i>●●</i></td></tr>
+    <tr><td><span class="chip c-us">US</span><a href="https://www.willseye.org" target="_blank" rel="noopener">Wills Eye</a><small>hôpital, Philadelphie</small></td><td class="d">●<i>●●</i></td><td class="d">●<i>●●</i></td><td class="d">●●●</td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td></tr>
+    <tr><td><span class="chip c-fr">FR</span><a href="https://www.elsan.care/fr/pathologie-et-traitement/maladies-des-yeux/operation-myopie" target="_blank" rel="noopener">Elsan Laser Vision</a><small>page « opération de la myopie »</small></td><td class="d">●●●</td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td><td class="d">●●●</td><td class="d">●●●</td></tr>
+    <tr><td><span class="chip c-fr">FR</span><a href="https://www.pointvision.com/" target="_blank" rel="noopener">Point Vision</a><small>réseau national</small></td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d"><i>●●●</i></td></tr>
+    <tr><td><span class="chip c-fr">FR</span><a href="https://vision-sante-paris.fr/" target="_blank" rel="noopener">Vision Santé Paris</a><small>cabinets Paris 11 et 12</small></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●<i>●●</i></td><td class="d"><i>●●●</i></td></tr>
+    <tr><td><span class="chip c-fr">FR</span><a href="https://www.15-20.fr" target="_blank" rel="noopener">Quinze-Vingts</a><small>hôpital, Paris 12e</small></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●●●</td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td><td class="d">●●<i>●</i></td></tr>
+    <tr><td><span class="chip c-fr">FR</span><a href="https://www.fo-rothschild.fr" target="_blank" rel="noopener">Fondation Rothschild</a><small>hôpital, Paris 19e</small></td><td class="d">●<i>●●</i></td><td class="d">●<i>●●</i></td><td class="d">●●●</td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d"><i>●●●</i></td></tr>
+    <tr><td><span class="chip c-fr">FR</span><a href="https://www.dryvescohen.com" target="_blank" rel="noopener">Dr Yves Cohen</a><small>cabinet, Paris 2e</small></td><td class="d">●<i>●●</i></td><td class="d">●●<i>●</i></td><td class="d">●<i>●●</i></td><td class="d">●<i>●●</i></td><td class="d">●<i>●●</i></td><td class="d"><i>●●●</i></td></tr>
     <tr class="tg"><td>Cible de la refonte<small>si les cases rouges sont comblées</small></td><td class="d">●●●</td><td class="d">●●●</td><td class="d">●●●</td><td class="d">●●●</td><td class="d">●●●</td><td class="d">●●<i>●</i></td></tr>
   </table></div>
   <p class="small" style="margin-top:8px">Notes subjectives, fondées sur le contenu de chaque page capturée. Pour DocteurVideo, voir le diagnostic de la refonte. « Prix visibles » de la cible : sans tarifs dans cette version (voir les décisions, section 12 de l'onglet « La proposition »).</p>
@@ -867,52 +869,52 @@ h2[id],h3[id],.comp[id]{scroll-margin-top:74px}
   <p class="sub">Ce que chacun fait bien, ce qu'il fait mal, et ce que le Dr Stopek peut en retenir.</p>
   <div class="grid">
 
-    <div class="comp" id="k1"><h3><span class="chip c-us">US</span>AAO EyeSmart · page cataracte</h3>
+    <div class="comp" id="k1"><h3><span class="chip c-us">US</span><a href="https://www.aao.org/eye-health/treatments/what-is-cataract-surgery" target="_blank" rel="noopener">AAO EyeSmart</a> · page cataracte</h3>
       <div class="lab">Bien</div><ul class="plus"><li>Plan en entonnoir : l'opération, le jour J, la récupération, les risques, la cataracte secondaire, les coûts, la FAQ.</li><li>Quand opérer : défini par la gêne dans la vie quotidienne, pas par un seuil. Même idée que la page du Dr Stopek.</li><li>Comparaison parlante : un cristallin opaque, comme un pare-brise embué.</li><li>Relecteur médecin nommé, date affichée.</li></ul>
       <div class="lab">Moins bien</div><ul class="minus"><li>Page longue, peu d'images, coûts sans chiffres.</li></ul>
       <div class="lab">À retenir</div><ul class="take"><li>Une image simple pour expliquer la cataracte. Un déroulé du jour J, étape par étape (déjà présent chez le Dr Stopek, à mieux montrer).</li></ul></div>
 
-    <div class="comp" id="k2"><h3><span class="chip c-us">US</span>Cleveland Clinic · cataracte</h3>
+    <div class="comp" id="k2"><h3><span class="chip c-us">US</span><a href="https://my.clevelandclinic.org/health/treatments/21472-cataract-surgery" target="_blank" rel="noopener">Cleveland Clinic</a> · cataracte</h3>
       <div class="lab">Bien</div><ul class="plus"><li>« Qui a besoin de la chirurgie ? » lié à la vie quotidienne. Dit clairement que ce n'est pas une urgence : le patient n'est pas pressé.</li><li>Risques chiffrés (par exemple décollement de rétine environ 2 pour 1 000, infection moins de 1 pour 1 000).</li><li>Liste « quand appeler le médecin ».</li><li>Honnête sur les limites : l'opération ne soigne pas une autre maladie de l'œil.</li></ul>
       <div class="lab">Moins bien</div><ul class="minus"><li>Aucune raison de choisir ce centre (« nos ophtalmologues sont des experts »). Trois blocs de rendez-vous et trois publicités dans le texte. Relecture datée de 2023, sans nom de relecteur.</li></ul>
       <div class="lab">À retenir</div><ul class="take"><li>La phrase « ce n'est pas une urgence » : rassurante et crédible. La liste « quand appeler » : à ajouter sur les pages cataracte, DMLA et corps flottants. Les risques chiffrés : seulement si le Dr Stopek valide ses propres chiffres.</li></ul></div>
 
-    <div class="comp" id="k3"><h3><span class="chip c-us">US</span>LasikPlus · réseau laser</h3>
+    <div class="comp" id="k3"><h3><span class="chip c-us">US</span><a href="https://www.lasikplus.com" target="_blank" rel="noopener">LasikPlus</a> · réseau laser</h3>
       <div class="lab">Bien</div><ul class="plus"><li>Questionnaire de 8 questions « suis-je candidat ? », simulateur de vision, parcours en trois étapes (consultation, traitement, suivi).</li><li>Preuves en couches : note Google de 4,9 sur plus de 92 000 avis, témoignages en vidéo, engagement de retraitement.</li><li>Prix « à partir de » par œil, financement.</li></ul>
       <div class="lab">Moins bien</div><ul class="minus"><li>Pression commerciale (« offre limitée »). Environ six boutons dans la page. Peu de détails sur les chirurgiens. Pas d'avant/après.</li></ul>
       <div class="lab">À retenir</div><ul class="take"><li>L'idée du mini-questionnaire « pour qui ? », sans la pression. Le parcours en trois étapes.</li></ul></div>
 
-    <div class="comp" id="k4"><h3><span class="chip c-us">US</span>Carter Eye Center · Dallas</h3>
+    <div class="comp" id="k4"><h3><span class="chip c-us">US</span><a href="https://cartereyecenter.com" target="_blank" rel="noopener">Carter Eye Center</a> · Dallas</h3>
       <div class="lab">Bien</div><ul class="plus"><li>Auto-test LASIK, page « êtes-vous candidat ? » découpée par âge (18-30 ans jusqu'à 60 ans et plus), consultation à distance, financement visible.</li><li>Règle utile : ordonnance stable depuis 12 mois.</li><li>Barre de rendez-vous fixe sur téléphone.</li></ul>
       <div class="lab">Moins bien</div><ul class="minus"><li>Lien « Prendre rendez-vous » mort. Bandeau COVID périmé. Fautes (« Cater Eye Center »). Promesses vagues.</li></ul>
       <div class="lab">À retenir</div><ul class="take"><li>Découper « pour qui ? » par situation de vie (ici l'âge) plutôt que par technique.</li></ul></div>
 
-    <div class="comp" id="k5"><h3><span class="chip c-us">US</span>Wills Eye · hôpital</h3>
+    <div class="comp" id="k5"><h3><span class="chip c-us">US</span><a href="https://www.willseye.org" target="_blank" rel="noopener">Wills Eye</a> · hôpital</h3>
       <div class="lab">Bien</div><ul class="plus"><li>Crédibilité institutionnelle très forte : fondé en 1832, classements, prix de ses médecins.</li><li>Une voie « urgence » séparée de la voie « rendez-vous ».</li><li>Liens vers transparence des prix et aide financière.</li></ul>
       <div class="lab">Moins bien</div><ul class="minus"><li>Pas d'aide à décider, pas de guide « quand opérer ». Menu à trois niveaux, bandeau de recrutement au-dessus du bouton.</li></ul>
       <div class="lab">À retenir</div><ul class="take"><li>Séparer clairement l'urgence du rendez-vous : exactement le cas de la page corps flottants.</li></ul></div>
 
-    <div class="comp" id="k6"><h3><span class="chip c-fr">FR</span>Elsan Laser Vision · page « opération de la myopie »</h3>
+    <div class="comp" id="k6"><h3><span class="chip c-fr">FR</span><a href="https://www.elsan.care/fr/pathologie-et-traitement/maladies-des-yeux/operation-myopie" target="_blank" rel="noopener">Elsan Laser Vision</a> · page « opération de la myopie »</h3>
       <div class="lab">Bien</div><ul class="plus"><li>Réponse nette à « suis-je concerné ? » : conditions d'opérabilité (majorité, myopie stable depuis 1 à 2 ans, cornée suffisante, pas de grossesse).</li><li>Comparaison PKR, LASIK, SMILE. Déroulé avant, jour J, après. FAQ de six questions.</li><li>Fourchettes de prix par technique.</li></ul>
       <div class="lab">Moins bien</div><ul class="minus"><li>Aucune raison de choisir ce centre. Contradictions internes (« n'importe quelle myopie peut être opérée » contre les contre-indications ; deux durées différentes). Coquilles. Risques sans chiffres.</li></ul>
       <div class="lab">À retenir</div><ul class="take"><li>Le plan de la page laser : concerné, quand, techniques, déroulé, FAQ. À remplir avec les informations que le Dr Stopek doit fournir.</li></ul></div>
 
-    <div class="comp" id="k7"><h3><span class="chip c-fr">FR</span>Point Vision · réseau</h3>
+    <div class="comp" id="k7"><h3><span class="chip c-fr">FR</span><a href="https://www.pointvision.com/" target="_blank" rel="noopener">Point Vision</a> · réseau</h3>
       <div class="lab">Bien</div><ul class="plus"><li>Promesse claire : rendez-vous rapides. Prise de rendez-vous par motif (cataracte, réfractive, consultation…), parcours de soin en quatre étapes avec durée indicative (environ 1 heure), certification ISO 9001.</li><li>Glossaire « Parlez-vous l'ophtalmologie ? ».</li></ul>
       <div class="lab">Moins bien</div><ul class="minus"><li>Aucun médecin visible, aucun avis, aucun prix. Chiffres incohérents. Entrée de test visible dans la liste des centres.</li></ul>
       <div class="lab">À retenir</div><ul class="take"><li>Le parcours en quatre étapes avec un temps indicatif. Le glossaire en mots simples (utile pour les patients âgés).</li></ul></div>
 
-    <div class="comp" id="k8"><h3><span class="chip c-fr">FR</span>Vision Santé Paris · Paris 11 et 12</h3>
+    <div class="comp" id="k8"><h3><span class="chip c-fr">FR</span><a href="https://vision-sante-paris.fr/" target="_blank" rel="noopener">Vision Santé Paris</a> · Paris 11 et 12</h3>
       <div class="lab">Bien</div><ul class="plus"><li>Ciblage local clair (« Paris 11 et 12 »), parcours « urgence » avec liste de symptômes pour se reconnaître, fiches par sous-spécialité, équipement cité.</li></ul>
       <div class="lab">Moins bien</div><ul class="minus"><li>Plus de dix points d'entrée de rendez-vous, téléphone répété cinq fois. Aucun avis, aucun prix de chirurgie. Chiffre « 45 » sans explication.</li></ul>
       <div class="lab">À retenir</div><ul class="take"><li>La liste de symptômes « Œil rouge, douleur… » pour s'auto-identifier. C'est un voisin direct (Paris 12e) : la comparaison locale se fera avec lui.</li></ul></div>
 
-    <div class="comp" id="k9"><h3><span class="chip c-fr">FR</span>Quinze-Vingts et Fondation Rothschild</h3>
+    <div class="comp" id="k9"><h3><span class="chip c-fr">FR</span><a href="https://www.15-20.fr" target="_blank" rel="noopener">Quinze-Vingts</a> et <a href="https://www.fo-rothschild.fr" target="_blank" rel="noopener">Fondation Rothschild</a></h3>
       <div class="lab">Bien</div><ul class="plus"><li>Crédibilité maximale : certification HAS « haute qualité des soins » (Rothschild), pages qualité et hygiène (Quinze-Vingts).</li><li>Tarifs, prise en charge et préparation du séjour visibles (Quinze-Vingts). Pages « La cataracte, c'est quoi ? » (Quinze-Vingts).</li></ul>
       <div class="lab">Moins bien</div><ul class="minus"><li>Menus de plus de 60 liens avec doublons. Pas de message d'accueil propre à l'ophtalmologie. Téléphone et urgences peu visibles (Quinze-Vingts). Parcours de rendez-vous indirect (Rothschild).</li></ul>
       <div class="lab">À retenir</div><ul class="take"><li>Le Dr Stopek est attaché au Quinze-Vingts : à le dire clairement, avec le nom exact. Les pages qualité sont un modèle de ce qu'on peut renvoyer en lien.</li></ul></div>
 
-    <div class="comp" id="k10"><h3><span class="chip c-fr">FR</span>Dr Yves Cohen · Paris 2e</h3>
+    <div class="comp" id="k10"><h3><span class="chip c-fr">FR</span><a href="https://www.dryvescohen.com" target="_blank" rel="noopener">Dr Yves Cohen</a> · Paris 2e</h3>
       <div class="lab">Bien</div><ul class="plus"><li>Promesse d'urgence très lisible, cartes de services courtes, ton rassurant.</li></ul>
       <div class="lab">Moins bien</div><ul class="minus"><li>Presque aucune preuve de compétence (ni diplôme, ni hôpital, ni chiffre). Aucune entrée « cataracte » dans le menu. Liens cassés. Menus en double.</li></ul>
       <div class="lab">À retenir</div><ul class="take"><li>Exemple de ce qu'un cabinet de chirurgien fait sans la pédagogie : le Dr Stopek a déjà ce qui lui manque.</li></ul></div>
@@ -1075,12 +1077,14 @@ h2[id],h3[id],.comp[id]{scroll-margin-top:74px}
   el("text",{x:X(9.8),y:B-10,"text-anchor":"end","font-size":12,fill:"var(--muted)"},"Pédagogie sans visage");
   el("text",{x:X(0.2),y:B-10,"font-size":12,fill:"var(--muted)"},"Cabinets : service, pas de preuve");
   el("text",{x:X(9.8),y:T+20,"text-anchor":"end","font-size":12,fill:"var(--ok)","font-weight":700},"Place libre : pédagogie + un chirurgien identifiable");
+  var URLS={"AAO":"https://www.aao.org/eye-health/treatments/what-is-cataract-surgery","Cleveland Clinic":"https://my.clevelandclinic.org/health/treatments/21472-cataract-surgery","Elsan Laser":"https://www.elsan.care/fr/pathologie-et-traitement/maladies-des-yeux/operation-myopie","LasikPlus":"https://www.lasikplus.com","Carter":"https://cartereyecenter.com","Wills Eye":"https://www.willseye.org","Rothschild":"https://www.fo-rothschild.fr","Quinze-Vingts":"https://www.15-20.fr","Point Vision":"https://www.pointvision.com/","Vision Santé Paris":"https://vision-sante-paris.fr/","Dr Cohen":"https://www.dryvescohen.com","DocteurVideo aujourd'hui":"https://www.docteurvideo.com"};
   var pts=[["AAO",9.1,2.6,"us"],["Cleveland Clinic",7.9,3.6,"us"],["Elsan Laser",8.2,1.6,"fr"],["LasikPlus",7.1,5.9,"us"],["Carter",7.9,4.7,"us"],["Wills Eye",2.0,8.7,"us"],["Rothschild",1.5,7.6,"fr"],["Quinze-Vingts",3.1,7.3,"fr"],["Point Vision",3.4,5.3,"fr"],["Vision Santé Paris",2.5,4.2,"fr"],["Dr Cohen",1.1,1.4,"fr"],["DocteurVideo aujourd'hui",6.0,4.2,"me"]];
   pts.forEach(function(p){
     var cx=X(p[1]),cy=Y(p[2]),col=p[3]=="fr"?"var(--edu)":p[3]=="us"?"var(--prac)":"var(--rdv)";
     el("circle",{cx:cx,cy:cy,r:p[3]=="me"?9:7,fill:col,stroke:"var(--card)","stroke-width":2});
     var right=cx<700;
-    el("text",{x:right?cx+13:cx-13,y:cy+4,"text-anchor":right?"start":"end","font-size":13,"font-weight":p[3]=="me"?700:400},p[0]);
+    var tx=el("text",{x:right?cx+13:cx-13,y:cy+4,"text-anchor":right?"start":"end","font-size":13,"font-weight":p[3]=="me"?700:400},p[0]);
+    var u=URLS[p[0]]; if(u){var an=document.createElementNS(NS,"a");an.setAttribute("href",u);an.setAttribute("target","_blank");s.replaceChild(an,tx);an.appendChild(tx);}
   });
   /* cible */
   var cx=X(8.6),cy=Y(8.3);
