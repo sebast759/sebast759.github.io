@@ -104,22 +104,25 @@ figcaption{color:var(--muted);font-size:12px;margin-top:5px}
   color:var(--ink);background:var(--bg);border:1px solid var(--line);
   border-radius:8px;padding:4px 9px}
 .cal:hover{border-color:var(--accent);color:var(--accent)}
-/* Live strip: five tiles across on a desktop, a swipeable row on a phone */
-.live{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;
-  -webkit-overflow-scrolling:touch;padding-bottom:4px}
-.lcam{flex:0 0 calc((100% - 40px)/5);min-width:200px;scroll-snap-align:start;
-  background:var(--panel);border:1px solid var(--line);border-radius:12px;
-  overflow:hidden;border-top:4px solid var(--accent)}
-.lcam header{display:flex;justify-content:space-between;align-items:center;
-  padding:6px 10px;font-size:12.5px;font-weight:650}
-.lcam header a{color:var(--muted);font-weight:400;text-decoration:none;font-size:11.5px}
+/* Live cams: a 3-column matrix of big tiles, 2 on a tablet, 1 on a phone */
+.live{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:900px){.live{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.live{grid-template-columns:1fr}}
+.lcam{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  overflow:hidden;border-top:4px solid var(--accent);min-width:0}
+.lcam header{display:flex;justify-content:space-between;align-items:baseline;gap:8px;
+  padding:7px 11px;font-size:13.5px;font-weight:650}
+.lcam header a{color:var(--muted);font-weight:400;text-decoration:none;font-size:12px;
+  white-space:nowrap}
+.lcam header a:hover{color:var(--accent)}
 .lcam .vid{position:relative;aspect-ratio:16/9;background:#111}
-.lcam video{width:100%;height:100%;object-fit:cover;display:block}
+.lcam video,.lcam .vid img{width:100%;height:100%;object-fit:cover;display:block}
+.lcam .tag{position:absolute;right:8px;top:8px;font-size:11px;color:#fff;
+  background:rgba(0,0,0,.55);padding:2px 7px;border-radius:999px;pointer-events:none}
 .lcam .off{display:none;position:absolute;inset:0;align-items:center;
   justify-content:center;color:#9aa1ac;font-size:12.5px}
 .lcam.offline .off{display:flex}
-.lcam.offline video{visibility:hidden}
-@media(max-width:640px){.lcam{flex-basis:82%}}
+.lcam.offline video,.lcam.offline img,.lcam.offline .tag{visibility:hidden}
 </style></head><body><div class="wrap">
 <div class="nav"><a class="brand" href="index.html" aria-label="Ericeira Surf Log"><img
  src="logo.jpg" width="34" height="34" alt=""></a><a href="index.html">Latest</a>
@@ -141,26 +144,48 @@ figcaption{color:var(--muted);font-size:12px;margin-top:5px}
 <b>VERDICT</b>
 ★★★☆☆ Ribeira on forecast only. Past last light (~18:20), day is done: tomorrow dawn is the play.
 <b>NEXT · Tue 07:30</b>
-⭐️ <b>Tomorrow · Tue 07:00-08:30</b> ★★★★☆ Norte · 1.2-1.5m · 6 km/h SE offshore · low tide <a href="https://www.surfline.com/surf-report/praia-do-norte/6a76019026a677d19fde7f36">📈</a> <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Surf%20%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%86%20Praia%20do%20Norte&amp;dates=20261027T070000Z/20261027T083000Z&amp;details=Fair%20To%20Good%20%C2%B7%201.2-1.5m%20%C2%B7%206km/h%20SE%20Offshore%20%C2%B7%20low%20tide%20%C2%B7%20forecast%20only%0Ahttps%3A//sebast759.github.io/erisurf/&amp;location=Praia%20do%20Norte%2C%20Ericeira%2C%20Portugal">📅</a></div><h2>Plan a session<span class="plan-fc">forecast only</span></h2><div class="plans"><article class="plan" title="Tomorrow" style="--accent:#D7263D"><span class="plan-when"><b>Tue 07:00</b>&ndash;08:30</span><span class="plan-stars">★★★★☆</span><span class="plan-spot">Norte</span><span class="plan-bits">1.2-1.5m · 6km/h SE · low tide</span><a class="cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Surf%20%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%86%20Praia%20do%20Norte&amp;dates=20261027T070000Z/20261027T083000Z&amp;details=Fair%20To%20Good%20%C2%B7%201.2-1.5m%20%C2%B7%206km/h%20SE%20Offshore%20%C2%B7%20low%20tide%20%C2%B7%20forecast%20only%0Ahttps%3A//sebast759.github.io/erisurf/&amp;location=Praia%20do%20Norte%2C%20Ericeira%2C%20Portugal" target="_blank" rel="noopener noreferrer" title="Block 90 minutes in Google Calendar">&#128197; Block</a></article></div><h2>Live cams<span class="plan-fc">Beachcam, live</span></h2><div class="live"><article class="lcam" style="--accent:#1B7FBF"><header><span>Ribeira d&#x27;Ilhas</span><a href="https://beachcam.meo.pt/livecams/ribeira-dilhas/" target="_blank" rel="noopener noreferrer">Beachcam &gt;&gt;</a></header><div class="vid"><video muted playsinline controls preload="none" data-src="https://video-auth1.iol.pt/beachcam/bcmafraribeira/playlist.m3u8"></video><span class="off">offline</span></div></article><article class="lcam" style="--accent:#6b7280"><header><span>Pescadores</span><a href="https://beachcam.meo.pt/livecams/praia-dos-pescadores/" target="_blank" rel="noopener noreferrer">Beachcam &gt;&gt;</a></header><div class="vid"><video muted playsinline controls preload="none" data-src="https://video-auth1.iol.pt/beachcam/bcpescadores/playlist.m3u8"></video><span class="off">offline</span></div></article><article class="lcam" style="--accent:#F4820B"><header><span>Praia do Sul</span><a href="https://beachcam.meo.pt/livecams/ericeira-praia-do-sul/" target="_blank" rel="noopener noreferrer">Beachcam &gt;&gt;</a></header><div class="vid"><video muted playsinline controls preload="none" data-src="https://video-auth1.iol.pt/beachcam/praiadosulericeira/playlist.m3u8"></video><span class="off">offline</span></div></article><article class="lcam" style="--accent:#7B4FC9"><header><span>Pedra Branca</span><a href="https://beachcam.meo.pt/livecams/ericeira/" target="_blank" rel="noopener noreferrer">Beachcam &gt;&gt;</a></header><div class="vid"><video muted playsinline controls preload="none" data-src="https://video-auth1.iol.pt/beachcam/ericeiraspots/playlist.m3u8"></video><span class="off">offline</span></div></article><article class="lcam" style="--accent:#2E9E5B"><header><span>Foz do Lizandro</span><a href="https://beachcam.meo.pt/livecams/foz-do-lizandro/" target="_blank" rel="noopener noreferrer">Beachcam &gt;&gt;</a></header><div class="vid"><video muted playsinline controls preload="none" data-src="https://video-auth1.iol.pt/beachcam/fozdolizandro/playlist.m3u8"></video><span class="off">offline</span></div></article></div><script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.15/dist/hls.min.js"></script><script>
+⭐️ <b>Tomorrow · Tue 07:00-08:30</b> ★★★★☆ Norte · 1.2-1.5m · 6 km/h SE offshore · low tide <a href="https://www.surfline.com/surf-report/praia-do-norte/6a76019026a677d19fde7f36">📈</a> <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Surf%20%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%86%20Praia%20do%20Norte&amp;dates=20261027T070000Z/20261027T083000Z&amp;details=Fair%20To%20Good%20%C2%B7%201.2-1.5m%20%C2%B7%206km/h%20SE%20Offshore%20%C2%B7%20low%20tide%20%C2%B7%20forecast%20only%0Ahttps%3A//sebast759.github.io/erisurf/&amp;location=Praia%20do%20Norte%2C%20Ericeira%2C%20Portugal">📅</a></div><h2>Plan a session<span class="plan-fc">forecast only</span></h2><div class="plans"><article class="plan" title="Tomorrow" style="--accent:#D7263D"><span class="plan-when"><b>Tue 07:00</b>&ndash;08:30</span><span class="plan-stars">★★★★☆</span><span class="plan-spot">Norte</span><span class="plan-bits">1.2-1.5m · 6km/h SE · low tide</span><a class="cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Surf%20%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%86%20Praia%20do%20Norte&amp;dates=20261027T070000Z/20261027T083000Z&amp;details=Fair%20To%20Good%20%C2%B7%201.2-1.5m%20%C2%B7%206km/h%20SE%20Offshore%20%C2%B7%20low%20tide%20%C2%B7%20forecast%20only%0Ahttps%3A//sebast759.github.io/erisurf/&amp;location=Praia%20do%20Norte%2C%20Ericeira%2C%20Portugal" target="_blank" rel="noopener noreferrer" title="Block 90 minutes in Google Calendar">&#128197; Block</a></article></div><h2>Live cams<span class="plan-fc">Beachcam live, Surfline stills</span></h2><div class="live"><article class="lcam" style="--accent:#1B7FBF"><header><span>Ribeira d&#x27;Ilhas</span><a href="https://beachcam.meo.pt/livecams/ribeira-dilhas/" target="_blank" rel="noopener noreferrer">Beachcam &gt;&gt;</a></header><div class="vid"><video muted playsinline controls preload="none" data-srcs="https://video-auth1.iol.pt/beachcam/bcmafraribeira/playlist.m3u8"></video><span class="tag">live</span><span class="off">offline</span></div></article><article class="lcam" style="--accent:#6b7280"><header><span>Pescadores (for Norte)</span><a href="https://beachcam.meo.pt/livecams/praia-dos-pescadores/" target="_blank" rel="noopener noreferrer">Beachcam &gt;&gt;</a></header><div class="vid"><video muted playsinline controls preload="none" data-srcs="https://video-auth1.iol.pt/beachcam/bcpescadores/playlist.m3u8"></video><span class="tag">live</span><span class="off">offline</span></div></article><article class="lcam" style="--accent:#F4820B"><header><span>Praia do Sul</span><a href="https://beachcam.meo.pt/livecams/ericeira-praia-do-sul/" target="_blank" rel="noopener noreferrer">Beachcam &gt;&gt;</a></header><div class="vid"><video muted playsinline controls preload="none" data-srcs="https://video-auth1.iol.pt/beachcam/praiadosulericeira/playlist.m3u8 https://ds2-cache.quanteec.com/contents/encodings/live/896e0602-1b1b-413f-3831-3530-6d61-63-9065-c943ced70587d/master.m3u8"></video><span class="tag">live</span><span class="off">offline</span></div></article><article class="lcam" style="--accent:#F4820B"><header><span>Praia do Sul</span><a href="https://www.surfline.com/surf-report/praia-do-sul/5fb2c2da7057d993d9d2caa3" target="_blank" rel="noopener noreferrer">Surfline &gt;&gt;</a></header><div class="vid"><img alt="Praia do Sul Surfline still" data-still="https://camstills.cdn-surfline.com/eu-west-1/pt-praiadosulericeira/latest_full.jpg"><span class="tag">still &middot; 1 min</span><span class="off">offline</span></div></article><article class="lcam" style="--accent:#7B4FC9"><header><span>Pedra Branca</span><a href="https://beachcam.meo.pt/livecams/ericeira/" target="_blank" rel="noopener noreferrer">Beachcam &gt;&gt;</a></header><div class="vid"><video muted playsinline controls preload="none" data-srcs="https://video-auth1.iol.pt/beachcam/ericeiraspots/playlist.m3u8 https://ds2-cache.quanteec.com/contents/encodings/live/964a8004-b7a2-49bb-3132-3530-6d61-63-a69f-5395e300c471d/master.m3u8"></video><span class="tag">live</span><span class="off">offline</span></div></article><article class="lcam" style="--accent:#7B4FC9"><header><span>Pedra Branca</span><a href="https://www.surfline.com/surf-report/pedra-branca/584204204e65fad6a77096ae" target="_blank" rel="noopener noreferrer">Surfline &gt;&gt;</a></header><div class="vid"><img alt="Pedra Branca Surfline still" data-still="https://camstills.cdn-surfline.com/eu-west-1/pt-pedrabranca/latest_full.jpg"><span class="tag">still &middot; 1 min</span><span class="off">offline</span></div></article><article class="lcam" style="--accent:#2E9E5B"><header><span>Foz do Lizandro</span><a href="https://beachcam.meo.pt/livecams/foz-do-lizandro/" target="_blank" rel="noopener noreferrer">Beachcam &gt;&gt;</a></header><div class="vid"><video muted playsinline controls preload="none" data-srcs="https://video-auth1.iol.pt/beachcam/fozdolizandro/playlist.m3u8 https://ds2-cache.quanteec.com/contents/encodings/live/51085092-4351-4471-3434-3530-6d61-63-b77c-291d4dd96fbed/master.m3u8"></video><span class="tag">live</span><span class="off">offline</span></div></article><article class="lcam" style="--accent:#2E9E5B"><header><span>Foz do Lizandro</span><a href="https://www.surfline.com/surf-report/foz-do-lizandro/5842041f4e65fad6a7708bbd" target="_blank" rel="noopener noreferrer">Surfline &gt;&gt;</a></header><div class="vid"><img alt="Foz do Lizandro Surfline still" data-still="https://camstills.cdn-surfline.com/eu-west-1/pt-fozdolizandro/latest_full.jpg"><span class="tag">still &middot; 1 min</span><span class="off">offline</span></div></article><article class="lcam" style="--accent:#2E9E5B"><header><span>Lizandro front</span><a href="https://www.surfline.com/surf-report/foz-do-lizandro/5842041f4e65fad6a7708bbd" target="_blank" rel="noopener noreferrer">Surfline &gt;&gt;</a></header><div class="vid"><img alt="Lizandro front Surfline still" data-still="https://camstills.cdn-surfline.com/eu-west-1/pt-fozdolizandrofront/latest_full.jpg"><span class="tag">still &middot; 1 min</span><span class="off">offline</span></div></article></div><script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.15/dist/hls.min.js"></script><script>
 (function(){
-  var vids=document.querySelectorAll('.lcam video');
-  function start(v){
-    if(v._on)return; v._on=1;
-    var src=v.dataset.src, tile=v.closest('.lcam');
+  function fail(t){t.classList.add('offline');}
+  function load(v,i){
+    var srcs=v.dataset.srcs.split(' '), tile=v.closest('.lcam');
+    if(i>=srcs.length){fail(tile);return;}
+    var h=null, done=false;
+    var next=function(){if(done)return;done=true;clearTimeout(tm);
+      if(h)h.destroy();v.onerror=null;load(v,i+1);};
+    // a dead feed can also answer 200 with an empty, ended playlist (Pedra's
+    // GoSurf copy did): no frames within 20s counts as a failure too
+    var tm=setTimeout(function(){if(v.readyState<2)next();},20000);
     if(window.Hls&&Hls.isSupported()){
-      var h=new Hls({lowLatencyMode:true}); h.loadSource(src); h.attachMedia(v);
-      h.on(Hls.Events.ERROR,function(e,d){if(d.fatal){tile.classList.add('offline');h.destroy();}});
+      h=new Hls({lowLatencyMode:true}); h.loadSource(srcs[i]); h.attachMedia(v);
+      h.on(Hls.Events.ERROR,function(e,d){if(d.fatal)next();});
     }else if(v.canPlayType('application/vnd.apple.mpegurl')){
-      v.src=src; v.onerror=function(){tile.classList.add('offline');};
-    }else{tile.classList.add('offline');return;}
+      v.onerror=next; v.src=srcs[i];
+    }else{clearTimeout(tm);fail(tile);return;}
     v.play().catch(function(){});
   }
-  if(!('IntersectionObserver' in window)){vids.forEach(start);return;}
+  function still(im){
+    im.onerror=function(){fail(im.closest('.lcam'));};
+    im.onload=function(){im.closest('.lcam').classList.remove('offline');};
+    im.src=im.dataset.still+'?t='+Math.floor(Date.now()/60000);
+  }
+  function show(el){
+    if(el.tagName==='VIDEO'){
+      if(!el._on){el._on=1;load(el,0);}else{el.play().catch(function(){});}
+    }else{
+      still(el); if(!el._iv)el._iv=setInterval(function(){still(el);},60000);
+    }
+  }
+  function hide(el){
+    if(el.tagName==='VIDEO'){if(el._on)el.pause();}
+    else if(el._iv){clearInterval(el._iv);el._iv=0;}
+  }
+  var els=document.querySelectorAll('.lcam video,.lcam img[data-still]');
+  if(!('IntersectionObserver' in window)){els.forEach(show);return;}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){
-    var v=e.target;
-    if(e.isIntersecting){start(v);v.play().catch(function(){});}else if(v._on){v.pause();}
+    (e.isIntersecting?show:hide)(e.target);
   });},{threshold:0.25});
-  vids.forEach(function(v){io.observe(v);});
+  els.forEach(function(el){io.observe(el);});
 })();
 </script><h2>Cams</h2><figure><img loading="lazy" src="img/291/conditions.png" alt="wind and tide"><figcaption>Wind &amp; tide, next 24h</figcaption></figure><h2>Spot notes</h2><div class='grid'><article class="card" style="--accent:#1B7FBF">
 <header><h3>Ribeira</h3><span class="badge" style="background:#ca8a04">FAIR</span></header>

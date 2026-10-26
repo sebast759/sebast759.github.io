@@ -104,22 +104,25 @@ figcaption{color:var(--muted);font-size:12px;margin-top:5px}
   color:var(--ink);background:var(--bg);border:1px solid var(--line);
   border-radius:8px;padding:4px 9px}
 .cal:hover{border-color:var(--accent);color:var(--accent)}
-/* Live strip: five tiles across on a desktop, a swipeable row on a phone */
-.live{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;
-  -webkit-overflow-scrolling:touch;padding-bottom:4px}
-.lcam{flex:0 0 calc((100% - 40px)/5);min-width:200px;scroll-snap-align:start;
-  background:var(--panel);border:1px solid var(--line);border-radius:12px;
-  overflow:hidden;border-top:4px solid var(--accent)}
-.lcam header{display:flex;justify-content:space-between;align-items:center;
-  padding:6px 10px;font-size:12.5px;font-weight:650}
-.lcam header a{color:var(--muted);font-weight:400;text-decoration:none;font-size:11.5px}
+/* Live cams: a 3-column matrix of big tiles, 2 on a tablet, 1 on a phone */
+.live{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:900px){.live{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.live{grid-template-columns:1fr}}
+.lcam{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  overflow:hidden;border-top:4px solid var(--accent);min-width:0}
+.lcam header{display:flex;justify-content:space-between;align-items:baseline;gap:8px;
+  padding:7px 11px;font-size:13.5px;font-weight:650}
+.lcam header a{color:var(--muted);font-weight:400;text-decoration:none;font-size:12px;
+  white-space:nowrap}
+.lcam header a:hover{color:var(--accent)}
 .lcam .vid{position:relative;aspect-ratio:16/9;background:#111}
-.lcam video{width:100%;height:100%;object-fit:cover;display:block}
+.lcam video,.lcam .vid img{width:100%;height:100%;object-fit:cover;display:block}
+.lcam .tag{position:absolute;right:8px;top:8px;font-size:11px;color:#fff;
+  background:rgba(0,0,0,.55);padding:2px 7px;border-radius:999px;pointer-events:none}
 .lcam .off{display:none;position:absolute;inset:0;align-items:center;
   justify-content:center;color:#9aa1ac;font-size:12.5px}
 .lcam.offline .off{display:flex}
-.lcam.offline video{visibility:hidden}
-@media(max-width:640px){.lcam{flex-basis:82%}}
+.lcam.offline video,.lcam.offline img,.lcam.offline .tag{visibility:hidden}
 </style></head><body><div class="wrap">
 <div class="nav"><a class="brand" href="index.html" aria-label="Ericeira Surf Log"><img
  src="logo.jpg" width="34" height="34" alt=""></a><a href="index.html">Latest</a>
