@@ -104,15 +104,19 @@ figcaption{color:var(--muted);font-size:12px;margin-top:5px}
   color:var(--ink);background:var(--bg);border:1px solid var(--line);
   border-radius:8px;padding:4px 9px}
 .cal:hover{border-color:var(--accent);color:var(--accent)}
-.report details.more summary{cursor:pointer;color:var(--muted);font-size:13px;
-  margin-top:6px;list-style-position:inside}
-.report details.more[open] summary{margin-bottom:4px}
 .livehd{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 4px;margin-top:4px}
 .livehd .jump{margin-left:auto;font-size:12.5px;font-weight:650;text-transform:none;
   letter-spacing:0;color:var(--ink);text-decoration:none;background:var(--panel);
   border:1px solid var(--line);border-radius:8px;padding:3px 9px}
 .livehd .jump:hover{border-color:#0891b2}
 #report{scroll-margin-top:12px}
+.headline{display:block;background:var(--panel);border:1px solid var(--line);
+  border-left:4px solid #0891b2;border-radius:10px;padding:10px 14px;margin:0 0 6px;
+  font-size:17px;text-decoration:none;color:var(--ink)}
+.headline b{font-weight:700}
+.headline span{color:var(--muted);font-size:13px;margin-left:4px}
+.headline:hover{border-color:#0891b2}
+@media(max-width:480px){.headline{font-size:15px;padding:9px 11px}}
 html{scroll-behavior:smooth}
 /* Live cams: a 3-column matrix of big tiles, 2 on a tablet, 1 on a phone */
 .live{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:16px}
