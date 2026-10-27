@@ -104,8 +104,11 @@ figcaption{color:var(--muted);font-size:12px;margin-top:5px}
   color:var(--ink);background:var(--bg);border:1px solid var(--line);
   border-radius:8px;padding:4px 9px}
 .cal:hover{border-color:var(--accent);color:var(--accent)}
+.report details.more summary{cursor:pointer;color:var(--muted);font-size:13px;
+  margin-top:6px;list-style-position:inside}
+.report details.more[open] summary{margin-bottom:4px}
 /* Live cams: a 3-column matrix of big tiles, 2 on a tablet, 1 on a phone */
-.live{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.live{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:16px}
 @media(max-width:900px){.live{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.live{grid-template-columns:1fr}}
 .lcam{background:var(--panel);border:1px solid var(--line);border-radius:12px;
