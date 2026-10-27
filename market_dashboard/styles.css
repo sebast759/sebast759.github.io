@@ -466,3 +466,7 @@ body {
 .rates-hot-cta { font-weight: 600; font-size: 14px; color: #2563eb; }
 .rates-hot img { width: 100%; aspect-ratio: 1.5; object-fit: contain; border: 1px solid #edf0f1; border-radius: 6px; }
 @media (max-width: 768px) { .rates-hot { grid-template-columns: 1fr 1fr; } .rates-hot-text { grid-column: 1 / -1; } }
+.fresh { font-weight: 700; margin-right: 4px; }
+.fresh.ok { color: #16a34a; }
+.fresh.warn { color: #f59e0b; }
+.fresh.late { color: #dc2626; }

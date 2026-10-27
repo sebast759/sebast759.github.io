@@ -34,7 +34,18 @@ document.addEventListener('DOMContentLoaded', function () {
   if (bondsUpdated) {
     fetch('graphs/bond_yield_curves/last_update.html', {cache: 'no-cache'})
       .then(r => r.ok ? r.text() : '')
-      .then(t => { bondsUpdated.textContent = t.trim(); })
+      .then(t => {
+        const [label, iso] = t.trim().split('\n');
+        bondsUpdated.textContent = (label || '').trim();
+        // green tick / orange / red warning by age vs the twice-daily bond scrape
+        const h = (Date.now() - Date.parse(iso)) / 36e5;
+        if (isNaN(h)) return;
+        const flag = document.createElement('span');
+        flag.className = 'fresh ' + (h <= 15 ? 'ok' : h <= 30 ? 'warn' : 'late');
+        flag.textContent = h <= 15 ? '✓' : '⚠︎';
+        flag.title = 'Updated ' + h.toFixed(1) + ' h ago (green <= 15 h, orange <= 30 h)';
+        bondsUpdated.prepend(flag);
+      })
       .catch(() => {});
   }
 
