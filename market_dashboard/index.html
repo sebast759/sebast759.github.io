@@ -22,12 +22,12 @@
         <details class="boards-menu" ontoggle="this.style.setProperty('--boards-top',this.querySelector('summary').getBoundingClientRect().bottom+'px')" onkeydown="if(event.key==='Escape'){this.open=false;this.querySelector('summary').focus();}">
             <summary class="tab">Boards <span aria-hidden="true">&#9662;</span></summary>
             <nav class="boards-options" aria-label="Boards">
-                <a href="posts.html">% Interest Rate Board</a>
-                <a href="elections.html"><img class="board-icon" src="img/polymarket.png" alt=""> Polymarket Board</a>
-                <a href="graphs/markets/commodities.html">🛢️ Commodity Board</a>
-                <a href="graphs/markets/commodities_curve.html">〰️ Futures Curves</a>
-                <a href="graphs/markets/commodities_futures.html">📈 Futures (Rolled)</a>
-                <a href="graphs/markets/eurostat.html">🇪🇺 Eurostat Construction Board</a>
+                <a href="posts.html">% Interest Rates G20</a>
+                <a href="elections.html"><img class="board-icon" src="img/polymarket.png" alt=""> Polymarket</a>
+                <a href="graphs/markets/commodities.html">🌽 Commodities Prices</a>
+                <a href="graphs/markets/commodities_curve.html"><img class="board-icon" src="img/contango.png" alt=""> Futures contango/backwardation</a>
+                <a href="graphs/markets/commodities_futures.html">📈 Future prices (rolled)</a>
+                <a href="graphs/markets/eurostat.html"><img class="board-icon" src="img/eurostat.png" alt=""> Eurostat Construction Indices</a>
             </nav>
         </details>
         <a class="tab" href="research.html">Research</a>
@@ -36,6 +36,17 @@
     <div class="content">
         <!-- Bonds Tab -->
         <div id="bonds" class="tab-content">
+            <!-- Hot interest-rate graphs: link to the Interest Rates G20 board -->
+            <a class="rates-hot" href="posts.html">
+                <div class="rates-hot-text">
+                    <span class="rates-hot-kicker">Hot on rates</span>
+                    <h2>France and the ex. PIGS</h2>
+                    <p>France pays more than Italy, Greece, Spain and Portugal at 10 years, despite the best Moody's rating of the group. See our best interest-rate graphs.</p>
+                    <span class="rates-hot-cta">Open Interest Rates G20 &rarr;</span>
+                </div>
+                <img src="graphs/posts/revenge_of_pigs_last03Y.png" alt="France and the ex. PIGS: 10 year spread vs Germany" loading="lazy">
+                <img src="graphs/posts/revenge_of_pigs_levels_last03Y.png" alt="France and the ex. PIGS: 10 year yields" loading="lazy">
+            </a>
             <!-- Two Column Section: Yields & Rolldown -->
              <div style="width: 60%; margin: 0 auto;">
                 <div id="bonds-updated" class="updated-meta"></div>

@@ -59,7 +59,7 @@ body {
 .boards-menu[open] summary { background: #f3f5f5; color: #1a1a1a; }
 .boards-options { position: absolute; top: 100%; right: 0; z-index: 100; min-width: 210px; padding: 5px; border: 1px solid #dce1e2; border-radius: 6px; background: white; box-shadow: 0 6px 18px #0002; }
 .boards-options a { display: block; padding: 12px; color: #202728; text-decoration: none; font-size: 14px; white-space: nowrap; }
-.boards-options .board-icon { width: 16px; height: 16px; vertical-align: -3px; }
+.boards-options .board-icon { width: auto; height: 16px; vertical-align: -3px; }
 .boards-options a:hover, .boards-options a:focus-visible { background: #edf0f1; border-radius: 3px; }
 @media (max-width: 768px) { .boards-options { position: fixed; top: var(--boards-top); right: 8px; } }
 
@@ -456,3 +456,13 @@ body {
     .crypto-segmented { max-width: 100%; width: 100%; }
     .crypto-chart-frame, .crypto-chart-frame--tall { min-height: 260px; }
 }
+
+/* Hot interest-rate graphs banner on the Bonds tab */
+.rates-hot { display: grid; grid-template-columns: minmax(220px, 1.1fr) 1fr 1fr; gap: 16px; align-items: center; max-width: 1200px; margin: 0 auto 24px; padding: 16px; background: #fff; border: 1px solid #dce1e2; border-radius: 8px; color: #202728; text-decoration: none; }
+.rates-hot:hover { box-shadow: 0 4px 14px #0002; }
+.rates-hot-kicker { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: #2563eb; }
+.rates-hot h2 { margin: 4px 0 8px; font-size: 1.3rem; }
+.rates-hot p { margin: 0 0 10px; font-size: 14px; color: #536164; line-height: 1.4; }
+.rates-hot-cta { font-weight: 600; font-size: 14px; color: #2563eb; }
+.rates-hot img { width: 100%; aspect-ratio: 1.5; object-fit: contain; border: 1px solid #edf0f1; border-radius: 6px; }
+@media (max-width: 768px) { .rates-hot { grid-template-columns: 1fr 1fr; } .rates-hot-text { grid-column: 1 / -1; } }
