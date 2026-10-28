@@ -16,9 +16,7 @@
         <div class="tab active" onclick="showTab('markets')">Markets</div>
         <div class="tab" onclick="showTab('bonds')">Bonds</div>
         <div class="tab" onclick="showTab('crypto')">Crypto</div>
-        <div class="tab" onclick="showTab('equities')">Equities</div>
         <div class="tab" onclick="showTab('macro')">Macro</div>
-        <div class="tab" onclick="showTab('global')">Global</div>
         <details class="boards-menu" ontoggle="this.style.setProperty('--boards-top',this.querySelector('summary').getBoundingClientRect().bottom+'px')" onkeydown="if(event.key==='Escape'){this.open=false;this.querySelector('summary').focus();}">
             <summary class="tab">Boards <span aria-hidden="true">&#9662;</span></summary>
             <nav class="boards-options" aria-label="Boards">
@@ -28,7 +26,6 @@
                 <a href="graphs/markets/commodities_curve.html"><img class="board-icon" src="img/contango.png" alt=""> Futures contango/backwardation</a>
                 <a href="graphs/markets/commodities_futures.html">📈 Future prices (rolled)</a>
                 <a href="graphs/markets/eurostat.html"><img class="board-icon" src="img/eurostat.png" alt=""> Eurostat Construction Indices</a>
-                <a href="graphs/markets/macro.html">🌐 Macro</a>
             </nav>
         </details>
         <a class="tab" href="research.html">Research</a>
@@ -255,47 +252,10 @@
             </div>
         </div>
 
-        <!-- Equities Tab -->
-        <div id="equities" class="tab-content">
-            <div class="placeholder">
-                <h2>📈 Equities</h2>
-                <p>Charts coming soon...</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <h3>S&P 500 Performance</h3>
-                    <p>Placeholder for chart</p>
-                </div>
-                <div class="card">
-                    <h3>Sector Rotation</h3>
-                    <p>Placeholder for chart</p>
-                </div>
-                <div class="card">
-                    <h3>Market Breadth</h3>
-                    <p>Placeholder for chart</p>
-                </div>
-            </div>
-        </div>
-
         <!-- Macro Tab -->
         <div id="macro" class="tab-content">
-            <div class="placeholder">
-                <h2>🌍 Macro</h2>
-                <p>Charts coming soon...</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <h3>GDP Growth</h3>
-                    <p>Placeholder for chart</p>
-                </div>
-                <div class="card">
-                    <h3>Inflation Rates</h3>
-                    <p>Placeholder for chart</p>
-                </div>
-                <div class="card">
-                    <h3>Central Bank Rates</h3>
-                    <p>Placeholder for chart</p>
-                </div>
+            <div class="markets-table-container">
+                <iframe id="macro-frame" data-src="graphs/markets/macro.html" style="height:1400px"></iframe>
             </div>
         </div>
 
@@ -369,27 +329,6 @@
                              alt="Cryptocurrency market treemap, year to date">
                     </div>
                 </section>
-            </div>
-        </div>
-        <!-- Global Tab -->
-        <div id="global" class="tab-content">
-            <div class="placeholder">
-                <h2>🌐 Global Overview</h2>
-                <p>Charts coming soon...</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <h3>Cross-Asset Correlations</h3>
-                    <p>Placeholder for chart</p>
-                </div>
-                <div class="card">
-                    <h3>Currency Strength</h3>
-                    <p>Placeholder for chart</p>
-                </div>
-                <div class="card">
-                    <h3>Commodity Prices</h3>
-                    <p>Placeholder for chart</p>
-                </div>
             </div>
         </div>
     </div>

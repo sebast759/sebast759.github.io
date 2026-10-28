@@ -36,4 +36,7 @@ series:p.series.map(s=>({name:s.name,color:s.color,dashStyle:s.dash||'Solid',dat
 document.querySelectorAll('[data-tab]').forEach(b=>{if(b.tagName==='BUTTON')b.onclick=()=>{tab=b.dataset.tab;document.querySelectorAll('#tabs button').forEach(x=>x.classList.toggle('active',x===b));draw();};});
 document.querySelectorAll('[data-years]').forEach(b=>b.onclick=()=>{years=+b.dataset.years;document.querySelectorAll('#ranges button').forEach(x=>x.classList.toggle('active',x===b));draw();});
 draw();
+if(window.self!==window.top){document.querySelector('header .heading').hidden=true;document.body.style.background='transparent';document.querySelector('header').style.cssText='background:transparent;border:0;padding:0 0 4px';
+const fit=()=>{try{window.parent.document.getElementById('macro-frame').style.height=(document.documentElement.scrollHeight+10)+'px';}catch(e){}};
+new ResizeObserver(fit).observe(document.body);fit();}
 </script></body></html>
