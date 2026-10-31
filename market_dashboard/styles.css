@@ -41,6 +41,9 @@ body {
     color: #666;
 }
 
+a.tab { text-decoration: none; }
+.tab .board-icon { width: auto; height: 18px; vertical-align: -3px; margin-right: 4px; }
+
 .tab:hover {
     color: #1a1a1a;
     background: #f9f9f9;
