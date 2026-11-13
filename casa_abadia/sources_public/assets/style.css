@@ -87,3 +87,11 @@ a.albumlink:hover{box-shadow:0 4px 14px rgba(0,0,0,.12)}
 a.albumlink img{width:100%;display:block;border-bottom:1px solid var(--line)}
 a.albumlink span{display:block;padding:10px 12px;font-weight:600}
 .pair figure svg{display:block;width:100%;height:auto;aspect-ratio:4/3;background:#f3f7f9}
+
+.refs{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin:10px 0 16px}
+.refs a{display:block;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:10px 12px;text-decoration:none;color:var(--ink)}
+.refs a:hover{box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.refs b{display:block;color:var(--accent)}
+.refs span{display:block;font-size:.88rem;margin:2px 0 4px}
+.refs i{font-style:normal;font-size:.75rem;color:var(--muted)}
+.pair figure a img{cursor:pointer}
