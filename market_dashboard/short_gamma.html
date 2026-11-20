@@ -1,0 +1,124 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SMH Weekend Hedge</title><style>body{font:14px system-ui;background:#f7f8fa;color:#17212e;margin:0}main{max-width:1050px;margin:30px auto;padding:0 20px}h1{font-size:23px}section{background:white;border:1px solid #e2e6ec;border-radius:12px;padding:18px;margin:14px 0}label{display:inline-flex;flex-direction:column;gap:5px;color:#536273;font-size:12px;margin:0 12px 12px 0}input{width:100px;padding:8px;border:1px solid #cbd3de;border-radius:6px;font:inherit;color:#17212e}button{padding:8px 12px;background:#17212e;color:white;border:0;border-radius:6px;cursor:pointer}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}th,td{padding:9px 7px;text-align:right;border-bottom:1px solid #edf0f3}th:first-child,td:first-child{text-align:left}th{color:#657181;font-weight:600}small,.muted{color:#657181}.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}.kpi{background:#f5f7f9;padding:13px;border-radius:9px}.kpi strong{display:block;font-size:23px;margin-top:6px}canvas{width:100%;height:430px;display:block}.scroll{overflow-x:auto}.positive{color:#08774a}.negative{color:#b53838}.foot{font-size:12px;line-height:1.6;color:#637082}.inputs .row{display:flex;flex-wrap:wrap;align-items:flex-end;border-bottom:1px solid #edf0f3;padding-bottom:4px;margin-bottom:12px}.inputs h4{width:100%;margin:0 0 8px;font-size:13px;color:#17212e}.ro{background:#f5f7f9;color:#536273}.quote{display:flex;align-items:center;gap:10px;margin:0 0 12px}.quote .chk{flex-direction:row;align-items:center;gap:6px;margin:0}.quote .chk input{width:auto}button.ghost{background:#eef1f5;color:#17212e}</style></head><body><main><p style="margin:0 0 6px"><a href="index.html" style="color:#657181;font-size:12px">&larr; Market Dashboard</a></p><h1>SMH weekend delta hedge</h1><p class="muted">Friday 20 Nov → Monday 23 Nov 2026 · Short 1 Dec 18 $350 put · Contract multiplier 100</p><section class="inputs">
+<div class="row"><h4>Entry (Friday, V0)</h4><label>SMH spot<input id="initialSpot" type="number" value="413" step="0.1"></label><label>Put premium<input id="premium" type="number" value="9.5" step="0.1"></label><label>Implied IV %<input id="iv0" type="text" readonly tabindex="-1" class="ro"></label><label>Put strike<input id="strike" type="number" value="350"></label><label>Rate %<input id="rate" type="number" value="4" step="0.1"></label></div>
+<div class="row"><h4>Live</h4><label>SMH spot<input id="spot" type="number" value="413" step="0.1"></label><label>Put (estimated)<input id="livePut" type="number" step="0.05"></label><label>IV %<input id="iv" type="number" step="1" min="1" max="300"></label><label>Put P&amp;L<input id="putPnl" type="text" readonly tabindex="-1" class="ro"></label><div class="quote"><button id="refreshQuote">Update SMH price</button><label class="chk"><input id="autoQuote" type="checkbox" checked>Refresh every 60s</label><button id="resetLive" class="ghost" title="Put back the V0 IV and re-estimate the put">Reset IV to V0</button></div></div>
+<div class="row"><h4>Position</h4><label>Existing short shares<input id="existing" type="number" value="10" step="1"></label><label>Share sale price<input id="entry" type="number" value="413" step="0.1"></label><label>Target short shares<input id="target" type="number" value="17" step="1"></label></div>
+<div id="quoteStatus" class="muted" style="font-size:12px">Live put = Black Scholes at the live SMH spot and live IV. Edit the put price to back out the live IV, or edit the IV to re-price the put.</div>
+<p class="muted" id="calibration"></p></section><section><div class="kpis"><div class="kpi">Current short shares<strong id="current">10</strong></div><div class="kpi">Target short shares<strong id="recommended">17</strong></div><div class="kpi">Trade now<strong id="trade">SELL 7</strong></div><div class="kpi">Model short put delta<strong id="delta">...</strong></div><div class="kpi">Friday → Monday time decay<strong id="theta">...</strong></div></div></section><section><h3>Monday P&L versus SMH price</h3><p class="muted">Fixed 10 shares versus fixed 17 shares versus actively hedged 17 share starting position. Active hedge is a hypothetical continuous hedge along a linear price path. The lower panel shows the required short share quantity at each Monday price. Actual discrete trading P&L depends on the path.</p><canvas id="plot" width="1000" height="460"></canvas><div id="legend" class="muted">● Current 10 shares &nbsp;&nbsp; ● Fixed 17 shares &nbsp;&nbsp; ● Active hedge</div></section><section><h3>Monday scenario table</h3><div class="scroll"><table><thead><tr><th>SMH Monday</th><th>Move</th><th>Put P&L</th><th>10 shares P&L</th><th>17 shares P&L</th><th>Active hedge P&L</th><th>Monday target short</th><th>Trade from 17</th></tr></thead><tbody id="scenarios"></tbody></table></div></section><section class="foot"><strong>Assumptions:</strong> Black Scholes European approximation for an American put, constant IV and 4% interest rate, zero dividends, Friday 20 November 16:00 ET to Monday 23 November 09:30 ET; option mark on Friday is the observed $9.50. The extra 7 shares in the 17 share scenario are assumed sold at the initial Friday spot. Live quotes move the chart marker without changing initial assumptions. Active hedge P&L is an idealized continuously rebalanced delta hedge along a linear path; it includes cash flows from rebalancing but excludes commissions, financing, borrow costs, bid ask spreads and jumps. Weekend gaps cannot actually be rehedged while the market is closed. Values are indicative, not executable quotes.</section></main><script>
+const $=id=>document.getElementById(id),num=id=>Number($(id).value);const erf=x=>{let s=Math.sign(x);x=Math.abs(x);let t=1/(1+.3275911*x);return s*(1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-.284496736)*t+.254829592)*t*Math.exp(-x*x))};const N=x=>(1+erf(x/Math.SQRT2))/2;const pdf=x=>Math.exp(-x*x/2)/Math.sqrt(2*Math.PI);const tFri=28/365,tMon=(25+6.5/24)/365;function put(s,k,t,v,r){if(t<=0)return Math.max(k-s,0);let a=(Math.log(s/k)+(r+v*v/2)*t)/(v*Math.sqrt(t)),b=a-v*Math.sqrt(t);return k*Math.exp(-r*t)*N(-b)-s*N(-a)}function dput(s,k,t,v,r){let a=(Math.log(s/k)+(r+v*v/2)*t)/(v*Math.sqrt(t));return N(a)-1}function ivsolve(s,k,p,r){let lo=.01,hi=3;for(let i=0;i<90;i++){let m=(lo+hi)/2;if(put(s,k,tFri,m,r)>p)hi=m;else lo=m}return(lo+hi)/2}const money=x=>(x<0?'−$':'$')+Math.abs(x).toFixed(0),signed=x=>(x>0?'+':'')+x.toFixed(1);let IV0=.5,IVL=null;
+function init(){IV0=ivsolve(num('initialSpot'),num('strike'),num('premium'),num('rate')/100);$('iv0').value=(IV0*100).toFixed(0);if(IVL===null)IVL=IV0;$('iv').value=(IVL*100).toFixed(0);priceLive();render()}
+function priceLive(){$('livePut').value=put(num('spot'),num('strike'),tFri,IVL,num('rate')/100).toFixed(2)}function render(){let s=num('initialSpot'),live=num('spot'),k=num('strike'),p=num('premium'),old=num('existing'),entry=num('entry'),target=num('target'),v=IVL,r=num('rate')/100;if(!(s>0&&k>0&&v>0&&p>=0))return;$('putPnl').value=money(100*(p-num('livePut')));let dp=dput(live,k,tFri,v,r),rec=-Math.round(100*(-dp)),diff=target-old;$('current').textContent=old;$('recommended').textContent=target;$('trade').textContent=diff>0?'SELL '+diff:diff<0?'BUY '+(-diff):'NONE';$('delta').textContent=(100*(-dp)).toFixed(1)+' shares';$('theta').textContent=money(100*(put(s,k,tFri,v,r)-put(s,k,tMon,v,r)));$('calibration').textContent='Model neutral hedge at live spot and IV: short '+(-rec)+' shares. Monday scenarios use the live IV ('+(v*100).toFixed(0)+'%). Friday option mark is the actual premium.';let data=[];for(let i=0;i<=60;i++){let x=s*(.95+.10*i/60),option=100*(p-put(x,k,tMon,v,r)),p10=option+old*(entry-x),p17=option+old*(entry-x)+(target-old)*(s-x);let steps=80,active=option+old*(entry-x)+(target-old)*(s-x);let currentShort=target,prev=s;for(let j=1;j<=steps;j++){let nx=s+(x-s)*j/steps;active+=currentShort*(prev-nx); // correct for replacing initial hedge baseline below
+currentShort=100*(-dput(nx,k,tMon+(tFri-tMon)*(1-j/steps),v,r));prev=nx} // recompute active without duplicated initial hedge
+active=option+old*(entry-s)+(target-old)*(s-s);currentShort=target;prev=s;for(let j=1;j<=steps;j++){let nx=s+(x-s)*j/steps;active+=currentShort*(prev-nx);currentShort=100*(-dput(nx,k,tFri+(tMon-tFri)*j/steps,v,r));prev=nx}let monShort=100*(-dput(x,k,tMon,v,r));data.push({x,option,p10,p17,active,monShort})}let tbody=$('scenarios');tbody.innerHTML='';for(let i=0;i<=20;i++){let z=data[i*3],tr=document.createElement('tr');let cells=[z.x.toFixed(2),signed((z.x/s-1)*100)+'%',money(z.option),money(z.p10),money(z.p17),money(z.active),z.monShort.toFixed(1),signed(z.monShort-target)+' shares'];cells.forEach((val,j)=>{let td=document.createElement('td');td.textContent=val;if(j>=2&&j<=5)td.className=( [z.option,z.p10,z.p17,z.active][j-2]>=0?'positive':'negative');tr.appendChild(td)});tbody.appendChild(tr)}draw(data,s,live);}
+function draw(data,s,live){
+ let c=$('plot'),ctx=c.getContext('2d'),W=c.width,H=c.height;
+ const L=72,R=20,top=20,mainBottom=288,subTop=326,subBottom=420;
+ const vals=data.flatMap(z=>[z.p10,z.p17,z.active]);
+ let min=Math.min(...vals,0),max=Math.max(...vals,0),pad=(max-min)*.1||20;min-=pad;max+=pad;
+ const xx=x=>L+(x-data[0].x)/(data.at(-1).x-data[0].x)*(W-L-R);
+ const yy=y=>top+(max-y)/(max-min)*(mainBottom-top);
+ const qvals=data.map(z=>z.monShort);let qmin=Math.floor(Math.min(...qvals)-2),qmax=Math.ceil(Math.max(...qvals)+2);
+ const yq=q=>subTop+(qmax-q)/(qmax-qmin)*(subBottom-subTop);
+ ctx.clearRect(0,0,W,H);ctx.font='12px system-ui';ctx.lineWidth=1;
+ for(let j=0;j<=4;j++){let v=min+(max-min)*j/4,y=yy(v);ctx.strokeStyle='#e4e9ef';ctx.beginPath();ctx.moveTo(L,y);ctx.lineTo(W-R,y);ctx.stroke();ctx.fillStyle='#657181';ctx.fillText(money(v),5,y+4)}
+ for(let j=0;j<=3;j++){let q=qmin+(qmax-qmin)*j/3,y=yq(q);ctx.strokeStyle='#e4e9ef';ctx.beginPath();ctx.moveTo(L,y);ctx.lineTo(W-R,y);ctx.stroke();ctx.fillStyle='#657181';ctx.fillText(q.toFixed(0),36,y+4)}
+ ctx.fillStyle='#536273';ctx.fillText('P&L ($)',L,12);ctx.fillText('Active hedge: short shares',L,subTop-12);
+ for(let j=-5;j<=5;j++){let x=s*(1+j/100),px=xx(x);ctx.fillStyle='#657181';let label=x.toFixed(1)+' ('+(j>0?'+':'')+j+'%)';ctx.fillText(label,px-ctx.measureText(label).width/2,H-13)}
+ // Two independent reference lines: initial spot fixed, latest spot moving.
+ ctx.setLineDash([5,4]);ctx.strokeStyle='#8793a3';ctx.lineWidth=1.4;
+ ctx.beginPath();ctx.moveTo(xx(s),top);ctx.lineTo(xx(s),subBottom);ctx.stroke();
+ ctx.setLineDash([3,3]);ctx.strokeStyle='#c0392b';ctx.lineWidth=1.7;
+ ctx.beginPath();ctx.moveTo(xx(live),top);ctx.lineTo(xx(live),subBottom);ctx.stroke();ctx.setLineDash([]);
+ ctx.fillStyle='#657181';ctx.fillText('Initial $'+s.toFixed(2),Math.max(L,Math.min(W-R-110,xx(s)-105)),top+14);
+ ctx.fillStyle='#c0392b';ctx.fillText('Latest $'+live.toFixed(2),Math.max(L,Math.min(W-R-105,xx(live)+6)),top+29);
+ for(let [key,color] of [['p10','#66788b'],['p17','#1763c6'],['active','#d17a20']]){ctx.beginPath();ctx.strokeStyle=color;ctx.lineWidth=2.6;data.forEach((z,i)=>i?ctx.lineTo(xx(z.x),yy(z[key])):ctx.moveTo(xx(z.x),yy(z[key])));ctx.stroke()}
+ ctx.beginPath();ctx.strokeStyle='#d17a20';ctx.lineWidth=2.6;data.forEach((z,i)=>i?ctx.lineTo(xx(z.x),yq(z.monShort)):ctx.moveTo(xx(z.x),yq(z.monShort)));ctx.stroke();
+ ctx.setLineDash([5,4]);ctx.strokeStyle='#1763c6';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(L,yq(num('target')));ctx.lineTo(W-R,yq(num('target')));ctx.stroke();ctx.setLineDash([]);
+ // Interpolate each series at the initial and latest prices.
+ function interpolate(x,key){
+  if(x<=data[0].x)return data[0][key];
+  if(x>=data[data.length-1].x)return data[data.length-1][key];
+  let pos=(x-data[0].x)/(data[data.length-1].x-data[0].x)*(data.length-1);
+  let i=Math.min(data.length-2,Math.floor(pos)),w=pos-i;
+  return data[i][key]*(1-w)+data[i+1][key]*w;
+ }
+ // Place all three P&L values in a vertically spaced stack rather than
+ // directly on top of nearly coincident curves. Leader lines identify crossings.
+ function labelStack(x,side){
+  if(x<data[0].x||x>data[data.length-1].x)return;
+  const series=[['p10','#66788b','10 shares'],['p17','#1763c6','17 shares'],['active','#d17a20','Active']];
+  const items=series.map(([key,color,name])=>({key,color,name,value:interpolate(x,key)}));
+  const px=xx(x),bw=178,bh=20,gap=3;
+  const baseline=Object.fromEntries(series.map(([key])=>[key,interpolate(s,key)]));
+  let bx=side==='left'?px-bw-15:px+15;
+  bx=Math.max(L+3,Math.min(W-R-bw-3,bx));
+  const averageY=items.reduce((acc,z)=>acc+yy(z.value),0)/items.length;
+  const stackHeight=items.length*bh+(items.length-1)*gap;
+  let startY=Math.max(top+53,Math.min(mainBottom-stackHeight-5,averageY-stackHeight/2));
+  // When reference lines are close, put the two stacks on opposite sides.
+  items.forEach((z,i)=>{
+   const curveY=yy(z.value),by=startY+i*(bh+gap),centerY=by+bh/2;
+   ctx.strokeStyle=z.color;ctx.lineWidth=1;ctx.setLineDash([]);
+   ctx.beginPath();ctx.moveTo(px,curveY);ctx.lineTo(side==='left'?bx+bw:bx,centerY);ctx.stroke();
+   ctx.fillStyle=z.color;ctx.beginPath();ctx.arc(px,curveY,3,0,Math.PI*2);ctx.fill();
+   ctx.fillStyle='rgba(255,255,255,.97)';ctx.fillRect(bx,by,bw,bh);
+   ctx.strokeStyle=z.color;ctx.strokeRect(bx,by,bw,bh);
+   ctx.fillStyle=z.color;ctx.font='bold 11px system-ui';
+   const change=z.value-baseline[z.key];
+   const changeLabel=(change>0?'+':'')+money(change);
+   ctx.fillText(z.name+': '+money(z.value)+' ['+changeLabel+']',bx+5,by+14);
+  });
+  const shares=interpolate(x,'monShort'),y=yq(shares);
+  ctx.fillStyle='#d17a20';ctx.beginPath();ctx.arc(px,y,3.5,0,2*Math.PI);ctx.fill();
+  const text=shares.toFixed(1)+' shares';ctx.font='bold 11px system-ui';
+  const w=ctx.measureText(text).width+12;
+  let hx=side==='left'?px-w-9:px+9;
+  hx=Math.max(L+2,Math.min(W-R-w-2,hx));
+  let hy=Math.max(subTop+3,Math.min(subBottom-21,y-10));
+  ctx.fillStyle='rgba(255,255,255,.96)';ctx.fillRect(hx,hy,w,20);
+  ctx.strokeStyle='#d17a20';ctx.strokeRect(hx,hy,w,20);
+  ctx.fillStyle='#d17a20';ctx.fillText(text,hx+6,hy+14);
+ }
+ // Latest values on the left, initial values on the right, to prevent
+ // overlapping callouts when the two vertical markers are close.
+ labelStack(live,'left');
+ labelStack(s,'right');
+ $('legend').innerHTML='<span style="color:#66788b">●</span> Fixed 10 shares &nbsp;&nbsp; <span style="color:#1763c6">●</span> Fixed 17 shares &nbsp;&nbsp; <span style="color:#d17a20">●</span> Active hedge; lower panel: Monday target shares (orange), Friday target (blue dashed)';
+}
+const FINNHUB_API_KEY='dc09o19r01qs4ks3ihlgdc09o19r01qs4ks3ihm0';
+$('autoQuote').checked=localStorage.getItem('smh_auto_quote')!=='false';
+$('autoQuote').addEventListener('change',()=>localStorage.setItem('smh_auto_quote',String($('autoQuote').checked)));
+let fetchingQuote=false;
+async function refreshSMH(){
+ if(fetchingQuote)return;
+ const key=FINNHUB_API_KEY;
+ fetchingQuote=true;$('refreshQuote').disabled=true;
+ $('quoteStatus').textContent='Fetching SMH quote from Finnhub...';
+ try{
+  const controller=new AbortController();
+  const timeout=setTimeout(()=>controller.abort(),12000);
+  let response;
+  try{response=await fetch('https://finnhub.io/api/v1/quote?symbol=SMH&token='+encodeURIComponent(key),{signal:controller.signal,cache:'no-store'});}
+  finally{clearTimeout(timeout);}
+  if(!response.ok)throw Error('Finnhub HTTP '+response.status);
+  const q=await response.json();
+  if(!Number.isFinite(q.c)||q.c<=0||!Number.isFinite(q.t)||q.t<=0)throw Error('No valid SMH quote returned');
+  const quoteTime=new Date(q.t*1000);
+  const ageMinutes=(Date.now()-quoteTime.getTime())/60000;
+  if(ageMinutes< -5)throw Error('Invalid future quote timestamp');
+  $('spot').value=q.c.toFixed(2);
+  localStorage.setItem('smh_latest_spot',String(q.c));
+  priceLive();render();
+  const ageText=ageMinutes>15?' · STALE / market may be closed':'';
+  $('quoteStatus').textContent='Finnhub SMH $'+q.c.toFixed(2)+' · Quote '+quoteTime.toLocaleString()+' · '+Math.max(0,Math.round(ageMinutes))+' min old'+ageText+'. Entry price unchanged.';
+ }catch(e){$('quoteStatus').textContent='Quote update failed: '+e.message+'. Manual spot remains available.';}
+ finally{fetchingQuote=false;$('refreshQuote').disabled=false;}
+}
+$('refreshQuote').addEventListener('click',refreshSMH);
+setInterval(()=>{if($('autoQuote').checked&&!document.hidden)refreshSMH()},60000);
+const savedLatest=Number(localStorage.getItem('smh_latest_spot'));if(savedLatest>0)$('spot').value=savedLatest;
+$('spot').addEventListener('input',()=>{localStorage.setItem('smh_latest_spot',$('spot').value);priceLive();render()});
+['initialSpot','premium','strike','rate'].forEach(id=>$(id).addEventListener('input',init));
+$('livePut').addEventListener('input',()=>{let p=num('livePut');if(p>0){IVL=ivsolve(num('spot'),num('strike'),p,num('rate')/100);$('iv').value=(IVL*100).toFixed(0)}render()});
+$('iv').addEventListener('input',()=>{let v=num('iv')/100;if(v>0){IVL=v;priceLive()}render()});
+$('resetLive').addEventListener('click',()=>{IVL=IV0;$('iv').value=(IVL*100).toFixed(0);priceLive();render()});
+['existing','entry','target'].forEach(id=>$(id).addEventListener('input',render));init();</script></body></html>
