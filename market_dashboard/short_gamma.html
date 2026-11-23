@@ -6,7 +6,7 @@
 <p class="muted" id="calibration"></p></section><section><div class="kpis"><div class="kpi">Current short shares<strong id="current">10</strong></div><div class="kpi">Target short shares<strong id="recommended">17</strong></div><div class="kpi">Trade now<strong id="trade">SELL 7</strong></div><div class="kpi">Model short put delta<strong id="delta">...</strong></div><div class="kpi">Friday → Monday time decay<strong id="theta">...</strong></div></div></section><section><h3>Monday P&L versus SMH price</h3><p class="muted">Fixed 10 shares versus fixed 17 shares versus actively hedged 17 share starting position. Active hedge is a hypothetical continuous hedge along a linear price path. The lower panel shows the required short share quantity at each Monday price. Actual discrete trading P&L depends on the path.</p><canvas id="plot" width="1000" height="460"></canvas><div id="legend" class="muted">● Current 10 shares &nbsp;&nbsp; ● Fixed 17 shares &nbsp;&nbsp; ● Active hedge</div></section><section><h3>Monday scenario table</h3><div class="scroll"><table><thead><tr><th>SMH Monday</th><th>Move</th><th>Put P&L</th><th>10 shares P&L</th><th>17 shares P&L</th><th>Active hedge P&L</th><th>Monday target short</th><th>Trade from 17</th></tr></thead><tbody id="scenarios"></tbody></table></div></section><section class="foot"><strong>Assumptions:</strong> Black Scholes European approximation for an American put, constant IV and 4% interest rate, zero dividends, Friday 20 November 16:00 ET to Monday 23 November 09:30 ET; option mark on Friday is the observed $9.50. The extra 7 shares in the 17 share scenario are assumed sold at the initial Friday spot. Live quotes move the chart marker without changing initial assumptions. Active hedge P&L is an idealized continuously rebalanced delta hedge along a linear path; it includes cash flows from rebalancing but excludes commissions, financing, borrow costs, bid ask spreads and jumps. Weekend gaps cannot actually be rehedged while the market is closed. Values are indicative, not executable quotes.</section></main><script>
 const $=id=>document.getElementById(id),num=id=>Number($(id).value);const erf=x=>{let s=Math.sign(x);x=Math.abs(x);let t=1/(1+.3275911*x);return s*(1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-.284496736)*t+.254829592)*t*Math.exp(-x*x))};const N=x=>(1+erf(x/Math.SQRT2))/2;const pdf=x=>Math.exp(-x*x/2)/Math.sqrt(2*Math.PI);const tFri=28/365,tMon=(25+6.5/24)/365;function put(s,k,t,v,r){if(t<=0)return Math.max(k-s,0);let a=(Math.log(s/k)+(r+v*v/2)*t)/(v*Math.sqrt(t)),b=a-v*Math.sqrt(t);return k*Math.exp(-r*t)*N(-b)-s*N(-a)}function dput(s,k,t,v,r){let a=(Math.log(s/k)+(r+v*v/2)*t)/(v*Math.sqrt(t));return N(a)-1}function ivsolve(s,k,p,r){let lo=.01,hi=3;for(let i=0;i<90;i++){let m=(lo+hi)/2;if(put(s,k,tFri,m,r)>p)hi=m;else lo=m}return(lo+hi)/2}const money=x=>(x<0?'−$':'$')+Math.abs(x).toFixed(0),signed=x=>(x>0?'+':'')+x.toFixed(1);let IV0=.5,IVL=null;
 function init(){IV0=ivsolve(num('initialSpot'),num('strike'),num('premium'),num('rate')/100);$('iv0').value=(IV0*100).toFixed(0);if(IVL===null)IVL=IV0;$('iv').value=(IVL*100).toFixed(0);priceLive();render()}
-function priceLive(){$('livePut').value=put(num('spot'),num('strike'),tFri,IVL,num('rate')/100).toFixed(2)}function render(){let s=num('initialSpot'),live=num('spot'),k=num('strike'),p=num('premium'),old=num('existing'),entry=num('entry'),target=num('target'),v=IVL,r=num('rate')/100;if(!(s>0&&k>0&&v>0&&p>=0))return;$('putPnl').value=money(100*(p-num('livePut')));let dp=dput(live,k,tFri,v,r),rec=-Math.round(100*(-dp)),diff=target-old;$('current').textContent=old;$('recommended').textContent=target;$('trade').textContent=diff>0?'SELL '+diff:diff<0?'BUY '+(-diff):'NONE';$('delta').textContent=(100*(-dp)).toFixed(1)+' shares';$('theta').textContent=money(100*(put(s,k,tFri,v,r)-put(s,k,tMon,v,r)));$('calibration').textContent='Model neutral hedge at live spot and IV: short '+(-rec)+' shares. Monday scenarios use the live IV ('+(v*100).toFixed(0)+'%). Friday option mark is the actual premium.';let data=[];for(let i=0;i<=60;i++){let x=s*(.95+.10*i/60),option=100*(p-put(x,k,tMon,v,r)),p10=option+old*(entry-x),p17=option+old*(entry-x)+(target-old)*(s-x);let steps=80,active=option+old*(entry-x)+(target-old)*(s-x);let currentShort=target,prev=s;for(let j=1;j<=steps;j++){let nx=s+(x-s)*j/steps;active+=currentShort*(prev-nx); // correct for replacing initial hedge baseline below
+function priceLive(){$('livePut').value=put(num('spot'),num('strike'),tMon,IVL,num('rate')/100).toFixed(2)}function render(){let s=num('initialSpot'),live=num('spot'),k=num('strike'),p=num('premium'),old=num('existing'),entry=num('entry'),target=num('target'),v=IVL,r=num('rate')/100;if(!(s>0&&k>0&&v>0&&p>=0))return;$('putPnl').value=money(100*(p-num('livePut')));let dp=dput(live,k,tFri,v,r),rec=-Math.round(100*(-dp)),diff=target-old;$('current').textContent=old;$('recommended').textContent=target;$('trade').textContent=diff>0?'SELL '+diff:diff<0?'BUY '+(-diff):'NONE';$('delta').textContent=(100*(-dp)).toFixed(1)+' shares';$('theta').textContent=money(100*(put(s,k,tFri,v,r)-put(s,k,tMon,v,r)));$('calibration').textContent='Model neutral hedge at live spot and IV: short '+(-rec)+' shares. Monday scenarios use the live IV ('+(v*100).toFixed(0)+'%). Friday option mark is the actual premium.';let data=[];for(let i=0;i<=60;i++){let x=s*(.90+.20*i/60),option=100*(p-put(x,k,tMon,v,r)),p10=option+old*(entry-x),p17=option+old*(entry-x)+(target-old)*(s-x);let steps=80,active=option+old*(entry-x)+(target-old)*(s-x);let currentShort=target,prev=s;for(let j=1;j<=steps;j++){let nx=s+(x-s)*j/steps;active+=currentShort*(prev-nx); // correct for replacing initial hedge baseline below
 currentShort=100*(-dput(nx,k,tMon+(tFri-tMon)*(1-j/steps),v,r));prev=nx} // recompute active without duplicated initial hedge
 active=option+old*(entry-s)+(target-old)*(s-s);currentShort=target;prev=s;for(let j=1;j<=steps;j++){let nx=s+(x-s)*j/steps;active+=currentShort*(prev-nx);currentShort=100*(-dput(nx,k,tFri+(tMon-tFri)*j/steps,v,r));prev=nx}let monShort=100*(-dput(x,k,tMon,v,r));data.push({x,option,p10,p17,active,monShort})}let tbody=$('scenarios');tbody.innerHTML='';for(let i=0;i<=20;i++){let z=data[i*3],tr=document.createElement('tr');let cells=[z.x.toFixed(2),signed((z.x/s-1)*100)+'%',money(z.option),money(z.p10),money(z.p17),money(z.active),z.monShort.toFixed(1),signed(z.monShort-target)+' shares'];cells.forEach((val,j)=>{let td=document.createElement('td');td.textContent=val;if(j>=2&&j<=5)td.className=( [z.option,z.p10,z.p17,z.active][j-2]>=0?'positive':'negative');tr.appendChild(td)});tbody.appendChild(tr)}draw(data,s,live);}
 function draw(data,s,live){
@@ -22,14 +22,15 @@ function draw(data,s,live){
  for(let j=0;j<=4;j++){let v=min+(max-min)*j/4,y=yy(v);ctx.strokeStyle='#e4e9ef';ctx.beginPath();ctx.moveTo(L,y);ctx.lineTo(W-R,y);ctx.stroke();ctx.fillStyle='#657181';ctx.fillText(money(v),5,y+4)}
  for(let j=0;j<=3;j++){let q=qmin+(qmax-qmin)*j/3,y=yq(q);ctx.strokeStyle='#e4e9ef';ctx.beginPath();ctx.moveTo(L,y);ctx.lineTo(W-R,y);ctx.stroke();ctx.fillStyle='#657181';ctx.fillText(q.toFixed(0),36,y+4)}
  ctx.fillStyle='#536273';ctx.fillText('P&L ($)',L,12);ctx.fillText('Active hedge: short shares',L,subTop-12);
- for(let j=-5;j<=5;j++){let x=s*(1+j/100),px=xx(x);ctx.fillStyle='#657181';let label=x.toFixed(1)+' ('+(j>0?'+':'')+j+'%)';ctx.fillText(label,px-ctx.measureText(label).width/2,H-13)}
+ for(let j=-10;j<=10;j+=2){let x=s*(1+j/100),px=xx(x);ctx.fillStyle='#657181';let label=x.toFixed(1)+' ('+(j>0?'+':'')+j+'%)';ctx.fillText(label,px-ctx.measureText(label).width/2,H-13)}
  // Two independent reference lines: initial spot fixed, latest spot moving.
  ctx.setLineDash([5,4]);ctx.strokeStyle='#8793a3';ctx.lineWidth=1.4;
- ctx.beginPath();ctx.moveTo(xx(s),top);ctx.lineTo(xx(s),subBottom);ctx.stroke();
+ ctx.beginPath();ctx.moveTo(xx(s),top+30);ctx.lineTo(xx(s),subBottom);ctx.stroke();
  ctx.setLineDash([3,3]);ctx.strokeStyle='#c0392b';ctx.lineWidth=1.7;
  ctx.beginPath();ctx.moveTo(xx(live),top);ctx.lineTo(xx(live),subBottom);ctx.stroke();ctx.setLineDash([]);
- ctx.fillStyle='#657181';ctx.fillText('Initial $'+s.toFixed(2),Math.max(L,Math.min(W-R-110,xx(s)-105)),top+14);
- ctx.fillStyle='#c0392b';ctx.fillText('Latest $'+live.toFixed(2),Math.max(L,Math.min(W-R-105,xx(live)+6)),top+29);
+ // Initial: two lines centered above its line. Last: two lines beside its line, on the side away from Initial.
+ ctx.textAlign='center';ctx.fillStyle='#657181';ctx.fillText('Initial',xx(s),top+12);ctx.fillText('$'+s.toFixed(2),xx(s),top+25);
+ ctx.textAlign=live>=s?'left':'right';const lx=xx(live)+(live>=s?6:-6);ctx.fillStyle='#c0392b';ctx.fillText('Last',lx,top+12);ctx.fillText('$'+live.toFixed(2),lx,top+25);ctx.textAlign='left';
  for(let [key,color] of [['p10','#66788b'],['p17','#1763c6'],['active','#d17a20']]){ctx.beginPath();ctx.strokeStyle=color;ctx.lineWidth=2.6;data.forEach((z,i)=>i?ctx.lineTo(xx(z.x),yy(z[key])):ctx.moveTo(xx(z.x),yy(z[key])));ctx.stroke()}
  ctx.beginPath();ctx.strokeStyle='#d17a20';ctx.lineWidth=2.6;data.forEach((z,i)=>i?ctx.lineTo(xx(z.x),yq(z.monShort)):ctx.moveTo(xx(z.x),yq(z.monShort)));ctx.stroke();
  ctx.setLineDash([5,4]);ctx.strokeStyle='#1763c6';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(L,yq(num('target')));ctx.lineTo(W-R,yq(num('target')));ctx.stroke();ctx.setLineDash([]);
@@ -43,10 +44,11 @@ function draw(data,s,live){
  }
  // Place all three P&L values in a vertically spaced stack rather than
  // directly on top of nearly coincident curves. Leader lines identify crossings.
- function labelStack(x,side){
+ function labelStack(x,side,showPnl=true){
   if(x<data[0].x||x>data[data.length-1].x)return;
   const series=[['p10','#66788b','10 shares'],['p17','#1763c6','17 shares'],['active','#d17a20','Active']];
-  const items=series.map(([key,color,name])=>({key,color,name,value:interpolate(x,key)}));
+  // Stack order follows the curve order at this price (highest P&L on top).
+  const items=series.map(([key,color,name])=>({key,color,name,value:interpolate(x,key)})).sort((a,b)=>b.value-a.value);
   const px=xx(x),bw=178,bh=20,gap=3;
   const baseline=Object.fromEntries(series.map(([key])=>[key,interpolate(s,key)]));
   let bx=side==='left'?px-bw-15:px+15;
@@ -55,12 +57,12 @@ function draw(data,s,live){
   const stackHeight=items.length*bh+(items.length-1)*gap;
   let startY=Math.max(top+53,Math.min(mainBottom-stackHeight-5,averageY-stackHeight/2));
   // When reference lines are close, put the two stacks on opposite sides.
-  items.forEach((z,i)=>{
+  if(showPnl)items.forEach((z,i)=>{
    const curveY=yy(z.value),by=startY+i*(bh+gap),centerY=by+bh/2;
    ctx.strokeStyle=z.color;ctx.lineWidth=1;ctx.setLineDash([]);
    ctx.beginPath();ctx.moveTo(px,curveY);ctx.lineTo(side==='left'?bx+bw:bx,centerY);ctx.stroke();
    ctx.fillStyle=z.color;ctx.beginPath();ctx.arc(px,curveY,3,0,Math.PI*2);ctx.fill();
-   ctx.fillStyle='rgba(255,255,255,.97)';ctx.fillRect(bx,by,bw,bh);
+   ctx.fillStyle='rgba(255,255,255,.5)';ctx.fillRect(bx,by,bw,bh);
    ctx.strokeStyle=z.color;ctx.strokeRect(bx,by,bw,bh);
    ctx.fillStyle=z.color;ctx.font='bold 11px system-ui';
    const change=z.value-baseline[z.key];
@@ -74,14 +76,14 @@ function draw(data,s,live){
   let hx=side==='left'?px-w-9:px+9;
   hx=Math.max(L+2,Math.min(W-R-w-2,hx));
   let hy=Math.max(subTop+3,Math.min(subBottom-21,y-10));
-  ctx.fillStyle='rgba(255,255,255,.96)';ctx.fillRect(hx,hy,w,20);
+  ctx.fillStyle='rgba(255,255,255,.5)';ctx.fillRect(hx,hy,w,20);
   ctx.strokeStyle='#d17a20';ctx.strokeRect(hx,hy,w,20);
   ctx.fillStyle='#d17a20';ctx.fillText(text,hx+6,hy+14);
  }
- // Latest values on the left, initial values on the right, to prevent
- // overlapping callouts when the two vertical markers are close.
- labelStack(live,'left');
- labelStack(s,'right');
+ // Put each stack on the outer side of its marker so the two never overlap
+ // (the initial stack used to hide the latest one when live > initial).
+ labelStack(live,live>=s?'right':'left');
+ labelStack(s,live>=s?'left':'right',false);
  $('legend').innerHTML='<span style="color:#66788b">●</span> Fixed 10 shares &nbsp;&nbsp; <span style="color:#1763c6">●</span> Fixed 17 shares &nbsp;&nbsp; <span style="color:#d17a20">●</span> Active hedge; lower panel: Monday target shares (orange), Friday target (blue dashed)';
 }
 const FINNHUB_API_KEY='dc09o19r01qs4ks3ihlgdc09o19r01qs4ks3ihm0';
