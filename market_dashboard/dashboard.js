@@ -284,3 +284,16 @@ document.addEventListener('DOMContentLoaded', function () {
   const tab = Array.from(document.querySelectorAll('.tab')).find(t => (t.getAttribute('onclick') || '').includes(call));
   if (tab) tab.click();
 });
+
+// Bitcoin drawdown / volatility switching (charts built by markets_dashboard crypto/btc_charts.py)
+document.querySelectorAll('.btc-risk-tab-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const charts = {drawdown: 'bitcoin_drawdown.png', volatility: 'bitcoin_roll_volatility.png'};
+        const labels = {drawdown: 'Bitcoin drawdown cycles since all-time high', volatility: 'Bitcoin 20-day realized volatility'};
+        const chart = document.getElementById('btc-risk-chart');
+        chart.src = 'graphs/crypto/' + charts[this.dataset.chart];
+        chart.alt = labels[this.dataset.chart];
+        document.querySelectorAll('.btc-risk-tab-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+    });
+});

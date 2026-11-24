@@ -441,6 +441,15 @@ a.tab { text-decoration: none; }
 }
 
 .crypto-chart-frame--tall { height: 500px; }
+/* bigger chart areas on large screens */
+@media (min-width: 1400px) {
+    .crypto-chart-frame { height: 470px; }
+    .crypto-chart-frame--tall { height: 600px; }
+}
+@media (min-width: 2000px) {
+    .crypto-chart-frame { height: 560px; }
+    .crypto-chart-frame--tall { height: 720px; }
+}
 .crypto-chart-frame img {
     display: block;
     width: 100%;
