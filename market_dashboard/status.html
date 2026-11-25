@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Status</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--line:#e6e9ee;--text:#1f2937;--muted:#6b7280;--green:#16a34a;--orange:#f59e0b;--red:#dc2626}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:1000px;margin:0 auto;padding:24px 16px 48px}
+h1{font-size:22px;margin:0 0 4px}
+.sub{color:var(--muted);margin-bottom:18px}
+.summary{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.pill{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;display:flex;align-items:center;gap:8px;font-weight:600}
+.banner{border-radius:10px;padding:10px 14px;margin-bottom:16px;font-weight:600;display:none}
+.banner.red{display:block;background:#fef2f2;color:var(--red);border:1px solid #fecaca}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:16px;overflow:hidden}
+section h2{font-size:15px;margin:0;padding:12px 16px;border-bottom:1px solid var(--line)}
+.row{display:grid;grid-template-columns:18px minmax(0,1.3fr) 150px minmax(0,2fr);gap:10px;padding:9px 16px;border-bottom:1px solid #f1f3f6;align-items:center}
+.row:last-child{border-bottom:0}
+.dot{width:12px;height:12px;border-radius:50%}
+.green{background:var(--green)}.orange{background:var(--orange)}.red{background:var(--red)}
+.name{font-weight:600;overflow-wrap:anywhere}
+.last{color:var(--muted);font-variant-numeric:tabular-nums}
+.detail{color:var(--muted);overflow-wrap:anywhere}
+.row.is-red .detail{color:var(--red)}
+@media (max-width:680px){.row{grid-template-columns:18px minmax(0,1fr)}.last,.detail{grid-column:2}}
+</style>
+</head>
+<body>
+<main>
+  <h1>Dashboard status</h1>
+  <div class="sub" id="checked">Loading…</div>
+  <div class="banner" id="stale"></div>
+  <div class="summary" id="summary"></div>
+  <div id="groups"></div>
+</main>
+<script>
+function render() {
+  const S = window.STATUS;
+  if (!S) { document.getElementById('checked').textContent = 'Status file could not be loaded.'; return; }
+  const fmt = iso => iso ? new Date(iso).toLocaleString('en-GB', {timeZone: 'Europe/London', day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit'}) : '—';
+  const ageH = iso => (Date.now() - new Date(iso)) / 3.6e6;
+  const checkAge = ageH(S.checked_at);
+  document.getElementById('checked').textContent = 'Last check ' + fmt(S.checked_at) + ' London time (' + Math.round(checkAge * 60) + ' min ago) · checks run hourly on Server Eri';
+  if (checkAge > 2) {
+    const b = document.getElementById('stale');
+    b.className = 'banner red';
+    b.textContent = 'The checker has not run for ' + checkAge.toFixed(1) + 'h (Server Eri off?) — statuses below may be out of date.';
+  }
+  const counts = {green: 0, orange: 0, red: 0};
+  S.items.forEach(i => counts[i.status]++);
+  document.getElementById('summary').innerHTML = ['red', 'orange', 'green'].map(s =>
+    `<span class="pill"><span class="dot ${s}"></span>${counts[s]} ${s === 'green' ? 'OK' : s === 'orange' ? 'late' : 'failing'}</span>`).join('');
+  const rank = {red: 0, orange: 1, green: 2}, groups = {};
+  S.items.forEach(i => (groups[i.group] = groups[i.group] || []).push(i));
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+  document.getElementById('groups').innerHTML = Object.entries(groups).map(([g, items]) => {
+    items.sort((a, b) => rank[a.status] - rank[b.status]);
+    return `<section><h2>${esc(g)}</h2>` + items.map(i =>
+      `<div class="row is-${i.status}"><span class="dot ${i.status}" title="${i.status}"></span>` +
+      `<span class="name">${esc(i.name)}</span><span class="last">${fmt(i.last)}</span>` +
+      `<span class="detail">${esc(i.detail)}</span></div>`).join('') + '</section>';
+  }).join('');
+}
+const s = document.createElement('script');
+s.src = 'https://tame-cap.s3.amazonaws.com/public/SEB/Dashboard/status/status.js?t=' + Date.now();
+s.onload = render; s.onerror = render;
+document.head.appendChild(s);
+</script>
+</body>
+</html>
